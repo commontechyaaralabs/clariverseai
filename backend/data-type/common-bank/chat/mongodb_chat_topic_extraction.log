@@ -1,0 +1,1260 @@
+2025-08-02 06:25:30,931 - INFO - [MainThread] - Starting MongoDB Chat Topic Extraction Process with Parallel Processing
+2025-08-02 06:25:30,932 - INFO - [MainThread] - Using 5 parallel workers
+2025-08-02 06:25:32,264 - INFO - [MainThread] - MongoDB connection established successfully to sparzaai.chat-chunks
+2025-08-02 06:25:32,271 - INFO - [MainThread] - Remote Ollama API health check: OK
+2025-08-02 06:25:32,542 - INFO - [MainThread] - Total documents in collection: 204
+2025-08-02 06:25:32,542 - INFO - [MainThread] - Unprocessed documents: 204
+2025-08-02 06:25:32,542 - INFO - [MainThread] - Using 5 parallel workers
+2025-08-02 06:25:33,504 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4a756cd4d67b0bf9fcf (1/204) with 9 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:25:33,506 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4a756cd4d67b0bf9fd0 (2/204) with 7 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:25:33,506 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4a756cd4d67b0bf9fd1 (3/204) with 7 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:25:33,509 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4a756cd4d67b0bf9fd2 (4/204) with 9 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:25:33,509 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4a756cd4d67b0bf9fd3 (5/204) with 11 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:25:33,515 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:25:33,515 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4a756cd4d67b0bf9fd0 conversation has 163 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:25:33,517 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:25:33,518 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:25:33,518 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4a756cd4d67b0bf9fcf conversation has 184 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:25:33,519 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4a756cd4d67b0bf9fd1 conversation has 192 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:25:33,520 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:25:33,521 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:25:33,522 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:25:33,523 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4a756cd4d67b0bf9fd2 conversation has 225 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:25:33,525 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4a756cd4d67b0bf9fd3 conversation has 246 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:25:33,527 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:25:33,529 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:25:33,532 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:25:33,534 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:25:36,088 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4a756cd4d67b0bf9fd1
+2025-08-02 06:25:36,088 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4a756cd4d67b0bf9fd1
+2025-08-02 06:25:36,088 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4a756cd4d67b0bf9fd4 (6/204) with 13 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:25:36,094 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:25:36,094 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4a756cd4d67b0bf9fd4 conversation has 239 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:25:36,098 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:25:38,405 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4a756cd4d67b0bf9fd2
+2025-08-02 06:25:38,405 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4a756cd4d67b0bf9fd2
+2025-08-02 06:25:38,405 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4a756cd4d67b0bf9fd5 (7/204) with 13 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:25:38,410 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:25:38,410 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4a756cd4d67b0bf9fd5 conversation has 338 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:25:38,414 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:25:40,582 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4a756cd4d67b0bf9fd0
+2025-08-02 06:25:40,583 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4a756cd4d67b0bf9fd0
+2025-08-02 06:25:40,583 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4a756cd4d67b0bf9fd6 (8/204) with 11 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:25:40,588 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:25:40,588 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4a756cd4d67b0bf9fd6 conversation has 296 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:25:40,592 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:25:42,764 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4a756cd4d67b0bf9fcf
+2025-08-02 06:25:42,765 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4a756cd4d67b0bf9fcf
+2025-08-02 06:25:42,765 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4a756cd4d67b0bf9fd7 (9/204) with 11 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:25:42,770 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:25:42,770 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4a756cd4d67b0bf9fd7 conversation has 218 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:25:42,774 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:25:45,055 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4a756cd4d67b0bf9fd3
+2025-08-02 06:25:45,056 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4a756cd4d67b0bf9fd3
+2025-08-02 06:25:45,056 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4a756cd4d67b0bf9fd8 (10/204) with 13 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:25:45,062 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:25:45,062 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4a756cd4d67b0bf9fd8 conversation has 332 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:25:45,068 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:25:47,362 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4a756cd4d67b0bf9fd4
+2025-08-02 06:25:47,363 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4a756cd4d67b0bf9fd4
+2025-08-02 06:25:47,363 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4a756cd4d67b0bf9fd9 (11/204) with 7 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:25:47,368 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:25:47,369 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4a756cd4d67b0bf9fd9 conversation has 182 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:25:47,373 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:25:49,738 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4a756cd4d67b0bf9fd5
+2025-08-02 06:25:49,738 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4a756cd4d67b0bf9fd5
+2025-08-02 06:25:49,738 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4a756cd4d67b0bf9fda (12/204) with 7 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:25:49,743 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:25:49,743 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4a756cd4d67b0bf9fda conversation has 204 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:25:49,747 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:25:52,058 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4a756cd4d67b0bf9fd6
+2025-08-02 06:25:52,058 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4a756cd4d67b0bf9fd6
+2025-08-02 06:25:52,058 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4a756cd4d67b0bf9fdb (13/204) with 13 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:25:52,063 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:25:52,063 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4a756cd4d67b0bf9fdb conversation has 250 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:25:52,067 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:25:54,310 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4a756cd4d67b0bf9fd7
+2025-08-02 06:25:54,310 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4a756cd4d67b0bf9fd7
+2025-08-02 06:25:54,310 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4a856cd4d67b0bf9fdc (14/204) with 13 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:25:54,315 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:25:54,315 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4a856cd4d67b0bf9fdc conversation has 262 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:25:54,319 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:25:56,692 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4a756cd4d67b0bf9fd8
+2025-08-02 06:25:56,693 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4a756cd4d67b0bf9fd8
+2025-08-02 06:25:56,693 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4a856cd4d67b0bf9fdd (15/204) with 11 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:25:56,693 - INFO - [MainThread] - Progress: 10/204 documents processed (Success: 10, Errors: 0)
+2025-08-02 06:25:56,698 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:25:56,698 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4a856cd4d67b0bf9fdd conversation has 265 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:25:56,702 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:25:58,925 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4a756cd4d67b0bf9fd9
+2025-08-02 06:25:58,926 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4a756cd4d67b0bf9fd9
+2025-08-02 06:25:58,926 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4a856cd4d67b0bf9fde (16/204) with 9 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:25:58,931 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:25:58,931 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4a856cd4d67b0bf9fde conversation has 252 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:25:58,935 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:26:01,171 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4a756cd4d67b0bf9fda
+2025-08-02 06:26:01,171 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4a756cd4d67b0bf9fda
+2025-08-02 06:26:01,171 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4a856cd4d67b0bf9fdf (17/204) with 11 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:26:01,176 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:26:01,176 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4a856cd4d67b0bf9fdf conversation has 271 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:01,180 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:26:03,445 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4a756cd4d67b0bf9fdb
+2025-08-02 06:26:03,446 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4a756cd4d67b0bf9fdb
+2025-08-02 06:26:03,446 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4a856cd4d67b0bf9fe0 (18/204) with 7 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:26:03,451 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:26:03,451 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4a856cd4d67b0bf9fe0 conversation has 187 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:03,456 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:26:05,781 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4a856cd4d67b0bf9fdc
+2025-08-02 06:26:05,781 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4a856cd4d67b0bf9fdc
+2025-08-02 06:26:05,781 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4a856cd4d67b0bf9fe1 (19/204) with 11 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:26:05,786 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:26:05,786 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4a856cd4d67b0bf9fe1 conversation has 211 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:05,790 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:26:08,102 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4a856cd4d67b0bf9fdd
+2025-08-02 06:26:08,102 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4a856cd4d67b0bf9fdd
+2025-08-02 06:26:08,102 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4a856cd4d67b0bf9fe2 (20/204) with 9 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:26:08,108 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:26:08,108 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4a856cd4d67b0bf9fe2 conversation has 197 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:08,112 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:26:10,425 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4a856cd4d67b0bf9fde
+2025-08-02 06:26:10,425 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4a856cd4d67b0bf9fde
+2025-08-02 06:26:10,425 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4a856cd4d67b0bf9fe3 (21/204) with 11 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:26:10,431 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:26:10,432 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4a856cd4d67b0bf9fe3 conversation has 230 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:10,436 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:26:12,713 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4a856cd4d67b0bf9fdf
+2025-08-02 06:26:12,713 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4a856cd4d67b0bf9fdf
+2025-08-02 06:26:12,713 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4a856cd4d67b0bf9fe4 (22/204) with 9 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:26:12,718 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:26:12,718 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4a856cd4d67b0bf9fe4 conversation has 273 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:12,722 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:26:14,940 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4a856cd4d67b0bf9fe0
+2025-08-02 06:26:14,941 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4a856cd4d67b0bf9fe0
+2025-08-02 06:26:14,941 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4a856cd4d67b0bf9fe5 (23/204) with 13 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:26:14,946 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:26:14,946 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4a856cd4d67b0bf9fe5 conversation has 312 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:14,950 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:26:17,252 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4a856cd4d67b0bf9fe1
+2025-08-02 06:26:17,252 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4a856cd4d67b0bf9fe1
+2025-08-02 06:26:17,252 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4a856cd4d67b0bf9fe6 (24/204) with 7 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:26:17,257 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:26:17,257 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4a856cd4d67b0bf9fe6 conversation has 188 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:17,262 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:26:19,541 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4a856cd4d67b0bf9fe2
+2025-08-02 06:26:19,541 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4a856cd4d67b0bf9fe2
+2025-08-02 06:26:19,541 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4a856cd4d67b0bf9fe7 (25/204) with 9 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:26:19,541 - INFO - [MainThread] - Progress: 20/204 documents processed (Success: 20, Errors: 0)
+2025-08-02 06:26:19,547 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:26:19,547 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4a856cd4d67b0bf9fe7 conversation has 260 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:19,551 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:26:21,788 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4a856cd4d67b0bf9fe3
+2025-08-02 06:26:21,789 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4a856cd4d67b0bf9fe3
+2025-08-02 06:26:21,789 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4a856cd4d67b0bf9fe8 (26/204) with 13 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:26:21,794 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:26:21,794 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4a856cd4d67b0bf9fe8 conversation has 344 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:21,798 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:26:24,107 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4a856cd4d67b0bf9fe4
+2025-08-02 06:26:24,107 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4a856cd4d67b0bf9fe4
+2025-08-02 06:26:24,108 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4a856cd4d67b0bf9fe9 (27/204) with 11 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:26:24,113 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:26:24,113 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4a856cd4d67b0bf9fe9 conversation has 182 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:24,117 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:26:26,417 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4a856cd4d67b0bf9fe5
+2025-08-02 06:26:26,417 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4a856cd4d67b0bf9fe5
+2025-08-02 06:26:26,418 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4a856cd4d67b0bf9fea (28/204) with 13 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:26:26,423 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:26:26,423 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4a856cd4d67b0bf9fea conversation has 315 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:26,428 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:26:28,620 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4a856cd4d67b0bf9fe6
+2025-08-02 06:26:28,620 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4a856cd4d67b0bf9fe6
+2025-08-02 06:26:28,621 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4a856cd4d67b0bf9feb (29/204) with 13 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:26:28,625 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:26:28,626 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4a856cd4d67b0bf9feb conversation has 270 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:28,630 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:26:30,886 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4a856cd4d67b0bf9fe7
+2025-08-02 06:26:30,886 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4a856cd4d67b0bf9fe7
+2025-08-02 06:26:30,886 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4a856cd4d67b0bf9fec (30/204) with 13 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:26:30,891 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:26:30,891 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4a856cd4d67b0bf9fec conversation has 253 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:30,896 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:26:33,311 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4a856cd4d67b0bf9fe8
+2025-08-02 06:26:33,311 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4a856cd4d67b0bf9fe8
+2025-08-02 06:26:33,312 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4a856cd4d67b0bf9fed (31/204) with 11 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:26:33,317 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:26:33,317 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4a856cd4d67b0bf9fed conversation has 235 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:33,321 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:26:35,489 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4a856cd4d67b0bf9fe9
+2025-08-02 06:26:35,489 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4a856cd4d67b0bf9fe9
+2025-08-02 06:26:35,490 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4a856cd4d67b0bf9fee (32/204) with 9 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:26:35,495 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:26:35,495 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4a856cd4d67b0bf9fee conversation has 221 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:35,499 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:26:37,853 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4a856cd4d67b0bf9fea
+2025-08-02 06:26:37,854 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4a856cd4d67b0bf9fea
+2025-08-02 06:26:37,854 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4a856cd4d67b0bf9fef (33/204) with 9 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:26:37,859 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:26:37,859 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4a856cd4d67b0bf9fef conversation has 209 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:37,863 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:26:40,116 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4a856cd4d67b0bf9feb
+2025-08-02 06:26:40,116 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4a856cd4d67b0bf9feb
+2025-08-02 06:26:40,116 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4a856cd4d67b0bf9ff0 (34/204) with 7 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:26:40,121 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:26:40,121 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4a856cd4d67b0bf9ff0 conversation has 231 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:40,125 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:26:42,380 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4a856cd4d67b0bf9fec
+2025-08-02 06:26:42,380 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4a856cd4d67b0bf9fec
+2025-08-02 06:26:42,381 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4a856cd4d67b0bf9ff1 (35/204) with 9 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:26:42,381 - INFO - [MainThread] - Progress: 30/204 documents processed (Success: 30, Errors: 0)
+2025-08-02 06:26:42,387 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:26:42,387 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4a856cd4d67b0bf9ff1 conversation has 175 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:42,392 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:26:44,696 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4a856cd4d67b0bf9fed
+2025-08-02 06:26:44,697 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4a856cd4d67b0bf9fed
+2025-08-02 06:26:44,697 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4a856cd4d67b0bf9ff2 (36/204) with 13 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:26:44,702 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:26:44,702 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4a856cd4d67b0bf9ff2 conversation has 233 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:44,706 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:26:46,945 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4a856cd4d67b0bf9fee
+2025-08-02 06:26:46,945 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4a856cd4d67b0bf9fee
+2025-08-02 06:26:46,945 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4a956cd4d67b0bf9ff3 (37/204) with 9 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:26:46,952 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:26:46,953 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4a956cd4d67b0bf9ff3 conversation has 271 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:46,957 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:26:49,220 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4a856cd4d67b0bf9fef
+2025-08-02 06:26:49,221 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4a856cd4d67b0bf9fef
+2025-08-02 06:26:49,221 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4a956cd4d67b0bf9ff4 (38/204) with 7 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:26:49,226 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:26:49,226 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4a956cd4d67b0bf9ff4 conversation has 151 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:49,230 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:26:51,486 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4a856cd4d67b0bf9ff0
+2025-08-02 06:26:51,486 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4a856cd4d67b0bf9ff0
+2025-08-02 06:26:51,487 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4a956cd4d67b0bf9ff5 (39/204) with 7 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:26:51,492 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:26:51,492 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4a956cd4d67b0bf9ff5 conversation has 201 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:51,496 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:26:53,680 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4a856cd4d67b0bf9ff1
+2025-08-02 06:26:53,680 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4a856cd4d67b0bf9ff1
+2025-08-02 06:26:53,680 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4a956cd4d67b0bf9ff6 (40/204) with 9 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:26:53,686 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:26:53,686 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4a956cd4d67b0bf9ff6 conversation has 242 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:53,690 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:26:55,947 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4a856cd4d67b0bf9ff2
+2025-08-02 06:26:55,947 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4a856cd4d67b0bf9ff2
+2025-08-02 06:26:55,947 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4a956cd4d67b0bf9ff7 (41/204) with 13 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:26:55,952 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:26:55,952 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4a956cd4d67b0bf9ff7 conversation has 338 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:55,956 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:26:58,153 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4a956cd4d67b0bf9ff3
+2025-08-02 06:26:58,154 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4a956cd4d67b0bf9ff3
+2025-08-02 06:26:58,154 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4a956cd4d67b0bf9ff8 (42/204) with 13 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:26:58,159 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:26:58,159 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4a956cd4d67b0bf9ff8 conversation has 235 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:26:58,163 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:27:00,294 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4a956cd4d67b0bf9ff4
+2025-08-02 06:27:00,295 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4a956cd4d67b0bf9ff4
+2025-08-02 06:27:00,295 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4a956cd4d67b0bf9ff9 (43/204) with 7 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:27:00,300 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:27:00,300 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4a956cd4d67b0bf9ff9 conversation has 166 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:00,304 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:27:02,532 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4a956cd4d67b0bf9ff5
+2025-08-02 06:27:02,532 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4a956cd4d67b0bf9ff5
+2025-08-02 06:27:02,532 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4a956cd4d67b0bf9ffa (44/204) with 9 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:27:02,537 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:27:02,537 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4a956cd4d67b0bf9ffa conversation has 212 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:02,541 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:27:04,824 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4a956cd4d67b0bf9ff6
+2025-08-02 06:27:04,824 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4a956cd4d67b0bf9ff6
+2025-08-02 06:27:04,824 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4a956cd4d67b0bf9ffb (45/204) with 11 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:27:04,824 - INFO - [MainThread] - Progress: 40/204 documents processed (Success: 40, Errors: 0)
+2025-08-02 06:27:04,829 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:27:04,830 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4a956cd4d67b0bf9ffb conversation has 267 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:04,834 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:27:07,222 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4a956cd4d67b0bf9ff7
+2025-08-02 06:27:07,223 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4a956cd4d67b0bf9ff7
+2025-08-02 06:27:07,223 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4a956cd4d67b0bf9ffc (46/204) with 11 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:27:07,228 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:27:07,228 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4a956cd4d67b0bf9ffc conversation has 355 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:07,232 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:27:09,488 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4a956cd4d67b0bf9ff8
+2025-08-02 06:27:09,488 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4a956cd4d67b0bf9ff8
+2025-08-02 06:27:09,488 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4a956cd4d67b0bf9ffd (47/204) with 11 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:27:09,493 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:27:09,494 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4a956cd4d67b0bf9ffd conversation has 257 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:09,498 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:27:11,676 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4a956cd4d67b0bf9ff9
+2025-08-02 06:27:11,676 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4a956cd4d67b0bf9ff9
+2025-08-02 06:27:11,676 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4a956cd4d67b0bf9ffe (48/204) with 9 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:27:11,681 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:27:11,682 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4a956cd4d67b0bf9ffe conversation has 218 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:11,686 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:27:13,951 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4a956cd4d67b0bf9ffa
+2025-08-02 06:27:13,951 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4a956cd4d67b0bf9ffa
+2025-08-02 06:27:13,951 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4a956cd4d67b0bf9fff (49/204) with 9 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:27:13,956 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:27:13,957 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4a956cd4d67b0bf9fff conversation has 225 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:13,961 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:27:16,286 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4a956cd4d67b0bf9ffb
+2025-08-02 06:27:16,286 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4a956cd4d67b0bf9ffb
+2025-08-02 06:27:16,286 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4a956cd4d67b0bfa000 (50/204) with 9 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:27:16,291 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:27:16,292 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4a956cd4d67b0bfa000 conversation has 241 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:16,296 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:27:18,666 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4a956cd4d67b0bf9ffc
+2025-08-02 06:27:18,667 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4a956cd4d67b0bf9ffc
+2025-08-02 06:27:18,667 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4a956cd4d67b0bfa001 (51/204) with 9 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:27:18,671 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:27:18,672 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4a956cd4d67b0bfa001 conversation has 228 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:18,676 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:27:20,931 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4a956cd4d67b0bf9ffd
+2025-08-02 06:27:20,931 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4a956cd4d67b0bf9ffd
+2025-08-02 06:27:20,932 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4a956cd4d67b0bfa002 (52/204) with 11 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:27:20,938 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:27:20,938 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4a956cd4d67b0bfa002 conversation has 248 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:20,943 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:27:23,257 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4a956cd4d67b0bf9ffe
+2025-08-02 06:27:23,258 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4a956cd4d67b0bf9ffe
+2025-08-02 06:27:23,258 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4a956cd4d67b0bfa003 (53/204) with 11 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:27:23,263 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:27:23,263 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4a956cd4d67b0bfa003 conversation has 233 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:23,267 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:27:25,556 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4a956cd4d67b0bf9fff
+2025-08-02 06:27:25,556 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4a956cd4d67b0bf9fff
+2025-08-02 06:27:25,557 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4a956cd4d67b0bfa004 (54/204) with 7 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:27:25,561 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:27:25,562 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4a956cd4d67b0bfa004 conversation has 205 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:25,566 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:27:27,841 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4a956cd4d67b0bfa000
+2025-08-02 06:27:27,841 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4a956cd4d67b0bfa000
+2025-08-02 06:27:27,842 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4a956cd4d67b0bfa005 (55/204) with 9 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:27:27,842 - INFO - [MainThread] - Progress: 50/204 documents processed (Success: 50, Errors: 0)
+2025-08-02 06:27:27,847 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:27:27,848 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4a956cd4d67b0bfa005 conversation has 195 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:27,852 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:27:30,141 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4a956cd4d67b0bfa001
+2025-08-02 06:27:30,141 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4a956cd4d67b0bfa001
+2025-08-02 06:27:30,141 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4a956cd4d67b0bfa006 (56/204) with 9 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:27:30,146 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:27:30,146 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4a956cd4d67b0bfa006 conversation has 197 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:30,150 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:27:32,467 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4a956cd4d67b0bfa002
+2025-08-02 06:27:32,467 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4a956cd4d67b0bfa002
+2025-08-02 06:27:32,467 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4a956cd4d67b0bfa007 (57/204) with 9 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:27:32,472 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:27:32,472 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4a956cd4d67b0bfa007 conversation has 199 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:32,476 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:27:34,736 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4a956cd4d67b0bfa003
+2025-08-02 06:27:34,736 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4a956cd4d67b0bfa003
+2025-08-02 06:27:34,736 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4a956cd4d67b0bfa008 (58/204) with 13 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:27:34,741 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:27:34,741 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4a956cd4d67b0bfa008 conversation has 322 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:34,745 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:27:36,978 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4a956cd4d67b0bfa004
+2025-08-02 06:27:36,978 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4a956cd4d67b0bfa004
+2025-08-02 06:27:36,978 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4a956cd4d67b0bfa009 (59/204) with 11 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:27:36,983 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:27:36,984 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4a956cd4d67b0bfa009 conversation has 240 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:36,988 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:27:39,301 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4a956cd4d67b0bfa005
+2025-08-02 06:27:39,301 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4a956cd4d67b0bfa005
+2025-08-02 06:27:39,301 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4a956cd4d67b0bfa00a (60/204) with 13 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:27:39,306 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:27:39,307 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4a956cd4d67b0bfa00a conversation has 276 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:39,311 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:27:41,575 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4a956cd4d67b0bfa006
+2025-08-02 06:27:41,575 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4a956cd4d67b0bfa006
+2025-08-02 06:27:41,575 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4a956cd4d67b0bfa00b (61/204) with 13 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:27:41,580 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:27:41,581 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4a956cd4d67b0bfa00b conversation has 315 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:41,585 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:27:43,794 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4a956cd4d67b0bfa007
+2025-08-02 06:27:43,794 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4a956cd4d67b0bfa007
+2025-08-02 06:27:43,795 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4a956cd4d67b0bfa00c (62/204) with 13 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:27:43,800 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:27:43,800 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4a956cd4d67b0bfa00c conversation has 305 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:43,804 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:27:46,126 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4a956cd4d67b0bfa008
+2025-08-02 06:27:46,126 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4a956cd4d67b0bfa008
+2025-08-02 06:27:46,127 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4a956cd4d67b0bfa00d (63/204) with 11 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:27:46,132 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:27:46,132 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4a956cd4d67b0bfa00d conversation has 223 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:46,136 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:27:48,416 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4a956cd4d67b0bfa009
+2025-08-02 06:27:48,416 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4a956cd4d67b0bfa009
+2025-08-02 06:27:48,416 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4a956cd4d67b0bfa00e (64/204) with 9 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:27:48,421 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:27:48,422 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4a956cd4d67b0bfa00e conversation has 194 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:48,426 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:27:50,778 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4a956cd4d67b0bfa00a
+2025-08-02 06:27:50,778 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4a956cd4d67b0bfa00a
+2025-08-02 06:27:50,778 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4a956cd4d67b0bfa00f (65/204) with 7 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:27:50,778 - INFO - [MainThread] - Progress: 60/204 documents processed (Success: 60, Errors: 0)
+2025-08-02 06:27:50,783 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:27:50,784 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4a956cd4d67b0bfa00f conversation has 171 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:50,788 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:27:53,057 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4a956cd4d67b0bfa00b
+2025-08-02 06:27:53,057 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4a956cd4d67b0bfa00b
+2025-08-02 06:27:53,058 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4a956cd4d67b0bfa010 (66/204) with 9 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:27:53,062 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:27:53,063 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4a956cd4d67b0bfa010 conversation has 233 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:53,066 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:27:55,334 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4a956cd4d67b0bfa00c
+2025-08-02 06:27:55,334 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4a956cd4d67b0bfa00c
+2025-08-02 06:27:55,335 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4aa56cd4d67b0bfa011 (67/204) with 7 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:27:55,340 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:27:55,341 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4aa56cd4d67b0bfa011 conversation has 215 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:55,345 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:27:57,578 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4a956cd4d67b0bfa00d
+2025-08-02 06:27:57,579 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4a956cd4d67b0bfa00d
+2025-08-02 06:27:57,579 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4aa56cd4d67b0bfa012 (68/204) with 7 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:27:57,584 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:27:57,584 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4aa56cd4d67b0bfa012 conversation has 182 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:57,588 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:27:59,781 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4a956cd4d67b0bfa00e
+2025-08-02 06:27:59,782 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4a956cd4d67b0bfa00e
+2025-08-02 06:27:59,782 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4aa56cd4d67b0bfa013 (69/204) with 13 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:27:59,787 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:27:59,787 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4aa56cd4d67b0bfa013 conversation has 312 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:27:59,791 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:28:01,997 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4a956cd4d67b0bfa00f
+2025-08-02 06:28:01,997 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4a956cd4d67b0bfa00f
+2025-08-02 06:28:01,997 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4aa56cd4d67b0bfa014 (70/204) with 9 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:28:02,004 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:28:02,004 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4aa56cd4d67b0bfa014 conversation has 232 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:02,009 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:28:04,243 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4a956cd4d67b0bfa010
+2025-08-02 06:28:04,243 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4a956cd4d67b0bfa010
+2025-08-02 06:28:04,243 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4aa56cd4d67b0bfa015 (71/204) with 13 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:28:04,248 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:28:04,248 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4aa56cd4d67b0bfa015 conversation has 303 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:04,252 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:28:06,518 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4aa56cd4d67b0bfa011
+2025-08-02 06:28:06,518 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4aa56cd4d67b0bfa011
+2025-08-02 06:28:06,518 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4aa56cd4d67b0bfa016 (72/204) with 11 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:28:06,523 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:28:06,524 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4aa56cd4d67b0bfa016 conversation has 259 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:06,528 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:28:08,747 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4aa56cd4d67b0bfa012
+2025-08-02 06:28:08,747 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4aa56cd4d67b0bfa012
+2025-08-02 06:28:08,747 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4aa56cd4d67b0bfa017 (73/204) with 9 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:28:08,753 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:28:08,754 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4aa56cd4d67b0bfa017 conversation has 189 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:08,758 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:28:11,170 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4aa56cd4d67b0bfa013
+2025-08-02 06:28:11,170 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4aa56cd4d67b0bfa013
+2025-08-02 06:28:11,170 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4aa56cd4d67b0bfa018 (74/204) with 7 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:28:11,175 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:28:11,176 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4aa56cd4d67b0bfa018 conversation has 226 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:11,180 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:28:13,461 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4aa56cd4d67b0bfa014
+2025-08-02 06:28:13,461 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4aa56cd4d67b0bfa014
+2025-08-02 06:28:13,461 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4aa56cd4d67b0bfa019 (75/204) with 11 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:28:13,462 - INFO - [MainThread] - Progress: 70/204 documents processed (Success: 70, Errors: 0)
+2025-08-02 06:28:13,467 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:28:13,467 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4aa56cd4d67b0bfa019 conversation has 251 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:13,472 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:28:15,799 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4aa56cd4d67b0bfa015
+2025-08-02 06:28:15,800 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4aa56cd4d67b0bfa015
+2025-08-02 06:28:15,800 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4aa56cd4d67b0bfa01a (76/204) with 7 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:28:15,805 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:28:15,806 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4aa56cd4d67b0bfa01a conversation has 179 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:15,810 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:28:18,087 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4aa56cd4d67b0bfa016
+2025-08-02 06:28:18,087 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4aa56cd4d67b0bfa016
+2025-08-02 06:28:18,087 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4aa56cd4d67b0bfa01b (77/204) with 7 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:28:18,093 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:28:18,093 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4aa56cd4d67b0bfa01b conversation has 214 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:18,097 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:28:20,266 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4aa56cd4d67b0bfa017
+2025-08-02 06:28:20,267 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4aa56cd4d67b0bfa017
+2025-08-02 06:28:20,267 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4aa56cd4d67b0bfa01c (78/204) with 13 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:28:20,272 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:28:20,272 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4aa56cd4d67b0bfa01c conversation has 260 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:20,276 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:28:22,520 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4aa56cd4d67b0bfa018
+2025-08-02 06:28:22,521 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4aa56cd4d67b0bfa018
+2025-08-02 06:28:22,521 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4aa56cd4d67b0bfa01d (79/204) with 13 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:28:22,526 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:28:22,526 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4aa56cd4d67b0bfa01d conversation has 312 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:22,531 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:28:24,789 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4aa56cd4d67b0bfa019
+2025-08-02 06:28:24,789 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4aa56cd4d67b0bfa019
+2025-08-02 06:28:24,790 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4aa56cd4d67b0bfa01e (80/204) with 7 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:28:24,795 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:28:24,795 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4aa56cd4d67b0bfa01e conversation has 185 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:24,800 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:28:27,015 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4aa56cd4d67b0bfa01a
+2025-08-02 06:28:27,015 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4aa56cd4d67b0bfa01a
+2025-08-02 06:28:27,015 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4aa56cd4d67b0bfa01f (81/204) with 7 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:28:27,020 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:28:27,020 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4aa56cd4d67b0bfa01f conversation has 211 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:27,024 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:28:29,286 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4aa56cd4d67b0bfa01b
+2025-08-02 06:28:29,286 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4aa56cd4d67b0bfa01b
+2025-08-02 06:28:29,286 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4aa56cd4d67b0bfa020 (82/204) with 7 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:28:29,291 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:28:29,292 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4aa56cd4d67b0bfa020 conversation has 190 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:29,296 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:28:31,582 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4aa56cd4d67b0bfa01c
+2025-08-02 06:28:31,583 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4aa56cd4d67b0bfa01c
+2025-08-02 06:28:31,583 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4aa56cd4d67b0bfa021 (83/204) with 7 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:28:31,588 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:28:31,588 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4aa56cd4d67b0bfa021 conversation has 218 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:31,592 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:28:33,918 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4aa56cd4d67b0bfa01d
+2025-08-02 06:28:33,918 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4aa56cd4d67b0bfa01d
+2025-08-02 06:28:33,918 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4aa56cd4d67b0bfa022 (84/204) with 9 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:28:33,923 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:28:33,924 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4aa56cd4d67b0bfa022 conversation has 259 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:33,928 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:28:36,139 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4aa56cd4d67b0bfa01e
+2025-08-02 06:28:36,139 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4aa56cd4d67b0bfa01e
+2025-08-02 06:28:36,139 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4aa56cd4d67b0bfa023 (85/204) with 13 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:28:36,140 - INFO - [MainThread] - Progress: 80/204 documents processed (Success: 80, Errors: 0)
+2025-08-02 06:28:36,145 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:28:36,145 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4aa56cd4d67b0bfa023 conversation has 273 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:36,149 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:28:38,373 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4aa56cd4d67b0bfa01f
+2025-08-02 06:28:38,373 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4aa56cd4d67b0bfa01f
+2025-08-02 06:28:38,373 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4aa56cd4d67b0bfa024 (86/204) with 13 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:28:38,379 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:28:38,379 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4aa56cd4d67b0bfa024 conversation has 280 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:38,384 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:28:40,599 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4aa56cd4d67b0bfa020
+2025-08-02 06:28:40,599 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4aa56cd4d67b0bfa020
+2025-08-02 06:28:40,599 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4aa56cd4d67b0bfa025 (87/204) with 9 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:28:40,604 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:28:40,604 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4aa56cd4d67b0bfa025 conversation has 246 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:40,608 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:28:42,863 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4aa56cd4d67b0bfa021
+2025-08-02 06:28:42,863 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4aa56cd4d67b0bfa021
+2025-08-02 06:28:42,863 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4aa56cd4d67b0bfa026 (88/204) with 13 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:28:42,868 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:28:42,869 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4aa56cd4d67b0bfa026 conversation has 268 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:42,873 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:28:45,103 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4aa56cd4d67b0bfa022
+2025-08-02 06:28:45,103 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4aa56cd4d67b0bfa022
+2025-08-02 06:28:45,103 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4aa56cd4d67b0bfa027 (89/204) with 9 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:28:45,109 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:28:45,109 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4aa56cd4d67b0bfa027 conversation has 196 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:45,113 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:28:47,416 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4aa56cd4d67b0bfa023
+2025-08-02 06:28:47,416 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4aa56cd4d67b0bfa023
+2025-08-02 06:28:47,416 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4aa56cd4d67b0bfa028 (90/204) with 11 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:28:47,422 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:28:47,422 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4aa56cd4d67b0bfa028 conversation has 246 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:47,426 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:28:49,760 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4aa56cd4d67b0bfa024
+2025-08-02 06:28:49,760 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4aa56cd4d67b0bfa024
+2025-08-02 06:28:49,760 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4aa56cd4d67b0bfa029 (91/204) with 9 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:28:49,766 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:28:49,767 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4aa56cd4d67b0bfa029 conversation has 197 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:49,772 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:28:52,073 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4aa56cd4d67b0bfa025
+2025-08-02 06:28:52,073 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4aa56cd4d67b0bfa025
+2025-08-02 06:28:52,074 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4aa56cd4d67b0bfa02a (92/204) with 11 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:28:52,078 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:28:52,079 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4aa56cd4d67b0bfa02a conversation has 247 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:52,083 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:28:54,383 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4aa56cd4d67b0bfa026
+2025-08-02 06:28:54,384 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4aa56cd4d67b0bfa026
+2025-08-02 06:28:54,384 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4aa56cd4d67b0bfa02b (93/204) with 13 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:28:54,390 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:28:54,390 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4aa56cd4d67b0bfa02b conversation has 261 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:54,395 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:28:56,602 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4aa56cd4d67b0bfa027
+2025-08-02 06:28:56,602 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4aa56cd4d67b0bfa027
+2025-08-02 06:28:56,602 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4aa56cd4d67b0bfa02c (94/204) with 9 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:28:56,608 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:28:56,608 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4aa56cd4d67b0bfa02c conversation has 183 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:56,612 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:28:58,893 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4aa56cd4d67b0bfa028
+2025-08-02 06:28:58,893 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4aa56cd4d67b0bfa028
+2025-08-02 06:28:58,893 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4aa56cd4d67b0bfa02d (95/204) with 7 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:28:58,893 - INFO - [MainThread] - Progress: 90/204 documents processed (Success: 90, Errors: 0)
+2025-08-02 06:28:58,898 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:28:58,899 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4aa56cd4d67b0bfa02d conversation has 192 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:28:58,903 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:29:01,080 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4aa56cd4d67b0bfa029
+2025-08-02 06:29:01,081 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4aa56cd4d67b0bfa029
+2025-08-02 06:29:01,081 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4aa56cd4d67b0bfa02e (96/204) with 9 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:29:01,086 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:29:01,086 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4aa56cd4d67b0bfa02e conversation has 197 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:01,090 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:29:03,413 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4aa56cd4d67b0bfa02a
+2025-08-02 06:29:03,413 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4aa56cd4d67b0bfa02a
+2025-08-02 06:29:03,414 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4ab56cd4d67b0bfa02f (97/204) with 13 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:29:03,419 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:29:03,419 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4ab56cd4d67b0bfa02f conversation has 287 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:03,423 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:29:05,703 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4aa56cd4d67b0bfa02b
+2025-08-02 06:29:05,703 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4aa56cd4d67b0bfa02b
+2025-08-02 06:29:05,703 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4ab56cd4d67b0bfa030 (98/204) with 9 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:29:05,708 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:29:05,709 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4ab56cd4d67b0bfa030 conversation has 192 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:05,713 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:29:07,941 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4aa56cd4d67b0bfa02c
+2025-08-02 06:29:07,941 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4aa56cd4d67b0bfa02c
+2025-08-02 06:29:07,941 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4ab56cd4d67b0bfa031 (99/204) with 11 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:29:07,946 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:29:07,947 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4ab56cd4d67b0bfa031 conversation has 247 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:07,951 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:29:10,231 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4aa56cd4d67b0bfa02d
+2025-08-02 06:29:10,231 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4aa56cd4d67b0bfa02d
+2025-08-02 06:29:10,232 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4ab56cd4d67b0bfa032 (100/204) with 9 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:29:10,236 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:29:10,237 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4ab56cd4d67b0bfa032 conversation has 211 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:10,241 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:29:12,471 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4aa56cd4d67b0bfa02e
+2025-08-02 06:29:12,472 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4aa56cd4d67b0bfa02e
+2025-08-02 06:29:12,472 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4ab56cd4d67b0bfa033 (101/204) with 11 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:29:12,477 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:29:12,477 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4ab56cd4d67b0bfa033 conversation has 287 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:12,481 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:29:14,790 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4ab56cd4d67b0bfa02f
+2025-08-02 06:29:14,791 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4ab56cd4d67b0bfa02f
+2025-08-02 06:29:14,791 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4ab56cd4d67b0bfa034 (102/204) with 11 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:29:14,796 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:29:14,796 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4ab56cd4d67b0bfa034 conversation has 212 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:14,801 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:29:17,044 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4ab56cd4d67b0bfa030
+2025-08-02 06:29:17,044 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4ab56cd4d67b0bfa030
+2025-08-02 06:29:17,044 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4ab56cd4d67b0bfa035 (103/204) with 11 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:29:17,049 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:29:17,049 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4ab56cd4d67b0bfa035 conversation has 302 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:17,053 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:29:19,307 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4ab56cd4d67b0bfa031
+2025-08-02 06:29:19,307 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4ab56cd4d67b0bfa031
+2025-08-02 06:29:19,308 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4ab56cd4d67b0bfa036 (104/204) with 11 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:29:19,312 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:29:19,313 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4ab56cd4d67b0bfa036 conversation has 246 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:19,317 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:29:21,498 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4ab56cd4d67b0bfa032
+2025-08-02 06:29:21,498 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4ab56cd4d67b0bfa032
+2025-08-02 06:29:21,499 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4ab56cd4d67b0bfa037 (105/204) with 9 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:29:21,499 - INFO - [MainThread] - Progress: 100/204 documents processed (Success: 100, Errors: 0)
+2025-08-02 06:29:21,503 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:29:21,504 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4ab56cd4d67b0bfa037 conversation has 204 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:21,508 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:29:23,828 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4ab56cd4d67b0bfa033
+2025-08-02 06:29:23,828 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4ab56cd4d67b0bfa033
+2025-08-02 06:29:23,829 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4ab56cd4d67b0bfa038 (106/204) with 7 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:29:23,834 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:29:23,834 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4ab56cd4d67b0bfa038 conversation has 206 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:23,838 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:29:26,101 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4ab56cd4d67b0bfa034
+2025-08-02 06:29:26,101 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4ab56cd4d67b0bfa034
+2025-08-02 06:29:26,102 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4ab56cd4d67b0bfa039 (107/204) with 13 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:29:26,107 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:29:26,107 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4ab56cd4d67b0bfa039 conversation has 278 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:26,111 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:29:28,417 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4ab56cd4d67b0bfa035
+2025-08-02 06:29:28,417 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4ab56cd4d67b0bfa035
+2025-08-02 06:29:28,417 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4ab56cd4d67b0bfa03a (108/204) with 11 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:29:28,422 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:29:28,423 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4ab56cd4d67b0bfa03a conversation has 245 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:28,427 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:29:30,788 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4ab56cd4d67b0bfa036
+2025-08-02 06:29:30,788 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4ab56cd4d67b0bfa036
+2025-08-02 06:29:30,788 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4ab56cd4d67b0bfa03b (109/204) with 13 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:29:30,793 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:29:30,793 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4ab56cd4d67b0bfa03b conversation has 288 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:30,798 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:29:33,090 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4ab56cd4d67b0bfa037
+2025-08-02 06:29:33,090 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4ab56cd4d67b0bfa037
+2025-08-02 06:29:33,090 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4ab56cd4d67b0bfa03c (110/204) with 7 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:29:33,095 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:29:33,095 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4ab56cd4d67b0bfa03c conversation has 252 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:33,099 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:29:35,341 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4ab56cd4d67b0bfa038
+2025-08-02 06:29:35,341 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4ab56cd4d67b0bfa038
+2025-08-02 06:29:35,341 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4ab56cd4d67b0bfa03d (111/204) with 11 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:29:35,347 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:29:35,347 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4ab56cd4d67b0bfa03d conversation has 265 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:35,353 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:29:37,600 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4ab56cd4d67b0bfa039
+2025-08-02 06:29:37,600 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4ab56cd4d67b0bfa039
+2025-08-02 06:29:37,601 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4ab56cd4d67b0bfa03e (112/204) with 13 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:29:37,606 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:29:37,606 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4ab56cd4d67b0bfa03e conversation has 259 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:37,610 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:29:39,918 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4ab56cd4d67b0bfa03a
+2025-08-02 06:29:39,919 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4ab56cd4d67b0bfa03a
+2025-08-02 06:29:39,919 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4ab56cd4d67b0bfa03f (113/204) with 7 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:29:39,925 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:29:39,925 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4ab56cd4d67b0bfa03f conversation has 163 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:39,930 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:29:42,235 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4ab56cd4d67b0bfa03b
+2025-08-02 06:29:42,235 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4ab56cd4d67b0bfa03b
+2025-08-02 06:29:42,235 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4ab56cd4d67b0bfa040 (114/204) with 13 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:29:42,240 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:29:42,241 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4ab56cd4d67b0bfa040 conversation has 273 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:42,245 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:29:44,511 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4ab56cd4d67b0bfa03c
+2025-08-02 06:29:44,511 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4ab56cd4d67b0bfa03c
+2025-08-02 06:29:44,511 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4ab56cd4d67b0bfa041 (115/204) with 11 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:29:44,511 - INFO - [MainThread] - Progress: 110/204 documents processed (Success: 110, Errors: 0)
+2025-08-02 06:29:44,516 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:29:44,517 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4ab56cd4d67b0bfa041 conversation has 207 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:44,521 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:29:46,782 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4ab56cd4d67b0bfa03d
+2025-08-02 06:29:46,782 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4ab56cd4d67b0bfa03d
+2025-08-02 06:29:46,782 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4ab56cd4d67b0bfa042 (116/204) with 7 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:29:46,787 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:29:46,788 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4ab56cd4d67b0bfa042 conversation has 163 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:46,792 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:29:49,075 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4ab56cd4d67b0bfa03e
+2025-08-02 06:29:49,075 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4ab56cd4d67b0bfa03e
+2025-08-02 06:29:49,075 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4ab56cd4d67b0bfa043 (117/204) with 13 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:29:49,081 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:29:49,081 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4ab56cd4d67b0bfa043 conversation has 314 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:49,086 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:29:51,253 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4ab56cd4d67b0bfa03f
+2025-08-02 06:29:51,253 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4ab56cd4d67b0bfa03f
+2025-08-02 06:29:51,253 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4ab56cd4d67b0bfa044 (118/204) with 7 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:29:51,258 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:29:51,258 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4ab56cd4d67b0bfa044 conversation has 175 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:51,262 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:29:53,573 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4ab56cd4d67b0bfa040
+2025-08-02 06:29:53,574 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4ab56cd4d67b0bfa040
+2025-08-02 06:29:53,574 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4ab56cd4d67b0bfa045 (119/204) with 13 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:29:53,579 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:29:53,579 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4ab56cd4d67b0bfa045 conversation has 312 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:53,583 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:29:55,864 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4ab56cd4d67b0bfa041
+2025-08-02 06:29:55,864 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4ab56cd4d67b0bfa041
+2025-08-02 06:29:55,865 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4ab56cd4d67b0bfa046 (120/204) with 9 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:29:55,869 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:29:55,870 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4ab56cd4d67b0bfa046 conversation has 234 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:55,874 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:29:58,032 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4ab56cd4d67b0bfa042
+2025-08-02 06:29:58,032 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4ab56cd4d67b0bfa042
+2025-08-02 06:29:58,033 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4ab56cd4d67b0bfa047 (121/204) with 7 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:29:58,038 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:29:58,038 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4ab56cd4d67b0bfa047 conversation has 207 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:29:58,042 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:30:00,368 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4ab56cd4d67b0bfa043
+2025-08-02 06:30:00,369 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4ab56cd4d67b0bfa043
+2025-08-02 06:30:00,369 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4ab56cd4d67b0bfa048 (122/204) with 9 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:30:00,374 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:30:00,374 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4ab56cd4d67b0bfa048 conversation has 220 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:00,378 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:30:02,626 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4ab56cd4d67b0bfa044
+2025-08-02 06:30:02,626 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4ab56cd4d67b0bfa044
+2025-08-02 06:30:02,626 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4ab56cd4d67b0bfa049 (123/204) with 7 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:30:02,631 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:30:02,632 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4ab56cd4d67b0bfa049 conversation has 152 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:02,636 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:30:04,982 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4ab56cd4d67b0bfa045
+2025-08-02 06:30:04,983 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4ab56cd4d67b0bfa045
+2025-08-02 06:30:04,983 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4ab56cd4d67b0bfa04a (124/204) with 9 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:30:04,988 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:30:04,988 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4ab56cd4d67b0bfa04a conversation has 219 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:04,992 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:30:07,264 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4ab56cd4d67b0bfa046
+2025-08-02 06:30:07,264 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4ab56cd4d67b0bfa046
+2025-08-02 06:30:07,264 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4ab56cd4d67b0bfa04b (125/204) with 7 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:30:07,265 - INFO - [MainThread] - Progress: 120/204 documents processed (Success: 120, Errors: 0)
+2025-08-02 06:30:07,271 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:30:07,271 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4ab56cd4d67b0bfa04b conversation has 199 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:07,276 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:30:09,512 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4ab56cd4d67b0bfa047
+2025-08-02 06:30:09,512 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4ab56cd4d67b0bfa047
+2025-08-02 06:30:09,512 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4ab56cd4d67b0bfa04c (126/204) with 7 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:30:09,517 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:30:09,517 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4ab56cd4d67b0bfa04c conversation has 165 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:09,521 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:30:11,758 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4ab56cd4d67b0bfa048
+2025-08-02 06:30:11,758 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4ab56cd4d67b0bfa048
+2025-08-02 06:30:11,759 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4ac56cd4d67b0bfa04d (127/204) with 13 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:30:11,764 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:30:11,764 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4ac56cd4d67b0bfa04d conversation has 314 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:11,768 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:30:13,940 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4ab56cd4d67b0bfa049
+2025-08-02 06:30:13,941 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4ab56cd4d67b0bfa049
+2025-08-02 06:30:13,941 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4ac56cd4d67b0bfa04e (128/204) with 7 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:30:13,946 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:30:13,946 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4ac56cd4d67b0bfa04e conversation has 190 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:13,950 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:30:16,231 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4ab56cd4d67b0bfa04a
+2025-08-02 06:30:16,231 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4ab56cd4d67b0bfa04a
+2025-08-02 06:30:16,231 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4ac56cd4d67b0bfa04f (129/204) with 13 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:30:16,236 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:30:16,237 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4ac56cd4d67b0bfa04f conversation has 319 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:16,241 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:30:18,444 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4ab56cd4d67b0bfa04b
+2025-08-02 06:30:18,444 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4ab56cd4d67b0bfa04b
+2025-08-02 06:30:18,444 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4ac56cd4d67b0bfa050 (130/204) with 13 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:30:18,449 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:30:18,450 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4ac56cd4d67b0bfa050 conversation has 325 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:18,454 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:30:20,650 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4ab56cd4d67b0bfa04c
+2025-08-02 06:30:20,650 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4ab56cd4d67b0bfa04c
+2025-08-02 06:30:20,650 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4ac56cd4d67b0bfa051 (131/204) with 7 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:30:20,655 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:30:20,655 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4ac56cd4d67b0bfa051 conversation has 181 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:20,659 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:30:22,960 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4ac56cd4d67b0bfa04d
+2025-08-02 06:30:22,961 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4ac56cd4d67b0bfa04d
+2025-08-02 06:30:22,961 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4ac56cd4d67b0bfa052 (132/204) with 11 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:30:22,966 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:30:22,966 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4ac56cd4d67b0bfa052 conversation has 270 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:22,971 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:30:25,191 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4ac56cd4d67b0bfa04e
+2025-08-02 06:30:25,191 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4ac56cd4d67b0bfa04e
+2025-08-02 06:30:25,191 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4ac56cd4d67b0bfa053 (133/204) with 7 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:30:25,196 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:30:25,196 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4ac56cd4d67b0bfa053 conversation has 180 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:25,200 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:30:27,598 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4ac56cd4d67b0bfa04f
+2025-08-02 06:30:27,598 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4ac56cd4d67b0bfa04f
+2025-08-02 06:30:27,598 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4ac56cd4d67b0bfa054 (134/204) with 13 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:30:27,603 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:30:27,603 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4ac56cd4d67b0bfa054 conversation has 277 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:27,607 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:30:29,956 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4ac56cd4d67b0bfa050
+2025-08-02 06:30:29,956 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4ac56cd4d67b0bfa050
+2025-08-02 06:30:29,956 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4ac56cd4d67b0bfa055 (135/204) with 11 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:30:29,957 - INFO - [MainThread] - Progress: 130/204 documents processed (Success: 130, Errors: 0)
+2025-08-02 06:30:29,963 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:30:29,963 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4ac56cd4d67b0bfa055 conversation has 293 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:29,968 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:30:32,233 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4ac56cd4d67b0bfa051
+2025-08-02 06:30:32,233 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4ac56cd4d67b0bfa051
+2025-08-02 06:30:32,233 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4ac56cd4d67b0bfa056 (136/204) with 7 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:30:32,238 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:30:32,239 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4ac56cd4d67b0bfa056 conversation has 219 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:32,243 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:30:34,572 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4ac56cd4d67b0bfa052
+2025-08-02 06:30:34,573 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4ac56cd4d67b0bfa052
+2025-08-02 06:30:34,573 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4ac56cd4d67b0bfa057 (137/204) with 7 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:30:34,578 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:30:34,578 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4ac56cd4d67b0bfa057 conversation has 176 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:34,582 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:30:36,713 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4ac56cd4d67b0bfa053
+2025-08-02 06:30:36,713 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4ac56cd4d67b0bfa053
+2025-08-02 06:30:36,713 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4ac56cd4d67b0bfa058 (138/204) with 13 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:30:36,719 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:30:36,719 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4ac56cd4d67b0bfa058 conversation has 272 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:36,723 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:30:39,000 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4ac56cd4d67b0bfa054
+2025-08-02 06:30:39,000 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4ac56cd4d67b0bfa054
+2025-08-02 06:30:39,000 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4ac56cd4d67b0bfa059 (139/204) with 9 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:30:39,005 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:30:39,006 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4ac56cd4d67b0bfa059 conversation has 212 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:39,010 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:30:41,322 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4ac56cd4d67b0bfa055
+2025-08-02 06:30:41,322 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4ac56cd4d67b0bfa055
+2025-08-02 06:30:41,323 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4ac56cd4d67b0bfa05a (140/204) with 7 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:30:41,328 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:30:41,328 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4ac56cd4d67b0bfa05a conversation has 226 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:41,332 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:30:43,637 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4ac56cd4d67b0bfa056
+2025-08-02 06:30:43,637 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4ac56cd4d67b0bfa056
+2025-08-02 06:30:43,637 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4ac56cd4d67b0bfa05b (141/204) with 11 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:30:43,642 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:30:43,643 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4ac56cd4d67b0bfa05b conversation has 190 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:43,647 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:30:45,827 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4ac56cd4d67b0bfa057
+2025-08-02 06:30:45,827 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4ac56cd4d67b0bfa057
+2025-08-02 06:30:45,827 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4ac56cd4d67b0bfa05c (142/204) with 11 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:30:45,832 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:30:45,832 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4ac56cd4d67b0bfa05c conversation has 314 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:45,837 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:30:48,165 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4ac56cd4d67b0bfa058
+2025-08-02 06:30:48,166 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4ac56cd4d67b0bfa058
+2025-08-02 06:30:48,166 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4ac56cd4d67b0bfa05d (143/204) with 9 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:30:48,171 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:30:48,171 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4ac56cd4d67b0bfa05d conversation has 273 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:48,175 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:30:50,410 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4ac56cd4d67b0bfa059
+2025-08-02 06:30:50,410 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4ac56cd4d67b0bfa059
+2025-08-02 06:30:50,410 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4ac56cd4d67b0bfa05e (144/204) with 13 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:30:50,416 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:30:50,416 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4ac56cd4d67b0bfa05e conversation has 263 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:50,420 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:30:52,631 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4ac56cd4d67b0bfa05a
+2025-08-02 06:30:52,631 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4ac56cd4d67b0bfa05a
+2025-08-02 06:30:52,632 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4ac56cd4d67b0bfa05f (145/204) with 13 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:30:52,632 - INFO - [MainThread] - Progress: 140/204 documents processed (Success: 140, Errors: 0)
+2025-08-02 06:30:52,638 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:30:52,638 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4ac56cd4d67b0bfa05f conversation has 242 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:52,643 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:30:54,839 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4ac56cd4d67b0bfa05b
+2025-08-02 06:30:54,840 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4ac56cd4d67b0bfa05b
+2025-08-02 06:30:54,840 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4ac56cd4d67b0bfa060 (146/204) with 9 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:30:54,845 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:30:54,845 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4ac56cd4d67b0bfa060 conversation has 189 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:54,849 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:30:57,190 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4ac56cd4d67b0bfa05c
+2025-08-02 06:30:57,191 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4ac56cd4d67b0bfa05c
+2025-08-02 06:30:57,191 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4ac56cd4d67b0bfa061 (147/204) with 7 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:30:57,196 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:30:57,196 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4ac56cd4d67b0bfa061 conversation has 186 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:57,201 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:30:59,504 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4ac56cd4d67b0bfa05d
+2025-08-02 06:30:59,504 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4ac56cd4d67b0bfa05d
+2025-08-02 06:30:59,504 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4ac56cd4d67b0bfa062 (148/204) with 13 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:30:59,510 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:30:59,510 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4ac56cd4d67b0bfa062 conversation has 282 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:30:59,514 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:31:01,818 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4ac56cd4d67b0bfa05e
+2025-08-02 06:31:01,818 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4ac56cd4d67b0bfa05e
+2025-08-02 06:31:01,818 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4ac56cd4d67b0bfa063 (149/204) with 11 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:31:01,824 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:31:01,824 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4ac56cd4d67b0bfa063 conversation has 301 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:01,829 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:31:04,134 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4ac56cd4d67b0bfa05f
+2025-08-02 06:31:04,135 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4ac56cd4d67b0bfa05f
+2025-08-02 06:31:04,135 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4ac56cd4d67b0bfa064 (150/204) with 7 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:31:04,140 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:31:04,140 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4ac56cd4d67b0bfa064 conversation has 194 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:04,144 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:31:06,344 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4ac56cd4d67b0bfa060
+2025-08-02 06:31:06,345 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4ac56cd4d67b0bfa060
+2025-08-02 06:31:06,345 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4ac56cd4d67b0bfa065 (151/204) with 13 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:31:06,350 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:31:06,350 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4ac56cd4d67b0bfa065 conversation has 260 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:06,354 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:31:08,617 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4ac56cd4d67b0bfa061
+2025-08-02 06:31:08,617 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4ac56cd4d67b0bfa061
+2025-08-02 06:31:08,617 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4ac56cd4d67b0bfa066 (152/204) with 13 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:31:08,622 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:31:08,623 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4ac56cd4d67b0bfa066 conversation has 295 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:08,626 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:31:10,952 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4ac56cd4d67b0bfa062
+2025-08-02 06:31:10,952 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4ac56cd4d67b0bfa062
+2025-08-02 06:31:10,953 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4ac56cd4d67b0bfa067 (153/204) with 9 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:31:10,958 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:31:10,958 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4ac56cd4d67b0bfa067 conversation has 223 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:10,962 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:31:13,291 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4ac56cd4d67b0bfa063
+2025-08-02 06:31:13,291 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4ac56cd4d67b0bfa063
+2025-08-02 06:31:13,291 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4ac56cd4d67b0bfa068 (154/204) with 9 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:31:13,296 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:31:13,297 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4ac56cd4d67b0bfa068 conversation has 219 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:13,301 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:31:15,530 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4ac56cd4d67b0bfa064
+2025-08-02 06:31:15,530 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4ac56cd4d67b0bfa064
+2025-08-02 06:31:15,530 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4ac56cd4d67b0bfa069 (155/204) with 9 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:31:15,531 - INFO - [MainThread] - Progress: 150/204 documents processed (Success: 150, Errors: 0)
+2025-08-02 06:31:15,536 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:31:15,536 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4ac56cd4d67b0bfa069 conversation has 213 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:15,540 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:31:17,880 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4ac56cd4d67b0bfa065
+2025-08-02 06:31:17,880 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4ac56cd4d67b0bfa065
+2025-08-02 06:31:17,880 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4ac56cd4d67b0bfa06a (156/204) with 11 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:31:17,885 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:31:17,885 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4ac56cd4d67b0bfa06a conversation has 249 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:17,890 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:31:20,196 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4ac56cd4d67b0bfa066
+2025-08-02 06:31:20,197 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4ac56cd4d67b0bfa066
+2025-08-02 06:31:20,197 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4ad56cd4d67b0bfa06b (157/204) with 13 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:31:20,202 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:31:20,202 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4ad56cd4d67b0bfa06b conversation has 273 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:20,206 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:31:22,500 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4ac56cd4d67b0bfa067
+2025-08-02 06:31:22,500 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4ac56cd4d67b0bfa067
+2025-08-02 06:31:22,501 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4ad56cd4d67b0bfa06c (158/204) with 9 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:31:22,507 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:31:22,508 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4ad56cd4d67b0bfa06c conversation has 224 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:22,513 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:31:24,742 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4ac56cd4d67b0bfa068
+2025-08-02 06:31:24,742 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4ac56cd4d67b0bfa068
+2025-08-02 06:31:24,743 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4ad56cd4d67b0bfa06d (159/204) with 11 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:31:24,748 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:31:24,748 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4ad56cd4d67b0bfa06d conversation has 264 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:24,753 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:31:26,993 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4ac56cd4d67b0bfa069
+2025-08-02 06:31:26,993 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4ac56cd4d67b0bfa069
+2025-08-02 06:31:26,993 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4ad56cd4d67b0bfa06e (160/204) with 9 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:31:26,998 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:31:26,998 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4ad56cd4d67b0bfa06e conversation has 203 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:27,003 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:31:29,265 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4ac56cd4d67b0bfa06a
+2025-08-02 06:31:29,265 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4ac56cd4d67b0bfa06a
+2025-08-02 06:31:29,265 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4ad56cd4d67b0bfa06f (161/204) with 13 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:31:29,271 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:31:29,271 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4ad56cd4d67b0bfa06f conversation has 308 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:29,275 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:31:31,574 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4ad56cd4d67b0bfa06b
+2025-08-02 06:31:31,574 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4ad56cd4d67b0bfa06b
+2025-08-02 06:31:31,574 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4ad56cd4d67b0bfa070 (162/204) with 13 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:31:31,579 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:31:31,579 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4ad56cd4d67b0bfa070 conversation has 286 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:31,583 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:31:33,820 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4ad56cd4d67b0bfa06c
+2025-08-02 06:31:33,821 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4ad56cd4d67b0bfa06c
+2025-08-02 06:31:33,821 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4ad56cd4d67b0bfa071 (163/204) with 11 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:31:33,827 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:31:33,828 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4ad56cd4d67b0bfa071 conversation has 246 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:33,834 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:31:36,144 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4ad56cd4d67b0bfa06d
+2025-08-02 06:31:36,144 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4ad56cd4d67b0bfa06d
+2025-08-02 06:31:36,144 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4ad56cd4d67b0bfa072 (164/204) with 11 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:31:36,149 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:31:36,150 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4ad56cd4d67b0bfa072 conversation has 258 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:36,153 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:31:38,357 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4ad56cd4d67b0bfa06e
+2025-08-02 06:31:38,357 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4ad56cd4d67b0bfa06e
+2025-08-02 06:31:38,357 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4ad56cd4d67b0bfa073 (165/204) with 9 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:31:38,357 - INFO - [MainThread] - Progress: 160/204 documents processed (Success: 160, Errors: 0)
+2025-08-02 06:31:38,362 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:31:38,363 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4ad56cd4d67b0bfa073 conversation has 224 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:38,367 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:31:40,720 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4ad56cd4d67b0bfa06f
+2025-08-02 06:31:40,720 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4ad56cd4d67b0bfa06f
+2025-08-02 06:31:40,720 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4ad56cd4d67b0bfa074 (166/204) with 9 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:31:40,725 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:31:40,726 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4ad56cd4d67b0bfa074 conversation has 179 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:40,730 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:31:43,062 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4ad56cd4d67b0bfa070
+2025-08-02 06:31:43,062 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4ad56cd4d67b0bfa070
+2025-08-02 06:31:43,062 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4ad56cd4d67b0bfa075 (167/204) with 13 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:31:43,067 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:31:43,068 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4ad56cd4d67b0bfa075 conversation has 262 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:43,072 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:31:45,412 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4ad56cd4d67b0bfa071
+2025-08-02 06:31:45,413 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4ad56cd4d67b0bfa071
+2025-08-02 06:31:45,413 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4ad56cd4d67b0bfa076 (168/204) with 11 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:31:45,418 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:31:45,418 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4ad56cd4d67b0bfa076 conversation has 254 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:45,422 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:31:47,684 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4ad56cd4d67b0bfa072
+2025-08-02 06:31:47,684 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4ad56cd4d67b0bfa072
+2025-08-02 06:31:47,684 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4ad56cd4d67b0bfa077 (169/204) with 7 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:31:47,689 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:31:47,689 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4ad56cd4d67b0bfa077 conversation has 183 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:47,694 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:31:49,939 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4ad56cd4d67b0bfa073
+2025-08-02 06:31:49,939 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4ad56cd4d67b0bfa073
+2025-08-02 06:31:49,939 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4ad56cd4d67b0bfa078 (170/204) with 7 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:31:49,945 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:31:49,945 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4ad56cd4d67b0bfa078 conversation has 187 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:49,949 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:31:52,091 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4ad56cd4d67b0bfa074
+2025-08-02 06:31:52,091 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4ad56cd4d67b0bfa074
+2025-08-02 06:31:52,091 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4ad56cd4d67b0bfa079 (171/204) with 7 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:31:52,096 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:31:52,096 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4ad56cd4d67b0bfa079 conversation has 150 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:52,101 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:31:54,403 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4ad56cd4d67b0bfa075
+2025-08-02 06:31:54,403 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4ad56cd4d67b0bfa075
+2025-08-02 06:31:54,404 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4ad56cd4d67b0bfa07a (172/204) with 7 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:31:54,409 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:31:54,409 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4ad56cd4d67b0bfa07a conversation has 148 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:54,414 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:31:56,727 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4ad56cd4d67b0bfa076
+2025-08-02 06:31:56,727 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4ad56cd4d67b0bfa076
+2025-08-02 06:31:56,728 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4ad56cd4d67b0bfa07b (173/204) with 9 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:31:56,733 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:31:56,733 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4ad56cd4d67b0bfa07b conversation has 227 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:56,737 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:31:58,933 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4ad56cd4d67b0bfa077
+2025-08-02 06:31:58,933 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4ad56cd4d67b0bfa077
+2025-08-02 06:31:58,933 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4ad56cd4d67b0bfa07c (174/204) with 11 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:31:58,938 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:31:58,939 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4ad56cd4d67b0bfa07c conversation has 223 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:31:58,942 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:32:01,109 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4ad56cd4d67b0bfa078
+2025-08-02 06:32:01,109 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4ad56cd4d67b0bfa078
+2025-08-02 06:32:01,109 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4ad56cd4d67b0bfa07d (175/204) with 7 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:32:01,109 - INFO - [MainThread] - Progress: 170/204 documents processed (Success: 170, Errors: 0)
+2025-08-02 06:32:01,114 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:32:01,114 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4ad56cd4d67b0bfa07d conversation has 227 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:01,118 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:32:03,291 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4ad56cd4d67b0bfa079
+2025-08-02 06:32:03,292 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4ad56cd4d67b0bfa079
+2025-08-02 06:32:03,292 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4ad56cd4d67b0bfa07e (176/204) with 7 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:32:03,297 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:32:03,297 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4ad56cd4d67b0bfa07e conversation has 205 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:03,301 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:32:05,513 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4ad56cd4d67b0bfa07a
+2025-08-02 06:32:05,513 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4ad56cd4d67b0bfa07a
+2025-08-02 06:32:05,513 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4ad56cd4d67b0bfa07f (177/204) with 11 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:32:05,518 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:32:05,519 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4ad56cd4d67b0bfa07f conversation has 251 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:05,523 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:32:07,757 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4ad56cd4d67b0bfa07b
+2025-08-02 06:32:07,757 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4ad56cd4d67b0bfa07b
+2025-08-02 06:32:07,757 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4ad56cd4d67b0bfa080 (178/204) with 9 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:32:07,762 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:32:07,762 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4ad56cd4d67b0bfa080 conversation has 260 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:07,767 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:32:10,021 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4ad56cd4d67b0bfa07c
+2025-08-02 06:32:10,022 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4ad56cd4d67b0bfa07c
+2025-08-02 06:32:10,022 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4ad56cd4d67b0bfa081 (179/204) with 7 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:32:10,027 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:32:10,027 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4ad56cd4d67b0bfa081 conversation has 191 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:10,032 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:32:12,296 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4ad56cd4d67b0bfa07d
+2025-08-02 06:32:12,296 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4ad56cd4d67b0bfa07d
+2025-08-02 06:32:12,296 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4ad56cd4d67b0bfa082 (180/204) with 9 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:32:12,302 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:32:12,302 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4ad56cd4d67b0bfa082 conversation has 189 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:12,306 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:32:14,481 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4ad56cd4d67b0bfa07e
+2025-08-02 06:32:14,481 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4ad56cd4d67b0bfa07e
+2025-08-02 06:32:14,482 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4ad56cd4d67b0bfa083 (181/204) with 7 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:32:14,486 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:32:14,487 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4ad56cd4d67b0bfa083 conversation has 196 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:14,490 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:32:16,746 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4ad56cd4d67b0bfa07f
+2025-08-02 06:32:16,747 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4ad56cd4d67b0bfa07f
+2025-08-02 06:32:16,747 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4ad56cd4d67b0bfa084 (182/204) with 9 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:32:16,752 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:32:16,753 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4ad56cd4d67b0bfa084 conversation has 245 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:16,757 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:32:19,072 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4ad56cd4d67b0bfa080
+2025-08-02 06:32:19,072 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4ad56cd4d67b0bfa080
+2025-08-02 06:32:19,072 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4ad56cd4d67b0bfa085 (183/204) with 7 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:32:19,077 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:32:19,078 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4ad56cd4d67b0bfa085 conversation has 173 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:19,082 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:32:21,254 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4ad56cd4d67b0bfa081
+2025-08-02 06:32:21,254 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4ad56cd4d67b0bfa081
+2025-08-02 06:32:21,255 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4ad56cd4d67b0bfa086 (184/204) with 13 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:32:21,259 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:32:21,260 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4ad56cd4d67b0bfa086 conversation has 323 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:21,263 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:32:23,476 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4ad56cd4d67b0bfa082
+2025-08-02 06:32:23,476 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4ad56cd4d67b0bfa082
+2025-08-02 06:32:23,476 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4ad56cd4d67b0bfa087 (185/204) with 9 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:32:23,476 - INFO - [MainThread] - Progress: 180/204 documents processed (Success: 180, Errors: 0)
+2025-08-02 06:32:23,481 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:32:23,482 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4ad56cd4d67b0bfa087 conversation has 234 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:23,486 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:32:25,676 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4ad56cd4d67b0bfa083
+2025-08-02 06:32:25,676 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4ad56cd4d67b0bfa083
+2025-08-02 06:32:25,676 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4ad56cd4d67b0bfa088 (186/204) with 11 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:32:25,681 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:32:25,682 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4ad56cd4d67b0bfa088 conversation has 206 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:25,685 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:32:27,968 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4ad56cd4d67b0bfa084
+2025-08-02 06:32:27,968 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4ad56cd4d67b0bfa084
+2025-08-02 06:32:27,968 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4ad56cd4d67b0bfa089 (187/204) with 9 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:32:27,973 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:32:27,973 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4ad56cd4d67b0bfa089 conversation has 224 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:27,977 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:32:30,185 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4ad56cd4d67b0bfa085
+2025-08-02 06:32:30,185 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4ad56cd4d67b0bfa085
+2025-08-02 06:32:30,185 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4ae56cd4d67b0bfa08a (188/204) with 11 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:32:30,190 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:32:30,190 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4ae56cd4d67b0bfa08a conversation has 275 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:30,195 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:32:32,498 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4ad56cd4d67b0bfa086
+2025-08-02 06:32:32,498 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4ad56cd4d67b0bfa086
+2025-08-02 06:32:32,499 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4ae56cd4d67b0bfa08b (189/204) with 11 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:32:32,505 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:32:32,505 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4ae56cd4d67b0bfa08b conversation has 260 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:32,510 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:32:34,772 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4ad56cd4d67b0bfa087
+2025-08-02 06:32:34,772 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4ad56cd4d67b0bfa087
+2025-08-02 06:32:34,772 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4ae56cd4d67b0bfa08c (190/204) with 9 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:32:34,778 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:32:34,779 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4ae56cd4d67b0bfa08c conversation has 251 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:34,784 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:32:37,048 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4ad56cd4d67b0bfa088
+2025-08-02 06:32:37,048 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4ad56cd4d67b0bfa088
+2025-08-02 06:32:37,048 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4ae56cd4d67b0bfa08d (191/204) with 9 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:32:37,053 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:32:37,054 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4ae56cd4d67b0bfa08d conversation has 210 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:37,058 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:32:39,296 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4ad56cd4d67b0bfa089
+2025-08-02 06:32:39,297 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4ad56cd4d67b0bfa089
+2025-08-02 06:32:39,297 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4ae56cd4d67b0bfa08e (192/204) with 11 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:32:39,301 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:32:39,302 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4ae56cd4d67b0bfa08e conversation has 267 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:39,306 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:32:41,662 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4ae56cd4d67b0bfa08a
+2025-08-02 06:32:41,662 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4ae56cd4d67b0bfa08a
+2025-08-02 06:32:41,663 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4ae56cd4d67b0bfa08f (193/204) with 7 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:32:41,668 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:32:41,668 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4ae56cd4d67b0bfa08f conversation has 152 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:41,672 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:32:43,937 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4ae56cd4d67b0bfa08b
+2025-08-02 06:32:43,938 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4ae56cd4d67b0bfa08b
+2025-08-02 06:32:43,938 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4ae56cd4d67b0bfa090 (194/204) with 7 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:32:43,943 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:32:43,943 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4ae56cd4d67b0bfa090 conversation has 201 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:43,947 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:32:46,189 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4ae56cd4d67b0bfa08c
+2025-08-02 06:32:46,189 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4ae56cd4d67b0bfa08c
+2025-08-02 06:32:46,189 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4ae56cd4d67b0bfa091 (195/204) with 9 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:32:46,190 - INFO - [MainThread] - Progress: 190/204 documents processed (Success: 190, Errors: 0)
+2025-08-02 06:32:46,194 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:32:46,195 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4ae56cd4d67b0bfa091 conversation has 245 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:46,199 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:32:48,388 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4ae56cd4d67b0bfa08d
+2025-08-02 06:32:48,389 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4ae56cd4d67b0bfa08d
+2025-08-02 06:32:48,389 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4ae56cd4d67b0bfa092 (196/204) with 9 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:32:48,394 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:32:48,394 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4ae56cd4d67b0bfa092 conversation has 241 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:48,398 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:32:50,681 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4ae56cd4d67b0bfa08e
+2025-08-02 06:32:50,681 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4ae56cd4d67b0bfa08e
+2025-08-02 06:32:50,681 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4ae56cd4d67b0bfa093 (197/204) with 7 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:32:50,686 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:32:50,687 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4ae56cd4d67b0bfa093 conversation has 186 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:50,691 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:32:52,882 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4ae56cd4d67b0bfa08f
+2025-08-02 06:32:52,882 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4ae56cd4d67b0bfa08f
+2025-08-02 06:32:52,882 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4ae56cd4d67b0bfa094 (198/204) with 11 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:32:52,887 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:32:52,887 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4ae56cd4d67b0bfa094 conversation has 242 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:52,892 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:32:55,016 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4ae56cd4d67b0bfa090
+2025-08-02 06:32:55,017 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4ae56cd4d67b0bfa090
+2025-08-02 06:32:55,017 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4ae56cd4d67b0bfa095 (199/204) with 11 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:32:55,022 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:32:55,022 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4ae56cd4d67b0bfa095 conversation has 244 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:55,027 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:32:57,231 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4ae56cd4d67b0bfa091
+2025-08-02 06:32:57,231 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4ae56cd4d67b0bfa091
+2025-08-02 06:32:57,231 - INFO - [ThreadPoolExecutor-0_4] - Processing document 688da4ae56cd4d67b0bfa096 (200/204) with 7 segments [Thread: ThreadPoolExecutor-0_4]
+2025-08-02 06:32:57,236 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:32:57,237 - INFO - [ThreadPoolExecutor-0_4] - Document 688da4ae56cd4d67b0bfa096 conversation has 196 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:57,241 - INFO - [ThreadPoolExecutor-0_4] - Remote Ollama API health check: OK
+2025-08-02 06:32:59,474 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4ae56cd4d67b0bfa092
+2025-08-02 06:32:59,474 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4ae56cd4d67b0bfa092
+2025-08-02 06:32:59,474 - INFO - [ThreadPoolExecutor-0_2] - Processing document 688da4ae56cd4d67b0bfa097 (201/204) with 9 segments [Thread: ThreadPoolExecutor-0_2]
+2025-08-02 06:32:59,479 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:32:59,479 - INFO - [ThreadPoolExecutor-0_2] - Document 688da4ae56cd4d67b0bfa097 conversation has 170 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:32:59,484 - INFO - [ThreadPoolExecutor-0_2] - Remote Ollama API health check: OK
+2025-08-02 06:33:01,677 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4ae56cd4d67b0bfa093
+2025-08-02 06:33:01,677 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4ae56cd4d67b0bfa093
+2025-08-02 06:33:01,678 - INFO - [ThreadPoolExecutor-0_3] - Processing document 688da4ae56cd4d67b0bfa098 (202/204) with 9 segments [Thread: ThreadPoolExecutor-0_3]
+2025-08-02 06:33:01,683 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:33:01,683 - INFO - [ThreadPoolExecutor-0_3] - Document 688da4ae56cd4d67b0bfa098 conversation has 251 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:33:01,687 - INFO - [ThreadPoolExecutor-0_3] - Remote Ollama API health check: OK
+2025-08-02 06:33:04,032 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4ae56cd4d67b0bfa094
+2025-08-02 06:33:04,033 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4ae56cd4d67b0bfa094
+2025-08-02 06:33:04,033 - INFO - [ThreadPoolExecutor-0_1] - Processing document 688da4ae56cd4d67b0bfa099 (203/204) with 7 segments [Thread: ThreadPoolExecutor-0_1]
+2025-08-02 06:33:04,038 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:33:04,039 - INFO - [ThreadPoolExecutor-0_1] - Document 688da4ae56cd4d67b0bfa099 conversation has 199 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:33:04,043 - INFO - [ThreadPoolExecutor-0_1] - Remote Ollama API health check: OK
+2025-08-02 06:33:06,308 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4ae56cd4d67b0bfa095
+2025-08-02 06:33:06,309 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4ae56cd4d67b0bfa095
+2025-08-02 06:33:06,309 - INFO - [ThreadPoolExecutor-0_0] - Processing document 688da4ae56cd4d67b0bfa09a (204/204) with 7 segments [Thread: ThreadPoolExecutor-0_0]
+2025-08-02 06:33:06,314 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:33:06,314 - INFO - [ThreadPoolExecutor-0_0] - Document 688da4ae56cd4d67b0bfa09a conversation has 155 words, under limit. Proceeding with direct topic extraction.
+2025-08-02 06:33:06,318 - INFO - [ThreadPoolExecutor-0_0] - Remote Ollama API health check: OK
+2025-08-02 06:33:08,516 - INFO - [ThreadPoolExecutor-0_4] - Successfully updated document 688da4ae56cd4d67b0bfa096
+2025-08-02 06:33:08,516 - INFO - [ThreadPoolExecutor-0_4] - Successfully processed and updated document 688da4ae56cd4d67b0bfa096
+2025-08-02 06:33:08,516 - INFO - [MainThread] - Progress: 200/204 documents processed (Success: 200, Errors: 0)
+2025-08-02 06:33:10,704 - INFO - [ThreadPoolExecutor-0_2] - Successfully updated document 688da4ae56cd4d67b0bfa097
+2025-08-02 06:33:10,704 - INFO - [ThreadPoolExecutor-0_2] - Successfully processed and updated document 688da4ae56cd4d67b0bfa097
+2025-08-02 06:33:12,984 - INFO - [ThreadPoolExecutor-0_3] - Successfully updated document 688da4ae56cd4d67b0bfa098
+2025-08-02 06:33:12,984 - INFO - [ThreadPoolExecutor-0_3] - Successfully processed and updated document 688da4ae56cd4d67b0bfa098
+2025-08-02 06:33:15,203 - INFO - [ThreadPoolExecutor-0_1] - Successfully updated document 688da4ae56cd4d67b0bfa099
+2025-08-02 06:33:15,203 - INFO - [ThreadPoolExecutor-0_1] - Successfully processed and updated document 688da4ae56cd4d67b0bfa099
+2025-08-02 06:33:17,377 - INFO - [ThreadPoolExecutor-0_0] - Successfully updated document 688da4ae56cd4d67b0bfa09a
+2025-08-02 06:33:17,377 - INFO - [ThreadPoolExecutor-0_0] - Successfully processed and updated document 688da4ae56cd4d67b0bfa09a
+2025-08-02 06:33:17,378 - INFO - [MainThread] - Parallel processing completed. Processed: 204, Errors: 0
+2025-08-02 06:33:18,333 - INFO - [MainThread] - Statistics: Found 76 unique dominant topics
+2025-08-02 06:33:18,333 - INFO - [MainThread] - Statistics: 63 conversations marked as urgent (30.9%)
+2025-08-02 06:33:18,333 - INFO - [MainThread] - Statistics: 0 conversations were summarized
+2025-08-02 06:33:18,333 - INFO - [MainThread] - Statistics: Average conversation length: 9.8 segments
+2025-08-02 06:33:18,334 - INFO - [MainThread] - Statistics report generated in 'mongodb_chat_analysis_statistics.txt'
+2025-08-02 06:33:18,336 - INFO - [MainThread] - Process completed successfully. Processed: 204, Errors: 0
+2025-08-02 06:33:18,336 - INFO - [MainThread] - Success rate: 100.0% (204/204)
+2025-08-02 06:33:18,470 - INFO - [MainThread] - MongoDB connection closed successfully

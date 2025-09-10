@@ -1,0 +1,33 @@
+{
+  "timestamp": "2025-08-23T14:19:44.809724",
+  "session_stats": {
+    "successful_generations": 522,
+    "failed_generations": 51,
+    "database_updates": 522,
+    "success_rate": 91.09947643979058
+  },
+  "intermediate_results": {
+    "total_results": 522,
+    "pending_database_saves": 0,
+    "intermediate_file": "logs/intermediate_results_20250823_132318.json"
+  },
+  "database_stats": {
+    "total_tweets": 2000,
+    "tweets_with_content": 1995,
+    "tweets_without_content": 5,
+    "completion_percentage": 99.75
+  },
+  "system_info": {
+    "cpu_cores": 128,
+    "max_workers": 8,
+    "batch_size": 5,
+    "cpu_usage": 1.9,
+    "memory_usage": 6.5
+  },
+  "log_files": {
+    "main_log": "logs/twitter_generator_20250823_132318.log",
+    "success_log": "logs/successful_generations_20250823_132318.log",
+    "failure_log": "logs/failed_generations_20250823_132318.log",
+    "progress_log": "logs/progress_20250823_132318.log"
+  }
+}

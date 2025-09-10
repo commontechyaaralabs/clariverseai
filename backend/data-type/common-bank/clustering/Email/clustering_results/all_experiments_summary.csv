@@ -1,0 +1,10 @@
+experiment_id,umap_params,hdbscan_params,num_clusters,noise_percent,silhouette_score,coherence_score,avg_similarity
+umap_1_hdbscan_1,"{'n_neighbors': 15, 'min_dist': 0.1}","{'min_cluster_size': 3, 'min_samples': 3, 'cluster_selection_method': 'eom'}",50,1.1477045908183632,0.9677886962890625,0.797435973571458,0.8677180708451006
+umap_1_hdbscan_2,"{'n_neighbors': 15, 'min_dist': 0.1}","{'min_cluster_size': 5, 'min_samples': 2, 'cluster_selection_method': 'leaf'}",64,31.886227544910177,0.8708791136741638,0.8500547595306782,0.8758120678587498
+umap_1_hdbscan_3,"{'n_neighbors': 15, 'min_dist': 0.1}","{'min_cluster_size': 4, 'min_samples': 4, 'cluster_selection_method': 'eom'}",41,0.5988023952095809,0.9816935062408447,0.8156784386549022,0.8980891843498395
+umap_2_hdbscan_1,"{'n_neighbors': 30, 'min_dist': 0.05}","{'min_cluster_size': 3, 'min_samples': 3, 'cluster_selection_method': 'eom'}",47,1.4970059880239521,0.9482132196426392,0.8005080890912932,0.8722280256174495
+umap_2_hdbscan_2,"{'n_neighbors': 30, 'min_dist': 0.05}","{'min_cluster_size': 5, 'min_samples': 2, 'cluster_selection_method': 'leaf'}",52,31.58682634730539,0.8724693655967712,0.8192691246500471,0.8799787409117896
+umap_2_hdbscan_3,"{'n_neighbors': 30, 'min_dist': 0.05}","{'min_cluster_size': 4, 'min_samples': 4, 'cluster_selection_method': 'eom'}",39,0.9481037924151697,0.9584867358207703,0.8030719615237283,0.902394660438228
+umap_3_hdbscan_1,"{'n_neighbors': 50, 'min_dist': 0.2}","{'min_cluster_size': 3, 'min_samples': 3, 'cluster_selection_method': 'eom'}",38,0.34930139720558884,0.9664853811264038,0.7819285853593154,0.8854906081268338
+umap_3_hdbscan_2,"{'n_neighbors': 50, 'min_dist': 0.2}","{'min_cluster_size': 5, 'min_samples': 2, 'cluster_selection_method': 'leaf'}",53,41.81636726546906,0.8124985098838806,0.8493271341207574,0.8754276625085798
+umap_3_hdbscan_3,"{'n_neighbors': 50, 'min_dist': 0.2}","{'min_cluster_size': 4, 'min_samples': 4, 'cluster_selection_method': 'eom'}",35,0.09980039920159679,0.9680814743041992,0.7873019873975825,0.9013755880058727

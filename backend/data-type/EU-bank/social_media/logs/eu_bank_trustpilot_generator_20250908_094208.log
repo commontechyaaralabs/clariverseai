@@ -1,0 +1,284 @@
+2025-09-08 09:42:08,918 - INFO - EU Bank Social Media Trustpilot Review Content Generator Starting...
+2025-09-08 09:42:08,918 - INFO - Database: sparzaai
+2025-09-08 09:42:08,918 - INFO - Collection: socialmedia
+2025-09-08 09:42:08,918 - INFO - Target Channel: Trustpilot
+2025-09-08 09:42:08,918 - INFO - Bank: EU Bank (European Banking)
+2025-09-08 09:42:08,918 - INFO - Model: gemma3:27b
+2025-09-08 09:42:08,918 - INFO - Ollama URL: https://teen-everybody-dpi-tyler.trycloudflare.com
+2025-09-08 09:42:08,918 - INFO - Review Platform: Trustpilot
+2025-09-08 09:42:09,981 - INFO - Database connection established and indexes created
+2025-09-08 09:42:10,409 - INFO - EU Bank Social Media Collection Statistics:
+2025-09-08 09:42:10,409 - INFO - Total social media records: 2287
+2025-09-08 09:42:10,409 - INFO - Trustpilot records (exact match): 1147
+2025-09-08 09:42:10,409 - INFO - Trustpilot records (all variations): 1147
+2025-09-08 09:42:10,409 - INFO - With generated content: 0
+2025-09-08 09:42:10,409 - INFO - Without generated content: 1147
+2025-09-08 09:42:10,514 - INFO - Available channels: ['App Store/Google Play', 'Reddit', 'Trustpilot', 'Twitter']
+2025-09-08 09:42:10,619 - INFO - Sample Trustpilot record structure:
+2025-09-08 09:42:10,620 - INFO -   _id: 68bb12eb35db675a8b09a217
+2025-09-08 09:42:10,620 - INFO -   email_id: raymondwarner5185@gmail.com
+2025-09-08 09:42:10,620 - INFO -   username: Raymond Warner
+2025-09-08 09:42:10,620 - INFO -   channel: Trustpilot
+2025-09-08 09:42:10,620 - INFO -   dominant_topic: Long Wait Times
+2025-09-08 09:42:10,620 - INFO -   subtopics: Peak Hour Congestion, Resource Allocation Issues, ...
+2025-09-08 09:42:10,620 - INFO -   created_at: 2024-12-21T00:43:25Z
+2025-09-08 09:42:10,620 - INFO -   domain: banking
+2025-09-08 09:42:10,620 - INFO -   review_id: TP264234
+2025-09-08 09:42:10,620 - INFO -   user_id: 292301
+2025-09-08 09:42:10,620 - INFO - Starting EU Bank Social Media Trustpilot Review Content Generation...
+2025-09-08 09:42:10,620 - INFO - Target Channel: Trustpilot
+2025-09-08 09:42:10,620 - INFO - Collection: socialmedia
+2025-09-08 09:42:10,620 - INFO - Bank: EU Bank (European)
+2025-09-08 09:42:10,621 - INFO - Review Platform: Trustpilot
+2025-09-08 09:42:10,621 - INFO - Batch size: 2
+2025-09-08 09:42:10,621 - INFO - Max workers: 4
+2025-09-08 09:42:10,621 - INFO - Testing connection to remote Ollama: https://teen-everybody-dpi-tyler.trycloudflare.com
+2025-09-08 09:42:10,621 - INFO - Using model: gemma3:27b
+2025-09-08 09:42:20,812 - INFO - Ollama connection test successful
+2025-09-08 09:42:20,813 - INFO - Fetching Trustpilot social media records from database...
+2025-09-08 09:42:21,446 - INFO - Found 1147 Trustpilot social media records needing content generation
+2025-09-08 09:42:21,446 - INFO - Processing batch 1/574 (2 records)...
+2025-09-08 09:42:21,446 - INFO - Record 68bb12eb35db675a8b09a217: Generating Trustpilot review content
+2025-09-08 09:42:21,447 - INFO - Record 68bb12eb35db675a8b09a218: Generating Trustpilot review content
+2025-09-08 09:42:54,695 - INFO - Batch 1 complete: 2/2 successful
+2025-09-08 09:42:54,695 - INFO - Saving batch of 2 updates to database...
+2025-09-08 09:42:54,800 - INFO - Successfully saved 2 records to database
+2025-09-08 09:42:54,801 - INFO - Database updated: 2 records saved
+2025-09-08 09:42:54,801 - INFO - Progress: 2/1147 records processed
+2025-09-08 09:42:54,801 - INFO - Success: 2 | Failures: 0
+2025-09-08 09:42:54,801 - INFO - Processing batch 2/574 (2 records)...
+2025-09-08 09:42:54,801 - INFO - Record 68bb12eb35db675a8b09a219: Generating Trustpilot review content
+2025-09-08 09:42:54,802 - INFO - Record 68bb12eb35db675a8b09a21a: Generating Trustpilot review content
+2025-09-08 09:43:19,628 - INFO - Batch 2 complete: 2/2 successful
+2025-09-08 09:43:19,629 - INFO - Saving batch of 2 updates to database...
+2025-09-08 09:43:19,734 - INFO - Successfully saved 2 records to database
+2025-09-08 09:43:19,734 - INFO - Database updated: 2 records saved
+2025-09-08 09:43:19,734 - INFO - Progress: 4/1147 records processed
+2025-09-08 09:43:19,735 - INFO - Success: 4 | Failures: 0
+2025-09-08 09:43:19,735 - INFO - Processing batch 3/574 (2 records)...
+2025-09-08 09:43:19,735 - INFO - Record 68bb12eb35db675a8b09a21d: Generating Trustpilot review content
+2025-09-08 09:43:19,735 - INFO - Record 68bb12eb35db675a8b09a21e: Generating Trustpilot review content
+2025-09-08 09:43:43,962 - INFO - Batch 3 complete: 2/2 successful
+2025-09-08 09:43:43,962 - INFO - Saving batch of 2 updates to database...
+2025-09-08 09:43:44,067 - INFO - Successfully saved 2 records to database
+2025-09-08 09:43:44,067 - INFO - Database updated: 2 records saved
+2025-09-08 09:43:44,068 - INFO - Progress: 6/1147 records processed
+2025-09-08 09:43:44,068 - INFO - Success: 6 | Failures: 0
+2025-09-08 09:43:44,068 - INFO - Processing batch 4/574 (2 records)...
+2025-09-08 09:43:44,068 - INFO - Record 68bb12eb35db675a8b09a21f: Generating Trustpilot review content
+2025-09-08 09:43:44,068 - INFO - Record 68bb12eb35db675a8b09a221: Generating Trustpilot review content
+2025-09-08 09:44:05,871 - INFO - Batch 4 complete: 2/2 successful
+2025-09-08 09:44:05,871 - INFO - Saving batch of 2 updates to database...
+2025-09-08 09:44:05,979 - INFO - Successfully saved 2 records to database
+2025-09-08 09:44:05,980 - INFO - Database updated: 2 records saved
+2025-09-08 09:44:05,980 - INFO - Progress: 8/1147 records processed
+2025-09-08 09:44:05,980 - INFO - Success: 8 | Failures: 0
+2025-09-08 09:44:05,980 - INFO - Processing batch 5/574 (2 records)...
+2025-09-08 09:44:05,980 - INFO - Record 68bb12eb35db675a8b09a227: Generating Trustpilot review content
+2025-09-08 09:44:05,981 - INFO - Record 68bb12eb35db675a8b09a228: Generating Trustpilot review content
+2025-09-08 09:44:31,609 - INFO - Batch 5 complete: 2/2 successful
+2025-09-08 09:44:31,610 - INFO - Saving batch of 2 updates to database...
+2025-09-08 09:44:31,717 - INFO - Successfully saved 2 records to database
+2025-09-08 09:44:31,717 - INFO - Database updated: 2 records saved
+2025-09-08 09:44:31,717 - INFO - Progress: 10/1147 records processed
+2025-09-08 09:44:31,717 - INFO - Success: 10 | Failures: 0
+2025-09-08 09:44:31,717 - INFO - Processing batch 6/574 (2 records)...
+2025-09-08 09:44:31,717 - INFO - Record 68bb12eb35db675a8b09a22c: Generating Trustpilot review content
+2025-09-08 09:44:31,718 - INFO - Record 68bb12eb35db675a8b09a22d: Generating Trustpilot review content
+2025-09-08 09:44:54,975 - INFO - Batch 6 complete: 2/2 successful
+2025-09-08 09:44:54,975 - INFO - Saving batch of 2 updates to database...
+2025-09-08 09:44:55,082 - INFO - Successfully saved 2 records to database
+2025-09-08 09:44:55,082 - INFO - Database updated: 2 records saved
+2025-09-08 09:44:55,082 - INFO - Progress: 12/1147 records processed
+2025-09-08 09:44:55,083 - INFO - Success: 12 | Failures: 0
+2025-09-08 09:44:55,083 - INFO - Processing batch 7/574 (2 records)...
+2025-09-08 09:44:55,083 - INFO - Record 68bb12eb35db675a8b09a22f: Generating Trustpilot review content
+2025-09-08 09:44:55,084 - INFO - Record 68bb12eb35db675a8b09a231: Generating Trustpilot review content
+2025-09-08 09:45:17,566 - INFO - Batch 7 complete: 2/2 successful
+2025-09-08 09:45:17,566 - INFO - Saving batch of 2 updates to database...
+2025-09-08 09:45:17,674 - INFO - Successfully saved 2 records to database
+2025-09-08 09:45:17,674 - INFO - Database updated: 2 records saved
+2025-09-08 09:45:17,674 - INFO - Progress: 14/1147 records processed
+2025-09-08 09:45:17,674 - INFO - Success: 14 | Failures: 0
+2025-09-08 09:45:17,674 - INFO - Processing batch 8/574 (2 records)...
+2025-09-08 09:45:17,675 - INFO - Record 68bb12eb35db675a8b09a235: Generating Trustpilot review content
+2025-09-08 09:45:17,675 - INFO - Record 68bb12eb35db675a8b09a236: Generating Trustpilot review content
+2025-09-08 09:45:40,474 - INFO - Batch 8 complete: 2/2 successful
+2025-09-08 09:45:40,475 - INFO - Saving batch of 2 updates to database...
+2025-09-08 09:45:40,582 - INFO - Successfully saved 2 records to database
+2025-09-08 09:45:40,582 - INFO - Database updated: 2 records saved
+2025-09-08 09:45:40,582 - INFO - Progress: 16/1147 records processed
+2025-09-08 09:45:40,582 - INFO - Success: 16 | Failures: 0
+2025-09-08 09:45:40,582 - INFO - Processing batch 9/574 (2 records)...
+2025-09-08 09:45:40,583 - INFO - Record 68bb12eb35db675a8b09a237: Generating Trustpilot review content
+2025-09-08 09:45:40,583 - INFO - Record 68bb12eb35db675a8b09a23a: Generating Trustpilot review content
+2025-09-08 09:46:04,946 - INFO - Batch 9 complete: 2/2 successful
+2025-09-08 09:46:04,946 - INFO - Saving batch of 2 updates to database...
+2025-09-08 09:46:05,053 - INFO - Successfully saved 2 records to database
+2025-09-08 09:46:05,053 - INFO - Database updated: 2 records saved
+2025-09-08 09:46:05,053 - INFO - Progress: 18/1147 records processed
+2025-09-08 09:46:05,054 - INFO - Success: 18 | Failures: 0
+2025-09-08 09:46:05,054 - INFO - Processing batch 10/574 (2 records)...
+2025-09-08 09:46:05,054 - INFO - Record 68bb12eb35db675a8b09a23b: Generating Trustpilot review content
+2025-09-08 09:46:05,054 - INFO - Record 68bb12eb35db675a8b09a23c: Generating Trustpilot review content
+2025-09-08 09:46:29,113 - INFO - Batch 10 complete: 2/2 successful
+2025-09-08 09:46:29,113 - INFO - Saving batch of 2 updates to database...
+2025-09-08 09:46:29,220 - INFO - Successfully saved 2 records to database
+2025-09-08 09:46:29,220 - INFO - Database updated: 2 records saved
+2025-09-08 09:46:29,220 - INFO - Progress: 20/1147 records processed
+2025-09-08 09:46:29,221 - INFO - Success: 20 | Failures: 0
+2025-09-08 09:46:29,221 - INFO - Processing batch 11/574 (2 records)...
+2025-09-08 09:46:29,221 - INFO - Record 68bb12eb35db675a8b09a23d: Generating Trustpilot review content
+2025-09-08 09:46:29,221 - INFO - Record 68bb12eb35db675a8b09a23e: Generating Trustpilot review content
+2025-09-08 09:46:51,557 - INFO - Batch 11 complete: 2/2 successful
+2025-09-08 09:46:51,557 - INFO - Saving batch of 2 updates to database...
+2025-09-08 09:46:51,663 - INFO - Successfully saved 2 records to database
+2025-09-08 09:46:51,664 - INFO - Database updated: 2 records saved
+2025-09-08 09:46:51,664 - INFO - Progress: 22/1147 records processed
+2025-09-08 09:46:51,664 - INFO - Success: 22 | Failures: 0
+2025-09-08 09:46:51,664 - INFO - Processing batch 12/574 (2 records)...
+2025-09-08 09:46:51,664 - INFO - Record 68bb12eb35db675a8b09a23f: Generating Trustpilot review content
+2025-09-08 09:46:51,664 - INFO - Record 68bb12eb35db675a8b09a242: Generating Trustpilot review content
+2025-09-08 09:47:15,252 - INFO - Batch 12 complete: 2/2 successful
+2025-09-08 09:47:15,252 - INFO - Saving batch of 2 updates to database...
+2025-09-08 09:47:15,359 - INFO - Successfully saved 2 records to database
+2025-09-08 09:47:15,360 - INFO - Database updated: 2 records saved
+2025-09-08 09:47:15,360 - INFO - Progress: 24/1147 records processed
+2025-09-08 09:47:15,360 - INFO - Success: 24 | Failures: 0
+2025-09-08 09:47:15,360 - INFO - Processing batch 13/574 (2 records)...
+2025-09-08 09:47:15,360 - INFO - Record 68bb12eb35db675a8b09a245: Generating Trustpilot review content
+2025-09-08 09:47:15,361 - INFO - Record 68bb12eb35db675a8b09a246: Generating Trustpilot review content
+2025-09-08 09:47:38,749 - INFO - Batch 13 complete: 2/2 successful
+2025-09-08 09:47:38,750 - INFO - Saving batch of 2 updates to database...
+2025-09-08 09:47:38,857 - INFO - Successfully saved 2 records to database
+2025-09-08 09:47:38,857 - INFO - Database updated: 2 records saved
+2025-09-08 09:47:38,858 - INFO - Progress: 26/1147 records processed
+2025-09-08 09:47:38,858 - INFO - Success: 26 | Failures: 0
+2025-09-08 09:47:38,858 - INFO - Processing batch 14/574 (2 records)...
+2025-09-08 09:47:38,858 - INFO - Record 68bb12eb35db675a8b09a247: Generating Trustpilot review content
+2025-09-08 09:47:38,858 - INFO - Record 68bb12eb35db675a8b09a24a: Generating Trustpilot review content
+2025-09-08 09:48:01,106 - INFO - Batch 14 complete: 2/2 successful
+2025-09-08 09:48:01,107 - INFO - Saving batch of 2 updates to database...
+2025-09-08 09:48:01,214 - INFO - Successfully saved 2 records to database
+2025-09-08 09:48:01,214 - INFO - Database updated: 2 records saved
+2025-09-08 09:48:01,214 - INFO - Progress: 28/1147 records processed
+2025-09-08 09:48:01,214 - INFO - Success: 28 | Failures: 0
+2025-09-08 09:48:01,214 - INFO - Processing batch 15/574 (2 records)...
+2025-09-08 09:48:01,214 - INFO - Record 68bb12eb35db675a8b09a24c: Generating Trustpilot review content
+2025-09-08 09:48:01,215 - INFO - Record 68bb12eb35db675a8b09a251: Generating Trustpilot review content
+2025-09-08 09:48:24,055 - INFO - Batch 15 complete: 2/2 successful
+2025-09-08 09:48:24,055 - INFO - Saving batch of 2 updates to database...
+2025-09-08 09:48:24,162 - INFO - Successfully saved 2 records to database
+2025-09-08 09:48:24,162 - INFO - Database updated: 2 records saved
+2025-09-08 09:48:24,162 - INFO - Progress: 30/1147 records processed
+2025-09-08 09:48:24,162 - INFO - Success: 30 | Failures: 0
+2025-09-08 09:48:24,162 - INFO - Processing batch 16/574 (2 records)...
+2025-09-08 09:48:24,162 - INFO - Record 68bb12eb35db675a8b09a253: Generating Trustpilot review content
+2025-09-08 09:48:24,163 - INFO - Record 68bb12eb35db675a8b09a256: Generating Trustpilot review content
+2025-09-08 09:48:46,562 - INFO - Batch 16 complete: 2/2 successful
+2025-09-08 09:48:46,563 - INFO - Saving batch of 2 updates to database...
+2025-09-08 09:48:46,670 - INFO - Successfully saved 2 records to database
+2025-09-08 09:48:46,670 - INFO - Database updated: 2 records saved
+2025-09-08 09:48:46,670 - INFO - Progress: 32/1147 records processed
+2025-09-08 09:48:46,670 - INFO - Success: 32 | Failures: 0
+2025-09-08 09:48:46,670 - INFO - Processing batch 17/574 (2 records)...
+2025-09-08 09:48:46,671 - INFO - Record 68bb12eb35db675a8b09a257: Generating Trustpilot review content
+2025-09-08 09:48:46,671 - INFO - Record 68bb12eb35db675a8b09a258: Generating Trustpilot review content
+2025-09-08 09:49:10,841 - INFO - Batch 17 complete: 2/2 successful
+2025-09-08 09:49:10,841 - INFO - Saving batch of 2 updates to database...
+2025-09-08 09:49:10,948 - INFO - Successfully saved 2 records to database
+2025-09-08 09:49:10,948 - INFO - Database updated: 2 records saved
+2025-09-08 09:49:10,948 - INFO - Progress: 34/1147 records processed
+2025-09-08 09:49:10,948 - INFO - Success: 34 | Failures: 0
+2025-09-08 09:49:10,948 - INFO - Processing batch 18/574 (2 records)...
+2025-09-08 09:49:10,949 - INFO - Record 68bb12eb35db675a8b09a25a: Generating Trustpilot review content
+2025-09-08 09:49:10,949 - INFO - Record 68bb12eb35db675a8b09a25b: Generating Trustpilot review content
+2025-09-08 09:49:36,030 - INFO - Batch 18 complete: 2/2 successful
+2025-09-08 09:49:36,030 - INFO - Saving batch of 2 updates to database...
+2025-09-08 09:49:36,137 - INFO - Successfully saved 2 records to database
+2025-09-08 09:49:36,138 - INFO - Database updated: 2 records saved
+2025-09-08 09:49:36,138 - INFO - Progress: 36/1147 records processed
+2025-09-08 09:49:36,138 - INFO - Success: 36 | Failures: 0
+2025-09-08 09:49:36,138 - INFO - Processing batch 19/574 (2 records)...
+2025-09-08 09:49:36,138 - INFO - Record 68bb12eb35db675a8b09a25c: Generating Trustpilot review content
+2025-09-08 09:49:36,139 - INFO - Record 68bb12eb35db675a8b09a25d: Generating Trustpilot review content
+2025-09-08 09:49:56,711 - INFO - Batch 19 complete: 2/2 successful
+2025-09-08 09:49:56,712 - INFO - Saving batch of 2 updates to database...
+2025-09-08 09:49:56,819 - INFO - Successfully saved 2 records to database
+2025-09-08 09:49:56,819 - INFO - Database updated: 2 records saved
+2025-09-08 09:49:56,819 - INFO - Progress: 38/1147 records processed
+2025-09-08 09:49:56,819 - INFO - Success: 38 | Failures: 0
+2025-09-08 09:49:56,819 - INFO - Processing batch 20/574 (2 records)...
+2025-09-08 09:49:56,820 - INFO - Record 68bb12eb35db675a8b09a25e: Generating Trustpilot review content
+2025-09-08 09:49:56,820 - INFO - Record 68bb12eb35db675a8b09a260: Generating Trustpilot review content
+2025-09-08 09:50:20,307 - INFO - Batch 20 complete: 2/2 successful
+2025-09-08 09:50:20,308 - INFO - Saving batch of 2 updates to database...
+2025-09-08 09:50:20,414 - INFO - Successfully saved 2 records to database
+2025-09-08 09:50:20,415 - INFO - Database updated: 2 records saved
+2025-09-08 09:50:20,415 - INFO - Progress: 40/1147 records processed
+2025-09-08 09:50:20,415 - INFO - Success: 40 | Failures: 0
+2025-09-08 09:50:20,415 - INFO - Processing batch 21/574 (2 records)...
+2025-09-08 09:50:20,415 - INFO - Record 68bb12eb35db675a8b09a262: Generating Trustpilot review content
+2025-09-08 09:50:20,415 - INFO - Record 68bb12eb35db675a8b09a26a: Generating Trustpilot review content
+2025-09-08 09:50:44,166 - INFO - Batch 21 complete: 2/2 successful
+2025-09-08 09:50:44,166 - INFO - Saving batch of 2 updates to database...
+2025-09-08 09:50:44,273 - INFO - Successfully saved 2 records to database
+2025-09-08 09:50:44,274 - INFO - Database updated: 2 records saved
+2025-09-08 09:50:44,274 - INFO - Progress: 42/1147 records processed
+2025-09-08 09:50:44,274 - INFO - Success: 42 | Failures: 0
+2025-09-08 09:50:44,274 - INFO - Processing batch 22/574 (2 records)...
+2025-09-08 09:50:44,274 - INFO - Record 68bb12eb35db675a8b09a26b: Generating Trustpilot review content
+2025-09-08 09:50:44,274 - INFO - Record 68bb12eb35db675a8b09a26c: Generating Trustpilot review content
+2025-09-08 09:51:08,074 - INFO - Batch 22 complete: 2/2 successful
+2025-09-08 09:51:08,074 - INFO - Saving batch of 2 updates to database...
+2025-09-08 09:51:08,181 - INFO - Successfully saved 2 records to database
+2025-09-08 09:51:08,181 - INFO - Database updated: 2 records saved
+2025-09-08 09:51:08,181 - INFO - Progress: 44/1147 records processed
+2025-09-08 09:51:08,182 - INFO - Success: 44 | Failures: 0
+2025-09-08 09:51:08,182 - INFO - Processing batch 23/574 (2 records)...
+2025-09-08 09:51:08,182 - INFO - Record 68bb12eb35db675a8b09a26e: Generating Trustpilot review content
+2025-09-08 09:51:08,182 - INFO - Record 68bb12eb35db675a8b09a271: Generating Trustpilot review content
+2025-09-08 09:51:30,907 - INFO - Received signal 2. Initiating graceful shutdown...
+2025-09-08 09:51:30,908 - INFO - Please wait for current operations to complete...
+2025-09-08 09:51:31,063 - INFO - Batch 23 complete: 1/2 successful
+2025-09-08 09:51:31,063 - INFO - Database updated: 0 records saved
+2025-09-08 09:51:31,063 - INFO - Progress: 46/1147 records processed
+2025-09-08 09:51:31,063 - INFO - Success: 46 | Failures: 0
+2025-09-08 09:51:31,063 - INFO - Shutdown requested. Stopping processing...
+2025-09-08 09:51:31,063 - INFO - EU Bank Social Media Trustpilot review generation complete!
+2025-09-08 09:51:31,063 - INFO - Total records updated: 44
+2025-09-08 09:51:31,063 - INFO - Successful generations: 46
+2025-09-08 09:51:31,063 - INFO - Failed generations: 0
+2025-09-08 09:51:31,497 - INFO - EU Bank Social Media Collection Statistics:
+2025-09-08 09:51:31,498 - INFO - Total social media records: 2287
+2025-09-08 09:51:31,498 - INFO - Trustpilot records (exact match): 1147
+2025-09-08 09:51:31,498 - INFO - Trustpilot records (all variations): 1147
+2025-09-08 09:51:31,498 - INFO - With generated content: 44
+2025-09-08 09:51:31,498 - INFO - Without generated content: 1103
+2025-09-08 09:51:31,604 - INFO - Available channels: ['App Store/Google Play', 'Reddit', 'Trustpilot', 'Twitter']
+2025-09-08 09:51:31,710 - INFO - Sample Trustpilot record structure:
+2025-09-08 09:51:31,710 - INFO -   _id: 68bb12eb35db675a8b09a217
+2025-09-08 09:51:31,710 - INFO -   email_id: raymondwarner5185@gmail.com
+2025-09-08 09:51:31,710 - INFO -   username: Raymond Warner
+2025-09-08 09:51:31,710 - INFO -   channel: Trustpilot
+2025-09-08 09:51:31,710 - INFO -   dominant_topic: Long Wait Times
+2025-09-08 09:51:31,711 - INFO -   subtopics: Peak Hour Congestion, Resource Allocation Issues, ...
+2025-09-08 09:51:31,711 - INFO -   created_at: 2024-12-21T00:43:25Z
+2025-09-08 09:51:31,711 - INFO -   domain: banking
+2025-09-08 09:51:31,711 - INFO -   review_id: TP264234
+2025-09-08 09:51:31,711 - INFO -   user_id: 292301
+2025-09-08 09:51:31,711 - INFO -   Date of experience: 12-05-2024
+2025-09-08 09:51:31,711 - INFO -   Title: Mortgage Application Held Hostage by Endless Delay...
+2025-09-08 09:51:31,711 - INFO -   content_generated_at: 2025-09-08T09:42:44.035010
+2025-09-08 09:51:31,711 - INFO -   priority: P2 - Medium
+2025-09-08 09:51:31,711 - INFO -   rating: 2
+2025-09-08 09:51:31,711 - INFO -   sentiment: Negative
+2025-09-08 09:51:31,711 - INFO -   text: Absolutely infuriating. As a small business owner,...
+2025-09-08 09:51:31,711 - INFO -   urgency: True
+2025-09-08 09:51:31,711 - INFO -   useful_count: 3
+2025-09-08 09:51:31,817 - INFO - Database connection closed
+2025-09-08 09:51:31,817 - INFO - Session complete. Check log files:
+2025-09-08 09:51:31,817 - INFO - Main Log: logs/eu_bank_trustpilot_generator_20250908_094208.log
+2025-09-08 09:51:31,817 - INFO - Success Log: logs/successful_trustpilot_generations_20250908_094208.log
+2025-09-08 09:51:31,817 - INFO - Failure Log: logs/failed_trustpilot_generations_20250908_094208.log
+2025-09-08 09:51:31,817 - INFO - Database connection closed

@@ -1,0 +1,156 @@
+keyphrase,embedding_dimension,document_count,batch_number
+ach processing error,3584,13,1
+aml documentation request,3584,13,1
+api connectivity issue,3584,17,1
+atm network problem,3584,9,1
+account access error,3584,19,1
+account opening issue,3584,18,1
+approval require,3584,12,1
+asset management issue,3584,7,1
+audit firm communication,3584,9,1
+audit trail need,3584,11,1
+authentication problem report,3584,11,1
+balance inquiry problem,3584,8,1
+basel iii requirement,3584,11,1
+beneficial ownership declaration,3584,8,1
+beneficiary bank unavailable,3584,5,1
+good execution report,3584,13,1
+bond trading problem,3584,8,2
+branch service complaint,3584,6,2
+crs report question,3584,19,2
+card network issue,3584,13,2
+card payment dispute,3584,14,2
+cash flow issue,3584,8,2
+cash management issue,3584,10,2
+certificate deposit question,3584,8,2
+check clearing issue,3584,13,2
+clearing house problem,3584,19,2
+client categorization update,3584,14,2
+commercial paper issue,3584,12,2
+complaint resolution request,3584,11,2
+compliance certificate request,3584,10,2
+compliance issue,3584,11,2
+compliance monitor alert,3584,13,2
+consent management dispute,3584,12,3
+consent withdrawal notification,3584,20,3
+consult project report,3584,8,3
+core banking system,3584,10,3
+corporate account issue,3584,11,3
+corporate loan inquiry,3584,11,3
+covenant breach alert,3584,16,3
+covenant compliance question,3584,20,3
+credit facility question,3584,9,3
+credit line utilization,3584,19,3
+cross border regulatory question,3584,7,3
+cross border transfer problem,3584,17,3
+custody service problem,3584,14,3
+customer feedback report,3584,4,3
+customer service escalation,3584,16,3
+cybersecurity incident report,3584,9,3
+datum breach warning,3584,15,4
+data retention question,3584,13,4
+datum sharing problem,3584,10,4
+deposit service issue,3584,11,4
+derivative question alert,3584,14,4
+digital banking error,3584,12,4
+digital platform malfunction,3584,16,4
+digital wallet issue,3584,9,4
+direct debit return,3584,12,4
+documentary collection issue,3584,9,4
+ecb policy update,3584,20,4
+eu passporte service,3584,9,4
+eu taxonomy report,3584,11,4
+enhance diligence,3584,8,4
+euro clearing problem,3584,8,4
+executive decision require,3584,17,4
+executive escalation email,3584,20,5
+export credit issue,3584,14,5
+export documentation error,3584,14,5
+fatca compliance issue,3584,14,5
+fx execution problem,3584,8,5
+facility renewal inquiry,3584,11,5
+fee clarification need,3584,13,5
+fee dispute email,3584,13,5
+fintech integration error,3584,15,5
+foreign exchange problem,3584,15,5
+fund transfer problem,3584,15,5
+gdpr access request,3584,20,5
+guarantee execution problem,3584,6,5
+access problem,3584,26,5
+marketing unresolved,3584,27,5
+import finance question,3584,13,5
+instant payment reject,3584,12,6
+integration problem report,3584,12,6
+interest rate query,3584,7,6
+internal audit,3584,11,6
+international transfer question,3584,15,6
+investment advisory question,3584,10,6
+investment service question,3584,8,6
+kyc documentation problem,3584,18,6
+legal advisor update,3584,9,6
+legal escalation,3584,22,6
+legal notice response,3584,13,6
+letter credit amendment,3584,18,6
+letter credit processing,3584,7,6
+liquidity facility problem,3584,11,6
+medium inquiry email,3584,7,6
+merchant service problem,3584,13,6
+mifid investment inquiry,3584,19,7
+mobile app issue,3584,12,7
+mobile authentication error,3584,16,7
+monitor system alert,3584,13,7
+multi currency statement need,3584,15,7
+online banking problem,3584,15,7
+open banking api,3584,12,7
+overdraft facility request,3584,9,7
+pos terminal issue,3584,11,7
+psd2 compliance question,3584,8,7
+payment service problem,3584,15,7
+performance management,3584,22,7
+personal data inquiry,3584,12,7
+phone banking issue,3584,12,7
+private banking service,3584,12,7
+process exception,3584,22,7
+process improvement request,3584,13,8
+processing delay complaint,3584,16,8
+process information need,3584,11,8
+quality assurance breach,3584,28,8
+quality assurance issue,3584,12,8
+regtech alert,3584,14,8
+regulatory documentation need,3584,15,8
+relationship manager request,3584,17,8
+report discrepancy alert,3584,9,8
+report platform issue,3584,15,8
+right erasure demand,3584,10,8
+risk assessment update,3584,10,8
+risk management alert,3584,31,8
+sepa instant failure,3584,12,8
+sepa payment failure,3584,19,8
+sepa payment status,3584,14,8
+sepa processing error,3584,10,9
+salary leave issue,3584,23,9
+sanction screen alert,3584,12,9
+satisfaction survey result,3584,5,9
+security incident alert,3584,8,9
+service level breach,3584,10,9
+service quality complaint,3584,11,9
+staff performance issue,3584,10,9
+strong customer authentication,3584,15,9
+system outage notification,3584,11,9
+target2 settlement issue,3584,11,9
+tpp access problem,3584,11,9
+tax withholding problem,3584,10,9
+technology emergency,3584,19,9
+party provider,3584,14,9
+trade documentation error,3584,6,9
+trade finance delay,3584,10,10
+training need alert,3584,13,10
+transaction dispute report,3584,8,10
+transaction processing error,3584,16,10
+treasury service problem,3584,8,10
+treasury system error,3584,8,10
+factor authentication error,3584,5,10
+user access approval,3584,30,10
+vendor management,3584,22,10
+wealth management issue,3584,10,10
+wire transfer delay,3584,10,10

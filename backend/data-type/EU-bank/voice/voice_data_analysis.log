@@ -1,0 +1,211 @@
+2025-08-22 22:21:14,517 - INFO - Connecting to MongoDB...
+2025-08-22 22:21:16,083 - INFO - Successfully connected to MongoDB
+2025-08-22 22:21:16,084 - INFO - Connected to database: sparzaai, collection: voice
+2025-08-22 22:21:16,085 - INFO - === VOICE DATA ANALYSIS STARTED ===
+2025-08-22 22:21:17,632 - INFO - === BASIC STATISTICS ===
+2025-08-22 22:21:17,633 - INFO - Total voice records: 2040
+2025-08-22 22:21:17,633 - INFO - Unique customer IDs: 1600
+2025-08-22 22:21:17,634 - INFO - Unique emails: 1600
+2025-08-22 22:21:17,635 - INFO - Unique customer names: 1600
+2025-08-22 22:21:18,578 - INFO - 
+=== CUSTOMER DISTRIBUTION ANALYSIS ===
+2025-08-22 22:21:18,579 - INFO - 
+--- Customers with 1 record(s) each ---
+2025-08-22 22:21:18,582 - INFO - Count: 1300 customers
+2025-08-22 22:21:18,583 - INFO - Total records: 1300
+2025-08-22 22:21:18,583 - INFO - Percentage: 63.7%
+2025-08-22 22:21:18,583 - INFO - First 10 Customer IDs:
+2025-08-22 22:21:18,584 - INFO -     1. CUST0001 - Daniel Tyler (danieltyler3713@gmail.com)
+2025-08-22 22:21:18,584 - INFO -     2. CUST0002 - Kyle Green (kylegreen9131@gmail.com)
+2025-08-22 22:21:18,585 - INFO -     3. CUST0003 - Melissa Wilkerson (melissawilkerson5976@gmail.com)
+2025-08-22 22:21:18,585 - INFO -     4. CUST0004 - Molly Thomas (mollythomas5744@gmail.com)
+2025-08-22 22:21:18,586 - INFO -     5. CUST0005 - Donald Wall (donaldwall1469@gmail.com)
+2025-08-22 22:21:18,586 - INFO -     6. CUST0006 - Sierra Bennett (sierrabennett3831@gmail.com)
+2025-08-22 22:21:18,587 - INFO -     7. CUST0007 - Tracy Gonzalez (tracygonzalez7517@gmail.com)
+2025-08-22 22:21:18,588 - INFO -     8. CUST0008 - Stephen Walter (stephenwalter8104@gmail.com)
+2025-08-22 22:21:18,588 - INFO -     9. CUST0009 - Tonya Boyd (tonyaboyd2635@gmail.com)
+2025-08-22 22:21:18,589 - INFO -    10. CUST0010 - Brandon Luna (brandonluna5410@gmail.com)
+2025-08-22 22:21:18,589 - INFO -   ...
+2025-08-22 22:21:18,590 - INFO - Last 5 Customer IDs:
+2025-08-22 22:21:18,590 - INFO -   1296. CUST1296 - Nicholas Smith (nicholassmith3622@gmail.com)
+2025-08-22 22:21:18,591 - INFO -   1297. CUST1297 - Tiffany Hudson (tiffanyhudson5652@gmail.com)
+2025-08-22 22:21:18,591 - INFO -   1298. CUST1298 - Jason Gallagher (jasongallagher9536@gmail.com)
+2025-08-22 22:21:18,591 - INFO -   1299. CUST1299 - Barbara Wallace (barbarawallace5513@gmail.com)
+2025-08-22 22:21:18,592 - INFO -   1300. CUST1300 - Robert Farley (robertfarley6169@gmail.com)
+2025-08-22 22:21:18,592 - INFO - 
+--- Customers with 2 record(s) each ---
+2025-08-22 22:21:18,593 - INFO - Count: 250 customers
+2025-08-22 22:21:18,593 - INFO - Total records: 500
+2025-08-22 22:21:18,594 - INFO - Percentage: 24.5%
+2025-08-22 22:21:18,594 - INFO - First 10 Customer IDs:
+2025-08-22 22:21:18,595 - INFO -     1. CUST1301 - Michele Larsen DDS (michelelarsendds2972@gmail.com)
+2025-08-22 22:21:18,595 - INFO -     2. CUST1302 - Erica Mcclure (ericamcclure7337@gmail.com)
+2025-08-22 22:21:18,596 - INFO -     3. CUST1303 - Victor Sellers (victorsellers9420@gmail.com)
+2025-08-22 22:21:18,597 - INFO -     4. CUST1304 - Kelly Clark (kellyclark4812@gmail.com)
+2025-08-22 22:21:18,597 - INFO -     5. CUST1305 - Francisco Martin (franciscomartin6285@gmail.com)
+2025-08-22 22:21:18,598 - INFO -     6. CUST1306 - Mary Schaefer (maryschaefer7745@gmail.com)
+2025-08-22 22:21:18,598 - INFO -     7. CUST1307 - Victoria Davis (victoriadavis5680@gmail.com)
+2025-08-22 22:21:18,599 - INFO -     8. CUST1308 - Cynthia Cummings (cynthiacummings9190@gmail.com)
+2025-08-22 22:21:18,599 - INFO -     9. CUST1309 - Dawn Foster MD (dawnfostermd4778@gmail.com)
+2025-08-22 22:21:18,599 - INFO -    10. CUST1310 - Pamela Kemp (pamelakemp1105@gmail.com)
+2025-08-22 22:21:18,600 - INFO -   ...
+2025-08-22 22:21:18,600 - INFO - Last 5 Customer IDs:
+2025-08-22 22:21:18,601 - INFO -   246. CUST1546 - Stephanie Martinez (stephaniemartinez7624@gmail.com)
+2025-08-22 22:21:18,601 - INFO -   247. CUST1547 - Arthur May (arthurmay5316@gmail.com)
+2025-08-22 22:21:18,602 - INFO -   248. CUST1548 - Tracey Hamilton (traceyhamilton5958@gmail.com)
+2025-08-22 22:21:18,602 - INFO -   249. CUST1549 - Scott May (scottmay5005@gmail.com)
+2025-08-22 22:21:18,603 - INFO -   250. CUST1550 - Jordan Martin (jordanmartin6997@gmail.com)
+2025-08-22 22:21:18,603 - INFO - 
+--- Customers with 4 record(s) each ---
+2025-08-22 22:21:18,603 - INFO - Count: 30 customers
+2025-08-22 22:21:18,604 - INFO - Total records: 120
+2025-08-22 22:21:18,604 - INFO - Percentage: 5.9%
+2025-08-22 22:21:18,605 - INFO - First 10 Customer IDs:
+2025-08-22 22:21:18,605 - INFO -     1. CUST1551 - Yvonne Thompson (yvonnethompson8416@gmail.com)
+2025-08-22 22:21:18,606 - INFO -     2. CUST1552 - Chloe Aguilar (chloeaguilar8967@gmail.com)
+2025-08-22 22:21:18,606 - INFO -     3. CUST1553 - John Perkins (johnperkins3500@gmail.com)
+2025-08-22 22:21:18,607 - INFO -     4. CUST1554 - Jason Flores (jasonflores2297@gmail.com)
+2025-08-22 22:21:18,607 - INFO -     5. CUST1555 - Andrea Ramirez (andrearamirez6565@gmail.com)
+2025-08-22 22:21:18,608 - INFO -     6. CUST1556 - Kevin Lewis (kevinlewis6552@gmail.com)
+2025-08-22 22:21:18,608 - INFO -     7. CUST1557 - Jamie Morales (jamiemorales2717@gmail.com)
+2025-08-22 22:21:18,609 - INFO -     8. CUST1558 - Virginia Martinez (virginiamartinez3482@gmail.com)
+2025-08-22 22:21:18,609 - INFO -     9. CUST1559 - Eric Taylor (erictaylor7064@gmail.com)
+2025-08-22 22:21:18,609 - INFO -    10. CUST1560 - Daniel Smith (danielsmith7299@gmail.com)
+2025-08-22 22:21:18,610 - INFO -   ...
+2025-08-22 22:21:18,610 - INFO - Last 5 Customer IDs:
+2025-08-22 22:21:18,611 - INFO -    26. CUST1576 - April Roberts (aprilroberts1475@gmail.com)
+2025-08-22 22:21:18,611 - INFO -    27. CUST1577 - Ronald Jackson (ronaldjackson4903@gmail.com)
+2025-08-22 22:21:18,612 - INFO -    28. CUST1578 - Brandon Watson (brandonwatson6924@gmail.com)
+2025-08-22 22:21:18,612 - INFO -    29. CUST1579 - Christopher Avery (christopheravery1012@gmail.com)
+2025-08-22 22:21:18,613 - INFO -    30. CUST1580 - Henry Rosario (henryrosario6788@gmail.com)
+2025-08-22 22:21:18,613 - INFO - 
+--- Customers with 6 record(s) each ---
+2025-08-22 22:21:18,613 - INFO - Count: 20 customers
+2025-08-22 22:21:18,614 - INFO - Total records: 120
+2025-08-22 22:21:18,614 - INFO - Percentage: 5.9%
+2025-08-22 22:21:18,615 - INFO - First 10 Customer IDs:
+2025-08-22 22:21:18,615 - INFO -     1. CUST1581 - Anthony Johnson (anthonyjohnson9727@gmail.com)
+2025-08-22 22:21:18,616 - INFO -     2. CUST1582 - Kristen White (kristenwhite8490@gmail.com)
+2025-08-22 22:21:18,616 - INFO -     3. CUST1583 - Scott Riley (scottriley3204@gmail.com)
+2025-08-22 22:21:18,617 - INFO -     4. CUST1584 - David Richardson (davidrichardson9339@gmail.com)
+2025-08-22 22:21:18,617 - INFO -     5. CUST1585 - Keith Jenkins (keithjenkins3214@gmail.com)
+2025-08-22 22:21:18,618 - INFO -     6. CUST1586 - Karen Cooper (karencooper3418@gmail.com)
+2025-08-22 22:21:18,618 - INFO -     7. CUST1587 - Mr. Kevin Thompson (mrkevinthompson6004@gmail.com)
+2025-08-22 22:21:18,618 - INFO -     8. CUST1588 - Lisa Cherry (lisacherry8128@gmail.com)
+2025-08-22 22:21:18,619 - INFO -     9. CUST1589 - Adam Hill (adamhill1805@gmail.com)
+2025-08-22 22:21:18,619 - INFO -    10. CUST1590 - Andrea Butler (andreabutler6647@gmail.com)
+2025-08-22 22:21:18,620 - INFO -   ...
+2025-08-22 22:21:18,621 - INFO - Last 5 Customer IDs:
+2025-08-22 22:21:18,621 - INFO -    16. CUST1596 - Ryan Owens (ryanowens4696@gmail.com)
+2025-08-22 22:21:18,621 - INFO -    17. CUST1597 - Joann Wolfe (joannwolfe5700@gmail.com)
+2025-08-22 22:21:18,622 - INFO -    18. CUST1598 - Cynthia Melendez (cynthiamelendez6181@gmail.com)
+2025-08-22 22:21:18,622 - INFO -    19. CUST1599 - Ryan Silva (ryansilva9460@gmail.com)
+2025-08-22 22:21:18,623 - INFO -    20. CUST1600 - Paula Duncan (pauladuncan8322@gmail.com)
+2025-08-22 22:21:18,623 - INFO - 
+=== SUMMARY ===
+2025-08-22 22:21:18,623 - INFO - Total unique customers: 1600
+2025-08-22 22:21:18,624 - INFO - Total records: 2040
+2025-08-22 22:21:18,625 - INFO - 
+=== CUSTOMER ID RANGE VALIDATION ===
+2025-08-22 22:21:19,147 - INFO - Expected vs Actual Customer ID Ranges:
+2025-08-22 22:21:19,148 - INFO - (Based on sequential generation: CUST0001-CUST1600)
+2025-08-22 22:21:19,148 - INFO - 
+1-record customers:
+2025-08-22 22:21:19,149 - INFO -   Expected range: CUST0001 - CUST1300
+2025-08-22 22:21:19,149 - INFO -   Actual range:   CUST0001 - CUST1300
+2025-08-22 22:21:19,150 - INFO -   Count: 1300 customers
+2025-08-22 22:21:19,150 - INFO -   ✅ Range matches expected pattern
+2025-08-22 22:21:19,151 - INFO - 
+2-record customers:
+2025-08-22 22:21:19,151 - INFO -   Expected range: CUST1301 - CUST1550
+2025-08-22 22:21:19,152 - INFO -   Actual range:   CUST1301 - CUST1550
+2025-08-22 22:21:19,152 - INFO -   Count: 250 customers
+2025-08-22 22:21:19,153 - INFO -   ✅ Range matches expected pattern
+2025-08-22 22:21:19,153 - INFO - 
+4-record customers:
+2025-08-22 22:21:19,154 - INFO -   Expected range: CUST1551 - CUST1580
+2025-08-22 22:21:19,154 - INFO -   Actual range:   CUST1551 - CUST1580
+2025-08-22 22:21:19,154 - INFO -   Count: 30 customers
+2025-08-22 22:21:19,155 - INFO -   ✅ Range matches expected pattern
+2025-08-22 22:21:19,155 - INFO - 
+6-record customers:
+2025-08-22 22:21:19,156 - INFO -   Expected range: CUST1581 - CUST1600
+2025-08-22 22:21:19,156 - INFO -   Actual range:   CUST1581 - CUST1600
+2025-08-22 22:21:19,157 - INFO -   Count: 20 customers
+2025-08-22 22:21:19,157 - INFO -   ✅ Range matches expected pattern
+2025-08-22 22:21:19,157 - INFO - 
+=== DATA INTEGRITY VERIFICATION ===
+2025-08-22 22:21:19,521 - WARNING - Found 21 duplicate call IDs!
+2025-08-22 22:21:19,522 - WARNING -   Duplicate call_id: CALL56806 (appears 2 times)
+2025-08-22 22:21:19,523 - WARNING -   Duplicate call_id: CALL75463 (appears 2 times)
+2025-08-22 22:21:19,523 - WARNING -   Duplicate call_id: CALL57185 (appears 2 times)
+2025-08-22 22:21:19,524 - WARNING -   Duplicate call_id: CALL85063 (appears 2 times)
+2025-08-22 22:21:19,524 - WARNING -   Duplicate call_id: CALL57134 (appears 2 times)
+2025-08-22 22:21:20,262 - INFO - ✅ Field 'call_id': All records have valid values
+2025-08-22 22:21:21,095 - INFO - ✅ Field 'timestamp': All records have valid values
+2025-08-22 22:21:21,829 - INFO - ✅ Field 'customer_name': All records have valid values
+2025-08-22 22:21:22,622 - INFO - ✅ Field 'customer_id': All records have valid values
+2025-08-22 22:21:23,472 - INFO - ✅ Field 'email': All records have valid values
+2025-08-22 22:21:23,858 - ERROR - Failed to verify data integrity: Failed to parse $size. Expected a number in: $size: { $gt: 1 }, full error: {'ok': 0.0, 'errmsg': 'Failed to parse $size. Expected a number in: $size: { $gt: 1 }', 'code': 2, 'codeName': 'BadValue'}
+2025-08-22 22:21:23,859 - INFO - 
+=== SAMPLE RECORDS BY CATEGORY ===
+2025-08-22 22:21:23,859 - INFO - 
+--- Sample from 1-record customers ---
+2025-08-22 22:21:24,366 - INFO - Customer: CUST0159
+2025-08-22 22:21:24,366 - INFO - Name: William Mccoy
+2025-08-22 22:21:24,367 - INFO - Email: williammccoy6818@gmail.com
+2025-08-22 22:21:24,367 - INFO - Records (1):
+2025-08-22 22:21:24,367 - INFO -   1. Call ID: CALL57165, Time: 2024-09-09T07:58:54Z
+2025-08-22 22:21:24,368 - INFO - 
+--- Sample from 2-record customers ---
+2025-08-22 22:21:24,864 - INFO - Customer: CUST1396
+2025-08-22 22:21:24,864 - INFO - Name: Jennifer Alvarez
+2025-08-22 22:21:24,865 - INFO - Email: jenniferalvarez4621@gmail.com
+2025-08-22 22:21:24,866 - INFO - Records (2):
+2025-08-22 22:21:24,866 - INFO -   1. Call ID: CALL35480, Time: 2024-05-11T09:25:23Z
+2025-08-22 22:21:24,867 - INFO -   2. Call ID: CALL92749, Time: 2025-12-10T19:00:18Z
+2025-08-22 22:21:24,868 - INFO - 
+--- Sample from 4-record customers ---
+2025-08-22 22:21:25,366 - INFO - Customer: CUST1566
+2025-08-22 22:21:25,367 - INFO - Name: Dennis Wise
+2025-08-22 22:21:25,368 - INFO - Email: denniswise8488@gmail.com
+2025-08-22 22:21:25,368 - INFO - Records (4):
+2025-08-22 22:21:25,369 - INFO -   1. Call ID: CALL00749, Time: 2023-01-03T09:48:34Z
+2025-08-22 22:21:25,369 - INFO -   2. Call ID: CALL67946, Time: 2023-04-04T22:24:21Z
+2025-08-22 22:21:25,370 - INFO -   3. Call ID: CALL77331, Time: 2023-06-04T19:47:11Z
+2025-08-22 22:21:25,370 - INFO -   4. Call ID: CALL54720, Time: 2025-02-06T04:34:54Z
+2025-08-22 22:21:25,371 - INFO - 
+--- Sample from 6-record customers ---
+2025-08-22 22:21:25,893 - INFO - Customer: CUST1585
+2025-08-22 22:21:25,895 - INFO - Name: Keith Jenkins
+2025-08-22 22:21:25,896 - INFO - Email: keithjenkins3214@gmail.com
+2025-08-22 22:21:25,897 - INFO - Records (6):
+2025-08-22 22:21:25,898 - INFO -   1. Call ID: CALL29277, Time: 2023-01-31T09:36:58Z
+2025-08-22 22:21:25,899 - INFO -   2. Call ID: CALL90094, Time: 2023-02-22T09:09:15Z
+2025-08-22 22:21:25,899 - INFO -   3. Call ID: CALL87908, Time: 2023-04-27T04:52:28Z
+2025-08-22 22:21:25,900 - INFO -   4. Call ID: CALL64718, Time: 2024-04-08T00:37:59Z
+2025-08-22 22:21:25,900 - INFO -   5. Call ID: CALL15630, Time: 2024-06-09T03:18:58Z
+2025-08-22 22:21:25,901 - INFO -   6. Call ID: CALL80862, Time: 2024-07-19T09:00:50Z
+2025-08-22 22:21:25,901 - INFO - 
+=== TIMESTAMP ANALYSIS ===
+2025-08-22 22:21:26,247 - INFO - Records by Year:
+2025-08-22 22:21:26,248 - INFO -   2023: 711 records (34.9%)
+2025-08-22 22:21:26,248 - INFO -   2024: 670 records (32.8%)
+2025-08-22 22:21:26,249 - INFO -   2025: 659 records (32.3%)
+2025-08-22 22:21:26,250 - INFO - 
+=== EXPORTING CUSTOMER LISTS ===
+2025-08-22 22:21:27,566 - INFO - Exported 1300 customers to 'customers_with_1_records.txt'
+2025-08-22 22:21:27,571 - INFO - Exported 250 customers to 'customers_with_2_records.txt'
+2025-08-22 22:21:27,572 - INFO - Exported 30 customers to 'customers_with_4_records.txt'
+2025-08-22 22:21:27,574 - INFO - Exported 20 customers to 'customers_with_6_records.txt'
+2025-08-22 22:21:27,575 - INFO - Exported summary to 'voice_data_summary.txt'
+2025-08-22 22:21:27,575 - INFO - 
+============================================================
+2025-08-22 22:21:27,575 - INFO - FINAL ASSESSMENT
+2025-08-22 22:21:27,576 - INFO - ============================================================
+2025-08-22 22:21:27,576 - INFO - ✅ Record counts match expected values
+2025-08-22 22:21:27,576 - WARNING - ⚠️  Data integrity issues found
+2025-08-22 22:21:27,576 - INFO - ✅ Analysis completed successfully!
+2025-08-22 22:21:27,576 - INFO - 📁 Check generated .txt files for detailed customer lists
+2025-08-22 22:21:27,821 - INFO - MongoDB connection closed
+2025-08-22 22:21:27,822 - INFO - === VOICE DATA ANALYSIS COMPLETED ===

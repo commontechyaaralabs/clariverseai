@@ -1,0 +1,387 @@
+[
+  {
+    "cluster_id": 0,
+    "cluster_name": "Workforce & HR Management",
+    "keyphrases": [
+      "Shift Coverage Request",
+      "Training Schedule Update",
+      "Performance Review Planning",
+      "Break Schedule Coordination",
+      "Overtime Approval Need",
+      "Team Meeting Reminder",
+      "Staff Management Discussion",
+      "Workforce Planning Update",
+      "Employee Relations Coordination",
+      "Attendance Management Alert",
+      "Leave Request Approval",
+      "Skill Development Update"
+    ],
+    "keyphrase_count": 12,
+    "domains": [
+      "banking"
+    ],
+    "data": "chat-chunks",
+    "dominant_label": "Workforce & HR Management",
+    "subclusters": {
+      "0": {
+        "label": "Workforce Scheduling & Planning",
+        "keyphrases": [
+          "Shift Coverage Request",
+          "Break Schedule Coordination",
+          "Overtime Approval Need",
+          "Workforce Planning Update"
+        ]
+      },
+      "1": {
+        "label": "Employee Development & Relations",
+        "keyphrases": [
+          "Training Schedule Update",
+          "Performance Review Planning",
+          "Skill Development Update",
+          "Team Meeting Reminder",
+          "Staff Management Discussion",
+          "Employee Relations Coordination",
+          "Attendance Management Alert",
+          "Leave Request Approval"
+        ]
+      }
+    },
+    "uniqueness_validated": true
+  },
+  {
+    "cluster_id": 1,
+    "cluster_name": "IT Infrastructure & Systems",
+    "keyphrases": [
+      "System Status Alert",
+      "Network Performance Issue",
+      "Application Server Warning",
+      "Authentication Service Down",
+      "Technology Rollout Update",
+      "System Integration Progress"
+    ],
+    "keyphrase_count": 6,
+    "domains": [
+      "banking"
+    ],
+    "data": "chat-chunks",
+    "dominant_label": "IT Infrastructure & Systems",
+    "subclusters": {
+      "0": {
+        "label": "System & Service Health",
+        "keyphrases": [
+          "System Status Alert",
+          "Network Performance Issue",
+          "Application Server Warning",
+          "Authentication Service Down"
+        ]
+      },
+      "1": {
+        "label": "IT Projects & Rollouts",
+        "keyphrases": [
+          "Technology Rollout Update",
+          "System Integration Progress"
+        ]
+      }
+    },
+    "uniqueness_validated": true
+  },
+  {
+    "cluster_id": 2,
+    "cluster_name": "IT Security & Support",
+    "keyphrases": [
+      "Database Access Problem",
+      "Security Protocol Change",
+      "Hardware Troubleshooting Help",
+      "Software Issue Resolution",
+      "User Access Problem",
+      "Cybersecurity Alert Warning"
+    ],
+    "keyphrase_count": 6,
+    "domains": [
+      "banking"
+    ],
+    "data": "chat-chunks",
+    "dominant_label": "IT Security & Support",
+    "subclusters": {
+      "0": {
+        "label": "Security & Access Control",
+        "keyphrases": [
+          "Database Access Problem",
+          "Security Protocol Change",
+          "User Access Problem",
+          "Cybersecurity Alert Warning"
+        ]
+      },
+      "1": {
+        "label": "Technical Troubleshooting",
+        "keyphrases": [
+          "Hardware Troubleshooting Help",
+          "Software Issue Resolution"
+        ]
+      }
+    },
+    "uniqueness_validated": true
+  },
+  {
+    "cluster_id": 3,
+    "cluster_name": "Operational Processes & Workflow",
+    "keyphrases": [
+      "Process Coordination Discussion",
+      "Workflow Optimization Alert",
+      "Quality Standard Reminder",
+      "Case Management Discussion",
+      "Knowledge Management Update",
+      "Team Coordination Update",
+      "Daily Operational Procedure"
+    ],
+    "keyphrase_count": 7,
+    "domains": [
+      "banking"
+    ],
+    "data": "chat-chunks",
+    "dominant_label": "Operational Processes & Workflow",
+    "subclusters": {
+      "0": {
+        "label": "Process & Workflow Optimization",
+        "keyphrases": [
+          "Process Coordination Discussion",
+          "Workflow Optimization Alert",
+          "Daily Operational Procedure"
+        ]
+      },
+      "1": {
+        "label": "Operational Quality & Knowledge",
+        "keyphrases": [
+          "Quality Standard Reminder",
+          "Case Management Discussion",
+          "Knowledge Management Update",
+          "Team Coordination Update"
+        ]
+      }
+    },
+    "uniqueness_validated": true
+  },
+  {
+    "cluster_id": 4,
+    "cluster_name": "Compliance & Policy",
+    "keyphrases": [
+      "Policy Clarification Request",
+      "Compliance Training Reminder",
+      "GDPR Access Request",
+      "Regulatory Update Alert",
+      "Regulatory Examination Preparation",
+      "Regulatory Response Management",
+      "Compliance Monitoring Update"
+    ],
+    "keyphrase_count": 7,
+    "domains": [
+      "banking"
+    ],
+    "data": "chat-chunks",
+    "dominant_label": "Compliance & Policy",
+    "subclusters": {
+      "0": {
+        "label": "Regulatory & Policy Updates",
+        "keyphrases": [
+          "Policy Clarification Request",
+          "Regulatory Update Alert",
+          "Regulatory Examination Preparation",
+          "Regulatory Response Management"
+        ]
+      },
+      "1": {
+        "label": "Compliance Monitoring & Training",
+        "keyphrases": [
+          "Compliance Training Reminder",
+          "GDPR Access Request",
+          "Compliance Monitoring Update"
+        ]
+      }
+    },
+    "uniqueness_validated": true
+  },
+  {
+    "cluster_id": 5,
+    "cluster_name": "Internal Audit & Reporting",
+    "keyphrases": [
+      "Audit Coordination Schedule",
+      "Monthly Compliance Audit",
+      "Audit Feedback Review",
+      "Compliance Report Generation",
+      "Audit Planning Coordination",
+      "Audit Finding Resolution"
+    ],
+    "keyphrase_count": 6,
+    "domains": [
+      "banking"
+    ],
+    "data": "chat-chunks",
+    "dominant_label": "Internal Audit & Reporting",
+    "subclusters": {
+      "0": {
+        "label": "Audit Coordination & Planning",
+        "keyphrases": [
+          "Audit Coordination Schedule",
+          "Audit Planning Coordination"
+        ]
+      },
+      "1": {
+        "label": "Audit Findings & Reporting",
+        "keyphrases": [
+          "Monthly Compliance Audit",
+          "Audit Feedback Review",
+          "Compliance Report Generation",
+          "Audit Finding Resolution"
+        ]
+      }
+    },
+    "uniqueness_validated": true
+  },
+  {
+    "cluster_id": 6,
+    "cluster_name": "Risk & Control Management",
+    "keyphrases": [
+      "Risk Assessment Update",
+      "Risk Assessment Documentation",
+      "Control Testing Validation",
+      "Compliance Gap Remediation"
+    ],
+    "keyphrase_count": 4,
+    "domains": [
+      "banking"
+    ],
+    "data": "chat-chunks",
+    "dominant_label": "Risk & Control Management",
+    "subclusters": {
+      "0": {
+        "label": "Risk Assessment & Documentation",
+        "keyphrases": [
+          "Risk Assessment Update",
+          "Risk Assessment Documentation"
+        ]
+      },
+      "1": {
+        "label": "Control & Remediation",
+        "keyphrases": [
+          "Control Testing Validation",
+          "Compliance Gap Remediation"
+        ]
+      }
+    },
+    "uniqueness_validated": true
+  },
+  {
+    "cluster_id": 7,
+    "cluster_name": "Business & Financial Planning",
+    "keyphrases": [
+      "Budget Management Discussion",
+      "Financial Reporting Procedure",
+      "Performance Metric Tracking",
+      "Business Continuity Activation",
+      "Cross-Department Project Update"
+    ],
+    "keyphrase_count": 5,
+    "domains": [
+      "banking"
+    ],
+    "data": "chat-chunks",
+    "dominant_label": "Business & Financial Planning",
+    "subclusters": {
+      "0": {
+        "label": "Financial & Performance Management",
+        "keyphrases": [
+          "Budget Management Discussion",
+          "Financial Reporting Procedure",
+          "Performance Metric Tracking"
+        ]
+      },
+      "1": {
+        "label": "Operational Planning & Projects",
+        "keyphrases": [
+          "Business Continuity Activation",
+          "Cross-Department Project Update"
+        ]
+      }
+    },
+    "uniqueness_validated": true
+  },
+  {
+    "cluster_id": 8,
+    "cluster_name": "Customer & Sales Strategy",
+    "keyphrases": [
+      "Customer Insight Report",
+      "Campaign Coordination Discussion",
+      "Content Management Update",
+      "Customer Research Finding",
+      "Account Management Strategy",
+      "Product Update Communication",
+      "Pipeline Management Discussion"
+    ],
+    "keyphrase_count": 7,
+    "domains": [
+      "banking"
+    ],
+    "data": "chat-chunks",
+    "dominant_label": "Customer & Sales Strategy",
+    "subclusters": {
+      "0": {
+        "label": "Customer & Market Insight",
+        "keyphrases": [
+          "Customer Insight Report",
+          "Customer Research Finding"
+        ]
+      },
+      "1": {
+        "label": "Product & Account Management",
+        "keyphrases": [
+          "Account Management Strategy",
+          "Product Update Communication",
+          "Pipeline Management Discussion"
+        ]
+      },
+      "2": {
+        "label": "Marketing & Content",
+        "keyphrases": [
+          "Campaign Coordination Discussion",
+          "Content Management Update"
+        ]
+      }
+    },
+    "uniqueness_validated": true
+  },
+  {
+    "cluster_id": 9,
+    "cluster_name": "External Relations & Vendor Management",
+    "keyphrases": [
+      "Vendor Management Discussion",
+      "Account Access Problem",
+      "Transaction Status Inquiry",
+      "Documentation Request Alert",
+      "Technology Provider Communication"
+    ],
+    "keyphrase_count": 5,
+    "domains": [
+      "banking"
+    ],
+    "data": "chat-chunks",
+    "dominant_label": "External Relations & Vendor Management",
+    "subclusters": {
+      "0": {
+        "label": "Vendor & Provider Management",
+        "keyphrases": [
+          "Vendor Management Discussion",
+          "Technology Provider Communication"
+        ]
+      },
+      "1": {
+        "label": "Client & External Queries",
+        "keyphrases": [
+          "Account Access Problem",
+          "Transaction Status Inquiry",
+          "Documentation Request Alert"
+        ]
+      }
+    },
+    "uniqueness_validated": true
+  }
+]

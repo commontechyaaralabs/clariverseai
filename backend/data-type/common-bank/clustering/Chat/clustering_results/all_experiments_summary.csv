@@ -1,0 +1,10 @@
+experiment_id,umap_params,hdbscan_params,num_clusters,noise_percent,silhouette_score,coherence_score,avg_similarity
+umap_1_hdbscan_1,"{'n_neighbors': 15, 'min_dist': 0.1}","{'min_cluster_size': 3, 'min_samples': 3, 'cluster_selection_method': 'eom'}",17,1.4705882352941175,0.9331731796264648,0.8846491341313016,0.8044111227498041
+umap_1_hdbscan_2,"{'n_neighbors': 15, 'min_dist': 0.1}","{'min_cluster_size': 5, 'min_samples': 2, 'cluster_selection_method': 'leaf'}",15,10.294117647058822,0.8740901350975037,0.8885416000429563,0.8279130373900698
+umap_1_hdbscan_3,"{'n_neighbors': 15, 'min_dist': 0.1}","{'min_cluster_size': 4, 'min_samples': 4, 'cluster_selection_method': 'eom'}",14,5.392156862745098,0.9322223663330078,0.8965780701166631,0.831534779565189
+umap_2_hdbscan_1,"{'n_neighbors': 30, 'min_dist': 0.05}","{'min_cluster_size': 3, 'min_samples': 3, 'cluster_selection_method': 'eom'}",15,7.352941176470589,0.9362242221832275,0.8752096764420418,0.8312146986607302
+umap_2_hdbscan_2,"{'n_neighbors': 30, 'min_dist': 0.05}","{'min_cluster_size': 5, 'min_samples': 2, 'cluster_selection_method': 'leaf'}",15,2.941176470588235,0.7837628722190857,0.902458937964066,0.8268140568958761
+umap_2_hdbscan_3,"{'n_neighbors': 30, 'min_dist': 0.05}","{'min_cluster_size': 4, 'min_samples': 4, 'cluster_selection_method': 'eom'}",14,8.823529411764707,0.9367852807044983,0.894896237898611,0.8390597965807921
+umap_3_hdbscan_1,"{'n_neighbors': 50, 'min_dist': 0.2}","{'min_cluster_size': 3, 'min_samples': 3, 'cluster_selection_method': 'eom'}",13,6.862745098039216,0.9148004055023193,0.9034080234636596,0.835225095842137
+umap_3_hdbscan_2,"{'n_neighbors': 50, 'min_dist': 0.2}","{'min_cluster_size': 5, 'min_samples': 2, 'cluster_selection_method': 'leaf'}",15,4.901960784313726,0.7884731292724609,0.898438329826532,0.8325872123466425
+umap_3_hdbscan_3,"{'n_neighbors': 50, 'min_dist': 0.2}","{'min_cluster_size': 4, 'min_samples': 4, 'cluster_selection_method': 'eom'}",13,6.862745098039216,0.9167372584342957,0.9074352308403323,0.8348200058967573

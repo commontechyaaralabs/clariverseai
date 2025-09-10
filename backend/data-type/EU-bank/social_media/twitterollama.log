@@ -1,0 +1,714 @@
+nohup: ignoring input
+2025-09-06 12:40:35,905 - INFO - SwedBank Twitter Social Media Content Generator Starting...
+2025-09-06 12:40:35,905 - INFO - Database: sparzaai
+2025-09-06 12:40:35,905 - INFO - Collection: socialmedia
+2025-09-06 12:40:35,905 - INFO - Target Channel: Twitter (case-insensitive)
+2025-09-06 12:40:35,905 - INFO - Bank: SwedBank (European Banking)
+2025-09-06 12:40:35,905 - INFO - Model: gemma3:27b
+2025-09-06 12:40:35,905 - INFO - Ollama URL: https://falling-wrist-covered-arrivals.trycloudflare.com
+2025-09-06 12:40:36,197 - INFO - Database connection established and indexes created
+2025-09-06 12:40:36,274 - INFO - SwedBank Twitter Collection Statistics:
+2025-09-06 12:40:36,274 - INFO - Total Twitter records: 282
+2025-09-06 12:40:36,274 - INFO - With generated content: 100
+2025-09-06 12:40:36,274 - INFO - Without generated content: 182
+2025-09-06 12:40:36,311 - INFO - Sample Twitter record structure:
+2025-09-06 12:40:36,311 - INFO -   _id: 68bb12eb35db675a8b09a223
+2025-09-06 12:40:36,311 - INFO -   email_id: travishanna9819@gmail.com
+2025-09-06 12:40:36,311 - INFO -   username: Travis Hanna
+2025-09-06 12:40:36,311 - INFO -   channel: Twitter
+2025-09-06 12:40:36,311 - INFO -   dominant_topic: Balance Update Delayed
+2025-09-06 12:40:36,311 - INFO -   subtopics: Real-time Processing Problems, Process Optimizatio...
+2025-09-06 12:40:36,312 - INFO -   created_at: 2024-11-14T23:14:43Z
+2025-09-06 12:40:36,312 - INFO -   domain: banking
+2025-09-06 12:40:36,312 - INFO -   tweet_id: T784232
+2025-09-06 12:40:36,312 - INFO -   user_id: 167052
+2025-09-06 12:40:36,312 - INFO -   content_generated_at: 2025-09-06T12:30:12.856793
+2025-09-06 12:40:36,312 - INFO -   hashtags: ['#BankingFail', '#DigitalBanking', '#PaymentIssues']
+2025-09-06 12:40:36,312 - INFO -   like_count: 42
+2025-09-06 12:40:36,312 - INFO -   priority: P2 - Medium
+2025-09-06 12:40:36,312 - INFO -   quote_count: 3
+2025-09-06 12:40:36,312 - INFO -   reply_count: 11
+2025-09-06 12:40:36,312 - INFO -   retweet_count: 9
+2025-09-06 12:40:36,312 - INFO -   sentiment: Negative
+2025-09-06 12:40:36,312 - INFO -   text: Honestly, @MyEUBank, still waiting for my balance ...
+2025-09-06 12:40:36,312 - INFO - Starting SwedBank Twitter Social Media Content Generation...
+2025-09-06 12:40:36,312 - INFO - Target Channel: Twitter
+2025-09-06 12:40:36,312 - INFO - Bank: SwedBank (European)
+2025-09-06 12:40:36,312 - INFO - Batch size: 2
+2025-09-06 12:40:36,312 - INFO - Max workers: 4
+2025-09-06 12:40:36,312 - INFO - Testing connection to remote Ollama: https://falling-wrist-covered-arrivals.trycloudflare.com
+2025-09-06 12:40:36,312 - INFO - Using model: gemma3:27b
+2025-09-06 12:40:42,460 - INFO - Ollama connection test successful
+2025-09-06 12:40:42,461 - INFO - Fetching Twitter social media records from database...
+2025-09-06 12:40:42,578 - INFO - Found 182 Twitter records needing content generation
+2025-09-06 12:40:42,578 - INFO - Processing batch 1/91 (2 records)...
+2025-09-06 12:40:59,701 - INFO - Batch 1 complete: 2/2 successful
+2025-09-06 12:40:59,702 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:40:59,738 - INFO - Successfully saved 2 records to database
+2025-09-06 12:40:59,738 - INFO - Database updated: 2 records saved
+2025-09-06 12:40:59,738 - INFO - Progress: 2/182 records processed
+2025-09-06 12:40:59,738 - INFO - Success: 2 | Failures: 0
+2025-09-06 12:40:59,738 - INFO - Processing batch 2/91 (2 records)...
+2025-09-06 12:41:11,501 - INFO - Batch 2 complete: 2/2 successful
+2025-09-06 12:41:11,502 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:41:11,541 - INFO - Successfully saved 2 records to database
+2025-09-06 12:41:11,541 - INFO - Database updated: 2 records saved
+2025-09-06 12:41:11,541 - INFO - Progress: 4/182 records processed
+2025-09-06 12:41:11,541 - INFO - Success: 4 | Failures: 0
+2025-09-06 12:41:11,541 - INFO - Processing batch 3/91 (2 records)...
+2025-09-06 12:41:23,138 - INFO - Batch 3 complete: 2/2 successful
+2025-09-06 12:41:23,138 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:41:23,175 - INFO - Successfully saved 2 records to database
+2025-09-06 12:41:23,175 - INFO - Database updated: 2 records saved
+2025-09-06 12:41:23,175 - INFO - Progress: 6/182 records processed
+2025-09-06 12:41:23,175 - INFO - Success: 6 | Failures: 0
+2025-09-06 12:41:23,175 - INFO - Processing batch 4/91 (2 records)...
+2025-09-06 12:41:34,279 - INFO - Batch 4 complete: 2/2 successful
+2025-09-06 12:41:34,279 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:41:34,317 - INFO - Successfully saved 2 records to database
+2025-09-06 12:41:34,317 - INFO - Database updated: 2 records saved
+2025-09-06 12:41:34,317 - INFO - Progress: 8/182 records processed
+2025-09-06 12:41:34,317 - INFO - Success: 8 | Failures: 0
+2025-09-06 12:41:34,317 - INFO - Processing batch 5/91 (2 records)...
+2025-09-06 12:41:46,014 - INFO - Batch 5 complete: 2/2 successful
+2025-09-06 12:41:46,015 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:41:46,053 - INFO - Successfully saved 2 records to database
+2025-09-06 12:41:46,053 - INFO - Database updated: 2 records saved
+2025-09-06 12:41:46,053 - INFO - Progress: 10/182 records processed
+2025-09-06 12:41:46,053 - INFO - Success: 10 | Failures: 0
+2025-09-06 12:41:46,053 - INFO - Processing batch 6/91 (2 records)...
+2025-09-06 12:41:57,346 - INFO - Batch 6 complete: 2/2 successful
+2025-09-06 12:41:57,346 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:41:57,382 - INFO - Successfully saved 2 records to database
+2025-09-06 12:41:57,382 - INFO - Database updated: 2 records saved
+2025-09-06 12:41:57,382 - INFO - Progress: 12/182 records processed
+2025-09-06 12:41:57,382 - INFO - Success: 12 | Failures: 0
+2025-09-06 12:41:57,382 - INFO - Processing batch 7/91 (2 records)...
+2025-09-06 12:42:09,162 - INFO - Batch 7 complete: 2/2 successful
+2025-09-06 12:42:09,162 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:42:09,198 - INFO - Successfully saved 2 records to database
+2025-09-06 12:42:09,198 - INFO - Database updated: 2 records saved
+2025-09-06 12:42:09,198 - INFO - Progress: 14/182 records processed
+2025-09-06 12:42:09,198 - INFO - Success: 14 | Failures: 0
+2025-09-06 12:42:09,198 - INFO - Processing batch 8/91 (2 records)...
+2025-09-06 12:42:20,681 - INFO - Batch 8 complete: 2/2 successful
+2025-09-06 12:42:20,682 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:42:20,717 - INFO - Successfully saved 2 records to database
+2025-09-06 12:42:20,717 - INFO - Database updated: 2 records saved
+2025-09-06 12:42:20,717 - INFO - Progress: 16/182 records processed
+2025-09-06 12:42:20,717 - INFO - Success: 16 | Failures: 0
+2025-09-06 12:42:20,717 - INFO - Processing batch 9/91 (2 records)...
+2025-09-06 12:42:32,504 - INFO - Batch 9 complete: 2/2 successful
+2025-09-06 12:42:32,504 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:42:32,541 - INFO - Successfully saved 2 records to database
+2025-09-06 12:42:32,541 - INFO - Database updated: 2 records saved
+2025-09-06 12:42:32,541 - INFO - Progress: 18/182 records processed
+2025-09-06 12:42:32,541 - INFO - Success: 18 | Failures: 0
+2025-09-06 12:42:32,541 - INFO - Processing batch 10/91 (2 records)...
+2025-09-06 12:42:44,009 - INFO - Batch 10 complete: 2/2 successful
+2025-09-06 12:42:44,009 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:42:44,046 - INFO - Successfully saved 2 records to database
+2025-09-06 12:42:44,046 - INFO - Database updated: 2 records saved
+2025-09-06 12:42:44,046 - INFO - Progress: 20/182 records processed
+2025-09-06 12:42:44,046 - INFO - Success: 20 | Failures: 0
+2025-09-06 12:42:44,046 - INFO - Processing batch 11/91 (2 records)...
+2025-09-06 12:42:56,175 - INFO - Batch 11 complete: 2/2 successful
+2025-09-06 12:42:56,175 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:42:56,211 - INFO - Successfully saved 2 records to database
+2025-09-06 12:42:56,211 - INFO - Database updated: 2 records saved
+2025-09-06 12:42:56,211 - INFO - Progress: 22/182 records processed
+2025-09-06 12:42:56,211 - INFO - Success: 22 | Failures: 0
+2025-09-06 12:42:56,211 - INFO - Processing batch 12/91 (2 records)...
+2025-09-06 12:43:07,942 - INFO - Batch 12 complete: 2/2 successful
+2025-09-06 12:43:07,942 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:43:07,977 - INFO - Successfully saved 2 records to database
+2025-09-06 12:43:07,977 - INFO - Database updated: 2 records saved
+2025-09-06 12:43:07,978 - INFO - Progress: 24/182 records processed
+2025-09-06 12:43:07,978 - INFO - Success: 24 | Failures: 0
+2025-09-06 12:43:07,978 - INFO - Processing batch 13/91 (2 records)...
+2025-09-06 12:43:28,144 - INFO - Batch 13 complete: 2/2 successful
+2025-09-06 12:43:28,144 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:43:28,179 - INFO - Successfully saved 2 records to database
+2025-09-06 12:43:28,180 - INFO - Database updated: 2 records saved
+2025-09-06 12:43:28,180 - INFO - Progress: 26/182 records processed
+2025-09-06 12:43:28,180 - INFO - Success: 26 | Failures: 0
+2025-09-06 12:43:28,180 - INFO - Processing batch 14/91 (2 records)...
+2025-09-06 12:43:39,783 - INFO - Batch 14 complete: 2/2 successful
+2025-09-06 12:43:39,783 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:43:39,818 - INFO - Successfully saved 2 records to database
+2025-09-06 12:43:39,818 - INFO - Database updated: 2 records saved
+2025-09-06 12:43:39,819 - INFO - Progress: 28/182 records processed
+2025-09-06 12:43:39,819 - INFO - Success: 28 | Failures: 0
+2025-09-06 12:43:39,819 - INFO - Processing batch 15/91 (2 records)...
+2025-09-06 12:43:51,305 - INFO - Batch 15 complete: 2/2 successful
+2025-09-06 12:43:51,305 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:43:51,341 - INFO - Successfully saved 2 records to database
+2025-09-06 12:43:51,341 - INFO - Database updated: 2 records saved
+2025-09-06 12:43:51,341 - INFO - Progress: 30/182 records processed
+2025-09-06 12:43:51,341 - INFO - Success: 30 | Failures: 0
+2025-09-06 12:43:51,341 - INFO - Processing batch 16/91 (2 records)...
+2025-09-06 12:44:02,774 - INFO - Batch 16 complete: 2/2 successful
+2025-09-06 12:44:02,774 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:44:02,811 - INFO - Successfully saved 2 records to database
+2025-09-06 12:44:02,811 - INFO - Database updated: 2 records saved
+2025-09-06 12:44:02,811 - INFO - Progress: 32/182 records processed
+2025-09-06 12:44:02,811 - INFO - Success: 32 | Failures: 0
+2025-09-06 12:44:02,811 - INFO - Processing batch 17/91 (2 records)...
+2025-09-06 12:44:14,151 - INFO - Batch 17 complete: 2/2 successful
+2025-09-06 12:44:14,151 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:44:14,188 - INFO - Successfully saved 2 records to database
+2025-09-06 12:44:14,188 - INFO - Database updated: 2 records saved
+2025-09-06 12:44:14,188 - INFO - Progress: 34/182 records processed
+2025-09-06 12:44:14,188 - INFO - Success: 34 | Failures: 0
+2025-09-06 12:44:14,188 - INFO - Processing batch 18/91 (2 records)...
+2025-09-06 12:44:25,464 - INFO - Batch 18 complete: 2/2 successful
+2025-09-06 12:44:25,464 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:44:25,503 - INFO - Successfully saved 2 records to database
+2025-09-06 12:44:25,503 - INFO - Database updated: 2 records saved
+2025-09-06 12:44:25,504 - INFO - Progress: 36/182 records processed
+2025-09-06 12:44:25,504 - INFO - Success: 36 | Failures: 0
+2025-09-06 12:44:25,504 - INFO - Processing batch 19/91 (2 records)...
+2025-09-06 12:44:37,422 - INFO - Batch 19 complete: 2/2 successful
+2025-09-06 12:44:37,422 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:44:37,458 - INFO - Successfully saved 2 records to database
+2025-09-06 12:44:37,458 - INFO - Database updated: 2 records saved
+2025-09-06 12:44:37,458 - INFO - Progress: 38/182 records processed
+2025-09-06 12:44:37,458 - INFO - Success: 38 | Failures: 0
+2025-09-06 12:44:37,458 - INFO - Processing batch 20/91 (2 records)...
+2025-09-06 12:44:48,926 - INFO - Batch 20 complete: 2/2 successful
+2025-09-06 12:44:48,926 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:44:48,962 - INFO - Successfully saved 2 records to database
+2025-09-06 12:44:48,962 - INFO - Database updated: 2 records saved
+2025-09-06 12:44:48,962 - INFO - Progress: 40/182 records processed
+2025-09-06 12:44:48,962 - INFO - Success: 40 | Failures: 0
+2025-09-06 12:44:48,962 - INFO - Processing batch 21/91 (2 records)...
+2025-09-06 12:45:01,099 - INFO - Batch 21 complete: 2/2 successful
+2025-09-06 12:45:01,099 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:45:01,134 - INFO - Successfully saved 2 records to database
+2025-09-06 12:45:01,135 - INFO - Database updated: 2 records saved
+2025-09-06 12:45:01,135 - INFO - Progress: 42/182 records processed
+2025-09-06 12:45:01,135 - INFO - Success: 42 | Failures: 0
+2025-09-06 12:45:01,135 - INFO - Processing batch 22/91 (2 records)...
+2025-09-06 12:45:12,731 - INFO - Batch 22 complete: 2/2 successful
+2025-09-06 12:45:12,731 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:45:12,770 - INFO - Successfully saved 2 records to database
+2025-09-06 12:45:12,770 - INFO - Database updated: 2 records saved
+2025-09-06 12:45:12,770 - INFO - Progress: 44/182 records processed
+2025-09-06 12:45:12,770 - INFO - Success: 44 | Failures: 0
+2025-09-06 12:45:12,770 - INFO - Processing batch 23/91 (2 records)...
+2025-09-06 12:45:24,550 - INFO - Batch 23 complete: 2/2 successful
+2025-09-06 12:45:24,550 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:45:24,589 - INFO - Successfully saved 2 records to database
+2025-09-06 12:45:24,589 - INFO - Database updated: 2 records saved
+2025-09-06 12:45:24,589 - INFO - Progress: 46/182 records processed
+2025-09-06 12:45:24,589 - INFO - Success: 46 | Failures: 0
+2025-09-06 12:45:24,589 - INFO - Processing batch 24/91 (2 records)...
+2025-09-06 12:45:36,534 - INFO - Batch 24 complete: 2/2 successful
+2025-09-06 12:45:36,534 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:45:36,569 - INFO - Successfully saved 2 records to database
+2025-09-06 12:45:36,570 - INFO - Database updated: 2 records saved
+2025-09-06 12:45:36,570 - INFO - Progress: 48/182 records processed
+2025-09-06 12:45:36,570 - INFO - Success: 48 | Failures: 0
+2025-09-06 12:45:36,570 - INFO - Processing batch 25/91 (2 records)...
+2025-09-06 12:45:48,353 - INFO - Batch 25 complete: 2/2 successful
+2025-09-06 12:45:48,354 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:45:48,389 - INFO - Successfully saved 2 records to database
+2025-09-06 12:45:48,389 - INFO - Database updated: 2 records saved
+2025-09-06 12:45:48,389 - INFO - Progress: 50/182 records processed
+2025-09-06 12:45:48,390 - INFO - Success: 50 | Failures: 0
+2025-09-06 12:45:48,390 - INFO - Processing batch 26/91 (2 records)...
+2025-09-06 12:46:00,155 - INFO - Batch 26 complete: 2/2 successful
+2025-09-06 12:46:00,155 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:46:00,191 - INFO - Successfully saved 2 records to database
+2025-09-06 12:46:00,191 - INFO - Database updated: 2 records saved
+2025-09-06 12:46:00,191 - INFO - Progress: 52/182 records processed
+2025-09-06 12:46:00,191 - INFO - Success: 52 | Failures: 0
+2025-09-06 12:46:00,191 - INFO - Processing batch 27/91 (2 records)...
+2025-09-06 12:46:11,799 - INFO - Batch 27 complete: 2/2 successful
+2025-09-06 12:46:11,799 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:46:11,835 - INFO - Successfully saved 2 records to database
+2025-09-06 12:46:11,835 - INFO - Database updated: 2 records saved
+2025-09-06 12:46:11,835 - INFO - Progress: 54/182 records processed
+2025-09-06 12:46:11,835 - INFO - Success: 54 | Failures: 0
+2025-09-06 12:46:11,835 - INFO - Processing batch 28/91 (2 records)...
+2025-09-06 12:46:23,442 - INFO - Batch 28 complete: 2/2 successful
+2025-09-06 12:46:23,442 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:46:23,479 - INFO - Successfully saved 2 records to database
+2025-09-06 12:46:23,480 - INFO - Database updated: 2 records saved
+2025-09-06 12:46:23,480 - INFO - Progress: 56/182 records processed
+2025-09-06 12:46:23,480 - INFO - Success: 56 | Failures: 0
+2025-09-06 12:46:23,480 - INFO - Processing batch 29/91 (2 records)...
+2025-09-06 12:46:35,075 - INFO - Batch 29 complete: 2/2 successful
+2025-09-06 12:46:35,075 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:46:35,113 - INFO - Successfully saved 2 records to database
+2025-09-06 12:46:35,113 - INFO - Database updated: 2 records saved
+2025-09-06 12:46:35,113 - INFO - Progress: 58/182 records processed
+2025-09-06 12:46:35,113 - INFO - Success: 58 | Failures: 0
+2025-09-06 12:46:35,113 - INFO - Processing batch 30/91 (2 records)...
+2025-09-06 12:46:46,683 - INFO - Batch 30 complete: 2/2 successful
+2025-09-06 12:46:46,683 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:46:46,719 - INFO - Successfully saved 2 records to database
+2025-09-06 12:46:46,719 - INFO - Database updated: 2 records saved
+2025-09-06 12:46:46,719 - INFO - Progress: 60/182 records processed
+2025-09-06 12:46:46,719 - INFO - Success: 60 | Failures: 0
+2025-09-06 12:46:46,719 - INFO - Processing batch 31/91 (2 records)...
+2025-09-06 12:46:58,215 - INFO - Batch 31 complete: 2/2 successful
+2025-09-06 12:46:58,215 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:46:58,251 - INFO - Successfully saved 2 records to database
+2025-09-06 12:46:58,251 - INFO - Database updated: 2 records saved
+2025-09-06 12:46:58,251 - INFO - Progress: 62/182 records processed
+2025-09-06 12:46:58,251 - INFO - Success: 62 | Failures: 0
+2025-09-06 12:46:58,251 - INFO - Processing batch 32/91 (2 records)...
+2025-09-06 12:47:09,774 - INFO - Batch 32 complete: 2/2 successful
+2025-09-06 12:47:09,774 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:47:09,810 - INFO - Successfully saved 2 records to database
+2025-09-06 12:47:09,810 - INFO - Database updated: 2 records saved
+2025-09-06 12:47:09,810 - INFO - Progress: 64/182 records processed
+2025-09-06 12:47:09,810 - INFO - Success: 64 | Failures: 0
+2025-09-06 12:47:09,810 - INFO - Processing batch 33/91 (2 records)...
+2025-09-06 12:47:20,823 - INFO - Batch 33 complete: 2/2 successful
+2025-09-06 12:47:20,823 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:47:20,859 - INFO - Successfully saved 2 records to database
+2025-09-06 12:47:20,859 - INFO - Database updated: 2 records saved
+2025-09-06 12:47:20,859 - INFO - Progress: 66/182 records processed
+2025-09-06 12:47:20,859 - INFO - Success: 66 | Failures: 0
+2025-09-06 12:47:20,859 - INFO - Processing batch 34/91 (2 records)...
+2025-09-06 12:47:43,826 - INFO - Batch 34 complete: 2/2 successful
+2025-09-06 12:47:43,826 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:47:43,865 - INFO - Successfully saved 2 records to database
+2025-09-06 12:47:43,865 - INFO - Database updated: 2 records saved
+2025-09-06 12:47:43,865 - INFO - Progress: 68/182 records processed
+2025-09-06 12:47:43,865 - INFO - Success: 68 | Failures: 0
+2025-09-06 12:47:43,865 - INFO - Processing batch 35/91 (2 records)...
+2025-09-06 12:48:02,994 - INFO - Batch 35 complete: 2/2 successful
+2025-09-06 12:48:02,994 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:48:03,032 - INFO - Successfully saved 2 records to database
+2025-09-06 12:48:03,032 - INFO - Database updated: 2 records saved
+2025-09-06 12:48:03,032 - INFO - Progress: 70/182 records processed
+2025-09-06 12:48:03,032 - INFO - Success: 70 | Failures: 0
+2025-09-06 12:48:03,032 - INFO - Processing batch 36/91 (2 records)...
+2025-09-06 12:48:14,094 - INFO - Batch 36 complete: 2/2 successful
+2025-09-06 12:48:14,094 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:48:14,131 - INFO - Successfully saved 2 records to database
+2025-09-06 12:48:14,131 - INFO - Database updated: 2 records saved
+2025-09-06 12:48:14,131 - INFO - Progress: 72/182 records processed
+2025-09-06 12:48:14,131 - INFO - Success: 72 | Failures: 0
+2025-09-06 12:48:14,131 - INFO - Processing batch 37/91 (2 records)...
+2025-09-06 12:48:25,729 - INFO - Batch 37 complete: 2/2 successful
+2025-09-06 12:48:25,729 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:48:25,768 - INFO - Successfully saved 2 records to database
+2025-09-06 12:48:25,768 - INFO - Database updated: 2 records saved
+2025-09-06 12:48:25,768 - INFO - Progress: 74/182 records processed
+2025-09-06 12:48:25,768 - INFO - Success: 74 | Failures: 0
+2025-09-06 12:48:25,768 - INFO - Processing batch 38/91 (2 records)...
+2025-09-06 12:48:47,677 - INFO - Batch 38 complete: 2/2 successful
+2025-09-06 12:48:47,677 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:48:47,713 - INFO - Successfully saved 2 records to database
+2025-09-06 12:48:47,713 - INFO - Database updated: 2 records saved
+2025-09-06 12:48:47,713 - INFO - Progress: 76/182 records processed
+2025-09-06 12:48:47,713 - INFO - Success: 76 | Failures: 0
+2025-09-06 12:48:47,713 - INFO - Processing batch 39/91 (2 records)...
+2025-09-06 12:49:09,133 - INFO - Batch 39 complete: 2/2 successful
+2025-09-06 12:49:09,133 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:49:09,169 - INFO - Successfully saved 2 records to database
+2025-09-06 12:49:09,169 - INFO - Database updated: 2 records saved
+2025-09-06 12:49:09,169 - INFO - Progress: 78/182 records processed
+2025-09-06 12:49:09,169 - INFO - Success: 78 | Failures: 0
+2025-09-06 12:49:09,169 - INFO - Processing batch 40/91 (2 records)...
+2025-09-06 12:49:20,475 - INFO - Batch 40 complete: 2/2 successful
+2025-09-06 12:49:20,475 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:49:20,511 - INFO - Successfully saved 2 records to database
+2025-09-06 12:49:20,511 - INFO - Database updated: 2 records saved
+2025-09-06 12:49:20,511 - INFO - Progress: 80/182 records processed
+2025-09-06 12:49:20,511 - INFO - Success: 80 | Failures: 0
+2025-09-06 12:49:20,511 - INFO - Processing batch 41/91 (2 records)...
+2025-09-06 12:49:31,848 - INFO - Batch 41 complete: 2/2 successful
+2025-09-06 12:49:31,848 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:49:31,884 - INFO - Successfully saved 2 records to database
+2025-09-06 12:49:31,884 - INFO - Database updated: 2 records saved
+2025-09-06 12:49:31,884 - INFO - Progress: 82/182 records processed
+2025-09-06 12:49:31,884 - INFO - Success: 82 | Failures: 0
+2025-09-06 12:49:31,884 - INFO - Processing batch 42/91 (2 records)...
+2025-09-06 12:49:43,759 - INFO - Batch 42 complete: 2/2 successful
+2025-09-06 12:49:43,759 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:49:43,796 - INFO - Successfully saved 2 records to database
+2025-09-06 12:49:43,797 - INFO - Database updated: 2 records saved
+2025-09-06 12:49:43,797 - INFO - Progress: 84/182 records processed
+2025-09-06 12:49:43,797 - INFO - Success: 84 | Failures: 0
+2025-09-06 12:49:43,797 - INFO - Processing batch 43/91 (2 records)...
+2025-09-06 12:49:55,100 - INFO - Batch 43 complete: 2/2 successful
+2025-09-06 12:49:55,100 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:49:55,137 - INFO - Successfully saved 2 records to database
+2025-09-06 12:49:55,137 - INFO - Database updated: 2 records saved
+2025-09-06 12:49:55,137 - INFO - Progress: 86/182 records processed
+2025-09-06 12:49:55,137 - INFO - Success: 86 | Failures: 0
+2025-09-06 12:49:55,137 - INFO - Processing batch 44/91 (2 records)...
+2025-09-06 12:50:06,827 - INFO - Batch 44 complete: 2/2 successful
+2025-09-06 12:50:06,827 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:50:06,863 - INFO - Successfully saved 2 records to database
+2025-09-06 12:50:06,863 - INFO - Database updated: 2 records saved
+2025-09-06 12:50:06,863 - INFO - Progress: 88/182 records processed
+2025-09-06 12:50:06,863 - INFO - Success: 88 | Failures: 0
+2025-09-06 12:50:06,863 - INFO - Processing batch 45/91 (2 records)...
+2025-09-06 12:50:18,482 - INFO - Batch 45 complete: 2/2 successful
+2025-09-06 12:50:18,482 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:50:18,518 - INFO - Successfully saved 2 records to database
+2025-09-06 12:50:18,518 - INFO - Database updated: 2 records saved
+2025-09-06 12:50:18,518 - INFO - Progress: 90/182 records processed
+2025-09-06 12:50:18,518 - INFO - Success: 90 | Failures: 0
+2025-09-06 12:50:18,518 - INFO - Processing batch 46/91 (2 records)...
+2025-09-06 12:50:29,908 - INFO - Batch 46 complete: 2/2 successful
+2025-09-06 12:50:29,908 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:50:29,943 - INFO - Successfully saved 2 records to database
+2025-09-06 12:50:29,943 - INFO - Database updated: 2 records saved
+2025-09-06 12:50:29,943 - INFO - Progress: 92/182 records processed
+2025-09-06 12:50:29,944 - INFO - Success: 92 | Failures: 0
+2025-09-06 12:50:29,944 - INFO - Processing batch 47/91 (2 records)...
+2025-09-06 12:50:41,596 - INFO - Batch 47 complete: 2/2 successful
+2025-09-06 12:50:41,596 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:50:41,632 - INFO - Successfully saved 2 records to database
+2025-09-06 12:50:41,632 - INFO - Database updated: 2 records saved
+2025-09-06 12:50:41,632 - INFO - Progress: 94/182 records processed
+2025-09-06 12:50:41,632 - INFO - Success: 94 | Failures: 0
+2025-09-06 12:50:41,632 - INFO - Processing batch 48/91 (2 records)...
+2025-09-06 12:50:53,472 - INFO - Batch 48 complete: 2/2 successful
+2025-09-06 12:50:53,472 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:50:53,508 - INFO - Successfully saved 2 records to database
+2025-09-06 12:50:53,508 - INFO - Database updated: 2 records saved
+2025-09-06 12:50:53,508 - INFO - Progress: 96/182 records processed
+2025-09-06 12:50:53,508 - INFO - Success: 96 | Failures: 0
+2025-09-06 12:50:53,508 - INFO - Processing batch 49/91 (2 records)...
+2025-09-06 12:51:05,242 - INFO - Batch 49 complete: 2/2 successful
+2025-09-06 12:51:05,242 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:51:05,280 - INFO - Successfully saved 2 records to database
+2025-09-06 12:51:05,280 - INFO - Database updated: 2 records saved
+2025-09-06 12:51:05,280 - INFO - Progress: 98/182 records processed
+2025-09-06 12:51:05,280 - INFO - Success: 98 | Failures: 0
+2025-09-06 12:51:05,280 - INFO - Processing batch 50/91 (2 records)...
+2025-09-06 12:51:16,749 - INFO - Batch 50 complete: 2/2 successful
+2025-09-06 12:51:16,749 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:51:16,785 - INFO - Successfully saved 2 records to database
+2025-09-06 12:51:16,785 - INFO - Database updated: 2 records saved
+2025-09-06 12:51:16,785 - INFO - Progress: 100/182 records processed
+2025-09-06 12:51:16,785 - INFO - Success: 100 | Failures: 0
+2025-09-06 12:51:16,785 - INFO - Processing batch 51/91 (2 records)...
+2025-09-06 12:51:28,129 - INFO - Batch 51 complete: 2/2 successful
+2025-09-06 12:51:28,129 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:51:28,164 - INFO - Successfully saved 2 records to database
+2025-09-06 12:51:28,165 - INFO - Database updated: 2 records saved
+2025-09-06 12:51:28,165 - INFO - Progress: 102/182 records processed
+2025-09-06 12:51:28,165 - INFO - Success: 102 | Failures: 0
+2025-09-06 12:51:28,165 - INFO - Processing batch 52/91 (2 records)...
+2025-09-06 12:51:39,534 - INFO - Batch 52 complete: 2/2 successful
+2025-09-06 12:51:39,534 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:51:39,570 - INFO - Successfully saved 2 records to database
+2025-09-06 12:51:39,570 - INFO - Database updated: 2 records saved
+2025-09-06 12:51:39,570 - INFO - Progress: 104/182 records processed
+2025-09-06 12:51:39,570 - INFO - Success: 104 | Failures: 0
+2025-09-06 12:51:39,570 - INFO - Processing batch 53/91 (2 records)...
+2025-09-06 12:51:51,126 - INFO - Batch 53 complete: 2/2 successful
+2025-09-06 12:51:51,126 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:51:51,162 - INFO - Successfully saved 2 records to database
+2025-09-06 12:51:51,162 - INFO - Database updated: 2 records saved
+2025-09-06 12:51:51,163 - INFO - Progress: 106/182 records processed
+2025-09-06 12:51:51,163 - INFO - Success: 106 | Failures: 0
+2025-09-06 12:51:51,163 - INFO - Processing batch 54/91 (2 records)...
+2025-09-06 12:52:02,843 - INFO - Batch 54 complete: 2/2 successful
+2025-09-06 12:52:02,843 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:52:02,878 - INFO - Successfully saved 2 records to database
+2025-09-06 12:52:02,878 - INFO - Database updated: 2 records saved
+2025-09-06 12:52:02,879 - INFO - Progress: 108/182 records processed
+2025-09-06 12:52:02,879 - INFO - Success: 108 | Failures: 0
+2025-09-06 12:52:02,879 - INFO - Processing batch 55/91 (2 records)...
+2025-09-06 12:52:14,476 - INFO - Batch 55 complete: 2/2 successful
+2025-09-06 12:52:14,476 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:52:14,513 - INFO - Successfully saved 2 records to database
+2025-09-06 12:52:14,513 - INFO - Database updated: 2 records saved
+2025-09-06 12:52:14,514 - INFO - Progress: 110/182 records processed
+2025-09-06 12:52:14,514 - INFO - Success: 110 | Failures: 0
+2025-09-06 12:52:14,514 - INFO - Processing batch 56/91 (2 records)...
+2025-09-06 12:52:26,320 - INFO - Batch 56 complete: 2/2 successful
+2025-09-06 12:52:26,320 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:52:26,358 - INFO - Successfully saved 2 records to database
+2025-09-06 12:52:26,358 - INFO - Database updated: 2 records saved
+2025-09-06 12:52:26,358 - INFO - Progress: 112/182 records processed
+2025-09-06 12:52:26,358 - INFO - Success: 112 | Failures: 0
+2025-09-06 12:52:26,358 - INFO - Processing batch 57/91 (2 records)...
+2025-09-06 12:52:37,723 - INFO - Batch 57 complete: 2/2 successful
+2025-09-06 12:52:37,723 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:52:37,759 - INFO - Successfully saved 2 records to database
+2025-09-06 12:52:37,759 - INFO - Database updated: 2 records saved
+2025-09-06 12:52:37,759 - INFO - Progress: 114/182 records processed
+2025-09-06 12:52:37,759 - INFO - Success: 114 | Failures: 0
+2025-09-06 12:52:37,759 - INFO - Processing batch 58/91 (2 records)...
+2025-09-06 12:52:49,424 - INFO - Batch 58 complete: 2/2 successful
+2025-09-06 12:52:49,424 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:52:49,460 - INFO - Successfully saved 2 records to database
+2025-09-06 12:52:49,460 - INFO - Database updated: 2 records saved
+2025-09-06 12:52:49,460 - INFO - Progress: 116/182 records processed
+2025-09-06 12:52:49,460 - INFO - Success: 116 | Failures: 0
+2025-09-06 12:52:49,460 - INFO - Processing batch 59/91 (2 records)...
+2025-09-06 12:53:01,270 - INFO - Batch 59 complete: 2/2 successful
+2025-09-06 12:53:01,270 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:53:01,305 - INFO - Successfully saved 2 records to database
+2025-09-06 12:53:01,305 - INFO - Database updated: 2 records saved
+2025-09-06 12:53:01,306 - INFO - Progress: 118/182 records processed
+2025-09-06 12:53:01,306 - INFO - Success: 118 | Failures: 0
+2025-09-06 12:53:01,306 - INFO - Processing batch 60/91 (2 records)...
+2025-09-06 12:53:13,065 - INFO - Batch 60 complete: 2/2 successful
+2025-09-06 12:53:13,065 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:53:13,101 - INFO - Successfully saved 2 records to database
+2025-09-06 12:53:13,101 - INFO - Database updated: 2 records saved
+2025-09-06 12:53:13,101 - INFO - Progress: 120/182 records processed
+2025-09-06 12:53:13,101 - INFO - Success: 120 | Failures: 0
+2025-09-06 12:53:13,101 - INFO - Processing batch 61/91 (2 records)...
+2025-09-06 12:53:24,581 - INFO - Batch 61 complete: 2/2 successful
+2025-09-06 12:53:24,581 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:53:24,618 - INFO - Successfully saved 2 records to database
+2025-09-06 12:53:24,618 - INFO - Database updated: 2 records saved
+2025-09-06 12:53:24,618 - INFO - Progress: 122/182 records processed
+2025-09-06 12:53:24,618 - INFO - Success: 122 | Failures: 0
+2025-09-06 12:53:24,618 - INFO - Processing batch 62/91 (2 records)...
+2025-09-06 12:53:36,029 - INFO - Batch 62 complete: 2/2 successful
+2025-09-06 12:53:36,029 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:53:36,067 - INFO - Successfully saved 2 records to database
+2025-09-06 12:53:36,067 - INFO - Database updated: 2 records saved
+2025-09-06 12:53:36,067 - INFO - Progress: 124/182 records processed
+2025-09-06 12:53:36,067 - INFO - Success: 124 | Failures: 0
+2025-09-06 12:53:36,067 - INFO - Processing batch 63/91 (2 records)...
+2025-09-06 12:53:47,115 - INFO - Batch 63 complete: 2/2 successful
+2025-09-06 12:53:47,116 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:53:47,151 - INFO - Successfully saved 2 records to database
+2025-09-06 12:53:47,151 - INFO - Database updated: 2 records saved
+2025-09-06 12:53:47,151 - INFO - Progress: 126/182 records processed
+2025-09-06 12:53:47,151 - INFO - Success: 126 | Failures: 0
+2025-09-06 12:53:47,151 - INFO - Processing batch 64/91 (2 records)...
+2025-09-06 12:53:58,433 - INFO - Batch 64 complete: 2/2 successful
+2025-09-06 12:53:58,433 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:53:58,469 - INFO - Successfully saved 2 records to database
+2025-09-06 12:53:58,469 - INFO - Database updated: 2 records saved
+2025-09-06 12:53:58,469 - INFO - Progress: 128/182 records processed
+2025-09-06 12:53:58,469 - INFO - Success: 128 | Failures: 0
+2025-09-06 12:53:58,469 - INFO - Processing batch 65/91 (2 records)...
+2025-09-06 12:54:09,933 - INFO - Batch 65 complete: 2/2 successful
+2025-09-06 12:54:09,933 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:54:09,969 - INFO - Successfully saved 2 records to database
+2025-09-06 12:54:09,969 - INFO - Database updated: 2 records saved
+2025-09-06 12:54:09,969 - INFO - Progress: 130/182 records processed
+2025-09-06 12:54:09,969 - INFO - Success: 130 | Failures: 0
+2025-09-06 12:54:09,969 - INFO - Processing batch 66/91 (2 records)...
+2025-09-06 12:54:21,665 - INFO - Batch 66 complete: 2/2 successful
+2025-09-06 12:54:21,665 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:54:21,701 - INFO - Successfully saved 2 records to database
+2025-09-06 12:54:21,701 - INFO - Database updated: 2 records saved
+2025-09-06 12:54:21,701 - INFO - Progress: 132/182 records processed
+2025-09-06 12:54:21,701 - INFO - Success: 132 | Failures: 0
+2025-09-06 12:54:21,701 - INFO - Processing batch 67/91 (2 records)...
+2025-09-06 12:54:33,239 - INFO - Batch 67 complete: 2/2 successful
+2025-09-06 12:54:33,239 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:54:33,275 - INFO - Successfully saved 2 records to database
+2025-09-06 12:54:33,275 - INFO - Database updated: 2 records saved
+2025-09-06 12:54:33,275 - INFO - Progress: 134/182 records processed
+2025-09-06 12:54:33,275 - INFO - Success: 134 | Failures: 0
+2025-09-06 12:54:33,275 - INFO - Processing batch 68/91 (2 records)...
+2025-09-06 12:54:44,891 - INFO - Batch 68 complete: 2/2 successful
+2025-09-06 12:54:44,891 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:54:44,931 - INFO - Successfully saved 2 records to database
+2025-09-06 12:54:44,931 - INFO - Database updated: 2 records saved
+2025-09-06 12:54:44,931 - INFO - Progress: 136/182 records processed
+2025-09-06 12:54:44,931 - INFO - Success: 136 | Failures: 0
+2025-09-06 12:54:44,931 - INFO - Processing batch 69/91 (2 records)...
+2025-09-06 12:54:56,142 - INFO - Batch 69 complete: 2/2 successful
+2025-09-06 12:54:56,142 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:54:56,181 - INFO - Successfully saved 2 records to database
+2025-09-06 12:54:56,181 - INFO - Database updated: 2 records saved
+2025-09-06 12:54:56,181 - INFO - Progress: 138/182 records processed
+2025-09-06 12:54:56,181 - INFO - Success: 138 | Failures: 0
+2025-09-06 12:54:56,181 - INFO - Processing batch 70/91 (2 records)...
+2025-09-06 12:55:08,148 - INFO - Batch 70 complete: 2/2 successful
+2025-09-06 12:55:08,148 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:55:08,184 - INFO - Successfully saved 2 records to database
+2025-09-06 12:55:08,184 - INFO - Database updated: 2 records saved
+2025-09-06 12:55:08,184 - INFO - Progress: 140/182 records processed
+2025-09-06 12:55:08,184 - INFO - Success: 140 | Failures: 0
+2025-09-06 12:55:08,184 - INFO - Processing batch 71/91 (2 records)...
+2025-09-06 12:55:19,459 - INFO - Batch 71 complete: 2/2 successful
+2025-09-06 12:55:19,460 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:55:19,495 - INFO - Successfully saved 2 records to database
+2025-09-06 12:55:19,495 - INFO - Database updated: 2 records saved
+2025-09-06 12:55:19,495 - INFO - Progress: 142/182 records processed
+2025-09-06 12:55:19,495 - INFO - Success: 142 | Failures: 0
+2025-09-06 12:55:19,495 - INFO - Processing batch 72/91 (2 records)...
+2025-09-06 12:55:31,055 - INFO - Batch 72 complete: 2/2 successful
+2025-09-06 12:55:31,055 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:55:31,090 - INFO - Successfully saved 2 records to database
+2025-09-06 12:55:31,090 - INFO - Database updated: 2 records saved
+2025-09-06 12:55:31,091 - INFO - Progress: 144/182 records processed
+2025-09-06 12:55:31,091 - INFO - Success: 144 | Failures: 0
+2025-09-06 12:55:31,091 - INFO - Processing batch 73/91 (2 records)...
+2025-09-06 12:55:42,659 - INFO - Batch 73 complete: 2/2 successful
+2025-09-06 12:55:42,659 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:55:42,694 - INFO - Successfully saved 2 records to database
+2025-09-06 12:55:42,694 - INFO - Database updated: 2 records saved
+2025-09-06 12:55:42,694 - INFO - Progress: 146/182 records processed
+2025-09-06 12:55:42,695 - INFO - Success: 146 | Failures: 0
+2025-09-06 12:55:42,695 - INFO - Processing batch 74/91 (2 records)...
+2025-09-06 12:55:54,402 - INFO - Batch 74 complete: 2/2 successful
+2025-09-06 12:55:54,403 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:55:54,438 - INFO - Successfully saved 2 records to database
+2025-09-06 12:55:54,439 - INFO - Database updated: 2 records saved
+2025-09-06 12:55:54,439 - INFO - Progress: 148/182 records processed
+2025-09-06 12:55:54,439 - INFO - Success: 148 | Failures: 0
+2025-09-06 12:55:54,439 - INFO - Processing batch 75/91 (2 records)...
+2025-09-06 12:56:05,978 - INFO - Batch 75 complete: 2/2 successful
+2025-09-06 12:56:05,978 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:56:06,015 - INFO - Successfully saved 2 records to database
+2025-09-06 12:56:06,015 - INFO - Database updated: 2 records saved
+2025-09-06 12:56:06,015 - INFO - Progress: 150/182 records processed
+2025-09-06 12:56:06,015 - INFO - Success: 150 | Failures: 0
+2025-09-06 12:56:06,015 - INFO - Processing batch 76/91 (2 records)...
+2025-09-06 12:56:17,727 - INFO - Batch 76 complete: 2/2 successful
+2025-09-06 12:56:17,727 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:56:17,762 - INFO - Successfully saved 2 records to database
+2025-09-06 12:56:17,762 - INFO - Database updated: 2 records saved
+2025-09-06 12:56:17,762 - INFO - Progress: 152/182 records processed
+2025-09-06 12:56:17,762 - INFO - Success: 152 | Failures: 0
+2025-09-06 12:56:17,762 - INFO - Processing batch 77/91 (2 records)...
+2025-09-06 12:56:28,985 - INFO - Batch 77 complete: 2/2 successful
+2025-09-06 12:56:28,985 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:56:29,021 - INFO - Successfully saved 2 records to database
+2025-09-06 12:56:29,021 - INFO - Database updated: 2 records saved
+2025-09-06 12:56:29,021 - INFO - Progress: 154/182 records processed
+2025-09-06 12:56:29,021 - INFO - Success: 154 | Failures: 0
+2025-09-06 12:56:29,021 - INFO - Processing batch 78/91 (2 records)...
+2025-09-06 12:56:40,895 - INFO - Batch 78 complete: 2/2 successful
+2025-09-06 12:56:40,896 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:56:40,931 - INFO - Successfully saved 2 records to database
+2025-09-06 12:56:40,931 - INFO - Database updated: 2 records saved
+2025-09-06 12:56:40,932 - INFO - Progress: 156/182 records processed
+2025-09-06 12:56:40,932 - INFO - Success: 156 | Failures: 0
+2025-09-06 12:56:40,932 - INFO - Processing batch 79/91 (2 records)...
+2025-09-06 12:56:52,257 - INFO - Batch 79 complete: 2/2 successful
+2025-09-06 12:56:52,257 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:56:52,293 - INFO - Successfully saved 2 records to database
+2025-09-06 12:56:52,293 - INFO - Database updated: 2 records saved
+2025-09-06 12:56:52,293 - INFO - Progress: 158/182 records processed
+2025-09-06 12:56:52,293 - INFO - Success: 158 | Failures: 0
+2025-09-06 12:56:52,293 - INFO - Processing batch 80/91 (2 records)...
+2025-09-06 12:57:13,469 - INFO - Batch 80 complete: 2/2 successful
+2025-09-06 12:57:13,470 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:57:13,505 - INFO - Successfully saved 2 records to database
+2025-09-06 12:57:13,505 - INFO - Database updated: 2 records saved
+2025-09-06 12:57:13,505 - INFO - Progress: 160/182 records processed
+2025-09-06 12:57:13,505 - INFO - Success: 160 | Failures: 0
+2025-09-06 12:57:13,505 - INFO - Processing batch 81/91 (2 records)...
+2025-09-06 12:57:24,501 - INFO - Batch 81 complete: 2/2 successful
+2025-09-06 12:57:24,501 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:57:24,537 - INFO - Successfully saved 2 records to database
+2025-09-06 12:57:24,537 - INFO - Database updated: 2 records saved
+2025-09-06 12:57:24,537 - INFO - Progress: 162/182 records processed
+2025-09-06 12:57:24,537 - INFO - Success: 162 | Failures: 0
+2025-09-06 12:57:24,537 - INFO - Processing batch 82/91 (2 records)...
+2025-09-06 12:57:35,721 - INFO - Batch 82 complete: 2/2 successful
+2025-09-06 12:57:35,722 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:57:35,759 - INFO - Successfully saved 2 records to database
+2025-09-06 12:57:35,759 - INFO - Database updated: 2 records saved
+2025-09-06 12:57:35,759 - INFO - Progress: 164/182 records processed
+2025-09-06 12:57:35,759 - INFO - Success: 164 | Failures: 0
+2025-09-06 12:57:35,759 - INFO - Processing batch 83/91 (2 records)...
+2025-09-06 12:57:47,053 - INFO - Batch 83 complete: 2/2 successful
+2025-09-06 12:57:47,054 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:57:47,089 - INFO - Successfully saved 2 records to database
+2025-09-06 12:57:47,090 - INFO - Database updated: 2 records saved
+2025-09-06 12:57:47,090 - INFO - Progress: 166/182 records processed
+2025-09-06 12:57:47,090 - INFO - Success: 166 | Failures: 0
+2025-09-06 12:57:47,090 - INFO - Processing batch 84/91 (2 records)...
+2025-09-06 12:58:06,261 - INFO - Batch 84 complete: 2/2 successful
+2025-09-06 12:58:06,262 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:58:06,299 - INFO - Successfully saved 2 records to database
+2025-09-06 12:58:06,299 - INFO - Database updated: 2 records saved
+2025-09-06 12:58:06,299 - INFO - Progress: 168/182 records processed
+2025-09-06 12:58:06,299 - INFO - Success: 168 | Failures: 0
+2025-09-06 12:58:06,299 - INFO - Processing batch 85/91 (2 records)...
+2025-09-06 12:58:17,675 - INFO - Batch 85 complete: 2/2 successful
+2025-09-06 12:58:17,675 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:58:17,711 - INFO - Successfully saved 2 records to database
+2025-09-06 12:58:17,711 - INFO - Database updated: 2 records saved
+2025-09-06 12:58:17,711 - INFO - Progress: 170/182 records processed
+2025-09-06 12:58:17,711 - INFO - Success: 170 | Failures: 0
+2025-09-06 12:58:17,711 - INFO - Processing batch 86/91 (2 records)...
+2025-09-06 12:58:29,088 - INFO - Batch 86 complete: 2/2 successful
+2025-09-06 12:58:29,088 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:58:29,123 - INFO - Successfully saved 2 records to database
+2025-09-06 12:58:29,124 - INFO - Database updated: 2 records saved
+2025-09-06 12:58:29,124 - INFO - Progress: 172/182 records processed
+2025-09-06 12:58:29,124 - INFO - Success: 172 | Failures: 0
+2025-09-06 12:58:29,124 - INFO - Processing batch 87/91 (2 records)...
+2025-09-06 12:58:49,925 - INFO - Batch 87 complete: 2/2 successful
+2025-09-06 12:58:49,926 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:58:49,961 - INFO - Successfully saved 2 records to database
+2025-09-06 12:58:49,961 - INFO - Database updated: 2 records saved
+2025-09-06 12:58:49,961 - INFO - Progress: 174/182 records processed
+2025-09-06 12:58:49,961 - INFO - Success: 174 | Failures: 0
+2025-09-06 12:58:49,962 - INFO - Processing batch 88/91 (2 records)...
+2025-09-06 12:59:01,093 - INFO - Batch 88 complete: 2/2 successful
+2025-09-06 12:59:01,093 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:59:01,129 - INFO - Successfully saved 2 records to database
+2025-09-06 12:59:01,129 - INFO - Database updated: 2 records saved
+2025-09-06 12:59:01,129 - INFO - Progress: 176/182 records processed
+2025-09-06 12:59:01,129 - INFO - Success: 176 | Failures: 0
+2025-09-06 12:59:01,129 - INFO - Processing batch 89/91 (2 records)...
+2025-09-06 12:59:12,716 - INFO - Batch 89 complete: 2/2 successful
+2025-09-06 12:59:12,716 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:59:12,751 - INFO - Successfully saved 2 records to database
+2025-09-06 12:59:12,751 - INFO - Database updated: 2 records saved
+2025-09-06 12:59:12,751 - INFO - Progress: 178/182 records processed
+2025-09-06 12:59:12,751 - INFO - Success: 178 | Failures: 0
+2025-09-06 12:59:12,752 - INFO - Processing batch 90/91 (2 records)...
+2025-09-06 12:59:24,078 - INFO - Batch 90 complete: 2/2 successful
+2025-09-06 12:59:24,078 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:59:24,113 - INFO - Successfully saved 2 records to database
+2025-09-06 12:59:24,114 - INFO - Database updated: 2 records saved
+2025-09-06 12:59:24,114 - INFO - Progress: 180/182 records processed
+2025-09-06 12:59:24,114 - INFO - Success: 180 | Failures: 0
+2025-09-06 12:59:24,114 - INFO - Processing batch 91/91 (2 records)...
+2025-09-06 12:59:35,177 - INFO - Batch 91 complete: 2/2 successful
+2025-09-06 12:59:35,177 - INFO - Saving batch of 2 updates to database...
+2025-09-06 12:59:35,212 - INFO - Successfully saved 2 records to database
+2025-09-06 12:59:35,212 - INFO - Database updated: 2 records saved
+2025-09-06 12:59:35,212 - INFO - Progress: 182/182 records processed
+2025-09-06 12:59:35,213 - INFO - Success: 182 | Failures: 0
+2025-09-06 12:59:35,213 - INFO - SwedBank Twitter content generation complete!
+2025-09-06 12:59:35,213 - INFO - Total records updated: 182
+2025-09-06 12:59:35,213 - INFO - Successful generations: 182
+2025-09-06 12:59:35,213 - INFO - Failed generations: 0
+2025-09-06 12:59:35,290 - INFO - SwedBank Twitter Collection Statistics:
+2025-09-06 12:59:35,290 - INFO - Total Twitter records: 282
+2025-09-06 12:59:35,290 - INFO - With generated content: 282
+2025-09-06 12:59:35,290 - INFO - Without generated content: 0
+2025-09-06 12:59:35,328 - INFO - Sample Twitter record structure:
+2025-09-06 12:59:35,328 - INFO -   _id: 68bb12eb35db675a8b09a223
+2025-09-06 12:59:35,328 - INFO -   email_id: travishanna9819@gmail.com
+2025-09-06 12:59:35,328 - INFO -   username: Travis Hanna
+2025-09-06 12:59:35,328 - INFO -   channel: Twitter
+2025-09-06 12:59:35,328 - INFO -   dominant_topic: Balance Update Delayed
+2025-09-06 12:59:35,328 - INFO -   subtopics: Real-time Processing Problems, Process Optimizatio...
+2025-09-06 12:59:35,328 - INFO -   created_at: 2024-11-14T23:14:43Z
+2025-09-06 12:59:35,328 - INFO -   domain: banking
+2025-09-06 12:59:35,328 - INFO -   tweet_id: T784232
+2025-09-06 12:59:35,328 - INFO -   user_id: 167052
+2025-09-06 12:59:35,328 - INFO -   content_generated_at: 2025-09-06T12:30:12.856793
+2025-09-06 12:59:35,328 - INFO -   hashtags: ['#BankingFail', '#DigitalBanking', '#PaymentIssues']
+2025-09-06 12:59:35,328 - INFO -   like_count: 42
+2025-09-06 12:59:35,328 - INFO -   priority: P2 - Medium
+2025-09-06 12:59:35,328 - INFO -   quote_count: 3
+2025-09-06 12:59:35,328 - INFO -   reply_count: 11
+2025-09-06 12:59:35,328 - INFO -   retweet_count: 9
+2025-09-06 12:59:35,328 - INFO -   sentiment: Negative
+2025-09-06 12:59:35,329 - INFO -   text: Honestly, @MyEUBank, still waiting for my balance ...
+2025-09-06 12:59:35,363 - INFO - Database connection closed
+2025-09-06 12:59:35,363 - INFO - Session complete. Check log files:
+2025-09-06 12:59:35,363 - INFO - Main Log: logs/swedbank_twitter_generator_20250906_124035.log
+2025-09-06 12:59:35,363 - INFO - Success Log: logs/successful_twitter_generations_20250906_124035.log
+2025-09-06 12:59:35,364 - INFO - Failure Log: logs/failed_twitter_generations_20250906_124035.log
+2025-09-06 12:59:35,364 - INFO - Database connection closed

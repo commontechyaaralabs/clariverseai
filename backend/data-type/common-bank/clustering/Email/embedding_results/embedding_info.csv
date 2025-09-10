@@ -1,0 +1,156 @@
+keyphrase,embedding_dimension,document_count,has_embedding
+ach processing error,3584,13,True
+aml documentation request,3584,13,True
+api connectivity issue,3584,17,True
+atm network problem,3584,9,True
+account access error,3584,19,True
+account opening issue,3584,18,True
+approval require,3584,12,True
+asset management issue,3584,7,True
+audit firm communication,3584,9,True
+audit trail need,3584,11,True
+authentication problem report,3584,11,True
+balance inquiry problem,3584,8,True
+basel iii requirement,3584,11,True
+beneficial ownership declaration,3584,8,True
+beneficiary bank unavailable,3584,5,True
+good execution report,3584,13,True
+bond trading problem,3584,8,True
+branch service complaint,3584,6,True
+crs report question,3584,19,True
+card network issue,3584,13,True
+card payment dispute,3584,14,True
+cash flow issue,3584,8,True
+cash management issue,3584,10,True
+certificate deposit question,3584,8,True
+check clearing issue,3584,13,True
+clearing house problem,3584,19,True
+client categorization update,3584,14,True
+commercial paper issue,3584,12,True
+complaint resolution request,3584,11,True
+compliance certificate request,3584,10,True
+compliance issue,3584,11,True
+compliance monitor alert,3584,13,True
+consent management dispute,3584,12,True
+consent withdrawal notification,3584,20,True
+consult project report,3584,8,True
+core banking system,3584,10,True
+corporate account issue,3584,11,True
+corporate loan inquiry,3584,11,True
+covenant breach alert,3584,16,True
+covenant compliance question,3584,20,True
+credit facility question,3584,9,True
+credit line utilization,3584,19,True
+cross border regulatory question,3584,7,True
+cross border transfer problem,3584,17,True
+custody service problem,3584,14,True
+customer feedback report,3584,4,True
+customer service escalation,3584,16,True
+cybersecurity incident report,3584,9,True
+datum breach warning,3584,15,True
+data retention question,3584,13,True
+datum sharing problem,3584,10,True
+deposit service issue,3584,11,True
+derivative question alert,3584,14,True
+digital banking error,3584,12,True
+digital platform malfunction,3584,16,True
+digital wallet issue,3584,9,True
+direct debit return,3584,12,True
+documentary collection issue,3584,9,True
+ecb policy update,3584,20,True
+eu passporte service,3584,9,True
+eu taxonomy report,3584,11,True
+enhance diligence,3584,8,True
+euro clearing problem,3584,8,True
+executive decision require,3584,17,True
+executive escalation email,3584,20,True
+export credit issue,3584,14,True
+export documentation error,3584,14,True
+fatca compliance issue,3584,14,True
+fx execution problem,3584,8,True
+facility renewal inquiry,3584,11,True
+fee clarification need,3584,13,True
+fee dispute email,3584,13,True
+fintech integration error,3584,15,True
+foreign exchange problem,3584,15,True
+fund transfer problem,3584,15,True
+gdpr access request,3584,20,True
+guarantee execution problem,3584,6,True
+access problem,3584,26,True
+marketing unresolved,3584,27,True
+import finance question,3584,13,True
+instant payment reject,3584,12,True
+integration problem report,3584,12,True
+interest rate query,3584,7,True
+internal audit,3584,11,True
+international transfer question,3584,15,True
+investment advisory question,3584,10,True
+investment service question,3584,8,True
+kyc documentation problem,3584,18,True
+legal advisor update,3584,9,True
+legal escalation,3584,22,True
+legal notice response,3584,13,True
+letter credit amendment,3584,18,True
+letter credit processing,3584,7,True
+liquidity facility problem,3584,11,True
+medium inquiry email,3584,7,True
+merchant service problem,3584,13,True
+mifid investment inquiry,3584,19,True
+mobile app issue,3584,12,True
+mobile authentication error,3584,16,True
+monitor system alert,3584,13,True
+multi currency statement need,3584,15,True
+online banking problem,3584,15,True
+open banking api,3584,12,True
+overdraft facility request,3584,9,True
+pos terminal issue,3584,11,True
+psd2 compliance question,3584,8,True
+payment service problem,3584,15,True
+performance management,3584,22,True
+personal data inquiry,3584,12,True
+phone banking issue,3584,12,True
+private banking service,3584,12,True
+process exception,3584,22,True
+process improvement request,3584,13,True
+processing delay complaint,3584,16,True
+process information need,3584,11,True
+quality assurance breach,3584,28,True
+quality assurance issue,3584,12,True
+regtech alert,3584,14,True
+regulatory documentation need,3584,15,True
+relationship manager request,3584,17,True
+report discrepancy alert,3584,9,True
+report platform issue,3584,15,True
+right erasure demand,3584,10,True
+risk assessment update,3584,10,True
+risk management alert,3584,31,True
+sepa instant failure,3584,12,True
+sepa payment failure,3584,19,True
+sepa payment status,3584,14,True
+sepa processing error,3584,10,True
+salary leave issue,3584,23,True
+sanction screen alert,3584,12,True
+satisfaction survey result,3584,5,True
+security incident alert,3584,8,True
+service level breach,3584,10,True
+service quality complaint,3584,11,True
+staff performance issue,3584,10,True
+strong customer authentication,3584,15,True
+system outage notification,3584,11,True
+target2 settlement issue,3584,11,True
+tpp access problem,3584,11,True
+tax withholding problem,3584,10,True
+technology emergency,3584,19,True
+party provider,3584,14,True
+trade documentation error,3584,6,True
+trade finance delay,3584,10,True
+training need alert,3584,13,True
+transaction dispute report,3584,8,True
+transaction processing error,3584,16,True
+treasury service problem,3584,8,True
+treasury system error,3584,8,True
+factor authentication error,3584,5,True
+user access approval,3584,30,True
+vendor management,3584,22,True
+wealth management issue,3584,10,True
+wire transfer delay,3584,10,True

@@ -1,0 +1,25 @@
+Customers with 6 record(s) each
+Total customers: 20
+Total records: 120
+================================================================================
+
+   1. CUST1581 - Anthony Johnson (anthonyjohnson9727@gmail.com)
+   2. CUST1582 - Kristen White (kristenwhite8490@gmail.com)
+   3. CUST1583 - Scott Riley (scottriley3204@gmail.com)
+   4. CUST1584 - David Richardson (davidrichardson9339@gmail.com)
+   5. CUST1585 - Keith Jenkins (keithjenkins3214@gmail.com)
+   6. CUST1586 - Karen Cooper (karencooper3418@gmail.com)
+   7. CUST1587 - Mr. Kevin Thompson (mrkevinthompson6004@gmail.com)
+   8. CUST1588 - Lisa Cherry (lisacherry8128@gmail.com)
+   9. CUST1589 - Adam Hill (adamhill1805@gmail.com)
+  10. CUST1590 - Andrea Butler (andreabutler6647@gmail.com)
+  11. CUST1591 - Nicole Fitzgerald (nicolefitzgerald7968@gmail.com)
+  12. CUST1592 - Rachel Leonard (rachelleonard6985@gmail.com)
+  13. CUST1593 - Larry Anderson (larryanderson4232@gmail.com)
+  14. CUST1594 - Mr. Norman Ponce DVM (mrnormanponcedvm5123@gmail.com)
+  15. CUST1595 - Melissa Scott (melissascott1141@gmail.com)
+  16. CUST1596 - Ryan Owens (ryanowens4696@gmail.com)
+  17. CUST1597 - Joann Wolfe (joannwolfe5700@gmail.com)
+  18. CUST1598 - Cynthia Melendez (cynthiamelendez6181@gmail.com)
+  19. CUST1599 - Ryan Silva (ryansilva9460@gmail.com)
+  20. CUST1600 - Paula Duncan (pauladuncan8322@gmail.com)

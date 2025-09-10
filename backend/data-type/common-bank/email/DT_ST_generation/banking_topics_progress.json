@@ -1,0 +1,2517 @@
+{
+  "generation_started": "2025-08-20 13:21:55",
+  "last_updated": "2025-08-20 13:47:11",
+  "target_topics": 191,
+  "current_count": 93,
+  "batches_completed": 30,
+  "topics": [
+    {
+      "dominant_topic": "NPL Resolution",
+      "subtopics": [
+        {
+          "name": "Asset Sales",
+          "weight": 0.003775
+        },
+        {
+          "name": "Debt Restructuring",
+          "weight": 0.00302
+        },
+        {
+          "name": "REO Management",
+          "weight": 0.002014
+        },
+        {
+          "name": "Securitization Schemes",
+          "weight": 0.002517
+        }
+      ],
+      "topic_weight": 0.011326
+    },
+    {
+      "dominant_topic": "KYC Remediation",
+      "subtopics": [
+        {
+          "name": "Data Enrichment",
+          "weight": 0.004531
+        },
+        {
+          "name": "Sanctions Screening",
+          "weight": 0.003776
+        },
+        {
+          "name": "Politically Exposed",
+          "weight": 0.002769
+        },
+        {
+          "name": "CDD Updates",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.012837
+    },
+    {
+      "dominant_topic": "Basel IV Impact",
+      "subtopics": [
+        {
+          "name": "Output Floor",
+          "weight": 0.005034
+        },
+        {
+          "name": "IRRBB Modelling",
+          "weight": 0.004027
+        },
+        {
+          "name": "Credit Valuation",
+          "weight": 0.00302
+        },
+        {
+          "name": "Operational Risk",
+          "weight": 0.00151
+        }
+      ],
+      "topic_weight": 0.013592
+    },
+    {
+      "dominant_topic": "Open Banking APIs",
+      "subtopics": [
+        {
+          "name": "Account Information",
+          "weight": 0.003524
+        },
+        {
+          "name": "Payment Initiation",
+          "weight": 0.004279
+        },
+        {
+          "name": "Third Party Access",
+          "weight": 0.002769
+        },
+        {
+          "name": "API Security",
+          "weight": 0.002014
+        }
+      ],
+      "topic_weight": 0.012585
+    },
+    {
+      "dominant_topic": "ESG Integration",
+      "subtopics": [
+        {
+          "name": "Climate Risk",
+          "weight": 0.004782
+        },
+        {
+          "name": "Social Lending",
+          "weight": 0.003272
+        },
+        {
+          "name": "Governance Scores",
+          "weight": 0.002517
+        },
+        {
+          "name": "Impact Investing",
+          "weight": 0.002014
+        }
+      ],
+      "topic_weight": 0.012585
+    },
+    {
+      "dominant_topic": "Digital Wallet Adoption",
+      "subtopics": [
+        {
+          "name": "Mobile Payments",
+          "weight": 0.004027
+        },
+        {
+          "name": "NFC Technology",
+          "weight": 0.00302
+        },
+        {
+          "name": "QR Code Usage",
+          "weight": 0.002517
+        },
+        {
+          "name": "Tokenization Trends",
+          "weight": 0.002265
+        }
+      ],
+      "topic_weight": 0.01183
+    },
+    {
+      "dominant_topic": "Cross-Border Payments",
+      "subtopics": [
+        {
+          "name": "Correspondent Banking",
+          "weight": 0.003775
+        },
+        {
+          "name": "SWIFT Messaging",
+          "weight": 0.003272
+        },
+        {
+          "name": "FX Volatility",
+          "weight": 0.002769
+        },
+        {
+          "name": "Reporting Requirements",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.011578
+    },
+    {
+      "dominant_topic": "FinTech Collaboration",
+      "subtopics": [
+        {
+          "name": "RegTech Solutions",
+          "weight": 0.004279
+        },
+        {
+          "name": "InsurTech Partnerships",
+          "weight": 0.003524
+        },
+        {
+          "name": "AI Integration",
+          "weight": 0.002517
+        },
+        {
+          "name": "Cloud Migration",
+          "weight": 0.002014
+        }
+      ],
+      "topic_weight": 0.012333
+    },
+    {
+      "dominant_topic": "Liquidity Coverage",
+      "subtopics": [
+        {
+          "name": "HQLA Holdings",
+          "weight": 0.004531
+        },
+        {
+          "name": "Stress Scenario",
+          "weight": 0.003776
+        },
+        {
+          "name": "Funding Diversification",
+          "weight": 0.002517
+        },
+        {
+          "name": "Intraday Liquidity",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.012585
+    },
+    {
+      "dominant_topic": "Fraud Detection",
+      "subtopics": [
+        {
+          "name": "Transaction Monitoring",
+          "weight": 0.005537
+        },
+        {
+          "name": "Anomaly Detection",
+          "weight": 0.003776
+        },
+        {
+          "name": "Card Fraud",
+          "weight": 0.002769
+        },
+        {
+          "name": "Phishing Attacks",
+          "weight": 0.00151
+        }
+      ],
+      "topic_weight": 0.013592
+    },
+    {
+      "dominant_topic": "Credit Risk Modelling",
+      "subtopics": [
+        {
+          "name": "PD Calibration",
+          "weight": 0.004027
+        },
+        {
+          "name": "LGD Estimation",
+          "weight": 0.003524
+        },
+        {
+          "name": "EAD Calculation",
+          "weight": 0.00302
+        },
+        {
+          "name": "Model Validation",
+          "weight": 0.002014
+        }
+      ],
+      "topic_weight": 0.012585
+    },
+    {
+      "dominant_topic": "Branch Optimization",
+      "subtopics": [
+        {
+          "name": "Digital Channels",
+          "weight": 0.004782
+        },
+        {
+          "name": "ATM Networks",
+          "weight": 0.003272
+        },
+        {
+          "name": "Cost Reduction",
+          "weight": 0.002517
+        },
+        {
+          "name": "Customer Experience",
+          "weight": 0.002014
+        }
+      ],
+      "topic_weight": 0.012585
+    },
+    {
+      "dominant_topic": "Data Privacy",
+      "subtopics": [
+        {
+          "name": "GDPR Compliance",
+          "weight": 0.005034
+        },
+        {
+          "name": "Data Encryption",
+          "weight": 0.003775
+        },
+        {
+          "name": "Consent Management",
+          "weight": 0.002517
+        },
+        {
+          "name": "Data Breaches",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.013088
+    },
+    {
+      "dominant_topic": "Cyber Resilience",
+      "subtopics": [
+        {
+          "name": "Incident Response",
+          "weight": 0.004279
+        },
+        {
+          "name": "Threat Intelligence",
+          "weight": 0.003524
+        },
+        {
+          "name": "Vulnerability Scanning",
+          "weight": 0.002769
+        },
+        {
+          "name": "Security Awareness",
+          "weight": 0.002014
+        }
+      ],
+      "topic_weight": 0.012585
+    },
+    {
+      "dominant_topic": "Regulatory Reporting",
+      "subtopics": [
+        {
+          "name": "COREP Submission",
+          "weight": 0.004027
+        },
+        {
+          "name": "FINREP Reporting",
+          "weight": 0.003524
+        },
+        {
+          "name": "XBRL Taxonomy",
+          "weight": 0.002517
+        },
+        {
+          "name": "Data Quality",
+          "weight": 0.002265
+        }
+      ],
+      "topic_weight": 0.012333
+    },
+    {
+      "dominant_topic": "TARGET2 Volatility",
+      "subtopics": [
+        {
+          "name": "Collateral Management",
+          "weight": 0.003776
+        },
+        {
+          "name": "Settlement Delays",
+          "weight": 0.001762
+        },
+        {
+          "name": "System Outages",
+          "weight": 0.002517
+        },
+        {
+          "name": "Margin Calls",
+          "weight": 0.002265
+        }
+      ],
+      "topic_weight": 0.01032
+    },
+    {
+      "dominant_topic": "MiFID II Costs",
+      "subtopics": [
+        {
+          "name": "Transaction Reporting",
+          "weight": 0.00302
+        },
+        {
+          "name": "Research Unbundling",
+          "weight": 0.002769
+        },
+        {
+          "name": "Best Execution",
+          "weight": 0.002014
+        },
+        {
+          "name": "Client Categorisation",
+          "weight": 0.002517
+        }
+      ],
+      "topic_weight": 0.01032
+    },
+    {
+      "dominant_topic": "Euro Clearing Fees",
+      "subtopics": [
+        {
+          "name": "Central Counterparty",
+          "weight": 0.003272
+        },
+        {
+          "name": "Settlement Costs",
+          "weight": 0.002769
+        },
+        {
+          "name": "Post-Trade Services",
+          "weight": 0.002014
+        },
+        {
+          "name": "Margin Requirements",
+          "weight": 0.002265
+        }
+      ],
+      "topic_weight": 0.01032
+    },
+    {
+      "dominant_topic": "AML Transaction Monitoring",
+      "subtopics": [
+        {
+          "name": "Pattern Recognition",
+          "weight": 0.002517
+        },
+        {
+          "name": "False Positives",
+          "weight": 0.00302
+        },
+        {
+          "name": "Threshold Adjustments",
+          "weight": 0.001762
+        },
+        {
+          "name": "Alert Investigation",
+          "weight": 0.002769
+        }
+      ],
+      "topic_weight": 0.010068
+    },
+    {
+      "dominant_topic": "Trade Finance Guarantees",
+      "subtopics": [
+        {
+          "name": "Confirmation Process",
+          "weight": 0.002265
+        },
+        {
+          "name": "Beneficiary Risks",
+          "weight": 0.002769
+        },
+        {
+          "name": "Document Discrepancies",
+          "weight": 0.002013
+        },
+        {
+          "name": "Expiry Management",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.008809
+    },
+    {
+      "dominant_topic": "Capital Adequacy Ratios",
+      "subtopics": [
+        {
+          "name": "CET1 Calculation",
+          "weight": 0.003524
+        },
+        {
+          "name": "Risk Weighted Assets",
+          "weight": 0.002769
+        },
+        {
+          "name": "Pillar Two Review",
+          "weight": 0.001762
+        },
+        {
+          "name": "Internal Models",
+          "weight": 0.002014
+        }
+      ],
+      "topic_weight": 0.010068
+    },
+    {
+      "dominant_topic": "Direct Debit Returns",
+      "subtopics": [
+        {
+          "name": "Insufficient Funds",
+          "weight": 0.003775
+        },
+        {
+          "name": "Account Closure",
+          "weight": 0.002265
+        },
+        {
+          "name": "Mandate Issues",
+          "weight": 0.002517
+        },
+        {
+          "name": "Dispute Resolution",
+          "weight": 0.00151
+        }
+      ],
+      "topic_weight": 0.010068
+    },
+    {
+      "dominant_topic": "ECB Policy Signals",
+      "subtopics": [
+        {
+          "name": "Interest Rate Guidance",
+          "weight": 0.00302
+        },
+        {
+          "name": "Quantitative Tightening",
+          "weight": 0.002517
+        },
+        {
+          "name": "Forward Guidance",
+          "weight": 0.002014
+        },
+        {
+          "name": "Macroprudential Measures",
+          "weight": 0.002265
+        }
+      ],
+      "topic_weight": 0.009816
+    },
+    {
+      "dominant_topic": "Securitisation Structures",
+      "subtopics": [
+        {
+          "name": "True Sale Analysis",
+          "weight": 0.002769
+        },
+        {
+          "name": "Credit Enhancement",
+          "weight": 0.002517
+        },
+        {
+          "name": "Retention Requirements",
+          "weight": 0.001762
+        },
+        {
+          "name": "SPV Oversight",
+          "weight": 0.002014
+        }
+      ],
+      "topic_weight": 0.009061
+    },
+    {
+      "dominant_topic": "Trade Document Checks",
+      "subtopics": [
+        {
+          "name": "UCP 600 Rules",
+          "weight": 0.003021
+        },
+        {
+          "name": "Discrepancy Handling",
+          "weight": 0.002517
+        },
+        {
+          "name": "Bill of Lading",
+          "weight": 0.001762
+        },
+        {
+          "name": "Invoice Validation",
+          "weight": 0.002265
+        }
+      ],
+      "topic_weight": 0.009565
+    },
+    {
+      "dominant_topic": "PSD2 Strong Authentication",
+      "subtopics": [
+        {
+          "name": "SCA Compliance",
+          "weight": 0.002769
+        },
+        {
+          "name": "Biometric Login",
+          "weight": 0.002014
+        },
+        {
+          "name": "Transaction Limits",
+          "weight": 0.002265
+        },
+        {
+          "name": "Exemption Rules",
+          "weight": 0.002517
+        }
+      ],
+      "topic_weight": 0.009565
+    },
+    {
+      "dominant_topic": "Internal Audit Findings",
+      "subtopics": [
+        {
+          "name": "Control Weaknesses",
+          "weight": 0.003272
+        },
+        {
+          "name": "Process Gaps",
+          "weight": 0.002517
+        },
+        {
+          "name": "Remediation Plans",
+          "weight": 0.002265
+        },
+        {
+          "name": "Report Accuracy",
+          "weight": 0.002014
+        }
+      ],
+      "topic_weight": 0.010068
+    },
+    {
+      "dominant_topic": "FX Exposure Management",
+      "subtopics": [
+        {
+          "name": "Hedging Strategies",
+          "weight": 0.003021
+        },
+        {
+          "name": "Currency Swaps",
+          "weight": 0.002517
+        },
+        {
+          "name": "Netting Agreements",
+          "weight": 0.001762
+        },
+        {
+          "name": "Translation Risk",
+          "weight": 0.002265
+        }
+      ],
+      "topic_weight": 0.009565
+    },
+    {
+      "dominant_topic": "Stress Test Scenarios",
+      "subtopics": [
+        {
+          "name": "Recession Modeling",
+          "weight": 0.002769
+        },
+        {
+          "name": "Market Shocks",
+          "weight": 0.002265
+        },
+        {
+          "name": "Reverse Stressing",
+          "weight": 0.002014
+        },
+        {
+          "name": "Sensitivity Analysis",
+          "weight": 0.002517
+        }
+      ],
+      "topic_weight": 0.009565
+    },
+    {
+      "dominant_topic": "Correspondent Bank Due Diligence",
+      "subtopics": [
+        {
+          "name": "Ownership Structure",
+          "weight": 0.002013
+        },
+        {
+          "name": "Reputational Risk",
+          "weight": 0.002769
+        },
+        {
+          "name": "Geographic Location",
+          "weight": 0.002265
+        },
+        {
+          "name": "Control Frameworks",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.008809
+    },
+    {
+      "dominant_topic": "Eurozone Credit Risk",
+      "subtopics": [
+        {
+          "name": "Sovereign Exposure",
+          "weight": 0.004027
+        },
+        {
+          "name": "NPL Management",
+          "weight": 0.003524
+        },
+        {
+          "name": "Real Estate Bubbles",
+          "weight": 0.002014
+        },
+        {
+          "name": "Corporate Defaults",
+          "weight": 0.002769
+        }
+      ],
+      "topic_weight": 0.012333
+    },
+    {
+      "dominant_topic": "SEPA Direct Debit",
+      "subtopics": [
+        {
+          "name": "Mandate Validity",
+          "weight": 0.003021
+        },
+        {
+          "name": "Rejection Rates",
+          "weight": 0.002517
+        },
+        {
+          "name": "Refund Requests",
+          "weight": 0.002265
+        },
+        {
+          "name": "Schemes Variations",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.009565
+    },
+    {
+      "dominant_topic": "Digital Wallet Security",
+      "subtopics": [
+        {
+          "name": "Tokenization Issues",
+          "weight": 0.003776
+        },
+        {
+          "name": "Biometric Authentication",
+          "weight": 0.002769
+        },
+        {
+          "name": "Account Takeovers",
+          "weight": 0.003272
+        },
+        {
+          "name": "Device Fingerprinting",
+          "weight": 0.002014
+        }
+      ],
+      "topic_weight": 0.01183
+    },
+    {
+      "dominant_topic": "Cross-Border Transfers",
+      "subtopics": [
+        {
+          "name": "Currency Conversion",
+          "weight": 0.002517
+        },
+        {
+          "name": "Reporting Thresholds",
+          "weight": 0.00302
+        },
+        {
+          "name": "Tax Implications",
+          "weight": 0.002014
+        },
+        {
+          "name": "Correspondent Banks",
+          "weight": 0.002769
+        }
+      ],
+      "topic_weight": 0.01032
+    },
+    {
+      "dominant_topic": "Digital Onboarding Flows",
+      "subtopics": [
+        {
+          "name": "ID Verification",
+          "weight": 0.003524
+        },
+        {
+          "name": "Remote Signatures",
+          "weight": 0.002769
+        },
+        {
+          "name": "KYC Automation",
+          "weight": 0.002265
+        },
+        {
+          "name": "Account Activation",
+          "weight": 0.002517
+        }
+      ],
+      "topic_weight": 0.011075
+    },
+    {
+      "dominant_topic": "Loan Loss Provisions",
+      "subtopics": [
+        {
+          "name": "IFRS 9 Modeling",
+          "weight": 0.004027
+        },
+        {
+          "name": "Expected Credit Loss",
+          "weight": 0.003021
+        },
+        {
+          "name": "Macroeconomic Forecasts",
+          "weight": 0.002265
+        },
+        {
+          "name": "Stage 3 Assets",
+          "weight": 0.002769
+        }
+      ],
+      "topic_weight": 0.012082
+    },
+    {
+      "dominant_topic": "Payment Scheme Migration",
+      "subtopics": [
+        {
+          "name": "System Integration",
+          "weight": 0.003272
+        },
+        {
+          "name": "Data Mapping",
+          "weight": 0.002769
+        },
+        {
+          "name": "User Training",
+          "weight": 0.002014
+        },
+        {
+          "name": "Parallel Runs",
+          "weight": 0.002517
+        }
+      ],
+      "topic_weight": 0.010571
+    },
+    {
+      "dominant_topic": "Vendor Risk Assessments",
+      "subtopics": [
+        {
+          "name": "Cloud Security",
+          "weight": 0.003775
+        },
+        {
+          "name": "Data Resilience",
+          "weight": 0.002517
+        },
+        {
+          "name": "Service Level",
+          "weight": 0.002265
+        },
+        {
+          "name": "Business Continuity",
+          "weight": 0.00302
+        }
+      ],
+      "topic_weight": 0.011578
+    },
+    {
+      "dominant_topic": "Euro Bond Issuance",
+      "subtopics": [
+        {
+          "name": "Yield Curves",
+          "weight": 0.00302
+        },
+        {
+          "name": "Credit Spreads",
+          "weight": 0.002517
+        },
+        {
+          "name": "Investor Demand",
+          "weight": 0.002769
+        },
+        {
+          "name": "Sovereign Risk",
+          "weight": 0.002265
+        }
+      ],
+      "topic_weight": 0.010571
+    },
+    {
+      "dominant_topic": "Consumer Credit Risk",
+      "subtopics": [
+        {
+          "name": "Default Rates",
+          "weight": 0.004531
+        },
+        {
+          "name": "Loan Loss",
+          "weight": 0.003021
+        },
+        {
+          "name": "Debt Service",
+          "weight": 0.002517
+        },
+        {
+          "name": "Credit Scoring",
+          "weight": 0.002014
+        }
+      ],
+      "topic_weight": 0.012082
+    },
+    {
+      "dominant_topic": "Branch Network Cuts",
+      "subtopics": [
+        {
+          "name": "Cost Optimization",
+          "weight": 0.003776
+        },
+        {
+          "name": "Digital Migration",
+          "weight": 0.00302
+        },
+        {
+          "name": "Customer Impact",
+          "weight": 0.002517
+        },
+        {
+          "name": "Real Estate",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.011075
+    },
+    {
+      "dominant_topic": "Letters of Credit",
+      "subtopics": [
+        {
+          "name": "Discrepancy Rates",
+          "weight": 0.004027
+        },
+        {
+          "name": "Confirmation Fees",
+          "weight": 0.002769
+        },
+        {
+          "name": "Document Validity",
+          "weight": 0.002517
+        },
+        {
+          "name": "Expiry Dates",
+          "weight": 0.002014
+        }
+      ],
+      "topic_weight": 0.011326
+    },
+    {
+      "dominant_topic": "ESG Loan Standards",
+      "subtopics": [
+        {
+          "name": "Green Financing",
+          "weight": 0.004279
+        },
+        {
+          "name": "Social Impact",
+          "weight": 0.00302
+        },
+        {
+          "name": "Reporting Metrics",
+          "weight": 0.002769
+        },
+        {
+          "name": "Due Diligence",
+          "weight": 0.002265
+        }
+      ],
+      "topic_weight": 0.012333
+    },
+    {
+      "dominant_topic": "Mortgage Rate Hikes",
+      "subtopics": [
+        {
+          "name": "Affordability Stress",
+          "weight": 0.003776
+        },
+        {
+          "name": "Repossession Risk",
+          "weight": 0.00302
+        },
+        {
+          "name": "Fixed vs Variable",
+          "weight": 0.002769
+        },
+        {
+          "name": "LTV Ratios",
+          "weight": 0.002265
+        }
+      ],
+      "topic_weight": 0.01183
+    },
+    {
+      "dominant_topic": "Pan-European Payments",
+      "subtopics": [
+        {
+          "name": "Instant Transfers",
+          "weight": 0.004027
+        },
+        {
+          "name": "Cross Border Fees",
+          "weight": 0.002517
+        },
+        {
+          "name": "Harmonization Efforts",
+          "weight": 0.003021
+        }
+      ],
+      "topic_weight": 0.009565
+    },
+    {
+      "dominant_topic": "SME Lending Criteria",
+      "subtopics": [
+        {
+          "name": "Credit Guarantees",
+          "weight": 0.003775
+        },
+        {
+          "name": "Collateral Requirements",
+          "weight": 0.00302
+        },
+        {
+          "name": "Turnover Ratios",
+          "weight": 0.002517
+        },
+        {
+          "name": "Cash Flow Analysis",
+          "weight": 0.002265
+        }
+      ],
+      "topic_weight": 0.011578
+    },
+    {
+      "dominant_topic": "Letter of Credit Discrepancies",
+      "subtopics": [
+        {
+          "name": "Document Mismatches",
+          "weight": 0.003775
+        },
+        {
+          "name": "Shipping Terms",
+          "weight": 0.002769
+        },
+        {
+          "name": "Invoice Discrepancies",
+          "weight": 0.00302
+        },
+        {
+          "name": "Expiry Issues",
+          "weight": 0.002014
+        }
+      ],
+      "topic_weight": 0.011578
+    },
+    {
+      "dominant_topic": "Digital Wallet Integration",
+      "subtopics": [
+        {
+          "name": "Tokenization Services",
+          "weight": 0.003524
+        },
+        {
+          "name": "Mobile Authentication",
+          "weight": 0.002769
+        },
+        {
+          "name": "QR Code Payments",
+          "weight": 0.002265
+        },
+        {
+          "name": "NFC Transactions",
+          "weight": 0.002014
+        }
+      ],
+      "topic_weight": 0.010571
+    },
+    {
+      "dominant_topic": "Trade Document Automation",
+      "subtopics": [
+        {
+          "name": "Optical Character",
+          "weight": 0.00302
+        },
+        {
+          "name": "Blockchain Integration",
+          "weight": 0.002517
+        },
+        {
+          "name": "Workflow Automation",
+          "weight": 0.002014
+        },
+        {
+          "name": "Digital Signatures",
+          "weight": 0.002769
+        }
+      ],
+      "topic_weight": 0.01032
+    },
+    {
+      "dominant_topic": "Real Estate Exposure",
+      "subtopics": [
+        {
+          "name": "Property Valuation",
+          "weight": 0.003272
+        },
+        {
+          "name": "Loan to Value",
+          "weight": 0.002769
+        },
+        {
+          "name": "Foreclosure Process",
+          "weight": 0.002265
+        },
+        {
+          "name": "Market Analysis",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.010068
+    },
+    {
+      "dominant_topic": "Basel III Capital",
+      "subtopics": [
+        {
+          "name": "CET1 Ratio",
+          "weight": 0.003272
+        },
+        {
+          "name": "Risk Weighted",
+          "weight": 0.00302
+        },
+        {
+          "name": "Leverage Ratio",
+          "weight": 0.002014
+        },
+        {
+          "name": "Capital Buffers",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.010068
+    },
+    {
+      "dominant_topic": "Loan Portfolio Reviews",
+      "subtopics": [
+        {
+          "name": "Credit Quality",
+          "weight": 0.00302
+        },
+        {
+          "name": "Impairment Losses",
+          "weight": 0.002769
+        },
+        {
+          "name": "Concentration Limits",
+          "weight": 0.002014
+        },
+        {
+          "name": "Provisioning Adequacy",
+          "weight": 0.002265
+        }
+      ],
+      "topic_weight": 0.010068
+    },
+    {
+      "dominant_topic": "Trade Document Errors",
+      "subtopics": [
+        {
+          "name": "Incoterms Discrepancies",
+          "weight": 0.002769
+        },
+        {
+          "name": "Quantity Issues",
+          "weight": 0.002517
+        },
+        {
+          "name": "Description Mismatches",
+          "weight": 0.002265
+        },
+        {
+          "name": "Insurance Coverage",
+          "weight": 0.002517
+        }
+      ],
+      "topic_weight": 0.010068
+    },
+    {
+      "dominant_topic": "Instant Payment Limits",
+      "subtopics": [
+        {
+          "name": "Daily Thresholds",
+          "weight": 0.00302
+        },
+        {
+          "name": "Transaction Caps",
+          "weight": 0.002769
+        },
+        {
+          "name": "Velocity Checks",
+          "weight": 0.002014
+        },
+        {
+          "name": "Risk Scoring",
+          "weight": 0.002265
+        }
+      ],
+      "topic_weight": 0.010068
+    },
+    {
+      "dominant_topic": "Recovery Plan Updates",
+      "subtopics": [
+        {
+          "name": "Liquidity Coverage",
+          "weight": 0.003272
+        },
+        {
+          "name": "Resolution Planning",
+          "weight": 0.002517
+        },
+        {
+          "name": "Operational Resilience",
+          "weight": 0.002265
+        },
+        {
+          "name": "Contingency Funding",
+          "weight": 0.002014
+        }
+      ],
+      "topic_weight": 0.010068
+    },
+    {
+      "dominant_topic": "Eurozone Inflation Impact",
+      "subtopics": [
+        {
+          "name": "Interest Rate",
+          "weight": 0.003775
+        },
+        {
+          "name": "Deposit Pricing",
+          "weight": 0.002517
+        },
+        {
+          "name": "Loan Repricing",
+          "weight": 0.002014
+        },
+        {
+          "name": "Asset Valuation",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.010068
+    },
+    {
+      "dominant_topic": "Credit Risk Modeling",
+      "subtopics": [
+        {
+          "name": "PD Estimation",
+          "weight": 0.003776
+        },
+        {
+          "name": "Loss Given Default",
+          "weight": 0.00302
+        },
+        {
+          "name": "Exposure At Default",
+          "weight": 0.002769
+        },
+        {
+          "name": "Scorecard Validation",
+          "weight": 0.002265
+        }
+      ],
+      "topic_weight": 0.01183
+    },
+    {
+      "dominant_topic": "Liquidity Coverage Ratio",
+      "subtopics": [
+        {
+          "name": "High Quality Assets",
+          "weight": 0.003272
+        },
+        {
+          "name": "Net Cash Outflows",
+          "weight": 0.00302
+        },
+        {
+          "name": "Stress Scenario Impact",
+          "weight": 0.002014
+        },
+        {
+          "name": "Reporting Accuracy",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.010068
+    },
+    {
+      "dominant_topic": "GDPR Data Subject",
+      "subtopics": [
+        {
+          "name": "Access Requests",
+          "weight": 0.00302
+        },
+        {
+          "name": "Data Portability",
+          "weight": 0.002265
+        },
+        {
+          "name": "Right to Erasure",
+          "weight": 0.002769
+        },
+        {
+          "name": "Consent Withdrawal",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.009816
+    },
+    {
+      "dominant_topic": "Payment Scheme Updates",
+      "subtopics": [
+        {
+          "name": "Rulebook Changes",
+          "weight": 0.002769
+        },
+        {
+          "name": "Message Formats",
+          "weight": 0.002517
+        },
+        {
+          "name": "Implementation Timelines",
+          "weight": 0.002014
+        },
+        {
+          "name": "Testing Procedures",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.009061
+    },
+    {
+      "dominant_topic": "Overdraft Facility Limits",
+      "subtopics": [
+        {
+          "name": "Credit Score",
+          "weight": 0.003021
+        },
+        {
+          "name": "Income Verification",
+          "weight": 0.002517
+        },
+        {
+          "name": "Usage Patterns",
+          "weight": 0.002265
+        },
+        {
+          "name": "Risk Assessment",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.009565
+    },
+    {
+      "dominant_topic": "Consumer Credit Regulations",
+      "subtopics": [
+        {
+          "name": "APR Disclosure",
+          "weight": 0.002769
+        },
+        {
+          "name": "Creditworthiness Assessment",
+          "weight": 0.002265
+        },
+        {
+          "name": "Debt Collection",
+          "weight": 0.002013
+        },
+        {
+          "name": "Over-Indebtedness",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.008809
+    },
+    {
+      "dominant_topic": "Collateral Valuation",
+      "subtopics": [
+        {
+          "name": "Property Appraisals",
+          "weight": 0.00302
+        },
+        {
+          "name": "Market Data",
+          "weight": 0.002265
+        },
+        {
+          "name": "Haircut Policies",
+          "weight": 0.002014
+        },
+        {
+          "name": "Independent Review",
+          "weight": 0.001259
+        }
+      ],
+      "topic_weight": 0.008558
+    },
+    {
+      "dominant_topic": "Card Payment Disputes",
+      "subtopics": [
+        {
+          "name": "Chargeback Reasons",
+          "weight": 0.003775
+        },
+        {
+          "name": "Merchant Disputes",
+          "weight": 0.002517
+        },
+        {
+          "name": "Fraud Claims",
+          "weight": 0.002014
+        },
+        {
+          "name": "Evidence Submission",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.010068
+    },
+    {
+      "dominant_topic": "Euro Liquidity Management",
+      "subtopics": [
+        {
+          "name": "ECB Funding",
+          "weight": 0.003272
+        },
+        {
+          "name": "Reserve Requirements",
+          "weight": 0.002769
+        },
+        {
+          "name": "Interbank Lending",
+          "weight": 0.002265
+        },
+        {
+          "name": "Collateral Pools",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.010068
+    },
+    {
+      "dominant_topic": "Securities Settlement Failures",
+      "subtopics": [
+        {
+          "name": "Delivery Issues",
+          "weight": 0.003524
+        },
+        {
+          "name": "Market Disruptions",
+          "weight": 0.002517
+        },
+        {
+          "name": "Counterparty Risk",
+          "weight": 0.002014
+        },
+        {
+          "name": "CSD Connectivity",
+          "weight": 0.002014
+        }
+      ],
+      "topic_weight": 0.010068
+    },
+    {
+      "dominant_topic": "Remittance Service Errors",
+      "subtopics": [
+        {
+          "name": "Routing Issues",
+          "weight": 0.003775
+        },
+        {
+          "name": "Beneficiary Details",
+          "weight": 0.002517
+        },
+        {
+          "name": "Exchange Rates",
+          "weight": 0.002014
+        },
+        {
+          "name": "Compliance Checks",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.010068
+    },
+    {
+      "dominant_topic": "GDPR Data Subject Access",
+      "subtopics": [
+        {
+          "name": "Request Validation",
+          "weight": 0.003524
+        },
+        {
+          "name": "Data Extraction",
+          "weight": 0.002517
+        },
+        {
+          "name": "Redaction Rules",
+          "weight": 0.002014
+        },
+        {
+          "name": "Response Timelines",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.009816
+    },
+    {
+      "dominant_topic": "Internal Controls Gaps",
+      "subtopics": [
+        {
+          "name": "Process Weaknesses",
+          "weight": 0.00302
+        },
+        {
+          "name": "Segregation Failures",
+          "weight": 0.002769
+        },
+        {
+          "name": "Documentation Deficiencies",
+          "weight": 0.002265
+        },
+        {
+          "name": "Monitoring Shortfalls",
+          "weight": 0.002014
+        }
+      ],
+      "topic_weight": 0.010068
+    },
+    {
+      "dominant_topic": "SWIFT Payment Investigations",
+      "subtopics": [
+        {
+          "name": "UETR Tracking",
+          "weight": 0.003524
+        },
+        {
+          "name": "MT101 Errors",
+          "weight": 0.002265
+        },
+        {
+          "name": "Traceability Issues",
+          "weight": 0.002517
+        },
+        {
+          "name": "Confirmation Delays",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.010068
+    },
+    {
+      "dominant_topic": "Digital Identity Verification",
+      "subtopics": [
+        {
+          "name": "eID Validation",
+          "weight": 0.002517
+        },
+        {
+          "name": "Biometric Matching",
+          "weight": 0.003021
+        },
+        {
+          "name": "Document Integrity",
+          "weight": 0.002265
+        },
+        {
+          "name": "KYC Updates",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.009565
+    },
+    {
+      "dominant_topic": "SEPA Credit Transfer Limits",
+      "subtopics": [
+        {
+          "name": "Daily Limits",
+          "weight": 0.003272
+        },
+        {
+          "name": "Transaction Size",
+          "weight": 0.002769
+        },
+        {
+          "name": "Account Restrictions",
+          "weight": 0.002014
+        },
+        {
+          "name": "Threshold Alerts",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.009816
+    },
+    {
+      "dominant_topic": "Eurozone Sovereign Debt",
+      "subtopics": [
+        {
+          "name": "Credit Rating",
+          "weight": 0.003524
+        },
+        {
+          "name": "Yield Spreads",
+          "weight": 0.00302
+        },
+        {
+          "name": "Default Risk",
+          "weight": 0.002265
+        },
+        {
+          "name": "Bond Auctions",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.010571
+    },
+    {
+      "dominant_topic": "SEPA End-of-Life",
+      "subtopics": [
+        {
+          "name": "Migration Planning",
+          "weight": 0.00302
+        },
+        {
+          "name": "System Updates",
+          "weight": 0.002517
+        },
+        {
+          "name": "Legacy Systems",
+          "weight": 0.002265
+        },
+        {
+          "name": "Client Communication",
+          "weight": 0.002014
+        }
+      ],
+      "topic_weight": 0.009816
+    },
+    {
+      "dominant_topic": "Financial Crime Reporting",
+      "subtopics": [
+        {
+          "name": "STR Filings",
+          "weight": 0.003272
+        },
+        {
+          "name": "Threshold Breaches",
+          "weight": 0.002517
+        },
+        {
+          "name": "Regulatory Queries",
+          "weight": 0.002014
+        },
+        {
+          "name": "Investigation Support",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.009565
+    },
+    {
+      "dominant_topic": "Euro Clearing Settlement",
+      "subtopics": [
+        {
+          "name": "Cut-off Times",
+          "weight": 0.002769
+        },
+        {
+          "name": "Settlement Finality",
+          "weight": 0.002517
+        },
+        {
+          "name": "Liquidity Shortfalls",
+          "weight": 0.002265
+        },
+        {
+          "name": "System Failures",
+          "weight": 0.002014
+        }
+      ],
+      "topic_weight": 0.009565
+    },
+    {
+      "dominant_topic": "AML Sanctions Lists",
+      "subtopics": [
+        {
+          "name": "List Updates",
+          "weight": 0.003524
+        },
+        {
+          "name": "False Matches",
+          "weight": 0.002517
+        },
+        {
+          "name": "Ownership Checks",
+          "weight": 0.002014
+        },
+        {
+          "name": "Beneficial Owners",
+          "weight": 0.002014
+        }
+      ],
+      "topic_weight": 0.010068
+    },
+    {
+      "dominant_topic": "Stress Test Modeling",
+      "subtopics": [
+        {
+          "name": "Reverse Stress Tests",
+          "weight": 0.004027
+        },
+        {
+          "name": "Scenario Definitions",
+          "weight": 0.003524
+        },
+        {
+          "name": "Macroeconomic Shocks",
+          "weight": 0.00302
+        },
+        {
+          "name": "Capital Adequacy",
+          "weight": 0.002014
+        }
+      ],
+      "topic_weight": 0.012585
+    },
+    {
+      "dominant_topic": "Recovery Resolution Plans",
+      "subtopics": [
+        {
+          "name": "Bail-In Criteria",
+          "weight": 0.005034
+        },
+        {
+          "name": "Operational Continuity",
+          "weight": 0.003775
+        },
+        {
+          "name": "Critical Functions",
+          "weight": 0.00302
+        },
+        {
+          "name": "Resolution Authority",
+          "weight": 0.002014
+        }
+      ],
+      "topic_weight": 0.013843
+    },
+    {
+      "dominant_topic": "Correspondent Banking Due",
+      "subtopics": [
+        {
+          "name": "KYC Compliance",
+          "weight": 0.004027
+        },
+        {
+          "name": "Sanctions Compliance",
+          "weight": 0.003524
+        },
+        {
+          "name": "Transaction Screening",
+          "weight": 0.002769
+        },
+        {
+          "name": "Risk Assessments",
+          "weight": 0.002265
+        }
+      ],
+      "topic_weight": 0.012585
+    },
+    {
+      "dominant_topic": "TARGET2 Liquidity",
+      "subtopics": [
+        {
+          "name": "Collateral Pooling",
+          "weight": 0.003775
+        },
+        {
+          "name": "Intraday Funding",
+          "weight": 0.002517
+        },
+        {
+          "name": "Reserve Management",
+          "weight": 0.002014
+        },
+        {
+          "name": "Auto-Collateralization",
+          "weight": 0.00302
+        }
+      ],
+      "topic_weight": 0.011326
+    },
+    {
+      "dominant_topic": "Euro Clearing Volumes",
+      "subtopics": [
+        {
+          "name": "TARGET2 Volumes",
+          "weight": 0.003272
+        },
+        {
+          "name": "STEP2 Transactions",
+          "weight": 0.002517
+        },
+        {
+          "name": "High Value Payments",
+          "weight": 0.002014
+        },
+        {
+          "name": "Cross-Border Flows",
+          "weight": 0.002769
+        }
+      ],
+      "topic_weight": 0.010571
+    },
+    {
+      "dominant_topic": "ECB Reporting Rules",
+      "subtopics": [
+        {
+          "name": "Statistical Reporting",
+          "weight": 0.00302
+        },
+        {
+          "name": "Balance Sheet Data",
+          "weight": 0.002517
+        },
+        {
+          "name": "Regulatory Templates",
+          "weight": 0.002265
+        },
+        {
+          "name": "Data Quality Checks",
+          "weight": 0.002769
+        }
+      ],
+      "topic_weight": 0.010571
+    },
+    {
+      "dominant_topic": "Trade Document Discrepancies",
+      "subtopics": [
+        {
+          "name": "Invoice Amounts",
+          "weight": 0.003776
+        },
+        {
+          "name": "Shipping Dates",
+          "weight": 0.002769
+        },
+        {
+          "name": "Goods Description",
+          "weight": 0.002014
+        },
+        {
+          "name": "Packing Lists",
+          "weight": 0.002517
+        }
+      ],
+      "topic_weight": 0.011075
+    },
+    {
+      "dominant_topic": "Regulatory Sandbox Access",
+      "subtopics": [
+        {
+          "name": "Innovation Testing",
+          "weight": 0.004027
+        },
+        {
+          "name": "FinTech Collaboration",
+          "weight": 0.002517
+        },
+        {
+          "name": "Supervisory Oversight",
+          "weight": 0.002014
+        },
+        {
+          "name": "Limited Scope Trials",
+          "weight": 0.00302
+        }
+      ],
+      "topic_weight": 0.011578
+    },
+    {
+      "dominant_topic": "TARGET2 Integration",
+      "subtopics": [
+        {
+          "name": "Liquidity Management",
+          "weight": 0.003272
+        },
+        {
+          "name": "Settlement Risk",
+          "weight": 0.002517
+        },
+        {
+          "name": "System Availability",
+          "weight": 0.002769
+        },
+        {
+          "name": "Cutover Planning",
+          "weight": 0.002014
+        }
+      ],
+      "topic_weight": 0.010571
+    },
+    {
+      "dominant_topic": "Sustainable Finance Bonds",
+      "subtopics": [
+        {
+          "name": "Green Bond Framework",
+          "weight": 0.003524
+        },
+        {
+          "name": "ESG Disclosure",
+          "weight": 0.002769
+        },
+        {
+          "name": "Impact Reporting",
+          "weight": 0.002014
+        },
+        {
+          "name": "Social Bonds",
+          "weight": 0.002517
+        }
+      ],
+      "topic_weight": 0.010823
+    },
+    {
+      "dominant_topic": "Trade Finance Digitisation",
+      "subtopics": [
+        {
+          "name": "Blockchain Platforms",
+          "weight": 0.004279
+        },
+        {
+          "name": "Digital Guarantees",
+          "weight": 0.003272
+        },
+        {
+          "name": "e-Bills Standard",
+          "weight": 0.002265
+        }
+      ],
+      "topic_weight": 0.009816
+    },
+    {
+      "dominant_topic": "Trade Finance Digitization",
+      "subtopics": [
+        {
+          "name": "eBL Implementation",
+          "weight": 0.003272
+        },
+        {
+          "name": "Blockchain Adoption",
+          "weight": 0.002769
+        },
+        {
+          "name": "Digital LCs",
+          "weight": 0.002265
+        },
+        {
+          "name": "Document Validation",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.010068
+    },
+    {
+      "dominant_topic": "Mobile Payment Fraud",
+      "subtopics": [
+        {
+          "name": "SIM Swapping",
+          "weight": 0.003524
+        },
+        {
+          "name": "Malware Attacks",
+          "weight": 0.002769
+        },
+        {
+          "name": "Phishing Schemes",
+          "weight": 0.002265
+        },
+        {
+          "name": "Token Compromise",
+          "weight": 0.002517
+        }
+      ],
+      "topic_weight": 0.011075
+    },
+    {
+      "dominant_topic": "IT System Outages",
+      "subtopics": [
+        {
+          "name": "Hardware Failures",
+          "weight": 0.002517
+        },
+        {
+          "name": "Software Bugs",
+          "weight": 0.002769
+        },
+        {
+          "name": "Network Downtime",
+          "weight": 0.002265
+        },
+        {
+          "name": "Disaster Recovery",
+          "weight": 0.002517
+        }
+      ],
+      "topic_weight": 0.010068
+    },
+    {
+      "dominant_topic": "Mobile Authentication Failures",
+      "subtopics": [
+        {
+          "name": "Biometric Issues",
+          "weight": 0.003021
+        },
+        {
+          "name": "Device Compatibility",
+          "weight": 0.002517
+        },
+        {
+          "name": "Token Validation",
+          "weight": 0.002265
+        },
+        {
+          "name": "Network Connectivity",
+          "weight": 0.001762
+        }
+      ],
+      "topic_weight": 0.009565
+    },
+    {
+      "dominant_topic": "SWIFT Message Standards",
+      "subtopics": [
+        {
+          "name": "MT101 Format",
+          "weight": 0.002769
+        },
+        {
+          "name": "MT940 Parsing",
+          "weight": 0.002265
+        },
+        {
+          "name": "Message Validation",
+          "weight": 0.003272
+        },
+        {
+          "name": "Connectivity Issues",
+          "weight": 0.002014
+        }
+      ],
+      "topic_weight": 0.01032
+    }
+  ],
+  "used_topic_names": [
+    "Cyber Resilience",
+    "Data Privacy",
+    "Euro Clearing Fees",
+    "Euro Bond Issuance",
+    "Eurozone Inflation Impact",
+    "SME Lending Criteria",
+    "AML Sanctions Lists",
+    "GDPR Data Subject",
+    "Real Estate Exposure",
+    "Trade Finance Guarantees",
+    "Consumer Credit Risk",
+    "Trade Document Automation",
+    "Cross-Border Transfers",
+    "Eurozone Credit Risk",
+    "Digital Onboarding Flows",
+    "Mobile Payment Fraud",
+    "Securities Settlement Failures",
+    "Digital Wallet Security",
+    "SEPA End-of-Life",
+    "FX Exposure Management",
+    "Payment Scheme Migration",
+    "Digital Wallet Adoption",
+    "Open Banking APIs",
+    "Card Payment Disputes",
+    "Direct Debit Returns",
+    "Internal Audit Findings",
+    "Eurozone Sovereign Debt",
+    "Correspondent Bank Due Diligence",
+    "ECB Reporting Rules",
+    "Regulatory Reporting",
+    "Cross-Border Payments",
+    "Pan-European Payments",
+    "Instant Payment Limits",
+    "PSD2 Strong Authentication",
+    "KYC Remediation",
+    "Trade Document Errors",
+    "Basel III Capital",
+    "Securitisation Structures",
+    "AML Transaction Monitoring",
+    "Trade Document Discrepancies",
+    "Branch Optimization",
+    "Trade Finance Digitization",
+    "Letters of Credit",
+    "TARGET2 Volatility",
+    "Credit Risk Modelling",
+    "Letter of Credit Discrepancies",
+    "Overdraft Facility Limits",
+    "Regulatory Sandbox Access",
+    "Financial Crime Reporting",
+    "Mortgage Rate Hikes",
+    "Internal Controls Gaps",
+    "TARGET2 Liquidity",
+    "Liquidity Coverage",
+    "Loan Loss Provisions",
+    "Euro Clearing Settlement",
+    "Euro Liquidity Management",
+    "ESG Loan Standards",
+    "Trade Document Checks",
+    "Euro Clearing Volumes",
+    "TARGET2 Integration",
+    "SWIFT Message Standards",
+    "Correspondent Banking Due",
+    "SWIFT Payment Investigations",
+    "Vendor Risk Assessments",
+    "MiFID II Costs",
+    "Sustainable Finance Bonds",
+    "Recovery Plan Updates",
+    "Stress Test Modeling",
+    "FinTech Collaboration",
+    "Consumer Credit Regulations",
+    "Capital Adequacy Ratios",
+    "IT System Outages",
+    "Fraud Detection",
+    "Remittance Service Errors",
+    "Collateral Valuation",
+    "Digital Identity Verification",
+    "Stress Test Scenarios",
+    "SEPA Direct Debit",
+    "Recovery Resolution Plans",
+    "Trade Finance Digitisation",
+    "SEPA Credit Transfer Limits",
+    "Loan Portfolio Reviews",
+    "Mobile Authentication Failures",
+    "Liquidity Coverage Ratio",
+    "Basel IV Impact",
+    "Digital Wallet Integration",
+    "GDPR Data Subject Access",
+    "Credit Risk Modeling",
+    "ESG Integration",
+    "ECB Policy Signals",
+    "NPL Resolution",
+    "Payment Scheme Updates",
+    "Branch Network Cuts"
+  ],
+  "used_subtopic_names": [
+    "Recession Modeling",
+    "Third Party Access",
+    "Cross-Border Flows",
+    "InsurTech Partnerships",
+    "Liquidity Management",
+    "Data Enrichment",
+    "RegTech Solutions",
+    "Invoice Discrepancies",
+    "Provisioning Adequacy",
+    "Correspondent Banks",
+    "Segregation Failures",
+    "API Security",
+    "Workflow Automation",
+    "KYC Updates",
+    "Account Activation",
+    "Collateral Requirements",
+    "List Updates",
+    "ID Verification",
+    "Bail-In Criteria",
+    "Tax Implications",
+    "Green Bond Framework",
+    "Net Cash Outflows",
+    "Credit Scoring",
+    "Legacy Systems",
+    "Risk Assessments",
+    "Fraud Claims",
+    "UCP 600 Rules",
+    "Description Mismatches",
+    "Fixed vs Variable",
+    "Sanctions Screening",
+    "CDD Updates",
+    "Card Fraud",
+    "Remediation Plans",
+    "Operational Resilience",
+    "Device Fingerprinting",
+    "Research Unbundling",
+    "NFC Transactions",
+    "Securitization Schemes",
+    "Creditworthiness Assessment",
+    "Capital Buffers",
+    "Mandate Issues",
+    "High Quality Assets",
+    "Transaction Caps",
+    "QR Code Payments",
+    "Shipping Terms",
+    "Data Portability",
+    "KYC Compliance",
+    "Monitoring Shortfalls",
+    "Cost Optimization",
+    "Credit Quality",
+    "Reporting Metrics",
+    "Impact Investing",
+    "Invoice Validation",
+    "Phishing Attacks",
+    "Property Valuation",
+    "Exposure At Default",
+    "Intraday Funding",
+    "Process Gaps",
+    "Impairment Losses",
+    "CET1 Ratio",
+    "Payment Initiation",
+    "Vulnerability Scanning",
+    "MT101 Errors",
+    "Mobile Authentication",
+    "Market Data",
+    "Insufficient Funds",
+    "STEP2 Transactions",
+    "Best Execution",
+    "Daily Limits",
+    "Malware Attacks",
+    "Liquidity Shortfalls",
+    "Tokenization Services",
+    "Repossession Risk",
+    "PD Estimation",
+    "Stress Scenario",
+    "Message Formats",
+    "Response Timelines",
+    "Migration Planning",
+    "False Matches",
+    "Instant Transfers",
+    "Account Closure",
+    "Cloud Security",
+    "Document Validity",
+    "Credit Guarantees",
+    "Data Extraction",
+    "Biometric Authentication",
+    "Optical Character",
+    "Threshold Adjustments",
+    "Document Discrepancies",
+    "Rejection Rates",
+    "Exemption Rules",
+    "Digital Signatures",
+    "Data Mapping",
+    "Expiry Issues",
+    "Reporting Requirements",
+    "Limited Scope Trials",
+    "Client Categorisation",
+    "Reverse Stressing",
+    "FX Volatility",
+    "Transaction Limits",
+    "Yield Curves",
+    "Confirmation Fees",
+    "ATM Networks",
+    "Critical Functions",
+    "Data Encryption",
+    "Loss Given Default",
+    "Mandate Validity",
+    "Social Impact",
+    "eID Validation",
+    "Haircut Policies",
+    "Correspondent Banking",
+    "Insurance Coverage",
+    "Forward Guidance",
+    "Data Quality Checks",
+    "LTV Ratios",
+    "Mobile Payments",
+    "Currency Swaps",
+    "Capital Adequacy",
+    "STR Filings",
+    "Stress Scenario Impact",
+    "REO Management",
+    "Customer Experience",
+    "Chargeback Reasons",
+    "Document Integrity",
+    "Translation Risk",
+    "Social Bonds",
+    "Regulatory Queries",
+    "Quantitative Tightening",
+    "Transaction Screening",
+    "Goods Description",
+    "Stage 3 Assets",
+    "Digital LCs",
+    "Credit Enhancement",
+    "Disaster Recovery",
+    "Supervisory Oversight",
+    "Interbank Lending",
+    "False Positives",
+    "GDPR Compliance",
+    "Governance Scores",
+    "Account Information",
+    "Implementation Timelines",
+    "Risk Weighted",
+    "Funding Diversification",
+    "Internal Models",
+    "Sovereign Exposure",
+    "Innovation Testing",
+    "Beneficiary Risks",
+    "Cutover Planning",
+    "Social Lending",
+    "Credit Spreads",
+    "Foreclosure Process",
+    "Post-Trade Services",
+    "Liquidity Coverage",
+    "Corporate Defaults",
+    "Yield Spreads",
+    "Investor Demand",
+    "Concentration Limits",
+    "Output Floor",
+    "Request Validation",
+    "Phishing Schemes",
+    "NFC Technology",
+    "Client Communication",
+    "Netting Agreements",
+    "Documentation Deficiencies",
+    "Collateral Pooling",
+    "Market Analysis",
+    "MT101 Format",
+    "Climate Risk",
+    "Sensitivity Analysis",
+    "Discrepancy Handling",
+    "Merchant Disputes",
+    "Scenario Definitions",
+    "Account Restrictions",
+    "Credit Valuation",
+    "Incoterms Discrepancies",
+    "Debt Service",
+    "SCA Compliance",
+    "Discrepancy Rates",
+    "IRRBB Modelling",
+    "Threat Intelligence",
+    "Ownership Structure",
+    "Green Financing",
+    "Service Level",
+    "Refund Requests",
+    "Compliance Checks",
+    "Redaction Rules",
+    "Impact Reporting",
+    "Pattern Recognition",
+    "Central Counterparty",
+    "Traceability Issues",
+    "Sanctions Compliance",
+    "Asset Sales",
+    "Income Verification",
+    "Collateral Pools",
+    "SPV Oversight",
+    "Biometric Issues",
+    "Default Rates",
+    "Intraday Liquidity",
+    "Loan Repricing",
+    "NPL Management",
+    "Exchange Rates",
+    "Auto-Collateralization",
+    "SWIFT Messaging",
+    "Statistical Reporting",
+    "Digital Channels",
+    "Hardware Failures",
+    "Customer Impact",
+    "Expiry Dates",
+    "Settlement Costs",
+    "MT940 Parsing",
+    "Loan Loss",
+    "Incident Response",
+    "Beneficial Owners",
+    "Invoice Amounts",
+    "Resolution Planning",
+    "XBRL Taxonomy",
+    "Velocity Checks",
+    "Scorecard Validation",
+    "Control Weaknesses",
+    "Digital Guarantees",
+    "Regulatory Templates",
+    "Alert Investigation",
+    "User Training",
+    "Settlement Delays",
+    "Model Validation",
+    "Market Disruptions",
+    "Balance Sheet Data",
+    "Reputational Risk",
+    "Dispute Resolution",
+    "Reserve Requirements",
+    "Interest Rate Guidance",
+    "AI Integration",
+    "Account Takeovers",
+    "Reserve Management",
+    "Threshold Alerts",
+    "Cost Reduction",
+    "Credit Score",
+    "Cut-off Times",
+    "Credit Rating",
+    "Investigation Support",
+    "Counterparty Risk",
+    "Currency Conversion",
+    "Transaction Reporting",
+    "UETR Tracking",
+    "Bill of Lading",
+    "e-Bills Standard",
+    "Beneficiary Details",
+    "Contingency Funding",
+    "Transaction Size",
+    "Control Frameworks",
+    "Debt Collection",
+    "Geographic Location",
+    "Asset Valuation",
+    "Evidence Submission",
+    "Document Validation",
+    "Tokenization Issues",
+    "Expected Credit Loss",
+    "HQLA Holdings",
+    "Default Risk",
+    "Risk Weighted Assets",
+    "Margin Requirements",
+    "System Outages",
+    "eBL Implementation",
+    "Security Awareness",
+    "System Failures",
+    "QR Code Usage",
+    "IFRS 9 Modeling",
+    "Quantity Issues",
+    "Cloud Migration",
+    "TARGET2 Volumes",
+    "Macroeconomic Forecasts",
+    "Operational Risk",
+    "System Availability",
+    "Macroprudential Measures",
+    "CSD Connectivity",
+    "Report Accuracy",
+    "Collateral Management",
+    "Retention Requirements",
+    "Software Bugs",
+    "Blockchain Adoption",
+    "ESG Disclosure",
+    "High Value Payments",
+    "EAD Calculation",
+    "Access Requests",
+    "Debt Restructuring",
+    "Consent Withdrawal",
+    "Rulebook Changes",
+    "Cross Border Fees",
+    "Schemes Variations",
+    "Reporting Thresholds",
+    "Reporting Accuracy",
+    "Blockchain Platforms",
+    "Biometric Matching",
+    "Usage Patterns",
+    "True Sale Analysis",
+    "Over-Indebtedness",
+    "Network Downtime",
+    "COREP Submission",
+    "Remote Signatures",
+    "Interest Rate",
+    "Anomaly Detection",
+    "Risk Scoring",
+    "Parallel Runs",
+    "PD Calibration",
+    "Due Diligence",
+    "LGD Estimation",
+    "Blockchain Integration",
+    "Independent Review",
+    "System Updates",
+    "Harmonization Efforts",
+    "Network Connectivity",
+    "Loan to Value",
+    "Turnover Ratios",
+    "Testing Procedures",
+    "Biometric Login",
+    "Property Appraisals",
+    "Settlement Finality",
+    "Real Estate",
+    "Bond Auctions",
+    "Operational Continuity",
+    "Device Compatibility",
+    "Token Validation",
+    "Resolution Authority",
+    "Tokenization Trends",
+    "Connectivity Issues",
+    "Cash Flow Analysis",
+    "Settlement Risk",
+    "Document Mismatches",
+    "Token Compromise",
+    "FINREP Reporting",
+    "Delivery Issues",
+    "Confirmation Delays",
+    "Message Validation",
+    "Routing Issues",
+    "KYC Automation",
+    "Risk Assessment",
+    "SIM Swapping",
+    "Real Estate Bubbles",
+    "FinTech Collaboration",
+    "Sovereign Risk",
+    "Daily Thresholds",
+    "Data Resilience",
+    "Digital Migration",
+    "Threshold Breaches",
+    "Data Quality",
+    "Reverse Stress Tests",
+    "Right to Erasure",
+    "Packing Lists",
+    "Confirmation Process",
+    "System Integration",
+    "Shipping Dates",
+    "Deposit Pricing",
+    "Consent Management",
+    "Data Breaches",
+    "Macroeconomic Shocks",
+    "Ownership Checks",
+    "Affordability Stress",
+    "Leverage Ratio",
+    "Business Continuity",
+    "Pillar Two Review",
+    "Hedging Strategies",
+    "Politically Exposed",
+    "Market Shocks",
+    "Margin Calls",
+    "Expiry Management",
+    "APR Disclosure",
+    "Process Weaknesses",
+    "Transaction Monitoring",
+    "CET1 Calculation",
+    "ECB Funding"
+  ],
+  "status": "completed",
+  "completion_percentage": 48.69,
+  "model_used": "google/gemma-3-27b-it:free"
+}

@@ -1,0 +1,17 @@
+VOICE DATA ANALYSIS SUMMARY
+==================================================
+
+Total Records: 2040
+Total Unique Customers: 1600
+
+Distribution:
+- 1300 customers with 1 record each = 1300 records (63.7%)
+- 250 customers with 2 records each = 500 records (24.5%)
+- 30 customers with 4 records each = 120 records (5.9%)
+- 20 customers with 6 records each = 120 records (5.9%)
+
+Files Generated:
+- customers_with_1_records.txt (1300 customers)
+- customers_with_2_records.txt (250 customers)
+- customers_with_4_records.txt (30 customers)
+- customers_with_6_records.txt (20 customers)

@@ -1,0 +1,754 @@
+[
+    {
+      "cluster_id": 0,
+      "dominant_label": "Call Center & Agent Support",
+      "keyphrases": [
+        "Excellent Call Support",
+        "Knowledgeable Agent Helped",
+        "Unhelpful Agent Encountered",
+        "Multilingual Support Appreciated",
+        "Language Barriers Experienced",
+        "Manager Unavailable Complaints"
+      ],
+      "keyphrase_count": 6,
+      "domains": [
+        "banking"
+      ],
+      "data": "twitter",
+      "subclusters": {
+        "0": {
+          "label": "Agent Support Quality",
+          "keyphrases": [
+            "Excellent Call Support",
+            "Knowledgeable Agent Helped",
+            "Unhelpful Agent Encountered",
+            "Manager Unavailable Complaints"
+          ]
+        },
+        "1": {
+          "label": "Language & Barrier Issues",
+          "keyphrases": [
+            "Multilingual Support Appreciated",
+            "Language Barriers Experienced"
+          ]
+        }
+      },
+      "uniqueness_validated": true,
+      "created_at": "2025-08-25T12:34:08Z",
+      "processing_date": "2025-08-25T12:34:08Z"
+    },
+    {
+      "cluster_id": 1,
+      "dominant_label": "Call & Response Time Issues",
+      "keyphrases": [
+        "Call Center Complaints",
+        "Long Wait Times",
+        "Quick Response Time",
+        "Call Disconnection Issues",
+        "Response Time Inadequate",
+        "Call Center Overwhelmed"
+      ],
+      "keyphrase_count": 6,
+      "domains": [
+        "banking"
+      ],
+      "data": "twitter",
+      "subclusters": {
+        "0": {
+          "label": "General Call Complaints",
+          "keyphrases": [
+            "Call Center Complaints",
+            "Call Disconnection Issues",
+            "Call Center Overwhelmed"
+          ]
+        },
+        "1": {
+          "label": "Response Time Metrics",
+          "keyphrases": [
+            "Long Wait Times",
+            "Quick Response Time",
+            "Response Time Inadequate"
+          ]
+        }
+      },
+      "uniqueness_validated": true,
+      "created_at": "2025-08-25T12:34:08Z",
+      "processing_date": "2025-08-25T12:34:08Z"
+    },
+    {
+      "cluster_id": 2,
+      "dominant_label": "Payment Processing",
+      "keyphrases": [
+        "Payment Processing Failure",
+        "SEPA Transfer Success",
+        "SEPA Payment Rejected",
+        "Standing Order Success",
+        "Order Processing Failed",
+        "Bulk Payment Efficiency",
+        "Mass Payment Errors",
+        "Transaction Declined Frustration",
+        "Payment Processing Smooth",
+        "Payment Processing Failed"
+      ],
+      "keyphrase_count": 10,
+      "domains": [
+        "banking"
+      ],
+      "data": "twitter",
+      "subclusters": {
+        "0": {
+          "label": "Payment Failures & Errors",
+          "keyphrases": [
+            "Payment Processing Failure",
+            "SEPA Payment Rejected",
+            "Order Processing Failed",
+            "Mass Payment Errors",
+            "Transaction Declined Frustration",
+            "Payment Processing Failed"
+          ]
+        },
+        "1": {
+          "label": "Successful & Efficient Payments",
+          "keyphrases": [
+            "SEPA Transfer Success",
+            "Standing Order Success",
+            "Bulk Payment Efficiency",
+            "Payment Processing Smooth"
+          ]
+        }
+      },
+      "uniqueness_validated": true,
+      "created_at": "2025-08-25T12:34:08Z",
+      "processing_date": "2025-08-25T12:34:08Z"
+    },
+    {
+      "cluster_id": 3,
+      "dominant_label": "International & Cross-Border Banking",
+      "keyphrases": [
+        "International Payment Smooth",
+        "Transfer Delays Experienced",
+        "Cross Border Issues",
+        "Multi Currency Problems",
+        "Exchange Rate Disputes",
+        "Correspondent Bank Delays",
+        "Cross Border Complications",
+        "International Banking Issues",
+        "Cross Border Inconsistencies"
+      ],
+      "keyphrase_count": 9,
+      "domains": [
+        "banking"
+      ],
+      "data": "twitter",
+      "subclusters": {
+        "0": {
+          "label": "International & Cross-Border Issues",
+          "keyphrases": [
+            "Transfer Delays Experienced",
+            "Cross Border Issues",
+            "Correspondent Bank Delays",
+            "Cross Border Complications",
+            "International Banking Issues",
+            "Cross Border Inconsistencies"
+          ]
+        },
+        "1": {
+          "label": "Currency & Exchange Issues",
+          "keyphrases": [
+            "Multi Currency Problems",
+            "Exchange Rate Disputes",
+            "International Payment Smooth"
+          ]
+        }
+      },
+      "uniqueness_validated": true,
+      "created_at": "2025-08-25T12:34:08Z",
+      "processing_date": "2025-08-25T12:34:08Z"
+    },
+    {
+      "cluster_id": 4,
+      "dominant_label": "Digital Platform & App Issues",
+      "keyphrases": [
+        "Mobile App Crashes",
+        "Website Performance Issues",
+        "Platform Crash Reports",
+        "Digital Platform Glitches",
+        "App Login Problems",
+        "Application Launch Failed",
+        "Login Screen Frozen",
+        "Mobile App Functional"
+      ],
+      "keyphrase_count": 8,
+      "domains": [
+        "banking"
+      ],
+      "data": "twitter",
+      "subclusters": {
+        "0": {
+          "label": "App & Website Crashes",
+          "keyphrases": [
+            "Mobile App Crashes",
+            "Website Performance Issues",
+            "Platform Crash Reports",
+            "Digital Platform Glitches"
+          ]
+        },
+        "1": {
+          "label": "Login & Access Issues",
+          "keyphrases": [
+            "App Login Problems",
+            "Application Launch Failed",
+            "Login Screen Frozen"
+          ]
+        },
+        "2": {
+          "label": "App Functionality",
+          "keyphrases": [
+            "Mobile App Functional"
+          ]
+        }
+      },
+      "uniqueness_validated": true,
+      "created_at": "2025-08-25T12:34:08Z",
+      "processing_date": "2025-08-25T12:34:08Z"
+    },
+    {
+      "cluster_id": 5,
+      "dominant_label": "System & Network Outages",
+      "keyphrases": [
+        "System Outage Frustration",
+        "Core Banking Down",
+        "Network Connectivity Lost",
+        "Service Interruption Experienced",
+        "System Availability Issues",
+        "Platform Downtime Frustration",
+        "System Outage Affecting",
+        "Maintenance Inconvenience Reported"
+      ],
+      "keyphrase_count": 8,
+      "domains": [
+        "banking"
+      ],
+      "data": "twitter",
+      "subclusters": {
+        "0": {
+          "label": "System & Core Banking Outages",
+          "keyphrases": [
+            "System Outage Frustration",
+            "Core Banking Down",
+            "Service Interruption Experienced",
+            "System Availability Issues",
+            "Platform Downtime Frustration",
+            "System Outage Affecting"
+          ]
+        },
+        "1": {
+          "label": "Network & Connectivity Issues",
+          "keyphrases": [
+            "Network Connectivity Lost"
+          ]
+        },
+        "2": {
+          "label": "Scheduled Maintenance",
+          "keyphrases": [
+            "Maintenance Inconvenience Reported"
+          ]
+        }
+      },
+      "uniqueness_validated": true,
+      "created_at": "2025-08-25T12:34:08Z",
+      "processing_date": "2025-08-25T12:34:08Z"
+    },
+    {
+      "cluster_id": 6,
+      "dominant_label": "API, Features & Bugs",
+      "keyphrases": [
+        "API Integration Problems",
+        "API Services Outstanding",
+        "Third Party Integration",
+        "Feature Enhancement Needed",
+        "Transaction Processing Stuck",
+        "Balance Update Delayed",
+        "Feature Malfunction Reports",
+        "Software Bug Complaints",
+        "Feature Explanation Requested",
+        "Feature Feedback Mixed"
+      ],
+      "keyphrase_count": 10,
+      "domains": [
+        "banking"
+      ],
+      "data": "twitter",
+      "subclusters": {
+        "0": {
+          "label": "API & Third-Party Integration",
+          "keyphrases": [
+            "API Integration Problems",
+            "API Services Outstanding",
+            "Third Party Integration"
+          ]
+        },
+        "1": {
+          "label": "Software & Feature Errors",
+          "keyphrases": [
+            "Transaction Processing Stuck",
+            "Balance Update Delayed",
+            "Feature Malfunction Reports",
+            "Software Bug Complaints"
+          ]
+        },
+        "2": {
+          "label": "Feature Requests & Feedback",
+          "keyphrases": [
+            "Feature Enhancement Needed",
+            "Feature Explanation Requested",
+            "Feature Feedback Mixed"
+          ]
+        }
+      },
+      "uniqueness_validated": true,
+      "created_at": "2025-08-25T12:34:08Z",
+      "processing_date": "2025-08-25T12:34:08Z"
+    },
+    {
+      "cluster_id": 7,
+      "dominant_label": "Corporate & Treasury Banking",
+      "keyphrases": [
+        "Treasury Services Excellence",
+        "Letter Credit Processed",
+        "Documentary Collection Efficient",
+        "Bank Guarantee Issued",
+        "Export Finance Approved",
+        "Trade Documentation Smooth",
+        "Import Processing Delays",
+        "Cash Management Superior",
+        "FX Trading Smooth",
+        "Investment Services Outstanding",
+        "Liquidity Management Excellent",
+        "Risk Management Tools",
+        "Treasury Operations Smooth",
+        "Trade Finance Satisfaction"
+      ],
+      "keyphrase_count": 14,
+      "domains": [
+        "banking"
+      ],
+      "data": "twitter",
+      "subclusters": {
+        "0": {
+          "label": "Trade & Export Finance",
+          "keyphrases": [
+            "Letter Credit Processed",
+            "Documentary Collection Efficient",
+            "Bank Guarantee Issued",
+            "Export Finance Approved",
+            "Trade Documentation Smooth",
+            "Import Processing Delays",
+            "Trade Finance Satisfaction"
+          ]
+        },
+        "1": {
+          "label": "Cash & Liquidity Management",
+          "keyphrases": [
+            "Cash Management Superior",
+            "Liquidity Management Excellent",
+            "Treasury Services Excellence",
+            "Treasury Operations Smooth"
+          ]
+        },
+        "2": {
+          "label": "Investment & Risk",
+          "keyphrases": [
+            "FX Trading Smooth",
+            "Investment Services Outstanding",
+            "Risk Management Tools"
+          ]
+        }
+      },
+      "uniqueness_validated": true,
+      "created_at": "2025-08-25T12:34:08Z",
+      "processing_date": "2025-08-25T12:34:08Z"
+    },
+    {
+      "cluster_id": 8,
+      "dominant_label": "Account Management & Access",
+      "keyphrases": [
+        "Account Access Problems",
+        "New Account Opening",
+        "Signatory Update Needed",
+        "Mandate Change Required",
+        "Authorization Matrix Updates",
+        "Corporate Setup Questions",
+        "Account Configuration Assistance",
+        "Password Reset Guidance",
+        "Profile Access Denied",
+        "Account Management Satisfactory"
+      ],
+      "keyphrase_count": 10,
+      "domains": [
+        "banking"
+      ],
+      "data": "twitter",
+      "subclusters": {
+        "0": {
+          "label": "Account Setup & Changes",
+          "keyphrases": [
+            "New Account Opening",
+            "Signatory Update Needed",
+            "Mandate Change Required",
+            "Authorization Matrix Updates",
+            "Corporate Setup Questions",
+            "Account Configuration Assistance",
+            "Account Management Satisfactory"
+          ]
+        },
+        "1": {
+          "label": "Access & Permissions Issues",
+          "keyphrases": [
+            "Account Access Problems",
+            "Password Reset Guidance",
+            "Profile Access Denied"
+          ]
+        }
+      },
+      "uniqueness_validated": true,
+      "created_at": "2025-08-25T12:34:08Z",
+      "processing_date": "2025-08-25T12:34:08Z"
+    },
+    {
+      "cluster_id": 9,
+      "dominant_label": "Fees, Charges & Billing",
+      "keyphrases": [
+        "Fee Structure Criticism",
+        "High Transaction Fees",
+        "Unexpected Charges Discovered",
+        "Pricing Transparency Lacking",
+        "Fee Increase Complaints",
+        "Billing Error Reports",
+        "Cost Structure Criticism"
+      ],
+      "keyphrase_count": 7,
+      "domains": [
+        "banking"
+      ],
+      "data": "twitter",
+      "subclusters": {
+        "0": {
+          "label": "Fee & Pricing Criticism",
+          "keyphrases": [
+            "Fee Structure Criticism",
+            "High Transaction Fees",
+            "Pricing Transparency Lacking",
+            "Cost Structure Criticism",
+            "Fee Increase Complaints"
+          ]
+        },
+        "1": {
+          "label": "Billing Errors",
+          "keyphrases": [
+            "Unexpected Charges Discovered",
+            "Billing Error Reports"
+          ]
+        }
+      },
+      "uniqueness_validated": true,
+      "created_at": "2025-08-25T12:34:08Z",
+      "processing_date": "2025-08-25T12:34:08Z"
+    },
+    {
+      "cluster_id": 10,
+      "dominant_label": "Regulatory & Legal Compliance",
+      "keyphrases": [
+        "GDPR Compliance Praise",
+        "Regulatory Compliance Questions",
+        "Open Banking Implementation",
+        "PSD2 Compliance Smooth",
+        "KYC Documentation Easy",
+        "AML Processes Smooth",
+        "Verification Process Lengthy",
+        "Compliance Checks Intrusive",
+        "Documentation Excessive Requirements",
+        "Regulatory Reporting Burdensome"
+      ],
+      "keyphrase_count": 10,
+      "domains": [
+        "banking"
+      ],
+      "data": "twitter",
+      "subclusters": {
+        "0": {
+          "label": "Regulatory & Audits",
+          "keyphrases": [
+            "GDPR Compliance Praise",
+            "Regulatory Compliance Questions",
+            "Open Banking Implementation",
+            "PSD2 Compliance Smooth",
+            "Regulatory Reporting Burdensome"
+          ]
+        },
+        "1": {
+          "label": "Verification & Documentation",
+          "keyphrases": [
+            "KYC Documentation Easy",
+            "AML Processes Smooth",
+            "Verification Process Lengthy",
+            "Compliance Checks Intrusive",
+            "Documentation Excessive Requirements"
+          ]
+        }
+      },
+      "uniqueness_validated": true,
+      "created_at": "2025-08-25T12:34:08Z",
+      "processing_date": "2025-08-25T12:34:08Z"
+    },
+    {
+      "cluster_id": 11,
+      "dominant_label": "Cybersecurity & Fraud",
+      "keyphrases": [
+        "Security Incident Concerns",
+        "Mobile Security Robust",
+        "Authentication Errors Reported",
+        "Multi Factor Problems",
+        "Fraud Alert Confusion",
+        "Unauthorized Access Fears",
+        "Cybersecurity Worries Expressed",
+        "Data Breach Concerns",
+        "Identity Verification Issues",
+        "Security Protocol Questions"
+      ],
+      "keyphrase_count": 10,
+      "domains": [
+        "banking"
+      ],
+      "data": "twitter",
+      "subclusters": {
+        "0": {
+          "label": "Authentication & Access Concerns",
+          "keyphrases": [
+            "Authentication Errors Reported",
+            "Multi Factor Problems",
+            "Identity Verification Issues",
+            "Unauthorized Access Fears",
+            "Security Protocol Questions"
+          ]
+        },
+        "1": {
+          "label": "Cybersecurity Threats",
+          "keyphrases": [
+            "Security Incident Concerns",
+            "Mobile Security Robust",
+            "Fraud Alert Confusion",
+            "Cybersecurity Worries Expressed",
+            "Data Breach Concerns"
+          ]
+        }
+      },
+      "uniqueness_validated": true,
+      "created_at": "2025-08-25T12:34:08Z",
+      "processing_date": "2025-08-25T12:34:08Z"
+    },
+    {
+      "cluster_id": 12,
+      "dominant_label": "Customer Experience & Satisfaction",
+      "keyphrases": [
+        "Digital Innovation Appreciation",
+        "Problem Initially Frustrating",
+        "Resolution Eventually Satisfactory",
+        "Improved Service Acknowledged",
+        "Compensation Appreciated Generally",
+        "Follow Up Satisfactory",
+        "Service Quality Poor",
+        "Escalation Process Unclear",
+        "Customer Service Disappointment",
+        "Online Banking Excellence",
+        "Relationship Management Praise",
+        "Account Manager Responsive",
+        "Corporate Service Exceptional",
+        "Dedicated Support Appreciated",
+        "Personalized Banking Excellence",
+        "Service Restoration Delayed",
+        "Public Recovery Successful",
+        "Issue Resolved Quickly",
+        "Management Responded Personally",
+        "Service Improvement Acknowledged",
+        "Compensation Provided Fairly",
+        "Brand Reputation Restored"
+      ],
+      "keyphrase_count": 22,
+      "domains": [
+        "banking"
+      ],
+      "data": "twitter",
+      "subclusters": {
+        "0": {
+          "label": "Problem Resolution",
+          "keyphrases": [
+            "Problem Initially Frustrating",
+            "Resolution Eventually Satisfactory",
+            "Improved Service Acknowledged",
+            "Compensation Appreciated Generally",
+            "Follow Up Satisfactory",
+            "Escalation Process Unclear"
+          ]
+        },
+        "1": {
+          "label": "Positive Service & Support",
+          "keyphrases": [
+            "Online Banking Excellence",
+            "Relationship Management Praise",
+            "Account Manager Responsive",
+            "Corporate Service Exceptional",
+            "Dedicated Support Appreciated",
+            "Personalized Banking Excellence",
+            "Digital Innovation Appreciation"
+          ]
+        },
+        "2": {
+          "label": "Public Recovery & Reputation",
+          "keyphrases": [
+            "Service Restoration Delayed",
+            "Public Recovery Successful",
+            "Issue Resolved Quickly",
+            "Management Responded Personally",
+            "Service Improvement Acknowledged",
+            "Compensation Provided Fairly",
+            "Brand Reputation Restored"
+          ]
+        }
+      },
+      "uniqueness_validated": true,
+      "created_at": "2025-08-25T12:34:08Z",
+      "processing_date": "2025-08-25T12:34:08Z"
+    },
+    {
+      "cluster_id": 13,
+      "dominant_label": "Comparative & Mixed Feedback",
+      "keyphrases": [
+        "Mixed Experience Reported",
+        "Better Than Competitors",
+        "Improvement Over Previous",
+        "Mixed Service Quality",
+        "Inconsistent Experience Reported",
+        "Partial Satisfaction Expressed",
+        "Comparative Banking Feedback",
+        "Some Functions Excellent",
+        "Others Need Improvement",
+        "Partial Functionality Working",
+        "Mixed User Experience",
+        "Development Suggestions Made",
+        "Process Clarification Needed",
+        "Information Inquiry Made",
+        "General Support Needed",
+        "Documentation Requirements Asked",
+        "Service Availability Questions",
+        "System Navigation Help",
+        "Routine Service Feedback",
+        "Standard Operation Smooth"
+      ],
+      "keyphrase_count": 20,
+      "domains": [
+        "banking"
+      ],
+      "data": "twitter",
+      "subclusters": {
+        "0": {
+          "label": "Inconsistency & Mixed Reviews",
+          "keyphrases": [
+            "Mixed Experience Reported",
+            "Mixed Service Quality",
+            "Inconsistent Experience Reported",
+            "Partial Satisfaction Expressed",
+            "Partial Functionality Working",
+            "Mixed User Experience"
+          ]
+        },
+        "1": {
+          "label": "External & Comparative Opinions",
+          "keyphrases": [
+            "Better Than Competitors",
+            "Improvement Over Previous",
+            "Comparative Banking Feedback",
+            "Some Functions Excellent",
+            "Others Need Improvement",
+            "Development Suggestions Made"
+          ]
+        },
+        "2": {
+          "label": "General Operations & Inquiries",
+          "keyphrases": [
+            "Process Clarification Needed",
+            "Information Inquiry Made",
+            "General Support Needed",
+            "Documentation Requirements Asked",
+            "Service Availability Questions",
+            "System Navigation Help"
+          ]
+        },
+        "3": {
+          "label": "Routine & Standard Feedback",
+          "keyphrases": [
+            "Routine Service Feedback",
+            "Standard Operation Smooth"
+          ]
+        }
+      },
+      "uniqueness_validated": true,
+      "created_at": "2025-08-25T12:34:08Z",
+      "processing_date": "2025-08-25T12:34:08Z"
+    },
+    {
+      "cluster_id": 14,
+      "dominant_label": "Operational & Seasonal Issues",
+      "keyphrases": [
+        "Holiday Period Issues",
+        "Year End Processing",
+        "Peak Time Difficulties",
+        "Off Peak Better",
+        "Periodic Performance Changes",
+        "Seasonal Variation Reports",
+        "Some Countries Excellent",
+        "Others Need Improvement",
+        "Local Service Quality",
+        "Regional Difference Reports",
+        "Viral Complaint Spreading",
+        "Public Issue Escalated"
+      ],
+      "keyphrase_count": 12,
+      "domains": [
+        "banking"
+      ],
+      "data": "twitter",
+      "subclusters": {
+        "0": {
+          "label": "Periodic & Seasonal Variations",
+          "keyphrases": [
+            "Holiday Period Issues",
+            "Year End Processing",
+            "Peak Time Difficulties",
+            "Off Peak Better",
+            "Periodic Performance Changes",
+            "Seasonal Variation Reports"
+          ]
+        },
+        "1": {
+          "label": "Geographic & Regional Differences",
+          "keyphrases": [
+            "Some Countries Excellent",
+            "Others Need Improvement",
+            "Local Service Quality",
+            "Regional Difference Reports"
+          ]
+        },
+        "2": {
+          "label": "Public & Viral Issues",
+          "keyphrases": [
+            "Viral Complaint Spreading",
+            "Public Issue Escalated"
+          ]
+        }
+      },
+      "uniqueness_validated": true,
+      "created_at": "2025-08-25T12:34:08Z",
+      "processing_date": "2025-08-25T12:34:08Z"
+    }
+  ]

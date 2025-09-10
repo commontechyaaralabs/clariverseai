@@ -1,0 +1,1231 @@
+[
+  {
+    "tweet_id": "T089774",
+    "update_doc": {
+      "text": "Experiencing longer than usual processing times on some money transfers today. We're aware of a slowdown in financial processing and our teams are working to resolve it. Increased transaction volumes combined with enhanced security protocols are contributing factors. We apprec...",
+      "hashtags": [
+        "Banking",
+        "FinTech",
+        "DigitalBanking",
+        "FinancialServices",
+        "TransactionProcessing"
+      ],
+      "retweet_count": 25,
+      "like_count": 85,
+      "reply_count": 35,
+      "quote_count": 8,
+      "sentiment": "Neutral",
+      "urgency": true,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Leah Sampson",
+      "dominant_topic": "Transaction Processing Stuck",
+      "subtopics": "Financial Processing Frozen, Money Transfer Stuck"
+    },
+    "timestamp": "2025-08-23T13:39:37.836639",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T327482",
+    "update_doc": {
+      "text": "Experiencing some frustrating issues logging into the mobile app this morning. UI seems frozen after entering credentials. Hopefully a quick fix \u2013 secure access is paramount, and these glitches erode trust. Anyone else seeing this? #DigitalBanking #BankingService #FinTech #Mob...",
+      "hashtags": [
+        "DigitalBanking",
+        "BankingService",
+        "FinTech",
+        "MobileBanking"
+      ],
+      "retweet_count": 25,
+      "like_count": 85,
+      "reply_count": 45,
+      "quote_count": 8,
+      "sentiment": "Negative",
+      "urgency": true,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Perry Jenkins",
+      "dominant_topic": "Login Screen Frozen",
+      "subtopics": "Mobile Screen Issues, User Interface Frozen"
+    },
+    "timestamp": "2025-08-23T13:39:38.305352",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T616430",
+    "update_doc": {
+      "text": "Seeing some progress on restoring full account functionality after yesterday\u2019s system update. While core services are back online, access to certain statement downloads & historical data is still intermittent. We appreciate your patience as we work to resolve remaining issues....",
+      "hashtags": [
+        "Banking",
+        "DigitalBanking",
+        "FinTech",
+        "BankingInnovation",
+        "FinancialServices"
+      ],
+      "retweet_count": 25,
+      "like_count": 115,
+      "reply_count": 35,
+      "quote_count": 8,
+      "sentiment": "Neutral",
+      "urgency": false,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Miranda Reyes",
+      "dominant_topic": "Partial Functionality Working",
+      "subtopics": "Account Functions Partial"
+    },
+    "timestamp": "2025-08-23T13:39:38.787301",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T019372",
+    "update_doc": {
+      "text": "Spent over an hour on the phone trying to escalate a fraudulent charge. The initial rep was helpful, but getting to someone who could actually *resolve* the issue felt impossible. A clearer escalation path is crucial for customer trust. @BankName, can we improve this process?",
+      "hashtags": [
+        "#BankingService",
+        "#CustomerExperience",
+        "#FraudPrevention",
+        "#Banking"
+      ],
+      "retweet_count": 25,
+      "like_count": 85,
+      "reply_count": 45,
+      "quote_count": 8,
+      "sentiment": "Negative",
+      "urgency": false,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Brian Davis",
+      "dominant_topic": "Customer Service Disappointment",
+      "subtopics": "Escalation Process Unclear"
+    },
+    "timestamp": "2025-08-23T13:39:38.858419",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T215420",
+    "update_doc": {
+      "text": "Seeing continued delays in import processing due to inconsistencies in international documentation. Banks are navigating complex regulatory hurdles & increased scrutiny. Streamlining these processes is crucial for global trade finance. We're working with clients to ensure comp...",
+      "hashtags": [
+        "TradeFinance",
+        "BankingCompliance",
+        "FinancialServices",
+        "RiskManagement",
+        "BankingNews"
+      ],
+      "retweet_count": 25,
+      "like_count": 85,
+      "reply_count": 30,
+      "quote_count": 10,
+      "sentiment": "Neutral",
+      "urgency": false,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Christopher Hicks",
+      "dominant_topic": "Import Processing Delays",
+      "subtopics": "International Documentation Issues"
+    },
+    "timestamp": "2025-08-23T13:39:39.144795",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T008772",
+    "update_doc": {
+      "text": "Seeing a higher than usual volume of SEPA transfer rejections & card declines today, alongside delays on some international payments. Investigating potential processing issues & increased security checks. We appreciate your patience as we work to resolve this swiftly. #Banking...",
+      "hashtags": [
+        "Banking",
+        "FinTech",
+        "PaymentProcessing",
+        "FinancialServices"
+      ],
+      "retweet_count": 25,
+      "like_count": 85,
+      "reply_count": 45,
+      "quote_count": 10,
+      "sentiment": "Negative",
+      "urgency": true,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Kelly Lopez",
+      "dominant_topic": "Payment Processing Failure",
+      "subtopics": "SEPA Transfer Rejected, Card Transaction Declined, International Payment Delayed"
+    },
+    "timestamp": "2025-08-23T13:39:48.253183",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T608027",
+    "update_doc": {
+      "text": "Navigating our new online banking system can be tricky! We've heard your feedback & are working on a more detailed user guide. In the meantime, a quick tutorial video is now available on our help center: [link]. Hoping this eases the transition - security updates require these...",
+      "hashtags": [
+        "DigitalBanking",
+        "BankingService",
+        "CustomerExperience",
+        "FinTech"
+      ],
+      "retweet_count": 25,
+      "like_count": 110,
+      "reply_count": 35,
+      "quote_count": 8,
+      "sentiment": "Neutral",
+      "urgency": false,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Regina Wells",
+      "dominant_topic": "System Navigation Help",
+      "subtopics": "User Guide Needed, System Tutorial Required"
+    },
+    "timestamp": "2025-08-23T13:39:48.459550",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T358939",
+    "update_doc": {
+      "text": "Really appreciate the proactive support from my Client Relationship Manager at First Horizon. Navigating the new SBA lending guidelines has been complex, but their clear explanations & quick responses have been invaluable. Excellent customer service! #Banking #FinancialService...",
+      "hashtags": [
+        "#Banking",
+        "#FinancialServices",
+        "#SBAloans",
+        "#CustomerExperience"
+      ],
+      "retweet_count": 28,
+      "like_count": 185,
+      "reply_count": 8,
+      "quote_count": 3,
+      "sentiment": "Positive",
+      "urgency": false,
+      "priority": "P3 - Low"
+    },
+    "original_data": {
+      "username": "Chloe Aguilar",
+      "dominant_topic": "Account Manager Responsive",
+      "subtopics": "Client Relationship Manager, Customer Service Specialist"
+    },
+    "timestamp": "2025-08-23T13:39:49.047961",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T487755",
+    "update_doc": {
+      "text": "Navigating recent FX volatility & increased scrutiny on cross-border payments. Our team successfully processed a complex international wire transfer today, leveraging enhanced compliance checks & real-time tracking. Maintaining smooth global transfers is a top priority as regu...",
+      "hashtags": [
+        "BankingCompliance",
+        "FinTech",
+        "GlobalPayments",
+        "FinancialServices"
+      ],
+      "retweet_count": 28,
+      "like_count": 115,
+      "reply_count": 17,
+      "quote_count": 8,
+      "sentiment": "Neutral",
+      "urgency": false,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Michelle Vaughan",
+      "dominant_topic": "International Payment Smooth",
+      "subtopics": "International Wire Success, Global Transfer Smooth, Cross Border Efficient, Foreign Exchange Excelle..."
+    },
+    "timestamp": "2025-08-23T13:39:49.166208",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T042433",
+    "update_doc": {
+      "text": "Update: Our platform repair is taking longer than anticipated due to a more complex infrastructure fix than initially estimated. We understand the frustration this extended outage causes, but prioritizing data security & stability is paramount. Enhanced monitoring is now in pl...",
+      "hashtags": [
+        "Banking",
+        "DigitalBanking",
+        "FinTech",
+        "Cybersecurity",
+        "BankingService"
+      ],
+      "retweet_count": 25,
+      "like_count": 95,
+      "reply_count": 45,
+      "quote_count": 10,
+      "sentiment": "Neutral",
+      "urgency": true,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Colleen Harris",
+      "dominant_topic": "Service Restoration Delayed",
+      "subtopics": "Platform Repair Extended, Infrastructure Fix Prolonged"
+    },
+    "timestamp": "2025-08-23T13:39:50.044663",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T948827",
+    "update_doc": {
+      "text": "Seeing increased processing times on some international wire transfers this week due to heightened scrutiny from updated KYC regulations. While frustrating, these measures are vital for maintaining financial integrity. Working to streamline the process for our clients. #Bankin...",
+      "hashtags": [
+        "BankingCompliance",
+        "FinTech",
+        "InternationalPayments",
+        "RiskManagement"
+      ],
+      "retweet_count": 25,
+      "like_count": 85,
+      "reply_count": 35,
+      "quote_count": 10,
+      "sentiment": "Neutral",
+      "urgency": false,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Timothy Griffith",
+      "dominant_topic": "International Payment Smooth",
+      "subtopics": "International Wire Success"
+    },
+    "timestamp": "2025-08-23T13:39:59.379151",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T897794",
+    "update_doc": {
+      "text": "Navigating cross-border payments continues to be a challenge. Inconsistencies in fees & processing times across different banking systems create friction for businesses and individual remitters. We need harmonized global standards & increased transparency. #GlobalBanking #FinT...",
+      "hashtags": [
+        "GlobalBanking",
+        "FinTech",
+        "Compliance",
+        "BankingNews"
+      ],
+      "retweet_count": 25,
+      "like_count": 85,
+      "reply_count": 35,
+      "quote_count": 10,
+      "sentiment": "Negative",
+      "urgency": false,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Erica Mcclure",
+      "dominant_topic": "Cross Border Inconsistencies",
+      "subtopics": "Multi Country Service Differences, Global Banking Inconsistent"
+    },
+    "timestamp": "2025-08-23T13:39:59.461267",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T964324",
+    "update_doc": {
+      "text": "Impressed with the clarity of recent GDPR compliance updates from First National! Strong data protection is crucial, and their documentation makes understanding our obligations much easier. Appreciate the proactive approach to regulatory transparency. #BankingCompliance #DataP...",
+      "hashtags": [
+        "BankingCompliance",
+        "DataProtection",
+        "FinTech",
+        "RiskManagement"
+      ],
+      "retweet_count": 28,
+      "like_count": 115,
+      "reply_count": 8,
+      "quote_count": 5,
+      "sentiment": "Positive",
+      "urgency": false,
+      "priority": "P3 - Low"
+    },
+    "original_data": {
+      "username": "Caleb Rodriguez",
+      "dominant_topic": "GDPR Compliance Praise",
+      "subtopics": "Data Protection Strong, Compliance Documentation Clear, Regulatory Transparency Appreciated"
+    },
+    "timestamp": "2025-08-23T13:39:59.463692",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T872127",
+    "update_doc": {
+      "text": "Analyzing our latest Seasonal Variation Reports reveals a concerning trend: cyclical account dormancy is increasing post-holiday season. Increased outreach & personalized offers are crucial to re-engage customers & mitigate potential credit risk. Regulatory scrutiny on inactiv...",
+      "hashtags": [
+        "#BankingRisk",
+        "#FinancialServices",
+        "#Compliance",
+        "#BankingNews"
+      ],
+      "retweet_count": 28,
+      "like_count": 85,
+      "reply_count": 35,
+      "quote_count": 12,
+      "sentiment": "Negative",
+      "urgency": false,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Brent Martin",
+      "dominant_topic": "Seasonal Variation Reports",
+      "subtopics": "Seasonal Banking Performance, Cyclical Account Management"
+    },
+    "timestamp": "2025-08-23T13:40:00.448670",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T438532",
+    "update_doc": {
+      "text": "Experiencing longer wait times in our mobile app this evening? We're seeing peak usage as many customers finalize year-end financial tasks. Our teams are working to ensure a smooth experience for everyone. Thank you for your patience! #DigitalBanking #BankingService #FinTech #...",
+      "hashtags": [
+        "DigitalBanking",
+        "BankingService",
+        "FinTech",
+        "Finance"
+      ],
+      "retweet_count": 25,
+      "like_count": 115,
+      "reply_count": 30,
+      "quote_count": 8,
+      "sentiment": "Neutral",
+      "urgency": false,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Brian Davis",
+      "dominant_topic": "Peak Time Difficulties",
+      "subtopics": "High Traffic Problems, Busy Period Issues, Peak Usage Difficulties"
+    },
+    "timestamp": "2025-08-23T13:40:00.477872",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T378976",
+    "update_doc": {
+      "text": "Successfully processed a complex Letter of Credit for a client expanding into Southeast Asia. Navigating the evolving UCP 600 rules & ensuring swift execution is key to supporting international commerce. Still, the documentation burden remains a challenge! #TradeFinance #Banki...",
+      "hashtags": [
+        "TradeFinance",
+        "BankingCompliance",
+        "InternationalTrade",
+        "FinTech"
+      ],
+      "retweet_count": 25,
+      "like_count": 115,
+      "reply_count": 18,
+      "quote_count": 8,
+      "sentiment": "Neutral",
+      "urgency": false,
+      "priority": "P3 - Low"
+    },
+    "original_data": {
+      "username": "Dr. Craig Estrada PhD",
+      "dominant_topic": "Letter Credit Processed",
+      "subtopics": "International Commerce Success"
+    },
+    "timestamp": "2025-08-23T13:40:10.734248",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T118157",
+    "update_doc": {
+      "text": "Seeing a rise in sophisticated phishing attempts targeting our mobile banking users. Reminders: never share OTPs, and always verify the sender's address! We're constantly updating our security protocols, but vigilance is key. Protecting your accounts is a shared responsibility...",
+      "hashtags": [
+        "Cybersecurity",
+        "BankingSecurity",
+        "FinTechSecurity",
+        "DigitalBanking"
+      ],
+      "retweet_count": 28,
+      "like_count": 95,
+      "reply_count": 32,
+      "quote_count": 8,
+      "sentiment": "Negative",
+      "urgency": true,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Briana Garcia",
+      "dominant_topic": "Cybersecurity Worries Expressed",
+      "subtopics": "Online Banking Safety, Cyber Protection Worries, Internet Security Issues"
+    },
+    "timestamp": "2025-08-23T13:40:38.954442",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T129282",
+    "update_doc": {
+      "text": "Seeing a higher than usual volume of SEPA transfer rejections & some standing order failures this morning. Investigating potential issues with intermediary bank processing. Customers, please check your originating bank if you experience delays. We're working to resolve this sw...",
+      "hashtags": [
+        "Banking",
+        "Payments",
+        "FinTech",
+        "Compliance",
+        "FinancialServices"
+      ],
+      "retweet_count": 25,
+      "like_count": 85,
+      "reply_count": 45,
+      "quote_count": 10,
+      "sentiment": "Negative",
+      "urgency": true,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Kevin Vaughn",
+      "dominant_topic": "Payment Processing Failure",
+      "subtopics": "SEPA Transfer Rejected, Standing Order Failed"
+    },
+    "timestamp": "2025-08-23T13:40:39.199928",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T610307",
+    "update_doc": {
+      "text": "Really impressed with the proactive support from my relationship manager at First Horizon. Navigating the new SBA lending guidelines was complex, but their personalized guidance made the process so much smoother. A true example of banking that understands small business needs!...",
+      "hashtags": [
+        "Banking",
+        "FinancialServices",
+        "SBLending",
+        "CustomerExperience"
+      ],
+      "retweet_count": 28,
+      "like_count": 185,
+      "reply_count": 8,
+      "quote_count": 3,
+      "sentiment": "Positive",
+      "urgency": false,
+      "priority": "P3 - Low"
+    },
+    "original_data": {
+      "username": "Miranda Reyes",
+      "dominant_topic": "Relationship Management Praise",
+      "subtopics": "Dedicated Support Appreciated, Personalized Banking Excellence"
+    },
+    "timestamp": "2025-08-23T13:40:39.228363",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T063720",
+    "update_doc": {
+      "text": "Seeing positive results from our enhanced fraud detection systems! While initial alerts caused some brief inconvenience for customers, the dramatic reduction in successful fraudulent transactions demonstrates a strong return on investment. Balancing security & convenience rema...",
+      "hashtags": [
+        "Cybersecurity",
+        "BankingSecurity",
+        "FraudPrevention",
+        "FinTech"
+      ],
+      "retweet_count": 28,
+      "like_count": 155,
+      "reply_count": 35,
+      "quote_count": 8,
+      "sentiment": "Positive",
+      "urgency": false,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Kelly Lopez",
+      "dominant_topic": "Public Recovery Successful",
+      "subtopics": "Public Issue Resolution, Community Service Recovery"
+    },
+    "timestamp": "2025-08-23T13:40:39.765904",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T809741",
+    "update_doc": {
+      "text": "After a frustrating delay with a fraud claim, I'm relieved to report a satisfactory resolution from @BankSecure. The final outcome was positive, though the initial process could be smoother. Hoping they streamline this for others facing similar issues. #Banking #CustomerServic...",
+      "hashtags": [
+        "Banking",
+        "CustomerService",
+        "FinancialServices",
+        "FraudPrevention"
+      ],
+      "retweet_count": 25,
+      "like_count": 85,
+      "reply_count": 40,
+      "quote_count": 8,
+      "sentiment": "Negative",
+      "urgency": false,
+      "priority": "P3 - Low"
+    },
+    "original_data": {
+      "username": "Regina Wells",
+      "dominant_topic": "Resolution Eventually Satisfactory",
+      "subtopics": "Final Solution Acceptable, End Result Satisfactory, Ultimate Resolution Good, Final Outcome Positive"
+    },
+    "timestamp": "2025-08-23T13:40:48.638749",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T448188",
+    "update_doc": {
+      "text": "Spent over an hour on the phone with @BankName support trying to resolve a simple transfer issue. The agent seemed unable to help & there was a noticeable language barrier, then the call dropped! Seriously impacting my trust. Need better training & clearer communication protoc...",
+      "hashtags": [
+        "BankingService",
+        "CustomerExperience",
+        "FinTech",
+        "Banking"
+      ],
+      "retweet_count": 25,
+      "like_count": 85,
+      "reply_count": 45,
+      "quote_count": 8,
+      "sentiment": "Negative",
+      "urgency": false,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Daniel Wong",
+      "dominant_topic": "Call Center Complaints",
+      "subtopics": "Unhelpful Agent Encountered, Language Barriers Experienced, Call Disconnection Issues"
+    },
+    "timestamp": "2025-08-23T13:40:48.910658",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T862567",
+    "update_doc": {
+      "text": "Navigating the new BSA/AML requirements for corporate account onboarding is proving challenging for many of our enterprise clients. Streamlining KYC processes with enhanced digital ID verification is crucial, but requires significant investment. Is anyone else seeing this bott...",
+      "hashtags": [
+        "BankingCompliance",
+        "FinTech",
+        "AML",
+        "EnterpriseServices",
+        "FinancialServices"
+      ],
+      "retweet_count": 22,
+      "like_count": 75,
+      "reply_count": 45,
+      "quote_count": 12,
+      "sentiment": "Negative",
+      "urgency": false,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Kathleen Estrada",
+      "dominant_topic": "Corporate Setup Questions",
+      "subtopics": "Enterprise Service Questions"
+    },
+    "timestamp": "2025-08-23T13:40:48.913658",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T396478",
+    "update_doc": {
+      "text": "Navigating the increasing complexity of banking authorization modifications. Recent updates to our User Authority Matrix, driven by evolving compliance needs, require rigorous access control changes. Aiming for seamless integration, but expect potential minor disruptions durin...",
+      "hashtags": [
+        "BankingCompliance",
+        "RiskManagement",
+        "FinTech",
+        "DigitalBanking"
+      ],
+      "retweet_count": 18,
+      "like_count": 75,
+      "reply_count": 25,
+      "quote_count": 8,
+      "sentiment": "Neutral",
+      "urgency": false,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Edgar Wright",
+      "dominant_topic": "Authorization Matrix Updates",
+      "subtopics": "User Authority Matrix, Access Control Changes, Banking Authorization Modifications"
+    },
+    "timestamp": "2025-08-23T13:40:50.390126",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T576987",
+    "update_doc": {
+      "text": "Experiencing longer than usual hold times with our support team? We're seeing unprecedented call volumes as customers proactively address fraud concerns & review new digital security features. We\u2019re adding resources & improving self-service options. Thank you for your patience...",
+      "hashtags": [
+        "BankingSecurity",
+        "CustomerService",
+        "FinTech",
+        "DigitalBanking"
+      ],
+      "retweet_count": 25,
+      "like_count": 115,
+      "reply_count": 35,
+      "quote_count": 8,
+      "sentiment": "Neutral",
+      "urgency": false,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "John Schmidt",
+      "dominant_topic": "Call Center Overwhelmed",
+      "subtopics": "Support System Overwhelmed, Service Infrastructure Strained"
+    },
+    "timestamp": "2025-08-23T13:40:50.823233",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T936093",
+    "update_doc": {
+      "text": "Experiencing a slight delay in balance updates today as we complete a critical financial data refresh to align with new regulatory reporting standards. We understand this is frustrating, and our team is working diligently to resolve it. Real-time info will be restored shortly....",
+      "hashtags": [
+        "Banking",
+        "FinTech",
+        "Compliance",
+        "FinancialServices",
+        "DataSecurity"
+      ],
+      "retweet_count": 25,
+      "like_count": 85,
+      "reply_count": 30,
+      "quote_count": 10,
+      "sentiment": "Neutral",
+      "urgency": true,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Juan Farmer",
+      "dominant_topic": "Balance Update Delayed",
+      "subtopics": "Account Information Delayed, Financial Data Refresh"
+    },
+    "timestamp": "2025-08-23T13:41:00.147752",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T342666",
+    "update_doc": {
+      "text": "Impressed with how proactively First National is handling recent GDPR updates. Their compliance documentation is exceptionally clear, and a real commitment to respecting customer privacy rights is evident. A strong signal of trust in these evolving regulatory landscapes. #Bank...",
+      "hashtags": [
+        "#BankingCompliance",
+        "#GDPR",
+        "#FinancialServices",
+        "#RiskManagement"
+      ],
+      "retweet_count": 28,
+      "like_count": 115,
+      "reply_count": 8,
+      "quote_count": 12,
+      "sentiment": "Positive",
+      "urgency": false,
+      "priority": "P3 - Low"
+    },
+    "original_data": {
+      "username": "David Sanchez",
+      "dominant_topic": "GDPR Compliance Praise",
+      "subtopics": "GDPR Handling Excellent, Privacy Rights Respected, Compliance Documentation Clear, Regulatory Transp..."
+    },
+    "timestamp": "2025-08-23T13:41:00.302547",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T539734",
+    "update_doc": {
+      "text": "Spent over an hour on hold with customer service trying to resolve a simple transaction error. The automated system just loops! Feels like basic client assistance is a lost art. Investing in better help desk support is crucial, especially as digital banking becomes the norm. #...",
+      "hashtags": [
+        "BankingService",
+        "CustomerExperience",
+        "DigitalBanking",
+        "Finance"
+      ],
+      "retweet_count": 25,
+      "like_count": 95,
+      "reply_count": 45,
+      "quote_count": 8,
+      "sentiment": "Negative",
+      "urgency": false,
+      "priority": "P3 - Low"
+    },
+    "original_data": {
+      "username": "Mary Mitchell",
+      "dominant_topic": "Service Quality Poor",
+      "subtopics": "Client Assistance Lacking, Help Desk Problems"
+    },
+    "timestamp": "2025-08-23T13:41:00.360155",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T541948",
+    "update_doc": {
+      "text": "Frustrated users reporting issues with 2FA verification tokens expiring too quickly during multi-step login. We're seeing a surge in support tickets related to this \u2013 a timely reminder of the balance between security & seamless customer access. Investigating potential solution...",
+      "hashtags": [
+        "TwoFactorAuthentication",
+        "DigitalBanking",
+        "Cybersecurity",
+        "BankingService"
+      ],
+      "retweet_count": 25,
+      "like_count": 85,
+      "reply_count": 45,
+      "quote_count": 10,
+      "sentiment": "Negative",
+      "urgency": false,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Travis Hogan",
+      "dominant_topic": "Multi Factor Problems",
+      "subtopics": "Two Factor Authentication, Verification Token Issues, Multi Step Login"
+    },
+    "timestamp": "2025-08-23T13:41:01.317238",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T738050",
+    "update_doc": {
+      "text": "Letter of Credit processed smoothly for a key export client! Trade documentation was meticulous, enabling a seamless transaction despite ongoing global supply chain pressures. Proud to facilitate international commerce and support business growth. #TradeFinance #Banking #Inter...",
+      "hashtags": [
+        "TradeFinance",
+        "Banking",
+        "InternationalCommerce",
+        "RiskManagement",
+        "FinancialServices"
+      ],
+      "retweet_count": 28,
+      "like_count": 155,
+      "reply_count": 8,
+      "quote_count": 5,
+      "sentiment": "Positive",
+      "urgency": false,
+      "priority": "P3 - Low"
+    },
+    "original_data": {
+      "username": "William Walker",
+      "dominant_topic": "Letter Credit Processed",
+      "subtopics": "Trade Documentation Complete, Export Process Smooth, International Commerce Success"
+    },
+    "timestamp": "2025-08-23T13:41:05.367772",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T377439",
+    "update_doc": {
+      "text": "Still waiting over 24 hours for a response to a critical account issue. The promise of streamlined digital banking is great, but it means nothing without responsive customer support. Seriously considering alternatives. @BankName, need to do better! #CustomerService #DigitalBan...",
+      "hashtags": [
+        "CustomerService",
+        "DigitalBanking",
+        "BankingIssues",
+        "Finance"
+      ],
+      "retweet_count": 25,
+      "like_count": 85,
+      "reply_count": 45,
+      "quote_count": 8,
+      "sentiment": "Negative",
+      "urgency": true,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Holly Lee",
+      "dominant_topic": "Customer Service Disappointment",
+      "subtopics": "Response Time Inadequate"
+    },
+    "timestamp": "2025-08-23T13:41:15.092650",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T983740",
+    "update_doc": {
+      "text": "Just finished a support call with @BankSecure and was pleasantly surprised by the reasonable assistance! Navigating recent fraud alerts can be stressful, but the agent was knowledgeable and quickly addressed my concerns. A positive experience, especially with evolving cybersec...",
+      "hashtags": [
+        "BankingSecurity",
+        "CustomerService",
+        "FinTech"
+      ],
+      "retweet_count": 25,
+      "like_count": 115,
+      "reply_count": 18,
+      "quote_count": 5,
+      "sentiment": "Positive",
+      "urgency": false,
+      "priority": "P3 - Low"
+    },
+    "original_data": {
+      "username": "Jennifer Garcia",
+      "dominant_topic": "Call Support Adequate",
+      "subtopics": "Banking Assistance Reasonable"
+    },
+    "timestamp": "2025-08-23T13:41:15.125613",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T719589",
+    "update_doc": {
+      "text": "Navigating the latest BSA/AML updates requires swift action! We\u2019re seeing a surge in requests for updated signature authority modifications & account control documentation. Proactive compliance is key, especially with increased scrutiny. Let's discuss streamlining the process....",
+      "hashtags": [
+        "BankingCompliance",
+        "AML",
+        "FinTech",
+        "RiskManagement"
+      ],
+      "retweet_count": 28,
+      "like_count": 115,
+      "reply_count": 35,
+      "quote_count": 12,
+      "sentiment": "Neutral",
+      "urgency": false,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Steve Parker DDS",
+      "dominant_topic": "Mandate Change Required",
+      "subtopics": "Account Control Updates, Signature Authority Modifications"
+    },
+    "timestamp": "2025-08-23T13:41:40.243137",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T488432",
+    "update_doc": {
+      "text": "Frustrating experience trying to resolve a simple account issue. My relationship manager is unavailable, and getting transferred repeatedly with no resolution. Response times are incredibly slow. Hoping for better support coordination \u2013 a core tenet of good banking! #BankingSe...",
+      "hashtags": [
+        "BankingService",
+        "CustomerExperience",
+        "DigitalBanking",
+        "Finance"
+      ],
+      "retweet_count": 25,
+      "like_count": 85,
+      "reply_count": 45,
+      "quote_count": 8,
+      "sentiment": "Negative",
+      "urgency": false,
+      "priority": "P3 - Low"
+    },
+    "original_data": {
+      "username": "Perry Jenkins",
+      "dominant_topic": "Customer Service Disappointment",
+      "subtopics": "Service Quality Poor, Response Time Inadequate, Relationship Manager Unavailable, Support Coordinati..."
+    },
+    "timestamp": "2025-08-23T13:41:41.361566",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T390245",
+    "update_doc": {
+      "text": "Seeing positive shifts in customer trust scores following our enhanced fraud detection rollout. It's a long road to fully restore confidence after recent industry challenges, but proactive security & transparency are key. Still, vigilance is paramount. #BankingSecurity #FinTec...",
+      "hashtags": [
+        "#BankingSecurity",
+        "#FinTech",
+        "#Cybersecurity",
+        "#FinancialServices"
+      ],
+      "retweet_count": 28,
+      "like_count": 185,
+      "reply_count": 17,
+      "quote_count": 8,
+      "sentiment": "Positive",
+      "urgency": false,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Ryan Delacruz",
+      "dominant_topic": "Brand Reputation Restored",
+      "subtopics": "Company Reputation Recovery"
+    },
+    "timestamp": "2025-08-23T13:41:41.481598",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T602147",
+    "update_doc": {
+      "text": "Seeing a lot of discussion online about recent account access issues. We understand the frustration & are working to enhance security protocols while maintaining a smooth user experience. Balancing innovation with robust fraud prevention is a key priority. #BankingSecurity #Di...",
+      "hashtags": [
+        "BankingSecurity",
+        "DigitalBanking",
+        "Cybersecurity",
+        "FinanceNews"
+      ],
+      "retweet_count": 25,
+      "like_count": 85,
+      "reply_count": 40,
+      "quote_count": 10,
+      "sentiment": "Negative",
+      "urgency": false,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Regina Harris",
+      "dominant_topic": "Viral Complaint Spreading",
+      "subtopics": "Viral Customer Problem, Community Issue Spreading"
+    },
+    "timestamp": "2025-08-23T13:41:50.618879",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T169210",
+    "update_doc": {
+      "text": "Noticed a slight increase in flagged credit transactions this week - likely a ripple effect of the new ISO 20022 standards implementation. Teams are proactively monitoring for false positives & refining algorithms. Staying vigilant to ensure seamless customer experience! #Cred...",
+      "hashtags": [
+        "#CreditRisk",
+        "#Compliance",
+        "#DigitalBanking",
+        "#FinancialServices"
+      ],
+      "retweet_count": 28,
+      "like_count": 115,
+      "reply_count": 22,
+      "quote_count": 12,
+      "sentiment": "Neutral",
+      "urgency": false,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Joseph Bradford",
+      "dominant_topic": "Card Services Excellent",
+      "subtopics": "Credit Transactions Excellent"
+    },
+    "timestamp": "2025-08-23T13:41:50.649986",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T382459",
+    "update_doc": {
+      "text": "Mixed feelings on the updated mobile app. The biometric login is a huge improvement & feels really secure, but the new transfer limit is surprisingly low. Hoping to see that adjusted soon! Balancing innovation with usability is key. #DigitalBanking #BankingInnovation #Customer...",
+      "hashtags": [
+        "DigitalBanking",
+        "BankingInnovation",
+        "CustomerExperience",
+        "FinTech"
+      ],
+      "retweet_count": 22,
+      "like_count": 85,
+      "reply_count": 35,
+      "quote_count": 8,
+      "sentiment": "Neutral",
+      "urgency": false,
+      "priority": "P3 - Low"
+    },
+    "original_data": {
+      "username": "Kristen Reynolds",
+      "dominant_topic": "Mixed Experience Reported",
+      "subtopics": "Experience Report Mixed, Account Experience Combined"
+    },
+    "timestamp": "2025-08-23T13:41:50.963829",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T104934",
+    "update_doc": {
+      "text": "Frustrated trying to access detailed transaction history for my business account online. The current interface isn't user-friendly & makes reconciliation a real challenge. Hoping @BankOfAmerica can improve this \u2013 clear data access is crucial for effective financial management!...",
+      "hashtags": [
+        "DigitalBanking",
+        "BankingService",
+        "FinTech",
+        "CustomerExperience"
+      ],
+      "retweet_count": 18,
+      "like_count": 85,
+      "reply_count": 35,
+      "quote_count": 5,
+      "sentiment": "Negative",
+      "urgency": false,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Christopher Carter",
+      "dominant_topic": "Information Inquiry Made",
+      "subtopics": "Account Information Needed"
+    },
+    "timestamp": "2025-08-23T13:41:51.963143",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T538268",
+    "update_doc": {
+      "text": "Noticed a slight dip in mobile app responsiveness this week. While overall satisfaction remains high (85% in our latest survey!), consistent performance is key. Hoping the team's recent infrastructure updates address these minor lags. Customer support response times also seem ...",
+      "hashtags": [
+        "DigitalBanking",
+        "BankingService",
+        "CustomerExperience",
+        "FinTech"
+      ],
+      "retweet_count": 25,
+      "like_count": 85,
+      "reply_count": 35,
+      "quote_count": 8,
+      "sentiment": "Negative",
+      "urgency": false,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Andrew Macdonald",
+      "dominant_topic": "Periodic Performance Changes",
+      "subtopics": "Banking Quality Fluctuation, Customer Support Cycles"
+    },
+    "timestamp": "2025-08-23T13:41:52.003252",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T856025",
+    "update_doc": {
+      "text": "Year-end processing is always a challenge, but we're seeing smoother yearly account reconciliation this time thanks to our new automated systems. Still navigating evolving KYC regulations though - compliance is a constant evolution! #BankingCompliance #YearEndProcessing #FinTe...",
+      "hashtags": [
+        "BankingCompliance",
+        "YearEndProcessing",
+        "FinTech",
+        "BankingRisk",
+        "DigitalBanking"
+      ],
+      "retweet_count": 28,
+      "like_count": 115,
+      "reply_count": 22,
+      "quote_count": 8,
+      "sentiment": "Neutral",
+      "urgency": false,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Cody Collins",
+      "dominant_topic": "Year End Processing",
+      "subtopics": "Annual Processing Period, Yearly Account Reconciliation"
+    },
+    "timestamp": "2025-08-23T13:42:01.102647",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T803163",
+    "update_doc": {
+      "text": "Appreciate the recent improvements to the mobile banking app, especially the faster bill pay! Still finding the two-factor authentication a bit clunky though - hoping for smoother integration in the future. Balancing convenience & security is key. \ud83d\udd11 #DigitalBanking #BankingInn...",
+      "hashtags": [
+        "DigitalBanking",
+        "BankingInnovation",
+        "FinTech",
+        "CustomerExperience"
+      ],
+      "retweet_count": 25,
+      "like_count": 110,
+      "reply_count": 35,
+      "quote_count": 8,
+      "sentiment": "Neutral",
+      "urgency": false,
+      "priority": "P3 - Low"
+    },
+    "original_data": {
+      "username": "Amy Campbell",
+      "dominant_topic": "Partial Satisfaction Expressed",
+      "subtopics": "Banking Feedback Balanced"
+    },
+    "timestamp": "2025-08-23T13:42:01.511615",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T923548",
+    "update_doc": {
+      "text": "Spent the morning reviewing updated KYC procedures. While crucial for compliance & security, the increased documentation requirements are adding friction to new account openings. Balancing risk mitigation with seamless customer onboarding is a key challenge. #Compliance #KYC #...",
+      "hashtags": [
+        "Compliance",
+        "KYC",
+        "BankingCompliance",
+        "FinTech",
+        "RiskManagement"
+      ],
+      "retweet_count": 25,
+      "like_count": 85,
+      "reply_count": 35,
+      "quote_count": 12,
+      "sentiment": "Negative",
+      "urgency": false,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Rickey Miller",
+      "dominant_topic": "Standard Operation Smooth",
+      "subtopics": "Regular Banking Operations, Typical Account Management, Normal Customer Support"
+    },
+    "timestamp": "2025-08-23T13:42:01.520619",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T236573",
+    "update_doc": {
+      "text": "Appreciate the faster online loan application process @FirstNationalBank - a real improvement! However, the follow-up from a loan officer was surprisingly slow. Streamlining that communication would elevate the experience significantly. Balancing tech with the human touch is k...",
+      "hashtags": [
+        "DigitalBanking",
+        "BankingService",
+        "CustomerExperience",
+        "FinTech"
+      ],
+      "retweet_count": 25,
+      "like_count": 115,
+      "reply_count": 35,
+      "quote_count": 5,
+      "sentiment": "Neutral",
+      "urgency": false,
+      "priority": "P3 - Low"
+    },
+    "original_data": {
+      "username": "Travis Hogan",
+      "dominant_topic": "Partial Satisfaction Expressed",
+      "subtopics": "Service Experience Mixed, Banking Feedback Balanced"
+    },
+    "timestamp": "2025-08-23T13:42:02.072141",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T487545",
+    "update_doc": {
+      "text": "Feeling the strain of increasingly complex compliance monitoring. While robust risk management is vital, the sheer volume of legal requirements feels unsustainable. We need smarter RegTech solutions, not just more checks! Balancing security & customer experience is key. #Banki...",
+      "hashtags": [
+        "BankingCompliance",
+        "RegTech",
+        "RiskManagement",
+        "FinTech"
+      ],
+      "retweet_count": 28,
+      "like_count": 85,
+      "reply_count": 42,
+      "quote_count": 12,
+      "sentiment": "Negative",
+      "urgency": false,
+      "priority": "P3 - Low"
+    },
+    "original_data": {
+      "username": "Danielle Clark",
+      "dominant_topic": "Compliance Checks Intrusive",
+      "subtopics": "Compliance Monitoring Excessive, Legal Requirements Burdensome"
+    },
+    "timestamp": "2025-08-23T13:42:02.253530",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T219955",
+    "update_doc": {
+      "text": "Seeing a concerning trend in longer wait times for loan applications, even with digital streamlining. Regional processing centers seem overwhelmed. We need consistent geographic banking standards & a focus on national service levels - customers deserve better! #BankingService ...",
+      "hashtags": [
+        "#BankingService",
+        "#FinancialServices",
+        "#Compliance",
+        "#DigitalBanking"
+      ],
+      "retweet_count": 28,
+      "like_count": 85,
+      "reply_count": 45,
+      "quote_count": 12,
+      "sentiment": "Negative",
+      "urgency": false,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Kevin Vaughn",
+      "dominant_topic": "Local Service Quality",
+      "subtopics": "Regional Service Quality, Geographic Banking Standards, Country Service Levels"
+    },
+    "timestamp": "2025-08-23T13:42:10.869815"
+  },
+  {
+    "tweet_id": "T508836",
+    "update_doc": {
+      "text": "Frustrated! My account was unexpectedly locked this morning, and the password reset link isn't working. Getting authentication errors repeatedly. Secure access is vital, but this is creating a major disruption. Hoping @BankSecure can resolve this quickly! #DigitalBanking #Bank...",
+      "hashtags": [
+        "DigitalBanking",
+        "BankingSecurity",
+        "CustomerService",
+        "FinTech"
+      ],
+      "retweet_count": 25,
+      "like_count": 85,
+      "reply_count": 45,
+      "quote_count": 8,
+      "sentiment": "Negative",
+      "urgency": true,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Holly Lee",
+      "dominant_topic": "Account Access Problems",
+      "subtopics": "Account Locked Unexpectedly, Password Reset Failed, Authentication Errors Occurred"
+    },
+    "timestamp": "2025-08-23T13:42:15.789175"
+  }
+]

@@ -1,0 +1,7 @@
+hdbscan
+umap-learn
+scikit-learn
+numpy
+pandas
+pymongo
+python-dotenv

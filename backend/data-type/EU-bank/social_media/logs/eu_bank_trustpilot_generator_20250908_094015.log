@@ -1,0 +1,76 @@
+2025-09-08 09:40:15,321 - INFO - EU Bank Social Media Trustpilot Review Content Generator Starting...
+2025-09-08 09:40:15,321 - INFO - Database: sparzaai
+2025-09-08 09:40:15,321 - INFO - Collection: socialmedia
+2025-09-08 09:40:15,321 - INFO - Target Channel: Trustpilot
+2025-09-08 09:40:15,321 - INFO - Bank: EU Bank (European Banking)
+2025-09-08 09:40:15,321 - INFO - Model: gemma3:27b
+2025-09-08 09:40:15,321 - INFO - Ollama URL: https://teen-everybody-dpi-tyler.trycloudflare.com
+2025-09-08 09:40:15,321 - INFO - Review Platform: Trustpilot
+2025-09-08 09:40:16,372 - INFO - Database connection established and indexes created
+2025-09-08 09:40:16,796 - INFO - EU Bank Social Media Collection Statistics:
+2025-09-08 09:40:16,796 - INFO - Total social media records: 2287
+2025-09-08 09:40:16,796 - INFO - Trustpilot records (exact match): 1147
+2025-09-08 09:40:16,796 - INFO - Trustpilot records (all variations): 1147
+2025-09-08 09:40:16,796 - INFO - With generated content: 0
+2025-09-08 09:40:16,796 - INFO - Without generated content: 1147
+2025-09-08 09:40:16,899 - INFO - Available channels: ['App Store/Google Play', 'Reddit', 'Trustpilot', 'Twitter']
+2025-09-08 09:40:17,003 - INFO - Sample Trustpilot record structure:
+2025-09-08 09:40:17,003 - INFO -   _id: 68bb12eb35db675a8b09a217
+2025-09-08 09:40:17,003 - INFO -   email_id: raymondwarner5185@gmail.com
+2025-09-08 09:40:17,003 - INFO -   username: Raymond Warner
+2025-09-08 09:40:17,003 - INFO -   channel: Trustpilot
+2025-09-08 09:40:17,003 - INFO -   dominant_topic: Long Wait Times
+2025-09-08 09:40:17,004 - INFO -   subtopics: Peak Hour Congestion, Resource Allocation Issues, ...
+2025-09-08 09:40:17,004 - INFO -   created_at: 2024-12-21T00:43:25Z
+2025-09-08 09:40:17,004 - INFO -   domain: banking
+2025-09-08 09:40:17,004 - INFO -   review_id: TP264234
+2025-09-08 09:40:17,004 - INFO -   user_id: 292301
+2025-09-08 09:40:17,004 - INFO - Starting EU Bank Social Media Trustpilot Review Content Generation...
+2025-09-08 09:40:17,004 - INFO - Target Channel: Trustpilot
+2025-09-08 09:40:17,004 - INFO - Collection: socialmedia
+2025-09-08 09:40:17,004 - INFO - Bank: EU Bank (European)
+2025-09-08 09:40:17,004 - INFO - Review Platform: Trustpilot
+2025-09-08 09:40:17,004 - INFO - Batch size: 2
+2025-09-08 09:40:17,004 - INFO - Max workers: 4
+2025-09-08 09:40:17,004 - INFO - Testing connection to remote Ollama: https://teen-everybody-dpi-tyler.trycloudflare.com
+2025-09-08 09:40:17,004 - INFO - Using model: gemma3:27b
+2025-09-08 09:40:26,445 - INFO - Ollama connection test successful
+2025-09-08 09:40:26,446 - INFO - Fetching Trustpilot social media records from database...
+2025-09-08 09:40:27,070 - INFO - Found 1147 Trustpilot social media records needing content generation
+2025-09-08 09:40:27,070 - INFO - Processing batch 1/574 (2 records)...
+2025-09-08 09:40:27,071 - INFO - Record 68bb12eb35db675a8b09a217: Generating Trustpilot review content
+2025-09-08 09:40:27,072 - INFO - Record 68bb12eb35db675a8b09a218: Generating Trustpilot review content
+2025-09-08 09:40:31,329 - INFO - Received signal 2. Initiating graceful shutdown...
+2025-09-08 09:40:31,330 - INFO - Please wait for current operations to complete...
+2025-09-08 09:40:59,335 - INFO - Batch 1 complete: 0/2 successful
+2025-09-08 09:40:59,336 - INFO - Progress: 2/1147 records processed
+2025-09-08 09:40:59,336 - INFO - Success: 2 | Failures: 0
+2025-09-08 09:40:59,336 - INFO - Shutdown requested. Stopping processing...
+2025-09-08 09:40:59,336 - INFO - EU Bank Social Media Trustpilot review generation complete!
+2025-09-08 09:40:59,336 - INFO - Total records updated: 0
+2025-09-08 09:40:59,336 - INFO - Successful generations: 2
+2025-09-08 09:40:59,336 - INFO - Failed generations: 0
+2025-09-08 09:40:59,761 - INFO - EU Bank Social Media Collection Statistics:
+2025-09-08 09:40:59,761 - INFO - Total social media records: 2287
+2025-09-08 09:40:59,761 - INFO - Trustpilot records (exact match): 1147
+2025-09-08 09:40:59,761 - INFO - Trustpilot records (all variations): 1147
+2025-09-08 09:40:59,761 - INFO - With generated content: 0
+2025-09-08 09:40:59,761 - INFO - Without generated content: 1147
+2025-09-08 09:40:59,865 - INFO - Available channels: ['App Store/Google Play', 'Reddit', 'Trustpilot', 'Twitter']
+2025-09-08 09:40:59,969 - INFO - Sample Trustpilot record structure:
+2025-09-08 09:40:59,969 - INFO -   _id: 68bb12eb35db675a8b09a217
+2025-09-08 09:40:59,969 - INFO -   email_id: raymondwarner5185@gmail.com
+2025-09-08 09:40:59,969 - INFO -   username: Raymond Warner
+2025-09-08 09:40:59,969 - INFO -   channel: Trustpilot
+2025-09-08 09:40:59,969 - INFO -   dominant_topic: Long Wait Times
+2025-09-08 09:40:59,969 - INFO -   subtopics: Peak Hour Congestion, Resource Allocation Issues, ...
+2025-09-08 09:40:59,969 - INFO -   created_at: 2024-12-21T00:43:25Z
+2025-09-08 09:40:59,969 - INFO -   domain: banking
+2025-09-08 09:40:59,970 - INFO -   review_id: TP264234
+2025-09-08 09:40:59,970 - INFO -   user_id: 292301
+2025-09-08 09:41:00,073 - INFO - Database connection closed
+2025-09-08 09:41:00,073 - INFO - Session complete. Check log files:
+2025-09-08 09:41:00,073 - INFO - Main Log: logs/eu_bank_trustpilot_generator_20250908_094015.log
+2025-09-08 09:41:00,073 - INFO - Success Log: logs/successful_trustpilot_generations_20250908_094015.log
+2025-09-08 09:41:00,073 - INFO - Failure Log: logs/failed_trustpilot_generations_20250908_094015.log
+2025-09-08 09:41:00,074 - INFO - Database connection closed

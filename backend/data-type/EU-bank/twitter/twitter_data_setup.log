@@ -1,0 +1,80 @@
+2025-08-23 01:20:14,108 - INFO - === Twitter Data Setup Script Started ===
+2025-08-23 01:20:14,108 - INFO - Connecting to MongoDB...
+2025-08-23 01:20:15,906 - INFO - Successfully connected to MongoDB
+2025-08-23 01:20:16,213 - INFO - Creating collection 'twitter'
+2025-08-23 01:20:17,389 - INFO - Created unique index on tweet_id field
+2025-08-23 01:20:17,636 - INFO - Loaded 0 existing tweet IDs to avoid duplicates
+2025-08-23 01:20:17,637 - INFO - Connected to database: sparzaai, collection: twitter
+2025-08-23 01:20:17,638 - INFO - Checking for existing duplicates...
+2025-08-23 01:20:17,881 - INFO - ✅ No duplicate tweet IDs found
+2025-08-23 01:20:17,883 - INFO - Fetching random email data from emailmessages collection...
+2025-08-23 01:20:19,164 - INFO - Retrieved 2000 random email records from emailmessages collection
+2025-08-23 01:20:19,165 - INFO - Starting to generate 2000 Twitter records...
+2025-08-23 01:20:19,165 - INFO - Generating batch 1/20 (100 records)
+2025-08-23 01:20:19,694 - INFO - Successfully inserted 100 records
+2025-08-23 01:20:19,695 - INFO - Batch 1 completed. Total inserted: 100/2000
+2025-08-23 01:20:19,796 - INFO - Generating batch 2/20 (100 records)
+2025-08-23 01:20:20,104 - INFO - Successfully inserted 100 records
+2025-08-23 01:20:20,105 - INFO - Batch 2 completed. Total inserted: 200/2000
+2025-08-23 01:20:20,207 - INFO - Generating batch 3/20 (100 records)
+2025-08-23 01:20:20,513 - INFO - Successfully inserted 100 records
+2025-08-23 01:20:20,514 - INFO - Batch 3 completed. Total inserted: 300/2000
+2025-08-23 01:20:20,615 - INFO - Generating batch 4/20 (100 records)
+2025-08-23 01:20:20,924 - INFO - Successfully inserted 100 records
+2025-08-23 01:20:20,925 - INFO - Batch 4 completed. Total inserted: 400/2000
+2025-08-23 01:20:21,026 - INFO - Generating batch 5/20 (100 records)
+2025-08-23 01:20:21,335 - INFO - Successfully inserted 100 records
+2025-08-23 01:20:21,336 - INFO - Batch 5 completed. Total inserted: 500/2000
+2025-08-23 01:20:21,438 - INFO - Generating batch 6/20 (100 records)
+2025-08-23 01:20:21,717 - INFO - Successfully inserted 100 records
+2025-08-23 01:20:21,718 - INFO - Batch 6 completed. Total inserted: 600/2000
+2025-08-23 01:20:21,820 - INFO - Generating batch 7/20 (100 records)
+2025-08-23 01:20:22,153 - INFO - Successfully inserted 100 records
+2025-08-23 01:20:22,154 - INFO - Batch 7 completed. Total inserted: 700/2000
+2025-08-23 01:20:22,255 - INFO - Generating batch 8/20 (100 records)
+2025-08-23 01:20:22,508 - INFO - Successfully inserted 100 records
+2025-08-23 01:20:22,509 - INFO - Batch 8 completed. Total inserted: 800/2000
+2025-08-23 01:20:22,610 - INFO - Generating batch 9/20 (100 records)
+2025-08-23 01:20:22,869 - INFO - Successfully inserted 100 records
+2025-08-23 01:20:22,871 - INFO - Batch 9 completed. Total inserted: 900/2000
+2025-08-23 01:20:22,973 - INFO - Generating batch 10/20 (100 records)
+2025-08-23 01:20:23,278 - INFO - Successfully inserted 100 records
+2025-08-23 01:20:23,279 - INFO - Batch 10 completed. Total inserted: 1000/2000
+2025-08-23 01:20:23,381 - INFO - Generating batch 11/20 (100 records)
+2025-08-23 01:20:23,688 - INFO - Successfully inserted 100 records
+2025-08-23 01:20:23,689 - INFO - Batch 11 completed. Total inserted: 1100/2000
+2025-08-23 01:20:23,790 - INFO - Generating batch 12/20 (100 records)
+2025-08-23 01:20:24,049 - INFO - Successfully inserted 100 records
+2025-08-23 01:20:24,050 - INFO - Batch 12 completed. Total inserted: 1200/2000
+2025-08-23 01:20:24,152 - INFO - Generating batch 13/20 (100 records)
+2025-08-23 01:20:24,409 - INFO - Successfully inserted 100 records
+2025-08-23 01:20:24,409 - INFO - Batch 13 completed. Total inserted: 1300/2000
+2025-08-23 01:20:24,510 - INFO - Generating batch 14/20 (100 records)
+2025-08-23 01:20:24,770 - INFO - Successfully inserted 100 records
+2025-08-23 01:20:24,773 - INFO - Batch 14 completed. Total inserted: 1400/2000
+2025-08-23 01:20:24,874 - INFO - Generating batch 15/20 (100 records)
+2025-08-23 01:20:25,222 - INFO - Successfully inserted 100 records
+2025-08-23 01:20:25,223 - INFO - Batch 15 completed. Total inserted: 1500/2000
+2025-08-23 01:20:25,324 - INFO - Generating batch 16/20 (100 records)
+2025-08-23 01:20:25,585 - INFO - Successfully inserted 100 records
+2025-08-23 01:20:25,587 - INFO - Batch 16 completed. Total inserted: 1600/2000
+2025-08-23 01:20:25,688 - INFO - Generating batch 17/20 (100 records)
+2025-08-23 01:20:26,043 - INFO - Successfully inserted 100 records
+2025-08-23 01:20:26,044 - INFO - Batch 17 completed. Total inserted: 1700/2000
+2025-08-23 01:20:26,145 - INFO - Generating batch 18/20 (100 records)
+2025-08-23 01:20:26,454 - INFO - Successfully inserted 100 records
+2025-08-23 01:20:26,454 - INFO - Batch 18 completed. Total inserted: 1800/2000
+2025-08-23 01:20:26,555 - INFO - Generating batch 19/20 (100 records)
+2025-08-23 01:20:26,807 - INFO - Successfully inserted 100 records
+2025-08-23 01:20:26,807 - INFO - Batch 19 completed. Total inserted: 1900/2000
+2025-08-23 01:20:26,909 - INFO - Generating batch 20/20 (100 records)
+2025-08-23 01:20:27,170 - INFO - Successfully inserted 100 records
+2025-08-23 01:20:27,171 - INFO - Batch 20 completed. Total inserted: 2000/2000
+2025-08-23 01:20:27,171 - INFO - Data generation completed. Total records inserted: 2000
+2025-08-23 01:20:27,436 - INFO - Collection 'twitter' contains 2000 documents
+2025-08-23 01:20:27,743 - INFO - ✅ All tweet IDs are unique!
+2025-08-23 01:20:28,091 - INFO - ✅ No duplicate tweet IDs found
+2025-08-23 01:20:28,398 - INFO - Sample record: {'_id': ObjectId('68a8c9fb8b8398d82b9fe325'), 'tweet_id': 'T456078', 'created_at': '2025-06-14T15:46:53Z', 'user_id': '524732', 'username': 'Joshua Garcia', 'email_id': 'joshuagarcia9047@gmail.com'}
+2025-08-23 01:20:28,399 - INFO - ✅ Twitter data generation completed successfully!
+2025-08-23 01:20:28,640 - INFO - MongoDB connection closed
+2025-08-23 01:20:28,641 - INFO - === Twitter Data Setup Script Completed ===

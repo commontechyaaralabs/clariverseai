@@ -1,0 +1,428 @@
+2025-08-23 13:52:34,823 - INFO - Rate limiter enabled: 16 requests per minute
+2025-08-23 13:52:34,824 - INFO - Recommended delay between requests: 3.75 seconds
+2025-08-23 13:52:34,926 - INFO - EU Banking Twitter Content Generator Starting...
+2025-08-23 13:52:34,926 - INFO - Database: sparzaai
+2025-08-23 13:52:34,927 - INFO - Collection: twitter
+2025-08-23 13:52:34,927 - INFO - Model: google/gemma-3-27b-it:free
+2025-08-23 13:52:34,927 - INFO - OpenRouter URL: https://openrouter.ai/api/v1
+2025-08-23 13:52:34,928 - INFO - Max Workers: 8
+2025-08-23 13:52:34,928 - INFO - Batch Size: 5
+2025-08-23 13:52:34,928 - INFO - Log Directory: logs
+2025-08-23 13:52:34,931 - INFO - Testing OpenRouter connection...
+2025-08-23 13:52:34,934 - INFO - Testing connection to OpenRouter: https://openrouter.ai/api/v1
+2025-08-23 13:52:34,935 - INFO - Testing model: google/gemma-3-27b-it:free
+2025-08-23 13:52:34,935 - INFO - Testing simple generation...
+2025-08-23 13:52:37,596 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:52:37,947 - INFO - OpenRouter connection test successful
+2025-08-23 13:52:37,947 - INFO - Test response: ```json
+{
+  "test": "success"
+}
+```
+...
+2025-08-23 13:52:37,948 - INFO - OpenRouter connection test successful!
+2025-08-23 13:52:39,896 - INFO - Unique index on tweet_id already exists
+2025-08-23 13:52:39,897 - INFO - Index on user_id already exists
+2025-08-23 13:52:39,897 - INFO - Index on username already exists
+2025-08-23 13:52:39,899 - INFO - Index on dominant_topic already exists
+2025-08-23 13:52:39,899 - INFO - Database connection established and indexes verified
+2025-08-23 13:52:40,866 - INFO - Collection Statistics:
+2025-08-23 13:52:40,867 - INFO - Total tweets: 2000
+2025-08-23 13:52:40,868 - INFO - With generated content: 1430
+2025-08-23 13:52:40,868 - INFO - Without generated content: 570
+2025-08-23 13:52:40,869 - INFO - Top Dominant Topics:
+2025-08-23 13:52:40,869 - INFO - 1. Excellent Call Support: 26 tweets
+2025-08-23 13:52:40,869 - INFO - 2. Others Need Improvement: 25 tweets
+2025-08-23 13:52:40,870 - INFO - 3. Customer Service Disappointment: 25 tweets
+2025-08-23 13:52:40,870 - INFO - 4. Payment Processing Failure: 24 tweets
+2025-08-23 13:52:40,870 - INFO - 5. Call Center Complaints: 24 tweets
+2025-08-23 13:52:40,871 - INFO - 6. GDPR Compliance Praise: 23 tweets
+2025-08-23 13:52:40,872 - INFO - 7. Account Access Problems: 23 tweets
+2025-08-23 13:52:40,872 - INFO - 8. Regulatory Compliance Questions: 23 tweets
+2025-08-23 13:52:40,873 - INFO - 9. Cross Border Issues: 23 tweets
+2025-08-23 13:52:40,873 - INFO - 10. Fee Structure Criticism: 23 tweets
+2025-08-23 13:52:40,873 - INFO - No pending intermediate results to recover
+2025-08-23 13:52:40,874 - INFO - Starting EU Banking Twitter Content Generation...
+2025-08-23 13:52:40,874 - INFO - System Info: 16 CPU cores detected
+2025-08-23 13:52:40,875 - INFO - Batch size: 5
+2025-08-23 13:52:40,875 - INFO - Max workers: 8
+2025-08-23 13:52:40,875 - INFO - Request timeout: 120s
+2025-08-23 13:52:40,876 - INFO - Max retries per request: 3
+2025-08-23 13:52:40,876 - INFO - Fetching tweet records from database...
+2025-08-23 13:52:42,257 - INFO - Found 570 tweets needing content generation
+2025-08-23 13:52:42,258 - INFO - Processing in 114 batches of 5 tweets each
+2025-08-23 13:52:42,258 - INFO - Rate limit: 16 requests per minute
+2025-08-23 13:52:42,258 - INFO - Recommended delay between requests: 3.75 seconds
+2025-08-23 13:52:42,259 - INFO - Processing batch 1/114 (5 tweets)...
+2025-08-23 13:52:44,289 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:52:44,387 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:52:44,434 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:52:44,882 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:52:44,961 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:52:47,589 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:52:47,812 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:52:48,613 - INFO - Batch 1 processing complete: 5/5 successful
+2025-08-23 13:52:48,613 - INFO - Batch duration: 6.35s
+2025-08-23 13:52:48,614 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:52:48,877 - INFO - Successfully saved 5 records to database
+2025-08-23 13:52:48,877 - INFO - Sample update - ID: T209607, Text: Successfully issued a new Bank Guarantee today, su...
+2025-08-23 13:52:48,878 - INFO - Database update complete: 5 records saved
+2025-08-23 13:52:52,629 - INFO - Processing batch 2/114 (5 tweets)...
+2025-08-23 13:52:54,490 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:52:54,505 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:52:54,794 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:52:55,245 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:52:55,734 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:52:57,714 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:52:58,040 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:52:58,233 - INFO - Batch 2 processing complete: 5/5 successful
+2025-08-23 13:52:58,234 - INFO - Batch duration: 5.60s
+2025-08-23 13:52:58,235 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:52:58,500 - INFO - Successfully saved 5 records to database
+2025-08-23 13:52:58,501 - INFO - Sample update - ID: T504041, Text: Recent uptick in sophisticated phishing attempts t...
+2025-08-23 13:52:58,501 - INFO - Database update complete: 5 records saved
+2025-08-23 13:53:02,253 - INFO - Processing batch 3/114 (5 tweets)...
+2025-08-23 13:53:03,819 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:53:03,927 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:53:03,974 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:53:03,984 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:53:04,016 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:53:07,092 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:53:07,317 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:53:10,479 - INFO - Batch 3 processing complete: 5/5 successful
+2025-08-23 13:53:10,480 - INFO - Batch duration: 8.22s
+2025-08-23 13:53:10,480 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:53:10,745 - INFO - Successfully saved 5 records to database
+2025-08-23 13:53:10,746 - INFO - Sample update - ID: T663665, Text: Increased market volatility is really highlighting...
+2025-08-23 13:53:10,747 - INFO - Database update complete: 5 records saved
+2025-08-23 13:53:14,499 - INFO - Processing batch 4/114 (5 tweets)...
+2025-08-23 13:53:14,505 - INFO - Rate limit reached. Waiting 28.8 seconds...
+2025-08-23 13:53:16,743 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:53:44,774 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:53:45,397 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:53:45,692 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:53:46,240 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:53:48,150 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:53:49,467 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:53:49,486 - INFO - Batch 4 processing complete: 5/5 successful
+2025-08-23 13:53:49,487 - INFO - Batch duration: 34.99s
+2025-08-23 13:53:49,488 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:53:49,756 - INFO - Successfully saved 5 records to database
+2025-08-23 13:53:49,756 - INFO - Sample update - ID: T604056, Text: Finally got through to support & was pleasantly su...
+2025-08-23 13:53:49,757 - INFO - Database update complete: 5 records saved
+2025-08-23 13:53:53,508 - INFO - Processing batch 5/114 (5 tweets)...
+2025-08-23 13:53:55,579 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:53:55,899 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:53:55,942 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:53:56,100 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:53:56,654 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:53:58,889 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:53:59,669 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:54:02,399 - INFO - Batch 5 processing complete: 5/5 successful
+2025-08-23 13:54:02,400 - INFO - Batch duration: 8.89s
+2025-08-23 13:54:02,400 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:54:02,680 - INFO - Successfully saved 5 records to database
+2025-08-23 13:54:02,681 - INFO - Sample update - ID: T877804, Text: Navigating the complexities of cross-border docume...
+2025-08-23 13:54:02,682 - INFO - Database update complete: 5 records saved
+2025-08-23 13:54:02,683 - INFO - Overall Progress: 4.4% | Batches: 5/114
+2025-08-23 13:54:02,684 - INFO - Success: 25 | Failures: 0 | DB Updates: 25
+2025-08-23 13:54:02,685 - INFO - Rate-limited failures: 0
+2025-08-23 13:54:02,686 - INFO - Rate Limit Status: 10/16 requests used this minute (6 remaining)
+2025-08-23 13:54:02,686 - INFO - Estimated time remaining: 34.1 minutes
+2025-08-23 13:54:02,693 - INFO - System: CPU 5.2% | Memory 78.4%
+2025-08-23 13:54:06,446 - INFO - Processing batch 6/114 (5 tweets)...
+2025-08-23 13:54:08,331 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:54:08,344 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:54:09,081 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:54:09,460 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:54:10,308 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:54:11,647 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:54:12,906 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:54:15,959 - INFO - Batch 6 processing complete: 5/5 successful
+2025-08-23 13:54:15,960 - INFO - Batch duration: 9.51s
+2025-08-23 13:54:15,960 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:54:16,224 - INFO - Successfully saved 5 records to database
+2025-08-23 13:54:16,225 - INFO - Sample update - ID: T829620, Text: Navigating our new online banking system is provin...
+2025-08-23 13:54:16,225 - INFO - Database update complete: 5 records saved
+2025-08-23 13:54:19,977 - INFO - Processing batch 7/114 (5 tweets)...
+2025-08-23 13:54:19,983 - INFO - Rate limit reached. Waiting 24.3 seconds...
+2025-08-23 13:54:21,557 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:54:22,118 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:54:28,395 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:54:45,740 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:54:46,225 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:54:47,310 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:54:49,806 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:54:50,705 - INFO - Batch 7 processing complete: 5/5 successful
+2025-08-23 13:54:50,706 - INFO - Batch duration: 30.73s
+2025-08-23 13:54:50,706 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:54:51,046 - INFO - Successfully saved 5 records to database
+2025-08-23 13:54:51,047 - INFO - Sample update - ID: T331453, Text: Navigating the evolving regulatory landscape for i...
+2025-08-23 13:54:51,047 - INFO - Database update complete: 5 records saved
+2025-08-23 13:54:54,799 - INFO - Processing batch 8/114 (5 tweets)...
+2025-08-23 13:54:57,092 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:54:57,403 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:54:57,533 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:54:58,078 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:54:58,118 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:55:01,194 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:55:06,780 - ERROR - Task processing error for T593001: No valid JSON found in LLM response
+2025-08-23 13:55:06,782 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:55:06,965 - ERROR - Task processing error for T861929: JSON parsing failed: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+2025-08-23 13:55:06,966 - INFO - Batch 8 processing complete: 3/5 successful
+2025-08-23 13:55:06,967 - INFO - Batch duration: 12.17s
+2025-08-23 13:55:10,719 - INFO - Processing batch 9/114 (5 tweets)...
+2025-08-23 13:55:12,551 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:55:12,576 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:55:13,192 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:55:13,309 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:55:14,694 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:55:15,854 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:55:16,535 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:55:18,705 - INFO - Batch 9 processing complete: 5/5 successful
+2025-08-23 13:55:18,705 - INFO - Batch duration: 7.98s
+2025-08-23 13:55:18,706 - INFO - Saving batch of 8 updates to database...
+2025-08-23 13:55:18,960 - INFO - Successfully saved 8 records to database
+2025-08-23 13:55:18,961 - INFO - Sample update - ID: T428771, Text: Experiencing slightly slower than usual balance up...
+2025-08-23 13:55:18,962 - INFO - Database update complete: 8 records saved
+2025-08-23 13:55:22,714 - INFO - Processing batch 10/114 (5 tweets)...
+2025-08-23 13:55:22,725 - INFO - Rate limit reached. Waiting 22.5 seconds...
+2025-08-23 13:55:24,404 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:55:24,737 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:55:25,737 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:55:27,986 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:55:46,970 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:55:46,972 - INFO - Retrying request to /chat/completions in 0.478744 seconds
+2025-08-23 13:55:48,290 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-23 13:55:48,326 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:55:48,327 - INFO - Retrying request to /chat/completions in 0.802939 seconds
+2025-08-23 13:55:50,017 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:55:50,019 - WARNING - Rate limit hit, waiting before retry...
+2025-08-23 13:55:51,977 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:55:53,775 - INFO - Backing off call_openrouter_with_backoff(...) for 0.5s (ValueError: Rate limit exceeded: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1755993600000'}, 'provider_name': None}}, 'user_id': 'user_31gESZZ0kbV8KfSdlI0I4vTpCgO'})
+2025-08-23 13:55:53,775 - WARNING - Retry 1/3 after 0.5s
+2025-08-23 13:55:55,308 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:55:55,309 - INFO - Retrying request to /chat/completions in 0.478802 seconds
+2025-08-23 13:55:56,670 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:55:56,671 - INFO - Retrying request to /chat/completions in 0.826107 seconds
+2025-08-23 13:55:58,538 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:55:58,540 - WARNING - Rate limit hit, waiting before retry...
+2025-08-23 13:56:02,292 - INFO - Backing off call_openrouter_with_backoff(...) for 0.9s (ValueError: Rate limit exceeded: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1755993600000'}, 'provider_name': None}}, 'user_id': 'user_31gESZZ0kbV8KfSdlI0I4vTpCgO'})
+2025-08-23 13:56:02,293 - WARNING - Retry 2/3 after 0.9s
+2025-08-23 13:56:04,597 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:04,599 - INFO - Retrying request to /chat/completions in 0.488850 seconds
+2025-08-23 13:56:06,004 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:06,007 - INFO - Retrying request to /chat/completions in 0.845163 seconds
+2025-08-23 13:56:07,713 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:07,715 - WARNING - Rate limit hit, waiting before retry...
+2025-08-23 13:56:11,470 - ERROR - Giving up call_openrouter_with_backoff(...) after 3 tries (ValueError: Rate limit exceeded: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1755993600000'}, 'provider_name': None}}, 'user_id': 'user_31gESZZ0kbV8KfSdlI0I4vTpCgO'})
+2025-08-23 13:56:11,475 - WARNING - Rate limit error for T453179: Rate limit exceeded: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-d
+2025-08-23 13:56:11,479 - INFO - Batch 10 processing complete: 4/5 successful
+2025-08-23 13:56:11,479 - INFO - Batch duration: 48.76s
+2025-08-23 13:56:11,480 - INFO - Overall Progress: 8.8% | Batches: 10/114
+2025-08-23 13:56:11,481 - INFO - Success: 47 | Failures: 2 | DB Updates: 43
+2025-08-23 13:56:11,481 - INFO - Rate-limited failures: 3
+2025-08-23 13:56:11,481 - INFO - Rate Limit Status: 7/16 requests used this minute (9 remaining)
+2025-08-23 13:56:11,482 - INFO - Estimated time remaining: 32.5 minutes
+2025-08-23 13:56:11,483 - INFO - System: CPU 10.7% | Memory 78.7%
+2025-08-23 13:56:15,234 - INFO - Processing batch 11/114 (5 tweets)...
+2025-08-23 13:56:16,452 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:16,454 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:16,455 - INFO - Retrying request to /chat/completions in 0.466319 seconds
+2025-08-23 13:56:16,456 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:16,457 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:16,458 - INFO - Retrying request to /chat/completions in 0.496105 seconds
+2025-08-23 13:56:16,459 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:16,461 - INFO - Retrying request to /chat/completions in 0.394736 seconds
+2025-08-23 13:56:16,462 - INFO - Retrying request to /chat/completions in 0.461116 seconds
+2025-08-23 13:56:16,464 - INFO - Retrying request to /chat/completions in 0.485931 seconds
+2025-08-23 13:56:17,325 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:17,327 - INFO - Retrying request to /chat/completions in 0.751515 seconds
+2025-08-23 13:56:17,575 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:17,577 - INFO - Retrying request to /chat/completions in 0.762846 seconds
+2025-08-23 13:56:17,749 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:17,751 - INFO - Retrying request to /chat/completions in 0.998103 seconds
+2025-08-23 13:56:17,984 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:17,986 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:17,986 - INFO - Retrying request to /chat/completions in 0.842347 seconds
+2025-08-23 13:56:17,987 - INFO - Retrying request to /chat/completions in 0.832576 seconds
+2025-08-23 13:56:18,194 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:18,196 - WARNING - Rate limit hit, waiting before retry...
+2025-08-23 13:56:18,444 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:18,446 - WARNING - Rate limit hit, waiting before retry...
+2025-08-23 13:56:18,943 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:18,945 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:18,946 - WARNING - Rate limit hit, waiting before retry...
+2025-08-23 13:56:18,947 - WARNING - Rate limit hit, waiting before retry...
+2025-08-23 13:56:19,418 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:19,421 - WARNING - Rate limit hit, waiting before retry...
+2025-08-23 13:56:21,950 - INFO - Backing off call_openrouter_with_backoff(...) for 0.6s (ValueError: Rate limit exceeded: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1755937620000'}, 'provider_name': None}}, 'user_id': 'user_31gESZZ0kbV8KfSdlI0I4vTpCgO'})
+2025-08-23 13:56:21,951 - WARNING - Retry 1/3 after 0.6s
+2025-08-23 13:56:22,199 - INFO - Backing off call_openrouter_with_backoff(...) for 1.0s (ValueError: Rate limit exceeded: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1755937620000'}, 'provider_name': None}}, 'user_id': 'user_31gESZZ0kbV8KfSdlI0I4vTpCgO'})
+2025-08-23 13:56:22,200 - WARNING - Retry 1/3 after 1.0s
+2025-08-23 13:56:22,703 - INFO - Backing off call_openrouter_with_backoff(...) for 0.3s (ValueError: Rate limit exceeded: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1755937620000'}, 'provider_name': None}}, 'user_id': 'user_31gESZZ0kbV8KfSdlI0I4vTpCgO'})
+2025-08-23 13:56:22,703 - INFO - Backing off call_openrouter_with_backoff(...) for 0.2s (ValueError: Rate limit exceeded: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1755937620000'}, 'provider_name': None}}, 'user_id': 'user_31gESZZ0kbV8KfSdlI0I4vTpCgO'})
+2025-08-23 13:56:22,704 - WARNING - Retry 1/3 after 0.3s
+2025-08-23 13:56:22,705 - WARNING - Retry 1/3 after 0.2s
+2025-08-23 13:56:23,175 - INFO - Backing off call_openrouter_with_backoff(...) for 0.6s (ValueError: Rate limit exceeded: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1755937620000'}, 'provider_name': None}}, 'user_id': 'user_31gESZZ0kbV8KfSdlI0I4vTpCgO'})
+2025-08-23 13:56:23,175 - WARNING - Retry 1/3 after 0.6s
+2025-08-23 13:56:23,515 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:23,517 - INFO - Retrying request to /chat/completions in 0.437972 seconds
+2025-08-23 13:56:23,576 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:23,578 - INFO - Retrying request to /chat/completions in 0.475137 seconds
+2025-08-23 13:56:23,788 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:23,789 - INFO - Retrying request to /chat/completions in 0.382014 seconds
+2025-08-23 13:56:23,890 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:23,891 - INFO - Retrying request to /chat/completions in 0.467887 seconds
+2025-08-23 13:56:23,965 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:23,967 - INFO - Retrying request to /chat/completions in 0.459895 seconds
+2025-08-23 13:56:24,075 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:24,077 - INFO - Retrying request to /chat/completions in 0.839604 seconds
+2025-08-23 13:56:24,169 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:24,170 - INFO - Retrying request to /chat/completions in 0.803518 seconds
+2025-08-23 13:56:24,333 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:24,334 - INFO - Retrying request to /chat/completions in 0.760091 seconds
+2025-08-23 13:56:24,639 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:24,640 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:24,641 - INFO - Retrying request to /chat/completions in 0.986931 seconds
+2025-08-23 13:56:24,642 - INFO - Retrying request to /chat/completions in 0.837834 seconds
+2025-08-23 13:56:25,055 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:25,058 - WARNING - Rate limit hit, waiting before retry...
+2025-08-23 13:56:25,093 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:25,099 - WARNING - Rate limit hit, waiting before retry...
+2025-08-23 13:56:25,254 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:25,256 - WARNING - Rate limit hit, waiting before retry...
+2025-08-23 13:56:26,074 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:26,076 - WARNING - Rate limit hit, waiting before retry...
+2025-08-23 13:56:26,126 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:26,128 - WARNING - Rate limit hit, waiting before retry...
+2025-08-23 13:56:28,810 - INFO - Backing off call_openrouter_with_backoff(...) for 0.4s (ValueError: Rate limit exceeded: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1755937620000'}, 'provider_name': None}}, 'user_id': 'user_31gESZZ0kbV8KfSdlI0I4vTpCgO'})
+2025-08-23 13:56:28,812 - WARNING - Retry 2/3 after 0.4s
+2025-08-23 13:56:28,851 - INFO - Backing off call_openrouter_with_backoff(...) for 0.7s (ValueError: Rate limit exceeded: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1755937620000'}, 'provider_name': None}}, 'user_id': 'user_31gESZZ0kbV8KfSdlI0I4vTpCgO'})
+2025-08-23 13:56:28,852 - WARNING - Retry 2/3 after 0.7s
+2025-08-23 13:56:29,009 - INFO - Backing off call_openrouter_with_backoff(...) for 0.5s (ValueError: Rate limit exceeded: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1755937620000'}, 'provider_name': None}}, 'user_id': 'user_31gESZZ0kbV8KfSdlI0I4vTpCgO'})
+2025-08-23 13:56:29,010 - WARNING - Retry 2/3 after 0.5s
+2025-08-23 13:56:29,562 - INFO - Rate limit reached. Waiting 16.7 seconds...
+2025-08-23 13:56:29,827 - INFO - Backing off call_openrouter_with_backoff(...) for 0.9s (ValueError: Rate limit exceeded: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1755937620000'}, 'provider_name': None}}, 'user_id': 'user_31gESZZ0kbV8KfSdlI0I4vTpCgO'})
+2025-08-23 13:56:29,828 - WARNING - Retry 2/3 after 0.9s
+2025-08-23 13:56:29,881 - INFO - Backing off call_openrouter_with_backoff(...) for 0.1s (ValueError: Rate limit exceeded: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1755937620000'}, 'provider_name': None}}, 'user_id': 'user_31gESZZ0kbV8KfSdlI0I4vTpCgO'})
+2025-08-23 13:56:29,881 - WARNING - Retry 2/3 after 0.1s
+2025-08-23 13:56:30,082 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:30,084 - INFO - Retrying request to /chat/completions in 0.419229 seconds
+2025-08-23 13:56:30,562 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:30,563 - INFO - Retrying request to /chat/completions in 0.379508 seconds
+2025-08-23 13:56:30,609 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:30,610 - INFO - Retrying request to /chat/completions in 0.909942 seconds
+2025-08-23 13:56:31,086 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:31,087 - INFO - Retrying request to /chat/completions in 0.816859 seconds
+2025-08-23 13:56:31,702 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:31,704 - WARNING - Rate limit hit, waiting before retry...
+2025-08-23 13:56:32,218 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:32,219 - WARNING - Rate limit hit, waiting before retry...
+2025-08-23 13:56:35,456 - ERROR - Giving up call_openrouter_with_backoff(...) after 3 tries (ValueError: Rate limit exceeded: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1755937620000'}, 'provider_name': None}}, 'user_id': 'user_31gESZZ0kbV8KfSdlI0I4vTpCgO'})
+2025-08-23 13:56:35,457 - WARNING - Rate limit error for T232978: Rate limit exceeded: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-m
+2025-08-23 13:56:35,457 - INFO - Received signal 2. Initiating graceful shutdown...
+2025-08-23 13:56:35,458 - INFO - Please wait for current operations to complete...
+2025-08-23 13:56:35,458 - WARNING - Cancelling remaining tasks...
+2025-08-23 13:56:35,971 - ERROR - Giving up call_openrouter_with_backoff(...) after 3 tries (ValueError: Rate limit exceeded: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1755937620000'}, 'provider_name': None}}, 'user_id': 'user_31gESZZ0kbV8KfSdlI0I4vTpCgO'})
+2025-08-23 13:56:35,972 - WARNING - Rate limit error for T605347: Rate limit exceeded: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-m
+2025-08-23 13:56:46,269 - INFO - Rate limit reached. Waiting 9.0 seconds...
+2025-08-23 13:56:47,062 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:47,064 - INFO - Retrying request to /chat/completions in 0.424026 seconds
+2025-08-23 13:56:47,113 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:47,114 - INFO - Retrying request to /chat/completions in 0.414702 seconds
+2025-08-23 13:56:47,628 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:47,629 - INFO - Retrying request to /chat/completions in 0.927922 seconds
+2025-08-23 13:56:47,637 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:47,638 - INFO - Retrying request to /chat/completions in 0.966882 seconds
+2025-08-23 13:56:48,790 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:48,792 - WARNING - Rate limit hit, waiting before retry...
+2025-08-23 13:56:48,809 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:48,810 - WARNING - Rate limit hit, waiting before retry...
+2025-08-23 13:56:52,546 - ERROR - Giving up call_openrouter_with_backoff(...) after 3 tries (ValueError: Rate limit exceeded: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1755937620000'}, 'provider_name': None}}, 'user_id': 'user_31gESZZ0kbV8KfSdlI0I4vTpCgO'})
+2025-08-23 13:56:52,548 - WARNING - Rate limit error for T259980: Rate limit exceeded: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-m
+2025-08-23 13:56:52,563 - ERROR - Giving up call_openrouter_with_backoff(...) after 3 tries (ValueError: Rate limit exceeded: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1755937620000'}, 'provider_name': None}}, 'user_id': 'user_31gESZZ0kbV8KfSdlI0I4vTpCgO'})
+2025-08-23 13:56:52,564 - WARNING - Rate limit error for T264321: Rate limit exceeded: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-m
+2025-08-23 13:56:56,487 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:56,488 - INFO - Retrying request to /chat/completions in 0.387297 seconds
+2025-08-23 13:56:57,022 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:57,023 - INFO - Retrying request to /chat/completions in 0.976485 seconds
+2025-08-23 13:56:58,771 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-08-23 13:56:58,772 - WARNING - Rate limit hit, waiting before retry...
+2025-08-23 13:57:02,527 - ERROR - Giving up call_openrouter_with_backoff(...) after 3 tries (ValueError: Rate limit exceeded: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '50', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1755993600000'}, 'provider_name': None}}, 'user_id': 'user_31gESZZ0kbV8KfSdlI0I4vTpCgO'})
+2025-08-23 13:57:02,528 - WARNING - Rate limit error for T718779: Rate limit exceeded: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-d
+2025-08-23 13:57:02,529 - INFO - Batch 11 processing complete: 0/5 successful
+2025-08-23 13:57:02,530 - INFO - Batch duration: 47.29s
+2025-08-23 13:57:02,530 - INFO - Shutdown requested. Stopping at batch 11/114
+2025-08-23 13:57:02,531 - INFO - Content generation interrupted gracefully!
+2025-08-23 13:57:02,531 - INFO - Total tweets updated: 43
+2025-08-23 13:57:02,532 - INFO - Successful generations: 47
+2025-08-23 13:57:02,532 - INFO - Failed generations: 2
+2025-08-23 13:57:02,532 - INFO - Rate-limited failures: 3
+2025-08-23 13:57:02,533 - INFO - Data updated in MongoDB: sparzaai.twitter
+2025-08-23 13:57:03,345 - INFO - Collection Statistics:
+2025-08-23 13:57:03,346 - INFO - Total tweets: 2000
+2025-08-23 13:57:03,346 - INFO - With generated content: 1473
+2025-08-23 13:57:03,348 - INFO - Without generated content: 527
+2025-08-23 13:57:03,349 - INFO - Top Dominant Topics:
+2025-08-23 13:57:03,349 - INFO - 1. Excellent Call Support: 26 tweets
+2025-08-23 13:57:03,350 - INFO - 2. Others Need Improvement: 25 tweets
+2025-08-23 13:57:03,350 - INFO - 3. Customer Service Disappointment: 25 tweets
+2025-08-23 13:57:03,351 - INFO - 4. Payment Processing Failure: 24 tweets
+2025-08-23 13:57:03,352 - INFO - 5. Call Center Complaints: 24 tweets
+2025-08-23 13:57:03,353 - INFO - 6. GDPR Compliance Praise: 23 tweets
+2025-08-23 13:57:03,354 - INFO - 7. Account Access Problems: 23 tweets
+2025-08-23 13:57:03,355 - INFO - 8. Regulatory Compliance Questions: 23 tweets
+2025-08-23 13:57:03,355 - INFO - 9. Cross Border Issues: 23 tweets
+2025-08-23 13:57:03,355 - INFO - 10. Fee Structure Criticism: 23 tweets
+2025-08-23 13:57:03,654 - INFO - Sample Generated Tweet Content:
+2025-08-23 13:57:03,655 - INFO - --- Sample Tweet 1 ---
+2025-08-23 13:57:03,656 - INFO - Tweet ID: T456078
+2025-08-23 13:57:03,656 - INFO - Username: Joshua Garcia
+2025-08-23 13:57:03,656 - INFO - Dominant Topic: Excellent Call Support
+2025-08-23 13:57:03,657 - INFO - Subtopics: Knowledgeable Agent Helped, Professional Service Delivered...
+2025-08-23 13:57:03,658 - INFO - Text: Just finished a call with @BankOfProgress and was incredibly impressed! The agent was exceptionally knowledgeable about recent changes to mortgage rates and explained everything clearly. Professional service and a real understanding of my needs. A great experience! #BankingSer...
+2025-08-23 13:57:03,658 - INFO - Hashtags: ['#BankingService', '#MortgageRates', '#CustomerExperience', '#DigitalBanking']
+2025-08-23 13:57:03,659 - INFO - Sentiment: Positive
+2025-08-23 13:57:03,659 - INFO - Engagement: 115 likes, 28 retweets
+2025-08-23 13:57:03,660 - INFO - Priority: P3 - Low
+2025-08-23 13:57:03,660 - INFO - --- Sample Tweet 2 ---
+2025-08-23 13:57:03,660 - INFO - Tweet ID: T788895
+2025-08-23 13:57:03,661 - INFO - Username: Michele Ochoa
+2025-08-23 13:57:03,661 - INFO - Dominant Topic: Mass Payment Errors
+2025-08-23 13:57:03,662 - INFO - Subtopics: Corporate Transfer Error, Business Processing Slow...
+2025-08-23 13:57:03,662 - INFO - Text: Seeing a concerning uptick in reported corporate transfer errors this week. Slow business processing times are exacerbating the issue, impacting reconciliation efforts. We're working to identify root causes & enhance validation protocols. Transparency is key during these mass ...
+2025-08-23 13:57:03,662 - INFO - Hashtags: ['BankingRisk', 'Compliance', 'FinancialServices', 'BankingNews']
+2025-08-23 13:57:03,662 - INFO - Sentiment: Negative
+2025-08-23 13:57:03,663 - INFO - Engagement: 85 likes, 25 retweets
+2025-08-23 13:57:03,663 - INFO - Priority: P2 - Medium
+2025-08-23 13:57:03,663 - INFO - --- Sample Tweet 3 ---
+2025-08-23 13:57:03,664 - INFO - Tweet ID: T139606
+2025-08-23 13:57:03,664 - INFO - Username: Michael Gibson
+2025-08-23 13:57:03,665 - INFO - Dominant Topic: Documentary Collection Efficient
+2025-08-23 13:57:03,665 - INFO - Subtopics: Trade Document Handling, International Settlement Success...
+2025-08-23 13:57:03,665 - INFO - Text: Navigating the evolving landscape of trade finance! Recent updates to documentary collection processes are streamlining international settlements, but ensuring full compliance with SWIFT gpi standards remains a key challenge. Efficiency gains are great, but risk mitigation is ...
+2025-08-23 13:57:03,665 - INFO - Hashtags: ['TradeFinance', 'BankingCompliance', 'DigitalBanking', 'FinancialServices']
+2025-08-23 13:57:03,665 - INFO - Sentiment: Neutral
+2025-08-23 13:57:03,667 - INFO - Engagement: 115 likes, 25 retweets
+2025-08-23 13:57:03,668 - INFO - Priority: P2 - Medium
+2025-08-23 13:57:03,911 - INFO - Verification: Found 5 tweets with generated content
+2025-08-23 13:57:03,912 - INFO -    tweet_id: T456078 | hashtags: 4 | text_length: 280 | sentiment: Positive
+2025-08-23 13:57:03,913 - INFO -    tweet_id: T788895 | hashtags: 4 | text_length: 280 | sentiment: Negative
+2025-08-23 13:57:03,913 - INFO -    tweet_id: T139606 | hashtags: 4 | text_length: 280 | sentiment: Neutral
+2025-08-23 13:57:03,913 - INFO -    tweet_id: T098665 | hashtags: 4 | text_length: 280 | sentiment: Negative
+2025-08-23 13:57:03,914 - INFO -    tweet_id: T442220 | hashtags: 4 | text_length: 280 | sentiment: Negative
+2025-08-23 13:57:03,914 - INFO - Verification complete: 5 tweets verified
+2025-08-23 13:57:04,436 - INFO - Content validation complete: 0 issues found
+2025-08-23 13:57:05,090 - INFO - Status report generated: logs\status_report_20250823_135704.json
+2025-08-23 13:57:05,090 - INFO - Final session report:
+2025-08-23 13:57:05,091 - INFO - Success Rate: 95.92%
+2025-08-23 13:57:05,091 - INFO - Database Completion: 73.65%
+2025-08-23 13:57:05,395 - INFO - Database connection closed
+2025-08-23 13:57:05,396 - INFO - Session complete. Check log files for detailed information:
+2025-08-23 13:57:05,396 - INFO - Main Log: logs\twitter_generator_20250823_135234.log
+2025-08-23 13:57:05,397 - INFO - Success Log: logs\successful_generations_20250823_135234.log
+2025-08-23 13:57:05,398 - INFO - Failure Log: logs\failed_generations_20250823_135234.log
+2025-08-23 13:57:05,398 - INFO - Progress Log: logs\progress_20250823_135234.log
+2025-08-23 13:57:05,398 - INFO - Intermediate Results: logs\intermediate_results_20250823_135234.json
+2025-08-23 13:57:05,399 - INFO - Database connection closed

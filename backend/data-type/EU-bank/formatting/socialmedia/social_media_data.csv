@@ -1,0 +1,101 @@
+tweet_id,channel,user_id,domain,created_at,content,likes,retweets,replies,_id,review_id,rating,title,helpful_votes,version,post_id,upvotes,downvotes,comments
+T880863,Twitter,369491,banking,2025-03-07T20:16:27Z,Sample tweet content about banking services,493.0,330.0,162.0,68bb3b6e35db675a8b09aaec,,,,,,,,,
+T295770,Twitter,197763,banking,2024-10-14T19:21:32Z,Sample tweet content about banking services,958.0,473.0,72.0,68bb3b6e35db675a8b09aaed,,,,,,,,,
+,Trustpilot,299382,banking,2025-02-07T01:05:48Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09aaee,TP649123,2.0,Review of banking service,3.0,,,,,
+,App Store/Google Play,796573,banking,2025-08-27T12:55:32Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09aaef,488451,5.0,App review for banking app,,4.2.7,,,,
+T646513,Twitter,993048,banking,2024-09-13T01:57:04Z,Sample tweet content about banking services,331.0,263.0,138.0,68bb3b6e35db675a8b09aaf0,,,,,,,,,
+T697488,Twitter,808221,banking,2025-06-25T19:01:32Z,Sample tweet content about banking services,405.0,148.0,166.0,68bb3b6e35db675a8b09aaf1,,,,,,,,,
+,App Store/Google Play,191637,banking,2025-03-12T10:57:03Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09aaf2,483993,5.0,App review for banking app,,4.5.1,,,,
+,Trustpilot,251171,banking,2025-08-12T02:37:29Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09aaf3,TP504351,5.0,Review of banking service,20.0,,,,,
+T433409,Twitter,688582,banking,2025-02-07T06:45:22Z,Sample tweet content about banking services,611.0,77.0,102.0,68bb3b6e35db675a8b09aaf4,,,,,,,,,
+,Trustpilot,164505,banking,2024-12-29T17:15:07Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09aaf5,TP794018,1.0,Review of banking service,35.0,,,,,
+T713448,Twitter,310508,banking,2025-03-09T08:52:58Z,Sample tweet content about banking services,898.0,266.0,64.0,68bb3b6e35db675a8b09aaf6,,,,,,,,,
+,App Store/Google Play,980575,banking,2025-09-03T04:01:29Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09aaf7,954320,3.0,App review for banking app,,4.4.5,,,,
+,Reddit,887643,banking,2024-09-26T03:20:16Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09aaf8,,,Discussion about banking experience,,,R242337,364.0,12.0,20.0
+,App Store/Google Play,932891,banking,2025-08-16T18:55:58Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09aaf9,299261,2.0,App review for banking app,,2.3.0,,,,
+T284912,Twitter,950746,banking,2025-07-07T10:21:31Z,Sample tweet content about banking services,16.0,388.0,191.0,68bb3b6e35db675a8b09aafa,,,,,,,,,
+,App Store/Google Play,661244,banking,2024-12-20T20:41:09Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09aafb,685493,1.0,App review for banking app,,5.9.4,,,,
+,Reddit,504276,banking,2024-12-13T22:48:40Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09aafc,,,Discussion about banking experience,,,R612960,48.0,23.0,105.0
+,Reddit,517265,banking,2024-12-20T03:54:47Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09aafd,,,Discussion about banking experience,,,R205305,180.0,5.0,135.0
+T240438,Twitter,376486,banking,2024-10-25T19:31:05Z,Sample tweet content about banking services,368.0,453.0,195.0,68bb3b6e35db675a8b09aafe,,,,,,,,,
+,App Store/Google Play,440265,banking,2024-11-27T06:40:33Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09aaff,239723,5.0,App review for banking app,,2.9.2,,,,
+,App Store/Google Play,150228,banking,2024-11-09T01:39:00Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09ab00,455547,1.0,App review for banking app,,5.8.5,,,,
+,Trustpilot,427461,banking,2025-08-15T13:20:15Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09ab01,TP357320,1.0,Review of banking service,33.0,,,,,
+,App Store/Google Play,611215,banking,2025-06-25T21:35:02Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09ab02,215307,5.0,App review for banking app,,2.0.0,,,,
+,Trustpilot,687670,banking,2024-12-10T19:24:57Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09ab03,TP909351,3.0,Review of banking service,42.0,,,,,
+,Reddit,721564,banking,2025-04-30T04:17:33Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09ab04,,,Discussion about banking experience,,,R945601,446.0,1.0,84.0
+,Reddit,382876,banking,2025-03-30T02:38:23Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09ab05,,,Discussion about banking experience,,,R212418,353.0,13.0,42.0
+,Trustpilot,494951,banking,2025-06-08T20:39:51Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09ab06,TP455575,2.0,Review of banking service,21.0,,,,,
+T358220,Twitter,569171,banking,2025-07-01T07:52:07Z,Sample tweet content about banking services,809.0,485.0,77.0,68bb3b6e35db675a8b09ab07,,,,,,,,,
+T480480,Twitter,118591,banking,2024-10-27T21:34:40Z,Sample tweet content about banking services,766.0,197.0,169.0,68bb3b6e35db675a8b09ab08,,,,,,,,,
+,Trustpilot,706837,banking,2024-11-02T18:28:06Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09ab09,TP104718,1.0,Review of banking service,15.0,,,,,
+,App Store/Google Play,226603,banking,2024-12-19T00:53:22Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09ab0a,673053,1.0,App review for banking app,,2.3.4,,,,
+,Reddit,799560,banking,2024-12-25T20:51:08Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09ab0b,,,Discussion about banking experience,,,R934479,236.0,42.0,150.0
+,Reddit,818716,banking,2025-06-14T06:04:11Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09ab0c,,,Discussion about banking experience,,,R839930,372.0,44.0,144.0
+,Trustpilot,776555,banking,2025-05-12T04:42:26Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09ab0d,TP237156,1.0,Review of banking service,9.0,,,,,
+,App Store/Google Play,777763,banking,2024-09-13T18:30:37Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09ab0e,655703,1.0,App review for banking app,,5.7.6,,,,
+T820212,Twitter,471145,banking,2025-03-17T10:53:10Z,Sample tweet content about banking services,732.0,461.0,30.0,68bb3b6e35db675a8b09ab0f,,,,,,,,,
+,Trustpilot,296174,banking,2025-01-14T00:57:35Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09ab10,TP779642,3.0,Review of banking service,4.0,,,,,
+,Reddit,428876,banking,2025-02-20T09:13:49Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09ab11,,,Discussion about banking experience,,,R358483,12.0,4.0,98.0
+T975589,Twitter,688275,banking,2025-07-21T23:08:24Z,Sample tweet content about banking services,766.0,398.0,8.0,68bb3b6e35db675a8b09ab12,,,,,,,,,
+,Reddit,900372,banking,2024-10-10T16:18:00Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09ab13,,,Discussion about banking experience,,,R537127,203.0,35.0,96.0
+,Reddit,921480,banking,2025-09-01T13:35:09Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09ab14,,,Discussion about banking experience,,,R268819,420.0,17.0,131.0
+,Trustpilot,123111,banking,2025-08-17T13:46:05Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09ab15,TP538325,2.0,Review of banking service,40.0,,,,,
+,Reddit,450827,banking,2024-11-29T15:52:14Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09ab16,,,Discussion about banking experience,,,R716522,34.0,22.0,116.0
+T594680,Twitter,254925,banking,2024-12-20T09:00:02Z,Sample tweet content about banking services,914.0,372.0,141.0,68bb3b6e35db675a8b09ab17,,,,,,,,,
+,Reddit,699147,banking,2024-12-26T05:15:16Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09ab18,,,Discussion about banking experience,,,R895240,136.0,58.0,57.0
+,Reddit,718390,banking,2024-11-14T00:58:49Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09ab19,,,Discussion about banking experience,,,R815621,269.0,43.0,61.0
+,Reddit,347418,banking,2024-10-08T05:50:27Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09ab1a,,,Discussion about banking experience,,,R665048,412.0,22.0,120.0
+,App Store/Google Play,182874,banking,2025-06-14T05:11:45Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09ab1b,334977,3.0,App review for banking app,,4.5.6,,,,
+T556750,Twitter,821776,banking,2024-11-08T10:31:24Z,Sample tweet content about banking services,142.0,122.0,106.0,68bb3b6e35db675a8b09ab1c,,,,,,,,,
+,Trustpilot,242354,banking,2025-08-19T08:01:15Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09ab1d,TP948819,4.0,Review of banking service,32.0,,,,,
+,Trustpilot,482472,banking,2025-05-23T01:28:22Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09ab1e,TP914685,2.0,Review of banking service,17.0,,,,,
+T847003,Twitter,980125,banking,2024-09-15T19:36:50Z,Sample tweet content about banking services,348.0,17.0,141.0,68bb3b6e35db675a8b09ab1f,,,,,,,,,
+T513433,Twitter,118710,banking,2025-07-10T18:22:22Z,Sample tweet content about banking services,86.0,328.0,139.0,68bb3b6e35db675a8b09ab20,,,,,,,,,
+,Trustpilot,328138,banking,2025-05-24T01:17:22Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09ab21,TP203533,5.0,Review of banking service,23.0,,,,,
+T913463,Twitter,370824,banking,2024-11-01T01:00:09Z,Sample tweet content about banking services,517.0,58.0,38.0,68bb3b6e35db675a8b09ab22,,,,,,,,,
+T141026,Twitter,877479,banking,2025-05-26T18:35:47Z,Sample tweet content about banking services,522.0,48.0,0.0,68bb3b6e35db675a8b09ab23,,,,,,,,,
+,App Store/Google Play,753914,banking,2025-01-18T04:06:27Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09ab24,702616,1.0,App review for banking app,,3.3.8,,,,
+,Reddit,877073,banking,2024-10-19T15:51:09Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09ab25,,,Discussion about banking experience,,,R979596,355.0,92.0,12.0
+,App Store/Google Play,700958,banking,2025-05-11T11:44:23Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09ab26,998362,1.0,App review for banking app,,4.6.7,,,,
+,App Store/Google Play,315860,banking,2025-05-02T02:51:51Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09ab27,658286,5.0,App review for banking app,,3.5.7,,,,
+T921476,Twitter,979960,banking,2024-12-17T08:42:32Z,Sample tweet content about banking services,598.0,461.0,176.0,68bb3b6e35db675a8b09ab28,,,,,,,,,
+,Trustpilot,341902,banking,2025-08-23T19:31:11Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09ab29,TP456994,3.0,Review of banking service,7.0,,,,,
+,App Store/Google Play,268572,banking,2025-08-26T11:02:30Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09ab2a,178733,3.0,App review for banking app,,4.7.6,,,,
+,Trustpilot,364507,banking,2025-01-24T16:12:49Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09ab2b,TP578347,4.0,Review of banking service,43.0,,,,,
+,Trustpilot,499392,banking,2025-05-02T04:45:15Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09ab2c,TP491003,2.0,Review of banking service,11.0,,,,,
+,App Store/Google Play,957993,banking,2025-07-17T02:57:21Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09ab2d,579238,3.0,App review for banking app,,5.8.8,,,,
+,App Store/Google Play,360320,banking,2024-11-03T18:04:37Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09ab2e,451678,2.0,App review for banking app,,2.4.7,,,,
+,Trustpilot,307498,banking,2024-12-18T18:48:26Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09ab2f,TP941603,3.0,Review of banking service,21.0,,,,,
+,Reddit,424022,banking,2025-02-20T19:23:35Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09ab30,,,Discussion about banking experience,,,R651898,17.0,29.0,96.0
+,Reddit,530893,banking,2025-06-05T12:59:14Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09ab31,,,Discussion about banking experience,,,R201935,212.0,72.0,77.0
+,Trustpilot,786171,banking,2025-08-25T02:18:38Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09ab32,TP994187,5.0,Review of banking service,2.0,,,,,
+T501938,Twitter,704219,banking,2025-06-05T12:07:21Z,Sample tweet content about banking services,975.0,369.0,62.0,68bb3b6e35db675a8b09ab33,,,,,,,,,
+,Trustpilot,201241,banking,2024-11-27T00:30:37Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09ab34,TP762404,1.0,Review of banking service,18.0,,,,,
+,App Store/Google Play,979691,banking,2025-05-13T13:58:38Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09ab35,200120,3.0,App review for banking app,,2.9.1,,,,
+,Trustpilot,855542,banking,2025-02-24T23:36:51Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09ab36,TP711171,1.0,Review of banking service,39.0,,,,,
+,App Store/Google Play,903064,banking,2025-04-01T12:28:21Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09ab37,846066,4.0,App review for banking app,,5.8.4,,,,
+,Reddit,798379,banking,2025-06-29T20:57:45Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09ab38,,,Discussion about banking experience,,,R680704,469.0,82.0,30.0
+,Trustpilot,795184,banking,2025-06-23T16:48:58Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09ab39,TP978684,4.0,Review of banking service,29.0,,,,,
+,Reddit,591546,banking,2025-06-09T09:23:55Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09ab3a,,,Discussion about banking experience,,,R568677,243.0,100.0,88.0
+,App Store/Google Play,425568,banking,2025-02-11T05:25:06Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09ab3b,432642,1.0,App review for banking app,,4.7.9,,,,
+,App Store/Google Play,634036,banking,2024-12-12T06:15:47Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09ab3c,341656,2.0,App review for banking app,,4.8.2,,,,
+,Reddit,539950,banking,2025-02-04T19:04:31Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09ab3d,,,Discussion about banking experience,,,R895882,181.0,62.0,131.0
+,Reddit,834235,banking,2024-10-24T02:01:06Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09ab3e,,,Discussion about banking experience,,,R871705,423.0,67.0,110.0
+T765597,Twitter,293334,banking,2024-10-17T01:55:13Z,Sample tweet content about banking services,796.0,120.0,17.0,68bb3b6e35db675a8b09ab3f,,,,,,,,,
+,Trustpilot,435380,banking,2024-11-02T19:02:31Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09ab40,TP180682,4.0,Review of banking service,49.0,,,,,
+,Reddit,438597,banking,2025-08-04T04:30:18Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09ab41,,,Discussion about banking experience,,,R821241,258.0,25.0,147.0
+,App Store/Google Play,643385,banking,2025-06-12T22:06:23Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09ab42,772737,4.0,App review for banking app,,5.9.0,,,,
+,App Store/Google Play,486917,banking,2024-12-20T09:44:26Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09ab43,329897,3.0,App review for banking app,,2.7.8,,,,
+,Trustpilot,657050,banking,2024-12-04T11:34:16Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09ab44,TP298814,5.0,Review of banking service,25.0,,,,,
+T132139,Twitter,879075,banking,2024-11-29T07:19:16Z,Sample tweet content about banking services,190.0,486.0,61.0,68bb3b6e35db675a8b09ab45,,,,,,,,,
+,Trustpilot,192201,banking,2025-08-06T09:11:46Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09ab46,TP118610,4.0,Review of banking service,31.0,,,,,
+T821124,Twitter,267251,banking,2024-10-19T12:59:14Z,Sample tweet content about banking services,202.0,480.0,68.0,68bb3b6e35db675a8b09ab47,,,,,,,,,
+,Reddit,600058,banking,2025-02-28T04:49:21Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09ab48,,,Discussion about banking experience,,,R616465,394.0,23.0,116.0
+,App Store/Google Play,810875,banking,2024-09-16T10:16:51Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09ab49,184584,4.0,App review for banking app,,2.9.4,,,,
+,Reddit,718147,banking,2024-11-11T20:05:54Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09ab4a,,,Discussion about banking experience,,,R231055,7.0,55.0,98.0
+,Trustpilot,332457,banking,2024-11-18T05:00:03Z,Sample Trustpilot review content about banking,,,,68bb3b6e35db675a8b09ab4b,TP775650,3.0,Review of banking service,9.0,,,,,
+T656165,Twitter,470011,banking,2025-04-13T07:31:29Z,Sample tweet content about banking services,558.0,475.0,130.0,68bb3b6e35db675a8b09ab4c,,,,,,,,,
+,App Store/Google Play,930048,banking,2025-04-24T18:06:58Z,Sample app store review content about banking mobile app,,,,68bb3b6e35db675a8b09ab4d,627400,3.0,App review for banking app,,4.7.0,,,,
+T670517,Twitter,516138,banking,2024-10-22T02:14:17Z,Sample tweet content about banking services,516.0,381.0,3.0,68bb3b6e35db675a8b09ab4e,,,,,,,,,
+,Reddit,436626,banking,2025-04-26T14:28:35Z,Sample Reddit post content discussing banking services,,,,68bb3b6e35db675a8b09ab4f,,,Discussion about banking experience,,,R859568,38.0,22.0,99.0

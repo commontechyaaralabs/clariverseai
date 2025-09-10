@@ -1,0 +1,35 @@
+# MongoDB Email Topic Analysis Statistics
+# Generated: 2025-08-01 16:20:22
+# Database: sparzaai
+# Collection: emailmessages
+# Model: gemma3:27b
+# Remote Endpoint: http://34.147.17.26:31100
+
+Total processed messages: 2004
+Unique dominant topics: 167
+Messages marked as urgent: 1318 (65.8%)
+Messages that were summarized: 0
+
+## Most Common Dominant Topics:
+- Loan Documentation Revision: 305 messages
+- Branch Audit Preparation: 267 messages
+- Fraud Detection Update: 183 messages
+- Branch Transaction Audit: 158 messages
+- Fraud System Update: 111 messages
+- LOS System Upgrade: 97 messages
+- Fraudulent Wire Transfer: 86 messages
+- Branch Audit Notification: 70 messages
+- Fraudulent Wire Transfers: 64 messages
+- Phishing Attack Response: 60 messages
+
+## Most Common Subtopics:
+- Income Verification Form: 202 occurrences
+- BSA/AML Compliance: 136 occurrences
+- Mandatory Training Session: 111 occurrences
+- Training Session Schedule: 91 occurrences
+- Mandatory Training: 80 occurrences
+- Training Schedule: 57 occurrences
+- AML Alert Triggered: 53 occurrences
+- Transaction Record Review: 52 occurrences
+- KYC Documentation Review: 49 occurrences
+- Income Verification Update: 49 occurrences

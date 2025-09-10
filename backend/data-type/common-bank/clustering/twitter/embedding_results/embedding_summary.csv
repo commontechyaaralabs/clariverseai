@@ -1,0 +1,168 @@
+keyphrase,embedding_dimension,document_count,batch_number
+aml process smooth,3584,14,1
+api integration problem,3584,20,1
+api service outstanding,3584,12,1
+account access problem,3584,23,1
+account configuration assistance,3584,13,1
+account management satisfactory,3584,9,1
+account manager responsive,3584,11,1
+app login problem,3584,11,1
+application launch fail,3584,8,1
+authentication error report,3584,9,1
+authorization matrix update,3584,13,1
+balance update delay,3584,11,1
+bank guarantee issue,3584,10,1
+well competitor,3584,11,1
+billing error report,3584,9,1
+brand reputation restore,3584,12,1
+bulk payment efficiency,3584,9,2
+center complaint,3584,24,2
+center overwhelmed,3584,8,2
+disconnection issue,3584,10,2
+support adequate,3584,14,2
+card service excellent,3584,8,2
+cash management superior,3584,11,2
+comparative banking feedback,3584,12,2
+compensation appreciate generally,3584,10,2
+compensation provide fairly,3584,10,2
+compliance check intrusive,3584,12,2
+core banking,3584,11,2
+corporate service exceptional,3584,8,2
+corporate setup question,3584,7,2
+correspondent bank delay,3584,13,2
+cost structure criticism,3584,8,2
+cross border complication,3584,10,3
+cross border inconsistency,3584,10,3
+cross border issue,3584,23,3
+customer service disappointment,3584,25,3
+cybersecurity worry express,3584,10,3
+data breach concern,3584,14,3
+dedicated support appreciate,3584,12,3
+development suggestion,3584,11,3
+digital innovation appreciation,3584,21,3
+digital platform glitch,3584,11,3
+documentary collection efficient,3584,12,3
+documentation excessive requirement,3584,10,3
+documentation requirement ask,3584,11,3
+escalation process unclear,3584,10,3
+excellent support,3584,26,3
+exchange rate dispute,3584,9,3
+export finance approve,3584,11,4
+fx trading smooth,3584,11,4
+feature enhancement need,3584,12,4
+feature explanation request,3584,10,4
+feature feedback mixed,3584,12,4
+feature malfunction report,3584,8,4
+fee increase complaint,3584,11,4
+fee structure criticism,3584,23,4
+follow satisfactory,3584,10,4
+fraud alert confusion,3584,12,4
+gdpr compliance praise,3584,23,4
+general support need,3584,11,4
+high transaction fee,3584,9,4
+holiday period issue,3584,11,4
+identity verification issue,3584,9,4
+import processing delay,3584,9,4
+improve service acknowledge,3584,13,5
+improvement previous,3584,10,5
+inconsistent experience report,3584,11,5
+information inquiry,3584,11,5
+international banking issue,3584,10,5
+international payment smooth,3584,12,5
+investment service outstanding,3584,14,5
+issue resolve quickly,3584,13,5
+kyc documentation easy,3584,11,5
+knowledgeable agent help,3584,10,5
+language barrier experience,3584,10,5
+letter credit process,3584,11,5
+liquidity management excellent,3584,10,5
+local service quality,3584,14,5
+login screen freeze,3584,10,5
+long wait time,3584,12,5
+maintenance inconvenience report,3584,11,6
+management respond personally,3584,11,6
+manager unavailable complaint,3584,10,6
+mandate change require,3584,13,6
+mass payment error,3584,11,6
+mixed experience report,3584,12,6
+mixed service quality,3584,11,6
+mixed user experience,3584,11,6
+mobile app crash,3584,12,6
+mobile app functional,3584,11,6
+mobile security robust,3584,12,6
+multi currency problem,3584,9,6
+multi factor problem,3584,9,6
+multilingual support appreciate,3584,11,6
+multilingual support vary,3584,13,6
+network connectivity lose,3584,12,6
+new account opening,3584,10,7
+peak well,3584,11,7
+online banking excellence,3584,14,7
+open banking implementation,3584,10,7
+order processing fail,3584,12,7
+need improvement,3584,25,7
+psd2 compliance smooth,3584,12,7
+partial functionality work,3584,8,7
+partial satisfaction express,3584,11,7
+password reset guidance,3584,11,7
+payment processing fail,3584,10,7
+payment processing failure,3584,24,7
+payment processing smooth,3584,8,7
+peak time difficulty,3584,9,7
+periodic performance change,3584,13,7
+personalize banking excellence,3584,11,7
+platform crash report,3584,11,8
+platform downtime frustration,3584,9,8
+pricing transparency lacking,3584,10,8
+problem initially frustrate,3584,9,8
+problem resolve efficiently,3584,11,8
+process clarification need,3584,12,8
+profile access deny,3584,12,8
+public issue escalate,3584,11,8
+public recovery successful,3584,15,8
+quick response time,3584,10,8
+regional difference report,3584,11,8
+regional service variation,3584,11,8
+regulatory compliance question,3584,23,8
+regulatory reporting burdensome,3584,13,8
+relationship management praise,3584,21,8
+resolution eventually satisfactory,3584,12,8
+response time inadequate,3584,9,9
+risk management tool,3584,13,9
+routine service feedback,3584,14,9
+sepa payment reject,3584,12,9
+sepa transfer success,3584,11,9
+seasonal variation report,3584,9,9
+security incident concern,3584,22,9
+security protocol question,3584,7,9
+service availability question,3584,10,9
+service improvement acknowledge,3584,11,9
+service information request,3584,13,9
+service interruption experience,3584,14,9
+service quality poor,3584,11,9
+service restoration delay,3584,10,9
+signatory update need,3584,10,9
+software bug complaint,3584,9,9
+country excellent,3584,11,10
+function excellent,3584,10,10
+standard operation smooth,3584,14,10
+stand order success,3584,11,10
+system availability issue,3584,13,10
+system navigation help,3584,13,10
+system outage affect,3584,5,10
+system outage frustration,3584,8,10
+party integration,3584,12,10
+trade documentation smooth,3584,12,10
+trade finance satisfaction,3584,18,10
+transaction decline frustration,3584,9,10
+transaction processing stick,3584,8,10
+transfer delay experience,3584,11,10
+treasury operation smooth,3584,12,10
+treasury service excellence,3584,20,10
+unauthorized access fear,3584,14,11
+unexpected charge discover,3584,8,11
+unhelpful agent encounter,3584,10,11
+verification process lengthy,3584,13,11
+viral complaint spread,3584,13,11
+website performance issue,3584,9,11
+year end processing,3584,12,11

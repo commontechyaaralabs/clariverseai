@@ -1,0 +1,168 @@
+keyphrase,embedding_dimension,document_count,has_embedding
+aml process smooth,3584,14,True
+api integration problem,3584,20,True
+api service outstanding,3584,12,True
+account access problem,3584,23,True
+account configuration assistance,3584,13,True
+account management satisfactory,3584,9,True
+account manager responsive,3584,11,True
+app login problem,3584,11,True
+application launch fail,3584,8,True
+authentication error report,3584,9,True
+authorization matrix update,3584,13,True
+balance update delay,3584,11,True
+bank guarantee issue,3584,10,True
+well competitor,3584,11,True
+billing error report,3584,9,True
+brand reputation restore,3584,12,True
+bulk payment efficiency,3584,9,True
+center complaint,3584,24,True
+center overwhelmed,3584,8,True
+disconnection issue,3584,10,True
+support adequate,3584,14,True
+card service excellent,3584,8,True
+cash management superior,3584,11,True
+comparative banking feedback,3584,12,True
+compensation appreciate generally,3584,10,True
+compensation provide fairly,3584,10,True
+compliance check intrusive,3584,12,True
+core banking,3584,11,True
+corporate service exceptional,3584,8,True
+corporate setup question,3584,7,True
+correspondent bank delay,3584,13,True
+cost structure criticism,3584,8,True
+cross border complication,3584,10,True
+cross border inconsistency,3584,10,True
+cross border issue,3584,23,True
+customer service disappointment,3584,25,True
+cybersecurity worry express,3584,10,True
+data breach concern,3584,14,True
+dedicated support appreciate,3584,12,True
+development suggestion,3584,11,True
+digital innovation appreciation,3584,21,True
+digital platform glitch,3584,11,True
+documentary collection efficient,3584,12,True
+documentation excessive requirement,3584,10,True
+documentation requirement ask,3584,11,True
+escalation process unclear,3584,10,True
+excellent support,3584,26,True
+exchange rate dispute,3584,9,True
+export finance approve,3584,11,True
+fx trading smooth,3584,11,True
+feature enhancement need,3584,12,True
+feature explanation request,3584,10,True
+feature feedback mixed,3584,12,True
+feature malfunction report,3584,8,True
+fee increase complaint,3584,11,True
+fee structure criticism,3584,23,True
+follow satisfactory,3584,10,True
+fraud alert confusion,3584,12,True
+gdpr compliance praise,3584,23,True
+general support need,3584,11,True
+high transaction fee,3584,9,True
+holiday period issue,3584,11,True
+identity verification issue,3584,9,True
+import processing delay,3584,9,True
+improve service acknowledge,3584,13,True
+improvement previous,3584,10,True
+inconsistent experience report,3584,11,True
+information inquiry,3584,11,True
+international banking issue,3584,10,True
+international payment smooth,3584,12,True
+investment service outstanding,3584,14,True
+issue resolve quickly,3584,13,True
+kyc documentation easy,3584,11,True
+knowledgeable agent help,3584,10,True
+language barrier experience,3584,10,True
+letter credit process,3584,11,True
+liquidity management excellent,3584,10,True
+local service quality,3584,14,True
+login screen freeze,3584,10,True
+long wait time,3584,12,True
+maintenance inconvenience report,3584,11,True
+management respond personally,3584,11,True
+manager unavailable complaint,3584,10,True
+mandate change require,3584,13,True
+mass payment error,3584,11,True
+mixed experience report,3584,12,True
+mixed service quality,3584,11,True
+mixed user experience,3584,11,True
+mobile app crash,3584,12,True
+mobile app functional,3584,11,True
+mobile security robust,3584,12,True
+multi currency problem,3584,9,True
+multi factor problem,3584,9,True
+multilingual support appreciate,3584,11,True
+multilingual support vary,3584,13,True
+network connectivity lose,3584,12,True
+new account opening,3584,10,True
+peak well,3584,11,True
+online banking excellence,3584,14,True
+open banking implementation,3584,10,True
+order processing fail,3584,12,True
+need improvement,3584,25,True
+psd2 compliance smooth,3584,12,True
+partial functionality work,3584,8,True
+partial satisfaction express,3584,11,True
+password reset guidance,3584,11,True
+payment processing fail,3584,10,True
+payment processing failure,3584,24,True
+payment processing smooth,3584,8,True
+peak time difficulty,3584,9,True
+periodic performance change,3584,13,True
+personalize banking excellence,3584,11,True
+platform crash report,3584,11,True
+platform downtime frustration,3584,9,True
+pricing transparency lacking,3584,10,True
+problem initially frustrate,3584,9,True
+problem resolve efficiently,3584,11,True
+process clarification need,3584,12,True
+profile access deny,3584,12,True
+public issue escalate,3584,11,True
+public recovery successful,3584,15,True
+quick response time,3584,10,True
+regional difference report,3584,11,True
+regional service variation,3584,11,True
+regulatory compliance question,3584,23,True
+regulatory reporting burdensome,3584,13,True
+relationship management praise,3584,21,True
+resolution eventually satisfactory,3584,12,True
+response time inadequate,3584,9,True
+risk management tool,3584,13,True
+routine service feedback,3584,14,True
+sepa payment reject,3584,12,True
+sepa transfer success,3584,11,True
+seasonal variation report,3584,9,True
+security incident concern,3584,22,True
+security protocol question,3584,7,True
+service availability question,3584,10,True
+service improvement acknowledge,3584,11,True
+service information request,3584,13,True
+service interruption experience,3584,14,True
+service quality poor,3584,11,True
+service restoration delay,3584,10,True
+signatory update need,3584,10,True
+software bug complaint,3584,9,True
+country excellent,3584,11,True
+function excellent,3584,10,True
+standard operation smooth,3584,14,True
+stand order success,3584,11,True
+system availability issue,3584,13,True
+system navigation help,3584,13,True
+system outage affect,3584,5,True
+system outage frustration,3584,8,True
+party integration,3584,12,True
+trade documentation smooth,3584,12,True
+trade finance satisfaction,3584,18,True
+transaction decline frustration,3584,9,True
+transaction processing stick,3584,8,True
+transfer delay experience,3584,11,True
+treasury operation smooth,3584,12,True
+treasury service excellence,3584,20,True
+unauthorized access fear,3584,14,True
+unexpected charge discover,3584,8,True
+unhelpful agent encounter,3584,10,True
+verification process lengthy,3584,13,True
+viral complaint spread,3584,13,True
+website performance issue,3584,9,True
+year end processing,3584,12,True

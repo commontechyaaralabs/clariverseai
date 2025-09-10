@@ -1,0 +1,36 @@
+{
+  "total_found": 5,
+  "valid_records": 5,
+  "records": [
+    {
+      "tweet_id": "T607535",
+      "username": "William Mckinney",
+      "dominant_topic": "Service Interruption Experienced",
+      "subtopics": "System Access Lost, Online Service Disrupted, Network Communication Interrupted"
+    },
+    {
+      "tweet_id": "T065334",
+      "username": "Henry Bryant",
+      "dominant_topic": "Website Performance Issues",
+      "subtopics": "Site Performance Slow, Browser Compatibility Issues, Web Interface Problems"
+    },
+    {
+      "tweet_id": "T715637",
+      "username": "Andrea Walters",
+      "dominant_topic": "Transaction Processing Stuck",
+      "subtopics": "Payment Processing Halted, Transaction Engine Stopped, Money Transfer Stuck"
+    },
+    {
+      "tweet_id": "T644797",
+      "username": "Christopher Hicks",
+      "dominant_topic": "Service Restoration Delayed",
+      "subtopics": "Service Restoration Slow, Platform Repair Extended, Infrastructure Fix Prolonged"
+    },
+    {
+      "tweet_id": "T295925",
+      "username": "Michele Ochoa",
+      "dominant_topic": "Compliance Checks Intrusive",
+      "subtopics": "Compliance Monitoring Excessive, Legal Requirements Burdensome, Audit Process Intensive"
+    }
+  ]
+}

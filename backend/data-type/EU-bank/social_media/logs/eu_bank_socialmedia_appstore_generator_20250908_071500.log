@@ -1,0 +1,336 @@
+2025-09-08 07:15:00,540 - INFO - EU Bank Social Media App Store Review Content Generator Starting...
+2025-09-08 07:15:00,540 - INFO - Database: sparzaai
+2025-09-08 07:15:00,540 - INFO - Collection: socialmedia
+2025-09-08 07:15:00,540 - INFO - Target Channel: App Store/Google Play
+2025-09-08 07:15:00,540 - INFO - Bank: EU Bank (European Banking)
+2025-09-08 07:15:00,540 - INFO - Model: gemma3:27b
+2025-09-08 07:15:00,540 - INFO - Ollama URL: https://teen-everybody-dpi-tyler.trycloudflare.com
+2025-09-08 07:15:00,540 - INFO - Platform Source: Database platform field
+2025-09-08 07:15:01,602 - INFO - Database connection established and indexes created
+2025-09-08 07:15:02,345 - INFO - EU Bank Social Media Collection Statistics:
+2025-09-08 07:15:02,345 - INFO - Total social media records: 2286
+2025-09-08 07:15:02,345 - INFO - App Store/Google Play records (exact match): 701
+2025-09-08 07:15:02,345 - INFO - App Store/Google Play records (all variations): 701
+2025-09-08 07:15:02,345 - INFO - With generated content: 84
+2025-09-08 07:15:02,345 - INFO - Without generated content: 617
+2025-09-08 07:15:02,345 - INFO - Platform field = 'App Store': 209
+2025-09-08 07:15:02,345 - INFO - Platform field = 'Google Play Store': 492
+2025-09-08 07:15:02,345 - INFO - Platform field = Other values: 0
+2025-09-08 07:15:02,449 - INFO - Available channels: ['App Store/Google Play', 'Reddit', 'Trustpilot', 'Twitter']
+2025-09-08 07:15:02,556 - INFO - Platform values in App Store/Google Play records: ['App Store', 'Google Play Store']
+2025-09-08 07:15:02,660 - INFO - Sample App Store/Google Play record structure:
+2025-09-08 07:15:02,661 - INFO -   _id: 68bb12eb35db675a8b09a21b
+2025-09-08 07:15:02,661 - INFO -   email_id: scottdaniels6518@gmail.com
+2025-09-08 07:15:02,661 - INFO -   username: Scott Daniels
+2025-09-08 07:15:02,661 - INFO -   channel: App Store/Google Play
+2025-09-08 07:15:02,661 - INFO -   dominant_topic: High Transaction Fees
+2025-09-08 07:15:02,661 - INFO -   subtopics: Cost Transparency Missing, Customer Retention Risk...
+2025-09-08 07:15:02,661 - INFO -   created_at: 2025-04-22T20:05:06Z
+2025-09-08 07:15:02,661 - INFO -   domain: banking
+2025-09-08 07:15:02,661 - INFO -   review_id: 513220
+2025-09-08 07:15:02,661 - INFO -   user_id: 825891
+2025-09-08 07:15:02,661 - INFO -   platform: Google Play Store
+2025-09-08 07:15:02,661 - INFO -   content_generated_at: 2025-09-08T06:59:25.316236
+2025-09-08 07:15:02,661 - INFO -   priority: P2 - Medium
+2025-09-08 07:15:02,661 - INFO -   rating: 2
+2025-09-08 07:15:02,661 - INFO -   review_helpful: 28
+2025-09-08 07:15:02,661 - INFO -   sentiment: Negative
+2025-09-08 07:15:02,661 - INFO -   text: Frankly, I’m switching banks. The app itself *func...
+2025-09-08 07:15:02,662 - INFO -   urgency: True
+2025-09-08 07:15:02,662 - INFO - Starting EU Bank Social Media App Store Review Content Generation...
+2025-09-08 07:15:02,662 - INFO - Target Channel: App Store/Google Play
+2025-09-08 07:15:02,662 - INFO - Collection: socialmedia
+2025-09-08 07:15:02,662 - INFO - Bank: EU Bank (European)
+2025-09-08 07:15:02,662 - INFO - Platform Source: Database platform field
+2025-09-08 07:15:02,662 - INFO - Batch size: 2
+2025-09-08 07:15:02,662 - INFO - Max workers: 4
+2025-09-08 07:15:02,662 - INFO - Testing connection to remote Ollama: https://teen-everybody-dpi-tyler.trycloudflare.com
+2025-09-08 07:15:02,662 - INFO - Using model: gemma3:27b
+2025-09-08 07:15:12,836 - INFO - Ollama connection test successful
+2025-09-08 07:15:12,838 - INFO - Testing platform field usage functionality...
+2025-09-08 07:15:12,838 - INFO - Test case 1: Valid Google Play Store platform field
+2025-09-08 07:15:12,838 - INFO - Record test_1: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:15:12,838 - INFO - Record test_1: Using platform 'Google Play Store' from database field
+2025-09-08 07:15:12,838 - INFO - ✅ Test 1 PASSED: Correctly determined 'Google Play Store'
+2025-09-08 07:15:12,839 - INFO - Test case 2: Valid App Store platform field
+2025-09-08 07:15:12,839 - INFO - Record test_2: Platform field contains 'App Store', Channel: 'App Store/Google Play'
+2025-09-08 07:15:12,839 - INFO - Record test_2: Using platform 'App Store' from database field
+2025-09-08 07:15:12,839 - INFO - ✅ Test 2 PASSED: Correctly determined 'App Store'
+2025-09-08 07:15:12,839 - INFO - Test case 3: Lowercase Google Play Store normalization
+2025-09-08 07:15:12,839 - INFO - Record test_3: Platform field contains 'google play store', Channel: 'App Store/Google Play'
+2025-09-08 07:15:12,839 - INFO - Record test_3: Normalized platform from 'google play store' to 'Google Play Store'
+2025-09-08 07:15:12,839 - INFO - ✅ Test 3 PASSED: Correctly determined 'Google Play Store'
+2025-09-08 07:15:12,839 - INFO - Test case 4: Lowercase App Store normalization
+2025-09-08 07:15:12,839 - INFO - Record test_4: Platform field contains 'app store', Channel: 'App Store/Google Play'
+2025-09-08 07:15:12,839 - INFO - Record test_4: Normalized platform from 'app store' to 'App Store'
+2025-09-08 07:15:12,839 - INFO - ✅ Test 4 PASSED: Correctly determined 'App Store'
+2025-09-08 07:15:12,839 - INFO - Test case 5: Empty platform field fallback
+2025-09-08 07:15:12,840 - INFO - Record test_5: Platform field contains '', Channel: 'App Store/Google Play'
+2025-09-08 07:15:12,840 - WARNING - Record test_5: Invalid or missing platform field '', defaulting to 'Google Play Store'
+2025-09-08 07:15:12,840 - INFO - ✅ Test 5 PASSED: Correctly determined 'Google Play Store'
+2025-09-08 07:15:12,840 - INFO - Test case 6: Invalid platform field fallback
+2025-09-08 07:15:12,840 - INFO - Record test_6: Platform field contains 'Invalid Platform', Channel: 'App Store/Google Play'
+2025-09-08 07:15:12,840 - WARNING - Record test_6: Invalid or missing platform field 'Invalid Platform', defaulting to 'Google Play Store'
+2025-09-08 07:15:12,840 - INFO - ✅ Test 6 PASSED: Correctly determined 'Google Play Store'
+2025-09-08 07:15:12,840 - INFO - Platform field usage test complete.
+2025-09-08 07:15:12,840 - INFO - Fetching App Store/Google Play social media records from database...
+2025-09-08 07:15:13,367 - INFO - Found 617 App Store/Google Play social media records needing content generation
+2025-09-08 07:15:13,367 - INFO - Platform field distribution in records to process:
+2025-09-08 07:15:13,367 - INFO -   Google Play Store: 435 records
+2025-09-08 07:15:13,367 - INFO -   App Store: 182 records
+2025-09-08 07:15:13,367 - INFO - Processing batch 1/309 (2 records)...
+2025-09-08 07:15:13,367 - INFO - Record 68bb12eb35db675a8b09a32f: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:15:13,367 - INFO - Record 68bb12eb35db675a8b09a32f: Using platform 'Google Play Store' from database field
+2025-09-08 07:15:13,367 - INFO - Record 68bb12eb35db675a8b09a332: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:15:13,368 - INFO - Record 68bb12eb35db675a8b09a332: Using platform 'Google Play Store' from database field
+2025-09-08 07:15:13,368 - INFO - Batch 1 platform distribution: {'Google Play Store': 2}
+2025-09-08 07:15:13,368 - INFO - Record 68bb12eb35db675a8b09a32f: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:15:13,368 - INFO - Record 68bb12eb35db675a8b09a332: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:15:13,369 - INFO - Record 68bb12eb35db675a8b09a32f: Using platform 'Google Play Store' from database field
+2025-09-08 07:15:13,369 - INFO - Record 68bb12eb35db675a8b09a332: Using platform 'Google Play Store' from database field
+2025-09-08 07:15:13,369 - INFO - Record 68bb12eb35db675a8b09a32f: Generating content for platform 'Google Play Store' from database field
+2025-09-08 07:15:13,369 - INFO - Record 68bb12eb35db675a8b09a332: Generating content for platform 'Google Play Store' from database field
+2025-09-08 07:15:45,509 - INFO - Batch 1 complete: 2/2 successful
+2025-09-08 07:15:45,510 - INFO - Saving batch of 2 updates to database...
+2025-09-08 07:15:45,615 - INFO - Successfully saved 2 records to database
+2025-09-08 07:15:45,615 - INFO - Database updated: 2 records saved
+2025-09-08 07:15:45,615 - INFO - Progress: 2/617 records processed
+2025-09-08 07:15:45,615 - INFO - Success: 2 | Failures: 0
+2025-09-08 07:15:45,615 - INFO - Processing batch 2/309 (2 records)...
+2025-09-08 07:15:45,615 - INFO - Record 68bb12eb35db675a8b09a333: Platform field contains 'App Store', Channel: 'App Store/Google Play'
+2025-09-08 07:15:45,615 - INFO - Record 68bb12eb35db675a8b09a333: Using platform 'App Store' from database field
+2025-09-08 07:15:45,615 - INFO - Record 68bb12eb35db675a8b09a337: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:15:45,615 - INFO - Record 68bb12eb35db675a8b09a337: Using platform 'Google Play Store' from database field
+2025-09-08 07:15:45,615 - INFO - Batch 2 platform distribution: {'App Store': 1, 'Google Play Store': 1}
+2025-09-08 07:15:45,616 - INFO - Record 68bb12eb35db675a8b09a333: Platform field contains 'App Store', Channel: 'App Store/Google Play'
+2025-09-08 07:15:45,616 - INFO - Record 68bb12eb35db675a8b09a337: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:15:45,616 - INFO - Record 68bb12eb35db675a8b09a333: Using platform 'App Store' from database field
+2025-09-08 07:15:45,616 - INFO - Record 68bb12eb35db675a8b09a337: Using platform 'Google Play Store' from database field
+2025-09-08 07:15:45,616 - INFO - Record 68bb12eb35db675a8b09a333: Generating content for platform 'App Store' from database field
+2025-09-08 07:15:45,617 - INFO - Record 68bb12eb35db675a8b09a337: Generating content for platform 'Google Play Store' from database field
+2025-09-08 07:16:08,588 - INFO - Batch 2 complete: 2/2 successful
+2025-09-08 07:16:08,588 - INFO - Saving batch of 2 updates to database...
+2025-09-08 07:16:08,693 - INFO - Successfully saved 2 records to database
+2025-09-08 07:16:08,693 - INFO - Database updated: 2 records saved
+2025-09-08 07:16:08,693 - INFO - Progress: 4/617 records processed
+2025-09-08 07:16:08,693 - INFO - Success: 4 | Failures: 0
+2025-09-08 07:16:08,694 - INFO - Processing batch 3/309 (2 records)...
+2025-09-08 07:16:08,694 - INFO - Record 68bb12eb35db675a8b09a339: Platform field contains 'App Store', Channel: 'App Store/Google Play'
+2025-09-08 07:16:08,694 - INFO - Record 68bb12eb35db675a8b09a339: Using platform 'App Store' from database field
+2025-09-08 07:16:08,694 - INFO - Record 68bb12eb35db675a8b09a33d: Platform field contains 'App Store', Channel: 'App Store/Google Play'
+2025-09-08 07:16:08,694 - INFO - Record 68bb12eb35db675a8b09a33d: Using platform 'App Store' from database field
+2025-09-08 07:16:08,694 - INFO - Batch 3 platform distribution: {'App Store': 2}
+2025-09-08 07:16:08,694 - INFO - Record 68bb12eb35db675a8b09a339: Platform field contains 'App Store', Channel: 'App Store/Google Play'
+2025-09-08 07:16:08,695 - INFO - Record 68bb12eb35db675a8b09a33d: Platform field contains 'App Store', Channel: 'App Store/Google Play'
+2025-09-08 07:16:08,695 - INFO - Record 68bb12eb35db675a8b09a339: Using platform 'App Store' from database field
+2025-09-08 07:16:08,695 - INFO - Record 68bb12eb35db675a8b09a33d: Using platform 'App Store' from database field
+2025-09-08 07:16:08,695 - INFO - Record 68bb12eb35db675a8b09a339: Generating content for platform 'App Store' from database field
+2025-09-08 07:16:08,695 - INFO - Record 68bb12eb35db675a8b09a33d: Generating content for platform 'App Store' from database field
+2025-09-08 07:16:33,158 - INFO - Batch 3 complete: 2/2 successful
+2025-09-08 07:16:33,159 - INFO - Saving batch of 2 updates to database...
+2025-09-08 07:16:33,264 - INFO - Successfully saved 2 records to database
+2025-09-08 07:16:33,264 - INFO - Database updated: 2 records saved
+2025-09-08 07:16:33,264 - INFO - Progress: 6/617 records processed
+2025-09-08 07:16:33,264 - INFO - Success: 6 | Failures: 0
+2025-09-08 07:16:33,264 - INFO - Processing batch 4/309 (2 records)...
+2025-09-08 07:16:33,264 - INFO - Record 68bb12eb35db675a8b09a346: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:16:33,264 - INFO - Record 68bb12eb35db675a8b09a346: Using platform 'Google Play Store' from database field
+2025-09-08 07:16:33,264 - INFO - Record 68bb12eb35db675a8b09a34f: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:16:33,264 - INFO - Record 68bb12eb35db675a8b09a34f: Using platform 'Google Play Store' from database field
+2025-09-08 07:16:33,264 - INFO - Batch 4 platform distribution: {'Google Play Store': 2}
+2025-09-08 07:16:33,265 - INFO - Record 68bb12eb35db675a8b09a346: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:16:33,265 - INFO - Record 68bb12eb35db675a8b09a34f: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:16:33,265 - INFO - Record 68bb12eb35db675a8b09a346: Using platform 'Google Play Store' from database field
+2025-09-08 07:16:33,266 - INFO - Record 68bb12eb35db675a8b09a34f: Using platform 'Google Play Store' from database field
+2025-09-08 07:16:33,266 - INFO - Record 68bb12eb35db675a8b09a346: Generating content for platform 'Google Play Store' from database field
+2025-09-08 07:16:33,266 - INFO - Record 68bb12eb35db675a8b09a34f: Generating content for platform 'Google Play Store' from database field
+2025-09-08 07:16:56,061 - INFO - Batch 4 complete: 2/2 successful
+2025-09-08 07:16:56,061 - INFO - Saving batch of 2 updates to database...
+2025-09-08 07:16:56,166 - INFO - Successfully saved 2 records to database
+2025-09-08 07:16:56,166 - INFO - Database updated: 2 records saved
+2025-09-08 07:16:56,166 - INFO - Progress: 8/617 records processed
+2025-09-08 07:16:56,166 - INFO - Success: 8 | Failures: 0
+2025-09-08 07:16:56,167 - INFO - Processing batch 5/309 (2 records)...
+2025-09-08 07:16:56,167 - INFO - Record 68bb12eb35db675a8b09a352: Platform field contains 'App Store', Channel: 'App Store/Google Play'
+2025-09-08 07:16:56,167 - INFO - Record 68bb12eb35db675a8b09a352: Using platform 'App Store' from database field
+2025-09-08 07:16:56,167 - INFO - Record 68bb12eb35db675a8b09a355: Platform field contains 'App Store', Channel: 'App Store/Google Play'
+2025-09-08 07:16:56,167 - INFO - Record 68bb12eb35db675a8b09a355: Using platform 'App Store' from database field
+2025-09-08 07:16:56,167 - INFO - Batch 5 platform distribution: {'App Store': 2}
+2025-09-08 07:16:56,167 - INFO - Record 68bb12eb35db675a8b09a352: Platform field contains 'App Store', Channel: 'App Store/Google Play'
+2025-09-08 07:16:56,168 - INFO - Record 68bb12eb35db675a8b09a355: Platform field contains 'App Store', Channel: 'App Store/Google Play'
+2025-09-08 07:16:56,168 - INFO - Record 68bb12eb35db675a8b09a352: Using platform 'App Store' from database field
+2025-09-08 07:16:56,168 - INFO - Record 68bb12eb35db675a8b09a355: Using platform 'App Store' from database field
+2025-09-08 07:16:56,168 - INFO - Record 68bb12eb35db675a8b09a352: Generating content for platform 'App Store' from database field
+2025-09-08 07:16:56,168 - INFO - Record 68bb12eb35db675a8b09a355: Generating content for platform 'App Store' from database field
+2025-09-08 07:17:20,273 - INFO - Batch 5 complete: 2/2 successful
+2025-09-08 07:17:20,274 - INFO - Saving batch of 2 updates to database...
+2025-09-08 07:17:20,379 - INFO - Successfully saved 2 records to database
+2025-09-08 07:17:20,379 - INFO - Database updated: 2 records saved
+2025-09-08 07:17:20,379 - INFO - Progress: 10/617 records processed
+2025-09-08 07:17:20,379 - INFO - Success: 10 | Failures: 0
+2025-09-08 07:17:20,379 - INFO - Processing batch 6/309 (2 records)...
+2025-09-08 07:17:20,379 - INFO - Record 68bb12eb35db675a8b09a35d: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:17:20,379 - INFO - Record 68bb12eb35db675a8b09a35d: Using platform 'Google Play Store' from database field
+2025-09-08 07:17:20,379 - INFO - Record 68bb12eb35db675a8b09a364: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:17:20,379 - INFO - Record 68bb12eb35db675a8b09a364: Using platform 'Google Play Store' from database field
+2025-09-08 07:17:20,379 - INFO - Batch 6 platform distribution: {'Google Play Store': 2}
+2025-09-08 07:17:20,380 - INFO - Record 68bb12eb35db675a8b09a35d: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:17:20,380 - INFO - Record 68bb12eb35db675a8b09a364: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:17:20,380 - INFO - Record 68bb12eb35db675a8b09a35d: Using platform 'Google Play Store' from database field
+2025-09-08 07:17:20,381 - INFO - Record 68bb12eb35db675a8b09a364: Using platform 'Google Play Store' from database field
+2025-09-08 07:17:20,381 - INFO - Record 68bb12eb35db675a8b09a35d: Generating content for platform 'Google Play Store' from database field
+2025-09-08 07:17:20,381 - INFO - Record 68bb12eb35db675a8b09a364: Generating content for platform 'Google Play Store' from database field
+2025-09-08 07:17:43,601 - INFO - Batch 6 complete: 2/2 successful
+2025-09-08 07:17:43,602 - INFO - Saving batch of 2 updates to database...
+2025-09-08 07:17:43,707 - INFO - Successfully saved 2 records to database
+2025-09-08 07:17:43,707 - INFO - Database updated: 2 records saved
+2025-09-08 07:17:43,707 - INFO - Progress: 12/617 records processed
+2025-09-08 07:17:43,707 - INFO - Success: 12 | Failures: 0
+2025-09-08 07:17:43,707 - INFO - Processing batch 7/309 (2 records)...
+2025-09-08 07:17:43,707 - INFO - Record 68bb12eb35db675a8b09a366: Platform field contains 'App Store', Channel: 'App Store/Google Play'
+2025-09-08 07:17:43,707 - INFO - Record 68bb12eb35db675a8b09a366: Using platform 'App Store' from database field
+2025-09-08 07:17:43,707 - INFO - Record 68bb12eb35db675a8b09a368: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:17:43,707 - INFO - Record 68bb12eb35db675a8b09a368: Using platform 'Google Play Store' from database field
+2025-09-08 07:17:43,707 - INFO - Batch 7 platform distribution: {'App Store': 1, 'Google Play Store': 1}
+2025-09-08 07:17:43,708 - INFO - Record 68bb12eb35db675a8b09a366: Platform field contains 'App Store', Channel: 'App Store/Google Play'
+2025-09-08 07:17:43,708 - INFO - Record 68bb12eb35db675a8b09a368: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:17:43,708 - INFO - Record 68bb12eb35db675a8b09a366: Using platform 'App Store' from database field
+2025-09-08 07:17:43,709 - INFO - Record 68bb12eb35db675a8b09a368: Using platform 'Google Play Store' from database field
+2025-09-08 07:17:43,709 - INFO - Record 68bb12eb35db675a8b09a366: Generating content for platform 'App Store' from database field
+2025-09-08 07:17:43,709 - INFO - Record 68bb12eb35db675a8b09a368: Generating content for platform 'Google Play Store' from database field
+2025-09-08 07:18:08,221 - INFO - Batch 7 complete: 2/2 successful
+2025-09-08 07:18:08,221 - INFO - Saving batch of 2 updates to database...
+2025-09-08 07:18:08,326 - INFO - Successfully saved 2 records to database
+2025-09-08 07:18:08,326 - INFO - Database updated: 2 records saved
+2025-09-08 07:18:08,326 - INFO - Progress: 14/617 records processed
+2025-09-08 07:18:08,327 - INFO - Success: 14 | Failures: 0
+2025-09-08 07:18:08,327 - INFO - Processing batch 8/309 (2 records)...
+2025-09-08 07:18:08,327 - INFO - Record 68bb12eb35db675a8b09a36d: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:18:08,327 - INFO - Record 68bb12eb35db675a8b09a36d: Using platform 'Google Play Store' from database field
+2025-09-08 07:18:08,327 - INFO - Record 68bb12eb35db675a8b09a36f: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:18:08,327 - INFO - Record 68bb12eb35db675a8b09a36f: Using platform 'Google Play Store' from database field
+2025-09-08 07:18:08,327 - INFO - Batch 8 platform distribution: {'Google Play Store': 2}
+2025-09-08 07:18:08,327 - INFO - Record 68bb12eb35db675a8b09a36d: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:18:08,328 - INFO - Record 68bb12eb35db675a8b09a36f: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:18:08,328 - INFO - Record 68bb12eb35db675a8b09a36d: Using platform 'Google Play Store' from database field
+2025-09-08 07:18:08,328 - INFO - Record 68bb12eb35db675a8b09a36f: Using platform 'Google Play Store' from database field
+2025-09-08 07:18:08,328 - INFO - Record 68bb12eb35db675a8b09a36d: Generating content for platform 'Google Play Store' from database field
+2025-09-08 07:18:08,328 - INFO - Record 68bb12eb35db675a8b09a36f: Generating content for platform 'Google Play Store' from database field
+2025-09-08 07:18:31,709 - INFO - Batch 8 complete: 2/2 successful
+2025-09-08 07:18:31,709 - INFO - Saving batch of 2 updates to database...
+2025-09-08 07:18:31,814 - INFO - Successfully saved 2 records to database
+2025-09-08 07:18:31,814 - INFO - Database updated: 2 records saved
+2025-09-08 07:18:31,814 - INFO - Progress: 16/617 records processed
+2025-09-08 07:18:31,814 - INFO - Success: 16 | Failures: 0
+2025-09-08 07:18:31,814 - INFO - Processing batch 9/309 (2 records)...
+2025-09-08 07:18:31,814 - INFO - Record 68bb12eb35db675a8b09a371: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:18:31,814 - INFO - Record 68bb12eb35db675a8b09a371: Using platform 'Google Play Store' from database field
+2025-09-08 07:18:31,814 - INFO - Record 68bb12eb35db675a8b09a372: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:18:31,814 - INFO - Record 68bb12eb35db675a8b09a372: Using platform 'Google Play Store' from database field
+2025-09-08 07:18:31,814 - INFO - Batch 9 platform distribution: {'Google Play Store': 2}
+2025-09-08 07:18:31,815 - INFO - Record 68bb12eb35db675a8b09a371: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:18:31,815 - INFO - Record 68bb12eb35db675a8b09a372: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:18:31,815 - INFO - Record 68bb12eb35db675a8b09a371: Using platform 'Google Play Store' from database field
+2025-09-08 07:18:31,815 - INFO - Record 68bb12eb35db675a8b09a372: Using platform 'Google Play Store' from database field
+2025-09-08 07:18:31,815 - INFO - Record 68bb12eb35db675a8b09a371: Generating content for platform 'Google Play Store' from database field
+2025-09-08 07:18:31,816 - INFO - Record 68bb12eb35db675a8b09a372: Generating content for platform 'Google Play Store' from database field
+2025-09-08 07:18:53,313 - INFO - Batch 9 complete: 2/2 successful
+2025-09-08 07:18:53,313 - INFO - Saving batch of 2 updates to database...
+2025-09-08 07:18:53,418 - INFO - Successfully saved 2 records to database
+2025-09-08 07:18:53,418 - INFO - Database updated: 2 records saved
+2025-09-08 07:18:53,418 - INFO - Progress: 18/617 records processed
+2025-09-08 07:18:53,418 - INFO - Success: 18 | Failures: 0
+2025-09-08 07:18:53,418 - INFO - Processing batch 10/309 (2 records)...
+2025-09-08 07:18:53,418 - INFO - Record 68bb12eb35db675a8b09a374: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:18:53,418 - INFO - Record 68bb12eb35db675a8b09a374: Using platform 'Google Play Store' from database field
+2025-09-08 07:18:53,419 - INFO - Record 68bb12eb35db675a8b09a376: Platform field contains 'App Store', Channel: 'App Store/Google Play'
+2025-09-08 07:18:53,419 - INFO - Record 68bb12eb35db675a8b09a376: Using platform 'App Store' from database field
+2025-09-08 07:18:53,419 - INFO - Batch 10 platform distribution: {'Google Play Store': 1, 'App Store': 1}
+2025-09-08 07:18:53,419 - INFO - Record 68bb12eb35db675a8b09a374: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:18:53,419 - INFO - Record 68bb12eb35db675a8b09a376: Platform field contains 'App Store', Channel: 'App Store/Google Play'
+2025-09-08 07:18:53,420 - INFO - Record 68bb12eb35db675a8b09a374: Using platform 'Google Play Store' from database field
+2025-09-08 07:18:53,420 - INFO - Record 68bb12eb35db675a8b09a376: Using platform 'App Store' from database field
+2025-09-08 07:18:53,420 - INFO - Record 68bb12eb35db675a8b09a374: Generating content for platform 'Google Play Store' from database field
+2025-09-08 07:18:53,420 - INFO - Record 68bb12eb35db675a8b09a376: Generating content for platform 'App Store' from database field
+2025-09-08 07:19:15,267 - INFO - Batch 10 complete: 2/2 successful
+2025-09-08 07:19:15,267 - INFO - Saving batch of 2 updates to database...
+2025-09-08 07:19:15,372 - INFO - Successfully saved 2 records to database
+2025-09-08 07:19:15,372 - INFO - Database updated: 2 records saved
+2025-09-08 07:19:15,372 - INFO - Progress: 20/617 records processed
+2025-09-08 07:19:15,372 - INFO - Success: 20 | Failures: 0
+2025-09-08 07:19:15,373 - INFO - Processing batch 11/309 (2 records)...
+2025-09-08 07:19:15,373 - INFO - Record 68bb12eb35db675a8b09a378: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:19:15,373 - INFO - Record 68bb12eb35db675a8b09a378: Using platform 'Google Play Store' from database field
+2025-09-08 07:19:15,373 - INFO - Record 68bb12eb35db675a8b09a379: Platform field contains 'App Store', Channel: 'App Store/Google Play'
+2025-09-08 07:19:15,373 - INFO - Record 68bb12eb35db675a8b09a379: Using platform 'App Store' from database field
+2025-09-08 07:19:15,373 - INFO - Batch 11 platform distribution: {'Google Play Store': 1, 'App Store': 1}
+2025-09-08 07:19:15,373 - INFO - Record 68bb12eb35db675a8b09a378: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:19:15,374 - INFO - Record 68bb12eb35db675a8b09a379: Platform field contains 'App Store', Channel: 'App Store/Google Play'
+2025-09-08 07:19:15,374 - INFO - Record 68bb12eb35db675a8b09a378: Using platform 'Google Play Store' from database field
+2025-09-08 07:19:15,374 - INFO - Record 68bb12eb35db675a8b09a379: Using platform 'App Store' from database field
+2025-09-08 07:19:15,374 - INFO - Record 68bb12eb35db675a8b09a378: Generating content for platform 'Google Play Store' from database field
+2025-09-08 07:19:15,374 - INFO - Record 68bb12eb35db675a8b09a379: Generating content for platform 'App Store' from database field
+2025-09-08 07:19:38,360 - INFO - Batch 11 complete: 2/2 successful
+2025-09-08 07:19:38,360 - INFO - Saving batch of 2 updates to database...
+2025-09-08 07:19:38,466 - INFO - Successfully saved 2 records to database
+2025-09-08 07:19:38,466 - INFO - Database updated: 2 records saved
+2025-09-08 07:19:38,466 - INFO - Progress: 22/617 records processed
+2025-09-08 07:19:38,466 - INFO - Success: 22 | Failures: 0
+2025-09-08 07:19:38,466 - INFO - Processing batch 12/309 (2 records)...
+2025-09-08 07:19:38,466 - INFO - Record 68bb12eb35db675a8b09a37a: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:19:38,466 - INFO - Record 68bb12eb35db675a8b09a37a: Using platform 'Google Play Store' from database field
+2025-09-08 07:19:38,466 - INFO - Record 68bb12eb35db675a8b09a37c: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:19:38,466 - INFO - Record 68bb12eb35db675a8b09a37c: Using platform 'Google Play Store' from database field
+2025-09-08 07:19:38,467 - INFO - Batch 12 platform distribution: {'Google Play Store': 2}
+2025-09-08 07:19:38,467 - INFO - Record 68bb12eb35db675a8b09a37a: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:19:38,467 - INFO - Record 68bb12eb35db675a8b09a37c: Platform field contains 'Google Play Store', Channel: 'App Store/Google Play'
+2025-09-08 07:19:38,467 - INFO - Record 68bb12eb35db675a8b09a37a: Using platform 'Google Play Store' from database field
+2025-09-08 07:19:38,468 - INFO - Record 68bb12eb35db675a8b09a37c: Using platform 'Google Play Store' from database field
+2025-09-08 07:19:38,468 - INFO - Record 68bb12eb35db675a8b09a37a: Generating content for platform 'Google Play Store' from database field
+2025-09-08 07:19:38,468 - INFO - Record 68bb12eb35db675a8b09a37c: Generating content for platform 'Google Play Store' from database field
+2025-09-08 07:19:50,435 - INFO - Received signal 2. Initiating graceful shutdown...
+2025-09-08 07:19:50,435 - INFO - Please wait for current operations to complete...
+2025-09-08 07:20:00,347 - INFO - Batch 12 complete: 0/2 successful
+2025-09-08 07:20:00,348 - INFO - Progress: 24/617 records processed
+2025-09-08 07:20:00,348 - INFO - Success: 24 | Failures: 0
+2025-09-08 07:20:00,348 - INFO - Shutdown requested. Stopping processing...
+2025-09-08 07:20:00,348 - INFO - EU Bank Social Media App Store review generation complete!
+2025-09-08 07:20:00,348 - INFO - Total records updated: 22
+2025-09-08 07:20:00,348 - INFO - Successful generations: 24
+2025-09-08 07:20:00,348 - INFO - Failed generations: 0
+2025-09-08 07:20:01,096 - INFO - EU Bank Social Media Collection Statistics:
+2025-09-08 07:20:01,096 - INFO - Total social media records: 2286
+2025-09-08 07:20:01,097 - INFO - App Store/Google Play records (exact match): 701
+2025-09-08 07:20:01,097 - INFO - App Store/Google Play records (all variations): 701
+2025-09-08 07:20:01,097 - INFO - With generated content: 106
+2025-09-08 07:20:01,097 - INFO - Without generated content: 595
+2025-09-08 07:20:01,097 - INFO - Platform field = 'App Store': 209
+2025-09-08 07:20:01,097 - INFO - Platform field = 'Google Play Store': 492
+2025-09-08 07:20:01,097 - INFO - Platform field = Other values: 0
+2025-09-08 07:20:01,201 - INFO - Available channels: ['App Store/Google Play', 'Reddit', 'Trustpilot', 'Twitter']
+2025-09-08 07:20:01,308 - INFO - Platform values in App Store/Google Play records: ['App Store', 'Google Play Store']
+2025-09-08 07:20:01,412 - INFO - Sample App Store/Google Play record structure:
+2025-09-08 07:20:01,413 - INFO -   _id: 68bb12eb35db675a8b09a21b
+2025-09-08 07:20:01,413 - INFO -   email_id: scottdaniels6518@gmail.com
+2025-09-08 07:20:01,413 - INFO -   username: Scott Daniels
+2025-09-08 07:20:01,413 - INFO -   channel: App Store/Google Play
+2025-09-08 07:20:01,413 - INFO -   dominant_topic: High Transaction Fees
+2025-09-08 07:20:01,413 - INFO -   subtopics: Cost Transparency Missing, Customer Retention Risk...
+2025-09-08 07:20:01,413 - INFO -   created_at: 2025-04-22T20:05:06Z
+2025-09-08 07:20:01,413 - INFO -   domain: banking
+2025-09-08 07:20:01,413 - INFO -   review_id: 513220
+2025-09-08 07:20:01,413 - INFO -   user_id: 825891
+2025-09-08 07:20:01,413 - INFO -   platform: Google Play Store
+2025-09-08 07:20:01,413 - INFO -   content_generated_at: 2025-09-08T06:59:25.316236
+2025-09-08 07:20:01,413 - INFO -   priority: P2 - Medium
+2025-09-08 07:20:01,413 - INFO -   rating: 2
+2025-09-08 07:20:01,413 - INFO -   review_helpful: 28
+2025-09-08 07:20:01,414 - INFO -   sentiment: Negative
+2025-09-08 07:20:01,414 - INFO -   text: Frankly, I’m switching banks. The app itself *func...
+2025-09-08 07:20:01,414 - INFO -   urgency: True
+2025-09-08 07:20:01,518 - INFO - Database connection closed
+2025-09-08 07:20:01,518 - INFO - Session complete. Check log files:
+2025-09-08 07:20:01,518 - INFO - Main Log: logs/eu_bank_socialmedia_appstore_generator_20250908_071500.log
+2025-09-08 07:20:01,518 - INFO - Success Log: logs/successful_socialmedia_appstore_generations_20250908_071500.log
+2025-09-08 07:20:01,518 - INFO - Failure Log: logs/failed_socialmedia_appstore_generations_20250908_071500.log
+2025-09-08 07:20:01,519 - INFO - Database connection closed

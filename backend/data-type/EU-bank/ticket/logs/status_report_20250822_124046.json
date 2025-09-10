@@ -1,0 +1,40 @@
+{
+  "timestamp": "2025-08-22T12:40:46.846092",
+  "session_stats": {
+    "successful_generations": 980,
+    "failed_generations": 0,
+    "titles_generated": 1020,
+    "database_updates": 2000,
+    "success_rate": 100.0
+  },
+  "intermediate_results": {
+    "total_results": 2000,
+    "pending_database_saves": 0,
+    "intermediate_file": "logs/intermediate_results_20250822_084855.json"
+  },
+  "database_stats": {
+    "total_tickets": 2000,
+    "tickets_with_titles": 2000,
+    "tickets_with_content": 2000,
+    "tickets_with_all_fields": 2000,
+    "tickets_without_titles": 0,
+    "tickets_without_content": 0,
+    "tickets_without_all": 0,
+    "title_completion_percentage": 100.0,
+    "content_completion_percentage": 100.0,
+    "full_completion_percentage": 100.0
+  },
+  "system_info": {
+    "cpu_cores": 128,
+    "max_workers": 16,
+    "batch_size": 10,
+    "cpu_usage": 1.2,
+    "memory_usage": 6.2
+  },
+  "log_files": {
+    "main_log": "logs/ticket_generator_20250822_084855.log",
+    "success_log": "logs/successful_generations_20250822_084855.log",
+    "failure_log": "logs/failed_generations_20250822_084855.log",
+    "progress_log": "logs/progress_20250822_084855.log"
+  }
+}

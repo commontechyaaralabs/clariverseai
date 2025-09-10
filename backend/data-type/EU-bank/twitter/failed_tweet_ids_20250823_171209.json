@@ -1,0 +1,3168 @@
+{
+  "total_found": 527,
+  "valid_records": 527,
+  "records": [
+    {
+      "tweet_id": "T861929",
+      "username": "Leah Sampson",
+      "dominant_topic": "Mixed User Experience",
+      "subtopics": "Banking Service Variable"
+    },
+    {
+      "tweet_id": "T593001",
+      "username": "Kelly Robbins",
+      "dominant_topic": "Account Access Problems",
+      "subtopics": "Authentication Errors Occurred, Profile Access Denied, Multi Factor Problems"
+    },
+    {
+      "tweet_id": "T105009",
+      "username": "Christopher Carter",
+      "dominant_topic": "GDPR Compliance Praise",
+      "subtopics": "GDPR Handling Excellent, Compliance Documentation Clear"
+    },
+    {
+      "tweet_id": "T643011",
+      "username": "Kristen Reynolds",
+      "dominant_topic": "FX Trading Smooth",
+      "subtopics": "International Rate Management, Multi Currency Operations"
+    },
+    {
+      "tweet_id": "T123855",
+      "username": "Andrew Macdonald",
+      "dominant_topic": "API Integration Problems",
+      "subtopics": "Data Synchronization Errors, Authentication Issues Reported, Open Banking Problems"
+    },
+    {
+      "tweet_id": "T014015",
+      "username": "Regina Harris",
+      "dominant_topic": "Resolution Eventually Satisfactory",
+      "subtopics": "Ultimate Resolution Good, Final Outcome Positive"
+    },
+    {
+      "tweet_id": "T453179",
+      "username": "Joseph Bradford",
+      "dominant_topic": "Unauthorized Access Fears",
+      "subtopics": "Account Breach Suspected, Identity Theft Concerns"
+    },
+    {
+      "tweet_id": "T264321",
+      "username": "Danielle Clark",
+      "dominant_topic": "Periodic Performance Changes",
+      "subtopics": "Account Management Variation, Customer Support Cycles"
+    },
+    {
+      "tweet_id": "T232978",
+      "username": "Cody Collins",
+      "dominant_topic": "PSD2 Compliance Smooth",
+      "subtopics": "Legal Requirements Met"
+    },
+    {
+      "tweet_id": "T718779",
+      "username": "Amy Campbell",
+      "dominant_topic": "Account Access Problems",
+      "subtopics": "Account Locked Unexpectedly, Multi Factor Problems"
+    },
+    {
+      "tweet_id": "T605347",
+      "username": "Rickey Miller",
+      "dominant_topic": "Feature Enhancement Needed",
+      "subtopics": "Feature Addition Requested, Platform Development Needed"
+    },
+    {
+      "tweet_id": "T259980",
+      "username": "Travis Hogan",
+      "dominant_topic": "Account Management Satisfactory",
+      "subtopics": "Business Account Management, Corporate Banking Services"
+    },
+    {
+      "tweet_id": "T162549",
+      "username": "Kevin Vaughn",
+      "dominant_topic": "Authentication Errors Reported",
+      "subtopics": "Security Login Failed, Access Verification Error, Authentication System Problem"
+    },
+    {
+      "tweet_id": "T289841",
+      "username": "Holly Lee",
+      "dominant_topic": "Account Manager Responsive",
+      "subtopics": "Personal Banking Representative, Client Relationship Manager, Customer Service Specialist"
+    },
+    {
+      "tweet_id": "T156699",
+      "username": "Lee Humphrey",
+      "dominant_topic": "Viral Complaint Spreading",
+      "subtopics": "Social Media Complaint, Viral Customer Problem"
+    },
+    {
+      "tweet_id": "T735752",
+      "username": "Colleen Harris",
+      "dominant_topic": "Issue Resolved Quickly",
+      "subtopics": "Problem Fixing Rapid"
+    },
+    {
+      "tweet_id": "T066086",
+      "username": "John Hogan",
+      "dominant_topic": "Cross Border Issues",
+      "subtopics": "Multi Currency Problems, Exchange Rate Disputes, International Banking Issues"
+    },
+    {
+      "tweet_id": "T702517",
+      "username": "Erica Mcclure",
+      "dominant_topic": "Information Inquiry Made",
+      "subtopics": "Service Inquiry Made"
+    },
+    {
+      "tweet_id": "T226330",
+      "username": "Brian Davis",
+      "dominant_topic": "Others Need Improvement",
+      "subtopics": "Service Areas Improvement, Account Features Development, System Capability Upgrade"
+    },
+    {
+      "tweet_id": "T426641",
+      "username": "Miranda Reyes",
+      "dominant_topic": "Maintenance Inconvenience Reported",
+      "subtopics": "Service Pause Reported, System Break Encountered, Platform Halt Noticed"
+    },
+    {
+      "tweet_id": "T173974",
+      "username": "Christopher Hicks",
+      "dominant_topic": "Comparative Banking Feedback",
+      "subtopics": "Banking Market Comparison, Competitor Analysis Feedback, Industry Service Review"
+    },
+    {
+      "tweet_id": "T731950",
+      "username": "Kelly Lopez",
+      "dominant_topic": "Treasury Operations Smooth",
+      "subtopics": "Corporate Treasury Operations, Enterprise Cash Handling, Institutional Banking Services"
+    },
+    {
+      "tweet_id": "T968948",
+      "username": "Regina Wells",
+      "dominant_topic": "Multilingual Support Varies",
+      "subtopics": "Multi Lingual Service, International Communication Support"
+    },
+    {
+      "tweet_id": "T879875",
+      "username": "Daniel Wong",
+      "dominant_topic": "Letter Credit Processed",
+      "subtopics": "Trade Documentation Complete, International Commerce Success, Business Transaction Approved"
+    },
+    {
+      "tweet_id": "T207374",
+      "username": "Brent Martin",
+      "dominant_topic": "Mobile Security Robust",
+      "subtopics": "Mobile Protection Excellent, Digital Safety Assured"
+    },
+    {
+      "tweet_id": "T990233",
+      "username": "Max Prince",
+      "dominant_topic": "Regional Service Variations",
+      "subtopics": "Country Service Differences, Local Service Inconsistencies"
+    },
+    {
+      "tweet_id": "T607535",
+      "username": "William Mckinney",
+      "dominant_topic": "Service Interruption Experienced",
+      "subtopics": "System Access Lost, Online Service Disrupted, Network Communication Interrupted"
+    },
+    {
+      "tweet_id": "T006682",
+      "username": "Joshua Garcia",
+      "dominant_topic": "Compliance Checks Intrusive",
+      "subtopics": "Regulatory Oversight Intrusive, Compliance Monitoring Excessive, Audit Process Intensive"
+    },
+    {
+      "tweet_id": "T446631",
+      "username": "Michele Ochoa",
+      "dominant_topic": "API Integration Problems",
+      "subtopics": "Data Synchronization Errors, Service Interruptions Experienced"
+    },
+    {
+      "tweet_id": "T516467",
+      "username": "Michael Gibson",
+      "dominant_topic": "Bulk Payment Efficiency",
+      "subtopics": "Business Transfer Efficient"
+    },
+    {
+      "tweet_id": "T643842",
+      "username": "Steven Villarreal",
+      "dominant_topic": "KYC Documentation Easy",
+      "subtopics": "Customer Identity Verification, Know Your Customer, Client Due Diligence, Account Holder Verification"
+    },
+    {
+      "tweet_id": "T842408",
+      "username": "Mary Smith",
+      "dominant_topic": "Excellent Call Support",
+      "subtopics": "Knowledgeable Agent Helped, Problem Resolved Efficiently"
+    },
+    {
+      "tweet_id": "T861159",
+      "username": "April Velazquez",
+      "dominant_topic": "Process Clarification Needed",
+      "subtopics": "Service Procedure Inquiries"
+    },
+    {
+      "tweet_id": "T994952",
+      "username": "Henry Bryant",
+      "dominant_topic": "Documentation Excessive Requirements",
+      "subtopics": "Paper Submission Heavy, Verification Process Complex, Compliance Paperwork Extensive"
+    },
+    {
+      "tweet_id": "T498710",
+      "username": "Jake Weber",
+      "dominant_topic": "Some Countries Excellent",
+      "subtopics": "Regional Banking Excellence, Country Service Superior"
+    },
+    {
+      "tweet_id": "T396023",
+      "username": "Maria Woodward",
+      "dominant_topic": "System Outage Frustration",
+      "subtopics": "Core Banking Down, Network Connectivity Lost"
+    },
+    {
+      "tweet_id": "T593603",
+      "username": "Patrick Arnold",
+      "dominant_topic": "Call Center Complaints",
+      "subtopics": "Long Wait Times, Unhelpful Agent Encountered, Language Barriers Experienced"
+    },
+    {
+      "tweet_id": "T647144",
+      "username": "Jennifer Garcia",
+      "dominant_topic": "Digital Platform Glitches",
+      "subtopics": "System Bugs Found, Software Issues Experienced"
+    },
+    {
+      "tweet_id": "T253542",
+      "username": "Jonathan Lucas",
+      "dominant_topic": "Relationship Management Praise",
+      "subtopics": "Account Manager Responsive, Dedicated Support Appreciated, Personalized Banking Excellence, Client Relationship Strong"
+    },
+    {
+      "tweet_id": "T751812",
+      "username": "Mike Jenkins",
+      "dominant_topic": "Relationship Management Praise",
+      "subtopics": "Dedicated Support Appreciated, Personalized Banking Excellence, Client Relationship Strong"
+    },
+    {
+      "tweet_id": "T464592",
+      "username": "Jason Wolf",
+      "dominant_topic": "Documentary Collection Efficient",
+      "subtopics": "Collection Process Smooth, Commercial Paper Processing"
+    },
+    {
+      "tweet_id": "T054768",
+      "username": "Tracy Russell",
+      "dominant_topic": "Process Clarification Needed",
+      "subtopics": "System Process Help"
+    },
+    {
+      "tweet_id": "T159974",
+      "username": "Mark Thompson",
+      "dominant_topic": "Others Need Improvement",
+      "subtopics": "Regional Banking Enhancement, Country Service Improvement"
+    },
+    {
+      "tweet_id": "T144358",
+      "username": "Chloe Aguilar",
+      "dominant_topic": "Treasury Services Excellence",
+      "subtopics": "Liquidity Management Excellent"
+    },
+    {
+      "tweet_id": "T659281",
+      "username": "Mary Schaefer",
+      "dominant_topic": "Public Recovery Successful",
+      "subtopics": "Public Issue Resolution, Customer Relationship Restoration"
+    },
+    {
+      "tweet_id": "T092407",
+      "username": "Lauren Soto",
+      "dominant_topic": "Fraud Alert Confusion",
+      "subtopics": "Fraud Warning Issued, Suspicious Activity Detected, Account Monitoring Triggered"
+    },
+    {
+      "tweet_id": "T336832",
+      "username": "Caleb Rodriguez",
+      "dominant_topic": "Account Configuration Assistance",
+      "subtopics": "Account Setup Assistance, Banking Configuration Help, Service Initialization Support, Account Creation Guidance"
+    },
+    {
+      "tweet_id": "T574670",
+      "username": "Alicia Moore",
+      "dominant_topic": "Core Banking Down",
+      "subtopics": "Main System Offline, Primary Platform Stopped"
+    },
+    {
+      "tweet_id": "T794961",
+      "username": "Timothy Griffith",
+      "dominant_topic": "Escalation Process Unclear",
+      "subtopics": "Problem Resolution Unclear"
+    },
+    {
+      "tweet_id": "T833949",
+      "username": "Mr. Adam Moore",
+      "dominant_topic": "Partial Functionality Working",
+      "subtopics": "Service Capabilities Restricted, System Functions Incomplete"
+    },
+    {
+      "tweet_id": "T637430",
+      "username": "Dylan Bautista",
+      "dominant_topic": "AML Processes Smooth",
+      "subtopics": "Suspicious Activity Monitoring"
+    },
+    {
+      "tweet_id": "T962341",
+      "username": "Chelsea Davis",
+      "dominant_topic": "Payment Processing Failure",
+      "subtopics": "Card Transaction Declined, Standing Order Failed"
+    },
+    {
+      "tweet_id": "T119546",
+      "username": "Scott Cameron",
+      "dominant_topic": "Multi Currency Problems",
+      "subtopics": "International Currency Issues, Foreign Exchange Problems"
+    },
+    {
+      "tweet_id": "T673294",
+      "username": "Nicole Williamson",
+      "dominant_topic": "Compliance Checks Intrusive",
+      "subtopics": "Regulatory Oversight Intrusive"
+    },
+    {
+      "tweet_id": "T763413",
+      "username": "Brooke Hunter",
+      "dominant_topic": "General Support Needed",
+      "subtopics": "Account Help Required"
+    },
+    {
+      "tweet_id": "T384607",
+      "username": "Ruth Cooper",
+      "dominant_topic": "Call Support Adequate",
+      "subtopics": "Customer Support Adequate, Service Quality Acceptable, Account Management Sufficient"
+    },
+    {
+      "tweet_id": "T895687",
+      "username": "Thomas Jenkins",
+      "dominant_topic": "Public Recovery Successful",
+      "subtopics": "Customer Relationship Restoration, Brand Image Recovery"
+    },
+    {
+      "tweet_id": "T839406",
+      "username": "Amy Parker",
+      "dominant_topic": "Identity Verification Issues",
+      "subtopics": "User Authentication Problems, Identity Confirmation Issues"
+    },
+    {
+      "tweet_id": "T697993",
+      "username": "Edgar Wright",
+      "dominant_topic": "Fee Structure Criticism",
+      "subtopics": "Pricing Transparency Lacking, Fee Increase Complaints"
+    },
+    {
+      "tweet_id": "T588600",
+      "username": "Andrea Walters",
+      "dominant_topic": "Compliance Checks Intrusive",
+      "subtopics": "Audit Process Intensive"
+    },
+    {
+      "tweet_id": "T007894",
+      "username": "Louis Pitts",
+      "dominant_topic": "Inconsistent Experience Reported",
+      "subtopics": "Customer Experience Inconsistent, Service Quality Variable, Account Management Fluctuating"
+    },
+    {
+      "tweet_id": "T545699",
+      "username": "William Mccoy",
+      "dominant_topic": "Feature Malfunction Reports",
+      "subtopics": "Mobile App Problems, Application Bug Issues"
+    },
+    {
+      "tweet_id": "T102211",
+      "username": "Terri Ford",
+      "dominant_topic": "Feature Explanation Requested",
+      "subtopics": "Banking Function Inquiries, System Feature Help"
+    },
+    {
+      "tweet_id": "T177082",
+      "username": "Dawn Foster MD",
+      "dominant_topic": "International Payment Smooth",
+      "subtopics": "Cross Border Efficient"
+    },
+    {
+      "tweet_id": "T645711",
+      "username": "Leroy Mendoza",
+      "dominant_topic": "Password Reset Guidance",
+      "subtopics": "Credential Reset Assistance, Access Restoration Support"
+    },
+    {
+      "tweet_id": "T998658",
+      "username": "John Schmidt",
+      "dominant_topic": "Resolution Eventually Satisfactory",
+      "subtopics": "Ultimate Resolution Good"
+    },
+    {
+      "tweet_id": "T071828",
+      "username": "Dr. Craig Estrada PhD",
+      "dominant_topic": "Others Need Improvement",
+      "subtopics": "Regional Banking Enhancement, Country Service Improvement, Local Service Upgrade"
+    },
+    {
+      "tweet_id": "T431094",
+      "username": "Pamela Payne",
+      "dominant_topic": "Regulatory Compliance Questions",
+      "subtopics": "KYC Documentation Questions, GDPR Rights Inquiry"
+    },
+    {
+      "tweet_id": "T495596",
+      "username": "Briana Garcia",
+      "dominant_topic": "Manager Unavailable Complaints",
+      "subtopics": "Account Officer Unavailable, Customer Advisor Busy"
+    },
+    {
+      "tweet_id": "T530340",
+      "username": "Megan Bates",
+      "dominant_topic": "Trade Documentation Smooth",
+      "subtopics": "International Paperwork Smooth"
+    },
+    {
+      "tweet_id": "T638756",
+      "username": "Megan Saunders",
+      "dominant_topic": "Documentary Collection Efficient",
+      "subtopics": "International Settlement Success"
+    },
+    {
+      "tweet_id": "T251593",
+      "username": "Maria Hayes",
+      "dominant_topic": "Service Improvement Acknowledged",
+      "subtopics": "Banking Service Enhancement, Customer Experience Improvement, Account Management Development, Service Quality Progress"
+    },
+    {
+      "tweet_id": "T660021",
+      "username": "Michael Butler",
+      "dominant_topic": "Corporate Setup Questions",
+      "subtopics": "Corporate Account Questions, Commercial Banking Inquiries"
+    },
+    {
+      "tweet_id": "T516797",
+      "username": "Kathleen Estrada",
+      "dominant_topic": "Multilingual Support Varies",
+      "subtopics": "Language Support Variable, International Communication Support, Foreign Language Assistance"
+    },
+    {
+      "tweet_id": "T602347",
+      "username": "Gabrielle Leonard",
+      "dominant_topic": "Improvement Over Previous",
+      "subtopics": "Service Development Progress, Customer Experience Enhanced, Account Management Better"
+    },
+    {
+      "tweet_id": "T164182",
+      "username": "Shannon Villarreal",
+      "dominant_topic": "Payment Processing Failed",
+      "subtopics": "Transaction System Failed, Payment Processing Broken"
+    },
+    {
+      "tweet_id": "T366392",
+      "username": "Edward Miller",
+      "dominant_topic": "SEPA Payment Rejected",
+      "subtopics": "Payment Gateway Failed, Transaction Engine Down"
+    },
+    {
+      "tweet_id": "T177589",
+      "username": "Kenneth Newman",
+      "dominant_topic": "Bank Guarantee Issued",
+      "subtopics": "Credit Assurance Given, Bank Commitment Issued, Security Document Processed"
+    },
+    {
+      "tweet_id": "T776868",
+      "username": "Michelle Vaughan",
+      "dominant_topic": "Software Bug Complaints",
+      "subtopics": "Mobile Software Complaints, Application Issues Reported, Program Problem Feedback, System Error Comments"
+    },
+    {
+      "tweet_id": "T796935",
+      "username": "John Mcguire",
+      "dominant_topic": "Signatory Update Needed",
+      "subtopics": "Authorized User Modifications, Account Access Updates"
+    },
+    {
+      "tweet_id": "T367539",
+      "username": "Kristen White",
+      "dominant_topic": "Multilingual Support Appreciated",
+      "subtopics": "Native Speaker Available, Translation Services Provided"
+    },
+    {
+      "tweet_id": "T326692",
+      "username": "Mary Mitchell",
+      "dominant_topic": "Personalized Banking Excellence",
+      "subtopics": "Premium Banking Experience, Exclusive Service Delivery, High Value Client"
+    },
+    {
+      "tweet_id": "T170112",
+      "username": "Juan Farmer",
+      "dominant_topic": "Transaction Processing Stuck",
+      "subtopics": "Money Transfer Stuck"
+    },
+    {
+      "tweet_id": "T402228",
+      "username": "David Sanchez",
+      "dominant_topic": "Cost Structure Criticism",
+      "subtopics": "Expensive Service Structure, Costly Account Management"
+    },
+    {
+      "tweet_id": "T787736",
+      "username": "Jasmine Smith",
+      "dominant_topic": "Unexpected Charges Discovered",
+      "subtopics": "Hidden Charges Applied, Surprise Fees Discovered, Undisclosed Costs Found, Additional Expenses Unexpected"
+    },
+    {
+      "tweet_id": "T148573",
+      "username": "Jacob Ayala",
+      "dominant_topic": "Unhelpful Agent Encountered",
+      "subtopics": "Expertise Lacking Clearly"
+    },
+    {
+      "tweet_id": "T810684",
+      "username": "Mrs. Sabrina Davis",
+      "dominant_topic": "Investment Services Outstanding",
+      "subtopics": "Portfolio Management Services"
+    },
+    {
+      "tweet_id": "T270216",
+      "username": "Ronald Joyce",
+      "dominant_topic": "Trade Finance Satisfaction",
+      "subtopics": "Documentary Collection Efficient, International Trade Supported"
+    },
+    {
+      "tweet_id": "T126787",
+      "username": "Mark Lopez",
+      "dominant_topic": "Identity Verification Issues",
+      "subtopics": "Identity Confirmation Issues, Customer Recognition Errors"
+    },
+    {
+      "tweet_id": "T825395",
+      "username": "Mariah Horton",
+      "dominant_topic": "Regulatory Compliance Questions",
+      "subtopics": "GDPR Rights Inquiry, MiFID Categorization Needed"
+    },
+    {
+      "tweet_id": "T620988",
+      "username": "William Walker",
+      "dominant_topic": "Trade Documentation Smooth",
+      "subtopics": "Commercial Paper Handling"
+    },
+    {
+      "tweet_id": "T091593",
+      "username": "Kathryn Knight",
+      "dominant_topic": "Online Banking Excellence",
+      "subtopics": "Internet Banking Smooth"
+    },
+    {
+      "tweet_id": "T891141",
+      "username": "Leah Sampson",
+      "dominant_topic": "Response Time Inadequate",
+      "subtopics": "Service Delivery Delayed, Support Availability Limited"
+    },
+    {
+      "tweet_id": "T779432",
+      "username": "Cindy Cooper",
+      "dominant_topic": "System Outage Frustration",
+      "subtopics": "Core Banking Down, Network Connectivity Lost, Service Interrupted Completely"
+    },
+    {
+      "tweet_id": "T749958",
+      "username": "Kelly Robbins",
+      "dominant_topic": "Customer Service Disappointment",
+      "subtopics": "Relationship Manager Unavailable"
+    },
+    {
+      "tweet_id": "T364100",
+      "username": "Steve Parker DDS",
+      "dominant_topic": "Development Suggestions Made",
+      "subtopics": "Service Development Ideas, Banking Improvement Suggestions"
+    },
+    {
+      "tweet_id": "T644793",
+      "username": "Stephen Walter",
+      "dominant_topic": "FX Trading Smooth",
+      "subtopics": "Foreign Exchange Trading, Multi Currency Operations"
+    },
+    {
+      "tweet_id": "T905729",
+      "username": "Colin Johnson",
+      "dominant_topic": "Periodic Performance Changes",
+      "subtopics": "Banking Quality Fluctuation"
+    },
+    {
+      "tweet_id": "T886168",
+      "username": "Perry Jenkins",
+      "dominant_topic": "Security Incident Concerns",
+      "subtopics": "Unauthorized Access Fears, Cybersecurity Worries Expressed, Data Breach Concerns"
+    },
+    {
+      "tweet_id": "T149648",
+      "username": "Ryan Hansen",
+      "dominant_topic": "API Integration Problems",
+      "subtopics": "Data Synchronization Errors, Service Interruptions Experienced, Open Banking Problems"
+    },
+    {
+      "tweet_id": "T476748",
+      "username": "Ryan Delacruz",
+      "dominant_topic": "Cost Structure Criticism",
+      "subtopics": "High Cost Banking, Premium Pricing Model, Costly Account Management"
+    },
+    {
+      "tweet_id": "T850925",
+      "username": "David Wood",
+      "dominant_topic": "Local Service Quality",
+      "subtopics": "Regional Service Quality, Country Service Levels"
+    },
+    {
+      "tweet_id": "T430849",
+      "username": "Christopher Carter",
+      "dominant_topic": "Service Improvement Acknowledged",
+      "subtopics": "Customer Experience Improvement, Service Quality Progress"
+    },
+    {
+      "tweet_id": "T206737",
+      "username": "Kristen Reynolds",
+      "dominant_topic": "Process Clarification Needed",
+      "subtopics": "Business Process Questions, Operational Method Questions, System Process Help"
+    },
+    {
+      "tweet_id": "T422165",
+      "username": "Andrew Macdonald",
+      "dominant_topic": "Platform Downtime Frustration",
+      "subtopics": "Service Unavailable Temporarily, System Downtime Extended, Platform Offline Long"
+    },
+    {
+      "tweet_id": "T290308",
+      "username": "Regina Harris",
+      "dominant_topic": "Profile Access Denied",
+      "subtopics": "User Account Blocked, Profile Access Restricted, Account Permissions Limited"
+    },
+    {
+      "tweet_id": "T123404",
+      "username": "Joseph Bradford",
+      "dominant_topic": "Mandate Change Required",
+      "subtopics": "Account Control Updates"
+    },
+    {
+      "tweet_id": "T808855",
+      "username": "Danielle Clark",
+      "dominant_topic": "App Login Problems",
+      "subtopics": "Login Authentication Failed, Security Verification Error"
+    },
+    {
+      "tweet_id": "T155666",
+      "username": "Cody Collins",
+      "dominant_topic": "Call Center Complaints",
+      "subtopics": "Long Wait Times, Call Disconnection Issues, Poor Resolution Quality"
+    },
+    {
+      "tweet_id": "T553024",
+      "username": "Amy Campbell",
+      "dominant_topic": "New Account Opening",
+      "subtopics": "Commercial Account Creation"
+    },
+    {
+      "tweet_id": "T619809",
+      "username": "Rickey Miller",
+      "dominant_topic": "Risk Management Tools",
+      "subtopics": "Market Risk Analysis, Credit Risk Management"
+    },
+    {
+      "tweet_id": "T793984",
+      "username": "Travis Hogan",
+      "dominant_topic": "SEPA Transfer Success",
+      "subtopics": "SEPA Processing Smooth, European Transfer Fast, Cross Border Success, Regional Payment Excellent"
+    },
+    {
+      "tweet_id": "T229481",
+      "username": "Kevin Vaughn",
+      "dominant_topic": "Pricing Transparency Lacking",
+      "subtopics": "Fee Information Unclear, Cost Structure Confusing, Pricing Details Missing, Charge Explanation Insufficient"
+    },
+    {
+      "tweet_id": "T750473",
+      "username": "Holly Lee",
+      "dominant_topic": "Improved Service Acknowledged",
+      "subtopics": "Service Quality Improved, Banking Experience Better, Customer Support Enhanced"
+    },
+    {
+      "tweet_id": "T788000",
+      "username": "Lee Humphrey",
+      "dominant_topic": "Better Than Competitors",
+      "subtopics": "Market Position Superior"
+    },
+    {
+      "tweet_id": "T064624",
+      "username": "Colleen Harris",
+      "dominant_topic": "Compensation Provided Fairly",
+      "subtopics": "Reasonable Issue Settlement"
+    },
+    {
+      "tweet_id": "T450765",
+      "username": "John Hogan",
+      "dominant_topic": "Signatory Update Needed",
+      "subtopics": "Signatory List Changes, Account Access Updates"
+    },
+    {
+      "tweet_id": "T059909",
+      "username": "Erica Mcclure",
+      "dominant_topic": "Public Issue Escalated",
+      "subtopics": "Customer Issue Publicity, Banking Problem Attention"
+    },
+    {
+      "tweet_id": "T973447",
+      "username": "Brian Davis",
+      "dominant_topic": "Brand Reputation Restored",
+      "subtopics": "Brand Image Restoration"
+    },
+    {
+      "tweet_id": "T222703",
+      "username": "Miranda Reyes",
+      "dominant_topic": "Network Connectivity Lost",
+      "subtopics": "Transaction Network Down, Processing System Offline"
+    },
+    {
+      "tweet_id": "T989177",
+      "username": "Christopher Hicks",
+      "dominant_topic": "Signatory Update Needed",
+      "subtopics": "Account Authority Updates, Account Access Updates"
+    },
+    {
+      "tweet_id": "T099712",
+      "username": "Kelly Lopez",
+      "dominant_topic": "Liquidity Management Excellent",
+      "subtopics": "Working Capital Optimization, Business Liquidity Control, Corporate Fund Management"
+    },
+    {
+      "tweet_id": "T059126",
+      "username": "Regina Wells",
+      "dominant_topic": "Process Clarification Needed",
+      "subtopics": "Business Process Questions, Service Procedure Inquiries, System Process Help"
+    },
+    {
+      "tweet_id": "T831289",
+      "username": "Daniel Wong",
+      "dominant_topic": "Export Finance Approved",
+      "subtopics": "International Trade Credit, Global Commerce Support"
+    },
+    {
+      "tweet_id": "T329275",
+      "username": "Brent Martin",
+      "dominant_topic": "Resolution Eventually Satisfactory",
+      "subtopics": "Final Solution Acceptable, End Result Satisfactory, Ultimate Resolution Good"
+    },
+    {
+      "tweet_id": "T153184",
+      "username": "Max Prince",
+      "dominant_topic": "Fee Structure Criticism",
+      "subtopics": "High Transaction Fees, Unexpected Charges Discovered, Pricing Transparency Lacking, Fee Increase Complaints, Billing Errors Reported"
+    },
+    {
+      "tweet_id": "T725757",
+      "username": "William Mckinney",
+      "dominant_topic": "Verification Process Lengthy",
+      "subtopics": "Identity Confirmation Slow, Customer Screening Lengthy"
+    },
+    {
+      "tweet_id": "T608963",
+      "username": "Joshua Garcia",
+      "dominant_topic": "AML Processes Smooth",
+      "subtopics": "Anti Money Laundering, Financial Crime Prevention, Suspicious Activity Monitoring, Compliance Risk Management"
+    },
+    {
+      "tweet_id": "T382979",
+      "username": "Michele Ochoa",
+      "dominant_topic": "Response Time Inadequate",
+      "subtopics": "Customer Wait Extended, Service Delivery Delayed, Support Availability Limited"
+    },
+    {
+      "tweet_id": "T827424",
+      "username": "Michael Gibson",
+      "dominant_topic": "Standing Order Success",
+      "subtopics": "Recurring Transfers Smooth"
+    },
+    {
+      "tweet_id": "T308044",
+      "username": "Steven Villarreal",
+      "dominant_topic": "Compensation Appreciated Generally",
+      "subtopics": "Customer Compensation Fair, Problem Settlement Payment, Service Recovery Compensation"
+    },
+    {
+      "tweet_id": "T651232",
+      "username": "Mary Smith",
+      "dominant_topic": "Better Than Competitors",
+      "subtopics": "Other Bank Inferior, Industry Standing Better"
+    },
+    {
+      "tweet_id": "T870554",
+      "username": "April Velazquez",
+      "dominant_topic": "Cross Border Issues",
+      "subtopics": "International Banking Issues"
+    },
+    {
+      "tweet_id": "T065334",
+      "username": "Henry Bryant",
+      "dominant_topic": "Website Performance Issues",
+      "subtopics": "Site Performance Slow, Browser Compatibility Issues, Web Interface Problems"
+    },
+    {
+      "tweet_id": "T798923",
+      "username": "Jake Weber",
+      "dominant_topic": "Year End Processing",
+      "subtopics": "Annual Processing Period, Financial Year End"
+    },
+    {
+      "tweet_id": "T082020",
+      "username": "Maria Woodward",
+      "dominant_topic": "Export Finance Approved",
+      "subtopics": "Foreign Business Financing, Global Commerce Support"
+    },
+    {
+      "tweet_id": "T561960",
+      "username": "Patrick Arnold",
+      "dominant_topic": "Mixed Experience Reported",
+      "subtopics": "Service Feedback Balanced, Customer Review Varied"
+    },
+    {
+      "tweet_id": "T292389",
+      "username": "Jennifer Garcia",
+      "dominant_topic": "Customer Service Disappointment",
+      "subtopics": "Response Time Inadequate, Relationship Manager Unavailable, Support Coordination Lacking"
+    },
+    {
+      "tweet_id": "T640391",
+      "username": "Jonathan Lucas",
+      "dominant_topic": "Cross Border Inconsistencies",
+      "subtopics": "Cross Border Banking Variable, Global Banking Inconsistent"
+    },
+    {
+      "tweet_id": "T202185",
+      "username": "Mike Jenkins",
+      "dominant_topic": "Service Quality Poor",
+      "subtopics": "Service Representatives Inadequate, Client Assistance Lacking"
+    },
+    {
+      "tweet_id": "T095384",
+      "username": "Jason Wolf",
+      "dominant_topic": "Issue Resolved Quickly",
+      "subtopics": "Customer Problem Resolution, Issue Settlement Quick"
+    },
+    {
+      "tweet_id": "T397511",
+      "username": "Tracy Russell",
+      "dominant_topic": "Import Processing Delays",
+      "subtopics": "Import Clearance Delayed, Trade Paper Problems, Commercial Processing Slow"
+    },
+    {
+      "tweet_id": "T791117",
+      "username": "Mark Thompson",
+      "dominant_topic": "Local Service Quality",
+      "subtopics": "Regional Service Quality, Country Service Levels, Local Banking Performance"
+    },
+    {
+      "tweet_id": "T325235",
+      "username": "Chloe Aguilar",
+      "dominant_topic": "Fraud Alert Confusion",
+      "subtopics": "Security Alert Received, Fraud Warning Issued"
+    },
+    {
+      "tweet_id": "T839781",
+      "username": "Mary Schaefer",
+      "dominant_topic": "Holiday Period Issues",
+      "subtopics": "Seasonal Banking Issues"
+    },
+    {
+      "tweet_id": "T200948",
+      "username": "Lauren Soto",
+      "dominant_topic": "Dedicated Support Appreciated",
+      "subtopics": "Personalized Customer Care, Customized Financial Services"
+    },
+    {
+      "tweet_id": "T328162",
+      "username": "Caleb Rodriguez",
+      "dominant_topic": "Liquidity Management Excellent",
+      "subtopics": "Business Liquidity Control, Corporate Fund Management"
+    },
+    {
+      "tweet_id": "T953232",
+      "username": "Alicia Moore",
+      "dominant_topic": "GDPR Compliance Praise",
+      "subtopics": "GDPR Handling Excellent, Data Protection Strong"
+    },
+    {
+      "tweet_id": "T487920",
+      "username": "Timothy Griffith",
+      "dominant_topic": "Call Center Complaints",
+      "subtopics": "Unhelpful Agent Encountered, Language Barriers Experienced, Poor Resolution Quality"
+    },
+    {
+      "tweet_id": "T112507",
+      "username": "Mr. Adam Moore",
+      "dominant_topic": "Others Need Improvement",
+      "subtopics": "Banking Functions Enhancement, Account Features Development, System Capability Upgrade"
+    },
+    {
+      "tweet_id": "T020759",
+      "username": "Dylan Bautista",
+      "dominant_topic": "Treasury Services Excellence",
+      "subtopics": "Cash Management Superior, Liquidity Management Excellent, Risk Management Tools"
+    },
+    {
+      "tweet_id": "T419513",
+      "username": "Chelsea Davis",
+      "dominant_topic": "Customer Service Disappointment",
+      "subtopics": "Service Quality Poor, Escalation Process Unclear, Relationship Manager Unavailable"
+    },
+    {
+      "tweet_id": "T175115",
+      "username": "Scott Cameron",
+      "dominant_topic": "Third Party Integration",
+      "subtopics": "External System Connectivity, Third Party Integration, API Gateway Issues"
+    },
+    {
+      "tweet_id": "T734972",
+      "username": "Nicole Williamson",
+      "dominant_topic": "Call Disconnection Issues",
+      "subtopics": "Phone Call Dropped, Technical Issues Experienced"
+    },
+    {
+      "tweet_id": "T984552",
+      "username": "Brooke Hunter",
+      "dominant_topic": "Development Suggestions Made",
+      "subtopics": "Banking Improvement Suggestions, Account Enhancement Recommendations"
+    },
+    {
+      "tweet_id": "T141279",
+      "username": "Ruth Cooper",
+      "dominant_topic": "Customer Service Disappointment",
+      "subtopics": "Service Quality Poor, Response Time Inadequate, Escalation Process Unclear"
+    },
+    {
+      "tweet_id": "T145406",
+      "username": "Thomas Jenkins",
+      "dominant_topic": "Feature Feedback Mixed",
+      "subtopics": "Banking Function Comments, Account Capability Reviews"
+    },
+    {
+      "tweet_id": "T097144",
+      "username": "Amy Parker",
+      "dominant_topic": "Local Service Quality",
+      "subtopics": "Country Service Levels, Local Banking Performance"
+    },
+    {
+      "tweet_id": "T637522",
+      "username": "Edgar Wright",
+      "dominant_topic": "Fee Increase Complaints",
+      "subtopics": "Charge Schedule Modified"
+    },
+    {
+      "tweet_id": "T311319",
+      "username": "Andrea Walters",
+      "dominant_topic": "Fee Structure Criticism",
+      "subtopics": "High Transaction Fees, Pricing Transparency Lacking, Billing Errors Reported"
+    },
+    {
+      "tweet_id": "T191242",
+      "username": "Louis Pitts",
+      "dominant_topic": "Security Incident Concerns",
+      "subtopics": "Fraud Alert Confusion, Cybersecurity Worries Expressed, Data Breach Concerns"
+    },
+    {
+      "tweet_id": "T449719",
+      "username": "William Mccoy",
+      "dominant_topic": "Fee Increase Complaints",
+      "subtopics": "Fee Structure Changed, Pricing Model Updated"
+    },
+    {
+      "tweet_id": "T716017",
+      "username": "Terri Ford",
+      "dominant_topic": "Multi Currency Problems",
+      "subtopics": "Multi Currency Complications"
+    },
+    {
+      "tweet_id": "T505568",
+      "username": "Dawn Foster MD",
+      "dominant_topic": "Cybersecurity Worries Expressed",
+      "subtopics": "Online Banking Safety"
+    },
+    {
+      "tweet_id": "T918893",
+      "username": "Leroy Mendoza",
+      "dominant_topic": "Transaction Declined Frustration",
+      "subtopics": "Card Authorization Failed, Processing Error Occurred"
+    },
+    {
+      "tweet_id": "T143391",
+      "username": "John Schmidt",
+      "dominant_topic": "Year End Processing",
+      "subtopics": "Business Year Closing, Financial Year End"
+    },
+    {
+      "tweet_id": "T093316",
+      "username": "Dr. Craig Estrada PhD",
+      "dominant_topic": "Cross Border Complications",
+      "subtopics": "International Service Issues, Multi Country Problems"
+    },
+    {
+      "tweet_id": "T451180",
+      "username": "Pamela Payne",
+      "dominant_topic": "System Availability Issues",
+      "subtopics": "System Update Required, Platform Upgrade Needed, Infrastructure Improvement Planned"
+    },
+    {
+      "tweet_id": "T428399",
+      "username": "Briana Garcia",
+      "dominant_topic": "Regional Service Variations",
+      "subtopics": "Country Service Differences, Regional Banking Variations, Local Service Inconsistencies, Geographic Banking Disparities"
+    },
+    {
+      "tweet_id": "T300297",
+      "username": "Megan Bates",
+      "dominant_topic": "Network Connectivity Lost",
+      "subtopics": "Payment Infrastructure Failed, Processing System Offline, Transfer Platform Unavailable"
+    },
+    {
+      "tweet_id": "T265389",
+      "username": "Megan Saunders",
+      "dominant_topic": "Feature Feedback Mixed",
+      "subtopics": "Service Feature Feedback"
+    },
+    {
+      "tweet_id": "T325581",
+      "username": "Maria Hayes",
+      "dominant_topic": "Mixed Service Quality",
+      "subtopics": "Service Experience Varied, Account Management Uneven"
+    },
+    {
+      "tweet_id": "T607390",
+      "username": "Michael Butler",
+      "dominant_topic": "Some Countries Excellent",
+      "subtopics": "Regional Banking Excellence"
+    },
+    {
+      "tweet_id": "T674544",
+      "username": "Kathleen Estrada",
+      "dominant_topic": "Routine Service Feedback",
+      "subtopics": "Standard Banking Service, Typical Customer Support, Normal Banking Operations"
+    },
+    {
+      "tweet_id": "T577442",
+      "username": "Gabrielle Leonard",
+      "dominant_topic": "Public Recovery Successful",
+      "subtopics": "Customer Relationship Restoration"
+    },
+    {
+      "tweet_id": "T136967",
+      "username": "Shannon Villarreal",
+      "dominant_topic": "Fraud Alert Confusion",
+      "subtopics": "Fraud Warning Issued, Account Monitoring Triggered"
+    },
+    {
+      "tweet_id": "T585446",
+      "username": "Edward Miller",
+      "dominant_topic": "Inconsistent Experience Reported",
+      "subtopics": "Account Management Fluctuating"
+    },
+    {
+      "tweet_id": "T454056",
+      "username": "Kenneth Newman",
+      "dominant_topic": "Fraud Alert Confusion",
+      "subtopics": "Security Alert Received, Fraud Warning Issued, Suspicious Activity Detected"
+    },
+    {
+      "tweet_id": "T214229",
+      "username": "Michelle Vaughan",
+      "dominant_topic": "Maintenance Inconvenience Reported",
+      "subtopics": "Banking Interruption Experienced, Platform Halt Noticed"
+    },
+    {
+      "tweet_id": "T483756",
+      "username": "John Mcguire",
+      "dominant_topic": "Public Recovery Successful",
+      "subtopics": "Community Service Recovery, Customer Relationship Restoration, Brand Image Recovery"
+    },
+    {
+      "tweet_id": "T408865",
+      "username": "Kristen White",
+      "dominant_topic": "Online Banking Excellence",
+      "subtopics": "Web Platform Outstanding"
+    },
+    {
+      "tweet_id": "T833463",
+      "username": "Mary Mitchell",
+      "dominant_topic": "Transaction Declined Frustration",
+      "subtopics": "Card Authorization Failed, Payment Declined Repeatedly, Transaction Blocked Unexpectedly"
+    },
+    {
+      "tweet_id": "T070972",
+      "username": "Juan Farmer",
+      "dominant_topic": "Password Reset Guidance",
+      "subtopics": "Account Recovery Help, Access Restoration Support, Login Problem Resolution"
+    },
+    {
+      "tweet_id": "T134839",
+      "username": "David Sanchez",
+      "dominant_topic": "Liquidity Management Excellent",
+      "subtopics": "Cash Flow Management, Working Capital Optimization, Corporate Fund Management"
+    },
+    {
+      "tweet_id": "T713228",
+      "username": "Jasmine Smith",
+      "dominant_topic": "Multilingual Support Varies",
+      "subtopics": "Language Support Variable"
+    },
+    {
+      "tweet_id": "T759525",
+      "username": "Jacob Ayala",
+      "dominant_topic": "API Services Outstanding",
+      "subtopics": "Programming Tools Superior, Integration Support Strong"
+    },
+    {
+      "tweet_id": "T139948",
+      "username": "Mrs. Sabrina Davis",
+      "dominant_topic": "Some Functions Excellent",
+      "subtopics": "Some Account Functions"
+    },
+    {
+      "tweet_id": "T274596",
+      "username": "Ronald Joyce",
+      "dominant_topic": "Fee Structure Criticism",
+      "subtopics": "High Transaction Fees, Fee Increase Complaints"
+    },
+    {
+      "tweet_id": "T028324",
+      "username": "Mark Lopez",
+      "dominant_topic": "Compensation Provided Fairly",
+      "subtopics": "Fair Customer Compensation, Reasonable Issue Settlement, Just Service Recovery"
+    },
+    {
+      "tweet_id": "T247254",
+      "username": "Mariah Horton",
+      "dominant_topic": "System Outage Frustration",
+      "subtopics": "Core Banking Down, Service Interrupted Completely"
+    },
+    {
+      "tweet_id": "T091170",
+      "username": "William Walker",
+      "dominant_topic": "Billing Error Reports",
+      "subtopics": "Invoice Errors Found, Billing Mistakes Discovered, Account Charges Wrong, Statement Discrepancies Reported"
+    },
+    {
+      "tweet_id": "T295098",
+      "username": "Kathryn Knight",
+      "dominant_topic": "Verification Process Lengthy",
+      "subtopics": "Document Verification Extended, Customer Screening Lengthy, Account Approval Delayed"
+    },
+    {
+      "tweet_id": "T703692",
+      "username": "Leah Sampson",
+      "dominant_topic": "Transfer Delays Experienced",
+      "subtopics": "Transfer Pending Long, International Delays Experienced, Cross Border Issues, Wire Processing Slow"
+    },
+    {
+      "tweet_id": "T929841",
+      "username": "Cindy Cooper",
+      "dominant_topic": "Compensation Appreciated Generally",
+      "subtopics": "Problem Settlement Payment, Service Recovery Compensation"
+    },
+    {
+      "tweet_id": "T764584",
+      "username": "Kelly Robbins",
+      "dominant_topic": "Trade Finance Satisfaction",
+      "subtopics": "Letter Credit Processed, Export Documentation Smooth, Bank Guarantee Issued, Documentary Collection Efficient, International Trade Supported"
+    },
+    {
+      "tweet_id": "T470120",
+      "username": "Steve Parker DDS",
+      "dominant_topic": "Routine Service Feedback",
+      "subtopics": "Regular Account Management"
+    },
+    {
+      "tweet_id": "T043179",
+      "username": "Stephen Walter",
+      "dominant_topic": "Fee Structure Criticism",
+      "subtopics": "Unexpected Charges Discovered, Fee Increase Complaints, Billing Errors Reported"
+    },
+    {
+      "tweet_id": "T235264",
+      "username": "Colin Johnson",
+      "dominant_topic": "API Integration Problems",
+      "subtopics": "Data Synchronization Errors, Authentication Issues Reported, Service Interruptions Experienced, Open Banking Problems"
+    },
+    {
+      "tweet_id": "T838372",
+      "username": "Perry Jenkins",
+      "dominant_topic": "Relationship Management Praise",
+      "subtopics": "Corporate Service Exceptional, Dedicated Support Appreciated, Personalized Banking Excellence, Client Relationship Strong"
+    },
+    {
+      "tweet_id": "T308049",
+      "username": "Ryan Hansen",
+      "dominant_topic": "Online Banking Excellence",
+      "subtopics": "Digital Banking Excellent, Web Platform Outstanding"
+    },
+    {
+      "tweet_id": "T659049",
+      "username": "Ryan Delacruz",
+      "dominant_topic": "System Availability Issues",
+      "subtopics": "Technical Maintenance Scheduled, Platform Upgrade Needed, Infrastructure Improvement Planned"
+    },
+    {
+      "tweet_id": "T228505",
+      "username": "David Wood",
+      "dominant_topic": "Multilingual Support Appreciated",
+      "subtopics": "Native Speaker Available, International Staff Helpful"
+    },
+    {
+      "tweet_id": "T303837",
+      "username": "Christopher Carter",
+      "dominant_topic": "Service Quality Poor",
+      "subtopics": "Client Assistance Lacking"
+    },
+    {
+      "tweet_id": "T010610",
+      "username": "Kristen Reynolds",
+      "dominant_topic": "Maintenance Inconvenience Reported",
+      "subtopics": "Banking Interruption Experienced, Service Pause Reported, System Break Encountered, Platform Halt Noticed"
+    },
+    {
+      "tweet_id": "T551145",
+      "username": "Andrew Macdonald",
+      "dominant_topic": "Platform Downtime Frustration",
+      "subtopics": "System Downtime Extended, Platform Offline Long"
+    },
+    {
+      "tweet_id": "T167028",
+      "username": "Regina Harris",
+      "dominant_topic": "Cross Border Issues",
+      "subtopics": "Exchange Rate Disputes, Regional Service Variations"
+    },
+    {
+      "tweet_id": "T694452",
+      "username": "Joseph Bradford",
+      "dominant_topic": "General Support Needed",
+      "subtopics": "Banking Assistance Needed, Account Help Required, General Support Requested"
+    },
+    {
+      "tweet_id": "T059185",
+      "username": "Danielle Clark",
+      "dominant_topic": "GDPR Compliance Praise",
+      "subtopics": "Compliance Documentation Clear"
+    },
+    {
+      "tweet_id": "T156701",
+      "username": "Cody Collins",
+      "dominant_topic": "Service Information Request",
+      "subtopics": "Fee Structure Inquiry, Process Clarification Needed, Documentation Requirements Asked"
+    },
+    {
+      "tweet_id": "T567267",
+      "username": "Amy Campbell",
+      "dominant_topic": "Call Center Overwhelmed",
+      "subtopics": "Customer Service Overload, Support System Overwhelmed, Help Desk Capacity"
+    },
+    {
+      "tweet_id": "T960761",
+      "username": "Rickey Miller",
+      "dominant_topic": "Digital Platform Glitches",
+      "subtopics": "System Bugs Found, Software Issues Experienced, Platform Problems Encountered"
+    },
+    {
+      "tweet_id": "T505540",
+      "username": "Travis Hogan",
+      "dominant_topic": "International Banking Issues",
+      "subtopics": "International Service Problems, Global Transaction Issues"
+    },
+    {
+      "tweet_id": "T776203",
+      "username": "Kevin Vaughn",
+      "dominant_topic": "Others Need Improvement",
+      "subtopics": "System Capability Upgrade"
+    },
+    {
+      "tweet_id": "T209505",
+      "username": "Holly Lee",
+      "dominant_topic": "Card Services Excellent",
+      "subtopics": "Debit Processing Fast"
+    },
+    {
+      "tweet_id": "T729223",
+      "username": "Lee Humphrey",
+      "dominant_topic": "Cash Management Superior",
+      "subtopics": "Corporate Cash Handling"
+    },
+    {
+      "tweet_id": "T558368",
+      "username": "Colleen Harris",
+      "dominant_topic": "Platform Downtime Frustration",
+      "subtopics": "Service Unavailable Temporarily"
+    },
+    {
+      "tweet_id": "T937709",
+      "username": "John Hogan",
+      "dominant_topic": "Platform Crash Reports",
+      "subtopics": "System Failure Reported, Platform Instability Issues"
+    },
+    {
+      "tweet_id": "T267158",
+      "username": "Erica Mcclure",
+      "dominant_topic": "Holiday Period Issues",
+      "subtopics": "Holiday Service Problems"
+    },
+    {
+      "tweet_id": "T190743",
+      "username": "Brian Davis",
+      "dominant_topic": "Partial Satisfaction Expressed",
+      "subtopics": "Customer Satisfaction Partial, Service Experience Mixed, Banking Feedback Balanced, Account Satisfaction Moderate"
+    },
+    {
+      "tweet_id": "T969954",
+      "username": "Miranda Reyes",
+      "dominant_topic": "Brand Reputation Restored",
+      "subtopics": "Company Reputation Recovery, Corporate Credibility Repair"
+    },
+    {
+      "tweet_id": "T860923",
+      "username": "Christopher Hicks",
+      "dominant_topic": "Development Suggestions Made",
+      "subtopics": "Service Development Ideas, Banking Improvement Suggestions, Account Enhancement Recommendations"
+    },
+    {
+      "tweet_id": "T544058",
+      "username": "Kelly Lopez",
+      "dominant_topic": "Mobile Security Robust",
+      "subtopics": "App Encryption Robust"
+    },
+    {
+      "tweet_id": "T197490",
+      "username": "Regina Wells",
+      "dominant_topic": "Core Banking Down",
+      "subtopics": "Main System Offline, Central Banking Down"
+    },
+    {
+      "tweet_id": "T482002",
+      "username": "Daniel Wong",
+      "dominant_topic": "Regulatory Compliance Questions",
+      "subtopics": "KYC Documentation Questions, AML Requirements Asked, MiFID Categorization Needed"
+    },
+    {
+      "tweet_id": "T136862",
+      "username": "Brent Martin",
+      "dominant_topic": "Multilingual Support Appreciated",
+      "subtopics": "Multiple Languages Supported, Translation Services Provided"
+    },
+    {
+      "tweet_id": "T388175",
+      "username": "Max Prince",
+      "dominant_topic": "Regulatory Compliance Questions",
+      "subtopics": "AML Requirements Asked, PSD2 Implementation Questions, MiFID Categorization Needed"
+    },
+    {
+      "tweet_id": "T588140",
+      "username": "William Mckinney",
+      "dominant_topic": "Call Support Adequate",
+      "subtopics": "Account Management Sufficient"
+    },
+    {
+      "tweet_id": "T275417",
+      "username": "Joshua Garcia",
+      "dominant_topic": "Mass Payment Errors",
+      "subtopics": "Corporate Transfer Error, Enterprise System Down"
+    },
+    {
+      "tweet_id": "T081586",
+      "username": "Michele Ochoa",
+      "dominant_topic": "Regional Service Variations",
+      "subtopics": "Country Service Differences, Regional Banking Variations"
+    },
+    {
+      "tweet_id": "T346903",
+      "username": "Michael Gibson",
+      "dominant_topic": "Software Bug Complaints",
+      "subtopics": "Mobile Software Complaints, System Error Comments"
+    },
+    {
+      "tweet_id": "T555194",
+      "username": "Steven Villarreal",
+      "dominant_topic": "App Login Problems",
+      "subtopics": "Login Authentication Failed, Password Access Blocked, Identity Check Failed"
+    },
+    {
+      "tweet_id": "T491619",
+      "username": "Mary Smith",
+      "dominant_topic": "Cross Border Inconsistencies",
+      "subtopics": "International Service Inconsistency"
+    },
+    {
+      "tweet_id": "T853892",
+      "username": "April Velazquez",
+      "dominant_topic": "Viral Complaint Spreading",
+      "subtopics": "Community Issue Spreading"
+    },
+    {
+      "tweet_id": "T486089",
+      "username": "Henry Bryant",
+      "dominant_topic": "Risk Management Tools",
+      "subtopics": "Credit Risk Management"
+    },
+    {
+      "tweet_id": "T631266",
+      "username": "Jake Weber",
+      "dominant_topic": "Card Services Excellent",
+      "subtopics": "Credit Transactions Excellent, Payment Cards Reliable"
+    },
+    {
+      "tweet_id": "T593884",
+      "username": "Maria Woodward",
+      "dominant_topic": "Issue Resolved Quickly",
+      "subtopics": "Customer Problem Resolution"
+    },
+    {
+      "tweet_id": "T046500",
+      "username": "Patrick Arnold",
+      "dominant_topic": "Multilingual Support Appreciated",
+      "subtopics": "International Staff Helpful"
+    },
+    {
+      "tweet_id": "T576162",
+      "username": "Jennifer Garcia",
+      "dominant_topic": "AML Processes Smooth",
+      "subtopics": "Anti Money Laundering, Financial Crime Prevention, Compliance Risk Management"
+    },
+    {
+      "tweet_id": "T779621",
+      "username": "Jonathan Lucas",
+      "dominant_topic": "Letter Credit Processed",
+      "subtopics": "International Commerce Success, Business Transaction Approved"
+    },
+    {
+      "tweet_id": "T143533",
+      "username": "Mike Jenkins",
+      "dominant_topic": "Cost Structure Criticism",
+      "subtopics": "Expensive Service Structure, High Cost Banking, Premium Pricing Model, Costly Account Management"
+    },
+    {
+      "tweet_id": "T093396",
+      "username": "Jason Wolf",
+      "dominant_topic": "Problem Initially Frustrating",
+      "subtopics": "Initial Problem Difficult, Early Issues Challenging, Starting Problems Faced"
+    },
+    {
+      "tweet_id": "T268193",
+      "username": "Tracy Russell",
+      "dominant_topic": "Mobile App Functional",
+      "subtopics": "Banking Application Functional, Online Banking Reliable"
+    },
+    {
+      "tweet_id": "T776147",
+      "username": "Mark Thompson",
+      "dominant_topic": "Improvement Over Previous",
+      "subtopics": "Service Development Progress, Customer Experience Enhanced"
+    },
+    {
+      "tweet_id": "T297080",
+      "username": "Chloe Aguilar",
+      "dominant_topic": "Service Quality Poor",
+      "subtopics": "Help Desk Problems"
+    },
+    {
+      "tweet_id": "T025202",
+      "username": "Mary Schaefer",
+      "dominant_topic": "Authorization Matrix Updates",
+      "subtopics": "Account Permissions Updates, User Authority Matrix"
+    },
+    {
+      "tweet_id": "T972490",
+      "username": "Lauren Soto",
+      "dominant_topic": "Regulatory Compliance Questions",
+      "subtopics": "AML Requirements Asked"
+    },
+    {
+      "tweet_id": "T409205",
+      "username": "Caleb Rodriguez",
+      "dominant_topic": "Transfer Delays Experienced",
+      "subtopics": "Cross Border Issues"
+    },
+    {
+      "tweet_id": "T011053",
+      "username": "Alicia Moore",
+      "dominant_topic": "Language Barriers Experienced",
+      "subtopics": "Translation Issues Experienced"
+    },
+    {
+      "tweet_id": "T767078",
+      "username": "Timothy Griffith",
+      "dominant_topic": "Some Functions Excellent",
+      "subtopics": "Account Management Strong"
+    },
+    {
+      "tweet_id": "T399331",
+      "username": "Mr. Adam Moore",
+      "dominant_topic": "Regulatory Compliance Questions",
+      "subtopics": "MiFID Categorization Needed"
+    },
+    {
+      "tweet_id": "T089445",
+      "username": "Dylan Bautista",
+      "dominant_topic": "Website Performance Issues",
+      "subtopics": "Site Performance Slow, Page Loading Delayed, Web Interface Problems"
+    },
+    {
+      "tweet_id": "T174472",
+      "username": "Chelsea Davis",
+      "dominant_topic": "Compensation Appreciated Generally",
+      "subtopics": "Issue Resolution Reward, Problem Settlement Payment, Service Recovery Compensation"
+    },
+    {
+      "tweet_id": "T835675",
+      "username": "Scott Cameron",
+      "dominant_topic": "Transaction Declined Frustration",
+      "subtopics": "Card Authorization Failed"
+    },
+    {
+      "tweet_id": "T740175",
+      "username": "Nicole Williamson",
+      "dominant_topic": "Development Suggestions Made",
+      "subtopics": "Service Development Ideas, Banking Improvement Suggestions, Account Enhancement Recommendations, System Upgrade Proposals"
+    },
+    {
+      "tweet_id": "T763505",
+      "username": "Brooke Hunter",
+      "dominant_topic": "Cybersecurity Worries Expressed",
+      "subtopics": "Digital Security Concerns, Online Banking Safety, Cyber Protection Worries"
+    },
+    {
+      "tweet_id": "T237492",
+      "username": "Ruth Cooper",
+      "dominant_topic": "Customer Service Disappointment",
+      "subtopics": "Response Time Inadequate, Escalation Process Unclear, Relationship Manager Unavailable"
+    },
+    {
+      "tweet_id": "T731711",
+      "username": "Thomas Jenkins",
+      "dominant_topic": "Holiday Period Issues",
+      "subtopics": "Holiday Service Problems, Vacation Period Difficulties, Festive Season Complications"
+    },
+    {
+      "tweet_id": "T017261",
+      "username": "Amy Parker",
+      "dominant_topic": "Inconsistent Experience Reported",
+      "subtopics": "Customer Experience Inconsistent, Account Management Fluctuating"
+    },
+    {
+      "tweet_id": "T078212",
+      "username": "Edgar Wright",
+      "dominant_topic": "Identity Verification Issues",
+      "subtopics": "User Authentication Problems, Account Verification Difficulties, Customer Recognition Errors"
+    },
+    {
+      "tweet_id": "T023222",
+      "username": "Andrea Walters",
+      "dominant_topic": "Network Connectivity Lost",
+      "subtopics": "Transaction Network Down, Processing System Offline, Transfer Platform Unavailable"
+    },
+    {
+      "tweet_id": "T294150",
+      "username": "Louis Pitts",
+      "dominant_topic": "Mass Payment Errors",
+      "subtopics": "Mass Payment Failed"
+    },
+    {
+      "tweet_id": "T986400",
+      "username": "William Mccoy",
+      "dominant_topic": "Treasury Services Excellence",
+      "subtopics": "Investment Services Outstanding, Liquidity Management Excellent, Risk Management Tools"
+    },
+    {
+      "tweet_id": "T845185",
+      "username": "Terri Ford",
+      "dominant_topic": "High Transaction Fees",
+      "subtopics": "Banking Fees Expensive, Account Maintenance Expensive"
+    },
+    {
+      "tweet_id": "T230312",
+      "username": "Dawn Foster MD",
+      "dominant_topic": "Verification Process Lengthy",
+      "subtopics": "Document Verification Extended, Account Approval Delayed"
+    },
+    {
+      "tweet_id": "T744658",
+      "username": "Leroy Mendoza",
+      "dominant_topic": "Website Performance Issues",
+      "subtopics": "Site Performance Slow"
+    },
+    {
+      "tweet_id": "T479320",
+      "username": "John Schmidt",
+      "dominant_topic": "Login Screen Frozen",
+      "subtopics": "Mobile Screen Issues, Display Problems Reported, User Interface Frozen"
+    },
+    {
+      "tweet_id": "T665871",
+      "username": "Dr. Craig Estrada PhD",
+      "dominant_topic": "Partial Satisfaction Expressed",
+      "subtopics": "Customer Satisfaction Partial, Banking Feedback Balanced, Account Satisfaction Moderate"
+    },
+    {
+      "tweet_id": "T039409",
+      "username": "Pamela Payne",
+      "dominant_topic": "Service Interruption Experienced",
+      "subtopics": "Internet Connection Failed, Network Communication Interrupted"
+    },
+    {
+      "tweet_id": "T166523",
+      "username": "Briana Garcia",
+      "dominant_topic": "System Outage Frustration",
+      "subtopics": "Payment System Unavailable, Network Connectivity Lost"
+    },
+    {
+      "tweet_id": "T317564",
+      "username": "Megan Bates",
+      "dominant_topic": "Dedicated Support Appreciated",
+      "subtopics": "Individual Service Attention, Tailored Banking Solutions"
+    },
+    {
+      "tweet_id": "T616445",
+      "username": "Megan Saunders",
+      "dominant_topic": "Pricing Transparency Lacking",
+      "subtopics": "Cost Structure Confusing, Pricing Details Missing, Charge Explanation Insufficient"
+    },
+    {
+      "tweet_id": "T471133",
+      "username": "Maria Hayes",
+      "dominant_topic": "Letter Credit Processed",
+      "subtopics": "Trade Documentation Complete, Export Process Smooth"
+    },
+    {
+      "tweet_id": "T505882",
+      "username": "Michael Butler",
+      "dominant_topic": "Knowledgeable Agent Helped",
+      "subtopics": "Technical Expertise Shown"
+    },
+    {
+      "tweet_id": "T273327",
+      "username": "Kathleen Estrada",
+      "dominant_topic": "Compensation Appreciated Generally",
+      "subtopics": "Issue Resolution Reward"
+    },
+    {
+      "tweet_id": "T500639",
+      "username": "Gabrielle Leonard",
+      "dominant_topic": "Regional Difference Reports",
+      "subtopics": "Geographic Banking Differences, Regional Service Variation, Country Banking Inconsistencies"
+    },
+    {
+      "tweet_id": "T342823",
+      "username": "Shannon Villarreal",
+      "dominant_topic": "Service Restoration Delayed",
+      "subtopics": "System Recovery Delayed, Platform Repair Extended"
+    },
+    {
+      "tweet_id": "T885959",
+      "username": "Edward Miller",
+      "dominant_topic": "KYC Documentation Easy",
+      "subtopics": "Know Your Customer, Client Due Diligence, Account Holder Verification"
+    },
+    {
+      "tweet_id": "T854555",
+      "username": "Kenneth Newman",
+      "dominant_topic": "Account Access Problems",
+      "subtopics": "Account Locked Unexpectedly, Password Reset Failed, Authentication Errors Occurred, Multi Factor Problems"
+    },
+    {
+      "tweet_id": "T485976",
+      "username": "Michelle Vaughan",
+      "dominant_topic": "Service Interruption Experienced",
+      "subtopics": "Internet Connection Failed, System Access Lost, Online Service Disrupted, Network Communication Interrupted"
+    },
+    {
+      "tweet_id": "T517558",
+      "username": "John Mcguire",
+      "dominant_topic": "Issue Resolved Quickly",
+      "subtopics": "Customer Problem Resolution, Problem Fixing Rapid"
+    },
+    {
+      "tweet_id": "T537059",
+      "username": "Kristen White",
+      "dominant_topic": "Improvement Over Previous",
+      "subtopics": "Customer Experience Enhanced, Account Management Better"
+    },
+    {
+      "tweet_id": "T373839",
+      "username": "Mary Mitchell",
+      "dominant_topic": "Service Availability Questions",
+      "subtopics": "Account Feature Inquiries, Service Availability Asked"
+    },
+    {
+      "tweet_id": "T169952",
+      "username": "Juan Farmer",
+      "dominant_topic": "Mixed User Experience",
+      "subtopics": "Banking Service Variable, Account Management Inconsistent"
+    },
+    {
+      "tweet_id": "T939776",
+      "username": "David Sanchez",
+      "dominant_topic": "Authorization Matrix Updates",
+      "subtopics": "User Authority Matrix, Access Control Changes"
+    },
+    {
+      "tweet_id": "T141931",
+      "username": "Jasmine Smith",
+      "dominant_topic": "Escalation Process Unclear",
+      "subtopics": "Issue Escalation Confusing, Service Recovery Procedures"
+    },
+    {
+      "tweet_id": "T216523",
+      "username": "Jacob Ayala",
+      "dominant_topic": "Password Reset Guidance",
+      "subtopics": "Access Restoration Support, Login Problem Resolution"
+    },
+    {
+      "tweet_id": "T544144",
+      "username": "Mrs. Sabrina Davis",
+      "dominant_topic": "Trade Finance Satisfaction",
+      "subtopics": "Export Documentation Smooth, Bank Guarantee Issued, Documentary Collection Efficient"
+    },
+    {
+      "tweet_id": "T144492",
+      "username": "Ronald Joyce",
+      "dominant_topic": "Better Than Competitors",
+      "subtopics": "Other Bank Inferior, Market Position Superior"
+    },
+    {
+      "tweet_id": "T185601",
+      "username": "Mark Lopez",
+      "dominant_topic": "Mixed User Experience",
+      "subtopics": "Account Management Inconsistent"
+    },
+    {
+      "tweet_id": "T620717",
+      "username": "Mariah Horton",
+      "dominant_topic": "Service Quality Poor",
+      "subtopics": "Customer Support Poor, Service Representatives Inadequate, Client Assistance Lacking, Help Desk Problems"
+    },
+    {
+      "tweet_id": "T606573",
+      "username": "William Walker",
+      "dominant_topic": "API Integration Problems",
+      "subtopics": "Service Interruptions Experienced"
+    },
+    {
+      "tweet_id": "T770080",
+      "username": "Kathryn Knight",
+      "dominant_topic": "Maintenance Inconvenience Reported",
+      "subtopics": "Service Pause Reported, Platform Halt Noticed"
+    },
+    {
+      "tweet_id": "T687293",
+      "username": "Leah Sampson",
+      "dominant_topic": "Mobile App Crashes",
+      "subtopics": "Application Launch Failed, Transaction Processing Stuck"
+    },
+    {
+      "tweet_id": "T543032",
+      "username": "Cindy Cooper",
+      "dominant_topic": "Account Manager Responsive",
+      "subtopics": "Personal Banking Representative, Client Relationship Manager"
+    },
+    {
+      "tweet_id": "T330164",
+      "username": "Kelly Robbins",
+      "dominant_topic": "Documentary Collection Efficient",
+      "subtopics": "Collection Process Smooth, International Settlement Success"
+    },
+    {
+      "tweet_id": "T846215",
+      "username": "Steve Parker DDS",
+      "dominant_topic": "Service Improvement Acknowledged",
+      "subtopics": "Banking Service Enhancement, Account Management Development, Service Quality Progress"
+    },
+    {
+      "tweet_id": "T775222",
+      "username": "Stephen Walter",
+      "dominant_topic": "Regulatory Compliance Questions",
+      "subtopics": "KYC Documentation Questions"
+    },
+    {
+      "tweet_id": "T273261",
+      "username": "Colin Johnson",
+      "dominant_topic": "Treasury Services Excellence",
+      "subtopics": "Investment Services Outstanding"
+    },
+    {
+      "tweet_id": "T557670",
+      "username": "Perry Jenkins",
+      "dominant_topic": "Standard Operation Smooth",
+      "subtopics": "Typical Account Management"
+    },
+    {
+      "tweet_id": "T022774",
+      "username": "Ryan Hansen",
+      "dominant_topic": "Payment Processing Failed",
+      "subtopics": "Payment Processing Broken"
+    },
+    {
+      "tweet_id": "T976306",
+      "username": "Ryan Delacruz",
+      "dominant_topic": "Balance Update Delayed",
+      "subtopics": "Account Information Delayed, Financial Data Refresh, Account Status Update"
+    },
+    {
+      "tweet_id": "T288266",
+      "username": "David Wood",
+      "dominant_topic": "Some Countries Excellent",
+      "subtopics": "Geographic Service Strong"
+    },
+    {
+      "tweet_id": "T653620",
+      "username": "Christopher Carter",
+      "dominant_topic": "Seasonal Variation Reports",
+      "subtopics": "Time Based Service, Cyclical Account Management"
+    },
+    {
+      "tweet_id": "T819579",
+      "username": "Kristen Reynolds",
+      "dominant_topic": "Call Center Complaints",
+      "subtopics": "Long Wait Times, Language Barriers Experienced, Call Disconnection Issues, Poor Resolution Quality"
+    },
+    {
+      "tweet_id": "T608080",
+      "username": "Andrew Macdonald",
+      "dominant_topic": "Website Performance Issues",
+      "subtopics": "Web Interface Problems"
+    },
+    {
+      "tweet_id": "T195590",
+      "username": "Regina Harris",
+      "dominant_topic": "Bulk Payment Efficiency",
+      "subtopics": "Business Transfer Efficient, Bulk Transaction Success"
+    },
+    {
+      "tweet_id": "T058931",
+      "username": "Joseph Bradford",
+      "dominant_topic": "Account Manager Responsive",
+      "subtopics": "Personal Banking Representative, Customer Service Specialist"
+    },
+    {
+      "tweet_id": "T612430",
+      "username": "Danielle Clark",
+      "dominant_topic": "Cross Border Issues",
+      "subtopics": "Multi Currency Problems, Exchange Rate Disputes, Correspondent Bank Delays, International Banking Issues"
+    },
+    {
+      "tweet_id": "T934065",
+      "username": "Cody Collins",
+      "dominant_topic": "Third Party Integration",
+      "subtopics": "External System Connectivity, Third Party Integration, API Gateway Issues, Service Communication Problems"
+    },
+    {
+      "tweet_id": "T951127",
+      "username": "Amy Campbell",
+      "dominant_topic": "Others Need Improvement",
+      "subtopics": "Service Areas Improvement, Banking Functions Enhancement"
+    },
+    {
+      "tweet_id": "T864188",
+      "username": "Rickey Miller",
+      "dominant_topic": "Service Interruption Experienced",
+      "subtopics": "System Access Lost"
+    },
+    {
+      "tweet_id": "T886255",
+      "username": "Travis Hogan",
+      "dominant_topic": "Regulatory Reporting Burdensome",
+      "subtopics": "Regulatory Reporting Heavy"
+    },
+    {
+      "tweet_id": "T374976",
+      "username": "Kevin Vaughn",
+      "dominant_topic": "System Availability Issues",
+      "subtopics": "Technical Maintenance Scheduled, System Update Required, Infrastructure Improvement Planned"
+    },
+    {
+      "tweet_id": "T942378",
+      "username": "Holly Lee",
+      "dominant_topic": "FX Trading Smooth",
+      "subtopics": "Foreign Exchange Trading, International Rate Management"
+    },
+    {
+      "tweet_id": "T865138",
+      "username": "Lee Humphrey",
+      "dominant_topic": "API Integration Problems",
+      "subtopics": "Third Party Connections, Authentication Issues Reported, Service Interruptions Experienced"
+    },
+    {
+      "tweet_id": "T431342",
+      "username": "Colleen Harris",
+      "dominant_topic": "FX Trading Smooth",
+      "subtopics": "Multi Currency Operations"
+    },
+    {
+      "tweet_id": "T547400",
+      "username": "John Hogan",
+      "dominant_topic": "Excellent Call Support",
+      "subtopics": "Problem Resolved Efficiently, Professional Service Delivered"
+    },
+    {
+      "tweet_id": "T931197",
+      "username": "Erica Mcclure",
+      "dominant_topic": "Off Peak Better",
+      "subtopics": "Quiet Period Better, Low Traffic Smooth, Minimal Usage Excellent"
+    },
+    {
+      "tweet_id": "T319518",
+      "username": "Brian Davis",
+      "dominant_topic": "Regulatory Compliance Questions",
+      "subtopics": "KYC Documentation Questions, GDPR Rights Inquiry, MiFID Categorization Needed"
+    },
+    {
+      "tweet_id": "T241108",
+      "username": "Miranda Reyes",
+      "dominant_topic": "International Payment Smooth",
+      "subtopics": "Global Transfer Smooth, Cross Border Efficient, Foreign Exchange Excellent"
+    },
+    {
+      "tweet_id": "T075530",
+      "username": "Christopher Hicks",
+      "dominant_topic": "Service Availability Questions",
+      "subtopics": "Banking Service Questions, Banking Option Questions"
+    },
+    {
+      "tweet_id": "T554327",
+      "username": "Kelly Lopez",
+      "dominant_topic": "Transfer Delays Experienced",
+      "subtopics": "International Delays Experienced, Cross Border Issues, Wire Processing Slow"
+    },
+    {
+      "tweet_id": "T868427",
+      "username": "Regina Wells",
+      "dominant_topic": "Trade Documentation Smooth",
+      "subtopics": "International Paperwork Smooth, Cross Border Documentation"
+    },
+    {
+      "tweet_id": "T656983",
+      "username": "Daniel Wong",
+      "dominant_topic": "Mandate Change Required",
+      "subtopics": "Banking Authority Changes, Access Permission Changes"
+    },
+    {
+      "tweet_id": "T934601",
+      "username": "Brent Martin",
+      "dominant_topic": "Payment Processing Smooth",
+      "subtopics": "Transaction Processing Reliable, Payment System Stable"
+    },
+    {
+      "tweet_id": "T659420",
+      "username": "Max Prince",
+      "dominant_topic": "Treasury Services Excellence",
+      "subtopics": "Investment Services Outstanding, Risk Management Tools"
+    },
+    {
+      "tweet_id": "T944362",
+      "username": "William Mckinney",
+      "dominant_topic": "Verification Process Lengthy",
+      "subtopics": "Customer Screening Lengthy"
+    },
+    {
+      "tweet_id": "T831572",
+      "username": "Joshua Garcia",
+      "dominant_topic": "Profile Access Denied",
+      "subtopics": "Login Credentials Denied, Account Permissions Limited"
+    },
+    {
+      "tweet_id": "T345977",
+      "username": "Michele Ochoa",
+      "dominant_topic": "Dedicated Support Appreciated",
+      "subtopics": "Customized Financial Services"
+    },
+    {
+      "tweet_id": "T710225",
+      "username": "Michael Gibson",
+      "dominant_topic": "Mixed Service Quality",
+      "subtopics": "Banking Quality Inconsistent, Account Management Uneven"
+    },
+    {
+      "tweet_id": "T870400",
+      "username": "Steven Villarreal",
+      "dominant_topic": "Local Service Quality",
+      "subtopics": "Geographic Banking Standards, Country Service Levels, Local Banking Performance"
+    },
+    {
+      "tweet_id": "T643067",
+      "username": "Mary Smith",
+      "dominant_topic": "PSD2 Compliance Smooth",
+      "subtopics": "Industry Standards Followed"
+    },
+    {
+      "tweet_id": "T844166",
+      "username": "April Velazquez",
+      "dominant_topic": "Bulk Payment Efficiency",
+      "subtopics": "Bulk Transaction Success"
+    },
+    {
+      "tweet_id": "T990524",
+      "username": "Henry Bryant",
+      "dominant_topic": "Issue Resolved Quickly",
+      "subtopics": "Issue Settlement Quick, Service Recovery Fast"
+    },
+    {
+      "tweet_id": "T943742",
+      "username": "Jake Weber",
+      "dominant_topic": "Import Processing Delays",
+      "subtopics": "International Documentation Issues, Trade Paper Problems"
+    },
+    {
+      "tweet_id": "T631387",
+      "username": "Maria Woodward",
+      "dominant_topic": "Excellent Call Support",
+      "subtopics": "Quick Response Received, Knowledgeable Agent Helped, Multilingual Assistance Provided"
+    },
+    {
+      "tweet_id": "T296093",
+      "username": "Patrick Arnold",
+      "dominant_topic": "Pricing Transparency Lacking",
+      "subtopics": "Cost Structure Confusing"
+    },
+    {
+      "tweet_id": "T140316",
+      "username": "Jennifer Garcia",
+      "dominant_topic": "Transaction Processing Stuck",
+      "subtopics": "Transaction Engine Stopped, Money Transfer Stuck"
+    },
+    {
+      "tweet_id": "T849457",
+      "username": "Jonathan Lucas",
+      "dominant_topic": "Relationship Management Praise",
+      "subtopics": "Account Manager Responsive, Corporate Service Exceptional, Dedicated Support Appreciated, Client Relationship Strong"
+    },
+    {
+      "tweet_id": "T748762",
+      "username": "Mike Jenkins",
+      "dominant_topic": "Data Breach Concerns",
+      "subtopics": "Customer Data Protection, Private Details Safety, Account Information Security"
+    },
+    {
+      "tweet_id": "T459974",
+      "username": "Jason Wolf",
+      "dominant_topic": "Card Services Excellent",
+      "subtopics": "Card Payments Smooth, Debit Processing Fast"
+    },
+    {
+      "tweet_id": "T435080",
+      "username": "Tracy Russell",
+      "dominant_topic": "System Availability Issues",
+      "subtopics": "System Update Required"
+    },
+    {
+      "tweet_id": "T694460",
+      "username": "Mark Thompson",
+      "dominant_topic": "Cross Border Issues",
+      "subtopics": "Correspondent Bank Delays, International Banking Issues"
+    },
+    {
+      "tweet_id": "T238472",
+      "username": "Chloe Aguilar",
+      "dominant_topic": "Excellent Call Support",
+      "subtopics": "Quick Response Received, Professional Service Delivered"
+    },
+    {
+      "tweet_id": "T111264",
+      "username": "Mary Schaefer",
+      "dominant_topic": "High Transaction Fees",
+      "subtopics": "Banking Fees Expensive, Service Charges High, Account Maintenance Expensive"
+    },
+    {
+      "tweet_id": "T833082",
+      "username": "Lauren Soto",
+      "dominant_topic": "Improvement Over Previous",
+      "subtopics": "Service Development Progress, Banking Improvement Noted, Customer Experience Enhanced, Account Management Better"
+    },
+    {
+      "tweet_id": "T828380",
+      "username": "Caleb Rodriguez",
+      "dominant_topic": "Improvement Over Previous",
+      "subtopics": "Account Management Better"
+    },
+    {
+      "tweet_id": "T344006",
+      "username": "Alicia Moore",
+      "dominant_topic": "Export Finance Approved",
+      "subtopics": "Export Funding Approved, International Trade Credit, Foreign Business Financing"
+    },
+    {
+      "tweet_id": "T429106",
+      "username": "Timothy Griffith",
+      "dominant_topic": "Comparative Banking Feedback",
+      "subtopics": "Banking Market Comparison, Financial Service Assessment"
+    },
+    {
+      "tweet_id": "T666282",
+      "username": "Mr. Adam Moore",
+      "dominant_topic": "Management Responded Personally",
+      "subtopics": "Senior Management Response, Leadership Personal Involvement"
+    },
+    {
+      "tweet_id": "T391134",
+      "username": "Dylan Bautista",
+      "dominant_topic": "Authentication Errors Reported",
+      "subtopics": "Security Login Failed"
+    },
+    {
+      "tweet_id": "T711539",
+      "username": "Chelsea Davis",
+      "dominant_topic": "Quick Response Time",
+      "subtopics": "Call Answered Fast, Issue Resolved Rapidly"
+    },
+    {
+      "tweet_id": "T623510",
+      "username": "Scott Cameron",
+      "dominant_topic": "PSD2 Compliance Smooth",
+      "subtopics": "Standards Compliance Excellent, Regulatory Implementation Smooth, Legal Requirements Met"
+    },
+    {
+      "tweet_id": "T102147",
+      "username": "Nicole Williamson",
+      "dominant_topic": "Fee Structure Criticism",
+      "subtopics": "High Transaction Fees, Unexpected Charges Discovered, Billing Errors Reported"
+    },
+    {
+      "tweet_id": "T604292",
+      "username": "Brooke Hunter",
+      "dominant_topic": "Excellent Call Support",
+      "subtopics": "Quick Response Received, Knowledgeable Agent Helped, Professional Service Delivered"
+    },
+    {
+      "tweet_id": "T745293",
+      "username": "Ruth Cooper",
+      "dominant_topic": "Feature Explanation Requested",
+      "subtopics": "Banking Function Inquiries, Account Capability Questions, System Feature Help"
+    },
+    {
+      "tweet_id": "T999865",
+      "username": "Thomas Jenkins",
+      "dominant_topic": "Partial Satisfaction Expressed",
+      "subtopics": "Customer Satisfaction Partial, Account Satisfaction Moderate"
+    },
+    {
+      "tweet_id": "T981701",
+      "username": "Amy Parker",
+      "dominant_topic": "Cost Structure Criticism",
+      "subtopics": "Expensive Service Structure"
+    },
+    {
+      "tweet_id": "T652069",
+      "username": "Edgar Wright",
+      "dominant_topic": "Account Management Satisfactory",
+      "subtopics": "Business Account Management, Corporate Banking Services, Enterprise Banking Support"
+    },
+    {
+      "tweet_id": "T715637",
+      "username": "Andrea Walters",
+      "dominant_topic": "Transaction Processing Stuck",
+      "subtopics": "Payment Processing Halted, Transaction Engine Stopped, Money Transfer Stuck"
+    },
+    {
+      "tweet_id": "T464110",
+      "username": "Louis Pitts",
+      "dominant_topic": "Routine Service Feedback",
+      "subtopics": "Typical Customer Support"
+    },
+    {
+      "tweet_id": "T211813",
+      "username": "William Mccoy",
+      "dominant_topic": "Follow Up Satisfactory",
+      "subtopics": "Customer Follow Up, Service Check Back, Account Monitoring Continued, Client Relationship Maintenance"
+    },
+    {
+      "tweet_id": "T393098",
+      "username": "Terri Ford",
+      "dominant_topic": "Mandate Change Required",
+      "subtopics": "Banking Authority Changes, Account Control Updates, Signature Authority Modifications, Access Permission Changes"
+    },
+    {
+      "tweet_id": "T872362",
+      "username": "Dawn Foster MD",
+      "dominant_topic": "Routine Service Feedback",
+      "subtopics": "Regular Account Management, Typical Customer Support"
+    },
+    {
+      "tweet_id": "T701326",
+      "username": "Leroy Mendoza",
+      "dominant_topic": "KYC Documentation Easy",
+      "subtopics": "Customer Identity Verification, Client Due Diligence, Account Holder Verification"
+    },
+    {
+      "tweet_id": "T544851",
+      "username": "John Schmidt",
+      "dominant_topic": "Seasonal Variation Reports",
+      "subtopics": "Seasonal Banking Performance, Periodic Service Quality, Cyclical Account Management"
+    },
+    {
+      "tweet_id": "T372439",
+      "username": "Dr. Craig Estrada PhD",
+      "dominant_topic": "Treasury Services Excellence",
+      "subtopics": "Cash Management Superior"
+    },
+    {
+      "tweet_id": "T704161",
+      "username": "Pamela Payne",
+      "dominant_topic": "Exchange Rate Disputes",
+      "subtopics": "Exchange Rate Disagreements"
+    },
+    {
+      "tweet_id": "T980506",
+      "username": "Briana Garcia",
+      "dominant_topic": "Digital Innovation Appreciation",
+      "subtopics": "Open Banking Excellent, API Services Outstanding, Mobile Security Robust"
+    },
+    {
+      "tweet_id": "T831579",
+      "username": "Megan Bates",
+      "dominant_topic": "Treasury Operations Smooth",
+      "subtopics": "Corporate Treasury Operations, Institutional Banking Services"
+    },
+    {
+      "tweet_id": "T710587",
+      "username": "Megan Saunders",
+      "dominant_topic": "International Banking Issues",
+      "subtopics": "Foreign Banking Challenges, Cross Border Complications, Global Transaction Issues"
+    },
+    {
+      "tweet_id": "T602086",
+      "username": "Maria Hayes",
+      "dominant_topic": "Identity Verification Issues",
+      "subtopics": "User Authentication Problems, Identity Confirmation Issues, Customer Recognition Errors"
+    },
+    {
+      "tweet_id": "T632870",
+      "username": "Michael Butler",
+      "dominant_topic": "Digital Innovation Appreciation",
+      "subtopics": "Open Banking Excellent, PSD2 Compliance Smooth, Mobile Security Robust, Fintech Integration Perfect"
+    },
+    {
+      "tweet_id": "T329621",
+      "username": "Kathleen Estrada",
+      "dominant_topic": "Account Management Satisfactory",
+      "subtopics": "Business Account Management, Corporate Banking Services, Commercial Account Handling, Enterprise Banking Support"
+    },
+    {
+      "tweet_id": "T573539",
+      "username": "Gabrielle Leonard",
+      "dominant_topic": "Cross Border Complications",
+      "subtopics": "Cross Border Complications, Global Banking Difficulties"
+    },
+    {
+      "tweet_id": "T510751",
+      "username": "Shannon Villarreal",
+      "dominant_topic": "SEPA Payment Rejected",
+      "subtopics": "Payment Gateway Failed"
+    },
+    {
+      "tweet_id": "T203782",
+      "username": "Edward Miller",
+      "dominant_topic": "Platform Crash Reports",
+      "subtopics": "Application Crashed Repeatedly, System Failure Reported, Software Malfunction Experienced"
+    },
+    {
+      "tweet_id": "T681249",
+      "username": "Kenneth Newman",
+      "dominant_topic": "Transfer Delays Experienced",
+      "subtopics": "Transfer Pending Long, Cross Border Issues"
+    },
+    {
+      "tweet_id": "T738778",
+      "username": "Michelle Vaughan",
+      "dominant_topic": "Compensation Appreciated Generally",
+      "subtopics": "Customer Compensation Fair, Service Recovery Compensation"
+    },
+    {
+      "tweet_id": "T067550",
+      "username": "John Mcguire",
+      "dominant_topic": "Cash Management Superior",
+      "subtopics": "Treasury Management Excellent, Corporate Cash Handling, Financial Resource Control"
+    },
+    {
+      "tweet_id": "T832069",
+      "username": "Kristen White",
+      "dominant_topic": "Bank Guarantee Issued",
+      "subtopics": "Financial Guarantee Provided, Security Document Processed"
+    },
+    {
+      "tweet_id": "T695648",
+      "username": "Mary Mitchell",
+      "dominant_topic": "Corporate Service Exceptional",
+      "subtopics": "Business Banking Excellence, Corporate Client Services, Enterprise Account Management"
+    },
+    {
+      "tweet_id": "T719419",
+      "username": "Juan Farmer",
+      "dominant_topic": "Cross Border Issues",
+      "subtopics": "Multi Currency Problems, Exchange Rate Disputes, Correspondent Bank Delays, Regional Service Variations, International Banking Issues"
+    },
+    {
+      "tweet_id": "T849031",
+      "username": "David Sanchez",
+      "dominant_topic": "Verification Process Lengthy",
+      "subtopics": "Document Verification Extended, Customer Screening Lengthy"
+    },
+    {
+      "tweet_id": "T786106",
+      "username": "Jasmine Smith",
+      "dominant_topic": "Treasury Operations Smooth",
+      "subtopics": "Business Financial Management, Enterprise Cash Handling"
+    },
+    {
+      "tweet_id": "T103023",
+      "username": "Jacob Ayala",
+      "dominant_topic": "Routine Service Feedback",
+      "subtopics": "Standard Banking Service, Regular Account Management, Normal Banking Operations"
+    },
+    {
+      "tweet_id": "T802677",
+      "username": "Mrs. Sabrina Davis",
+      "dominant_topic": "Letter Credit Processed",
+      "subtopics": "Export Process Smooth"
+    },
+    {
+      "tweet_id": "T537354",
+      "username": "Ronald Joyce",
+      "dominant_topic": "Platform Downtime Frustration",
+      "subtopics": "Network Interruption Prolonged"
+    },
+    {
+      "tweet_id": "T654178",
+      "username": "Mark Lopez",
+      "dominant_topic": "API Integration Problems",
+      "subtopics": "Service Interruptions Experienced, Open Banking Problems"
+    },
+    {
+      "tweet_id": "T937633",
+      "username": "Mariah Horton",
+      "dominant_topic": "Card Services Excellent",
+      "subtopics": "Card Payments Smooth, Debit Processing Fast, Credit Transactions Excellent, Payment Cards Reliable"
+    },
+    {
+      "tweet_id": "T158194",
+      "username": "William Walker",
+      "dominant_topic": "Some Countries Excellent",
+      "subtopics": "Regional Banking Excellence, Local Banking Outstanding"
+    },
+    {
+      "tweet_id": "T929280",
+      "username": "Kathryn Knight",
+      "dominant_topic": "Signatory Update Needed",
+      "subtopics": "Signatory List Changes"
+    },
+    {
+      "tweet_id": "T747054",
+      "username": "Leah Sampson",
+      "dominant_topic": "Investment Services Outstanding",
+      "subtopics": "Portfolio Management Services, Wealth Management Superior, Financial Planning Support"
+    },
+    {
+      "tweet_id": "T956638",
+      "username": "Cindy Cooper",
+      "dominant_topic": "Trade Documentation Smooth",
+      "subtopics": "Cross Border Documentation, Trade Document Processing, Commercial Paper Handling"
+    },
+    {
+      "tweet_id": "T214364",
+      "username": "Kelly Robbins",
+      "dominant_topic": "Signatory Update Needed",
+      "subtopics": "Signatory List Changes, Authorized User Modifications, Account Access Updates"
+    },
+    {
+      "tweet_id": "T421318",
+      "username": "Steve Parker DDS",
+      "dominant_topic": "Cross Border Issues",
+      "subtopics": "Multi Currency Problems, Exchange Rate Disputes"
+    },
+    {
+      "tweet_id": "T404947",
+      "username": "Stephen Walter",
+      "dominant_topic": "Online Banking Excellence",
+      "subtopics": "Online Services Superior, Web Platform Outstanding"
+    },
+    {
+      "tweet_id": "T850347",
+      "username": "Colin Johnson",
+      "dominant_topic": "Order Processing Failed",
+      "subtopics": "Scheduled Payment Missing"
+    },
+    {
+      "tweet_id": "T296260",
+      "username": "Perry Jenkins",
+      "dominant_topic": "Maintenance Inconvenience Reported",
+      "subtopics": "Banking Interruption Experienced, Service Pause Reported, System Break Encountered"
+    },
+    {
+      "tweet_id": "T273386",
+      "username": "Ryan Hansen",
+      "dominant_topic": "Software Bug Complaints",
+      "subtopics": "Program Problem Feedback"
+    },
+    {
+      "tweet_id": "T403604",
+      "username": "Ryan Delacruz",
+      "dominant_topic": "Authentication Errors Reported",
+      "subtopics": "Security Login Failed, Access Verification Error"
+    },
+    {
+      "tweet_id": "T963056",
+      "username": "David Wood",
+      "dominant_topic": "Billing Error Reports",
+      "subtopics": "Account Charges Wrong"
+    },
+    {
+      "tweet_id": "T239580",
+      "username": "Christopher Carter",
+      "dominant_topic": "AML Processes Smooth",
+      "subtopics": "Financial Crime Prevention"
+    },
+    {
+      "tweet_id": "T144018",
+      "username": "Kristen Reynolds",
+      "dominant_topic": "Quick Response Time",
+      "subtopics": "Agent Responded Quickly, Support Available Immediately"
+    },
+    {
+      "tweet_id": "T059914",
+      "username": "Andrew Macdonald",
+      "dominant_topic": "Routine Service Feedback",
+      "subtopics": "Standard Banking Service, Regular Account Management"
+    },
+    {
+      "tweet_id": "T958647",
+      "username": "Regina Harris",
+      "dominant_topic": "Customer Service Disappointment",
+      "subtopics": "Service Quality Poor, Escalation Process Unclear, Support Coordination Lacking"
+    },
+    {
+      "tweet_id": "T030433",
+      "username": "Joseph Bradford",
+      "dominant_topic": "Peak Time Difficulties",
+      "subtopics": "Busy Period Issues, Peak Usage Difficulties"
+    },
+    {
+      "tweet_id": "T015697",
+      "username": "Danielle Clark",
+      "dominant_topic": "Holiday Period Issues",
+      "subtopics": "Seasonal Banking Issues, Holiday Service Problems, Vacation Period Difficulties"
+    },
+    {
+      "tweet_id": "T091202",
+      "username": "Cody Collins",
+      "dominant_topic": "System Navigation Help",
+      "subtopics": "Navigation Assistance Required"
+    },
+    {
+      "tweet_id": "T916858",
+      "username": "Amy Campbell",
+      "dominant_topic": "Maintenance Inconvenience Reported",
+      "subtopics": "System Break Encountered, Platform Halt Noticed"
+    },
+    {
+      "tweet_id": "T218612",
+      "username": "Rickey Miller",
+      "dominant_topic": "Call Center Complaints",
+      "subtopics": "Long Wait Times, Unhelpful Agent Encountered, Language Barriers Experienced, Poor Resolution Quality"
+    },
+    {
+      "tweet_id": "T946823",
+      "username": "Travis Hogan",
+      "dominant_topic": "Dedicated Support Appreciated",
+      "subtopics": "Personalized Customer Care, Tailored Banking Solutions"
+    },
+    {
+      "tweet_id": "T427576",
+      "username": "Kevin Vaughn",
+      "dominant_topic": "Regulatory Compliance Questions",
+      "subtopics": "AML Requirements Asked, GDPR Rights Inquiry"
+    },
+    {
+      "tweet_id": "T108582",
+      "username": "Holly Lee",
+      "dominant_topic": "Digital Innovation Appreciation",
+      "subtopics": "PSD2 Compliance Smooth, Fintech Integration Perfect"
+    },
+    {
+      "tweet_id": "T301727",
+      "username": "Lee Humphrey",
+      "dominant_topic": "Improved Service Acknowledged",
+      "subtopics": "Banking Experience Better, Customer Support Enhanced"
+    },
+    {
+      "tweet_id": "T472278",
+      "username": "Colleen Harris",
+      "dominant_topic": "Account Manager Responsive",
+      "subtopics": "Dedicated Account Officer, Customer Service Specialist"
+    },
+    {
+      "tweet_id": "T388320",
+      "username": "John Hogan",
+      "dominant_topic": "System Outage Frustration",
+      "subtopics": "Network Connectivity Lost"
+    },
+    {
+      "tweet_id": "T704141",
+      "username": "Erica Mcclure",
+      "dominant_topic": "Routine Service Feedback",
+      "subtopics": "Standard Banking Service, Regular Account Management, Typical Customer Support"
+    },
+    {
+      "tweet_id": "T015955",
+      "username": "Brian Davis",
+      "dominant_topic": "Verification Process Lengthy",
+      "subtopics": "Customer Screening Lengthy, Account Approval Delayed"
+    },
+    {
+      "tweet_id": "T105572",
+      "username": "Miranda Reyes",
+      "dominant_topic": "Payment Processing Failure",
+      "subtopics": "Bulk Payment Error"
+    },
+    {
+      "tweet_id": "T644797",
+      "username": "Christopher Hicks",
+      "dominant_topic": "Service Restoration Delayed",
+      "subtopics": "Service Restoration Slow, Platform Repair Extended, Infrastructure Fix Prolonged"
+    },
+    {
+      "tweet_id": "T030949",
+      "username": "Kelly Lopez",
+      "dominant_topic": "Partial Functionality Working",
+      "subtopics": "Service Capabilities Restricted"
+    },
+    {
+      "tweet_id": "T311777",
+      "username": "Regina Wells",
+      "dominant_topic": "Correspondent Bank Delays",
+      "subtopics": "Foreign Correspondent Issues, Cross Border Processing, International Network Problems"
+    },
+    {
+      "tweet_id": "T761816",
+      "username": "Daniel Wong",
+      "dominant_topic": "Profile Access Denied",
+      "subtopics": "Profile Access Restricted"
+    },
+    {
+      "tweet_id": "T594528",
+      "username": "Brent Martin",
+      "dominant_topic": "Problem Initially Frustrating",
+      "subtopics": "Early Issues Challenging, Beginning Complications Experienced"
+    },
+    {
+      "tweet_id": "T705497",
+      "username": "Max Prince",
+      "dominant_topic": "Call Support Adequate",
+      "subtopics": "Customer Support Adequate"
+    },
+    {
+      "tweet_id": "T402176",
+      "username": "William Mckinney",
+      "dominant_topic": "Others Need Improvement",
+      "subtopics": "Country Service Improvement, Local Service Upgrade"
+    },
+    {
+      "tweet_id": "T282081",
+      "username": "Joshua Garcia",
+      "dominant_topic": "Mobile Security Robust",
+      "subtopics": "Device Security Strong, Mobile Protection Excellent, App Encryption Robust, Digital Safety Assured"
+    },
+    {
+      "tweet_id": "T295925",
+      "username": "Michele Ochoa",
+      "dominant_topic": "Compliance Checks Intrusive",
+      "subtopics": "Compliance Monitoring Excessive, Legal Requirements Burdensome, Audit Process Intensive"
+    },
+    {
+      "tweet_id": "T235266",
+      "username": "Michael Gibson",
+      "dominant_topic": "System Navigation Help",
+      "subtopics": "Help Documentation Requested, System Tutorial Required"
+    },
+    {
+      "tweet_id": "T408264",
+      "username": "Steven Villarreal",
+      "dominant_topic": "Improved Service Acknowledged",
+      "subtopics": "Service Quality Improved, Banking Experience Better, Account Management Upgraded"
+    },
+    {
+      "tweet_id": "T707574",
+      "username": "Mary Smith",
+      "dominant_topic": "Trade Finance Satisfaction",
+      "subtopics": "Export Documentation Smooth, International Trade Supported"
+    },
+    {
+      "tweet_id": "T862632",
+      "username": "April Velazquez",
+      "dominant_topic": "Viral Complaint Spreading",
+      "subtopics": "Social Media Complaint, Viral Customer Problem, Community Issue Spreading"
+    },
+    {
+      "tweet_id": "T839576",
+      "username": "Henry Bryant",
+      "dominant_topic": "Letter Credit Processed",
+      "subtopics": "Business Transaction Approved"
+    },
+    {
+      "tweet_id": "T883711",
+      "username": "Jake Weber",
+      "dominant_topic": "Account Configuration Assistance",
+      "subtopics": "Account Setup Assistance, Banking Configuration Help, Service Initialization Support"
+    },
+    {
+      "tweet_id": "T972081",
+      "username": "Maria Woodward",
+      "dominant_topic": "SEPA Transfer Success",
+      "subtopics": "Cross Border Success, Regional Payment Excellent"
+    },
+    {
+      "tweet_id": "T469931",
+      "username": "Patrick Arnold",
+      "dominant_topic": "Payment Processing Failure",
+      "subtopics": "SEPA Transfer Rejected, Card Transaction Declined, Bulk Payment Error"
+    },
+    {
+      "tweet_id": "T574310",
+      "username": "Jennifer Garcia",
+      "dominant_topic": "Long Wait Times",
+      "subtopics": "Customer Waiting Long"
+    },
+    {
+      "tweet_id": "T815073",
+      "username": "Jonathan Lucas",
+      "dominant_topic": "Documentary Collection Efficient",
+      "subtopics": "Trade Document Handling, Commercial Paper Processing, International Settlement Success"
+    },
+    {
+      "tweet_id": "T397341",
+      "username": "Mike Jenkins",
+      "dominant_topic": "Unexpected Charges Discovered",
+      "subtopics": "Hidden Charges Applied, Surprise Fees Discovered"
+    },
+    {
+      "tweet_id": "T991980",
+      "username": "Jason Wolf",
+      "dominant_topic": "Software Bug Complaints",
+      "subtopics": "Application Issues Reported, Program Problem Feedback"
+    },
+    {
+      "tweet_id": "T597031",
+      "username": "Tracy Russell",
+      "dominant_topic": "Public Recovery Successful",
+      "subtopics": "Community Service Recovery, Brand Image Recovery"
+    },
+    {
+      "tweet_id": "T131010",
+      "username": "Mark Thompson",
+      "dominant_topic": "PSD2 Compliance Smooth",
+      "subtopics": "Standards Compliance Excellent"
+    },
+    {
+      "tweet_id": "T502710",
+      "username": "Chloe Aguilar",
+      "dominant_topic": "Viral Complaint Spreading",
+      "subtopics": "Public Issue Escalation, Viral Customer Problem"
+    },
+    {
+      "tweet_id": "T515706",
+      "username": "Mary Schaefer",
+      "dominant_topic": "Development Suggestions Made",
+      "subtopics": "Account Enhancement Recommendations"
+    },
+    {
+      "tweet_id": "T292731",
+      "username": "Lauren Soto",
+      "dominant_topic": "Quick Response Time",
+      "subtopics": "Call Answered Fast, Issue Resolved Rapidly, Support Available Immediately"
+    },
+    {
+      "tweet_id": "T884532",
+      "username": "Caleb Rodriguez",
+      "dominant_topic": "Multilingual Support Appreciated",
+      "subtopics": "Multiple Languages Supported, Translation Services Provided, International Staff Helpful"
+    },
+    {
+      "tweet_id": "T789901",
+      "username": "Alicia Moore",
+      "dominant_topic": "SEPA Transfer Success",
+      "subtopics": "SEPA Processing Smooth"
+    },
+    {
+      "tweet_id": "T653299",
+      "username": "Timothy Griffith",
+      "dominant_topic": "Open Banking Implementation",
+      "subtopics": "System Connectivity Strong"
+    },
+    {
+      "tweet_id": "T358415",
+      "username": "Mr. Adam Moore",
+      "dominant_topic": "Payment Processing Failed",
+      "subtopics": "Transaction System Failed, Payment Processing Broken, Financial Transaction Error, Money Transfer Problems"
+    },
+    {
+      "tweet_id": "T688437",
+      "username": "Dylan Bautista",
+      "dominant_topic": "Platform Downtime Frustration",
+      "subtopics": "Service Unavailable Temporarily, System Downtime Extended, Network Interruption Prolonged"
+    },
+    {
+      "tweet_id": "T979362",
+      "username": "Chelsea Davis",
+      "dominant_topic": "Data Breach Concerns",
+      "subtopics": "Personal Information Security, Customer Data Protection, Private Details Safety"
+    },
+    {
+      "tweet_id": "T159915",
+      "username": "Scott Cameron",
+      "dominant_topic": "Public Recovery Successful",
+      "subtopics": "Public Issue Resolution, Customer Relationship Restoration, Brand Image Recovery"
+    },
+    {
+      "tweet_id": "T599208",
+      "username": "Nicole Williamson",
+      "dominant_topic": "Billing Error Reports",
+      "subtopics": "Billing Mistakes Discovered, Account Charges Wrong"
+    },
+    {
+      "tweet_id": "T711870",
+      "username": "Brooke Hunter",
+      "dominant_topic": "Resolution Eventually Satisfactory",
+      "subtopics": "End Result Satisfactory, Ultimate Resolution Good, Final Outcome Positive"
+    },
+    {
+      "tweet_id": "T731857",
+      "username": "Ruth Cooper",
+      "dominant_topic": "Language Barriers Experienced",
+      "subtopics": "Communication Barriers Faced, Language Options Limited"
+    },
+    {
+      "tweet_id": "T165530",
+      "username": "Thomas Jenkins",
+      "dominant_topic": "Routine Service Feedback",
+      "subtopics": "Standard Banking Service, Normal Banking Operations"
+    },
+    {
+      "tweet_id": "T287866",
+      "username": "Amy Parker",
+      "dominant_topic": "Call Support Adequate",
+      "subtopics": "Customer Support Adequate, Account Management Sufficient, Banking Assistance Reasonable"
+    },
+    {
+      "tweet_id": "T605386",
+      "username": "Edgar Wright",
+      "dominant_topic": "Core Banking Down",
+      "subtopics": "Main System Offline, Core Processing Unavailable"
+    },
+    {
+      "tweet_id": "T465274",
+      "username": "Andrea Walters",
+      "dominant_topic": "Unauthorized Access Fears",
+      "subtopics": "Account Breach Suspected, Security Violation Reported"
+    },
+    {
+      "tweet_id": "T739356",
+      "username": "Louis Pitts",
+      "dominant_topic": "Feature Enhancement Needed",
+      "subtopics": "System Enhancement Suggested, Platform Development Needed"
+    },
+    {
+      "tweet_id": "T238482",
+      "username": "William Mccoy",
+      "dominant_topic": "Excellent Call Support",
+      "subtopics": "Quick Response Received"
+    },
+    {
+      "tweet_id": "T443901",
+      "username": "Terri Ford",
+      "dominant_topic": "Balance Update Delayed",
+      "subtopics": "Account Information Delayed, Account Status Update"
+    },
+    {
+      "tweet_id": "T421135",
+      "username": "Dawn Foster MD",
+      "dominant_topic": "Liquidity Management Excellent",
+      "subtopics": "Business Liquidity Control"
+    },
+    {
+      "tweet_id": "T064094",
+      "username": "Leroy Mendoza",
+      "dominant_topic": "Mobile Security Robust",
+      "subtopics": "Device Security Strong, Mobile Protection Excellent"
+    },
+    {
+      "tweet_id": "T285315",
+      "username": "John Schmidt",
+      "dominant_topic": "Fee Structure Criticism",
+      "subtopics": "Unexpected Charges Discovered, Fee Increase Complaints"
+    },
+    {
+      "tweet_id": "T228609",
+      "username": "Dr. Craig Estrada PhD",
+      "dominant_topic": "Mobile App Functional",
+      "subtopics": "Mobile Platform Working"
+    },
+    {
+      "tweet_id": "T698070",
+      "username": "Pamela Payne",
+      "dominant_topic": "Corporate Setup Questions",
+      "subtopics": "Business Banking Setup, Corporate Account Questions, Enterprise Service Questions"
+    },
+    {
+      "tweet_id": "T741071",
+      "username": "Briana Garcia",
+      "dominant_topic": "Standard Operation Smooth",
+      "subtopics": "Standard Service Delivery, Typical Account Management, Normal Customer Support"
+    },
+    {
+      "tweet_id": "T663570",
+      "username": "Megan Bates",
+      "dominant_topic": "Transfer Delays Experienced",
+      "subtopics": "Transfer Pending Long, Wire Processing Slow"
+    },
+    {
+      "tweet_id": "T956902",
+      "username": "Megan Saunders",
+      "dominant_topic": "Mixed Experience Reported",
+      "subtopics": "Experience Report Mixed, Service Feedback Balanced"
+    },
+    {
+      "tweet_id": "T084806",
+      "username": "Maria Hayes",
+      "dominant_topic": "Payment Processing Failed",
+      "subtopics": "Transaction System Failed, Payment Processing Broken, Financial Transaction Error"
+    },
+    {
+      "tweet_id": "T481690",
+      "username": "Michael Butler",
+      "dominant_topic": "Exchange Rate Disputes",
+      "subtopics": "Exchange Rate Disagreements, Currency Conversion Disputes, Foreign Exchange Conflicts, International Rate Issues"
+    },
+    {
+      "tweet_id": "T141045",
+      "username": "Kathleen Estrada",
+      "dominant_topic": "Fee Structure Criticism",
+      "subtopics": "Unexpected Charges Discovered"
+    },
+    {
+      "tweet_id": "T881294",
+      "username": "Gabrielle Leonard",
+      "dominant_topic": "Documentary Collection Efficient",
+      "subtopics": "Collection Process Smooth, Trade Document Handling, International Settlement Success"
+    },
+    {
+      "tweet_id": "T747632",
+      "username": "Shannon Villarreal",
+      "dominant_topic": "SEPA Transfer Success",
+      "subtopics": "SEPA Processing Smooth, European Transfer Fast"
+    },
+    {
+      "tweet_id": "T756372",
+      "username": "Edward Miller",
+      "dominant_topic": "GDPR Compliance Praise",
+      "subtopics": "GDPR Handling Excellent"
+    },
+    {
+      "tweet_id": "T315892",
+      "username": "Kenneth Newman",
+      "dominant_topic": "App Login Problems",
+      "subtopics": "Security Verification Error"
+    },
+    {
+      "tweet_id": "T080616",
+      "username": "Michelle Vaughan",
+      "dominant_topic": "Improvement Over Previous",
+      "subtopics": "Banking Improvement Noted, Customer Experience Enhanced, Account Management Better"
+    },
+    {
+      "tweet_id": "T858114",
+      "username": "John Mcguire",
+      "dominant_topic": "Digital Platform Glitches",
+      "subtopics": "Software Issues Experienced, Platform Problems Encountered"
+    },
+    {
+      "tweet_id": "T803921",
+      "username": "Kristen White",
+      "dominant_topic": "Problem Resolved Efficiently",
+      "subtopics": "Issue Fixed Successfully, Solution Provided Quickly, Customer Satisfied Completely, Problem Eliminated Effectively"
+    },
+    {
+      "tweet_id": "T182227",
+      "username": "Mary Mitchell",
+      "dominant_topic": "Fee Structure Criticism",
+      "subtopics": "Unexpected Charges Discovered, Pricing Transparency Lacking, Fee Increase Complaints, Billing Errors Reported"
+    },
+    {
+      "tweet_id": "T203119",
+      "username": "Juan Farmer",
+      "dominant_topic": "Response Time Inadequate",
+      "subtopics": "Support Availability Limited"
+    },
+    {
+      "tweet_id": "T295391",
+      "username": "David Sanchez",
+      "dominant_topic": "Mandate Change Required",
+      "subtopics": "Signature Authority Modifications, Access Permission Changes"
+    },
+    {
+      "tweet_id": "T210053",
+      "username": "Jasmine Smith",
+      "dominant_topic": "Unexpected Charges Discovered",
+      "subtopics": "Undisclosed Costs Found, Additional Expenses Unexpected"
+    },
+    {
+      "tweet_id": "T913409",
+      "username": "Jacob Ayala",
+      "dominant_topic": "Relationship Management Praise",
+      "subtopics": "Corporate Service Exceptional, Dedicated Support Appreciated, Personalized Banking Excellence"
+    },
+    {
+      "tweet_id": "T418713",
+      "username": "Mrs. Sabrina Davis",
+      "dominant_topic": "Balance Update Delayed",
+      "subtopics": "Account Information Delayed, Balance Update Slow, Financial Data Refresh"
+    },
+    {
+      "tweet_id": "T059788",
+      "username": "Ronald Joyce",
+      "dominant_topic": "Network Connectivity Lost",
+      "subtopics": "Payment Infrastructure Failed"
+    },
+    {
+      "tweet_id": "T326949",
+      "username": "Mark Lopez",
+      "dominant_topic": "System Navigation Help",
+      "subtopics": "Navigation Assistance Required, User Guide Needed"
+    },
+    {
+      "tweet_id": "T117244",
+      "username": "Mariah Horton",
+      "dominant_topic": "Service Interruption Experienced",
+      "subtopics": "Online Service Disrupted, Network Communication Interrupted"
+    },
+    {
+      "tweet_id": "T989089",
+      "username": "William Walker",
+      "dominant_topic": "Long Wait Times",
+      "subtopics": "Customer Waiting Long, Response Time Slow"
+    },
+    {
+      "tweet_id": "T975331",
+      "username": "Kathryn Knight",
+      "dominant_topic": "Regional Service Variations",
+      "subtopics": "Country Service Differences, Local Service Inconsistencies, Geographic Banking Disparities"
+    },
+    {
+      "tweet_id": "T558596",
+      "username": "Leah Sampson",
+      "dominant_topic": "Service Restoration Delayed",
+      "subtopics": "Service Restoration Slow, Platform Repair Extended"
+    },
+    {
+      "tweet_id": "T184630",
+      "username": "Cindy Cooper",
+      "dominant_topic": "GDPR Compliance Praise",
+      "subtopics": "Privacy Rights Respected"
+    },
+    {
+      "tweet_id": "T080443",
+      "username": "Kelly Robbins",
+      "dominant_topic": "Correspondent Bank Delays",
+      "subtopics": "Cross Border Processing, International Network Problems"
+    },
+    {
+      "tweet_id": "T341843",
+      "username": "Steve Parker DDS",
+      "dominant_topic": "Response Time Inadequate",
+      "subtopics": "Service Delivery Delayed"
+    },
+    {
+      "tweet_id": "T419921",
+      "username": "Stephen Walter",
+      "dominant_topic": "General Support Needed",
+      "subtopics": "Banking Assistance Needed, Account Help Required"
+    },
+    {
+      "tweet_id": "T358322",
+      "username": "Colin Johnson",
+      "dominant_topic": "Relationship Management Praise",
+      "subtopics": "Dedicated Support Appreciated"
+    },
+    {
+      "tweet_id": "T911490",
+      "username": "Perry Jenkins",
+      "dominant_topic": "Order Processing Failed",
+      "subtopics": "Automated Transfer Error, Scheduled Payment Missing"
+    },
+    {
+      "tweet_id": "T318879",
+      "username": "Ryan Hansen",
+      "dominant_topic": "Online Banking Excellence",
+      "subtopics": "Digital Banking Excellent, Web Platform Outstanding, Internet Banking Smooth"
+    },
+    {
+      "tweet_id": "T583670",
+      "username": "Ryan Delacruz",
+      "dominant_topic": "Cross Border Issues",
+      "subtopics": "Multi Currency Problems, Regional Service Variations"
+    },
+    {
+      "tweet_id": "T579634",
+      "username": "David Wood",
+      "dominant_topic": "Holiday Period Issues",
+      "subtopics": "Festive Season Complications"
+    },
+    {
+      "tweet_id": "T881711",
+      "username": "Christopher Carter",
+      "dominant_topic": "Mixed Experience Reported",
+      "subtopics": "Experience Report Mixed"
+    },
+    {
+      "tweet_id": "T873997",
+      "username": "Kristen Reynolds",
+      "dominant_topic": "Investment Services Outstanding",
+      "subtopics": "Investment Advisory Excellent, Financial Planning Support"
+    },
+    {
+      "tweet_id": "T146110",
+      "username": "Andrew Macdonald",
+      "dominant_topic": "General Support Needed",
+      "subtopics": "General Support Requested"
+    },
+    {
+      "tweet_id": "T299264",
+      "username": "Regina Harris",
+      "dominant_topic": "Security Incident Concerns",
+      "subtopics": "Fraud Alert Confusion, Cybersecurity Worries Expressed, Data Breach Concerns, Identity Verification Issues"
+    },
+    {
+      "tweet_id": "T597246",
+      "username": "Joseph Bradford",
+      "dominant_topic": "Off Peak Better",
+      "subtopics": "Quiet Period Better, Low Traffic Smooth, Minimal Usage Excellent, Off Peak Superior"
+    },
+    {
+      "tweet_id": "T470224",
+      "username": "Danielle Clark",
+      "dominant_topic": "High Transaction Fees",
+      "subtopics": "Service Charges High"
+    },
+    {
+      "tweet_id": "T283702",
+      "username": "Cody Collins",
+      "dominant_topic": "SEPA Payment Rejected",
+      "subtopics": "Payment Gateway Failed, Transfer System Error"
+    },
+    {
+      "tweet_id": "T797290",
+      "username": "Amy Campbell",
+      "dominant_topic": "AML Processes Smooth",
+      "subtopics": "Financial Crime Prevention, Suspicious Activity Monitoring"
+    },
+    {
+      "tweet_id": "T563586",
+      "username": "Rickey Miller",
+      "dominant_topic": "Unauthorized Access Fears",
+      "subtopics": "Unauthorized Login Detected, Security Violation Reported"
+    },
+    {
+      "tweet_id": "T367830",
+      "username": "Travis Hogan",
+      "dominant_topic": "Application Launch Failed",
+      "subtopics": "Mobile Application Startup"
+    },
+    {
+      "tweet_id": "T949608",
+      "username": "Kevin Vaughn",
+      "dominant_topic": "Standard Operation Smooth",
+      "subtopics": "Standard Service Delivery, Typical Account Management"
+    },
+    {
+      "tweet_id": "T495125",
+      "username": "Holly Lee",
+      "dominant_topic": "Billing Error Reports",
+      "subtopics": "Invoice Errors Found, Billing Mistakes Discovered"
+    },
+    {
+      "tweet_id": "T925602",
+      "username": "Lee Humphrey",
+      "dominant_topic": "Balance Update Delayed",
+      "subtopics": "Financial Data Refresh, Account Status Update"
+    },
+    {
+      "tweet_id": "T124914",
+      "username": "Colleen Harris",
+      "dominant_topic": "Follow Up Satisfactory",
+      "subtopics": "Customer Follow Up, Client Relationship Maintenance"
+    },
+    {
+      "tweet_id": "T066236",
+      "username": "John Hogan",
+      "dominant_topic": "API Services Outstanding",
+      "subtopics": "Developer Interface Excellent, Programming Tools Superior, Technical Documentation Clear, Integration Support Strong"
+    },
+    {
+      "tweet_id": "T018419",
+      "username": "Erica Mcclure",
+      "dominant_topic": "Payment Processing Failure",
+      "subtopics": "SEPA Transfer Rejected"
+    },
+    {
+      "tweet_id": "T537647",
+      "username": "Brian Davis",
+      "dominant_topic": "Excellent Call Support",
+      "subtopics": "Knowledgeable Agent Helped, Multilingual Assistance Provided, Professional Service Delivered"
+    },
+    {
+      "tweet_id": "T125587",
+      "username": "Miranda Reyes",
+      "dominant_topic": "Payment Processing Failure",
+      "subtopics": "SEPA Transfer Rejected, Card Transaction Declined, International Payment Delayed, Standing Order Failed"
+    },
+    {
+      "tweet_id": "T257991",
+      "username": "Christopher Hicks",
+      "dominant_topic": "Pricing Transparency Lacking",
+      "subtopics": "Fee Information Unclear, Pricing Details Missing, Charge Explanation Insufficient"
+    },
+    {
+      "tweet_id": "T424196",
+      "username": "Kelly Lopez",
+      "dominant_topic": "Seasonal Variation Reports",
+      "subtopics": "Time Based Service, Seasonal Banking Performance"
+    },
+    {
+      "tweet_id": "T634931",
+      "username": "Regina Wells",
+      "dominant_topic": "Feature Enhancement Needed",
+      "subtopics": "User Interface Improvement, Feature Addition Requested"
+    },
+    {
+      "tweet_id": "T786833",
+      "username": "Daniel Wong",
+      "dominant_topic": "Data Breach Concerns",
+      "subtopics": "Customer Data Protection"
+    },
+    {
+      "tweet_id": "T290342",
+      "username": "Brent Martin",
+      "dominant_topic": "Multi Currency Problems",
+      "subtopics": "Foreign Exchange Problems, Multi Currency Complications, Cross Border Money"
+    },
+    {
+      "tweet_id": "T212473",
+      "username": "Max Prince",
+      "dominant_topic": "Service Interruption Experienced",
+      "subtopics": "Internet Connection Failed, System Access Lost, Network Communication Interrupted"
+    },
+    {
+      "tweet_id": "T172453",
+      "username": "William Mckinney",
+      "dominant_topic": "Brand Reputation Restored",
+      "subtopics": "Corporate Credibility Repair"
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+ach processing error
+aml documentation request
+api connectivity issue
+atm network problem
+account access error
+account opening issue
+approval require
+asset management issue
+audit firm communication
+audit trail need
+authentication problem report
+balance inquiry problem
+basel iii requirement
+beneficial ownership declaration
+beneficiary bank unavailable
+good execution report
+bond trading problem
+branch service complaint
+crs report question
+card network issue
+card payment dispute
+cash flow issue
+cash management issue
+certificate deposit question
+check clearing issue
+clearing house problem
+client categorization update
+commercial paper issue
+complaint resolution request
+compliance certificate request
+compliance issue
+compliance monitor alert
+consent management dispute
+consent withdrawal notification
+consult project report
+core banking system
+corporate account issue
+corporate loan inquiry
+covenant breach alert
+covenant compliance question
+credit facility question
+credit line utilization
+cross border regulatory question
+cross border transfer problem
+custody service problem
+customer feedback report
+customer service escalation
+cybersecurity incident report
+datum breach warning
+data retention question
+datum sharing problem
+deposit service issue
+derivative question alert
+digital banking error
+digital platform malfunction
+digital wallet issue
+direct debit return
+documentary collection issue
+ecb policy update
+eu passporte service
+eu taxonomy report
+enhance diligence
+euro clearing problem
+executive decision require
+executive escalation email
+export credit issue
+export documentation error
+fatca compliance issue
+fx execution problem
+facility renewal inquiry
+fee clarification need
+fee dispute email
+fintech integration error
+foreign exchange problem
+fund transfer problem
+gdpr access request
+guarantee execution problem
+access problem
+marketing unresolved
+import finance question
+instant payment reject
+integration problem report
+interest rate query
+internal audit
+international transfer question
+investment advisory question
+investment service question
+kyc documentation problem
+legal advisor update
+legal escalation
+legal notice response
+letter credit amendment
+letter credit processing
+liquidity facility problem
+medium inquiry email
+merchant service problem
+mifid investment inquiry
+mobile app issue
+mobile authentication error
+monitor system alert
+multi currency statement need
+online banking problem
+open banking api
+overdraft facility request
+pos terminal issue
+psd2 compliance question
+payment service problem
+performance management
+personal data inquiry
+phone banking issue
+private banking service
+process exception
+process improvement request
+processing delay complaint
+process information need
+quality assurance breach
+quality assurance issue
+regtech alert
+regulatory documentation need
+relationship manager request
+report discrepancy alert
+report platform issue
+right erasure demand
+risk assessment update
+risk management alert
+sepa instant failure
+sepa payment failure
+sepa payment status
+sepa processing error
+salary leave issue
+sanction screen alert
+satisfaction survey result
+security incident alert
+service level breach
+service quality complaint
+staff performance issue
+strong customer authentication
+system outage notification
+target2 settlement issue
+tpp access problem
+tax withholding problem
+technology emergency
+party provider
+trade documentation error
+trade finance delay
+training need alert
+transaction dispute report
+transaction processing error
+treasury service problem
+treasury system error
+factor authentication error
+user access approval
+vendor management
+wealth management issue
+wire transfer delay

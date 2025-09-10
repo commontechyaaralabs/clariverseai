@@ -1,0 +1,45 @@
+# MongoDB Chat Conversation Topic Analysis Statistics
+# Generated: 2025-08-02 06:33:18
+# Database: sparzaai
+# Collection: chat-chunks
+# Model: gemma3:27b
+# Remote Endpoint: http://34.147.17.26:31100
+# Parallel Workers: 5
+
+Total processed conversations: 204
+Unique dominant topics: 76
+Conversations marked as urgent: 63 (30.9%)
+Conversations that were summarized: 0
+Average conversation length: 9.8 segments
+Shortest conversation: 7 segments
+Longest conversation: 13 segments
+
+## Most Common Dominant Topics:
+- Fraudulent Charge Dispute: 24 conversations
+- Direct Debit Failure: 19 conversations
+- Direct Deposit Delay: 18 conversations
+- Unauthorized Charge Dispute: 17 conversations
+- Direct Deposit Issue: 10 conversations
+- Card Decline Issue: 6 conversations
+- Recurring Charge Inquiry: 5 conversations
+- Failed Direct Debit: 4 conversations
+- Unauthorized Charge Inquiry: 4 conversations
+- Subscription Charge Inquiry: 4 conversations
+
+## Most Common Subtopics:
+- Account History Review: 31 occurrences
+- System Glitch Impact: 12 occurrences
+- Transaction History Review: 10 occurrences
+- Fraud Investigation Process: 7 occurrences
+- Dispute Process Initiation: 6 occurrences
+- Subscription Service Recognition: 6 occurrences
+- Dispute Initiation Process: 6 occurrences
+- Account Verification: 5 occurrences
+- Failed Login Attempts: 5 occurrences
+- Pending Deposit Status: 5 occurrences
+
+## Conversation Length Distribution:
+- 7 segments: 54 conversations
+- 9 segments: 57 conversations
+- 11 segments: 46 conversations
+- 13 segments: 47 conversations

@@ -1,0 +1,13 @@
+2025-08-23 14:20:40,297 - COLLECTION_STATS: total=2000, with_content=1995, without_content=5
+2025-08-23 14:20:40,935 - BATCH_START: total_tweets=5, batch_size=5
+2025-08-23 14:20:40,936 - BATCH_START: batch=1/1, records=5
+2025-08-23 14:20:46,314 - SUCCESS_COUNT: 1
+2025-08-23 14:20:51,422 - SUCCESS_COUNT: 2
+2025-08-23 14:20:56,410 - SUCCESS_COUNT: 3
+2025-08-23 14:21:01,655 - SUCCESS_COUNT: 4
+2025-08-23 14:21:06,672 - SUCCESS_COUNT: 5
+2025-08-23 14:21:06,674 - BATCH_COMPLETE: batch=1, successful=5, duration=25.74s
+2025-08-23 14:21:06,803 - DATABASE_SAVE: 5 records saved, total_updates: 5
+2025-08-23 14:21:06,806 - PROGRESS_SUMMARY: batch=1/1, success=5, failures=0, db_updates=5
+2025-08-23 14:21:06,806 - FINAL_SUMMARY: total_updated=5, success=5, failures=0
+2025-08-23 14:21:07,203 - COLLECTION_STATS: total=2000, with_content=2000, without_content=0

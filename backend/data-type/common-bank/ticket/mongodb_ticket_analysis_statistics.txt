@@ -1,0 +1,36 @@
+# MongoDB Ticket Topic Analysis Statistics
+# Generated: 2025-08-02 06:24:49
+# Database: sparzaai
+# Collection: tickets
+# Model: gemma3:27b
+# Remote Endpoint: http://34.147.17.26:31100
+# Parallel Workers: 5
+
+Total processed tickets: 2000
+Unique dominant topics: 432
+Tickets marked as urgent: 1678 (83.9%)
+Tickets that were summarized: 0
+
+## Most Common Dominant Topics:
+- Branch Network Outage: 133 tickets
+- Suspicious Login Activity: 125 tickets
+- ATM Card Reader Failure: 112 tickets
+- OBAS Login Failures: 88 tickets
+- iOS App Crash: 87 tickets
+- ACH Payment Delays: 69 tickets
+- Report Generation Failure: 67 tickets
+- ATM Card Retention: 66 tickets
+- Exchange Server Outage: 46 tickets
+- iOS App Crashing: 39 tickets
+
+## Most Common Subtopics:
+- Account Lockout: 128 occurrences
+- Transaction History: 103 occurrences
+- Chrome Version X: 81 occurrences
+- AD Replication: 76 occurrences
+- Crash Logs: 67 occurrences
+- Packet Loss: 65 occurrences
+- Unusual IP Addresses: 61 occurrences
+- Index Optimization: 60 occurrences
+- Card Reader Failure: 55 occurrences
+- Invalid Credentials: 52 occurrences

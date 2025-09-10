@@ -1,0 +1,67 @@
+2025-08-23 01:09:21,083 - INFO - === Voice Data Setup Script Started ===
+2025-08-23 01:09:21,083 - INFO - Connecting to MongoDB...
+2025-08-23 01:09:22,809 - INFO - Successfully connected to MongoDB
+2025-08-23 01:09:23,054 - INFO - Connected to database: sparzaai, collection: voice
+2025-08-23 01:09:23,054 - INFO - Fetching random email data from emailmessages collection...
+2025-08-23 01:09:24,498 - INFO - Retrieved 2000 random email records from emailmessages collection
+2025-08-23 01:09:24,499 - INFO - Starting voice data generation with customer distribution...
+2025-08-23 01:09:24,500 - INFO - Creating customer distribution...
+2025-08-23 01:09:24,500 - INFO - Pre-generating 1600 unique customers...
+2025-08-23 01:09:24,505 - INFO - Generating 1300 customers with 1 record each...
+2025-08-23 01:09:24,532 - INFO - Generating 250 customers with 2 records each...
+2025-08-23 01:09:24,543 - INFO - Generating 30 customers with 4 records each...
+2025-08-23 01:09:24,546 - INFO - Generating 20 customers with 6 records each...
+2025-08-23 01:09:24,552 - INFO - Distribution created successfully:
+2025-08-23 01:09:24,552 - INFO -   - 1 record customers: 1300 unique customers × 1 record = 1300 records
+2025-08-23 01:09:24,553 - INFO -   - 2 record customers: 250 unique customers × 2 records = 500 records
+2025-08-23 01:09:24,553 - INFO -   - 4 record customers: 30 unique customers × 4 records = 120 records
+2025-08-23 01:09:24,554 - INFO -   - 6 record customers: 20 unique customers × 6 records = 80 records
+2025-08-23 01:09:24,554 - INFO -   - Total unique customers: 1600
+2025-08-23 01:09:24,555 - INFO -   - Total records: 2040
+2025-08-23 01:09:25,087 - INFO - Batch 1/21: Inserted 100 records (Total: 100)
+2025-08-23 01:09:25,658 - INFO - Batch 2/21: Inserted 100 records (Total: 200)
+2025-08-23 01:09:26,044 - INFO - Batch 3/21: Inserted 100 records (Total: 300)
+2025-08-23 01:09:26,430 - INFO - Batch 4/21: Inserted 100 records (Total: 400)
+2025-08-23 01:09:26,919 - INFO - Batch 5/21: Inserted 100 records (Total: 500)
+2025-08-23 01:09:27,322 - INFO - Batch 6/21: Inserted 100 records (Total: 600)
+2025-08-23 01:09:27,680 - INFO - Batch 7/21: Inserted 100 records (Total: 700)
+2025-08-23 01:09:28,146 - INFO - Batch 8/21: Inserted 100 records (Total: 800)
+2025-08-23 01:09:28,496 - INFO - Batch 9/21: Inserted 100 records (Total: 900)
+2025-08-23 01:09:28,848 - INFO - Batch 10/21: Inserted 100 records (Total: 1000)
+2025-08-23 01:09:29,202 - INFO - Batch 11/21: Inserted 100 records (Total: 1100)
+2025-08-23 01:09:29,585 - INFO - Batch 12/21: Inserted 100 records (Total: 1200)
+2025-08-23 01:09:30,070 - INFO - Batch 13/21: Inserted 100 records (Total: 1300)
+2025-08-23 01:09:30,422 - INFO - Batch 14/21: Inserted 100 records (Total: 1400)
+2025-08-23 01:09:30,774 - INFO - Batch 15/21: Inserted 100 records (Total: 1500)
+2025-08-23 01:09:31,125 - INFO - Batch 16/21: Inserted 100 records (Total: 1600)
+2025-08-23 01:09:31,475 - INFO - Batch 17/21: Inserted 100 records (Total: 1700)
+2025-08-23 01:09:31,934 - INFO - Batch 18/21: Inserted 100 records (Total: 1800)
+2025-08-23 01:09:32,283 - INFO - Batch 19/21: Inserted 100 records (Total: 1900)
+2025-08-23 01:09:32,633 - INFO - Batch 20/21: Inserted 100 records (Total: 2000)
+2025-08-23 01:09:33,002 - INFO - Batch 21/21: Inserted 40 records (Total: 2040)
+2025-08-23 01:09:33,003 - INFO - Successfully inserted all 2040 records
+2025-08-23 01:09:33,003 - INFO - Data generation completed. Total records inserted: 2040
+2025-08-23 01:09:33,317 - INFO - Collection 'voice' contains 4080 documents
+2025-08-23 01:09:33,576 - INFO - Customer distribution verification:
+2025-08-23 01:09:33,577 - INFO -   - 1300 customers with 2 record(s) each = 2600 records (63.7%)
+2025-08-23 01:09:33,578 - INFO -   - 250 customers with 4 record(s) each = 1000 records (24.5%)
+2025-08-23 01:09:33,578 - INFO -   - 30 customers with 8 record(s) each = 240 records (5.9%)
+2025-08-23 01:09:33,578 - INFO -   - 20 customers with 12 record(s) each = 240 records (5.9%)
+2025-08-23 01:09:33,578 - INFO - Total unique customers: 1600
+2025-08-23 01:09:33,578 - INFO - Total records verification: 4080
+2025-08-23 01:09:33,986 - INFO - Sample record: {'_id': ObjectId('68a89e5db21812ca3cfb3611'), 'call_id': 'CALL67725', 'timestamp': '2023-02-15T12:20:42Z', 'customer_name': 'Mary Gillespie', 'customer_id': 'CUST0888', 'email': 'marygillespie3170@gmail.com', 'dominant_topic': 'Security Warning Call', 'subtopics': 'Fraud Prevention Tips, Safe Banking Practices', 'call_purpose': 'Fraud Prevention Inquiry', 'conversation': [{'speaker': 'user', 'text': "Hello, I received a text message warning me about potential fraudulent activity on my account and it said to call this number. I'm a bit concerned."}, {'speaker': 'agent', 'text': 'Good morning, Mrs. Gillespie. Thank you for calling EuroBank. To verify your identity, could you please provide the last four digits of your account number and your date of birth?'}, {'speaker': 'user', 'text': "Certainly, it's 1234 and my date of birth is 15th of March 1968. What kind of fraud are you seeing?"}, {'speaker': 'agent', 'text': "Thank you. We've detected some unusual login attempts from a new device. As a precaution, we flagged it and wanted to confirm it wasn't you accessing your account."}, {'speaker': 'user', 'text': "No, that wasn't me. I only use my laptop at home. What should I be looking out for, to prevent this happening again?"}, {'speaker': 'agent', 'text': "We advise against clicking on links in unsolicited emails or texts, and always access your online banking directly through our website. Enable two-factor authentication if you haven't already – it adds an extra layer of security."}, {'speaker': 'user', 'text': "I think I have that enabled, but I'll double check. Is there anything else I should be doing? I’m a little worried about phishing scams."}, {'speaker': 'agent', 'text': 'Absolutely. Never share your PIN or full password with anyone, even someone claiming to be from the bank. We will *never* ask for that information. Also, regularly review your transaction history for any unrecognized activity.'}, {'speaker': 'user', 'text': 'That’s very helpful, thank you. I feel much better now knowing what to look out for. I’ll check my transactions tonight.'}], 'priority': 'P2 - High', 'resolution_status': 'Resolved', 'sentiment': 'Neutral', 'urgency': True}
+2025-08-23 01:09:33,987 - INFO - ✅ Voice data generation completed successfully!
+2025-08-23 01:09:33,987 - INFO - 
+==================================================
+2025-08-23 01:09:33,988 - INFO - FINAL DISTRIBUTION SUMMARY:
+2025-08-23 01:09:33,988 - INFO - ==================================================
+2025-08-23 01:09:33,989 - INFO - 1 record customers: 1300 unique customers × 1 record = 1300 records (65%)
+2025-08-23 01:09:33,989 - INFO - 2 record customers: 250 unique customers × 2 records = 500 records (25%)
+2025-08-23 01:09:33,990 - INFO - 4 record customers: 30 unique customers × 4 records = 120 records (6%)
+2025-08-23 01:09:33,991 - INFO - 6 record customers: 20 unique customers × 6 records = 80 records (4%)
+2025-08-23 01:09:33,991 - INFO - --------------------------------------------------
+2025-08-23 01:09:33,992 - INFO - Total unique customers: 1600
+2025-08-23 01:09:33,992 - INFO - Total records: 2000
+2025-08-23 01:09:33,993 - INFO - ==================================================
+2025-08-23 01:09:34,236 - INFO - MongoDB connection closed
+2025-08-23 01:09:34,237 - INFO - === Voice Data Setup Script Completed ===

@@ -1,0 +1,2001 @@
+keyphrase,document_id,has_embedding
+aml process smooth,68a8c9fb8b8398d82b9fe32c,True
+aml process smooth,68a8c9fc8b8398d82b9fe463,True
+aml process smooth,68a8c9fd8b8398d82b9fe4ce,True
+aml process smooth,68a8c9fd8b8398d82b9fe59a,True
+aml process smooth,68a8c9fd8b8398d82b9fe5a9,True
+aml process smooth,68a8c9fd8b8398d82b9fe5aa,True
+aml process smooth,68a8c9fe8b8398d82b9fe684,True
+aml process smooth,68a8c9fe8b8398d82b9fe6de,True
+aml process smooth,68a8c9ff8b8398d82b9fe75b,True
+aml process smooth,68a8ca018b8398d82b9fe918,True
+aml process smooth,68a8ca018b8398d82b9fe965,True
+aml process smooth,68a8ca028b8398d82b9fe9d3,True
+aml process smooth,68a8ca028b8398d82b9fea78,True
+aml process smooth,68a8ca028b8398d82b9feae3,True
+api integration problem,68a8c9fb8b8398d82b9fe380,True
+api integration problem,68a8c9fc8b8398d82b9fe408,True
+api integration problem,68a8c9fc8b8398d82b9fe417,True
+api integration problem,68a8c9fc8b8398d82b9fe41d,True
+api integration problem,68a8c9fc8b8398d82b9fe482,True
+api integration problem,68a8c9fd8b8398d82b9fe4bc,True
+api integration problem,68a8c9fd8b8398d82b9fe5bc,True
+api integration problem,68a8c9fe8b8398d82b9fe61f,True
+api integration problem,68a8c9fe8b8398d82b9fe675,True
+api integration problem,68a8c9ff8b8398d82b9fe760,True
+api integration problem,68a8c9ff8b8398d82b9fe7d2,True
+api integration problem,68a8ca008b8398d82b9fe8b2,True
+api integration problem,68a8ca008b8398d82b9fe8c7,True
+api integration problem,68a8ca008b8398d82b9fe8ea,True
+api integration problem,68a8ca018b8398d82b9fe902,True
+api integration problem,68a8ca018b8398d82b9fe949,True
+api integration problem,68a8ca018b8398d82b9fe9ab,True
+api integration problem,68a8ca028b8398d82b9fea08,True
+api integration problem,68a8ca028b8398d82b9fea20,True
+api integration problem,68a8ca028b8398d82b9fea6a,True
+api service outstanding,68a8c9fc8b8398d82b9fe3f5,True
+api service outstanding,68a8c9fd8b8398d82b9fe4b6,True
+api service outstanding,68a8c9fd8b8398d82b9fe519,True
+api service outstanding,68a8c9fd8b8398d82b9fe536,True
+api service outstanding,68a8c9fd8b8398d82b9fe59b,True
+api service outstanding,68a8c9fe8b8398d82b9fe5e8,True
+api service outstanding,68a8c9fe8b8398d82b9fe5ed,True
+api service outstanding,68a8c9fe8b8398d82b9fe5f7,True
+api service outstanding,68a8c9fe8b8398d82b9fe618,True
+api service outstanding,68a8c9fe8b8398d82b9fe6f0,True
+api service outstanding,68a8ca018b8398d82b9fe99f,True
+api service outstanding,68a8ca028b8398d82b9feaea,True
+account access problem,68a8c9fb8b8398d82b9fe338,True
+account access problem,68a8c9fb8b8398d82b9fe3ea,True
+account access problem,68a8c9fb8b8398d82b9fe3eb,True
+account access problem,68a8c9fc8b8398d82b9fe412,True
+account access problem,68a8c9fc8b8398d82b9fe466,True
+account access problem,68a8c9fc8b8398d82b9fe491,True
+account access problem,68a8c9fd8b8398d82b9fe4e3,True
+account access problem,68a8c9fd8b8398d82b9fe4fd,True
+account access problem,68a8c9fd8b8398d82b9fe51c,True
+account access problem,68a8c9fd8b8398d82b9fe571,True
+account access problem,68a8c9fd8b8398d82b9fe5ab,True
+account access problem,68a8c9fe8b8398d82b9fe5ea,True
+account access problem,68a8c9fe8b8398d82b9fe62b,True
+account access problem,68a8c9fe8b8398d82b9fe66a,True
+account access problem,68a8c9ff8b8398d82b9fe74f,True
+account access problem,68a8c9ff8b8398d82b9fe788,True
+account access problem,68a8c9ff8b8398d82b9fe7c8,True
+account access problem,68a8ca008b8398d82b9fe83a,True
+account access problem,68a8ca008b8398d82b9fe867,True
+account access problem,68a8ca008b8398d82b9fe88f,True
+account access problem,68a8ca008b8398d82b9fe8e0,True
+account access problem,68a8ca008b8398d82b9fe8ef,True
+account access problem,68a8ca028b8398d82b9fe9fb,True
+account configuration assistance,68a8c9fb8b8398d82b9fe333,True
+account configuration assistance,68a8c9fb8b8398d82b9fe361,True
+account configuration assistance,68a8c9fb8b8398d82b9fe3d6,True
+account configuration assistance,68a8c9fc8b8398d82b9fe41c,True
+account configuration assistance,68a8c9fc8b8398d82b9fe422,True
+account configuration assistance,68a8c9fc8b8398d82b9fe423,True
+account configuration assistance,68a8c9fc8b8398d82b9fe428,True
+account configuration assistance,68a8c9fd8b8398d82b9fe582,True
+account configuration assistance,68a8c9fe8b8398d82b9fe66f,True
+account configuration assistance,68a8ca008b8398d82b9fe7fd,True
+account configuration assistance,68a8ca008b8398d82b9fe833,True
+account configuration assistance,68a8ca018b8398d82b9fe914,True
+account configuration assistance,68a8ca028b8398d82b9fea98,True
+account management satisfactory,68a8c9fb8b8398d82b9fe385,True
+account management satisfactory,68a8c9fb8b8398d82b9fe3bb,True
+account management satisfactory,68a8c9fc8b8398d82b9fe44b,True
+account management satisfactory,68a8c9fd8b8398d82b9fe530,True
+account management satisfactory,68a8ca008b8398d82b9fe81b,True
+account management satisfactory,68a8ca008b8398d82b9fe841,True
+account management satisfactory,68a8ca008b8398d82b9fe8f1,True
+account management satisfactory,68a8ca028b8398d82b9fea4c,True
+account management satisfactory,68a8ca028b8398d82b9fea5b,True
+account manager responsive,68a8c9fb8b8398d82b9fe382,True
+account manager responsive,68a8c9fc8b8398d82b9fe4a6,True
+account manager responsive,68a8c9fd8b8398d82b9fe5a2,True
+account manager responsive,68a8c9fe8b8398d82b9fe5f1,True
+account manager responsive,68a8c9fe8b8398d82b9fe621,True
+account manager responsive,68a8c9fe8b8398d82b9fe691,True
+account manager responsive,68a8c9fe8b8398d82b9fe702,True
+account manager responsive,68a8ca008b8398d82b9fe8f3,True
+account manager responsive,68a8ca028b8398d82b9fea0b,True
+account manager responsive,68a8ca028b8398d82b9fea18,True
+account manager responsive,68a8ca028b8398d82b9fea85,True
+app login problem,68a8c9fb8b8398d82b9fe350,True
+app login problem,68a8c9fd8b8398d82b9fe508,True
+app login problem,68a8c9fe8b8398d82b9fe607,True
+app login problem,68a8c9fe8b8398d82b9fe624,True
+app login problem,68a8c9fe8b8398d82b9fe626,True
+app login problem,68a8c9ff8b8398d82b9fe78c,True
+app login problem,68a8ca008b8398d82b9fe897,True
+app login problem,68a8ca008b8398d82b9fe8ad,True
+app login problem,68a8ca018b8398d82b9fe951,True
+app login problem,68a8ca028b8398d82b9fe9cc,True
+app login problem,68a8ca028b8398d82b9feac3,True
+application launch fail,68a8c9fd8b8398d82b9fe58a,True
+application launch fail,68a8c9fe8b8398d82b9fe5f6,True
+application launch fail,68a8c9fe8b8398d82b9fe625,True
+application launch fail,68a8ca008b8398d82b9fe7fe,True
+application launch fail,68a8ca008b8398d82b9fe83c,True
+application launch fail,68a8ca008b8398d82b9fe89a,True
+application launch fail,68a8ca008b8398d82b9fe8dd,True
+application launch fail,68a8ca028b8398d82b9feae5,True
+authentication error report,68a8c9fb8b8398d82b9fe367,True
+authentication error report,68a8c9fb8b8398d82b9fe392,True
+authentication error report,68a8c9fb8b8398d82b9fe39e,True
+authentication error report,68a8c9fc8b8398d82b9fe476,True
+authentication error report,68a8c9fe8b8398d82b9fe64c,True
+authentication error report,68a8c9fe8b8398d82b9fe650,True
+authentication error report,68a8ca008b8398d82b9fe8f2,True
+authentication error report,68a8ca028b8398d82b9fea44,True
+authentication error report,68a8ca028b8398d82b9fea76,True
+authorization matrix update,68a8c9fb8b8398d82b9fe378,True
+authorization matrix update,68a8c9fc8b8398d82b9fe3fd,True
+authorization matrix update,68a8c9fc8b8398d82b9fe443,True
+authorization matrix update,68a8c9fe8b8398d82b9fe628,True
+authorization matrix update,68a8c9fe8b8398d82b9fe652,True
+authorization matrix update,68a8c9fe8b8398d82b9fe656,True
+authorization matrix update,68a8c9fe8b8398d82b9fe69f,True
+authorization matrix update,68a8c9fe8b8398d82b9fe709,True
+authorization matrix update,68a8c9ff8b8398d82b9fe790,True
+authorization matrix update,68a8c9ff8b8398d82b9fe7c6,True
+authorization matrix update,68a8ca008b8398d82b9fe821,True
+authorization matrix update,68a8ca028b8398d82b9fe9da,True
+authorization matrix update,68a8ca028b8398d82b9fea01,True
+balance update delay,68a8c9fb8b8398d82b9fe334,True
+balance update delay,68a8c9fc8b8398d82b9fe433,True
+balance update delay,68a8c9fd8b8398d82b9fe50f,True
+balance update delay,68a8c9fe8b8398d82b9fe605,True
+balance update delay,68a8c9fe8b8398d82b9fe64e,True
+balance update delay,68a8c9ff8b8398d82b9fe7a8,True
+balance update delay,68a8ca008b8398d82b9fe8e2,True
+balance update delay,68a8ca028b8398d82b9fea12,True
+balance update delay,68a8ca028b8398d82b9feab4,True
+balance update delay,68a8ca028b8398d82b9feacc,True
+balance update delay,68a8ca028b8398d82b9feae8,True
+bank guarantee issue,68a8c9fc8b8398d82b9fe46d,True
+bank guarantee issue,68a8c9fc8b8398d82b9fe499,True
+bank guarantee issue,68a8c9fd8b8398d82b9fe506,True
+bank guarantee issue,68a8c9fd8b8398d82b9fe58b,True
+bank guarantee issue,68a8c9fe8b8398d82b9fe62f,True
+bank guarantee issue,68a8c9ff8b8398d82b9fe7ae,True
+bank guarantee issue,68a8c9ff8b8398d82b9fe7b8,True
+bank guarantee issue,68a8ca008b8398d82b9fe8bd,True
+bank guarantee issue,68a8ca018b8398d82b9fe933,True
+bank guarantee issue,68a8ca028b8398d82b9fea62,True
+well competitor,68a8c9fc8b8398d82b9fe49b,True
+well competitor,68a8c9fe8b8398d82b9fe631,True
+well competitor,68a8c9fe8b8398d82b9fe6ee,True
+well competitor,68a8c9ff8b8398d82b9fe715,True
+well competitor,68a8ca008b8398d82b9fe813,True
+well competitor,68a8ca008b8398d82b9fe864,True
+well competitor,68a8ca008b8398d82b9fe872,True
+well competitor,68a8ca008b8398d82b9fe8a8,True
+well competitor,68a8ca018b8398d82b9fe958,True
+well competitor,68a8ca018b8398d82b9fe969,True
+well competitor,68a8ca028b8398d82b9fea05,True
+billing error report,68a8c9fd8b8398d82b9fe4c8,True
+billing error report,68a8c9fe8b8398d82b9fe61e,True
+billing error report,68a8c9ff8b8398d82b9fe72f,True
+billing error report,68a8ca008b8398d82b9fe7ff,True
+billing error report,68a8ca008b8398d82b9fe8a6,True
+billing error report,68a8ca018b8398d82b9fe9a4,True
+billing error report,68a8ca028b8398d82b9fea77,True
+billing error report,68a8ca028b8398d82b9feaab,True
+billing error report,68a8ca028b8398d82b9feae7,True
+brand reputation restore,68a8c9fd8b8398d82b9fe4ee,True
+brand reputation restore,68a8c9fd8b8398d82b9fe504,True
+brand reputation restore,68a8c9fd8b8398d82b9fe509,True
+brand reputation restore,68a8c9fd8b8398d82b9fe59c,True
+brand reputation restore,68a8c9fd8b8398d82b9fe59e,True
+brand reputation restore,68a8c9ff8b8398d82b9fe725,True
+brand reputation restore,68a8c9ff8b8398d82b9fe75d,True
+brand reputation restore,68a8ca008b8398d82b9fe87b,True
+brand reputation restore,68a8ca008b8398d82b9fe882,True
+brand reputation restore,68a8ca018b8398d82b9fe95c,True
+brand reputation restore,68a8ca018b8398d82b9fe9c1,True
+brand reputation restore,68a8ca028b8398d82b9feaf4,True
+bulk payment efficiency,68a8c9fb8b8398d82b9fe345,True
+bulk payment efficiency,68a8c9fc8b8398d82b9fe484,True
+bulk payment efficiency,68a8c9fe8b8398d82b9fe6fd,True
+bulk payment efficiency,68a8c9ff8b8398d82b9fe720,True
+bulk payment efficiency,68a8ca008b8398d82b9fe80f,True
+bulk payment efficiency,68a8ca008b8398d82b9fe83f,True
+bulk payment efficiency,68a8ca018b8398d82b9fe903,True
+bulk payment efficiency,68a8ca028b8398d82b9fea17,True
+bulk payment efficiency,68a8ca028b8398d82b9fea32,True
+center complaint,68a8c9fb8b8398d82b9fe383,True
+center complaint,68a8c9fb8b8398d82b9fe3c1,True
+center complaint,68a8c9fc8b8398d82b9fe47c,True
+center complaint,68a8c9fc8b8398d82b9fe486,True
+center complaint,68a8c9fc8b8398d82b9fe4a8,True
+center complaint,68a8c9fd8b8398d82b9fe4cd,True
+center complaint,68a8c9fd8b8398d82b9fe52a,True
+center complaint,68a8c9fd8b8398d82b9fe548,True
+center complaint,68a8c9fd8b8398d82b9fe558,True
+center complaint,68a8c9fe8b8398d82b9fe5e3,True
+center complaint,68a8c9fe8b8398d82b9fe64d,True
+center complaint,68a8c9ff8b8398d82b9fe722,True
+center complaint,68a8c9ff8b8398d82b9fe73f,True
+center complaint,68a8c9ff8b8398d82b9fe750,True
+center complaint,68a8c9ff8b8398d82b9fe76a,True
+center complaint,68a8c9ff8b8398d82b9fe76d,True
+center complaint,68a8c9ff8b8398d82b9fe793,True
+center complaint,68a8ca008b8398d82b9fe817,True
+center complaint,68a8ca008b8398d82b9fe878,True
+center complaint,68a8ca018b8398d82b9fe90a,True
+center complaint,68a8ca018b8398d82b9fe952,True
+center complaint,68a8ca018b8398d82b9fe97a,True
+center complaint,68a8ca028b8398d82b9fea15,True
+center complaint,68a8ca028b8398d82b9fea80,True
+center overwhelmed,68a8c9fb8b8398d82b9fe330,True
+center overwhelmed,68a8c9fc8b8398d82b9fe458,True
+center overwhelmed,68a8c9fc8b8398d82b9fe49c,True
+center overwhelmed,68a8c9fd8b8398d82b9fe56f,True
+center overwhelmed,68a8c9fd8b8398d82b9fe59d,True
+center overwhelmed,68a8c9ff8b8398d82b9fe797,True
+center overwhelmed,68a8ca008b8398d82b9fe8b3,True
+center overwhelmed,68a8ca018b8398d82b9fe9b7,True
+disconnection issue,68a8c9fb8b8398d82b9fe354,True
+disconnection issue,68a8c9fb8b8398d82b9fe374,True
+disconnection issue,68a8c9fb8b8398d82b9fe38d,True
+disconnection issue,68a8c9fc8b8398d82b9fe4ac,True
+disconnection issue,68a8c9fd8b8398d82b9fe4f9,True
+disconnection issue,68a8c9fe8b8398d82b9fe615,True
+disconnection issue,68a8c9ff8b8398d82b9fe7c0,True
+disconnection issue,68a8ca008b8398d82b9fe7fb,True
+disconnection issue,68a8ca008b8398d82b9fe85a,True
+disconnection issue,68a8ca018b8398d82b9fe97f,True
+support adequate,68a8c9fb8b8398d82b9fe398,True
+support adequate,68a8c9fc8b8398d82b9fe48b,True
+support adequate,68a8c9fd8b8398d82b9fe4ea,True
+support adequate,68a8c9fd8b8398d82b9fe550,True
+support adequate,68a8c9fe8b8398d82b9fe6b8,True
+support adequate,68a8c9fe8b8398d82b9fe6e9,True
+support adequate,68a8c9ff8b8398d82b9fe7a6,True
+support adequate,68a8ca008b8398d82b9fe843,True
+support adequate,68a8ca008b8398d82b9fe873,True
+support adequate,68a8ca008b8398d82b9fe8ca,True
+support adequate,68a8ca018b8398d82b9fe91d,True
+support adequate,68a8ca018b8398d82b9fe9c8,True
+support adequate,68a8ca028b8398d82b9fea8f,True
+support adequate,68a8ca028b8398d82b9feaaf,True
+card service excellent,68a8c9fc8b8398d82b9fe410,True
+card service excellent,68a8c9fc8b8398d82b9fe450,True
+card service excellent,68a8c9fe8b8398d82b9fe6f1,True
+card service excellent,68a8ca008b8398d82b9fe888,True
+card service excellent,68a8ca018b8398d82b9fe9bb,True
+card service excellent,68a8ca028b8398d82b9fe9d0,True
+card service excellent,68a8ca028b8398d82b9fea3a,True
+card service excellent,68a8ca028b8398d82b9fea6b,True
+cash management superior,68a8c9fd8b8398d82b9fe4f4,True
+cash management superior,68a8c9fe8b8398d82b9fe60d,True
+cash management superior,68a8c9fe8b8398d82b9fe611,True
+cash management superior,68a8c9fe8b8398d82b9fe616,True
+cash management superior,68a8c9fe8b8398d82b9fe69d,True
+cash management superior,68a8c9ff8b8398d82b9fe7c5,True
+cash management superior,68a8c9ff8b8398d82b9fe7c9,True
+cash management superior,68a8ca008b8398d82b9fe870,True
+cash management superior,68a8ca008b8398d82b9fe8cb,True
+cash management superior,68a8ca018b8398d82b9fe9bc,True
+cash management superior,68a8ca028b8398d82b9fea61,True
+comparative banking feedback,68a8c9fc8b8398d82b9fe465,True
+comparative banking feedback,68a8c9fc8b8398d82b9fe492,True
+comparative banking feedback,68a8c9fd8b8398d82b9fe4dc,True
+comparative banking feedback,68a8c9fe8b8398d82b9fe61c,True
+comparative banking feedback,68a8c9fe8b8398d82b9fe680,True
+comparative banking feedback,68a8c9fe8b8398d82b9fe6a0,True
+comparative banking feedback,68a8c9ff8b8398d82b9fe745,True
+comparative banking feedback,68a8c9ff8b8398d82b9fe766,True
+comparative banking feedback,68a8c9ff8b8398d82b9fe773,True
+comparative banking feedback,68a8ca008b8398d82b9fe8a4,True
+comparative banking feedback,68a8ca008b8398d82b9fe8fa,True
+comparative banking feedback,68a8ca028b8398d82b9fea42,True
+compensation appreciate generally,68a8c9fd8b8398d82b9fe50e,True
+compensation appreciate generally,68a8c9fd8b8398d82b9fe562,True
+compensation appreciate generally,68a8c9fe8b8398d82b9fe5e5,True
+compensation appreciate generally,68a8ca008b8398d82b9fe7f6,True
+compensation appreciate generally,68a8ca008b8398d82b9fe8da,True
+compensation appreciate generally,68a8ca018b8398d82b9fe968,True
+compensation appreciate generally,68a8ca018b8398d82b9fe9a7,True
+compensation appreciate generally,68a8ca028b8398d82b9fe9e1,True
+compensation appreciate generally,68a8ca028b8398d82b9fe9f7,True
+compensation appreciate generally,68a8ca028b8398d82b9fea60,True
+compensation provide fairly,68a8c9fc8b8398d82b9fe40a,True
+compensation provide fairly,68a8c9fc8b8398d82b9fe40f,True
+compensation provide fairly,68a8c9fc8b8398d82b9fe494,True
+compensation provide fairly,68a8c9fc8b8398d82b9fe4b3,True
+compensation provide fairly,68a8c9fd8b8398d82b9fe553,True
+compensation provide fairly,68a8c9fe8b8398d82b9fe68c,True
+compensation provide fairly,68a8c9ff8b8398d82b9fe73a,True
+compensation provide fairly,68a8ca008b8398d82b9fe807,True
+compensation provide fairly,68a8ca018b8398d82b9fe959,True
+compensation provide fairly,68a8ca018b8398d82b9fe9a2,True
+compliance check intrusive,68a8c9fb8b8398d82b9fe337,True
+compliance check intrusive,68a8c9fb8b8398d82b9fe384,True
+compliance check intrusive,68a8c9fc8b8398d82b9fe3f3,True
+compliance check intrusive,68a8c9fc8b8398d82b9fe425,True
+compliance check intrusive,68a8c9fe8b8398d82b9fe658,True
+compliance check intrusive,68a8c9fe8b8398d82b9fe6ec,True
+compliance check intrusive,68a8ca008b8398d82b9fe80e,True
+compliance check intrusive,68a8ca008b8398d82b9fe889,True
+compliance check intrusive,68a8ca018b8398d82b9fe901,True
+compliance check intrusive,68a8ca018b8398d82b9fe91b,True
+compliance check intrusive,68a8ca018b8398d82b9fe921,True
+compliance check intrusive,68a8ca028b8398d82b9fea92,True
+core banking,68a8c9fc8b8398d82b9fe46a,True
+core banking,68a8c9fd8b8398d82b9fe4d1,True
+core banking,68a8c9fd8b8398d82b9fe4d9,True
+core banking,68a8c9fe8b8398d82b9fe6d5,True
+core banking,68a8c9ff8b8398d82b9fe77f,True
+core banking,68a8c9ff8b8398d82b9fe7b3,True
+core banking,68a8c9ff8b8398d82b9fe7d0,True
+core banking,68a8ca008b8398d82b9fe8d3,True
+core banking,68a8ca018b8398d82b9fe915,True
+core banking,68a8ca018b8398d82b9fe9c4,True
+core banking,68a8ca028b8398d82b9feab0,True
+corporate service exceptional,68a8c9fb8b8398d82b9fe3ac,True
+corporate service exceptional,68a8c9fc8b8398d82b9fe444,True
+corporate service exceptional,68a8c9fc8b8398d82b9fe461,True
+corporate service exceptional,68a8c9fd8b8398d82b9fe53e,True
+corporate service exceptional,68a8c9fd8b8398d82b9fe58c,True
+corporate service exceptional,68a8ca008b8398d82b9fe7f7,True
+corporate service exceptional,68a8ca008b8398d82b9fe8d9,True
+corporate service exceptional,68a8ca028b8398d82b9fea63,True
+corporate setup question,68a8c9fc8b8398d82b9fe41a,True
+corporate setup question,68a8c9ff8b8398d82b9fe77e,True
+corporate setup question,68a8c9ff8b8398d82b9fe79f,True
+corporate setup question,68a8c9ff8b8398d82b9fe7bb,True
+corporate setup question,68a8c9ff8b8398d82b9fe7c3,True
+corporate setup question,68a8ca018b8398d82b9fe92e,True
+corporate setup question,68a8ca028b8398d82b9feab9,True
+correspondent bank delay,68a8c9fb8b8398d82b9fe371,True
+correspondent bank delay,68a8c9fb8b8398d82b9fe3c6,True
+correspondent bank delay,68a8c9fc8b8398d82b9fe478,True
+correspondent bank delay,68a8c9fc8b8398d82b9fe483,True
+correspondent bank delay,68a8c9fd8b8398d82b9fe4fb,True
+correspondent bank delay,68a8c9fd8b8398d82b9fe58f,True
+correspondent bank delay,68a8c9fe8b8398d82b9fe6c4,True
+correspondent bank delay,68a8c9fe8b8398d82b9fe6d1,True
+correspondent bank delay,68a8ca008b8398d82b9fe7f3,True
+correspondent bank delay,68a8ca008b8398d82b9fe852,True
+correspondent bank delay,68a8ca008b8398d82b9fe8a1,True
+correspondent bank delay,68a8ca028b8398d82b9fea8c,True
+correspondent bank delay,68a8ca028b8398d82b9fead4,True
+cost structure criticism,68a8c9fd8b8398d82b9fe516,True
+cost structure criticism,68a8c9fd8b8398d82b9fe5b0,True
+cost structure criticism,68a8c9fe8b8398d82b9fe676,True
+cost structure criticism,68a8c9ff8b8398d82b9fe779,True
+cost structure criticism,68a8ca018b8398d82b9fe939,True
+cost structure criticism,68a8ca018b8398d82b9fe94a,True
+cost structure criticism,68a8ca028b8398d82b9fe9d5,True
+cost structure criticism,68a8ca028b8398d82b9fea4b,True
+cross border complication,68a8c9fc8b8398d82b9fe459,True
+cross border complication,68a8c9fc8b8398d82b9fe4b0,True
+cross border complication,68a8c9fd8b8398d82b9fe4f1,True
+cross border complication,68a8c9fd8b8398d82b9fe5b4,True
+cross border complication,68a8c9fe8b8398d82b9fe5e9,True
+cross border complication,68a8c9fe8b8398d82b9fe6c7,True
+cross border complication,68a8c9ff8b8398d82b9fe782,True
+cross border complication,68a8ca008b8398d82b9fe7fc,True
+cross border complication,68a8ca018b8398d82b9fe98c,True
+cross border complication,68a8ca028b8398d82b9fea5c,True
+cross border inconsistency,68a8c9fe8b8398d82b9fe636,True
+cross border inconsistency,68a8c9fe8b8398d82b9fe63b,True
+cross border inconsistency,68a8c9fe8b8398d82b9fe65c,True
+cross border inconsistency,68a8c9fe8b8398d82b9fe6b5,True
+cross border inconsistency,68a8c9ff8b8398d82b9fe7cb,True
+cross border inconsistency,68a8ca008b8398d82b9fe7d6,True
+cross border inconsistency,68a8ca008b8398d82b9fe824,True
+cross border inconsistency,68a8ca008b8398d82b9fe893,True
+cross border inconsistency,68a8ca018b8398d82b9fe970,True
+cross border inconsistency,68a8ca028b8398d82b9fe9cd,True
+cross border issue,68a8c9fb8b8398d82b9fe32a,True
+cross border issue,68a8c9fb8b8398d82b9fe35b,True
+cross border issue,68a8c9fb8b8398d82b9fe35f,True
+cross border issue,68a8c9fc8b8398d82b9fe498,True
+cross border issue,68a8c9fd8b8398d82b9fe520,True
+cross border issue,68a8c9fe8b8398d82b9fe5e1,True
+cross border issue,68a8c9fe8b8398d82b9fe5fb,True
+cross border issue,68a8c9fe8b8398d82b9fe610,True
+cross border issue,68a8c9fe8b8398d82b9fe637,True
+cross border issue,68a8c9fe8b8398d82b9fe6d8,True
+cross border issue,68a8c9fe8b8398d82b9fe6e7,True
+cross border issue,68a8c9fe8b8398d82b9fe6f5,True
+cross border issue,68a8c9ff8b8398d82b9fe7b7,True
+cross border issue,68a8c9ff8b8398d82b9fe7d1,True
+cross border issue,68a8ca008b8398d82b9fe896,True
+cross border issue,68a8ca008b8398d82b9fe8f6,True
+cross border issue,68a8ca018b8398d82b9fe96a,True
+cross border issue,68a8ca018b8398d82b9fe9b3,True
+cross border issue,68a8ca028b8398d82b9fea19,True
+cross border issue,68a8ca028b8398d82b9fea3c,True
+cross border issue,68a8ca028b8398d82b9fea64,True
+cross border issue,68a8ca028b8398d82b9fea71,True
+cross border issue,68a8ca028b8398d82b9feada,True
+customer service disappointment,68a8c9fb8b8398d82b9fe33d,True
+customer service disappointment,68a8c9fb8b8398d82b9fe36d,True
+customer service disappointment,68a8c9fb8b8398d82b9fe39b,True
+customer service disappointment,68a8c9fc8b8398d82b9fe426,True
+customer service disappointment,68a8c9fd8b8398d82b9fe4f5,True
+customer service disappointment,68a8c9fd8b8398d82b9fe544,True
+customer service disappointment,68a8c9fd8b8398d82b9fe56a,True
+customer service disappointment,68a8c9fd8b8398d82b9fe58e,True
+customer service disappointment,68a8c9fd8b8398d82b9fe5d8,True
+customer service disappointment,68a8c9fe8b8398d82b9fe6cd,True
+customer service disappointment,68a8c9ff8b8398d82b9fe795,True
+customer service disappointment,68a8ca008b8398d82b9fe7d8,True
+customer service disappointment,68a8ca008b8398d82b9fe82b,True
+customer service disappointment,68a8ca008b8398d82b9fe83d,True
+customer service disappointment,68a8ca008b8398d82b9fe880,True
+customer service disappointment,68a8ca008b8398d82b9fe898,True
+customer service disappointment,68a8ca008b8398d82b9fe8a9,True
+customer service disappointment,68a8ca008b8398d82b9fe8bc,True
+customer service disappointment,68a8ca008b8398d82b9fe8e5,True
+customer service disappointment,68a8ca018b8398d82b9fe944,True
+customer service disappointment,68a8ca018b8398d82b9fe96f,True
+customer service disappointment,68a8ca018b8398d82b9fe97d,True
+customer service disappointment,68a8ca018b8398d82b9fe981,True
+customer service disappointment,68a8ca028b8398d82b9fe9e5,True
+customer service disappointment,68a8ca028b8398d82b9fea7b,True
+cybersecurity worry express,68a8c9fc8b8398d82b9fe446,True
+cybersecurity worry express,68a8c9fc8b8398d82b9fe46f,True
+cybersecurity worry express,68a8c9fe8b8398d82b9fe6ca,True
+cybersecurity worry express,68a8c9fe8b8398d82b9fe6cb,True
+cybersecurity worry express,68a8c9fe8b8398d82b9fe6d2,True
+cybersecurity worry express,68a8c9ff8b8398d82b9fe764,True
+cybersecurity worry express,68a8ca008b8398d82b9fe838,True
+cybersecurity worry express,68a8ca008b8398d82b9fe8e1,True
+cybersecurity worry express,68a8ca018b8398d82b9fe989,True
+cybersecurity worry express,68a8ca028b8398d82b9fe9e4,True
+data breach concern,68a8c9fb8b8398d82b9fe38b,True
+data breach concern,68a8c9fb8b8398d82b9fe3e8,True
+data breach concern,68a8c9fb8b8398d82b9fe3e9,True
+data breach concern,68a8c9fc8b8398d82b9fe3f9,True
+data breach concern,68a8c9fc8b8398d82b9fe43c,True
+data breach concern,68a8c9fc8b8398d82b9fe4ae,True
+data breach concern,68a8c9fe8b8398d82b9fe6a3,True
+data breach concern,68a8c9fe8b8398d82b9fe704,True
+data breach concern,68a8ca008b8398d82b9fe7e8,True
+data breach concern,68a8ca008b8398d82b9fe81a,True
+data breach concern,68a8ca008b8398d82b9fe8b8,True
+data breach concern,68a8ca028b8398d82b9fea39,True
+data breach concern,68a8ca028b8398d82b9feaa9,True
+data breach concern,68a8ca028b8398d82b9feaf1,True
+dedicated support appreciate,68a8c9fb8b8398d82b9fe336,True
+dedicated support appreciate,68a8c9fb8b8398d82b9fe3c3,True
+dedicated support appreciate,68a8c9fd8b8398d82b9fe4de,True
+dedicated support appreciate,68a8c9fd8b8398d82b9fe51f,True
+dedicated support appreciate,68a8c9fd8b8398d82b9fe527,True
+dedicated support appreciate,68a8c9fd8b8398d82b9fe53a,True
+dedicated support appreciate,68a8c9fe8b8398d82b9fe659,True
+dedicated support appreciate,68a8c9ff8b8398d82b9fe72a,True
+dedicated support appreciate,68a8ca018b8398d82b9fe977,True
+dedicated support appreciate,68a8ca028b8398d82b9fe9f3,True
+dedicated support appreciate,68a8ca028b8398d82b9fea2e,True
+dedicated support appreciate,68a8ca028b8398d82b9fea81,True
+development suggestion,68a8c9fb8b8398d82b9fe3ab,True
+development suggestion,68a8c9fd8b8398d82b9fe4c3,True
+development suggestion,68a8c9fd8b8398d82b9fe541,True
+development suggestion,68a8c9fe8b8398d82b9fe688,True
+development suggestion,68a8c9ff8b8398d82b9fe75a,True
+development suggestion,68a8ca008b8398d82b9fe871,True
+development suggestion,68a8ca018b8398d82b9fe945,True
+development suggestion,68a8ca018b8398d82b9fe980,True
+development suggestion,68a8ca018b8398d82b9fe9c2,True
+development suggestion,68a8ca028b8398d82b9fe9e3,True
+development suggestion,68a8ca028b8398d82b9feaa2,True
+digital innovation appreciation,68a8c9fb8b8398d82b9fe36c,True
+digital innovation appreciation,68a8c9fc8b8398d82b9fe3ff,True
+digital innovation appreciation,68a8c9fc8b8398d82b9fe49f,True
+digital innovation appreciation,68a8c9fd8b8398d82b9fe4d0,True
+digital innovation appreciation,68a8c9fd8b8398d82b9fe54e,True
+digital innovation appreciation,68a8c9fd8b8398d82b9fe575,True
+digital innovation appreciation,68a8c9fd8b8398d82b9fe57b,True
+digital innovation appreciation,68a8c9fd8b8398d82b9fe5a6,True
+digital innovation appreciation,68a8c9fe8b8398d82b9fe5ec,True
+digital innovation appreciation,68a8c9fe8b8398d82b9fe5fc,True
+digital innovation appreciation,68a8c9fe8b8398d82b9fe66d,True
+digital innovation appreciation,68a8c9fe8b8398d82b9fe670,True
+digital innovation appreciation,68a8c9fe8b8398d82b9fe693,True
+digital innovation appreciation,68a8c9ff8b8398d82b9fe7b6,True
+digital innovation appreciation,68a8ca008b8398d82b9fe7ec,True
+digital innovation appreciation,68a8ca008b8398d82b9fe877,True
+digital innovation appreciation,68a8ca008b8398d82b9fe879,True
+digital innovation appreciation,68a8ca008b8398d82b9fe8cc,True
+digital innovation appreciation,68a8ca028b8398d82b9fea56,True
+digital innovation appreciation,68a8ca028b8398d82b9fea5a,True
+digital innovation appreciation,68a8ca028b8398d82b9fea83,True
+digital platform glitch,68a8c9fb8b8398d82b9fe3cb,True
+digital platform glitch,68a8c9fc8b8398d82b9fe47a,True
+digital platform glitch,68a8c9fd8b8398d82b9fe57d,True
+digital platform glitch,68a8c9fd8b8398d82b9fe5cc,True
+digital platform glitch,68a8c9fe8b8398d82b9fe638,True
+digital platform glitch,68a8c9fe8b8398d82b9fe6f7,True
+digital platform glitch,68a8ca008b8398d82b9fe859,True
+digital platform glitch,68a8ca008b8398d82b9fe8a3,True
+digital platform glitch,68a8ca018b8398d82b9fe90b,True
+digital platform glitch,68a8ca018b8398d82b9fe9b8,True
+digital platform glitch,68a8ca028b8398d82b9feac5,True
+documentary collection efficient,68a8c9fb8b8398d82b9fe327,True
+documentary collection efficient,68a8c9fc8b8398d82b9fe487,True
+documentary collection efficient,68a8c9fd8b8398d82b9fe525,True
+documentary collection efficient,68a8c9fd8b8398d82b9fe52d,True
+documentary collection efficient,68a8c9fe8b8398d82b9fe6d3,True
+documentary collection efficient,68a8c9ff8b8398d82b9fe70f,True
+documentary collection efficient,68a8c9ff8b8398d82b9fe79e,True
+documentary collection efficient,68a8ca018b8398d82b9fe90e,True
+documentary collection efficient,68a8ca018b8398d82b9fe92c,True
+documentary collection efficient,68a8ca028b8398d82b9fea0c,True
+documentary collection efficient,68a8ca028b8398d82b9fea9c,True
+documentary collection efficient,68a8ca028b8398d82b9feac0,True
+documentation excessive requirement,68a8c9fd8b8398d82b9fe4d7,True
+documentation excessive requirement,68a8c9fd8b8398d82b9fe4f0,True
+documentation excessive requirement,68a8c9fd8b8398d82b9fe570,True
+documentation excessive requirement,68a8c9fd8b8398d82b9fe592,True
+documentation excessive requirement,68a8c9fe8b8398d82b9fe65a,True
+documentation excessive requirement,68a8c9fe8b8398d82b9fe6b0,True
+documentation excessive requirement,68a8c9fe8b8398d82b9fe6e0,True
+documentation excessive requirement,68a8c9ff8b8398d82b9fe780,True
+documentation excessive requirement,68a8ca008b8398d82b9fe895,True
+documentation excessive requirement,68a8ca018b8398d82b9fe907,True
+documentation requirement ask,68a8c9fb8b8398d82b9fe375,True
+documentation requirement ask,68a8c9fd8b8398d82b9fe50c,True
+documentation requirement ask,68a8c9fd8b8398d82b9fe540,True
+documentation requirement ask,68a8c9fe8b8398d82b9fe67e,True
+documentation requirement ask,68a8c9ff8b8398d82b9fe770,True
+documentation requirement ask,68a8c9ff8b8398d82b9fe7ab,True
+documentation requirement ask,68a8c9ff8b8398d82b9fe7be,True
+documentation requirement ask,68a8ca008b8398d82b9fe7f1,True
+documentation requirement ask,68a8ca008b8398d82b9fe808,True
+documentation requirement ask,68a8ca008b8398d82b9fe846,True
+documentation requirement ask,68a8ca008b8398d82b9fe87f,True
+escalation process unclear,68a8c9fb8b8398d82b9fe357,True
+escalation process unclear,68a8c9fb8b8398d82b9fe396,True
+escalation process unclear,68a8c9fd8b8398d82b9fe4d4,True
+escalation process unclear,68a8c9fd8b8398d82b9fe5b3,True
+escalation process unclear,68a8c9fe8b8398d82b9fe66b,True
+escalation process unclear,68a8c9ff8b8398d82b9fe759,True
+escalation process unclear,68a8c9ff8b8398d82b9fe7d3,True
+escalation process unclear,68a8ca008b8398d82b9fe8e3,True
+escalation process unclear,68a8ca018b8398d82b9fe916,True
+escalation process unclear,68a8ca028b8398d82b9fea02,True
+excellent support,68a8c9fb8b8398d82b9fe325,True
+excellent support,68a8c9fb8b8398d82b9fe34b,True
+excellent support,68a8c9fb8b8398d82b9fe3a8,True
+excellent support,68a8c9fb8b8398d82b9fe3b7,True
+excellent support,68a8c9fb8b8398d82b9fe3c7,True
+excellent support,68a8c9fc8b8398d82b9fe421,True
+excellent support,68a8c9fc8b8398d82b9fe479,True
+excellent support,68a8c9fd8b8398d82b9fe4c5,True
+excellent support,68a8c9fd8b8398d82b9fe543,True
+excellent support,68a8c9fd8b8398d82b9fe57f,True
+excellent support,68a8c9fe8b8398d82b9fe60e,True
+excellent support,68a8c9fe8b8398d82b9fe666,True
+excellent support,68a8c9fe8b8398d82b9fe6d6,True
+excellent support,68a8c9fe8b8398d82b9fe700,True
+excellent support,68a8c9ff8b8398d82b9fe71a,True
+excellent support,68a8c9ff8b8398d82b9fe71e,True
+excellent support,68a8ca008b8398d82b9fe803,True
+excellent support,68a8ca008b8398d82b9fe8c6,True
+excellent support,68a8ca008b8398d82b9fe8d6,True
+excellent support,68a8ca018b8398d82b9fe905,True
+excellent support,68a8ca028b8398d82b9fea22,True
+excellent support,68a8ca028b8398d82b9fea35,True
+excellent support,68a8ca028b8398d82b9fea3d,True
+excellent support,68a8ca028b8398d82b9fea48,True
+excellent support,68a8ca028b8398d82b9feab3,True
+excellent support,68a8ca028b8398d82b9feaec,True
+exchange rate dispute,68a8c9fb8b8398d82b9fe32d,True
+exchange rate dispute,68a8c9fc8b8398d82b9fe407,True
+exchange rate dispute,68a8c9fc8b8398d82b9fe43d,True
+exchange rate dispute,68a8c9fd8b8398d82b9fe53f,True
+exchange rate dispute,68a8c9fe8b8398d82b9fe64b,True
+exchange rate dispute,68a8c9ff8b8398d82b9fe73b,True
+exchange rate dispute,68a8ca008b8398d82b9fe8ba,True
+exchange rate dispute,68a8ca028b8398d82b9fea55,True
+exchange rate dispute,68a8ca028b8398d82b9feabe,True
+export finance approve,68a8c9fb8b8398d82b9fe3bc,True
+export finance approve,68a8c9fd8b8398d82b9fe4c9,True
+export finance approve,68a8c9fd8b8398d82b9fe545,True
+export finance approve,68a8c9fe8b8398d82b9fe660,True
+export finance approve,68a8c9fe8b8398d82b9fe685,True
+export finance approve,68a8c9ff8b8398d82b9fe74d,True
+export finance approve,68a8c9ff8b8398d82b9fe7a0,True
+export finance approve,68a8ca008b8398d82b9fe836,True
+export finance approve,68a8ca018b8398d82b9fe961,True
+export finance approve,68a8ca018b8398d82b9fe96d,True
+export finance approve,68a8ca028b8398d82b9fea41,True
+fx trading smooth,68a8c9fb8b8398d82b9fe3e5,True
+fx trading smooth,68a8c9fe8b8398d82b9fe5eb,True
+fx trading smooth,68a8c9fe8b8398d82b9fe705,True
+fx trading smooth,68a8c9ff8b8398d82b9fe747,True
+fx trading smooth,68a8ca008b8398d82b9fe842,True
+fx trading smooth,68a8ca008b8398d82b9fe84c,True
+fx trading smooth,68a8ca008b8398d82b9fe8c2,True
+fx trading smooth,68a8ca008b8398d82b9fe8e9,True
+fx trading smooth,68a8ca018b8398d82b9fe946,True
+fx trading smooth,68a8ca028b8398d82b9fea1f,True
+fx trading smooth,68a8ca028b8398d82b9fea21,True
+feature enhancement need,68a8c9fb8b8398d82b9fe399,True
+feature enhancement need,68a8c9fb8b8398d82b9fe3a0,True
+feature enhancement need,68a8c9fc8b8398d82b9fe490,True
+feature enhancement need,68a8c9fd8b8398d82b9fe5c9,True
+feature enhancement need,68a8c9fd8b8398d82b9fe5d2,True
+feature enhancement need,68a8c9fd8b8398d82b9fe5d7,True
+feature enhancement need,68a8c9ff8b8398d82b9fe736,True
+feature enhancement need,68a8ca008b8398d82b9fe868,True
+feature enhancement need,68a8ca008b8398d82b9fe8b7,True
+feature enhancement need,68a8ca008b8398d82b9fe8f0,True
+feature enhancement need,68a8ca028b8398d82b9feab2,True
+feature enhancement need,68a8ca028b8398d82b9feaf0,True
+feature explanation request,68a8c9fb8b8398d82b9fe33f,True
+feature explanation request,68a8c9fb8b8398d82b9fe341,True
+feature explanation request,68a8c9fb8b8398d82b9fe3e0,True
+feature explanation request,68a8c9fc8b8398d82b9fe4a5,True
+feature explanation request,68a8c9fd8b8398d82b9fe549,True
+feature explanation request,68a8c9fd8b8398d82b9fe5de,True
+feature explanation request,68a8c9ff8b8398d82b9fe778,True
+feature explanation request,68a8c9ff8b8398d82b9fe7a3,True
+feature explanation request,68a8ca018b8398d82b9fe924,True
+feature explanation request,68a8ca028b8398d82b9fea49,True
+feature feedback mixed,68a8c9fb8b8398d82b9fe3a2,True
+feature feedback mixed,68a8c9fb8b8398d82b9fe3a5,True
+feature feedback mixed,68a8c9fd8b8398d82b9fe521,True
+feature feedback mixed,68a8c9fd8b8398d82b9fe589,True
+feature feedback mixed,68a8c9fe8b8398d82b9fe6ab,True
+feature feedback mixed,68a8c9ff8b8398d82b9fe711,True
+feature feedback mixed,68a8c9ff8b8398d82b9fe730,True
+feature feedback mixed,68a8c9ff8b8398d82b9fe75f,True
+feature feedback mixed,68a8c9ff8b8398d82b9fe794,True
+feature feedback mixed,68a8ca008b8398d82b9fe81e,True
+feature feedback mixed,68a8ca018b8398d82b9fe982,True
+feature feedback mixed,68a8ca018b8398d82b9fe990,True
+feature malfunction report,68a8c9fb8b8398d82b9fe388,True
+feature malfunction report,68a8c9fc8b8398d82b9fe41f,True
+feature malfunction report,68a8c9fd8b8398d82b9fe56e,True
+feature malfunction report,68a8c9fe8b8398d82b9fe63d,True
+feature malfunction report,68a8c9ff8b8398d82b9fe775,True
+feature malfunction report,68a8c9ff8b8398d82b9fe7aa,True
+feature malfunction report,68a8c9ff8b8398d82b9fe7b9,True
+feature malfunction report,68a8ca018b8398d82b9fe923,True
+fee increase complaint,68a8c9fb8b8398d82b9fe3b4,True
+fee increase complaint,68a8c9fb8b8398d82b9fe3ca,True
+fee increase complaint,68a8c9fd8b8398d82b9fe4c6,True
+fee increase complaint,68a8c9fd8b8398d82b9fe4e8,True
+fee increase complaint,68a8c9fd8b8398d82b9fe4ed,True
+fee increase complaint,68a8c9fd8b8398d82b9fe5b9,True
+fee increase complaint,68a8c9fe8b8398d82b9fe6ef,True
+fee increase complaint,68a8ca008b8398d82b9fe802,True
+fee increase complaint,68a8ca008b8398d82b9fe87e,True
+fee increase complaint,68a8ca018b8398d82b9fe984,True
+fee increase complaint,68a8ca018b8398d82b9fe987,True
+fee structure criticism,68a8c9fb8b8398d82b9fe3a9,True
+fee structure criticism,68a8c9fb8b8398d82b9fe3bd,True
+fee structure criticism,68a8c9fb8b8398d82b9fe3e7,True
+fee structure criticism,68a8c9fd8b8398d82b9fe4fa,True
+fee structure criticism,68a8c9fd8b8398d82b9fe586,True
+fee structure criticism,68a8c9fe8b8398d82b9fe653,True
+fee structure criticism,68a8c9fe8b8398d82b9fe671,True
+fee structure criticism,68a8c9fe8b8398d82b9fe68b,True
+fee structure criticism,68a8c9ff8b8398d82b9fe753,True
+fee structure criticism,68a8c9ff8b8398d82b9fe79c,True
+fee structure criticism,68a8c9ff8b8398d82b9fe7ca,True
+fee structure criticism,68a8ca008b8398d82b9fe7df,True
+fee structure criticism,68a8ca008b8398d82b9fe80c,True
+fee structure criticism,68a8ca008b8398d82b9fe89b,True
+fee structure criticism,68a8ca018b8398d82b9fe920,True
+fee structure criticism,68a8ca018b8398d82b9fe963,True
+fee structure criticism,68a8ca018b8398d82b9fe985,True
+fee structure criticism,68a8ca018b8398d82b9fe9a1,True
+fee structure criticism,68a8ca018b8398d82b9fe9aa,True
+fee structure criticism,68a8ca028b8398d82b9fea47,True
+fee structure criticism,68a8ca028b8398d82b9feab7,True
+fee structure criticism,68a8ca028b8398d82b9feabf,True
+fee structure criticism,68a8ca028b8398d82b9feac7,True
+follow satisfactory,68a8c9fb8b8398d82b9fe34d,True
+follow satisfactory,68a8c9fb8b8398d82b9fe386,True
+follow satisfactory,68a8c9fc8b8398d82b9fe45a,True
+follow satisfactory,68a8c9fc8b8398d82b9fe45d,True
+follow satisfactory,68a8c9fc8b8398d82b9fe4a0,True
+follow satisfactory,68a8ca008b8398d82b9fe809,True
+follow satisfactory,68a8ca008b8398d82b9fe828,True
+follow satisfactory,68a8ca008b8398d82b9fe8b4,True
+follow satisfactory,68a8ca028b8398d82b9fea4f,True
+follow satisfactory,68a8ca028b8398d82b9feae9,True
+fraud alert confusion,68a8c9fc8b8398d82b9fe3f2,True
+fraud alert confusion,68a8c9fc8b8398d82b9fe4b1,True
+fraud alert confusion,68a8c9fd8b8398d82b9fe54f,True
+fraud alert confusion,68a8c9fd8b8398d82b9fe5a3,True
+fraud alert confusion,68a8c9fe8b8398d82b9fe622,True
+fraud alert confusion,68a8c9ff8b8398d82b9fe755,True
+fraud alert confusion,68a8c9ff8b8398d82b9fe756,True
+fraud alert confusion,68a8ca008b8398d82b9fe8af,True
+fraud alert confusion,68a8ca018b8398d82b9fe913,True
+fraud alert confusion,68a8ca018b8398d82b9fe975,True
+fraud alert confusion,68a8ca018b8398d82b9fe995,True
+fraud alert confusion,68a8ca018b8398d82b9fe997,True
+gdpr compliance praise,68a8c9fb8b8398d82b9fe365,True
+gdpr compliance praise,68a8c9fb8b8398d82b9fe39d,True
+gdpr compliance praise,68a8c9fc8b8398d82b9fe43e,True
+gdpr compliance praise,68a8c9fd8b8398d82b9fe511,True
+gdpr compliance praise,68a8c9fd8b8398d82b9fe568,True
+gdpr compliance praise,68a8c9fd8b8398d82b9fe581,True
+gdpr compliance praise,68a8c9fd8b8398d82b9fe5ac,True
+gdpr compliance praise,68a8c9fe8b8398d82b9fe5fa,True
+gdpr compliance praise,68a8c9fe8b8398d82b9fe668,True
+gdpr compliance praise,68a8c9fe8b8398d82b9fe68e,True
+gdpr compliance praise,68a8c9fe8b8398d82b9fe6bc,True
+gdpr compliance praise,68a8c9ff8b8398d82b9fe712,True
+gdpr compliance praise,68a8c9ff8b8398d82b9fe732,True
+gdpr compliance praise,68a8c9ff8b8398d82b9fe77b,True
+gdpr compliance praise,68a8c9ff8b8398d82b9fe7a9,True
+gdpr compliance praise,68a8ca008b8398d82b9fe837,True
+gdpr compliance praise,68a8ca008b8398d82b9fe8a2,True
+gdpr compliance praise,68a8ca008b8398d82b9fe8d7,True
+gdpr compliance praise,68a8ca008b8398d82b9fe8e8,True
+gdpr compliance praise,68a8ca018b8398d82b9fe979,True
+gdpr compliance praise,68a8ca018b8398d82b9fe9b5,True
+gdpr compliance praise,68a8ca028b8398d82b9feac2,True
+gdpr compliance praise,68a8ca028b8398d82b9fead3,True
+general support need,68a8c9fc8b8398d82b9fe41b,True
+general support need,68a8c9fc8b8398d82b9fe442,True
+general support need,68a8c9fd8b8398d82b9fe578,True
+general support need,68a8c9fe8b8398d82b9fe65f,True
+general support need,68a8c9ff8b8398d82b9fe789,True
+general support need,68a8c9ff8b8398d82b9fe791,True
+general support need,68a8ca008b8398d82b9fe850,True
+general support need,68a8ca018b8398d82b9fe91c,True
+general support need,68a8ca018b8398d82b9fe9b4,True
+general support need,68a8ca028b8398d82b9fead6,True
+general support need,68a8ca028b8398d82b9feade,True
+high transaction fee,68a8c9fb8b8398d82b9fe340,True
+high transaction fee,68a8c9fd8b8398d82b9fe5a4,True
+high transaction fee,68a8c9fe8b8398d82b9fe6d9,True
+high transaction fee,68a8c9fe8b8398d82b9fe6da,True
+high transaction fee,68a8c9ff8b8398d82b9fe78a,True
+high transaction fee,68a8ca008b8398d82b9fe854,True
+high transaction fee,68a8ca028b8398d82b9fe9ec,True
+high transaction fee,68a8ca028b8398d82b9fea3e,True
+high transaction fee,68a8ca028b8398d82b9feae1,True
+holiday period issue,68a8c9fc8b8398d82b9fe493,True
+holiday period issue,68a8c9fe8b8398d82b9fe689,True
+holiday period issue,68a8c9fe8b8398d82b9fe6b4,True
+holiday period issue,68a8c9fe8b8398d82b9fe6c9,True
+holiday period issue,68a8c9ff8b8398d82b9fe729,True
+holiday period issue,68a8c9ff8b8398d82b9fe77d,True
+holiday period issue,68a8ca018b8398d82b9fe976,True
+holiday period issue,68a8ca018b8398d82b9fe9bf,True
+holiday period issue,68a8ca028b8398d82b9fe9e6,True
+holiday period issue,68a8ca028b8398d82b9fea7d,True
+holiday period issue,68a8ca028b8398d82b9feadb,True
+identity verification issue,68a8c9fc8b8398d82b9fe438,True
+identity verification issue,68a8c9fc8b8398d82b9fe475,True
+identity verification issue,68a8c9fd8b8398d82b9fe4c0,True
+identity verification issue,68a8c9fd8b8398d82b9fe4d3,True
+identity verification issue,68a8c9fe8b8398d82b9fe662,True
+identity verification issue,68a8ca018b8398d82b9fe91f,True
+identity verification issue,68a8ca018b8398d82b9fe93e,True
+identity verification issue,68a8ca028b8398d82b9fe9e8,True
+identity verification issue,68a8ca028b8398d82b9fea59,True
+import processing delay,68a8c9fb8b8398d82b9fe360,True
+import processing delay,68a8c9fd8b8398d82b9fe5ba,True
+import processing delay,68a8c9fd8b8398d82b9fe5da,True
+import processing delay,68a8c9fe8b8398d82b9fe62d,True
+import processing delay,68a8c9fe8b8398d82b9fe65d,True
+import processing delay,68a8c9fe8b8398d82b9fe6d7,True
+import processing delay,68a8c9ff8b8398d82b9fe792,True
+import processing delay,68a8ca018b8398d82b9fe973,True
+import processing delay,68a8ca028b8398d82b9fea34,True
+improve service acknowledge,68a8c9fb8b8398d82b9fe344,True
+improve service acknowledge,68a8c9fb8b8398d82b9fe347,True
+improve service acknowledge,68a8c9fb8b8398d82b9fe3c2,True
+improve service acknowledge,68a8c9fd8b8398d82b9fe528,True
+improve service acknowledge,68a8c9fe8b8398d82b9fe6cf,True
+improve service acknowledge,68a8c9ff8b8398d82b9fe761,True
+improve service acknowledge,68a8c9ff8b8398d82b9fe7ba,True
+improve service acknowledge,68a8c9ff8b8398d82b9fe7c4,True
+improve service acknowledge,68a8ca008b8398d82b9fe80d,True
+improve service acknowledge,68a8ca008b8398d82b9fe8c9,True
+improve service acknowledge,68a8ca018b8398d82b9fe957,True
+improve service acknowledge,68a8ca028b8398d82b9fea84,True
+improve service acknowledge,68a8ca028b8398d82b9fea94,True
+improvement previous,68a8c9fd8b8398d82b9fe4e2,True
+improvement previous,68a8c9fd8b8398d82b9fe5be,True
+improvement previous,68a8c9fe8b8398d82b9fe5e4,True
+improvement previous,68a8ca008b8398d82b9fe806,True
+improvement previous,68a8ca018b8398d82b9fe930,True
+improvement previous,68a8ca028b8398d82b9fe9d8,True
+improvement previous,68a8ca028b8398d82b9fe9fe,True
+improvement previous,68a8ca028b8398d82b9fea3f,True
+improvement previous,68a8ca028b8398d82b9fea40,True
+improvement previous,68a8ca028b8398d82b9feac4,True
+inconsistent experience report,68a8c9fc8b8398d82b9fe43a,True
+inconsistent experience report,68a8c9fc8b8398d82b9fe48e,True
+inconsistent experience report,68a8c9fc8b8398d82b9fe497,True
+inconsistent experience report,68a8c9fd8b8398d82b9fe4e4,True
+inconsistent experience report,68a8c9fd8b8398d82b9fe4e7,True
+inconsistent experience report,68a8c9fd8b8398d82b9fe579,True
+inconsistent experience report,68a8c9fe8b8398d82b9fe633,True
+inconsistent experience report,68a8c9fe8b8398d82b9fe697,True
+inconsistent experience report,68a8ca018b8398d82b9fe922,True
+inconsistent experience report,68a8ca018b8398d82b9fe996,True
+inconsistent experience report,68a8ca028b8398d82b9fe9e7,True
+information inquiry,68a8c9fb8b8398d82b9fe33c,True
+information inquiry,68a8c9fb8b8398d82b9fe3de,True
+information inquiry,68a8c9fd8b8398d82b9fe4c4,True
+information inquiry,68a8c9fd8b8398d82b9fe52f,True
+information inquiry,68a8c9fd8b8398d82b9fe547,True
+information inquiry,68a8c9fd8b8398d82b9fe5a1,True
+information inquiry,68a8c9fe8b8398d82b9fe5ee,True
+information inquiry,68a8c9fe8b8398d82b9fe6fc,True
+information inquiry,68a8ca008b8398d82b9fe7e9,True
+information inquiry,68a8ca008b8398d82b9fe884,True
+information inquiry,68a8ca008b8398d82b9fe8f7,True
+international banking issue,68a8c9fd8b8398d82b9fe4c1,True
+international banking issue,68a8c9fe8b8398d82b9fe5ef,True
+international banking issue,68a8c9fe8b8398d82b9fe63e,True
+international banking issue,68a8c9fe8b8398d82b9fe63f,True
+international banking issue,68a8c9fe8b8398d82b9fe69e,True
+international banking issue,68a8ca008b8398d82b9fe86c,True
+international banking issue,68a8ca008b8398d82b9fe874,True
+international banking issue,68a8ca008b8398d82b9fe8bf,True
+international banking issue,68a8ca018b8398d82b9fe9b9,True
+international banking issue,68a8ca028b8398d82b9fea58,True
+international payment smooth,68a8c9fb8b8398d82b9fe370,True
+international payment smooth,68a8c9fc8b8398d82b9fe453,True
+international payment smooth,68a8c9fd8b8398d82b9fe56d,True
+international payment smooth,68a8c9fe8b8398d82b9fe5f3,True
+international payment smooth,68a8c9fe8b8398d82b9fe614,True
+international payment smooth,68a8c9fe8b8398d82b9fe696,True
+international payment smooth,68a8c9fe8b8398d82b9fe6be,True
+international payment smooth,68a8c9ff8b8398d82b9fe70d,True
+international payment smooth,68a8c9ff8b8398d82b9fe7b5,True
+international payment smooth,68a8ca008b8398d82b9fe85d,True
+international payment smooth,68a8ca018b8398d82b9fe925,True
+international payment smooth,68a8ca028b8398d82b9fea25,True
+investment service outstanding,68a8c9fb8b8398d82b9fe37a,True
+investment service outstanding,68a8c9fb8b8398d82b9fe37b,True
+investment service outstanding,68a8c9fb8b8398d82b9fe3bf,True
+investment service outstanding,68a8c9fc8b8398d82b9fe40b,True
+investment service outstanding,68a8c9fc8b8398d82b9fe451,True
+investment service outstanding,68a8c9fd8b8398d82b9fe513,True
+investment service outstanding,68a8c9fe8b8398d82b9fe647,True
+investment service outstanding,68a8c9fe8b8398d82b9fe6d4,True
+investment service outstanding,68a8c9fe8b8398d82b9fe6df,True
+investment service outstanding,68a8c9ff8b8398d82b9fe776,True
+investment service outstanding,68a8ca008b8398d82b9fe7f0,True
+investment service outstanding,68a8ca018b8398d82b9fe93c,True
+investment service outstanding,68a8ca028b8398d82b9fea6e,True
+investment service outstanding,68a8ca028b8398d82b9feadd,True
+issue resolve quickly,68a8c9fc8b8398d82b9fe43f,True
+issue resolve quickly,68a8c9fd8b8398d82b9fe51e,True
+issue resolve quickly,68a8c9fd8b8398d82b9fe577,True
+issue resolve quickly,68a8c9fe8b8398d82b9fe683,True
+issue resolve quickly,68a8c9fe8b8398d82b9fe6a9,True
+issue resolve quickly,68a8c9fe8b8398d82b9fe6b3,True
+issue resolve quickly,68a8c9ff8b8398d82b9fe744,True
+issue resolve quickly,68a8ca008b8398d82b9fe7da,True
+issue resolve quickly,68a8ca008b8398d82b9fe8f5,True
+issue resolve quickly,68a8ca018b8398d82b9fe972,True
+issue resolve quickly,68a8ca028b8398d82b9fe9d1,True
+issue resolve quickly,68a8ca028b8398d82b9fe9fd,True
+issue resolve quickly,68a8ca028b8398d82b9fea33,True
+kyc documentation easy,68a8c9fb8b8398d82b9fe393,True
+kyc documentation easy,68a8c9fc8b8398d82b9fe401,True
+kyc documentation easy,68a8c9fc8b8398d82b9fe427,True
+kyc documentation easy,68a8c9fc8b8398d82b9fe454,True
+kyc documentation easy,68a8c9fd8b8398d82b9fe4cf,True
+kyc documentation easy,68a8c9fd8b8398d82b9fe4f6,True
+kyc documentation easy,68a8c9fe8b8398d82b9fe651,True
+kyc documentation easy,68a8ca008b8398d82b9fe7ed,True
+kyc documentation easy,68a8ca018b8398d82b9fe904,True
+kyc documentation easy,68a8ca028b8398d82b9fe9fa,True
+kyc documentation easy,68a8ca028b8398d82b9fea52,True
+knowledgeable agent help,68a8c9fb8b8398d82b9fe3ce,True
+knowledgeable agent help,68a8c9fc8b8398d82b9fe49a,True
+knowledgeable agent help,68a8c9fd8b8398d82b9fe501,True
+knowledgeable agent help,68a8c9fd8b8398d82b9fe514,True
+knowledgeable agent help,68a8c9fd8b8398d82b9fe522,True
+knowledgeable agent help,68a8c9fd8b8398d82b9fe594,True
+knowledgeable agent help,68a8c9fe8b8398d82b9fe641,True
+knowledgeable agent help,68a8c9fe8b8398d82b9fe6f4,True
+knowledgeable agent help,68a8ca008b8398d82b9fe825,True
+knowledgeable agent help,68a8ca028b8398d82b9fe9f6,True
+language barrier experience,68a8c9fb8b8398d82b9fe34f,True
+language barrier experience,68a8c9fb8b8398d82b9fe373,True
+language barrier experience,68a8c9fb8b8398d82b9fe3b1,True
+language barrier experience,68a8c9fc8b8398d82b9fe42c,True
+language barrier experience,68a8c9fd8b8398d82b9fe50b,True
+language barrier experience,68a8c9fe8b8398d82b9fe601,True
+language barrier experience,68a8c9fe8b8398d82b9fe665,True
+language barrier experience,68a8ca008b8398d82b9fe849,True
+language barrier experience,68a8ca028b8398d82b9fe9dd,True
+language barrier experience,68a8ca028b8398d82b9feaad,True
+letter credit process,68a8c9fc8b8398d82b9fe42e,True
+letter credit process,68a8c9fc8b8398d82b9fe436,True
+letter credit process,68a8c9fc8b8398d82b9fe464,True
+letter credit process,68a8c9fe8b8398d82b9fe6c2,True
+letter credit process,68a8c9fe8b8398d82b9fe6d0,True
+letter credit process,68a8c9ff8b8398d82b9fe7b0,True
+letter credit process,68a8ca008b8398d82b9fe8fd,True
+letter credit process,68a8ca028b8398d82b9fe9d4,True
+letter credit process,68a8ca028b8398d82b9fe9f5,True
+letter credit process,68a8ca028b8398d82b9fea68,True
+letter credit process,68a8ca028b8398d82b9fea97,True
+liquidity management excellent,68a8c9fb8b8398d82b9fe359,True
+liquidity management excellent,68a8c9fb8b8398d82b9fe3e2,True
+liquidity management excellent,68a8c9fd8b8398d82b9fe4f2,True
+liquidity management excellent,68a8c9fd8b8398d82b9fe517,True
+liquidity management excellent,68a8c9fe8b8398d82b9fe694,True
+liquidity management excellent,68a8ca008b8398d82b9fe7e5,True
+liquidity management excellent,68a8ca018b8398d82b9fe95f,True
+liquidity management excellent,68a8ca018b8398d82b9fe978,True
+liquidity management excellent,68a8ca018b8398d82b9fe99d,True
+liquidity management excellent,68a8ca028b8398d82b9feab5,True
+local service quality,68a8c9fb8b8398d82b9fe3b8,True
+local service quality,68a8c9fc8b8398d82b9fe45b,True
+local service quality,68a8c9fc8b8398d82b9fe485,True
+local service quality,68a8c9fd8b8398d82b9fe51d,True
+local service quality,68a8c9fe8b8398d82b9fe663,True
+local service quality,68a8c9fe8b8398d82b9fe674,True
+local service quality,68a8c9ff8b8398d82b9fe7a5,True
+local service quality,68a8ca008b8398d82b9fe7fa,True
+local service quality,68a8ca008b8398d82b9fe855,True
+local service quality,68a8ca008b8398d82b9fe88e,True
+local service quality,68a8ca018b8398d82b9fe94b,True
+local service quality,68a8ca018b8398d82b9fe974,True
+local service quality,68a8ca018b8398d82b9fe983,True
+local service quality,68a8ca028b8398d82b9fea30,True
+login screen freeze,68a8c9fb8b8398d82b9fe3a4,True
+login screen freeze,68a8c9fc8b8398d82b9fe42f,True
+login screen freeze,68a8c9fd8b8398d82b9fe51b,True
+login screen freeze,68a8c9fd8b8398d82b9fe560,True
+login screen freeze,68a8c9fd8b8398d82b9fe5b7,True
+login screen freeze,68a8c9fe8b8398d82b9fe6e5,True
+login screen freeze,68a8c9ff8b8398d82b9fe777,True
+login screen freeze,68a8c9ff8b8398d82b9fe7c7,True
+login screen freeze,68a8ca008b8398d82b9fe8a0,True
+login screen freeze,68a8ca028b8398d82b9fe9ef,True
+long wait time,68a8c9fb8b8398d82b9fe35e,True
+long wait time,68a8c9fb8b8398d82b9fe3ba,True
+long wait time,68a8c9fd8b8398d82b9fe54a,True
+long wait time,68a8c9fd8b8398d82b9fe55f,True
+long wait time,68a8c9fd8b8398d82b9fe599,True
+long wait time,68a8c9fd8b8398d82b9fe5ce,True
+long wait time,68a8c9fe8b8398d82b9fe5e2,True
+long wait time,68a8c9fe8b8398d82b9fe617,True
+long wait time,68a8c9fe8b8398d82b9fe690,True
+long wait time,68a8c9ff8b8398d82b9fe76e,True
+long wait time,68a8ca028b8398d82b9fea9b,True
+long wait time,68a8ca028b8398d82b9fead0,True
+maintenance inconvenience report,68a8c9fb8b8398d82b9fe3da,True
+maintenance inconvenience report,68a8c9fc8b8398d82b9fe45e,True
+maintenance inconvenience report,68a8c9fd8b8398d82b9fe52b,True
+maintenance inconvenience report,68a8c9fe8b8398d82b9fe5f4,True
+maintenance inconvenience report,68a8c9ff8b8398d82b9fe7a4,True
+maintenance inconvenience report,68a8ca008b8398d82b9fe8f9,True
+maintenance inconvenience report,68a8ca018b8398d82b9fe998,True
+maintenance inconvenience report,68a8ca018b8398d82b9fe9b1,True
+maintenance inconvenience report,68a8ca028b8398d82b9fea09,True
+maintenance inconvenience report,68a8ca028b8398d82b9fea74,True
+maintenance inconvenience report,68a8ca028b8398d82b9fea7f,True
+management respond personally,68a8c9fb8b8398d82b9fe343,True
+management respond personally,68a8c9fb8b8398d82b9fe35c,True
+management respond personally,68a8c9fb8b8398d82b9fe36a,True
+management respond personally,68a8c9fb8b8398d82b9fe3db,True
+management respond personally,68a8c9fd8b8398d82b9fe5c2,True
+management respond personally,68a8c9fe8b8398d82b9fe5f2,True
+management respond personally,68a8c9fe8b8398d82b9fe6af,True
+management respond personally,68a8c9fe8b8398d82b9fe6c5,True
+management respond personally,68a8ca008b8398d82b9fe7db,True
+management respond personally,68a8ca008b8398d82b9fe848,True
+management respond personally,68a8ca028b8398d82b9fea43,True
+manager unavailable complaint,68a8c9fb8b8398d82b9fe329,True
+manager unavailable complaint,68a8c9fb8b8398d82b9fe3e1,True
+manager unavailable complaint,68a8c9fd8b8398d82b9fe4b5,True
+manager unavailable complaint,68a8c9fd8b8398d82b9fe502,True
+manager unavailable complaint,68a8c9fd8b8398d82b9fe53c,True
+manager unavailable complaint,68a8c9fe8b8398d82b9fe67b,True
+manager unavailable complaint,68a8c9ff8b8398d82b9fe762,True
+manager unavailable complaint,68a8ca008b8398d82b9fe7de,True
+manager unavailable complaint,68a8ca008b8398d82b9fe8db,True
+manager unavailable complaint,68a8ca018b8398d82b9fe92a,True
+mandate change require,68a8c9fb8b8398d82b9fe387,True
+mandate change require,68a8c9fc8b8398d82b9fe413,True
+mandate change require,68a8c9fc8b8398d82b9fe4b2,True
+mandate change require,68a8c9fd8b8398d82b9fe4bd,True
+mandate change require,68a8c9fe8b8398d82b9fe69b,True
+mandate change require,68a8c9ff8b8398d82b9fe716,True
+mandate change require,68a8ca008b8398d82b9fe865,True
+mandate change require,68a8ca008b8398d82b9fe87d,True
+mandate change require,68a8ca008b8398d82b9fe8d1,True
+mandate change require,68a8ca018b8398d82b9fe950,True
+mandate change require,68a8ca028b8398d82b9fea29,True
+mandate change require,68a8ca028b8398d82b9fea50,True
+mandate change require,68a8ca028b8398d82b9feac9,True
+mass payment error,68a8c9fb8b8398d82b9fe326,True
+mass payment error,68a8c9fb8b8398d82b9fe381,True
+mass payment error,68a8c9fc8b8398d82b9fe42b,True
+mass payment error,68a8c9fd8b8398d82b9fe4ec,True
+mass payment error,68a8c9fd8b8398d82b9fe587,True
+mass payment error,68a8c9fe8b8398d82b9fe5e6,True
+mass payment error,68a8c9fe8b8398d82b9fe6a2,True
+mass payment error,68a8c9fe8b8398d82b9fe6b9,True
+mass payment error,68a8c9ff8b8398d82b9fe7b4,True
+mass payment error,68a8ca028b8398d82b9fe9c9,True
+mass payment error,68a8ca028b8398d82b9fe9ea,True
+mixed experience report,68a8c9fb8b8398d82b9fe32b,True
+mixed experience report,68a8c9fb8b8398d82b9fe32e,True
+mixed experience report,68a8c9fb8b8398d82b9fe35d,True
+mixed experience report,68a8c9fd8b8398d82b9fe507,True
+mixed experience report,68a8c9fd8b8398d82b9fe523,True
+mixed experience report,68a8c9fe8b8398d82b9fe6a8,True
+mixed experience report,68a8ca008b8398d82b9fe7e4,True
+mixed experience report,68a8ca008b8398d82b9fe7e6,True
+mixed experience report,68a8ca008b8398d82b9fe885,True
+mixed experience report,68a8ca018b8398d82b9fe96e,True
+mixed experience report,68a8ca028b8398d82b9feabc,True
+mixed experience report,68a8ca028b8398d82b9feadc,True
+mixed service quality,68a8c9fb8b8398d82b9fe38e,True
+mixed service quality,68a8c9fb8b8398d82b9fe3d3,True
+mixed service quality,68a8c9fc8b8398d82b9fe4a2,True
+mixed service quality,68a8c9fd8b8398d82b9fe5d0,True
+mixed service quality,68a8c9fe8b8398d82b9fe5f9,True
+mixed service quality,68a8ca008b8398d82b9fe820,True
+mixed service quality,68a8ca008b8398d82b9fe844,True
+mixed service quality,68a8ca008b8398d82b9fe84f,True
+mixed service quality,68a8ca008b8398d82b9fe8cd,True
+mixed service quality,68a8ca018b8398d82b9fe991,True
+mixed service quality,68a8ca028b8398d82b9fea2f,True
+mixed user experience,68a8c9fb8b8398d82b9fe362,True
+mixed user experience,68a8c9fc8b8398d82b9fe404,True
+mixed user experience,68a8c9fd8b8398d82b9fe57e,True
+mixed user experience,68a8c9fd8b8398d82b9fe5c1,True
+mixed user experience,68a8c9fe8b8398d82b9fe63a,True
+mixed user experience,68a8c9ff8b8398d82b9fe713,True
+mixed user experience,68a8c9ff8b8398d82b9fe737,True
+mixed user experience,68a8c9ff8b8398d82b9fe765,True
+mixed user experience,68a8ca008b8398d82b9fe8de,True
+mixed user experience,68a8ca028b8398d82b9fea00,True
+mixed user experience,68a8ca028b8398d82b9fea06,True
+mobile app crash,68a8c9fb8b8398d82b9fe33b,True
+mobile app crash,68a8c9fb8b8398d82b9fe358,True
+mobile app crash,68a8c9fc8b8398d82b9fe4a4,True
+mobile app crash,68a8c9fd8b8398d82b9fe4f3,True
+mobile app crash,68a8c9fd8b8398d82b9fe4ff,True
+mobile app crash,68a8c9fd8b8398d82b9fe5a8,True
+mobile app crash,68a8c9fe8b8398d82b9fe627,True
+mobile app crash,68a8c9fe8b8398d82b9fe645,True
+mobile app crash,68a8c9ff8b8398d82b9fe73e,True
+mobile app crash,68a8c9ff8b8398d82b9fe774,True
+mobile app crash,68a8ca008b8398d82b9fe8ce,True
+mobile app crash,68a8ca028b8398d82b9fea0a,True
+mobile app functional,68a8c9fb8b8398d82b9fe363,True
+mobile app functional,68a8c9fb8b8398d82b9fe394,True
+mobile app functional,68a8c9fc8b8398d82b9fe434,True
+mobile app functional,68a8c9fc8b8398d82b9fe469,True
+mobile app functional,68a8c9fc8b8398d82b9fe48c,True
+mobile app functional,68a8c9fd8b8398d82b9fe5d5,True
+mobile app functional,68a8c9fe8b8398d82b9fe699,True
+mobile app functional,68a8c9ff8b8398d82b9fe721,True
+mobile app functional,68a8c9ff8b8398d82b9fe7cd,True
+mobile app functional,68a8ca028b8398d82b9fe9d7,True
+mobile app functional,68a8ca028b8398d82b9feab8,True
+mobile security robust,68a8c9fd8b8398d82b9fe4d8,True
+mobile security robust,68a8c9fd8b8398d82b9fe598,True
+mobile security robust,68a8c9fd8b8398d82b9fe5cb,True
+mobile security robust,68a8c9fe8b8398d82b9fe62a,True
+mobile security robust,68a8c9fe8b8398d82b9fe6f6,True
+mobile security robust,68a8c9ff8b8398d82b9fe78e,True
+mobile security robust,68a8ca008b8398d82b9fe876,True
+mobile security robust,68a8ca008b8398d82b9fe8c4,True
+mobile security robust,68a8ca008b8398d82b9fe8fe,True
+mobile security robust,68a8ca018b8398d82b9fe9c3,True
+mobile security robust,68a8ca028b8398d82b9fea91,True
+mobile security robust,68a8ca028b8398d82b9feab6,True
+multi currency problem,68a8c9fc8b8398d82b9fe424,True
+multi currency problem,68a8c9fd8b8398d82b9fe529,True
+multi currency problem,68a8c9fd8b8398d82b9fe5b1,True
+multi currency problem,68a8c9fe8b8398d82b9fe6dc,True
+multi currency problem,68a8c9fe8b8398d82b9fe703,True
+multi currency problem,68a8c9ff8b8398d82b9fe748,True
+multi currency problem,68a8ca018b8398d82b9fe91a,True
+multi currency problem,68a8ca018b8398d82b9fe988,True
+multi currency problem,68a8ca028b8398d82b9feaf2,True
+multi factor problem,68a8c9fc8b8398d82b9fe414,True
+multi factor problem,68a8c9fc8b8398d82b9fe44d,True
+multi factor problem,68a8c9fe8b8398d82b9fe5f8,True
+multi factor problem,68a8c9fe8b8398d82b9fe602,True
+multi factor problem,68a8c9fe8b8398d82b9fe657,True
+multi factor problem,68a8c9fe8b8398d82b9fe679,True
+multi factor problem,68a8c9ff8b8398d82b9fe71b,True
+multi factor problem,68a8ca008b8398d82b9fe829,True
+multi factor problem,68a8ca008b8398d82b9fe89e,True
+multilingual support appreciate,68a8c9fb8b8398d82b9fe37e,True
+multilingual support appreciate,68a8c9fb8b8398d82b9fe3cc,True
+multilingual support appreciate,68a8c9fc8b8398d82b9fe49d,True
+multilingual support appreciate,68a8c9fe8b8398d82b9fe66e,True
+multilingual support appreciate,68a8ca008b8398d82b9fe7f5,True
+multilingual support appreciate,68a8ca008b8398d82b9fe866,True
+multilingual support appreciate,68a8ca018b8398d82b9fe936,True
+multilingual support appreciate,68a8ca018b8398d82b9fe9af,True
+multilingual support appreciate,68a8ca018b8398d82b9fe9c6,True
+multilingual support appreciate,68a8ca028b8398d82b9fe9d2,True
+multilingual support appreciate,68a8ca028b8398d82b9feaa4,True
+multilingual support vary,68a8c9fb8b8398d82b9fe3d8,True
+multilingual support vary,68a8c9fc8b8398d82b9fe468,True
+multilingual support vary,68a8c9fc8b8398d82b9fe470,True
+multilingual support vary,68a8c9fc8b8398d82b9fe48d,True
+multilingual support vary,68a8c9fc8b8398d82b9fe4ab,True
+multilingual support vary,68a8c9fd8b8398d82b9fe524,True
+multilingual support vary,68a8c9fe8b8398d82b9fe6f8,True
+multilingual support vary,68a8c9ff8b8398d82b9fe799,True
+multilingual support vary,68a8ca008b8398d82b9fe7dd,True
+multilingual support vary,68a8ca008b8398d82b9fe7f4,True
+multilingual support vary,68a8ca008b8398d82b9fe8fc,True
+multilingual support vary,68a8ca018b8398d82b9fe92f,True
+multilingual support vary,68a8ca018b8398d82b9fe99e,True
+network connectivity lose,68a8c9fb8b8398d82b9fe3af,True
+network connectivity lose,68a8c9fd8b8398d82b9fe4bb,True
+network connectivity lose,68a8c9fd8b8398d82b9fe4cc,True
+network connectivity lose,68a8c9fd8b8398d82b9fe532,True
+network connectivity lose,68a8c9fd8b8398d82b9fe566,True
+network connectivity lose,68a8c9fd8b8398d82b9fe5c6,True
+network connectivity lose,68a8ca008b8398d82b9fe805,True
+network connectivity lose,68a8ca008b8398d82b9fe8ac,True
+network connectivity lose,68a8ca018b8398d82b9fe95d,True
+network connectivity lose,68a8ca018b8398d82b9fe98f,True
+network connectivity lose,68a8ca028b8398d82b9fe9e9,True
+network connectivity lose,68a8ca028b8398d82b9feacd,True
+new account opening,68a8c9fc8b8398d82b9fe403,True
+new account opening,68a8c9fc8b8398d82b9fe439,True
+new account opening,68a8c9fd8b8398d82b9fe53d,True
+new account opening,68a8c9fd8b8398d82b9fe574,True
+new account opening,68a8c9fe8b8398d82b9fe61b,True
+new account opening,68a8c9fe8b8398d82b9fe6ac,True
+new account opening,68a8c9fe8b8398d82b9fe6c3,True
+new account opening,68a8c9ff8b8398d82b9fe78b,True
+new account opening,68a8ca008b8398d82b9fe8b6,True
+new account opening,68a8ca018b8398d82b9fe953,True
+peak well,68a8c9fb8b8398d82b9fe3df,True
+peak well,68a8c9fd8b8398d82b9fe5b5,True
+peak well,68a8c9fd8b8398d82b9fe5c3,True
+peak well,68a8c9fe8b8398d82b9fe5fd,True
+peak well,68a8c9fe8b8398d82b9fe620,True
+peak well,68a8c9fe8b8398d82b9fe6ae,True
+peak well,68a8c9fe8b8398d82b9fe6ff,True
+peak well,68a8c9ff8b8398d82b9fe738,True
+peak well,68a8c9ff8b8398d82b9fe74e,True
+peak well,68a8ca028b8398d82b9fea23,True
+peak well,68a8ca028b8398d82b9feae0,True
+online banking excellence,68a8c9fb8b8398d82b9fe356,True
+online banking excellence,68a8c9fb8b8398d82b9fe37f,True
+online banking excellence,68a8c9fb8b8398d82b9fe395,True
+online banking excellence,68a8c9fb8b8398d82b9fe3b0,True
+online banking excellence,68a8c9fc8b8398d82b9fe46c,True
+online banking excellence,68a8c9fc8b8398d82b9fe473,True
+online banking excellence,68a8c9fd8b8398d82b9fe534,True
+online banking excellence,68a8c9fe8b8398d82b9fe67f,True
+online banking excellence,68a8c9ff8b8398d82b9fe74c,True
+online banking excellence,68a8ca018b8398d82b9fe941,True
+online banking excellence,68a8ca018b8398d82b9fe99a,True
+online banking excellence,68a8ca018b8398d82b9fe9ad,True
+online banking excellence,68a8ca028b8398d82b9fea72,True
+online banking excellence,68a8ca028b8398d82b9fead9,True
+open banking implementation,68a8c9fd8b8398d82b9fe505,True
+open banking implementation,68a8c9fd8b8398d82b9fe5af,True
+open banking implementation,68a8c9fe8b8398d82b9fe69c,True
+open banking implementation,68a8c9fe8b8398d82b9fe6e8,True
+open banking implementation,68a8c9ff8b8398d82b9fe7cc,True
+open banking implementation,68a8ca008b8398d82b9fe7ef,True
+open banking implementation,68a8ca008b8398d82b9fe858,True
+open banking implementation,68a8ca008b8398d82b9fe8e6,True
+open banking implementation,68a8ca008b8398d82b9fe8e7,True
+open banking implementation,68a8ca028b8398d82b9feaa6,True
+order processing fail,68a8c9fb8b8398d82b9fe3cd,True
+order processing fail,68a8c9fb8b8398d82b9fe3ec,True
+order processing fail,68a8c9fc8b8398d82b9fe416,True
+order processing fail,68a8c9fd8b8398d82b9fe515,True
+order processing fail,68a8c9fe8b8398d82b9fe629,True
+order processing fail,68a8c9fe8b8398d82b9fe673,True
+order processing fail,68a8c9ff8b8398d82b9fe7ce,True
+order processing fail,68a8ca008b8398d82b9fe7e2,True
+order processing fail,68a8ca008b8398d82b9fe86d,True
+order processing fail,68a8ca008b8398d82b9fe881,True
+order processing fail,68a8ca028b8398d82b9fea73,True
+order processing fail,68a8ca028b8398d82b9fead8,True
+need improvement,68a8c9fb8b8398d82b9fe39f,True
+need improvement,68a8c9fb8b8398d82b9fe3a7,True
+need improvement,68a8c9fb8b8398d82b9fe3c8,True
+need improvement,68a8c9fb8b8398d82b9fe3d0,True
+need improvement,68a8c9fd8b8398d82b9fe4eb,True
+need improvement,68a8c9fd8b8398d82b9fe500,True
+need improvement,68a8c9fd8b8398d82b9fe56b,True
+need improvement,68a8c9fd8b8398d82b9fe5a0,True
+need improvement,68a8c9fe8b8398d82b9fe609,True
+need improvement,68a8c9fe8b8398d82b9fe64f,True
+need improvement,68a8c9fe8b8398d82b9fe6a4,True
+need improvement,68a8c9fe8b8398d82b9fe6aa,True
+need improvement,68a8c9fe8b8398d82b9fe6b6,True
+need improvement,68a8c9fe8b8398d82b9fe6b7,True
+need improvement,68a8c9fe8b8398d82b9fe708,True
+need improvement,68a8ca008b8398d82b9fe80a,True
+need improvement,68a8ca008b8398d82b9fe830,True
+need improvement,68a8ca008b8398d82b9fe84b,True
+need improvement,68a8ca008b8398d82b9fe8f8,True
+need improvement,68a8ca018b8398d82b9fe910,True
+need improvement,68a8ca018b8398d82b9fe928,True
+need improvement,68a8ca018b8398d82b9fe97b,True
+need improvement,68a8ca018b8398d82b9fe9ba,True
+need improvement,68a8ca028b8398d82b9fea1b,True
+need improvement,68a8ca028b8398d82b9fea90,True
+psd2 compliance smooth,68a8c9fb8b8398d82b9fe376,True
+psd2 compliance smooth,68a8c9fb8b8398d82b9fe3c4,True
+psd2 compliance smooth,68a8c9fb8b8398d82b9fe3c5,True
+psd2 compliance smooth,68a8c9fb8b8398d82b9fe3dd,True
+psd2 compliance smooth,68a8c9fc8b8398d82b9fe4a3,True
+psd2 compliance smooth,68a8c9fe8b8398d82b9fe604,True
+psd2 compliance smooth,68a8c9ff8b8398d82b9fe781,True
+psd2 compliance smooth,68a8ca008b8398d82b9fe835,True
+psd2 compliance smooth,68a8ca008b8398d82b9fe8ee,True
+psd2 compliance smooth,68a8ca028b8398d82b9fea31,True
+psd2 compliance smooth,68a8ca028b8398d82b9fea46,True
+psd2 compliance smooth,68a8ca028b8398d82b9feaa0,True
+partial functionality work,68a8c9fc8b8398d82b9fe3f0,True
+partial functionality work,68a8c9fd8b8398d82b9fe5bb,True
+partial functionality work,68a8c9fd8b8398d82b9fe5d9,True
+partial functionality work,68a8c9fe8b8398d82b9fe62c,True
+partial functionality work,68a8c9fe8b8398d82b9fe62e,True
+partial functionality work,68a8ca008b8398d82b9fe800,True
+partial functionality work,68a8ca018b8398d82b9fe917,True
+partial functionality work,68a8ca028b8398d82b9fea8b,True
+partial satisfaction express,68a8c9fc8b8398d82b9fe44c,True
+partial satisfaction express,68a8c9fc8b8398d82b9fe44e,True
+partial satisfaction express,68a8c9fd8b8398d82b9fe5cd,True
+partial satisfaction express,68a8c9fe8b8398d82b9fe677,True
+partial satisfaction express,68a8c9ff8b8398d82b9fe7bd,True
+partial satisfaction express,68a8ca008b8398d82b9fe88b,True
+partial satisfaction express,68a8ca008b8398d82b9fe88d,True
+partial satisfaction express,68a8ca008b8398d82b9fe8aa,True
+partial satisfaction express,68a8ca018b8398d82b9fe9c0,True
+partial satisfaction express,68a8ca028b8398d82b9fe9f0,True
+partial satisfaction express,68a8ca028b8398d82b9fea4a,True
+password reset guidance,68a8c9fb8b8398d82b9fe38f,True
+password reset guidance,68a8c9fb8b8398d82b9fe39c,True
+password reset guidance,68a8c9fd8b8398d82b9fe518,True
+password reset guidance,68a8c9fe8b8398d82b9fe68f,True
+password reset guidance,68a8c9ff8b8398d82b9fe743,True
+password reset guidance,68a8ca008b8398d82b9fe7eb,True
+password reset guidance,68a8ca008b8398d82b9fe81f,True
+password reset guidance,68a8ca008b8398d82b9fe8be,True
+password reset guidance,68a8ca018b8398d82b9fe926,True
+password reset guidance,68a8ca018b8398d82b9fe99c,True
+password reset guidance,68a8ca028b8398d82b9fea03,True
+payment processing fail,68a8c9fe8b8398d82b9fe5ff,True
+payment processing fail,68a8ca008b8398d82b9fe827,True
+payment processing fail,68a8ca008b8398d82b9fe831,True
+payment processing fail,68a8ca008b8398d82b9fe840,True
+payment processing fail,68a8ca008b8398d82b9fe860,True
+payment processing fail,68a8ca008b8398d82b9fe8e4,True
+payment processing fail,68a8ca018b8398d82b9fe931,True
+payment processing fail,68a8ca028b8398d82b9fea11,True
+payment processing fail,68a8ca028b8398d82b9feaa7,True
+payment processing fail,68a8ca028b8398d82b9feabd,True
+payment processing failure,68a8c9fb8b8398d82b9fe33a,True
+payment processing failure,68a8c9fb8b8398d82b9fe3b9,True
+payment processing failure,68a8c9fc8b8398d82b9fe456,True
+payment processing failure,68a8c9fc8b8398d82b9fe477,True
+payment processing failure,68a8c9fc8b8398d82b9fe481,True
+payment processing failure,68a8c9fc8b8398d82b9fe4a1,True
+payment processing failure,68a8c9fd8b8398d82b9fe52c,True
+payment processing failure,68a8c9fd8b8398d82b9fe591,True
+payment processing failure,68a8c9fd8b8398d82b9fe5b6,True
+payment processing failure,68a8c9fd8b8398d82b9fe5d6,True
+payment processing failure,68a8c9fd8b8398d82b9fe5db,True
+payment processing failure,68a8c9fe8b8398d82b9fe5f0,True
+payment processing failure,68a8c9fe8b8398d82b9fe619,True
+payment processing failure,68a8c9fe8b8398d82b9fe640,True
+payment processing failure,68a8c9fe8b8398d82b9fe69a,True
+payment processing failure,68a8c9fe8b8398d82b9fe6fe,True
+payment processing failure,68a8c9ff8b8398d82b9fe727,True
+payment processing failure,68a8ca008b8398d82b9fe82e,True
+payment processing failure,68a8ca008b8398d82b9fe8dc,True
+payment processing failure,68a8ca018b8398d82b9fe919,True
+payment processing failure,68a8ca028b8398d82b9fea89,True
+payment processing failure,68a8ca028b8398d82b9fea9a,True
+payment processing failure,68a8ca028b8398d82b9feaeb,True
+payment processing failure,68a8ca028b8398d82b9feaed,True
+payment processing smooth,68a8c9fb8b8398d82b9fe355,True
+payment processing smooth,68a8c9fb8b8398d82b9fe3be,True
+payment processing smooth,68a8c9fd8b8398d82b9fe4b9,True
+payment processing smooth,68a8c9fd8b8398d82b9fe4bf,True
+payment processing smooth,68a8c9fe8b8398d82b9fe6e1,True
+payment processing smooth,68a8ca008b8398d82b9fe834,True
+payment processing smooth,68a8ca008b8398d82b9fe8cf,True
+payment processing smooth,68a8ca028b8398d82b9fea2a,True
+peak time difficulty,68a8c9fc8b8398d82b9fe488,True
+peak time difficulty,68a8c9fc8b8398d82b9fe4ad,True
+peak time difficulty,68a8c9fd8b8398d82b9fe561,True
+peak time difficulty,68a8c9fd8b8398d82b9fe567,True
+peak time difficulty,68a8c9fe8b8398d82b9fe612,True
+peak time difficulty,68a8c9fe8b8398d82b9fe63c,True
+peak time difficulty,68a8ca008b8398d82b9fe86f,True
+peak time difficulty,68a8ca008b8398d82b9fe87c,True
+peak time difficulty,68a8ca028b8398d82b9fea7c,True
+periodic performance change,68a8c9fb8b8398d82b9fe35a,True
+periodic performance change,68a8c9fb8b8398d82b9fe379,True
+periodic performance change,68a8c9fb8b8398d82b9fe3d2,True
+periodic performance change,68a8c9fc8b8398d82b9fe445,True
+periodic performance change,68a8c9fd8b8398d82b9fe4dd,True
+periodic performance change,68a8c9fe8b8398d82b9fe6b1,True
+periodic performance change,68a8c9fe8b8398d82b9fe6e3,True
+periodic performance change,68a8c9ff8b8398d82b9fe785,True
+periodic performance change,68a8c9ff8b8398d82b9fe7ad,True
+periodic performance change,68a8ca008b8398d82b9fe84d,True
+periodic performance change,68a8ca008b8398d82b9fe886,True
+periodic performance change,68a8ca008b8398d82b9fe8ed,True
+periodic performance change,68a8ca018b8398d82b9fe947,True
+personalize banking excellence,68a8c9fb8b8398d82b9fe390,True
+personalize banking excellence,68a8c9fb8b8398d82b9fe3d1,True
+personalize banking excellence,68a8c9fd8b8398d82b9fe5a5,True
+personalize banking excellence,68a8c9fe8b8398d82b9fe623,True
+personalize banking excellence,68a8c9ff8b8398d82b9fe77a,True
+personalize banking excellence,68a8c9ff8b8398d82b9fe7bc,True
+personalize banking excellence,68a8ca008b8398d82b9fe7f8,True
+personalize banking excellence,68a8ca008b8398d82b9fe801,True
+personalize banking excellence,68a8ca008b8398d82b9fe826,True
+personalize banking excellence,68a8ca008b8398d82b9fe863,True
+personalize banking excellence,68a8ca018b8398d82b9fe937,True
+platform crash report,68a8c9fc8b8398d82b9fe496,True
+platform crash report,68a8c9fd8b8398d82b9fe539,True
+platform crash report,68a8c9fd8b8398d82b9fe57c,True
+platform crash report,68a8c9fd8b8398d82b9fe595,True
+platform crash report,68a8c9fd8b8398d82b9fe5b2,True
+platform crash report,68a8c9ff8b8398d82b9fe741,True
+platform crash report,68a8c9ff8b8398d82b9fe784,True
+platform crash report,68a8ca008b8398d82b9fe7dc,True
+platform crash report,68a8ca008b8398d82b9fe89c,True
+platform crash report,68a8ca018b8398d82b9fe9be,True
+platform crash report,68a8ca028b8398d82b9fea5e,True
+platform downtime frustration,68a8c9fc8b8398d82b9fe448,True
+platform downtime frustration,68a8c9fe8b8398d82b9fe635,True
+platform downtime frustration,68a8c9fe8b8398d82b9fe644,True
+platform downtime frustration,68a8ca008b8398d82b9fe81d,True
+platform downtime frustration,68a8ca018b8398d82b9fe94e,True
+platform downtime frustration,68a8ca018b8398d82b9fe9b2,True
+platform downtime frustration,68a8ca018b8398d82b9fe9bd,True
+platform downtime frustration,68a8ca028b8398d82b9fea69,True
+platform downtime frustration,68a8ca028b8398d82b9feaa8,True
+pricing transparency lacking,68a8c9fb8b8398d82b9fe37c,True
+pricing transparency lacking,68a8c9fb8b8398d82b9fe397,True
+pricing transparency lacking,68a8c9fd8b8398d82b9fe4b8,True
+pricing transparency lacking,68a8c9fe8b8398d82b9fe67c,True
+pricing transparency lacking,68a8c9ff8b8398d82b9fe728,True
+pricing transparency lacking,68a8ca008b8398d82b9fe8c0,True
+pricing transparency lacking,68a8ca018b8398d82b9fe956,True
+pricing transparency lacking,68a8ca028b8398d82b9fe9f4,True
+pricing transparency lacking,68a8ca028b8398d82b9fea36,True
+pricing transparency lacking,68a8ca028b8398d82b9feaee,True
+problem initially frustrate,68a8c9fd8b8398d82b9fe4fc,True
+problem initially frustrate,68a8c9fe8b8398d82b9fe648,True
+problem initially frustrate,68a8c9fe8b8398d82b9fe6bf,True
+problem initially frustrate,68a8c9fe8b8398d82b9fe6f3,True
+problem initially frustrate,68a8ca008b8398d82b9fe85b,True
+problem initially frustrate,68a8ca008b8398d82b9fe87a,True
+problem initially frustrate,68a8ca008b8398d82b9fe8d4,True
+problem initially frustrate,68a8ca028b8398d82b9fe9d6,True
+problem initially frustrate,68a8ca028b8398d82b9fea8e,True
+problem resolve efficiently,68a8c9fc8b8398d82b9fe3f8,True
+problem resolve efficiently,68a8c9fc8b8398d82b9fe480,True
+problem resolve efficiently,68a8c9fc8b8398d82b9fe4a7,True
+problem resolve efficiently,68a8c9fe8b8398d82b9fe672,True
+problem resolve efficiently,68a8c9ff8b8398d82b9fe749,True
+problem resolve efficiently,68a8c9ff8b8398d82b9fe74b,True
+problem resolve efficiently,68a8c9ff8b8398d82b9fe7c2,True
+problem resolve efficiently,68a8ca008b8398d82b9fe80b,True
+problem resolve efficiently,68a8ca008b8398d82b9fe883,True
+problem resolve efficiently,68a8ca008b8398d82b9fe8ae,True
+problem resolve efficiently,68a8ca028b8398d82b9feac6,True
+process clarification need,68a8c9fd8b8398d82b9fe4fe,True
+process clarification need,68a8c9fd8b8398d82b9fe531,True
+process clarification need,68a8c9fd8b8398d82b9fe5a7,True
+process clarification need,68a8c9fe8b8398d82b9fe646,True
+process clarification need,68a8c9fe8b8398d82b9fe649,True
+process clarification need,68a8c9fe8b8398d82b9fe707,True
+process clarification need,68a8ca008b8398d82b9fe83e,True
+process clarification need,68a8ca008b8398d82b9fe891,True
+process clarification need,68a8ca018b8398d82b9fe906,True
+process clarification need,68a8ca018b8398d82b9fe90f,True
+process clarification need,68a8ca018b8398d82b9fe94d,True
+process clarification need,68a8ca018b8398d82b9fe960,True
+profile access deny,68a8c9fc8b8398d82b9fe3f1,True
+profile access deny,68a8c9fc8b8398d82b9fe3f7,True
+profile access deny,68a8c9fc8b8398d82b9fe495,True
+profile access deny,68a8c9fd8b8398d82b9fe50a,True
+profile access deny,68a8c9fd8b8398d82b9fe50d,True
+profile access deny,68a8c9fd8b8398d82b9fe593,True
+profile access deny,68a8c9fe8b8398d82b9fe606,True
+profile access deny,68a8c9fe8b8398d82b9fe643,True
+profile access deny,68a8c9ff8b8398d82b9fe787,True
+profile access deny,68a8ca018b8398d82b9fe94f,True
+profile access deny,68a8ca028b8398d82b9fea2d,True
+profile access deny,68a8ca028b8398d82b9fea8d,True
+public issue escalate,68a8c9fb8b8398d82b9fe339,True
+public issue escalate,68a8c9fc8b8398d82b9fe455,True
+public issue escalate,68a8c9fd8b8398d82b9fe4d2,True
+public issue escalate,68a8c9fd8b8398d82b9fe4df,True
+public issue escalate,68a8c9fd8b8398d82b9fe4e5,True
+public issue escalate,68a8c9fd8b8398d82b9fe52e,True
+public issue escalate,68a8c9fd8b8398d82b9fe538,True
+public issue escalate,68a8c9fe8b8398d82b9fe6a7,True
+public issue escalate,68a8c9fe8b8398d82b9fe6b2,True
+public issue escalate,68a8c9fe8b8398d82b9fe6cc,True
+public issue escalate,68a8ca018b8398d82b9fe95b,True
+public recovery successful,68a8c9fb8b8398d82b9fe377,True
+public recovery successful,68a8c9fb8b8398d82b9fe3a3,True
+public recovery successful,68a8c9fb8b8398d82b9fe3cf,True
+public recovery successful,68a8c9fc8b8398d82b9fe46b,True
+public recovery successful,68a8c9fc8b8398d82b9fe4a9,True
+public recovery successful,68a8c9fe8b8398d82b9fe60a,True
+public recovery successful,68a8c9ff8b8398d82b9fe76b,True
+public recovery successful,68a8c9ff8b8398d82b9fe7bf,True
+public recovery successful,68a8ca008b8398d82b9fe7e7,True
+public recovery successful,68a8ca018b8398d82b9fe912,True
+public recovery successful,68a8ca018b8398d82b9fe91e,True
+public recovery successful,68a8ca018b8398d82b9fe994,True
+public recovery successful,68a8ca018b8398d82b9fe999,True
+public recovery successful,68a8ca028b8398d82b9fea9f,True
+public recovery successful,68a8ca028b8398d82b9feaaa,True
+quick response time,68a8c9fb8b8398d82b9fe3d9,True
+quick response time,68a8c9fc8b8398d82b9fe3fa,True
+quick response time,68a8c9fc8b8398d82b9fe406,True
+quick response time,68a8c9fe8b8398d82b9fe687,True
+quick response time,68a8c9ff8b8398d82b9fe757,True
+quick response time,68a8c9ff8b8398d82b9fe77c,True
+quick response time,68a8ca008b8398d82b9fe8ab,True
+quick response time,68a8ca028b8398d82b9fea45,True
+quick response time,68a8ca028b8398d82b9fea79,True
+quick response time,68a8ca028b8398d82b9feaa3,True
+regional difference report,68a8c9fb8b8398d82b9fe3d5,True
+regional difference report,68a8c9fc8b8398d82b9fe415,True
+regional difference report,68a8c9fc8b8398d82b9fe48a,True
+regional difference report,68a8c9fc8b8398d82b9fe4b4,True
+regional difference report,68a8c9fd8b8398d82b9fe4d5,True
+regional difference report,68a8c9fd8b8398d82b9fe4f7,True
+regional difference report,68a8c9fe8b8398d82b9fe5e7,True
+regional difference report,68a8c9fe8b8398d82b9fe6f9,True
+regional difference report,68a8c9ff8b8398d82b9fe786,True
+regional difference report,68a8ca008b8398d82b9fe85e,True
+regional difference report,68a8ca028b8398d82b9fe9f8,True
+regional service variation,68a8c9fb8b8398d82b9fe366,True
+regional service variation,68a8c9fb8b8398d82b9fe3aa,True
+regional service variation,68a8c9fd8b8398d82b9fe552,True
+regional service variation,68a8c9fd8b8398d82b9fe5dd,True
+regional service variation,68a8c9ff8b8398d82b9fe718,True
+regional service variation,68a8ca008b8398d82b9fe82c,True
+regional service variation,68a8ca008b8398d82b9fe869,True
+regional service variation,68a8ca008b8398d82b9fe8ff,True
+regional service variation,68a8ca018b8398d82b9fe98e,True
+regional service variation,68a8ca028b8398d82b9fe9ca,True
+regional service variation,68a8ca028b8398d82b9fead1,True
+regulatory compliance question,68a8c9fb8b8398d82b9fe38c,True
+regulatory compliance question,68a8c9fb8b8398d82b9fe3c9,True
+regulatory compliance question,68a8c9fc8b8398d82b9fe405,True
+regulatory compliance question,68a8c9fc8b8398d82b9fe447,True
+regulatory compliance question,68a8c9fc8b8398d82b9fe471,True
+regulatory compliance question,68a8c9fd8b8398d82b9fe510,True
+regulatory compliance question,68a8c9fd8b8398d82b9fe565,True
+regulatory compliance question,68a8c9fd8b8398d82b9fe5c7,True
+regulatory compliance question,68a8c9fe8b8398d82b9fe686,True
+regulatory compliance question,68a8c9fe8b8398d82b9fe6c6,True
+regulatory compliance question,68a8c9ff8b8398d82b9fe71d,True
+regulatory compliance question,68a8c9ff8b8398d82b9fe733,True
+regulatory compliance question,68a8c9ff8b8398d82b9fe7d4,True
+regulatory compliance question,68a8ca008b8398d82b9fe892,True
+regulatory compliance question,68a8ca018b8398d82b9fe929,True
+regulatory compliance question,68a8ca018b8398d82b9fe93f,True
+regulatory compliance question,68a8ca018b8398d82b9fe9c5,True
+regulatory compliance question,68a8ca018b8398d82b9fe9c7,True
+regulatory compliance question,68a8ca028b8398d82b9fe9db,True
+regulatory compliance question,68a8ca028b8398d82b9fe9df,True
+regulatory compliance question,68a8ca028b8398d82b9fea0e,True
+regulatory compliance question,68a8ca028b8398d82b9fea24,True
+regulatory compliance question,68a8ca028b8398d82b9fea82,True
+regulatory reporting burdensome,68a8c9fb8b8398d82b9fe37d,True
+regulatory reporting burdensome,68a8c9fc8b8398d82b9fe418,True
+regulatory reporting burdensome,68a8c9fc8b8398d82b9fe41e,True
+regulatory reporting burdensome,68a8c9fd8b8398d82b9fe4be,True
+regulatory reporting burdensome,68a8c9fd8b8398d82b9fe51a,True
+regulatory reporting burdensome,68a8c9fd8b8398d82b9fe55b,True
+regulatory reporting burdensome,68a8c9fd8b8398d82b9fe5ca,True
+regulatory reporting burdensome,68a8c9fd8b8398d82b9fe5cf,True
+regulatory reporting burdensome,68a8c9fe8b8398d82b9fe65e,True
+regulatory reporting burdensome,68a8c9fe8b8398d82b9fe6ea,True
+regulatory reporting burdensome,68a8ca008b8398d82b9fe85c,True
+regulatory reporting burdensome,68a8ca008b8398d82b9fe8b9,True
+regulatory reporting burdensome,68a8ca028b8398d82b9fea1d,True
+relationship management praise,68a8c9fb8b8398d82b9fe351,True
+relationship management praise,68a8c9fb8b8398d82b9fe3b6,True
+relationship management praise,68a8c9fc8b8398d82b9fe43b,True
+relationship management praise,68a8c9fd8b8398d82b9fe53b,True
+relationship management praise,68a8c9fd8b8398d82b9fe54d,True
+relationship management praise,68a8c9fd8b8398d82b9fe563,True
+relationship management praise,68a8c9fd8b8398d82b9fe576,True
+relationship management praise,68a8c9fd8b8398d82b9fe5bf,True
+relationship management praise,68a8c9fe8b8398d82b9fe6db,True
+relationship management praise,68a8c9fe8b8398d82b9fe70a,True
+relationship management praise,68a8c9ff8b8398d82b9fe72b,True
+relationship management praise,68a8c9ff8b8398d82b9fe72c,True
+relationship management praise,68a8c9ff8b8398d82b9fe769,True
+relationship management praise,68a8ca008b8398d82b9fe811,True
+relationship management praise,68a8ca008b8398d82b9fe812,True
+relationship management praise,68a8ca018b8398d82b9fe90c,True
+relationship management praise,68a8ca018b8398d82b9fe90d,True
+relationship management praise,68a8ca018b8398d82b9fe9ac,True
+relationship management praise,68a8ca028b8398d82b9fea38,True
+relationship management praise,68a8ca028b8398d82b9feacb,True
+relationship management praise,68a8ca028b8398d82b9fead7,True
+resolution eventually satisfactory,68a8c9fb8b8398d82b9fe389,True
+resolution eventually satisfactory,68a8c9fc8b8398d82b9fe3f4,True
+resolution eventually satisfactory,68a8c9fc8b8398d82b9fe474,True
+resolution eventually satisfactory,68a8c9fe8b8398d82b9fe6f2,True
+resolution eventually satisfactory,68a8c9ff8b8398d82b9fe74a,True
+resolution eventually satisfactory,68a8c9ff8b8398d82b9fe76c,True
+resolution eventually satisfactory,68a8ca008b8398d82b9fe7f9,True
+resolution eventually satisfactory,68a8ca008b8398d82b9fe899,True
+resolution eventually satisfactory,68a8ca008b8398d82b9fe8eb,True
+resolution eventually satisfactory,68a8ca018b8398d82b9fe927,True
+resolution eventually satisfactory,68a8ca018b8398d82b9fe962,True
+resolution eventually satisfactory,68a8ca028b8398d82b9feaac,True
+response time inadequate,68a8c9fc8b8398d82b9fe4aa,True
+response time inadequate,68a8c9fe8b8398d82b9fe632,True
+response time inadequate,68a8c9fe8b8398d82b9fe667,True
+response time inadequate,68a8c9ff8b8398d82b9fe70e,True
+response time inadequate,68a8ca008b8398d82b9fe862,True
+response time inadequate,68a8ca018b8398d82b9fe942,True
+response time inadequate,68a8ca018b8398d82b9fe966,True
+response time inadequate,68a8ca028b8398d82b9feac8,True
+response time inadequate,68a8ca028b8398d82b9fead5,True
+risk management tool,68a8c9fb8b8398d82b9fe3e3,True
+risk management tool,68a8c9fd8b8398d82b9fe4c2,True
+risk management tool,68a8c9fd8b8398d82b9fe4f8,True
+risk management tool,68a8c9fe8b8398d82b9fe603,True
+risk management tool,68a8c9fe8b8398d82b9fe60f,True
+risk management tool,68a8c9fe8b8398d82b9fe6c1,True
+risk management tool,68a8c9ff8b8398d82b9fe710,True
+risk management tool,68a8c9ff8b8398d82b9fe79a,True
+risk management tool,68a8ca008b8398d82b9fe810,True
+risk management tool,68a8ca008b8398d82b9fe8b5,True
+risk management tool,68a8ca008b8398d82b9fe8c8,True
+risk management tool,68a8ca018b8398d82b9fe954,True
+risk management tool,68a8ca028b8398d82b9fe9cf,True
+routine service feedback,68a8c9fb8b8398d82b9fe342,True
+routine service feedback,68a8c9fd8b8398d82b9fe4db,True
+routine service feedback,68a8c9fd8b8398d82b9fe5d1,True
+routine service feedback,68a8c9fe8b8398d82b9fe661,True
+routine service feedback,68a8ca008b8398d82b9fe7d5,True
+routine service feedback,68a8ca008b8398d82b9fe875,True
+routine service feedback,68a8ca018b8398d82b9fe993,True
+routine service feedback,68a8ca018b8398d82b9fe9a9,True
+routine service feedback,68a8ca028b8398d82b9fea4e,True
+routine service feedback,68a8ca028b8398d82b9fea51,True
+routine service feedback,68a8ca028b8398d82b9fea67,True
+routine service feedback,68a8ca028b8398d82b9fea7a,True
+routine service feedback,68a8ca028b8398d82b9fea87,True
+routine service feedback,68a8ca028b8398d82b9feaae,True
+sepa payment reject,68a8c9fb8b8398d82b9fe332,True
+sepa payment reject,68a8c9fb8b8398d82b9fe3a6,True
+sepa payment reject,68a8c9fc8b8398d82b9fe44f,True
+sepa payment reject,68a8c9fc8b8398d82b9fe462,True
+sepa payment reject,68a8c9fe8b8398d82b9fe630,True
+sepa payment reject,68a8c9fe8b8398d82b9fe68a,True
+sepa payment reject,68a8c9fe8b8398d82b9fe6a1,True
+sepa payment reject,68a8ca008b8398d82b9fe7f2,True
+sepa payment reject,68a8ca008b8398d82b9fe8d8,True
+sepa payment reject,68a8ca018b8398d82b9fe932,True
+sepa payment reject,68a8ca028b8398d82b9fea5d,True
+sepa payment reject,68a8ca028b8398d82b9feae2,True
+sepa transfer success,68a8c9fb8b8398d82b9fe369,True
+sepa transfer success,68a8c9fc8b8398d82b9fe419,True
+sepa transfer success,68a8c9fd8b8398d82b9fe526,True
+sepa transfer success,68a8c9fd8b8398d82b9fe569,True
+sepa transfer success,68a8c9fd8b8398d82b9fe596,True
+sepa transfer success,68a8c9ff8b8398d82b9fe717,True
+sepa transfer success,68a8ca008b8398d82b9fe86b,True
+sepa transfer success,68a8ca018b8398d82b9fe955,True
+sepa transfer success,68a8ca028b8398d82b9fea99,True
+sepa transfer success,68a8ca028b8398d82b9feaa5,True
+sepa transfer success,68a8ca028b8398d82b9feac1,True
+seasonal variation report,68a8c9fd8b8398d82b9fe555,True
+seasonal variation report,68a8c9fd8b8398d82b9fe572,True
+seasonal variation report,68a8c9fe8b8398d82b9fe642,True
+seasonal variation report,68a8c9fe8b8398d82b9fe6fa,True
+seasonal variation report,68a8c9ff8b8398d82b9fe752,True
+seasonal variation report,68a8ca008b8398d82b9fe832,True
+seasonal variation report,68a8ca028b8398d82b9fea14,True
+seasonal variation report,68a8ca028b8398d82b9fea53,True
+seasonal variation report,68a8ca028b8398d82b9feaef,True
+security incident concern,68a8c9fb8b8398d82b9fe33e,True
+security incident concern,68a8c9fb8b8398d82b9fe36b,True
+security incident concern,68a8c9fb8b8398d82b9fe3a1,True
+security incident concern,68a8c9fb8b8398d82b9fe3e6,True
+security incident concern,68a8c9fc8b8398d82b9fe3ee,True
+security incident concern,68a8c9fc8b8398d82b9fe409,True
+security incident concern,68a8c9fd8b8398d82b9fe557,True
+security incident concern,68a8c9fd8b8398d82b9fe59f,True
+security incident concern,68a8c9fd8b8398d82b9fe5c5,True
+security incident concern,68a8c9fe8b8398d82b9fe695,True
+security incident concern,68a8c9fe8b8398d82b9fe6ba,True
+security incident concern,68a8c9ff8b8398d82b9fe740,True
+security incident concern,68a8c9ff8b8398d82b9fe75e,True
+security incident concern,68a8c9ff8b8398d82b9fe783,True
+security incident concern,68a8c9ff8b8398d82b9fe7cf,True
+security incident concern,68a8ca008b8398d82b9fe7d7,True
+security incident concern,68a8ca008b8398d82b9fe804,True
+security incident concern,68a8ca008b8398d82b9fe82f,True
+security incident concern,68a8ca008b8398d82b9fe856,True
+security incident concern,68a8ca018b8398d82b9fe948,True
+security incident concern,68a8ca018b8398d82b9fe986,True
+security incident concern,68a8ca028b8398d82b9feadf,True
+security protocol question,68a8c9fb8b8398d82b9fe36e,True
+security protocol question,68a8c9fb8b8398d82b9fe3ad,True
+security protocol question,68a8c9fc8b8398d82b9fe3fc,True
+security protocol question,68a8c9fc8b8398d82b9fe431,True
+security protocol question,68a8c9fc8b8398d82b9fe452,True
+security protocol question,68a8c9fd8b8398d82b9fe5d3,True
+security protocol question,68a8c9fe8b8398d82b9fe6eb,True
+service availability question,68a8c9fb8b8398d82b9fe331,True
+service availability question,68a8c9fb8b8398d82b9fe391,True
+service availability question,68a8c9fc8b8398d82b9fe3ef,True
+service availability question,68a8c9fc8b8398d82b9fe40d,True
+service availability question,68a8c9fc8b8398d82b9fe46e,True
+service availability question,68a8c9fd8b8398d82b9fe5bd,True
+service availability question,68a8c9fe8b8398d82b9fe664,True
+service availability question,68a8c9ff8b8398d82b9fe73d,True
+service availability question,68a8ca028b8398d82b9fe9ff,True
+service availability question,68a8ca028b8398d82b9fea26,True
+service improvement acknowledge,68a8c9fc8b8398d82b9fe449,True
+service improvement acknowledge,68a8c9fd8b8398d82b9fe503,True
+service improvement acknowledge,68a8c9fd8b8398d82b9fe5b8,True
+service improvement acknowledge,68a8c9fd8b8398d82b9fe5c4,True
+service improvement acknowledge,68a8c9fe8b8398d82b9fe67d,True
+service improvement acknowledge,68a8c9fe8b8398d82b9fe6bd,True
+service improvement acknowledge,68a8c9ff8b8398d82b9fe796,True
+service improvement acknowledge,68a8ca008b8398d82b9fe890,True
+service improvement acknowledge,68a8ca018b8398d82b9fe92d,True
+service improvement acknowledge,68a8ca018b8398d82b9fe94c,True
+service improvement acknowledge,68a8ca028b8398d82b9fea0d,True
+service information request,68a8c9fb8b8398d82b9fe368,True
+service information request,68a8c9fc8b8398d82b9fe437,True
+service information request,68a8c9fc8b8398d82b9fe457,True
+service information request,68a8c9fd8b8398d82b9fe4ca,True
+service information request,68a8c9fd8b8398d82b9fe537,True
+service information request,68a8c9ff8b8398d82b9fe724,True
+service information request,68a8c9ff8b8398d82b9fe726,True
+service information request,68a8c9ff8b8398d82b9fe72d,True
+service information request,68a8c9ff8b8398d82b9fe7b1,True
+service information request,68a8ca008b8398d82b9fe7ee,True
+service information request,68a8ca008b8398d82b9fe814,True
+service information request,68a8ca008b8398d82b9fe819,True
+service information request,68a8ca018b8398d82b9fe9b6,True
+service interruption experience,68a8c9fb8b8398d82b9fe3e4,True
+service interruption experience,68a8c9fd8b8398d82b9fe4e0,True
+service interruption experience,68a8c9fd8b8398d82b9fe55e,True
+service interruption experience,68a8c9fd8b8398d82b9fe58d,True
+service interruption experience,68a8c9fe8b8398d82b9fe5f5,True
+service interruption experience,68a8c9ff8b8398d82b9fe714,True
+service interruption experience,68a8c9ff8b8398d82b9fe758,True
+service interruption experience,68a8ca008b8398d82b9fe7ea,True
+service interruption experience,68a8ca008b8398d82b9fe900,True
+service interruption experience,68a8ca028b8398d82b9fe9f1,True
+service interruption experience,68a8ca028b8398d82b9fe9fc,True
+service interruption experience,68a8ca028b8398d82b9fea1c,True
+service interruption experience,68a8ca028b8398d82b9feacf,True
+service interruption experience,68a8ca028b8398d82b9feaf3,True
+service quality poor,68a8c9fb8b8398d82b9fe34e,True
+service quality poor,68a8c9fb8b8398d82b9fe353,True
+service quality poor,68a8c9fe8b8398d82b9fe613,True
+service quality poor,68a8c9fe8b8398d82b9fe6ce,True
+service quality poor,68a8c9ff8b8398d82b9fe7a7,True
+service quality poor,68a8ca008b8398d82b9fe822,True
+service quality poor,68a8ca008b8398d82b9fe83b,True
+service quality poor,68a8ca018b8398d82b9fe971,True
+service quality poor,68a8ca018b8398d82b9fe9b0,True
+service quality poor,68a8ca028b8398d82b9fe9d9,True
+service quality poor,68a8ca028b8398d82b9fea07,True
+service restoration delay,68a8c9fd8b8398d82b9fe4da,True
+service restoration delay,68a8c9fd8b8398d82b9fe556,True
+service restoration delay,68a8c9fd8b8398d82b9fe55d,True
+service restoration delay,68a8c9fe8b8398d82b9fe639,True
+service restoration delay,68a8c9fe8b8398d82b9fe65b,True
+service restoration delay,68a8c9ff8b8398d82b9fe768,True
+service restoration delay,68a8ca008b8398d82b9fe8bb,True
+service restoration delay,68a8ca028b8398d82b9fe9f9,True
+service restoration delay,68a8ca028b8398d82b9fea8a,True
+service restoration delay,68a8ca028b8398d82b9fead2,True
+signatory update need,68a8c9fc8b8398d82b9fe472,True
+signatory update need,68a8c9fe8b8398d82b9fe60b,True
+signatory update need,68a8c9fe8b8398d82b9fe61a,True
+signatory update need,68a8c9fe8b8398d82b9fe6c8,True
+signatory update need,68a8ca008b8398d82b9fe8c3,True
+signatory update need,68a8ca018b8398d82b9fe935,True
+signatory update need,68a8ca018b8398d82b9fe95a,True
+signatory update need,68a8ca018b8398d82b9fe95e,True
+signatory update need,68a8ca028b8398d82b9fea6d,True
+signatory update need,68a8ca028b8398d82b9fea70,True
+software bug complaint,68a8c9fb8b8398d82b9fe39a,True
+software bug complaint,68a8c9fc8b8398d82b9fe411,True
+software bug complaint,68a8c9fe8b8398d82b9fe608,True
+software bug complaint,68a8c9ff8b8398d82b9fe75c,True
+software bug complaint,68a8ca008b8398d82b9fe839,True
+software bug complaint,68a8ca018b8398d82b9fe934,True
+software bug complaint,68a8ca028b8398d82b9fe9cb,True
+software bug complaint,68a8ca028b8398d82b9fea75,True
+software bug complaint,68a8ca028b8398d82b9fea9e,True
+country excellent,68a8c9fd8b8398d82b9fe4d6,True
+country excellent,68a8c9fd8b8398d82b9fe57a,True
+country excellent,68a8c9ff8b8398d82b9fe754,True
+country excellent,68a8c9ff8b8398d82b9fe767,True
+country excellent,68a8ca008b8398d82b9fe815,True
+country excellent,68a8ca008b8398d82b9fe894,True
+country excellent,68a8ca008b8398d82b9fe8a7,True
+country excellent,68a8ca018b8398d82b9fe908,True
+country excellent,68a8ca018b8398d82b9fe992,True
+country excellent,68a8ca028b8398d82b9fea13,True
+country excellent,68a8ca028b8398d82b9fea6c,True
+function excellent,68a8c9fb8b8398d82b9fe348,True
+function excellent,68a8c9fc8b8398d82b9fe49e,True
+function excellent,68a8c9fd8b8398d82b9fe5ad,True
+function excellent,68a8c9fe8b8398d82b9fe5fe,True
+function excellent,68a8c9fe8b8398d82b9fe6e2,True
+function excellent,68a8c9ff8b8398d82b9fe71c,True
+function excellent,68a8ca008b8398d82b9fe847,True
+function excellent,68a8ca008b8398d82b9fe85f,True
+function excellent,68a8ca018b8398d82b9fe9a0,True
+function excellent,68a8ca028b8398d82b9fe9de,True
+standard operation smooth,68a8c9fb8b8398d82b9fe32f,True
+standard operation smooth,68a8c9fc8b8398d82b9fe3fb,True
+standard operation smooth,68a8c9fd8b8398d82b9fe54c,True
+standard operation smooth,68a8c9fd8b8398d82b9fe55c,True
+standard operation smooth,68a8c9fd8b8398d82b9fe583,True
+standard operation smooth,68a8c9fd8b8398d82b9fe584,True
+standard operation smooth,68a8c9fe8b8398d82b9fe61d,True
+standard operation smooth,68a8c9fe8b8398d82b9fe6dd,True
+standard operation smooth,68a8c9fe8b8398d82b9fe701,True
+standard operation smooth,68a8c9ff8b8398d82b9fe798,True
+standard operation smooth,68a8ca008b8398d82b9fe88c,True
+standard operation smooth,68a8ca028b8398d82b9fea10,True
+standard operation smooth,68a8ca028b8398d82b9feaba,True
+standard operation smooth,68a8ca028b8398d82b9feae6,True
+stand order success,68a8c9fc8b8398d82b9fe432,True
+stand order success,68a8c9fc8b8398d82b9fe440,True
+stand order success,68a8c9fe8b8398d82b9fe682,True
+stand order success,68a8c9fe8b8398d82b9fe6fb,True
+stand order success,68a8c9ff8b8398d82b9fe719,True
+stand order success,68a8c9ff8b8398d82b9fe731,True
+stand order success,68a8c9ff8b8398d82b9fe742,True
+stand order success,68a8ca008b8398d82b9fe7e3,True
+stand order success,68a8ca008b8398d82b9fe89d,True
+stand order success,68a8ca008b8398d82b9fe89f,True
+stand order success,68a8ca018b8398d82b9fe967,True
+system availability issue,68a8c9fb8b8398d82b9fe3d7,True
+system availability issue,68a8c9fc8b8398d82b9fe3ed,True
+system availability issue,68a8c9fc8b8398d82b9fe441,True
+system availability issue,68a8c9fd8b8398d82b9fe564,True
+system availability issue,68a8c9fe8b8398d82b9fe60c,True
+system availability issue,68a8c9ff8b8398d82b9fe7a1,True
+system availability issue,68a8ca008b8398d82b9fe7d9,True
+system availability issue,68a8ca008b8398d82b9fe851,True
+system availability issue,68a8ca008b8398d82b9fe8b1,True
+system availability issue,68a8ca018b8398d82b9fe98d,True
+system availability issue,68a8ca018b8398d82b9fe9ae,True
+system availability issue,68a8ca028b8398d82b9fea1e,True
+system availability issue,68a8ca028b8398d82b9fea3b,True
+system navigation help,68a8c9fc8b8398d82b9fe435,True
+system navigation help,68a8c9fd8b8398d82b9fe4cb,True
+system navigation help,68a8c9fd8b8398d82b9fe551,True
+system navigation help,68a8c9fd8b8398d82b9fe5dc,True
+system navigation help,68a8c9fe8b8398d82b9fe600,True
+system navigation help,68a8c9fe8b8398d82b9fe692,True
+system navigation help,68a8c9ff8b8398d82b9fe734,True
+system navigation help,68a8c9ff8b8398d82b9fe746,True
+system navigation help,68a8c9ff8b8398d82b9fe7ac,True
+system navigation help,68a8ca008b8398d82b9fe8d5,True
+system navigation help,68a8ca028b8398d82b9fea7e,True
+system navigation help,68a8ca028b8398d82b9fea93,True
+system navigation help,68a8ca028b8398d82b9feace,True
+system outage affect,68a8c9fb8b8398d82b9fe328,True
+system outage affect,68a8c9fb8b8398d82b9fe3b5,True
+system outage affect,68a8c9fc8b8398d82b9fe42d,True
+system outage affect,68a8c9fe8b8398d82b9fe70b,True
+system outage affect,68a8ca008b8398d82b9fe7e1,True
+system outage frustration,68a8c9fb8b8398d82b9fe38a,True
+system outage frustration,68a8c9fc8b8398d82b9fe44a,True
+system outage frustration,68a8c9fc8b8398d82b9fe48f,True
+system outage frustration,68a8ca018b8398d82b9fe909,True
+system outage frustration,68a8ca018b8398d82b9fe943,True
+system outage frustration,68a8ca018b8398d82b9fe9a3,True
+system outage frustration,68a8ca028b8398d82b9fe9f2,True
+system outage frustration,68a8ca028b8398d82b9fea86,True
+party integration,68a8c9fb8b8398d82b9fe3ae,True
+party integration,68a8c9fb8b8398d82b9fe3c0,True
+party integration,68a8c9fc8b8398d82b9fe429,True
+party integration,68a8c9fd8b8398d82b9fe54b,True
+party integration,68a8c9fd8b8398d82b9fe580,True
+party integration,68a8c9fd8b8398d82b9fe5c8,True
+party integration,68a8c9ff8b8398d82b9fe771,True
+party integration,68a8ca008b8398d82b9fe82a,True
+party integration,68a8ca008b8398d82b9fe861,True
+party integration,68a8ca008b8398d82b9fe8df,True
+party integration,68a8ca018b8398d82b9fe97e,True
+party integration,68a8ca028b8398d82b9fea1a,True
+trade documentation smooth,68a8c9fb8b8398d82b9fe364,True
+trade documentation smooth,68a8c9fc8b8398d82b9fe45c,True
+trade documentation smooth,68a8c9fc8b8398d82b9fe460,True
+trade documentation smooth,68a8c9fd8b8398d82b9fe533,True
+trade documentation smooth,68a8c9fe8b8398d82b9fe654,True
+trade documentation smooth,68a8c9ff8b8398d82b9fe739,True
+trade documentation smooth,68a8c9ff8b8398d82b9fe79d,True
+trade documentation smooth,68a8ca008b8398d82b9fe8d0,True
+trade documentation smooth,68a8ca018b8398d82b9fe92b,True
+trade documentation smooth,68a8ca018b8398d82b9fe940,True
+trade documentation smooth,68a8ca028b8398d82b9fea28,True
+trade documentation smooth,68a8ca028b8398d82b9fea6f,True
+trade finance satisfaction,68a8c9fb8b8398d82b9fe349,True
+trade finance satisfaction,68a8c9fc8b8398d82b9fe47f,True
+trade finance satisfaction,68a8c9fc8b8398d82b9fe4af,True
+trade finance satisfaction,68a8c9fd8b8398d82b9fe4e6,True
+trade finance satisfaction,68a8c9fd8b8398d82b9fe4ef,True
+trade finance satisfaction,68a8c9fd8b8398d82b9fe512,True
+trade finance satisfaction,68a8c9fd8b8398d82b9fe597,True
+trade finance satisfaction,68a8c9fd8b8398d82b9fe5e0,True
+trade finance satisfaction,68a8c9fe8b8398d82b9fe67a,True
+trade finance satisfaction,68a8c9fe8b8398d82b9fe68d,True
+trade finance satisfaction,68a8c9ff8b8398d82b9fe72e,True
+trade finance satisfaction,68a8c9ff8b8398d82b9fe7c1,True
+trade finance satisfaction,68a8ca008b8398d82b9fe857,True
+trade finance satisfaction,68a8ca008b8398d82b9fe86e,True
+trade finance satisfaction,68a8ca018b8398d82b9fe93d,True
+trade finance satisfaction,68a8ca018b8398d82b9fe9a8,True
+trade finance satisfaction,68a8ca028b8398d82b9fea04,True
+trade finance satisfaction,68a8ca028b8398d82b9fea95,True
+transaction decline frustration,68a8c9fb8b8398d82b9fe34c,True
+transaction decline frustration,68a8c9fd8b8398d82b9fe4ba,True
+transaction decline frustration,68a8c9fe8b8398d82b9fe6a6,True
+transaction decline frustration,68a8c9fe8b8398d82b9fe6e6,True
+transaction decline frustration,68a8c9fe8b8398d82b9fe706,True
+transaction decline frustration,68a8ca008b8398d82b9fe818,True
+transaction decline frustration,68a8ca018b8398d82b9fe98a,True
+transaction decline frustration,68a8ca018b8398d82b9fe99b,True
+transaction decline frustration,68a8ca028b8398d82b9fe9e2,True
+transaction processing stick,68a8c9fb8b8398d82b9fe34a,True
+transaction processing stick,68a8c9fc8b8398d82b9fe45f,True
+transaction processing stick,68a8c9fd8b8398d82b9fe4c7,True
+transaction processing stick,68a8c9fd8b8398d82b9fe55a,True
+transaction processing stick,68a8c9fe8b8398d82b9fe655,True
+transaction processing stick,68a8ca018b8398d82b9fe938,True
+transaction processing stick,68a8ca028b8398d82b9fea37,True
+transaction processing stick,68a8ca028b8398d82b9fea4d,True
+transfer delay experience,68a8c9fc8b8398d82b9fe42a,True
+transfer delay experience,68a8c9fd8b8398d82b9fe542,True
+transfer delay experience,68a8c9fe8b8398d82b9fe6bb,True
+transfer delay experience,68a8c9ff8b8398d82b9fe78d,True
+transfer delay experience,68a8c9ff8b8398d82b9fe7a2,True
+transfer delay experience,68a8ca008b8398d82b9fe82d,True
+transfer delay experience,68a8ca018b8398d82b9fe9a6,True
+transfer delay experience,68a8ca028b8398d82b9fe9dc,True
+transfer delay experience,68a8ca028b8398d82b9fea27,True
+transfer delay experience,68a8ca028b8398d82b9fea5f,True
+transfer delay experience,68a8ca028b8398d82b9feabb,True
+treasury operation smooth,68a8c9fb8b8398d82b9fe352,True
+treasury operation smooth,68a8c9fc8b8398d82b9fe430,True
+treasury operation smooth,68a8c9fd8b8398d82b9fe5c0,True
+treasury operation smooth,68a8c9fe8b8398d82b9fe634,True
+treasury operation smooth,68a8c9fe8b8398d82b9fe6ad,True
+treasury operation smooth,68a8c9fe8b8398d82b9fe6c0,True
+treasury operation smooth,68a8c9ff8b8398d82b9fe735,True
+treasury operation smooth,68a8ca008b8398d82b9fe8b0,True
+treasury operation smooth,68a8ca008b8398d82b9fe8d2,True
+treasury operation smooth,68a8ca008b8398d82b9fe8fb,True
+treasury operation smooth,68a8ca028b8398d82b9fea57,True
+treasury operation smooth,68a8ca028b8398d82b9fea66,True
+treasury service excellence,68a8c9fb8b8398d82b9fe36f,True
+treasury service excellence,68a8c9fc8b8398d82b9fe402,True
+treasury service excellence,68a8c9fc8b8398d82b9fe40c,True
+treasury service excellence,68a8c9fc8b8398d82b9fe489,True
+treasury service excellence,68a8c9fd8b8398d82b9fe4e1,True
+treasury service excellence,68a8c9fd8b8398d82b9fe5df,True
+treasury service excellence,68a8c9fe8b8398d82b9fe66c,True
+treasury service excellence,68a8c9fe8b8398d82b9fe6ed,True
+treasury service excellence,68a8c9ff8b8398d82b9fe71f,True
+treasury service excellence,68a8c9ff8b8398d82b9fe7b2,True
+treasury service excellence,68a8ca008b8398d82b9fe7e0,True
+treasury service excellence,68a8ca008b8398d82b9fe81c,True
+treasury service excellence,68a8ca008b8398d82b9fe823,True
+treasury service excellence,68a8ca008b8398d82b9fe845,True
+treasury service excellence,68a8ca018b8398d82b9fe911,True
+treasury service excellence,68a8ca018b8398d82b9fe97c,True
+treasury service excellence,68a8ca028b8398d82b9fe9eb,True
+treasury service excellence,68a8ca028b8398d82b9fea0f,True
+treasury service excellence,68a8ca028b8398d82b9fea2b,True
+treasury service excellence,68a8ca028b8398d82b9fea54,True
+unauthorized access fear,68a8c9fb8b8398d82b9fe346,True
+unauthorized access fear,68a8c9fb8b8398d82b9fe372,True
+unauthorized access fear,68a8c9fc8b8398d82b9fe467,True
+unauthorized access fear,68a8c9fd8b8398d82b9fe56c,True
+unauthorized access fear,68a8c9fd8b8398d82b9fe573,True
+unauthorized access fear,68a8c9fe8b8398d82b9fe678,True
+unauthorized access fear,68a8c9ff8b8398d82b9fe723,True
+unauthorized access fear,68a8c9ff8b8398d82b9fe763,True
+unauthorized access fear,68a8c9ff8b8398d82b9fe76f,True
+unauthorized access fear,68a8c9ff8b8398d82b9fe772,True
+unauthorized access fear,68a8ca008b8398d82b9fe8c5,True
+unauthorized access fear,68a8ca008b8398d82b9fe8ec,True
+unauthorized access fear,68a8ca028b8398d82b9feab1,True
+unauthorized access fear,68a8ca028b8398d82b9feae4,True
+unexpected charge discover,68a8c9fb8b8398d82b9fe3b2,True
+unexpected charge discover,68a8c9fb8b8398d82b9fe3b3,True
+unexpected charge discover,68a8c9fb8b8398d82b9fe3d4,True
+unexpected charge discover,68a8c9ff8b8398d82b9fe73c,True
+unexpected charge discover,68a8c9ff8b8398d82b9fe7af,True
+unexpected charge discover,68a8ca018b8398d82b9fe93a,True
+unexpected charge discover,68a8ca028b8398d82b9fea9d,True
+unexpected charge discover,68a8ca028b8398d82b9feaca,True
+unhelpful agent encounter,68a8c9fc8b8398d82b9fe40e,True
+unhelpful agent encounter,68a8c9fc8b8398d82b9fe47b,True
+unhelpful agent encounter,68a8c9fc8b8398d82b9fe47d,True
+unhelpful agent encounter,68a8c9fd8b8398d82b9fe5ae,True
+unhelpful agent encounter,68a8c9fe8b8398d82b9fe6e4,True
+unhelpful agent encounter,68a8ca008b8398d82b9fe84e,True
+unhelpful agent encounter,68a8ca008b8398d82b9fe86a,True
+unhelpful agent encounter,68a8ca008b8398d82b9fe8a5,True
+unhelpful agent encounter,68a8ca008b8398d82b9fe8c1,True
+unhelpful agent encounter,68a8ca018b8398d82b9fe93b,True
+verification process lengthy,68a8c9fb8b8398d82b9fe3dc,True
+verification process lengthy,68a8c9fc8b8398d82b9fe3fe,True
+verification process lengthy,68a8c9fc8b8398d82b9fe47e,True
+verification process lengthy,68a8c9fd8b8398d82b9fe559,True
+verification process lengthy,68a8c9fd8b8398d82b9fe585,True
+verification process lengthy,68a8c9fe8b8398d82b9fe64a,True
+verification process lengthy,68a8c9ff8b8398d82b9fe751,True
+verification process lengthy,68a8ca018b8398d82b9fe964,True
+verification process lengthy,68a8ca018b8398d82b9fe9a5,True
+verification process lengthy,68a8ca028b8398d82b9fe9ed,True
+verification process lengthy,68a8ca028b8398d82b9fea2c,True
+verification process lengthy,68a8ca028b8398d82b9fea65,True
+verification process lengthy,68a8ca028b8398d82b9fea88,True
+viral complaint spread,68a8c9fc8b8398d82b9fe400,True
+viral complaint spread,68a8c9fd8b8398d82b9fe4e9,True
+viral complaint spread,68a8c9fd8b8398d82b9fe546,True
+viral complaint spread,68a8c9fd8b8398d82b9fe554,True
+viral complaint spread,68a8c9fd8b8398d82b9fe5d4,True
+viral complaint spread,68a8c9fe8b8398d82b9fe70c,True
+viral complaint spread,68a8c9ff8b8398d82b9fe78f,True
+viral complaint spread,68a8c9ff8b8398d82b9fe79b,True
+viral complaint spread,68a8ca008b8398d82b9fe887,True
+viral complaint spread,68a8ca008b8398d82b9fe8f4,True
+viral complaint spread,68a8ca028b8398d82b9fe9ce,True
+viral complaint spread,68a8ca028b8398d82b9fea96,True
+viral complaint spread,68a8ca028b8398d82b9feaa1,True
+website performance issue,68a8c9fc8b8398d82b9fe3f6,True
+website performance issue,68a8c9fd8b8398d82b9fe535,True
+website performance issue,68a8c9fe8b8398d82b9fe669,True
+website performance issue,68a8c9fe8b8398d82b9fe6a5,True
+website performance issue,68a8ca008b8398d82b9fe853,True
+website performance issue,68a8ca018b8398d82b9fe96b,True
+website performance issue,68a8ca028b8398d82b9fe9e0,True
+website performance issue,68a8ca028b8398d82b9fe9ee,True
+website performance issue,68a8ca028b8398d82b9fea16,True
+year end processing,68a8c9fb8b8398d82b9fe335,True
+year end processing,68a8c9fc8b8398d82b9fe420,True
+year end processing,68a8c9fd8b8398d82b9fe4b7,True
+year end processing,68a8c9fd8b8398d82b9fe588,True
+year end processing,68a8c9fd8b8398d82b9fe590,True
+year end processing,68a8c9fe8b8398d82b9fe681,True
+year end processing,68a8c9fe8b8398d82b9fe698,True
+year end processing,68a8ca008b8398d82b9fe816,True
+year end processing,68a8ca008b8398d82b9fe84a,True
+year end processing,68a8ca008b8398d82b9fe88a,True
+year end processing,68a8ca018b8398d82b9fe96c,True
+year end processing,68a8ca018b8398d82b9fe98b,True

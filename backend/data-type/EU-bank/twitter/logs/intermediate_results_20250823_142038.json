@@ -1,0 +1,133 @@
+[
+  {
+    "tweet_id": "T607535",
+    "update_doc": {
+      "text": "Experiencing intermittent connectivity issues impacting online & mobile access. Our teams are working diligently to restore full service. We understand the frustration & appreciate your patience. We're committed to maintaining secure & reliable banking services. Updates to fol...",
+      "hashtags": [
+        "#Banking",
+        "#DigitalBanking",
+        "#Finance",
+        "#Cybersecurity"
+      ],
+      "retweet_count": 25,
+      "like_count": 85,
+      "reply_count": 35,
+      "quote_count": 10,
+      "sentiment": "Negative",
+      "urgency": true,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "William Mckinney",
+      "dominant_topic": "Service Interruption Experienced",
+      "subtopics": "System Access Lost, Online Service Disrupted, Network Communication Interrupted"
+    },
+    "timestamp": "2025-08-23T14:20:46.314909",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T065334",
+    "update_doc": {
+      "text": "Experiencing intermittent slowness on our website & reports of browser compatibility issues with older versions of Chrome/Firefox. Our team is working to resolve this ASAP! We apologize for the inconvenience. Accessing accounts via the mobile app remains unaffected. #DigitalBa...",
+      "hashtags": [
+        "#DigitalBanking",
+        "#BankingNews",
+        "#FinTech",
+        "#CustomerService"
+      ],
+      "retweet_count": 25,
+      "like_count": 85,
+      "reply_count": 35,
+      "quote_count": 10,
+      "sentiment": "Negative",
+      "urgency": true,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Henry Bryant",
+      "dominant_topic": "Website Performance Issues",
+      "subtopics": "Site Performance Slow, Browser Compatibility Issues, Web Interface Problems"
+    },
+    "timestamp": "2025-08-23T14:20:51.422316",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T295925",
+    "update_doc": {
+      "text": "Navigating the increasing complexity of compliance monitoring is a constant challenge. While robust risk management is essential, the sheer volume of regulatory requirements feels unsustainable. Need to see more streamlined processes & tech solutions to alleviate the burden. #...",
+      "hashtags": [
+        "#BankingCompliance",
+        "#RegTech",
+        "#RiskManagement",
+        "#FinTech"
+      ],
+      "retweet_count": 25,
+      "like_count": 85,
+      "reply_count": 40,
+      "quote_count": 10,
+      "sentiment": "Negative",
+      "urgency": false,
+      "priority": "P3 - Low"
+    },
+    "original_data": {
+      "username": "Michele Ochoa",
+      "dominant_topic": "Compliance Checks Intrusive",
+      "subtopics": "Compliance Monitoring Excessive, Legal Requirements Burdensome, Audit Process Intensive"
+    },
+    "timestamp": "2025-08-23T14:20:56.410640",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T644797",
+    "update_doc": {
+      "text": "Extended platform repair continues to impact some online banking services. We understand the frustration & are working diligently to restore full access. The infrastructure fix is proving more complex than initially anticipated, but security & data integrity remain our top pri...",
+      "hashtags": [
+        "#Banking",
+        "#DigitalBanking",
+        "#Finance",
+        "#Cybersecurity",
+        "#BankingService"
+      ],
+      "retweet_count": 25,
+      "like_count": 85,
+      "reply_count": 40,
+      "quote_count": 10,
+      "sentiment": "Negative",
+      "urgency": true,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Christopher Hicks",
+      "dominant_topic": "Service Restoration Delayed",
+      "subtopics": "Service Restoration Slow, Platform Repair Extended, Infrastructure Fix Prolonged"
+    },
+    "timestamp": "2025-08-23T14:21:01.655401",
+    "saved_to_db": true
+  },
+  {
+    "tweet_id": "T715637",
+    "update_doc": {
+      "text": "Experiencing intermittent delays with some money transfers & payment processing due to a temporary halt in our transaction engine. Our teams are working diligently to resolve this & restore full service. We appreciate your patience! Monitoring closely for any fraudulent activi...",
+      "hashtags": [
+        "#Banking",
+        "#FinTech",
+        "#DigitalBanking",
+        "#PaymentProcessing"
+      ],
+      "retweet_count": 25,
+      "like_count": 85,
+      "reply_count": 40,
+      "quote_count": 10,
+      "sentiment": "Negative",
+      "urgency": true,
+      "priority": "P2 - Medium"
+    },
+    "original_data": {
+      "username": "Andrea Walters",
+      "dominant_topic": "Transaction Processing Stuck",
+      "subtopics": "Payment Processing Halted, Transaction Engine Stopped, Money Transfer Stuck"
+    },
+    "timestamp": "2025-08-23T14:21:06.672194",
+    "saved_to_db": true
+  }
+]

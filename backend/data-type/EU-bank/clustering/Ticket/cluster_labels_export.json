@@ -1,0 +1,4637 @@
+{
+  "export_date": "2025-08-05T12:46:27.378903",
+  "total_clusters": 115,
+  "clusters": [
+    {
+      "cluster_id": 69,
+      "cluster_name": "invalid / route / number / ach",
+      "keyphrases": [
+        "invalid route number",
+        "route number validation",
+        "invalid ach routing"
+      ],
+      "dominant_label": "ACH Debit Route Number Verification",
+      "subclusters": {
+        "0": {
+          "label": "ACH Payment Route Validation Protocols",
+          "keyphrases": [
+            "invalid route number"
+          ]
+        },
+        "1": {
+          "label": "ACH Origination Routing Number Accuracy",
+          "keyphrases": [
+            "route number validation"
+          ]
+        },
+        "2": {
+          "label": "ACH Transaction Route Number Anomaly Detection",
+          "keyphrases": [
+            "invalid ach routing"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 40,
+      "cluster_name": "ach / fraud / detection",
+      "keyphrases": [
+        "ach fraud update",
+        "fraud detection update"
+      ],
+      "dominant_label": "ACH Fraud Pattern Anomaly Engine",
+      "subclusters": {
+        "0": {
+          "label": "Automated Clearing House Fraud Mitigation",
+          "keyphrases": [
+            "ach fraud update"
+          ]
+        },
+        "1": {
+          "label": "Fraud Analytics Platform Enhancement",
+          "keyphrases": [
+            "fraud detection update"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 91,
+      "cluster_name": "ach / payroll / fail",
+      "keyphrases": [
+        "ach payroll rejection",
+        "ach payroll delay",
+        "fail ach payroll",
+        "ach payroll failure"
+      ],
+      "dominant_label": "ACH Origination Return Reason Analysis Engine",
+      "subclusters": {
+        "0": {
+          "label": "Automated Clearing House Disbursement Exception Handling",
+          "keyphrases": [
+            "ach payroll rejection"
+          ]
+        },
+        "1": {
+          "label": "ACH Payroll Processing System Latency Analysis",
+          "keyphrases": [
+            "ach payroll delay"
+          ]
+        },
+        "2": {
+          "label": "Direct Deposit Transaction Failure Investigation",
+          "keyphrases": [
+            "fail ach payroll"
+          ]
+        },
+        "3": {
+          "label": "ACH Payroll Payment System Error Resolution",
+          "keyphrases": [
+            "ach payroll failure"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 77,
+      "cluster_name": "dna / batch / ach / api",
+      "keyphrases": [
+        "dna batch processing",
+        "ach api timeout",
+        "ach batch failure",
+        "ach file validation",
+        "ach batch delay",
+        "ach file rejection",
+        "fail ach batch"
+      ],
+      "dominant_label": "ACH Return File Exception Workflow",
+      "subclusters": {
+        "0": {
+          "label": "Automated Clearing House File Transmission Errors",
+          "keyphrases": [
+            "ach file rejection",
+            "ach file validation"
+          ]
+        },
+        "1": {
+          "label": "ACH Batch Job Scheduling Anomalies",
+          "keyphrases": [
+            "ach batch delay"
+          ]
+        },
+        "2": {
+          "label": "ACH Payment API Connectivity Issues",
+          "keyphrases": [
+            "ach api timeout"
+          ]
+        },
+        "3": {
+          "label": "ACH Transaction Processing Failure Analysis",
+          "keyphrases": [
+            "fail ach batch"
+          ]
+        },
+        "4": {
+          "label": "ACH Batch Job Completion Rate Monitoring",
+          "keyphrases": [
+            "dna batch processing"
+          ]
+        },
+        "5": {
+          "label": "ACH Payment System Batch Error Escalation",
+          "keyphrases": [
+            "ach batch failure"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 114,
+      "cluster_name": "ach / routing / route",
+      "keyphrases": [
+        "ach routing error",
+        "ach route validation",
+        "ach routing number",
+        "ach route error"
+      ],
+      "dominant_label": "ACH Return Route Validation Engine",
+      "subclusters": {
+        "0": {
+          "label": "ACH Payment Routing Validation Engine",
+          "keyphrases": [
+            "ach routing error",
+            "ach route validation"
+          ]
+        },
+        "1": {
+          "label": "ACH Payment Route Number Discrepancy Analysis",
+          "keyphrases": [
+            "ach routing number",
+            "ach route error"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 13,
+      "cluster_name": "aml / system / procedure",
+      "keyphrases": [
+        "aml system update",
+        "aml procedure update",
+        "aml system upgrade",
+        "aml threshold revision",
+        "aml threshold change",
+        "aml rule revision",
+        "aml rule update"
+      ],
+      "dominant_label": "AML Transaction Rule Tuning Engine",
+      "subclusters": {
+        "0": {
+          "label": "AML Regulatory Change Implementation",
+          "keyphrases": [
+            "aml procedure update",
+            "aml threshold change"
+          ]
+        },
+        "1": {
+          "label": "AML System Configuration Management",
+          "keyphrases": [
+            "aml system upgrade"
+          ]
+        },
+        "2": {
+          "label": "AML Alert Tuning and Calibration",
+          "keyphrases": [
+            "aml threshold revision"
+          ]
+        },
+        "3": {
+          "label": "Transaction Monitoring Rule Lifecycle",
+          "keyphrases": [
+            "aml rule update"
+          ]
+        },
+        "4": {
+          "label": "BSA/AML System Maintenance Scheduling",
+          "keyphrases": [
+            "aml system update"
+          ]
+        },
+        "5": {
+          "label": "Anti-Money Laundering Rule Refinement",
+          "keyphrases": [
+            "aml rule revision"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 52,
+      "cluster_name": "atm card retention",
+      "keyphrases": [
+        "atm card retention"
+      ],
+      "dominant_label": "ATM Card Compromise Incident Response",
+      "subclusters": {
+        "0": {
+          "label": "ATM Cardholder Retention Strategies",
+          "keyphrases": [
+            "atm card retention"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 57,
+      "cluster_name": "account nickname truncation",
+      "keyphrases": [
+        "account nickname truncation"
+      ],
+      "dominant_label": "Account Nickname Data Masking Engine",
+      "subclusters": {
+        "0": {
+          "label": "Customer Data Masking Protocol",
+          "keyphrases": [
+            "account nickname truncation"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 68,
+      "cluster_name": "account nickname font",
+      "keyphrases": [
+        "account nickname font"
+      ],
+      "dominant_label": "Account Nickname Font Rendering Engine",
+      "subclusters": {
+        "0": {
+          "label": "Customer Data Presentation Layer Configuration",
+          "keyphrases": [
+            "account nickname font"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 93,
+      "cluster_name": "nickname / display / account",
+      "keyphrases": [
+        "nickname display error",
+        "account nickname alignment",
+        "account nickname display",
+        "nickname truncation"
+      ],
+      "dominant_label": "Account Nickname Rendering Consistency Engine",
+      "subclusters": {
+        "0": {
+          "label": "Digital Banking Account Profile Rendering",
+          "keyphrases": [
+            "nickname display error"
+          ]
+        },
+        "1": {
+          "label": "Customer Account Name Format Validation",
+          "keyphrases": [
+            "account nickname alignment"
+          ]
+        },
+        "2": {
+          "label": "Online Banking Customer Identity Display",
+          "keyphrases": [
+            "account nickname display"
+          ]
+        },
+        "3": {
+          "label": "Core Banking Account Label Length Control",
+          "keyphrases": [
+            "nickname truncation"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 111,
+      "cluster_name": "account / detail / incorrect / balance",
+      "keyphrases": [
+        "account detail font",
+        "incorrect account statement",
+        "balance field misalignment",
+        "account balance discrepancy",
+        "account balance query",
+        "balance label misalignment",
+        "account balance alignment",
+        "balance label font",
+        "account balance font",
+        "label misalignment",
+        "account summary font"
+      ],
+      "dominant_label": "Account Statement Balance Field Validation",
+      "subclusters": {
+        "0": {
+          "label": "Core Deposit Account Statement Rendering",
+          "keyphrases": [
+            "account detail font",
+            "balance field misalignment"
+          ]
+        },
+        "1": {
+          "label": "Digital Banking Account Summary Display",
+          "keyphrases": [
+            "account summary font"
+          ]
+        },
+        "2": {
+          "label": "Retail Account Balance Verification Workflow",
+          "keyphrases": [
+            "account balance query"
+          ]
+        },
+        "3": {
+          "label": "Mortgage Servicing Statement Discrepancy Analysis",
+          "keyphrases": [
+            "account balance discrepancy"
+          ]
+        },
+        "4": {
+          "label": "Commercial Loan Statement Formatting Errors",
+          "keyphrases": [
+            "incorrect account statement"
+          ]
+        },
+        "5": {
+          "label": "Core Banking Balance Label Alignment",
+          "keyphrases": [
+            "balance label misalignment"
+          ]
+        },
+        "6": {
+          "label": "Treasury Management Account Detail Formatting",
+          "keyphrases": [
+            "account balance alignment"
+          ]
+        },
+        "7": {
+          "label": "Core Deposit Account Statement Font Consistency",
+          "keyphrases": [
+            "balance label font"
+          ]
+        },
+        "8": {
+          "label": "Retail Banking Statement Font Management",
+          "keyphrases": [
+            "account balance font"
+          ]
+        },
+        "9": {
+          "label": "Statement Generation Label Misalignment Detection",
+          "keyphrases": [
+            "label misalignment"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 73,
+      "cluster_name": "ldap / login / query / authentication",
+      "keyphrases": [
+        "ldap login failure",
+        "ldap query latency",
+        "ldap authentication failure",
+        "ldap connection timeout",
+        "ldap server latency"
+      ],
+      "dominant_label": "Active Directory Authentication Failure Analysis",
+      "subclusters": {
+        "0": {
+          "label": "Digital Banking Authentication Infrastructure",
+          "keyphrases": [
+            "ldap authentication failure",
+            "ldap login failure"
+          ]
+        },
+        "1": {
+          "label": "Core Banking System Directory Services Performance",
+          "keyphrases": [
+            "ldap query latency",
+            "ldap server latency"
+          ]
+        },
+        "2": {
+          "label": "Loan Origination System User Access Control",
+          "keyphrases": [
+            "ldap connection timeout"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 101,
+      "cluster_name": "authservice / login / transaction / datum",
+      "keyphrases": [
+        "authservice login failure",
+        "transaction datum lock",
+        "authsvc login failure",
+        "authsvc latency issue",
+        "authserv login failure"
+      ],
+      "dominant_label": "AuthService Transaction Failure Analysis System",
+      "subclusters": {
+        "0": {
+          "label": "Authentication Service Transaction Degradation",
+          "keyphrases": [
+            "authservice login failure",
+            "authsvc login failure"
+          ]
+        },
+        "1": {
+          "label": "Transaction Data Integrity Monitoring",
+          "keyphrases": [
+            "transaction datum lock"
+          ]
+        },
+        "2": {
+          "label": "Authentication API Performance Bottleneck Analysis",
+          "keyphrases": [
+            "authsvc latency issue"
+          ]
+        },
+        "3": {
+          "label": "Authentication Service Failure Diagnostics",
+          "keyphrases": [
+            "authserv login failure"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 107,
+      "cluster_name": "avaya / aura / voip / audio",
+      "keyphrases": [
+        "avaya aura static",
+        "voip audio quality",
+        "voip quality degradation",
+        "voip quality"
+      ],
+      "dominant_label": "Avaya Aura VoIP Quality Analysis",
+      "subclusters": {
+        "0": {
+          "label": "Avaya Aura VoIP Call Quality Monitoring",
+          "keyphrases": [
+            "avaya aura static",
+            "voip quality"
+          ]
+        },
+        "1": {
+          "label": "VoIP Degradation Root Cause Analysis",
+          "keyphrases": [
+            "voip quality degradation"
+          ]
+        },
+        "2": {
+          "label": "VoIP Static Noise Reduction",
+          "keyphrases": [
+            "avaya aura static"
+          ]
+        },
+        "3": {
+          "label": "Additional Banking Operations 1754397689",
+          "keyphrases": [
+            "voip audio quality"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 43,
+      "cluster_name": "aml / audit / bsa",
+      "keyphrases": [
+        "aml audit preparation",
+        "bsa aml audit"
+      ],
+      "dominant_label": "BSA AML Regulatory Reporting Automation",
+      "subclusters": {
+        "0": {
+          "label": "BSA/AML Audit Evidence Documentation",
+          "keyphrases": [
+            "aml audit preparation"
+          ]
+        },
+        "1": {
+          "label": "BSA/AML Regulatory Examination Preparation",
+          "keyphrases": [
+            "bsa aml audit"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 4,
+      "cluster_name": "branch audit preparation",
+      "keyphrases": [
+        "branch audit preparation"
+      ],
+      "dominant_label": "BSA/AML Transaction Monitoring System Audit",
+      "subclusters": {
+        "0": {
+          "label": "Branch Operational Readiness Assessments",
+          "keyphrases": [
+            "branch audit preparation"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 29,
+      "cluster_name": "fraud / threshold / alert",
+      "keyphrases": [
+        "fraud threshold reduction",
+        "fraud alert escalation",
+        "fraud alert threshold",
+        "fraud alert volume",
+        "fraud alert review",
+        "beneficial ownership certification"
+      ],
+      "dominant_label": "Beneficial Ownership Regulatory Reporting System",
+      "subclusters": {
+        "0": {
+          "label": "Fraud Alert Triage & Investigation",
+          "keyphrases": [
+            "fraud alert review",
+            "fraud alert escalation"
+          ]
+        },
+        "1": {
+          "label": "Transaction Fraud Scoring Parameter Optimization",
+          "keyphrases": [
+            "fraud alert threshold",
+            "fraud threshold reduction"
+          ]
+        },
+        "2": {
+          "label": "Beneficial Ownership Compliance Workflow",
+          "keyphrases": [
+            "beneficial ownership certification"
+          ]
+        },
+        "3": {
+          "label": "Fraud Monitoring System Performance Analysis",
+          "keyphrases": [
+            "fraud alert volume"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 75,
+      "cluster_name": "bill / payment / billpay / module",
+      "keyphrases": [
+        "bill payment failure",
+        "billpay module crash",
+        "bill pay alignment",
+        "bill pay ui"
+      ],
+      "dominant_label": "BillPay Transaction Dispute Workflow Engine",
+      "subclusters": {
+        "0": {
+          "label": "Digital Bill Payment Interface Rendering",
+          "keyphrases": [
+            "billpay module crash",
+            "bill pay alignment"
+          ]
+        },
+        "1": {
+          "label": "Automated Clearing House Bill Payment Error Resolution",
+          "keyphrases": [
+            "bill payment failure"
+          ]
+        },
+        "2": {
+          "label": "Digital Banking Bill Payment UI Diagnostics",
+          "keyphrases": [
+            "bill pay ui"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 42,
+      "cluster_name": "branch audit preparation",
+      "keyphrases": [
+        "branch audit preparation"
+      ],
+      "dominant_label": "Branch Audit Readiness Data Aggregator",
+      "subclusters": {
+        "0": {
+          "label": "Branch Audit Documentation Control Procedures",
+          "keyphrases": [
+            "branch audit preparation"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 0,
+      "cluster_name": "branch audit notification",
+      "keyphrases": [
+        "branch audit notification"
+      ],
+      "dominant_label": "Branch Deposit Exception Review Workflow",
+      "subclusters": {
+        "0": {
+          "label": "Branch Compliance Review Procedures",
+          "keyphrases": [
+            "branch audit notification"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 35,
+      "cluster_name": "branch / audit",
+      "keyphrases": [
+        "branch audit review",
+        "branch audit compliance",
+        "branch audit schedule",
+        "branch audit preparation"
+      ],
+      "dominant_label": "Branch Deposit Regulatory Reporting System",
+      "subclusters": {
+        "0": {
+          "label": "Branch Regulatory Examination Planning",
+          "keyphrases": [
+            "branch audit schedule"
+          ]
+        },
+        "1": {
+          "label": "Branch Operational Compliance Verification",
+          "keyphrases": [
+            "branch audit compliance"
+          ]
+        },
+        "2": {
+          "label": "Branch Audit Remediation Tracking",
+          "keyphrases": [
+            "branch audit preparation"
+          ]
+        },
+        "3": {
+          "label": "Branch Internal Controls Assessment Procedures",
+          "keyphrases": [
+            "branch audit review"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 33,
+      "cluster_name": "branch audit preparation",
+      "keyphrases": [
+        "branch audit preparation"
+      ],
+      "dominant_label": "Branch Regulatory Compliance Audit System",
+      "subclusters": {
+        "0": {
+          "label": "Branch Operational Audit Readiness",
+          "keyphrases": [
+            "branch audit preparation"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 102,
+      "cluster_name": "cif / query / database / cadb",
+      "keyphrases": [
+        "cif query performance",
+        "cif database performance",
+        "cadb query performance",
+        "cis query timeout",
+        "cis performance degradation",
+        "cis query performance"
+      ],
+      "dominant_label": "CADB Index Fragmentation Monitoring System",
+      "subclusters": {
+        "0": {
+          "label": "Customer Information File Query Optimization",
+          "keyphrases": [
+            "cif query performance",
+            "cif database performance"
+          ]
+        },
+        "1": {
+          "label": "Credit Application Database Performance Monitoring",
+          "keyphrases": [
+            "cadb query performance"
+          ]
+        },
+        "2": {
+          "label": "Customer Identification System Timeout Analysis",
+          "keyphrases": [
+            "cis query timeout"
+          ]
+        },
+        "3": {
+          "label": "Customer Information System Performance Degradation Diagnostics",
+          "keyphrases": [
+            "cis performance degradation"
+          ]
+        },
+        "4": {
+          "label": "Credit Information System Query Latency",
+          "keyphrases": [
+            "cis query performance"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 97,
+      "cluster_name": "false / positive",
+      "keyphrases": [
+        "false positive fraud",
+        "false positive block",
+        "false positive alert"
+      ],
+      "dominant_label": "Card Fraud Alert Tuning Engine",
+      "subclusters": {
+        "0": {
+          "label": "Fraud Alert System Calibration - Retail Banking",
+          "keyphrases": [
+            "false positive alert"
+          ]
+        },
+        "1": {
+          "label": "ACH Transaction Fraud Scoring - False Positive Mitigation",
+          "keyphrases": [
+            "false positive block"
+          ]
+        },
+        "2": {
+          "label": "Card Fraud Rule Tuning - False Positive Analysis",
+          "keyphrases": [
+            "false positive fraud"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 46,
+      "cluster_name": "suspicious / mobile / login / unusual",
+      "keyphrases": [
+        "suspicious mobile login",
+        "suspicious login activity",
+        "unusual login activity"
+      ],
+      "dominant_label": "Citrix Secure Access Login Analysis",
+      "subclusters": {
+        "0": {
+          "label": "Digital Banking Login Anomaly Detection",
+          "keyphrases": [
+            "suspicious login activity"
+          ]
+        },
+        "1": {
+          "label": "Mobile Banking Access Risk Scoring",
+          "keyphrases": [
+            "suspicious mobile login"
+          ]
+        },
+        "2": {
+          "label": "User Authentication Behavior Profiling",
+          "keyphrases": [
+            "unusual login activity"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 24,
+      "cluster_name": "kyc / verification / update / mfa",
+      "keyphrases": [
+        "kyc verification update",
+        "kyc update procedure",
+        "mfa protocol breach",
+        "kyc procedure update",
+        "kyc documentation update"
+      ],
+      "dominant_label": "Client Identity KYC Data Enrichment",
+      "subclusters": {
+        "0": {
+          "label": "Customer Due Diligence Protocol Updates",
+          "keyphrases": [
+            "kyc verification update",
+            "kyc procedure update"
+          ]
+        },
+        "1": {
+          "label": "Beneficial Ownership Validation Process Enhancement",
+          "keyphrases": [
+            "kyc documentation update"
+          ]
+        },
+        "2": {
+          "label": "Multi-Factor Authentication Security Incident Response",
+          "keyphrases": [
+            "mfa protocol breach"
+          ]
+        },
+        "3": {
+          "label": "AML Regulatory Compliance Procedure Refresh",
+          "keyphrases": []
+        },
+        "4": {
+          "label": "Additional Banking Operations 1754391433",
+          "keyphrases": [
+            "kyc update procedure"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 12,
+      "cluster_name": "loan / documentation / origination",
+      "keyphrases": [
+        "loan documentation update",
+        "loan documentation request",
+        "loan origination upgrade"
+      ],
+      "dominant_label": "Commercial Lending Document Generation System",
+      "subclusters": {
+        "0": {
+          "label": "Commercial Loan Document Management System",
+          "keyphrases": [
+            "loan documentation update",
+            "loan documentation request"
+          ]
+        },
+        "1": {
+          "label": "Loan Origination System (LOS) Enhancement",
+          "keyphrases": [
+            "loan origination upgrade"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 16,
+      "cluster_name": "loan / guideline / commercial",
+      "keyphrases": [
+        "loan guideline revision",
+        "loan guideline update",
+        "commercial loan audit"
+      ],
+      "dominant_label": "Commercial Loan Covenant Monitoring System",
+      "subclusters": {
+        "0": {
+          "label": "Commercial Loan Policy Documentation Control",
+          "keyphrases": [
+            "loan guideline revision"
+          ]
+        },
+        "1": {
+          "label": "Commercial Credit Adherence Framework Update",
+          "keyphrases": [
+            "loan guideline update"
+          ]
+        },
+        "2": {
+          "label": "Commercial Lending Regulatory Audit Procedures",
+          "keyphrases": [
+            "commercial loan audit"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 32,
+      "cluster_name": "loan / procedure / application / dscr",
+      "keyphrases": [
+        "loan procedure update",
+        "loan application clarification",
+        "loan dscr discrepancy",
+        "loan procedure revision"
+      ],
+      "dominant_label": "Commercial Loan DSCR Validation Engine",
+      "subclusters": {
+        "0": {
+          "label": "Commercial Loan Underwriting Guideline Maintenance",
+          "keyphrases": [
+            "loan procedure update",
+            "loan procedure revision"
+          ]
+        },
+        "1": {
+          "label": "Loan Application Documentation Review Process",
+          "keyphrases": [
+            "loan application clarification"
+          ]
+        },
+        "2": {
+          "label": "Debt Service Coverage Ratio (DSCR) Validation Workflow",
+          "keyphrases": [
+            "loan dscr discrepancy"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 38,
+      "cluster_name": "loan / document / documentation",
+      "keyphrases": [
+        "loan document revision",
+        "loan documentation revision"
+      ],
+      "dominant_label": "Commercial Loan Document Version Control",
+      "subclusters": {
+        "0": {
+          "label": "Commercial Loan Portfolio Document Control",
+          "keyphrases": [
+            "loan document revision"
+          ]
+        },
+        "1": {
+          "label": "Credit Agreement Revision Workflow",
+          "keyphrases": [
+            "loan documentation revision"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 37,
+      "cluster_name": "loan documentation revision",
+      "keyphrases": [
+        "loan documentation revision"
+      ],
+      "dominant_label": "Commercial Loan Document Versioning System",
+      "subclusters": {
+        "0": {
+          "label": "Commercial Loan Covenant Compliance Verification",
+          "keyphrases": [
+            "loan documentation revision"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 11,
+      "cluster_name": "loan / system",
+      "keyphrases": [
+        "loan system update",
+        "loan system upgrade"
+      ],
+      "dominant_label": "Commercial Loan Servicing API Gateway",
+      "subclusters": {
+        "0": {
+          "label": "Commercial Loan Platform Technical Refresh",
+          "keyphrases": [
+            "loan system upgrade"
+          ]
+        },
+        "1": {
+          "label": "Loan Servicing Application Patch Deployment",
+          "keyphrases": [
+            "loan system update"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 80,
+      "cluster_name": "statement / date / font / generation",
+      "keyphrases": [
+        "statement date format",
+        "statement font display",
+        "statement generation timeout",
+        "statement archive failure",
+        "statement generation delay",
+        "statement download failure",
+        "statement font size",
+        "statement font distortion",
+        "statement font inconsistency",
+        "statement datum discrepancy",
+        "statement generation failure",
+        "statement text alignment"
+      ],
+      "dominant_label": "Customer Statement PDF Rendering Engine",
+      "subclusters": {
+        "0": {
+          "label": "Digital Statement Rendering Quality",
+          "keyphrases": [
+            "statement font display",
+            "statement font distortion",
+            "statement font inconsistency"
+          ]
+        },
+        "1": {
+          "label": "Customer Account Statement Delivery Issues",
+          "keyphrases": [
+            "statement download failure",
+            "statement archive failure"
+          ]
+        },
+        "2": {
+          "label": "Batch Statement Generation Performance",
+          "keyphrases": [
+            "statement generation delay",
+            "statement generation timeout",
+            "statement generation failure"
+          ]
+        },
+        "3": {
+          "label": "Mortgage Servicing Statement Data Integrity",
+          "keyphrases": [
+            "statement datum discrepancy"
+          ]
+        },
+        "4": {
+          "label": "Consumer Loan Statement Presentation Layer",
+          "keyphrases": [
+            "statement font size"
+          ]
+        },
+        "5": {
+          "label": "Digital Banking Statement Generation Pipeline",
+          "keyphrases": [
+            "statement date format"
+          ]
+        },
+        "6": {
+          "label": "Additional Banking Operations 1754397607",
+          "keyphrases": [
+            "statement text alignment"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 78,
+      "cluster_name": "credential / stuffing",
+      "keyphrases": [
+        "credential stuffing attempt",
+        "credential stuffing attack"
+      ],
+      "dominant_label": "CyberArk Credential Stuffing Prevention System",
+      "subclusters": {
+        "0": {
+          "label": "Digital Banking Account Access Threat Detection",
+          "keyphrases": [
+            "credential stuffing attempt"
+          ]
+        },
+        "1": {
+          "label": "Commercial Loan Online Banking Authentication Security",
+          "keyphrases": [
+            "credential stuffing attack"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 59,
+      "cluster_name": "suspicious / login / unusual / fraudulent",
+      "keyphrases": [
+        "suspicious login attempt",
+        "unusual login attempt",
+        "fraudulent login attempt"
+      ],
+      "dominant_label": "CyberArk EPPM Session Risk Analysis",
+      "subclusters": {
+        "0": {
+          "label": "Digital Banking Access Control Anomalies",
+          "keyphrases": [
+            "suspicious login attempt"
+          ]
+        },
+        "1": {
+          "label": "Commercial Account Login Threat Detection",
+          "keyphrases": [
+            "unusual login attempt"
+          ]
+        },
+        "2": {
+          "label": "Retail Banking Fraudulent Access Event Analysis",
+          "keyphrases": [
+            "fraudulent login attempt"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 23,
+      "cluster_name": "phishe attack response",
+      "keyphrases": [
+        "phishe attack response"
+      ],
+      "dominant_label": "CyberArk PAM Privileged Access Security",
+      "subclusters": {
+        "0": {
+          "label": "Cybersecurity Incident - Phishing Remediation",
+          "keyphrases": [
+            "phishe attack response"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 10,
+      "cluster_name": "phishe / threat / attack / campaign",
+      "keyphrases": [
+        "phishe threat detection",
+        "phishe attack vector",
+        "phishe campaign detection",
+        "phishe attack protocol",
+        "phishe attack mitigation",
+        "phishe attack pattern",
+        "phishe attack detection"
+      ],
+      "dominant_label": "DMARC Email Phishing Threat Defense",
+      "subclusters": {
+        "0": {
+          "label": "Digital Banking Phishing Threat Intelligence",
+          "keyphrases": [
+            "phishe threat detection",
+            "phishe attack pattern"
+          ]
+        },
+        "1": {
+          "label": "Fraudulent Email Campaign Analysis",
+          "keyphrases": [
+            "phishe campaign detection"
+          ]
+        },
+        "2": {
+          "label": "Phishing Attack Surface Mapping",
+          "keyphrases": [
+            "phishe attack vector"
+          ]
+        },
+        "3": {
+          "label": "Email-Based Fraud Prevention Controls",
+          "keyphrases": [
+            "phishe attack mitigation"
+          ]
+        },
+        "4": {
+          "label": "Phishing Protocol Vulnerability Assessments",
+          "keyphrases": [
+            "phishe attack protocol"
+          ]
+        },
+        "5": {
+          "label": "Cybersecurity Incident Response - Phishing",
+          "keyphrases": [
+            "phishe attack detection"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 45,
+      "cluster_name": "account / summary",
+      "keyphrases": [
+        "account summary api",
+        "account summary query",
+        "account summary alignment",
+        "dna account summary"
+      ],
+      "dominant_label": "DNA Account Summary Data Pipeline",
+      "subclusters": {
+        "0": {
+          "label": "Core Banking Account Data API Performance",
+          "keyphrases": [
+            "account summary api"
+          ]
+        },
+        "1": {
+          "label": "Customer Account Summary Query Optimization",
+          "keyphrases": [
+            "account summary query"
+          ]
+        },
+        "2": {
+          "label": "Digital Statement Presentation Layer Alignment",
+          "keyphrases": [
+            "account summary alignment"
+          ]
+        },
+        "3": {
+          "label": "DNA Core System Account Data Retrieval",
+          "keyphrases": [
+            "dna account summary"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 15,
+      "cluster_name": "fraudulent / debit",
+      "keyphrases": [
+        "fraudulent debit activity",
+        "fraudulent debit transaction",
+        "fraudulent debit card"
+      ],
+      "dominant_label": "Debit Card Compromise Detection Engine",
+      "subclusters": {
+        "0": {
+          "label": "Debit Card Fraud Pattern Recognition",
+          "keyphrases": [
+            "fraudulent debit activity"
+          ]
+        },
+        "1": {
+          "label": "Debit Card Transaction Anomaly Detection",
+          "keyphrases": [
+            "fraudulent debit transaction"
+          ]
+        },
+        "2": {
+          "label": "Debit Card Compromise Investigation Protocols",
+          "keyphrases": [
+            "fraudulent debit card"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 109,
+      "cluster_name": "password / reset / login / failure",
+      "keyphrases": [
+        "password reset failure",
+        "login failure impact",
+        "olb login failure",
+        "mfa login failure",
+        "horizon login failure",
+        "login failure error",
+        "duo authentication failure",
+        "login failure spike",
+        "duo mfa failure",
+        "online banking font",
+        "fail login attempt",
+        "login failure rate",
+        "online login failure",
+        "athena login failure",
+        "duo security failure"
+      ],
+      "dominant_label": "Duo Horizon MFA Failure Analysis",
+      "subclusters": {
+        "0": {
+          "label": "Digital Banking Authentication Failure Root Cause",
+          "keyphrases": [
+            "login failure impact",
+            "login failure error"
+          ]
+        },
+        "1": {
+          "label": "Online Loan Application Session Timeout Analysis",
+          "keyphrases": [
+            "olb login failure",
+            "fail login attempt"
+          ]
+        },
+        "2": {
+          "label": "Multi-Factor Authentication System Degradation",
+          "keyphrases": [
+            "mfa login failure",
+            "duo authentication failure"
+          ]
+        },
+        "3": {
+          "label": "Horizon MFA System Error Logging",
+          "keyphrases": [
+            "horizon login failure",
+            "duo mfa failure"
+          ]
+        },
+        "4": {
+          "label": "Mobile Banking Login Attempt Failure Metrics",
+          "keyphrases": [
+            "login failure rate",
+            "athena login failure"
+          ]
+        },
+        "5": {
+          "label": "Digital Account Access Error Resolution",
+          "keyphrases": [
+            "online login failure"
+          ]
+        },
+        "6": {
+          "label": "Font Rendering Issue - Digital Statements",
+          "keyphrases": [
+            "online banking font"
+          ]
+        },
+        "7": {
+          "label": "Digital Banking Session Management Anomaly",
+          "keyphrases": [
+            "password reset failure"
+          ]
+        },
+        "8": {
+          "label": "Additional Banking Operations 1754397577",
+          "keyphrases": [
+            "login failure spike",
+            "duo security failure"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 110,
+      "cluster_name": "duplicate / ach / wire / debit",
+      "keyphrases": [
+        "duplicate ach payment",
+        "duplicate wire transfer",
+        "duplicate debit transaction"
+      ],
+      "dominant_label": "Duplicate Payment Cross System Reconciliation",
+      "subclusters": {
+        "0": {
+          "label": "Automated Clearing House Duplicate Payment Investigation",
+          "keyphrases": [
+            "duplicate ach payment"
+          ]
+        },
+        "1": {
+          "label": "Cross-Border Wire Transfer Duplication Protocols",
+          "keyphrases": [
+            "duplicate wire transfer"
+          ]
+        },
+        "2": {
+          "label": "Point-of-Sale Debit Transaction Replication Monitoring",
+          "keyphrases": [
+            "duplicate debit transaction"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 18,
+      "cluster_name": "fraud system upgrade",
+      "keyphrases": [
+        "fraud system upgrade"
+      ],
+      "dominant_label": "EML Payment Fraud Detection Engine",
+      "subclusters": {
+        "0": {
+          "label": "Payment System Security Protocol Updates",
+          "keyphrases": [
+            "fraud system upgrade"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 87,
+      "cluster_name": "exchange / online",
+      "keyphrases": [
+        "exchange online outage",
+        "exchange online delay"
+      ],
+      "dominant_label": "Exchange Online Message Delivery Resilience",
+      "subclusters": {
+        "0": {
+          "label": "Corporate Email Server Availability",
+          "keyphrases": [
+            "exchange online outage"
+          ]
+        },
+        "1": {
+          "label": "Corporate Email Delivery Latency Analysis",
+          "keyphrases": [
+            "exchange online delay"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 54,
+      "cluster_name": "email / notification / delivery",
+      "keyphrases": [
+        "email notification delay",
+        "email delivery failure",
+        "email delivery delay",
+        "email delivery latency"
+      ],
+      "dominant_label": "Exchange Online Transport Rule Auditing",
+      "subclusters": {
+        "0": {
+          "label": "Commercial Loan Email Alert System Latency",
+          "keyphrases": [
+            "email notification delay"
+          ]
+        },
+        "1": {
+          "label": "Retail Banking Transaction Email Delivery Failure",
+          "keyphrases": [
+            "email delivery failure"
+          ]
+        },
+        "2": {
+          "label": "Treasury Payment System Email Delivery Latency",
+          "keyphrases": [
+            "email delivery delay"
+          ]
+        },
+        "3": {
+          "label": "Digital Banking System Outbound Email Latency",
+          "keyphrases": [
+            "email delivery latency"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 50,
+      "cluster_name": "outlook / signature / exchange / server",
+      "keyphrases": [
+        "outlook signature display",
+        "exchange server failure",
+        "exchange server outage",
+        "exchange server downtime",
+        "exchange server offline",
+        "exchange server queue",
+        "exchange server cpu",
+        "exchange server performance",
+        "exchange email delay"
+      ],
+      "dominant_label": "Exchange Server Message Tracking Analysis",
+      "subclusters": {
+        "0": {
+          "label": "Exchange Server Performance - Loan Servicing",
+          "keyphrases": [
+            "exchange server performance",
+            "exchange server cpu"
+          ]
+        },
+        "1": {
+          "label": "Commercial Email Delivery - Regulatory Reporting",
+          "keyphrases": [
+            "exchange email delay"
+          ]
+        },
+        "2": {
+          "label": "Exchange Server Outage - Treasury Operations",
+          "keyphrases": [
+            "exchange server outage"
+          ]
+        },
+        "3": {
+          "label": "Core Banking System - Email Queue Monitoring",
+          "keyphrases": [
+            "exchange server queue"
+          ]
+        },
+        "4": {
+          "label": "Digital Banking - Outlook Signature Rendering",
+          "keyphrases": [
+            "outlook signature display"
+          ]
+        },
+        "5": {
+          "label": "Commercial Lending - Email System Failure",
+          "keyphrases": [
+            "exchange server failure"
+          ]
+        },
+        "6": {
+          "label": "Retail Banking - Email Delivery Latency",
+          "keyphrases": [
+            "exchange email delay"
+          ]
+        },
+        "7": {
+          "label": "Financial Crimes Email System Downtime",
+          "keyphrases": [
+            "exchange server downtime"
+          ]
+        },
+        "8": {
+          "label": "Regulatory Reporting - Exchange Server Offline",
+          "keyphrases": [
+            "exchange server offline"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 82,
+      "cluster_name": "pvsm / payment / api / response",
+      "keyphrases": [
+        "pvsm payment delay",
+        "api response delay",
+        "ths api timeout",
+        "api performance degradation",
+        "cif api performance",
+        "api payment delay",
+        "api connection timeout",
+        "api bad request",
+        "experian api failure",
+        "push notification failure",
+        "salesforce api timeout",
+        "api rate limiting",
+        "alert email failure",
+        "swift message validation",
+        "system performance degradation"
+      ],
+      "dominant_label": "Experian CIF API Failure Analysis",
+      "subclusters": {
+        "0": {
+          "label": "Core Payment System API Latency",
+          "keyphrases": [
+            "api response delay",
+            "api payment delay"
+          ]
+        },
+        "1": {
+          "label": "External Credit Bureau API Reliability",
+          "keyphrases": [
+            "experian api failure",
+            "cif api performance"
+          ]
+        },
+        "2": {
+          "label": "SWIFT Messaging Validation Protocols",
+          "keyphrases": [
+            "swift message validation"
+          ]
+        },
+        "3": {
+          "label": "Digital Banking Notification Delivery",
+          "keyphrases": [
+            "push notification failure"
+          ]
+        },
+        "4": {
+          "label": "Third-Party Integration Timeout Management",
+          "keyphrases": [
+            "salesforce api timeout",
+            "api connection timeout"
+          ]
+        },
+        "5": {
+          "label": "System Performance Degradation - Batch Processing",
+          "keyphrases": [
+            "system performance degradation"
+          ]
+        },
+        "6": {
+          "label": "Loan Origination System API Errors",
+          "keyphrases": [
+            "api bad request"
+          ]
+        },
+        "7": {
+          "label": "Payment Processing Rate Limiting",
+          "keyphrases": [
+            "api rate limiting"
+          ]
+        },
+        "8": {
+          "label": "Alerting System Email Delivery Issues",
+          "keyphrases": [
+            "alert email failure"
+          ]
+        },
+        "9": {
+          "label": "Payment Gateway Timeout Analysis",
+          "keyphrases": [
+            "ths api timeout"
+          ]
+        },
+        "10": {
+          "label": "Mortgage Loan Processing API Latency",
+          "keyphrases": [
+            "pvsm payment delay"
+          ]
+        },
+        "11": {
+          "label": "Additional Banking Operations 1754397481",
+          "keyphrases": [
+            "api performance degradation"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 64,
+      "cluster_name": "report / generation / regulatory / reporting",
+      "keyphrases": [
+        "report generation delay",
+        "regulatory report failure",
+        "regulatory reporting failure",
+        "report generation timeout",
+        "regulatory reporting delay"
+      ],
+      "dominant_label": "FFIEC Call Report Data Validation",
+      "subclusters": {
+        "0": {
+          "label": "Regulatory Reporting System Data Pipeline Latency",
+          "keyphrases": [
+            "report generation delay",
+            "report generation timeout"
+          ]
+        },
+        "1": {
+          "label": "Basel III Regulatory Report Submission Errors",
+          "keyphrases": [
+            "regulatory report failure"
+          ]
+        },
+        "2": {
+          "label": "Call Report System Processing Delays",
+          "keyphrases": [
+            "regulatory reporting delay"
+          ]
+        },
+        "3": {
+          "label": "Financial Crimes Enforcement Network (FinCEN) Filing Failures",
+          "keyphrases": [
+            "regulatory reporting failure"
+          ]
+        },
+        "4": {
+          "label": "Automated Regulatory Report Validation Engine Issues",
+          "keyphrases": [
+            "regulatory reporting failure"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 25,
+      "cluster_name": "fraud / detection / swift",
+      "keyphrases": [
+        "fraud detection misconfiguration",
+        "fraud detection protocol",
+        "swift fraud protocol",
+        "fraud verification protocol",
+        "fraud detection system"
+      ],
+      "dominant_label": "FICO Falcon Fraud Scoring Engine",
+      "subclusters": {
+        "0": {
+          "label": "Fraud Detection System Configuration Audit",
+          "keyphrases": [
+            "fraud detection misconfiguration"
+          ]
+        },
+        "1": {
+          "label": "Cross-Border Payment Fraud Protocol",
+          "keyphrases": [
+            "swift fraud protocol"
+          ]
+        },
+        "2": {
+          "label": "Payment Fraud Verification Lifecycle",
+          "keyphrases": [
+            "fraud verification protocol"
+          ]
+        },
+        "3": {
+          "label": "Fraud Detection System Integration Testing",
+          "keyphrases": [
+            "fraud detection system"
+          ]
+        },
+        "4": {
+          "label": "Real-Time Fraud Detection Protocol Enhancement",
+          "keyphrases": [
+            "fraud detection protocol"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 5,
+      "cluster_name": "fraud / patch / detection",
+      "keyphrases": [
+        "fraud patch deployment",
+        "fraud detection adjustment",
+        "fraud detection calibration",
+        "fraud detection patch",
+        "advanced fraud detection",
+        "fraud detection tune",
+        "fraud detection update"
+      ],
+      "dominant_label": "FIS Fraud Detection Model Calibration System",
+      "subclusters": {
+        "0": {
+          "label": "Transaction Fraud Mitigation System Enhancements",
+          "keyphrases": [
+            "fraud patch deployment",
+            "fraud detection update"
+          ]
+        },
+        "1": {
+          "label": "Fraud Detection Engine Parameter Optimization",
+          "keyphrases": [
+            "fraud detection adjustment",
+            "fraud detection tune"
+          ]
+        },
+        "2": {
+          "label": "AML Transaction Monitoring System Calibration",
+          "keyphrases": [
+            "fraud detection calibration"
+          ]
+        },
+        "3": {
+          "label": "Real-Time Fraud Scoring Model Deployment",
+          "keyphrases": [
+            "advanced fraud detection"
+          ]
+        },
+        "4": {
+          "label": "Fraud Detection Patch Management Lifecycle",
+          "keyphrases": [
+            "fraud detection patch"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 56,
+      "cluster_name": "report / server / generation / reconciliation",
+      "keyphrases": [
+        "report server failure",
+        "report generation failure",
+        "reconciliation report failure",
+        "transaction report discrepancy",
+        "daily report failure",
+        "fedline connection error",
+        "hard bounce analysis"
+      ],
+      "dominant_label": "FedLine Transaction Error Root Cause",
+      "subclusters": {
+        "0": {
+          "label": "Fedline Transaction Reporting System Errors",
+          "keyphrases": [
+            "fedline connection error",
+            "transaction report discrepancy"
+          ]
+        },
+        "1": {
+          "label": "Automated Regulatory Report Generation Failures",
+          "keyphrases": [
+            "report generation failure",
+            "daily report failure"
+          ]
+        },
+        "2": {
+          "label": "Mortgage Servicing Statement Reconciliation Discrepancies",
+          "keyphrases": [
+            "reconciliation report failure"
+          ]
+        },
+        "3": {
+          "label": "Core Banking Data Feed Integrity Monitoring",
+          "keyphrases": [
+            "report server failure"
+          ]
+        },
+        "4": {
+          "label": "Treasury Payment System Interface Errors",
+          "keyphrases": [
+            "hard bounce analysis"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 104,
+      "cluster_name": "crm / datum / query / performance",
+      "keyphrases": [
+        "crm datum sync",
+        "crm query timeout",
+        "crm performance degradation",
+        "etl job failure",
+        "etl process failure",
+        "dwh report delay",
+        "crm report slowness",
+        "finacle query timeout",
+        "etl datum inaccuracy",
+        "dwh connection failure",
+        "salesforce datum sync",
+        "etl pipeline failure",
+        "crm query performance",
+        "etl datum incompleteness"
+      ],
+      "dominant_label": "Finacle Core Data Synchronization Audit",
+      "subclusters": {
+        "0": {
+          "label": "Core Banking Data Pipeline Integrity",
+          "keyphrases": [
+            "etl job failure",
+            "etl process failure"
+          ]
+        },
+        "1": {
+          "label": "Customer Relationship Data Synchronization Latency",
+          "keyphrases": [
+            "crm datum sync",
+            "salesforce datum sync"
+          ]
+        },
+        "2": {
+          "label": "Data Warehouse Report Generation Delays",
+          "keyphrases": [
+            "dwh report delay"
+          ]
+        },
+        "3": {
+          "label": "Finacle Core Data Query Performance",
+          "keyphrases": [
+            "finacle query timeout"
+          ]
+        },
+        "4": {
+          "label": "Loan Origination System Data Accuracy",
+          "keyphrases": [
+            "etl datum inaccuracy",
+            "etl datum incompleteness"
+          ]
+        },
+        "5": {
+          "label": "CRM System Query Response Time",
+          "keyphrases": [
+            "crm query timeout",
+            "crm query performance"
+          ]
+        },
+        "6": {
+          "label": "Data Warehouse Connection Reliability",
+          "keyphrases": [
+            "dwh connection failure"
+          ]
+        },
+        "7": {
+          "label": "ETL Pipeline Error Handling Protocols",
+          "keyphrases": [
+            "etl pipeline failure"
+          ]
+        },
+        "8": {
+          "label": "Additional Banking Operations 1754397682",
+          "keyphrases": [
+            "crm report slowness",
+            "crm performance degradation"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 3,
+      "cluster_name": "finacle / system / outage",
+      "keyphrases": [
+        "finacle system maintenance",
+        "finacle outage impact",
+        "finacle system outage",
+        "fiserv horizon maintenance",
+        "finacle system upgrade"
+      ],
+      "dominant_label": "Finacle Core System Availability Monitoring",
+      "subclusters": {
+        "0": {
+          "label": "Finacle Core Banking System Scheduled Downtime",
+          "keyphrases": [
+            "finacle system maintenance",
+            "finacle outage impact"
+          ]
+        },
+        "1": {
+          "label": "Finacle System Unplanned Interruption",
+          "keyphrases": [
+            "finacle system outage"
+          ]
+        },
+        "2": {
+          "label": "FISERV Horizon System Preventative Maintenance",
+          "keyphrases": [
+            "fiserv horizon maintenance"
+          ]
+        },
+        "3": {
+          "label": "Finacle System Version Upgrade Rollout",
+          "keyphrases": [
+            "finacle system upgrade"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 41,
+      "cluster_name": "finacle / security / mfa / vulnerability",
+      "keyphrases": [
+        "finacle security upgrade",
+        "finacle security patch",
+        "mfa vulnerability patch",
+        "finserv outage",
+        "finserv platform outage"
+      ],
+      "dominant_label": "Finacle MFA Vulnerability Remediation System",
+      "subclusters": {
+        "0": {
+          "label": "Finacle Core Banking Vulnerability Remediation",
+          "keyphrases": [
+            "finacle security patch",
+            "mfa vulnerability patch"
+          ]
+        },
+        "1": {
+          "label": "Finacle System Planned Maintenance",
+          "keyphrases": [
+            "finacle security upgrade"
+          ]
+        },
+        "2": {
+          "label": "Finserv Platform Incident Management",
+          "keyphrases": [
+            "finserv outage"
+          ]
+        },
+        "3": {
+          "label": "Finserv Core Banking System Redundancy",
+          "keyphrases": [
+            "finserv platform outage"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 94,
+      "cluster_name": "core / banking / router",
+      "keyphrases": [
+        "core banking restart",
+        "core router failure",
+        "core banking upgrade",
+        "core banking diskspace",
+        "core banking slowdown"
+      ],
+      "dominant_label": "Finastra Core Banking Performance Baselining",
+      "subclusters": {
+        "0": {
+          "label": "Core Banking System Restart Procedures",
+          "keyphrases": [
+            "core banking restart"
+          ]
+        },
+        "1": {
+          "label": "Core Banking Network Infrastructure Faults",
+          "keyphrases": [
+            "core router failure"
+          ]
+        },
+        "2": {
+          "label": "Core Banking System Upgrade Rollout",
+          "keyphrases": [
+            "core banking upgrade"
+          ]
+        },
+        "3": {
+          "label": "Core Banking Database Storage Capacity Alerts",
+          "keyphrases": [
+            "core banking diskspace"
+          ]
+        },
+        "4": {
+          "label": "Core Banking Application Performance Degradation",
+          "keyphrases": [
+            "core banking slowdown"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 100,
+      "cluster_name": "branch / network",
+      "keyphrases": [
+        "branch network outage",
+        "branch network downtime"
+      ],
+      "dominant_label": "Finastra Core Branch Connectivity Monitor",
+      "subclusters": {
+        "0": {
+          "label": "Branch Network Connectivity Resilience",
+          "keyphrases": [
+            "branch network outage"
+          ]
+        },
+        "1": {
+          "label": "Branch Operational Infrastructure Availability",
+          "keyphrases": [
+            "branch network downtime"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 61,
+      "cluster_name": "branch / network / router",
+      "keyphrases": [
+        "branch network latency",
+        "branch network connectivity",
+        "branch router cpu"
+      ],
+      "dominant_label": "Finastra Core Branch Network Monitoring",
+      "subclusters": {
+        "0": {
+          "label": "Branch Network Infrastructure Monitoring",
+          "keyphrases": [
+            "branch network latency"
+          ]
+        },
+        "1": {
+          "label": "Branch Router Performance Diagnostics",
+          "keyphrases": [
+            "branch router cpu"
+          ]
+        },
+        "2": {
+          "label": "Branch Network Connectivity Assurance",
+          "keyphrases": [
+            "branch network connectivity"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 49,
+      "cluster_name": "branch network outage",
+      "keyphrases": [
+        "branch network outage"
+      ],
+      "dominant_label": "Finastra Core Branch Resilience Monitor",
+      "subclusters": {
+        "0": {
+          "label": "Regional Branch Infrastructure Resilience",
+          "keyphrases": [
+            "branch network outage"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 74,
+      "cluster_name": "database / query / replication / lag",
+      "keyphrases": [
+        "database query latency",
+        "replication lag",
+        "database query performance",
+        "db connection timeout",
+        "database disk space",
+        "database replication lag",
+        "database backup failure",
+        "database query timeout",
+        "database connection timeout",
+        "database lock contention",
+        "database connection error"
+      ],
+      "dominant_label": "Finastra Core Database Lock Analysis",
+      "subclusters": {
+        "0": {
+          "label": "Commercial Loan Database Query Performance",
+          "keyphrases": [
+            "database query performance",
+            "database query timeout"
+          ]
+        },
+        "1": {
+          "label": "Finacle Core Banking Replication Latency",
+          "keyphrases": [
+            "replication lag",
+            "database replication lag"
+          ]
+        },
+        "2": {
+          "label": "Retail Deposit Account Database Disk Capacity",
+          "keyphrases": [
+            "database disk space"
+          ]
+        },
+        "3": {
+          "label": "Mortgage Servicing Database Connection Errors",
+          "keyphrases": [
+            "db connection timeout",
+            "database connection timeout"
+          ]
+        },
+        "4": {
+          "label": "Credit Card Transaction Database Lock Contention",
+          "keyphrases": [
+            "database lock contention"
+          ]
+        },
+        "5": {
+          "label": "Commercial Lending Database Backup Failures",
+          "keyphrases": [
+            "database backup failure"
+          ]
+        },
+        "6": {
+          "label": "Real-Time Payment Database Query Latency",
+          "keyphrases": [
+            "database query latency"
+          ]
+        },
+        "7": {
+          "label": "Additional Banking Operations 1754397643",
+          "keyphrases": [
+            "database connection error"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 71,
+      "cluster_name": "cbs / disk / backup / post",
+      "keyphrases": [
+        "cbs disk space",
+        "cbs backup failure",
+        "cbs post restart check",
+        "cdw report slowdown",
+        "cisco router failure",
+        "ib transaction slowdown",
+        "cbs database performance",
+        "cbs shutdown failure",
+        "cbs log growth",
+        "cbs batch failure",
+        "cbs cpu spike",
+        "ibs performance degradation",
+        "cbs query latency",
+        "cbs server overload",
+        "cbs cpu utilization",
+        "cbs performance latency",
+        "cbs performance degradation",
+        "dna performance degradation",
+        "dtr generation failure"
+      ],
+      "dominant_label": "Finastra Core Database Performance Baselining",
+      "subclusters": {
+        "0": {
+          "label": "Core Banking System Disk Utilization Monitoring",
+          "keyphrases": [
+            "cbs disk space",
+            "cbs log growth"
+          ]
+        },
+        "1": {
+          "label": "Core Banking System Backup & Recovery Processes",
+          "keyphrases": [
+            "cbs backup failure",
+            "cbs shutdown failure"
+          ]
+        },
+        "2": {
+          "label": "Core Banking System Post-Restart Integrity Checks",
+          "keyphrases": [
+            "cbs post restart check"
+          ]
+        },
+        "3": {
+          "label": "Customer Data Warehouse Reporting Performance",
+          "keyphrases": [
+            "cdw report slowdown"
+          ]
+        },
+        "4": {
+          "label": "Network Infrastructure Device Failure Analysis",
+          "keyphrases": [
+            "cisco router failure"
+          ]
+        },
+        "5": {
+          "label": "Internal Banking Transaction Processing Latency",
+          "keyphrases": [
+            "ib transaction slowdown"
+          ]
+        },
+        "6": {
+          "label": "Core Banking Database Performance Bottlenecks",
+          "keyphrases": [
+            "cbs database performance"
+          ]
+        },
+        "7": {
+          "label": "Core Banking System Batch Processing Failures",
+          "keyphrases": [
+            "cbs batch failure"
+          ]
+        },
+        "8": {
+          "label": "Core Banking System CPU Resource Spikes",
+          "keyphrases": [
+            "cbs cpu spike"
+          ]
+        },
+        "9": {
+          "label": "Internal Banking System Performance Degradation",
+          "keyphrases": [
+            "ibs performance degradation"
+          ]
+        },
+        "10": {
+          "label": "Core Banking System Query Performance Analysis",
+          "keyphrases": [
+            "cbs query latency"
+          ]
+        },
+        "11": {
+          "label": "Core Banking System Server Overload Detection",
+          "keyphrases": [
+            "cbs server overload"
+          ]
+        },
+        "12": {
+          "label": "Data Transformation Engine Performance Issues",
+          "keyphrases": [
+            "dna performance degradation"
+          ]
+        },
+        "13": {
+          "label": "Data Transfer Record Generation Failures",
+          "keyphrases": [
+            "dtr generation failure"
+          ]
+        },
+        "14": {
+          "label": "Core Banking System CPU Utilization Monitoring",
+          "keyphrases": [
+            "cbs cpu utilization"
+          ]
+        },
+        "15": {
+          "label": "Core Banking System Performance Latency Analysis",
+          "keyphrases": [
+            "cbs performance latency"
+          ]
+        },
+        "16": {
+          "label": "Core Banking System Performance Degradation Analysis",
+          "keyphrases": [
+            "cbs performance degradation"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 79,
+      "cluster_name": "slow / report / query",
+      "keyphrases": [
+        "slow report generation",
+        "slow query performance"
+      ],
+      "dominant_label": "Finastra Core SQL Performance Tuning",
+      "subclusters": {
+        "0": {
+          "label": "Commercial Loan Covenant Data Retrieval Latency",
+          "keyphrases": [
+            "slow report generation"
+          ]
+        },
+        "1": {
+          "label": "Core Banking Account Data API Query Performance",
+          "keyphrases": [
+            "slow query performance"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 60,
+      "cluster_name": "sql / timeout / query / server",
+      "keyphrases": [
+        "sql timeout error",
+        "sql query timeout",
+        "sql server timeout"
+      ],
+      "dominant_label": "Finastra Core SQL Timeout Analysis",
+      "subclusters": {
+        "0": {
+          "label": "Core Banking SQL Query Performance",
+          "keyphrases": [
+            "sql query timeout"
+          ]
+        },
+        "1": {
+          "label": "Loan Origination System Database Timeout Analysis",
+          "keyphrases": [
+            "sql timeout error"
+          ]
+        },
+        "2": {
+          "label": "Commercial Lending Database SQL Server Response Time",
+          "keyphrases": [
+            "sql server timeout"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 103,
+      "cluster_name": "server / memory / cpu / utilization",
+      "keyphrases": [
+        "server memory leak",
+        "cpu utilization spike",
+        "server room overheat",
+        "server disk space",
+        "server cpu spike"
+      ],
+      "dominant_label": "Finastra Core Server Memory Leakage",
+      "subclusters": {
+        "0": {
+          "label": "Core Loan Servicing Platform Infrastructure",
+          "keyphrases": [
+            "server memory leak",
+            "server disk space"
+          ]
+        },
+        "1": {
+          "label": "Commercial Loan Application Server Performance",
+          "keyphrases": [
+            "cpu utilization spike"
+          ]
+        },
+        "2": {
+          "label": "Data Center Environmental Control Systems",
+          "keyphrases": [
+            "server room overheat"
+          ]
+        },
+        "3": {
+          "label": "Real-Time Payment Processing Engine Load",
+          "keyphrases": [
+            "server cpu spike"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 62,
+      "cluster_name": "archive / backup / verbose / logging",
+      "keyphrases": [
+        "archive backup failure",
+        "verbose logging issue",
+        "backup job failure",
+        "stage backup failure",
+        "batch job failure"
+      ],
+      "dominant_label": "Finastra Core Stage Backup Validation",
+      "subclusters": {
+        "0": {
+          "label": "Core Banking System Stage Backup Validation",
+          "keyphrases": [
+            "stage backup failure"
+          ]
+        },
+        "1": {
+          "label": "Automated Regulatory Report Archive Integrity",
+          "keyphrases": [
+            "archive backup failure"
+          ]
+        },
+        "2": {
+          "label": "Core Banking Batch Processing Failure Analysis",
+          "keyphrases": [
+            "batch job failure"
+          ]
+        },
+        "3": {
+          "label": "Finacle Core System Verbose Log Handling",
+          "keyphrases": [
+            "verbose logging issue"
+          ]
+        },
+        "4": {
+          "label": "Disaster Recovery Backup Job Failure Remediation",
+          "keyphrases": [
+            "backup job failure"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 22,
+      "cluster_name": "core / banking",
+      "keyphrases": [
+        "core banking upgrade",
+        "core banking outage"
+      ],
+      "dominant_label": "Finastra Core System Availability Monitoring",
+      "subclusters": {
+        "0": {
+          "label": "Core Banking System Lifecycle Management",
+          "keyphrases": [
+            "core banking upgrade"
+          ]
+        },
+        "1": {
+          "label": "Core Banking System Incident Reporting",
+          "keyphrases": [
+            "core banking outage"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 67,
+      "cluster_name": "brute force attack",
+      "keyphrases": [
+        "brute force attack"
+      ],
+      "dominant_label": "Finastra Core System Brute Force Detection",
+      "subclusters": {
+        "0": {
+          "label": "Cybersecurity Threat Detection - Brute Force Attempts",
+          "keyphrases": [
+            "brute force attack"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 105,
+      "cluster_name": "wan / link",
+      "keyphrases": [
+        "wan link latency",
+        "wan link performance",
+        "wan link packet loss",
+        "wan link degradation"
+      ],
+      "dominant_label": "Finastra Core WAN Link Monitoring",
+      "subclusters": {
+        "0": {
+          "label": "Commercial Loan Servicing WAN Connectivity",
+          "keyphrases": [
+            "wan link latency",
+            "wan link performance"
+          ]
+        },
+        "1": {
+          "label": "Retail Banking Core System WAN Resilience",
+          "keyphrases": [
+            "wan link packet loss",
+            "wan link degradation"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 44,
+      "cluster_name": "branch audit preparation",
+      "keyphrases": [
+        "branch audit preparation"
+      ],
+      "dominant_label": "Finastra Fusion Audit Trail System",
+      "subclusters": {
+        "0": {
+          "label": "Branch Audit Pre-Examination Documentation",
+          "keyphrases": [
+            "branch audit preparation"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 112,
+      "cluster_name": "pdf / font / statement / text",
+      "keyphrases": [
+        "pdf font distortion",
+        "pdf statement alignment",
+        "pdf text alignment",
+        "pdf statement generation",
+        "pdf nickname display",
+        "wiki link error",
+        "pdf formatting error",
+        "pdf statement format",
+        "pdf statement distortion",
+        "pdf font display",
+        "pdf account truncation",
+        "break link error"
+      ],
+      "dominant_label": "Finastra Fusion PDF Statement Engine",
+      "subclusters": {
+        "0": {
+          "label": "Digital Statement Rendering - Font Issues",
+          "keyphrases": [
+            "pdf font distortion",
+            "pdf font display"
+          ]
+        },
+        "1": {
+          "label": "Digital Banking Document Alignment Errors",
+          "keyphrases": [
+            "pdf statement alignment",
+            "pdf text alignment"
+          ]
+        },
+        "2": {
+          "label": "Automated Statement Generation - Formatting Defects",
+          "keyphrases": [
+            "pdf statement generation",
+            "pdf statement format"
+          ]
+        },
+        "3": {
+          "label": "Digital Account Summary - Display Errors",
+          "keyphrases": [
+            "pdf nickname display",
+            "pdf account truncation"
+          ]
+        },
+        "4": {
+          "label": "Internal Knowledge Base - Broken Links",
+          "keyphrases": [
+            "wiki link error"
+          ]
+        },
+        "5": {
+          "label": "PDF Statement Generation - Visual Distortion",
+          "keyphrases": [
+            "pdf statement distortion"
+          ]
+        },
+        "6": {
+          "label": "PDF Rendering - Font Integrity Validation",
+          "keyphrases": [
+            "pdf formatting error"
+          ]
+        },
+        "7": {
+          "label": "break link error",
+          "keyphrases": [
+            "break link error"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 108,
+      "cluster_name": "fraudulent / wire / high / risk",
+      "keyphrases": [
+        "fraudulent wire transfer",
+        "high risk transaction",
+        "fraudulent transaction alert",
+        "fraudulent transfer attempt"
+      ],
+      "dominant_label": "Finastra Fusion Payment Control System",
+      "subclusters": {
+        "0": {
+          "label": "Cross-Border Payment Fraud Prevention Controls",
+          "keyphrases": [
+            "fraudulent wire transfer"
+          ]
+        },
+        "1": {
+          "label": "Real-Time Fraud Scoring – Wire Transfer Attempts",
+          "keyphrases": [
+            "fraudulent transfer attempt"
+          ]
+        },
+        "2": {
+          "label": "Commercial Payment Fraud – High Value Transaction Alerts",
+          "keyphrases": [
+            "high risk transaction"
+          ]
+        },
+        "3": {
+          "label": "Fraudulent ACH/Wire Transfer – Alert Escalation Workflow",
+          "keyphrases": [
+            "fraudulent transaction alert"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 90,
+      "cluster_name": "report / query / database / performance",
+      "keyphrases": [
+        "report query performance",
+        "report database capacity",
+        "report performance degradation",
+        "query performance degradation",
+        "report query timeout"
+      ],
+      "dominant_label": "Finastra Fusion Report Query Optimization",
+      "subclusters": {
+        "0": {
+          "label": "Commercial Loan Covenant Data Retrieval Performance",
+          "keyphrases": [
+            "report query performance",
+            "report database capacity"
+          ]
+        },
+        "1": {
+          "label": "Core Banking Data Pipeline Latency Analysis",
+          "keyphrases": [
+            "report performance degradation"
+          ]
+        },
+        "2": {
+          "label": "Fraud Detection System Real-Time Query Latency",
+          "keyphrases": [
+            "query performance degradation"
+          ]
+        },
+        "3": {
+          "label": "Treasury Management Reporting System API Response Time",
+          "keyphrases": [
+            "report query timeout"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 106,
+      "cluster_name": "firewall / log / audit",
+      "keyphrases": [
+        "firewall log volume",
+        "audit log purge",
+        "audit log retention",
+        "audit log capacity",
+        "log retention violation",
+        "firewall log growth",
+        "firewall log overflow",
+        "audit log purging",
+        "audit log storage",
+        "log file growth",
+        "log retention failure"
+      ],
+      "dominant_label": "Firewall Audit Log Capacity Alerting",
+      "subclusters": {
+        "0": {
+          "label": "Core Banking Audit Trail Management",
+          "keyphrases": [
+            "audit log retention",
+            "audit log purging"
+          ]
+        },
+        "1": {
+          "label": "Firewall Security Log Capacity Planning",
+          "keyphrases": [
+            "firewall log capacity",
+            "firewall log overflow"
+          ]
+        },
+        "2": {
+          "label": "Transaction Log Storage Compliance",
+          "keyphrases": [
+            "audit log storage"
+          ]
+        },
+        "3": {
+          "label": "Digital Banking Audit Log Volume Analysis",
+          "keyphrases": [
+            "firewall log volume"
+          ]
+        },
+        "4": {
+          "label": "Loan Origination System Log Retention",
+          "keyphrases": [
+            "log retention violation"
+          ]
+        },
+        "5": {
+          "label": "Fraud Detection System Log Growth Monitoring",
+          "keyphrases": [
+            "log file growth"
+          ]
+        },
+        "6": {
+          "label": "Regulatory Reporting Audit Log Management",
+          "keyphrases": [
+            "firewall log growth"
+          ]
+        },
+        "7": {
+          "label": "Anti-Money Laundering System Log Archiving",
+          "keyphrases": [
+            "audit log purge"
+          ]
+        },
+        "8": {
+          "label": "Cybersecurity Event Log Storage Optimization",
+          "keyphrases": [
+            "log retention failure"
+          ]
+        },
+        "9": {
+          "label": "Additional Banking Operations 1754397445",
+          "keyphrases": [
+            "audit log capacity"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 27,
+      "cluster_name": "false / positive",
+      "keyphrases": [
+        "false positive increase",
+        "false positive alert",
+        "false positive rate"
+      ],
+      "dominant_label": "KYC Remediation False Positive Engine",
+      "subclusters": {
+        "0": {
+          "label": "AML Transaction Monitoring System False Positive Analysis",
+          "keyphrases": [
+            "false positive increase"
+          ]
+        },
+        "1": {
+          "label": "Fraud Scoring Engine Alert Tuning",
+          "keyphrases": [
+            "false positive alert"
+          ]
+        },
+        "2": {
+          "label": "BSA/AML Compliance Reporting False Positive Rate Optimization",
+          "keyphrases": [
+            "false positive rate"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 28,
+      "cluster_name": "lendsmart / los",
+      "keyphrases": [
+        "lendsmart los implementation",
+        "lendsmart los upgrade",
+        "lendsmart los training"
+      ],
+      "dominant_label": "Lendsmart LOS Data Migration Workflow",
+      "subclusters": {
+        "0": {
+          "label": "Loan Origination System Deployment Lifecycle",
+          "keyphrases": [
+            "lendsmart los implementation"
+          ]
+        },
+        "1": {
+          "label": "Loan Origination System Versioning & Patching",
+          "keyphrases": [
+            "lendsmart los upgrade"
+          ]
+        },
+        "2": {
+          "label": "Lender Application Proficiency Programs",
+          "keyphrases": [
+            "lendsmart los training"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 17,
+      "cluster_name": "lendsmart / system / training / implementation",
+      "keyphrases": [
+        "lendsmart system upgrade",
+        "lendsmart training",
+        "lendsmart implementation",
+        "lendsmart v2.0 upgrade"
+      ],
+      "dominant_label": "Lendsmart Loan Origination System Migration",
+      "subclusters": {
+        "0": {
+          "label": "Loan Origination System Technical Rollout",
+          "keyphrases": [
+            "lendsmart implementation",
+            "lendsmart v2.0 upgrade"
+          ]
+        },
+        "1": {
+          "label": "Loan Platform User Proficiency Enhancement",
+          "keyphrases": [
+            "lendsmart training"
+          ]
+        },
+        "2": {
+          "label": "Commercial Lending System Infrastructure Upgrade",
+          "keyphrases": [
+            "lendsmart system upgrade"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 31,
+      "cluster_name": "los system upgrade",
+      "keyphrases": [
+        "los system upgrade"
+      ],
+      "dominant_label": "Loan Origination System Remediation Workflow",
+      "subclusters": {
+        "0": {
+          "label": "Loan Origination System Technical Infrastructure",
+          "keyphrases": [
+            "los system upgrade"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 2,
+      "cluster_name": "loan documentation revision",
+      "keyphrases": [
+        "loan documentation revision"
+      ],
+      "dominant_label": "Loan Servicing Document Versioning Engine",
+      "subclusters": {
+        "0": {
+          "label": "Commercial Loan Covenant Modification Workflow",
+          "keyphrases": [
+            "loan documentation revision"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 92,
+      "cluster_name": "incorrect / interest / loan / report",
+      "keyphrases": [
+        "incorrect interest rate",
+        "loan report performance",
+        "loan report timeout",
+        "loan report generation",
+        "loan form display",
+        "loan balance discrepancy",
+        "loan database performance",
+        "loan processing delay",
+        "loan server cpu",
+        "credit score retrieval",
+        "credit bureau api",
+        "loan report failure",
+        "loan report delay",
+        "interest calculation failure"
+      ],
+      "dominant_label": "Loan Servicing Interest Rate Engine",
+      "subclusters": {
+        "0": {
+          "label": "Loan Servicing System Performance Analytics",
+          "keyphrases": [
+            "loan report performance",
+            "loan database performance",
+            "loan processing delay"
+          ]
+        },
+        "1": {
+          "label": "Mortgage Loan Calculation Engine Diagnostics",
+          "keyphrases": [
+            "incorrect interest rate",
+            "interest calculation failure"
+          ]
+        },
+        "2": {
+          "label": "Credit Bureau Data Integration Failure Analysis",
+          "keyphrases": [
+            "credit score retrieval",
+            "credit bureau api"
+          ]
+        },
+        "3": {
+          "label": "Loan Reporting System Latency Monitoring",
+          "keyphrases": [
+            "loan report timeout",
+            "loan report delay"
+          ]
+        },
+        "4": {
+          "label": "Loan Origination System Form Rendering Issues",
+          "keyphrases": [
+            "loan form display"
+          ]
+        },
+        "5": {
+          "label": "Residential Mortgage Account Reconciliation",
+          "keyphrases": [
+            "loan balance discrepancy"
+          ]
+        },
+        "6": {
+          "label": "Loan Servicing Infrastructure CPU Utilization",
+          "keyphrases": [
+            "loan server cpu"
+          ]
+        },
+        "7": {
+          "label": "Loan Report Generation Error Handling",
+          "keyphrases": [
+            "loan report failure"
+          ]
+        },
+        "8": {
+          "label": "Additional Banking Operations 1754397418",
+          "keyphrases": [
+            "loan report generation"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 84,
+      "cluster_name": "los / query / server / connectivity",
+      "keyphrases": [
+        "los query performance",
+        "los server performance",
+        "los connectivity failure",
+        "los integration failure",
+        "los database performance",
+        "los performance degradation"
+      ],
+      "dominant_label": "LoanOriginationSystem Query Optimization Engine",
+      "subclusters": {
+        "0": {
+          "label": "Mortgage Application System Query Optimization",
+          "keyphrases": [
+            "los query performance",
+            "los database performance"
+          ]
+        },
+        "1": {
+          "label": "Loan Origination System Server Capacity Monitoring",
+          "keyphrases": [
+            "los server performance"
+          ]
+        },
+        "2": {
+          "label": "Loan Application System Network Connectivity Issues",
+          "keyphrases": [
+            "los connectivity failure"
+          ]
+        },
+        "3": {
+          "label": "Third-Party LOS Data Exchange Failures",
+          "keyphrases": [
+            "los integration failure"
+          ]
+        },
+        "4": {
+          "label": "Loan Origination System Performance Degradation Analysis",
+          "keyphrases": [
+            "los performance degradation"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 7,
+      "cluster_name": "los / update / staff / training",
+      "keyphrases": [
+        "los update training",
+        "los staff training",
+        "los training update",
+        "los implementation training",
+        "los system training",
+        "los version upgrade",
+        "los training schedule",
+        "los system upgrade"
+      ],
+      "dominant_label": "LoanOriginationSystem Version Upgrade Training",
+      "subclusters": {
+        "0": {
+          "label": "Loan Origination System User Proficiency",
+          "keyphrases": [
+            "los update training",
+            "los staff training"
+          ]
+        },
+        "1": {
+          "label": "Loan Origination System Version Control",
+          "keyphrases": [
+            "los version upgrade"
+          ]
+        },
+        "2": {
+          "label": "Loan Application System Training Delivery",
+          "keyphrases": [
+            "los training update"
+          ]
+        },
+        "3": {
+          "label": "Loan Origination System Technical Training",
+          "keyphrases": [
+            "los system training"
+          ]
+        },
+        "4": {
+          "label": "Loan Workflow System Implementation Training",
+          "keyphrases": [
+            "los implementation training"
+          ]
+        },
+        "5": {
+          "label": "Loan Application System Scheduling",
+          "keyphrases": [
+            "los training schedule"
+          ]
+        },
+        "6": {
+          "label": "Loan System Upgrade Training Materials",
+          "keyphrases": [
+            "los system upgrade"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 70,
+      "cluster_name": "mpls / link / connection / circuit",
+      "keyphrases": [
+        "mpls link failure",
+        "mpls connection drop",
+        "mpls circuit latency",
+        "mpls connection failure",
+        "mpls network latency",
+        "mpls circuit failure"
+      ],
+      "dominant_label": "MPLS Network Performance Baselining System",
+      "subclusters": {
+        "0": {
+          "label": "MPLS Network Performance - Loan Origination",
+          "keyphrases": [
+            "mpls connection drop",
+            "mpls connection failure"
+          ]
+        },
+        "1": {
+          "label": "Commercial Payment Gateway - MPLS Latency",
+          "keyphrases": [
+            "mpls circuit latency",
+            "mpls circuit failure"
+          ]
+        },
+        "2": {
+          "label": "Core Banking System - MPLS Connectivity Issues",
+          "keyphrases": [
+            "mpls link failure"
+          ]
+        },
+        "3": {
+          "label": "Commercial Loan Servicing API - MPLS Network Reliability",
+          "keyphrases": [
+            "mpls network latency"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 39,
+      "cluster_name": "fraudulent / transaction",
+      "keyphrases": [
+        "fraudulent transaction",
+        "fraudulent transaction spike",
+        "fraudulent transaction review",
+        "fraudulent transaction pattern",
+        "fraudulent transaction alert",
+        "fraudulent transfer attempt"
+      ],
+      "dominant_label": "Misys Transaction Bombing Detection System",
+      "subclusters": {
+        "0": {
+          "label": "Card Not Present Fraud Investigation Workflow",
+          "keyphrases": [
+            "fraudulent transaction"
+          ]
+        },
+        "1": {
+          "label": "ACH Transaction Fraud Pattern Analysis",
+          "keyphrases": [
+            "fraudulent transaction pattern"
+          ]
+        },
+        "2": {
+          "label": "Real-Time Fraud Alert Escalation Protocols",
+          "keyphrases": [
+            "fraudulent transaction alert"
+          ]
+        },
+        "3": {
+          "label": "Wire Transfer Fraud Attempt Verification",
+          "keyphrases": [
+            "fraudulent transfer attempt"
+          ]
+        },
+        "4": {
+          "label": "Fraudulent Transaction Volume Anomaly Detection",
+          "keyphrases": [
+            "fraudulent transaction spike"
+          ]
+        },
+        "5": {
+          "label": "Fraudulent Transaction Remediation Procedure",
+          "keyphrases": [
+            "fraudulent transaction review"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 48,
+      "cluster_name": "android / app / ios / crash",
+      "keyphrases": [
+        "android app crash",
+        "ios app crash",
+        "ios crash report"
+      ],
+      "dominant_label": "Mobile Banking SDK Crash Analytics",
+      "subclusters": {
+        "0": {
+          "label": "Mobile Banking Application Stability Monitoring",
+          "keyphrases": [
+            "android app crash"
+          ]
+        },
+        "1": {
+          "label": "iOS Banking App Performance Diagnostics",
+          "keyphrases": [
+            "ios app crash"
+          ]
+        },
+        "2": {
+          "label": "Mobile App Crash Report Analysis Pipeline",
+          "keyphrases": [
+            "ios crash report"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 55,
+      "cluster_name": "mobile / app / deposit / bill",
+      "keyphrases": [
+        "mobile app crash",
+        "mobile deposit quality",
+        "mobile bill pay failure",
+        "mobile app alignment",
+        "mobile balance discrepancy",
+        "mobile app delay",
+        "mobile deposit crash"
+      ],
+      "dominant_label": "Mobile Deposit Image Quality Analysis",
+      "subclusters": {
+        "0": {
+          "label": "Mobile Banking Application Stability",
+          "keyphrases": [
+            "mobile app crash",
+            "mobile app delay"
+          ]
+        },
+        "1": {
+          "label": "Mobile Deposit Image Resolution",
+          "keyphrases": [
+            "mobile deposit quality"
+          ]
+        },
+        "2": {
+          "label": "Digital Bill Payment System Errors",
+          "keyphrases": [
+            "mobile bill pay failure"
+          ]
+        },
+        "3": {
+          "label": "Mobile Application User Interface Discrepancies",
+          "keyphrases": [
+            "mobile app alignment"
+          ]
+        },
+        "4": {
+          "label": "Digital Account Balance Reconciliation",
+          "keyphrases": [
+            "mobile balance discrepancy"
+          ]
+        },
+        "5": {
+          "label": "Mobile Banking System Performance Bottlenecks",
+          "keyphrases": [
+            "mobile deposit crash"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 51,
+      "cluster_name": "ach / payment / delay",
+      "keyphrases": [
+        "ach payment stall",
+        "ach payment delay",
+        "delay ach payment",
+        "ach processing timeout"
+      ],
+      "dominant_label": "NACHA ACH Return Rate Optimization",
+      "subclusters": {
+        "0": {
+          "label": "Automated Clearing House Transaction Bottlenecks",
+          "keyphrases": [
+            "ach payment stall"
+          ]
+        },
+        "1": {
+          "label": "ACH Payment Processing Latency Analysis",
+          "keyphrases": [
+            "ach payment delay"
+          ]
+        },
+        "2": {
+          "label": "Delayed ACH Transaction Remediation",
+          "keyphrases": [
+            "delay ach payment"
+          ]
+        },
+        "3": {
+          "label": "ACH Batch Processing Timeout Investigation",
+          "keyphrases": [
+            "ach processing timeout"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 58,
+      "cluster_name": "ach / payment / nacha / file",
+      "keyphrases": [
+        "ach payment failure",
+        "nacha file transmission",
+        "nacha file error",
+        "nacha connectivity failure",
+        "ach settlement rejection",
+        "ach transfer failure",
+        "ach payment rejection"
+      ],
+      "dominant_label": "NACHA File Transmission Error Analysis",
+      "subclusters": {
+        "0": {
+          "label": "Automated Clearing House Disbursement Processing Errors",
+          "keyphrases": [
+            "ach payment failure",
+            "ach transfer failure"
+          ]
+        },
+        "1": {
+          "label": "NACHA File Transmission Network Connectivity Issues",
+          "keyphrases": [
+            "nacha file transmission"
+          ]
+        },
+        "2": {
+          "label": "ACH Settlement Rejection Reason Codes",
+          "keyphrases": [
+            "ach settlement rejection"
+          ]
+        },
+        "3": {
+          "label": "NACHA File Format Validation Errors",
+          "keyphrases": [
+            "nacha file error"
+          ]
+        },
+        "4": {
+          "label": "ACH Transaction Processing API Failures",
+          "keyphrases": [
+            "ach payment rejection"
+          ]
+        },
+        "5": {
+          "label": "NACHA Network Communication Disruptions",
+          "keyphrases": [
+            "nacha connectivity failure"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 20,
+      "cluster_name": "fraudulent / ach",
+      "keyphrases": [
+        "fraudulent ach transaction",
+        "fraudulent ach activity",
+        "fraudulent ach transfer"
+      ],
+      "dominant_label": "NACHA Rules Payment Exception Handling System",
+      "subclusters": {
+        "0": {
+          "label": "Automated Clearing House Fraud Pattern Identification",
+          "keyphrases": [
+            "fraudulent ach transaction"
+          ]
+        },
+        "1": {
+          "label": "ACH Origination System Anomaly Detection",
+          "keyphrases": [
+            "fraudulent ach activity"
+          ]
+        },
+        "2": {
+          "label": "ACH Payment System Fraud Investigation Protocols",
+          "keyphrases": [
+            "fraudulent ach transfer"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 19,
+      "cluster_name": "mobile / banking / fraud / detection",
+      "keyphrases": [
+        "mobile banking security",
+        "fraud detection upgrade",
+        "fraud detection rollout",
+        "malware signature update",
+        "malware detection update",
+        "enhance fraud detection",
+        "malware threat detection",
+        "mobile fraud detection",
+        "enhance diligence"
+      ],
+      "dominant_label": "NCR Aloha POS Fraud Mitigation",
+      "subclusters": {
+        "0": {
+          "label": "Mobile Banking Authentication Protocol Updates",
+          "keyphrases": [
+            "mobile banking security"
+          ]
+        },
+        "1": {
+          "label": "Fraud Detection System Deployment Lifecycle",
+          "keyphrases": [
+            "fraud detection rollout"
+          ]
+        },
+        "2": {
+          "label": "Fraud Detection Model Versioning Controls",
+          "keyphrases": [
+            "fraud detection upgrade"
+          ]
+        },
+        "3": {
+          "label": "Endpoint Malware Signature Database Refresh",
+          "keyphrases": [
+            "malware signature update"
+          ]
+        },
+        "4": {
+          "label": "Real-Time Malware Threat Intelligence Feed Integration",
+          "keyphrases": [
+            "malware threat detection"
+          ]
+        },
+        "5": {
+          "label": "Mobile Payment Fraud Prevention Controls",
+          "keyphrases": [
+            "mobile fraud detection"
+          ]
+        },
+        "6": {
+          "label": "Enhanced Customer Due Diligence Procedures",
+          "keyphrases": [
+            "enhance diligence"
+          ]
+        },
+        "7": {
+          "label": "Fraud Detection Engine Performance Tuning",
+          "keyphrases": [
+            "enhance fraud detection"
+          ]
+        },
+        "8": {
+          "label": "Malware Detection System Calibration Protocols",
+          "keyphrases": [
+            "malware detection update"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 96,
+      "cluster_name": "atm / cash",
+      "keyphrases": [
+        "atm cash dispense",
+        "atm cash error",
+        "atm cash dispenser",
+        "atm cash dispense failure",
+        "atm cash jam",
+        "atm deposit failure"
+      ],
+      "dominant_label": "NCR Aptra ATM Cash Recycling",
+      "subclusters": {
+        "0": {
+          "label": "ATM Cash Dispensing Error Analysis",
+          "keyphrases": [
+            "atm cash dispense failure",
+            "atm cash jam"
+          ]
+        },
+        "1": {
+          "label": "ATM Deposit Processing Exception Handling",
+          "keyphrases": [
+            "atm deposit failure"
+          ]
+        },
+        "2": {
+          "label": "ATM Cash Dispense Hardware Diagnostics",
+          "keyphrases": [
+            "atm cash dispenser"
+          ]
+        },
+        "3": {
+          "label": "ATM Transaction Error Root Cause Analysis",
+          "keyphrases": [
+            "atm cash dispense"
+          ]
+        },
+        "4": {
+          "label": "ATM Cash Dispensing System Monitoring",
+          "keyphrases": [
+            "atm cash error"
+          ]
+        },
+        "5": {
+          "label": "ATM Cash Recycler Fault Identification",
+          "keyphrases": []
+        }
+      }
+    },
+    {
+      "cluster_id": 47,
+      "cluster_name": "atm / cassette / ncr / card",
+      "keyphrases": [
+        "atm cassette jam",
+        "ncr card reader failure",
+        "atm card reader failure",
+        "atm chip reader",
+        "atm card read failure",
+        "atm card reader"
+      ],
+      "dominant_label": "NCR SelfServ ATM Diagnostics Platform",
+      "subclusters": {
+        "0": {
+          "label": "ATM Card Reader Functionality Diagnostics",
+          "keyphrases": [
+            "atm card reader failure",
+            "atm card read failure"
+          ]
+        },
+        "1": {
+          "label": "NCR ATM Hardware Fault Resolution",
+          "keyphrases": [
+            "ncr card reader failure"
+          ]
+        },
+        "2": {
+          "label": "ATM Chip Card Reader Performance Monitoring",
+          "keyphrases": [
+            "atm chip reader"
+          ]
+        },
+        "3": {
+          "label": "ATM Cassette Mechanism Troubleshooting",
+          "keyphrases": [
+            "atm cassette jam"
+          ]
+        },
+        "4": {
+          "label": "ATM Card Reader Error Logging & Analysis",
+          "keyphrases": [
+            "atm card reader"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 66,
+      "cluster_name": "receipt / printer",
+      "keyphrases": [
+        "receipt printer failure",
+        "receipt printer error",
+        "receipt printer offline"
+      ],
+      "dominant_label": "NCR SelfServ Receipt Printer Diagnostics",
+      "subclusters": {
+        "0": {
+          "label": "ATM Receipt Printer Diagnostic Protocols",
+          "keyphrases": [
+            "receipt printer failure"
+          ]
+        },
+        "1": {
+          "label": "ATM Cash Dispenser Receipt Error Analysis",
+          "keyphrases": [
+            "receipt printer error"
+          ]
+        },
+        "2": {
+          "label": "ATM Offline Receipt Generation Troubleshooting",
+          "keyphrases": [
+            "receipt printer offline"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 30,
+      "cluster_name": "account / opening / new",
+      "keyphrases": [
+        "account opening procedure",
+        "new account kyc",
+        "new account procedure"
+      ],
+      "dominant_label": "New Account CIP Verification Engine",
+      "subclusters": {
+        "0": {
+          "label": "New Account Due Diligence Protocols",
+          "keyphrases": [
+            "new account kyc"
+          ]
+        },
+        "1": {
+          "label": "Account Origination KYC Compliance",
+          "keyphrases": [
+            "new account procedure"
+          ]
+        },
+        "2": {
+          "label": "Account Opening Regulatory Adherence",
+          "keyphrases": [
+            "account opening procedure"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 53,
+      "cluster_name": "ob / login / obas",
+      "keyphrases": [
+        "ob login failure",
+        "obas login failure"
+      ],
+      "dominant_label": "OBAS User Authentication Session Audit",
+      "subclusters": {
+        "0": {
+          "label": "Online Banking Access Control Validation",
+          "keyphrases": [
+            "ob login failure"
+          ]
+        },
+        "1": {
+          "label": "OBAS Authentication Server Error Logging",
+          "keyphrases": [
+            "obas login failure"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 36,
+      "cluster_name": "revise / loan / aml / kyc",
+      "keyphrases": [
+        "revise loan documentation",
+        "revise aml procedure",
+        "revise kyc procedure",
+        "enhance kyc verification",
+        "update kyc procedure",
+        "revise aml rule",
+        "revise aml guideline",
+        "revise loan protocol"
+      ],
+      "dominant_label": "OFAC Compliance Screening Alert Workflow",
+      "subclusters": {
+        "0": {
+          "label": "Credit Policy & Procedure Updates",
+          "keyphrases": [
+            "revise loan documentation",
+            "revise loan protocol"
+          ]
+        },
+        "1": {
+          "label": "AML Compliance Framework Review",
+          "keyphrases": [
+            "revise aml procedure",
+            "revise aml rule",
+            "revise aml guideline"
+          ]
+        },
+        "2": {
+          "label": "Customer Identification Program (CIP) Enhancement",
+          "keyphrases": [
+            "enhance kyc verification"
+          ]
+        },
+        "3": {
+          "label": "Know Your Customer (KYC) Procedure Refresh",
+          "keyphrases": [
+            "update kyc procedure"
+          ]
+        },
+        "4": {
+          "label": "Additional Banking Operations 1754391323",
+          "keyphrases": [
+            "revise kyc procedure"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 89,
+      "cluster_name": "authentication / service",
+      "keyphrases": [
+        "authentication service latency",
+        "authentication service failure",
+        "authentication service timeout",
+        "data synchronization error",
+        "authentication server failure",
+        "fraudguard api failure",
+        "okta connection failure",
+        "data center cool",
+        "authentication server timeout",
+        "ad authentication failure"
+      ],
+      "dominant_label": "Okta Adaptive MFA Policy Engine",
+      "subclusters": {
+        "0": {
+          "label": "Digital Banking Authentication Infrastructure Reliability",
+          "keyphrases": [
+            "authentication service latency",
+            "authentication service failure"
+          ]
+        },
+        "1": {
+          "label": "Core Banking Data Replication Issue Diagnostics",
+          "keyphrases": [
+            "data synchronization error"
+          ]
+        },
+        "2": {
+          "label": "Fraud Prevention API Integration Error Analysis",
+          "keyphrases": [
+            "fraudguard api failure"
+          ]
+        },
+        "3": {
+          "label": "Single Sign-On Connectivity Troubleshooting",
+          "keyphrases": [
+            "okta connection failure"
+          ]
+        },
+        "4": {
+          "label": "Authentication Server Redundancy Failover Analysis",
+          "keyphrases": [
+            "authentication server failure"
+          ]
+        },
+        "5": {
+          "label": "Authentication System Timeout Escalation Protocols",
+          "keyphrases": [
+            "authentication server timeout"
+          ]
+        },
+        "6": {
+          "label": "Active Directory Integration Error Resolution",
+          "keyphrases": [
+            "ad authentication failure"
+          ]
+        },
+        "7": {
+          "label": "Digital Banking Session Stability Monitoring",
+          "keyphrases": []
+        },
+        "8": {
+          "label": "Remote Access Security Incident Response",
+          "keyphrases": []
+        },
+        "9": {
+          "label": "Core Banking Data Integrity Verification",
+          "keyphrases": []
+        },
+        "10": {
+          "label": "Additional Banking Operations 1754397535",
+          "keyphrases": [
+            "data center cool",
+            "authentication service timeout"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 113,
+      "cluster_name": "oracle / database / sql / query",
+      "keyphrases": [
+        "oracle database performance",
+        "sql query performance",
+        "sql server performance",
+        "oracle query performance",
+        "store procedure performance",
+        "sql query optimization",
+        "oracle query timeout"
+      ],
+      "dominant_label": "Oracle SQL Procedure Performance Baselining",
+      "subclusters": {
+        "0": {
+          "label": "Commercial Loan SQL Query Analysis",
+          "keyphrases": [
+            "sql query performance",
+            "sql query optimization"
+          ]
+        },
+        "1": {
+          "label": "Oracle Database Performance - Retail Banking",
+          "keyphrases": [
+            "oracle database performance"
+          ]
+        },
+        "2": {
+          "label": "Commercial Credit Risk SQL Stored Procedure Efficiency",
+          "keyphrases": [
+            "store procedure performance"
+          ]
+        },
+        "3": {
+          "label": "Mortgage Servicing SQL Server Response Time",
+          "keyphrases": [
+            "sql server performance"
+          ]
+        },
+        "4": {
+          "label": "Treasury Reporting Oracle Query Tuning",
+          "keyphrases": [
+            "oracle query performance"
+          ]
+        },
+        "5": {
+          "label": "Fraud Detection System Stored Procedure Latency",
+          "keyphrases": [
+            "store procedure performance"
+          ]
+        },
+        "6": {
+          "label": "Commercial Loan Application SQL Timeout Analysis",
+          "keyphrases": [
+            "oracle query timeout"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 95,
+      "cluster_name": "payee / font / button / alignment",
+      "keyphrases": [
+        "payee font",
+        "payee button alignment",
+        "payee alignment"
+      ],
+      "dominant_label": "Payee Data Font Validation Engine",
+      "subclusters": {
+        "0": {
+          "label": "Digital Bill Payment UI Rendering Diagnostics",
+          "keyphrases": [
+            "payee alignment"
+          ]
+        },
+        "1": {
+          "label": "Automated Clearing House Disbursement API Font Validation",
+          "keyphrases": [
+            "payee font"
+          ]
+        },
+        "2": {
+          "label": "Digital Banking Transaction UI Element Alignment",
+          "keyphrases": [
+            "payee button alignment"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 65,
+      "cluster_name": "database performance degradation",
+      "keyphrases": [
+        "database performance degradation"
+      ],
+      "dominant_label": "PostgreSQL Transaction Log Analysis System",
+      "subclusters": {
+        "0": {
+          "label": "Database Query Optimization - Loan Servicing",
+          "keyphrases": [
+            "database performance degradation"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 76,
+      "cluster_name": "phishe / email",
+      "keyphrases": [
+        "phishe email response",
+        "phishe email detection",
+        "phishe email threat",
+        "phishe email spike"
+      ],
+      "dominant_label": "Proofpoint Email Phishing Response Automation",
+      "subclusters": {
+        "0": {
+          "label": "Digital Banking Fraud Alert Escalation",
+          "keyphrases": [
+            "phishe email response"
+          ]
+        },
+        "1": {
+          "label": "Retail Banking Phishing Detection Engine",
+          "keyphrases": [
+            "phishe email detection"
+          ]
+        },
+        "2": {
+          "label": "Commercial Loan Email Threat Intelligence",
+          "keyphrases": [
+            "phishe email threat"
+          ]
+        },
+        "3": {
+          "label": "Fraudulent Email Campaign Spike Analysis",
+          "keyphrases": [
+            "phishe email spike"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 14,
+      "cluster_name": "rtgs system upgrade",
+      "keyphrases": [
+        "rtgs system upgrade"
+      ],
+      "dominant_label": "RTGS System Liquidity Stress Testing",
+      "subclusters": {
+        "0": {
+          "label": "High-Value Payment System Lifecycle",
+          "keyphrases": [
+            "rtgs system upgrade"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 9,
+      "cluster_name": "fraud system update",
+      "keyphrases": [
+        "fraud system update"
+      ],
+      "dominant_label": "Realtime Card Fraud Velocity Monitoring",
+      "subclusters": {
+        "0": {
+          "label": "Core Banking System Patch Management",
+          "keyphrases": [
+            "fraud system update"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 72,
+      "cluster_name": "date / format / excessive / log",
+      "keyphrases": [
+        "date format error",
+        "excessive log volume",
+        "report datum integrity",
+        "report datum discrepancy",
+        "report date format",
+        "uk date format",
+        "datum discrepancy",
+        "report datum failure",
+        "report datum inaccuracy",
+        "date format bug",
+        "datum integration discrepancy"
+      ],
+      "dominant_label": "Report Datum Reconciliation Workflow Engine",
+      "subclusters": {
+        "0": {
+          "label": "Core Loan Servicing Data Validation",
+          "keyphrases": [
+            "report datum discrepancy",
+            "report datum inaccuracy"
+          ]
+        },
+        "1": {
+          "label": "Commercial Lending Report Generation",
+          "keyphrases": [
+            "report datum failure",
+            "report date format"
+          ]
+        },
+        "2": {
+          "label": "Retail Banking Statement Data Integrity",
+          "keyphrases": [
+            "datum integration discrepancy"
+          ]
+        },
+        "3": {
+          "label": "Mortgage Application Data Formatting",
+          "keyphrases": [
+            "date format error"
+          ]
+        },
+        "4": {
+          "label": "Treasury Management Reporting System",
+          "keyphrases": [
+            "uk date format"
+          ]
+        },
+        "5": {
+          "label": "Commercial Loan Covenant Data Discrepancies",
+          "keyphrases": [
+            "datum discrepancy"
+          ]
+        },
+        "6": {
+          "label": "Core Banking System Log Volume Analysis",
+          "keyphrases": [
+            "excessive log volume"
+          ]
+        },
+        "7": {
+          "label": "Retail Deposit Account Reporting Errors",
+          "keyphrases": [
+            "report datum integrity"
+          ]
+        },
+        "8": {
+          "label": "Commercial Loan Document Data Validation",
+          "keyphrases": [
+            "date format bug"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 98,
+      "cluster_name": "ssl / certificate / smtp / connection",
+      "keyphrases": [
+        "ssl certificate expiry",
+        "smtp connection delay",
+        "smtp connection timeout",
+        "sftp file transfer",
+        "smtp queue length",
+        "ssl certificate renewal",
+        "sftp connection failure",
+        "smtp connection failure",
+        "smtp server failure",
+        "smtp server delay"
+      ],
+      "dominant_label": "SMTP Relay Host Performance Baselining",
+      "subclusters": {
+        "0": {
+          "label": "Core Banking System Secure File Exchange",
+          "keyphrases": [
+            "sftp file transfer",
+            "sftp connection failure"
+          ]
+        },
+        "1": {
+          "label": "Automated Email Notification Infrastructure",
+          "keyphrases": [
+            "smtp connection delay",
+            "smtp connection timeout"
+          ]
+        },
+        "2": {
+          "label": "Treasury Payment System Secure Transmission",
+          "keyphrases": [
+            "smtp connection failure"
+          ]
+        },
+        "3": {
+          "label": "Commercial Lending Document Delivery Pipeline",
+          "keyphrases": [
+            "smtp queue length"
+          ]
+        },
+        "4": {
+          "label": "Retail Banking System Certificate Management",
+          "keyphrases": [
+            "ssl certificate expiry"
+          ]
+        },
+        "5": {
+          "label": "Digital Banking System Encryption Protocol Lifecycle",
+          "keyphrases": [
+            "ssl certificate renewal"
+          ]
+        },
+        "6": {
+          "label": "Commercial Loan Servicing Secure File Transfer Protocol",
+          "keyphrases": [
+            "sftp connection failure"
+          ]
+        },
+        "7": {
+          "label": "Core Deposit Account System Secure Messaging",
+          "keyphrases": [
+            "smtp connection delay"
+          ]
+        },
+        "8": {
+          "label": "Automated Regulatory Reporting Secure Transmission",
+          "keyphrases": [
+            "smtp connection failure"
+          ]
+        },
+        "9": {
+          "label": "Mortgage Loan Servicing Secure File Exchange",
+          "keyphrases": [
+            "smtp connection timeout"
+          ]
+        },
+        "10": {
+          "label": "Additional Banking Operations 1754397766",
+          "keyphrases": [
+            "smtp server delay",
+            "smtp server failure"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 8,
+      "cluster_name": "fraudulent / swift / wire / transfer",
+      "keyphrases": [
+        "fraudulent swift message",
+        "wire transfer verification",
+        "fraudulent wire transfer",
+        "wire transfer threshold"
+      ],
+      "dominant_label": "SWIFT Payment Fraud Detection System",
+      "subclusters": {
+        "0": {
+          "label": "International Funds Transfer Validation",
+          "keyphrases": [
+            "wire transfer verification",
+            "wire transfer threshold"
+          ]
+        },
+        "1": {
+          "label": "SWIFT Fraudulent Transaction Analysis",
+          "keyphrases": [
+            "fraudulent swift message",
+            "fraudulent wire transfer"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 88,
+      "cluster_name": "css / styling / alignment / font",
+      "keyphrases": [
+        "css styling misalignment",
+        "css alignment issue",
+        "font render discrepancy",
+        "font rendering error",
+        "css styling error",
+        "ui nickname alignment",
+        "firefox ui misalignment",
+        "safari font distortion",
+        "font distortion issue",
+        "firefox font rendering",
+        "safari display bug",
+        "font size issue",
+        "firefox display misalignment",
+        "font size inconsistency",
+        "safari ui alignment",
+        "safari display misalignment",
+        "safari display alignment",
+        "button alignment issue",
+        "safari font size",
+        "safari button alignment",
+        "font display distortion",
+        "safari nickname alignment",
+        "css alignment error"
+      ],
+      "dominant_label": "Safari Webkit Rendering Discrepancy Analysis",
+      "subclusters": {
+        "0": {
+          "label": "Digital Banking UI Rendering Defects - Safari",
+          "keyphrases": [
+            "safari font distortion",
+            "safari display bug",
+            "safari font size",
+            "safari ui alignment",
+            "safari display misalignment"
+          ]
+        },
+        "1": {
+          "label": "Core Loan Application Form Styling Errors",
+          "keyphrases": [
+            "css styling misalignment",
+            "css alignment issue",
+            "css styling error"
+          ]
+        },
+        "2": {
+          "label": "Online Account Access Display Inconsistencies",
+          "keyphrases": [
+            "font size issue",
+            "font size inconsistency",
+            "font display distortion"
+          ]
+        },
+        "3": {
+          "label": "Mobile Banking App UI Element Misalignment",
+          "keyphrases": [
+            "ui nickname alignment",
+            "button alignment issue"
+          ]
+        },
+        "4": {
+          "label": "Firefox Browser Rendering Anomalies - Loan Origination",
+          "keyphrases": [
+            "firefox ui misalignment",
+            "firefox font rendering",
+            "firefox display misalignment"
+          ]
+        },
+        "5": {
+          "label": "Commercial Loan Document Presentation Errors",
+          "keyphrases": [
+            "font render discrepancy",
+            "font rendering error"
+          ]
+        },
+        "6": {
+          "label": "Digital Account Onboarding Form Layout Issues",
+          "keyphrases": [
+            "safari display alignment",
+            "safari nickname alignment"
+          ]
+        },
+        "7": {
+          "label": "Credit Card Application Form Rendering Defects",
+          "keyphrases": [
+            "css alignment error"
+          ]
+        },
+        "8": {
+          "label": "Additional Banking Operations 1754397434",
+          "keyphrases": [
+            "font distortion issue",
+            "safari button alignment"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 26,
+      "cluster_name": "sentinel / update / algorithm",
+      "keyphrases": [
+        "sentinel update impact",
+        "sentinel update procedure",
+        "sentinel algorithm update",
+        "sentinel update deployment",
+        "sentinel update implementation",
+        "sentinel vulnerability patch"
+      ],
+      "dominant_label": "Sentinel Algorithm Anomaly Detection System",
+      "subclusters": {
+        "0": {
+          "label": "Sentinel Algorithm Deployment Procedures",
+          "keyphrases": [
+            "sentinel update procedure",
+            "sentinel update deployment"
+          ]
+        },
+        "1": {
+          "label": "Sentinel System Vulnerability Remediation",
+          "keyphrases": [
+            "sentinel vulnerability patch"
+          ]
+        },
+        "2": {
+          "label": "Realtime Fraud Monitoring System Updates",
+          "keyphrases": [
+            "sentinel update impact"
+          ]
+        },
+        "3": {
+          "label": "Sentinel Algorithm Enhancement Lifecycle",
+          "keyphrases": [
+            "sentinel algorithm update"
+          ]
+        },
+        "4": {
+          "label": "Fraud Detection Algorithm Implementation Protocols",
+          "keyphrases": [
+            "sentinel update implementation"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 1,
+      "cluster_name": "sentinel / system",
+      "keyphrases": [
+        "sentinel system upgrade",
+        "sentinel system launch",
+        "sentinel system update"
+      ],
+      "dominant_label": "SentinelOne XDR Threat Hunting Platform",
+      "subclusters": {
+        "0": {
+          "label": "Sentinel System Deployment Lifecycle",
+          "keyphrases": [
+            "sentinel system launch"
+          ]
+        },
+        "1": {
+          "label": "Sentinel System Patch Management Lifecycle",
+          "keyphrases": [
+            "sentinel system update"
+          ]
+        },
+        "2": {
+          "label": "Sentinel System Version Control Protocols",
+          "keyphrases": [
+            "sentinel system upgrade"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 34,
+      "cluster_name": "hydra / malware / phishe / wire",
+      "keyphrases": [
+        "hydra malware threat",
+        "phishe wire fraud",
+        "phishe wire transfer",
+        "sm phishe detection",
+        "smurfe fraud pattern",
+        "phishe threat update",
+        "phishe detection update",
+        "phishe technique update",
+        "phishe attack review",
+        "phishe attack patch",
+        "phishe campaign impact",
+        "phishe attack update",
+        "cerberus x malware",
+        "hydra-7 malware threat",
+        "smurfing investigation",
+        "smishe attack response",
+        "phishe system update"
+      ],
+      "dominant_label": "Smishe Transaction Fraud Pattern Analysis",
+      "subclusters": {
+        "0": {
+          "label": "Advanced Malware Threat Intelligence Feeds",
+          "keyphrases": [
+            "hydra malware threat",
+            "cerberus x malware",
+            "hydra-7 malware threat"
+          ]
+        },
+        "1": {
+          "label": "Wire Transfer Fraud Pattern Analysis - Phishing Vectors",
+          "keyphrases": [
+            "phishe wire fraud",
+            "phishe wire transfer"
+          ]
+        },
+        "2": {
+          "label": "SMiShing Fraud Detection System Calibration",
+          "keyphrases": [
+            "sm phishe detection"
+          ]
+        },
+        "3": {
+          "label": "Fraudulent Transaction Pattern Identification - Smurfing",
+          "keyphrases": [
+            "smurfe fraud pattern",
+            "smurfing investigation"
+          ]
+        },
+        "4": {
+          "label": "Phishing Threat Intelligence Updates & Remediation",
+          "keyphrases": [
+            "phishe threat update",
+            "phishe detection update",
+            "phishe technique update"
+          ]
+        },
+        "5": {
+          "label": "Phishing Attack Surface Vulnerability Assessments",
+          "keyphrases": [
+            "phishe attack review",
+            "phishe attack patch"
+          ]
+        },
+        "6": {
+          "label": "Phishing Campaign Impact Analysis & Reporting",
+          "keyphrases": [
+            "phishe campaign impact"
+          ]
+        },
+        "7": {
+          "label": "Phishing System Version Control Protocols",
+          "keyphrases": [
+            "phishe attack update"
+          ]
+        },
+        "8": {
+          "label": "SMiShing Attack Incident Response Protocols",
+          "keyphrases": [
+            "smishe attack response"
+          ]
+        },
+        "9": {
+          "label": "Additional Banking Operations 1754391359",
+          "keyphrases": [
+            "phishe system update"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 99,
+      "cluster_name": "snowflake / connection / query",
+      "keyphrases": [
+        "snowflake connection timeout",
+        "snowflake connection failure",
+        "snowflake query timeout",
+        "snowflake report timeout",
+        "snowflake report failure",
+        "snowflake query performance"
+      ],
+      "dominant_label": "Snowflake Report Data Latency Analysis",
+      "subclusters": {
+        "0": {
+          "label": "Commercial Loan Data Warehouse Connectivity",
+          "keyphrases": [
+            "snowflake connection timeout",
+            "snowflake connection failure"
+          ]
+        },
+        "1": {
+          "label": "Retail Banking Report Generation Latency",
+          "keyphrases": [
+            "snowflake report timeout"
+          ]
+        },
+        "2": {
+          "label": "Treasury System Query Performance Monitoring",
+          "keyphrases": [
+            "snowflake query timeout"
+          ]
+        },
+        "3": {
+          "label": "Mortgage Servicing Data Pipeline Reliability",
+          "keyphrases": [
+            "snowflake report failure"
+          ]
+        },
+        "4": {
+          "label": "Commercial Lending Analytics Engine Performance",
+          "keyphrases": [
+            "snowflake query performance"
+          ]
+        },
+        "5": {
+          "label": "Retail Deposit Account Statement Generation Stability",
+          "keyphrases": [
+            "snowflake query performance"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 85,
+      "cluster_name": "dim / file / server / network",
+      "keyphrases": [
+        "dim file upload",
+        "file server capacity",
+        "network printer offline",
+        "splunk disk capacity",
+        "file server cpu"
+      ],
+      "dominant_label": "Splunk Indexer Disk Capacity Alerting",
+      "subclusters": {
+        "0": {
+          "label": "Loan Origination System File Upload Infrastructure",
+          "keyphrases": [
+            "dim file upload"
+          ]
+        },
+        "1": {
+          "label": "Credit Reporting Data Server Capacity Management",
+          "keyphrases": [
+            "file server capacity"
+          ]
+        },
+        "2": {
+          "label": "Branch Network Printer Connectivity Diagnostics",
+          "keyphrases": [
+            "network printer offline"
+          ]
+        },
+        "3": {
+          "label": "Security Information and Event Management (SIEM) Storage Optimization",
+          "keyphrases": [
+            "splunk disk capacity"
+          ]
+        },
+        "4": {
+          "label": "Loan Servicing Application Server Resource Monitoring",
+          "keyphrases": [
+            "file server cpu"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 83,
+      "cluster_name": "small / font / size",
+      "keyphrases": [
+        "small font size",
+        "font size display",
+        "font size readability",
+        "font size render"
+      ],
+      "dominant_label": "Statement Font Size Validation Engine",
+      "subclusters": {
+        "0": {
+          "label": "Digital Banking Statement Font Scaling",
+          "keyphrases": [
+            "small font size",
+            "font size readability"
+          ]
+        },
+        "1": {
+          "label": "Loan Origination System Font Rendering",
+          "keyphrases": [
+            "font size render"
+          ]
+        },
+        "2": {
+          "label": "Mobile Banking Display Font Configuration",
+          "keyphrases": [
+            "font size display"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 6,
+      "cluster_name": "branch transaction audit",
+      "keyphrases": [
+        "branch transaction audit"
+      ],
+      "dominant_label": "Teller Balancing Exception Investigation System",
+      "subclusters": {
+        "0": {
+          "label": "Branch Transaction Exception Reporting",
+          "keyphrases": [
+            "branch transaction audit"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 81,
+      "cluster_name": "teller / printer / app",
+      "keyphrases": [
+        "teller printer offline",
+        "teller app slowness",
+        "teller app freeze",
+        "teller printer failure",
+        "teller printer error"
+      ],
+      "dominant_label": "Teller Cash Recycler Jam Detection",
+      "subclusters": {
+        "0": {
+          "label": "Branch Teller Application Performance",
+          "keyphrases": [
+            "teller app slowness",
+            "teller app freeze"
+          ]
+        },
+        "1": {
+          "label": "Branch Teller Printer Hardware Diagnostics",
+          "keyphrases": [
+            "teller printer failure",
+            "teller printer error"
+          ]
+        },
+        "2": {
+          "label": "Branch Teller System Offline Status",
+          "keyphrases": [
+            "teller printer offline"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 21,
+      "cluster_name": "vigilance / update / system",
+      "keyphrases": [
+        "vigilance update",
+        "vigilance system update",
+        "vigilance update deployment",
+        "vigilance system upgrade"
+      ],
+      "dominant_label": "Vigilance System Transaction Fraud Scoring",
+      "subclusters": {
+        "0": {
+          "label": "Vigilance System Patch Release Management",
+          "keyphrases": [
+            "vigilance update"
+          ]
+        },
+        "1": {
+          "label": "Vigilance System Deployment Protocols",
+          "keyphrases": [
+            "vigilance system update"
+          ]
+        },
+        "2": {
+          "label": "Vigilance System Update Rollout Schedule",
+          "keyphrases": [
+            "vigilance update deployment"
+          ]
+        },
+        "3": {
+          "label": "Vigilance System Version Control Procedures",
+          "keyphrases": [
+            "vigilance system upgrade"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 63,
+      "cluster_name": "web / server / login / chrome",
+      "keyphrases": [
+        "web server log",
+        "web login failure",
+        "chrome login failure",
+        "chrome head distortion",
+        "webdirect login failure"
+      ],
+      "dominant_label": "Webdirect Login Failure Analysis",
+      "subclusters": {
+        "0": {
+          "label": "Digital Banking Authentication Failure Analysis",
+          "keyphrases": [
+            "web login failure",
+            "chrome login failure"
+          ]
+        },
+        "1": {
+          "label": "Commercial Loan Application Web Server Logging",
+          "keyphrases": [
+            "web server log"
+          ]
+        },
+        "2": {
+          "label": "Online Banking UI Rendering Discrepancies",
+          "keyphrases": [
+            "chrome head distortion"
+          ]
+        },
+        "3": {
+          "label": "Retail Loan Origination System Access Failure",
+          "keyphrases": [
+            "webdirect login failure"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 86,
+      "cluster_name": "ios / transaction / bill",
+      "keyphrases": [
+        "ios transaction crash",
+        "ios bill payment crash",
+        "ios transaction history"
+      ],
+      "dominant_label": "iOS Bill Pay Transaction Logging",
+      "subclusters": {
+        "0": {
+          "label": "iOS Mobile Banking Transaction Logging",
+          "keyphrases": [
+            "ios transaction crash"
+          ]
+        },
+        "1": {
+          "label": "iOS Bill Pay API Error Handling",
+          "keyphrases": [
+            "ios bill payment crash"
+          ]
+        },
+        "2": {
+          "label": "iOS Mobile Banking History Data Integrity",
+          "keyphrases": [
+            "ios transaction history"
+          ]
+        }
+      }
+    }
+  ]
+}

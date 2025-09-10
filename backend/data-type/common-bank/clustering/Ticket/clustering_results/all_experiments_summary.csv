@@ -1,0 +1,10 @@
+experiment_id,umap_params,hdbscan_params,num_clusters,noise_percent,silhouette_score,coherence_score,avg_similarity
+umap_1_hdbscan_1,"{'n_neighbors': 15, 'min_dist': 0.1}","{'min_cluster_size': 3, 'min_samples': 3, 'cluster_selection_method': 'eom'}",90,1.0,0.9529023766517639,0.8811884091434223,0.843302567149872
+umap_1_hdbscan_2,"{'n_neighbors': 15, 'min_dist': 0.1}","{'min_cluster_size': 5, 'min_samples': 2, 'cluster_selection_method': 'leaf'}",104,26.150000000000002,0.8699057698249817,0.9116245872930219,0.8456592003701267
+umap_1_hdbscan_3,"{'n_neighbors': 15, 'min_dist': 0.1}","{'min_cluster_size': 4, 'min_samples': 4, 'cluster_selection_method': 'eom'}",81,0.8,0.9685646295547485,0.8821635934641578,0.8562309962207687
+umap_2_hdbscan_1,"{'n_neighbors': 30, 'min_dist': 0.05}","{'min_cluster_size': 3, 'min_samples': 3, 'cluster_selection_method': 'eom'}",87,2.0500000000000003,0.9518789649009705,0.8892459858931565,0.8343806731847908
+umap_2_hdbscan_2,"{'n_neighbors': 30, 'min_dist': 0.05}","{'min_cluster_size': 5, 'min_samples': 2, 'cluster_selection_method': 'leaf'}",88,16.5,0.8708999156951904,0.8947194486794138,0.8491065388820561
+umap_2_hdbscan_3,"{'n_neighbors': 30, 'min_dist': 0.05}","{'min_cluster_size': 4, 'min_samples': 4, 'cluster_selection_method': 'eom'}",77,1.35,0.963457465171814,0.8834657631281139,0.8528295028505684
+umap_3_hdbscan_1,"{'n_neighbors': 50, 'min_dist': 0.2}","{'min_cluster_size': 3, 'min_samples': 3, 'cluster_selection_method': 'eom'}",77,1.7000000000000002,0.9485450983047485,0.8664398244626742,0.8432776327141474
+umap_3_hdbscan_2,"{'n_neighbors': 50, 'min_dist': 0.2}","{'min_cluster_size': 5, 'min_samples': 2, 'cluster_selection_method': 'leaf'}",94,30.15,0.8382200598716736,0.8912288881035387,0.8444031297909351
+umap_3_hdbscan_3,"{'n_neighbors': 50, 'min_dist': 0.2}","{'min_cluster_size': 4, 'min_samples': 4, 'cluster_selection_method': 'eom'}",70,1.3,0.9553385972976685,0.8684254143910028,0.8565032494930831

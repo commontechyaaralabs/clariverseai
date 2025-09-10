@@ -1,0 +1,1202 @@
+2025-08-23 13:23:18,855 - INFO - Rate limiter enabled: 30 requests per minute
+2025-08-23 13:23:18,855 - INFO - Recommended delay between requests: 2.00 seconds
+2025-08-23 13:23:18,877 - INFO - EU Banking Twitter Content Generator Starting...
+2025-08-23 13:23:18,877 - INFO - Database: sparzaai
+2025-08-23 13:23:18,877 - INFO - Collection: twitter
+2025-08-23 13:23:18,877 - INFO - Model: gemma3:27b
+2025-08-23 13:23:18,877 - INFO - Ollama URL: https://metallic-heel-about-prizes.trycloudflare.com/
+2025-08-23 13:23:18,877 - INFO - Max Workers: 8
+2025-08-23 13:23:18,877 - INFO - Batch Size: 5
+2025-08-23 13:23:18,877 - INFO - Log Directory: logs
+2025-08-23 13:23:18,878 - INFO - Testing Ollama connection...
+2025-08-23 13:23:18,878 - INFO - Testing connection to Ollama: https://metallic-heel-about-prizes.trycloudflare.com/
+2025-08-23 13:23:18,878 - INFO - Testing model: gemma3:27b
+2025-08-23 13:23:18,878 - INFO - Testing simple generation...
+2025-08-23 13:23:26,463 - INFO - Ollama connection test successful
+2025-08-23 13:23:26,463 - INFO - Test response: ```json
+{"test": "success"}
+```
+...
+2025-08-23 13:23:26,463 - INFO - Ollama connection test successful!
+2025-08-23 13:23:27,360 - INFO - Unique index on tweet_id already exists
+2025-08-23 13:23:27,360 - INFO - Index on user_id already exists
+2025-08-23 13:23:27,360 - INFO - Index on username already exists
+2025-08-23 13:23:27,360 - INFO - Index on dominant_topic already exists
+2025-08-23 13:23:27,360 - INFO - Database connection established and indexes verified
+2025-08-23 13:23:28,295 - INFO - Collection Statistics:
+2025-08-23 13:23:28,295 - INFO - Total tweets: 2000
+2025-08-23 13:23:28,296 - INFO - With generated content: 1473
+2025-08-23 13:23:28,296 - INFO - Without generated content: 527
+2025-08-23 13:23:28,296 - INFO - Top Dominant Topics:
+2025-08-23 13:23:28,296 - INFO - 1. Excellent Call Support: 26 tweets
+2025-08-23 13:23:28,296 - INFO - 2. Customer Service Disappointment: 25 tweets
+2025-08-23 13:23:28,296 - INFO - 3. Others Need Improvement: 25 tweets
+2025-08-23 13:23:28,296 - INFO - 4. Payment Processing Failure: 24 tweets
+2025-08-23 13:23:28,296 - INFO - 5. Call Center Complaints: 24 tweets
+2025-08-23 13:23:28,296 - INFO - 6. Fee Structure Criticism: 23 tweets
+2025-08-23 13:23:28,296 - INFO - 7. Cross Border Issues: 23 tweets
+2025-08-23 13:23:28,296 - INFO - 8. Regulatory Compliance Questions: 23 tweets
+2025-08-23 13:23:28,296 - INFO - 9. GDPR Compliance Praise: 23 tweets
+2025-08-23 13:23:28,296 - INFO - 10. Account Access Problems: 23 tweets
+2025-08-23 13:23:28,296 - INFO - No pending intermediate results to recover
+2025-08-23 13:23:28,297 - INFO - Starting EU Banking Twitter Content Generation...
+2025-08-23 13:23:28,297 - INFO - System Info: 128 CPU cores detected
+2025-08-23 13:23:28,297 - INFO - Batch size: 5
+2025-08-23 13:23:28,297 - INFO - Max workers: 8
+2025-08-23 13:23:28,297 - INFO - Request timeout: 120s
+2025-08-23 13:23:28,297 - INFO - Max retries per request: 3
+2025-08-23 13:23:28,297 - INFO - Fetching tweet records from database...
+2025-08-23 13:23:30,625 - INFO - Found 527 tweets needing content generation
+2025-08-23 13:23:30,626 - INFO - Processing in 106 batches of 5 tweets each
+2025-08-23 13:23:30,626 - INFO - Rate limit: 30 requests per minute
+2025-08-23 13:23:30,626 - INFO - Recommended delay between requests: 2.00 seconds
+2025-08-23 13:23:30,626 - INFO - Processing batch 1/106 (5 tweets)...
+2025-08-23 13:23:41,163 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:23:51,644 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:23:56,613 - INFO - Batch 1 processing complete: 5/5 successful
+2025-08-23 13:23:56,613 - INFO - Batch duration: 25.99s
+2025-08-23 13:23:56,613 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:23:56,747 - INFO - Successfully saved 5 records to database
+2025-08-23 13:23:56,747 - INFO - Sample update - ID: T593001, Text: Experiencing intermittent login issues today. We'v...
+2025-08-23 13:23:56,747 - INFO - Database update complete: 5 records saved
+2025-08-23 13:23:58,747 - INFO - Processing batch 2/106 (5 tweets)...
+2025-08-23 13:24:09,366 - ERROR - Task processing error for T453179: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:24:09,367 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:24:19,810 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:24:25,097 - INFO - Batch 2 processing complete: 4/5 successful
+2025-08-23 13:24:25,097 - INFO - Batch duration: 26.35s
+2025-08-23 13:24:27,098 - INFO - Processing batch 3/106 (5 tweets)...
+2025-08-23 13:24:37,990 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:24:48,480 - ERROR - Task processing error for T162549: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:24:48,480 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:24:53,954 - INFO - Batch 3 processing complete: 4/5 successful
+2025-08-23 13:24:53,954 - INFO - Batch duration: 26.86s
+2025-08-23 13:24:53,955 - INFO - Saving batch of 8 updates to database...
+2025-08-23 13:24:54,088 - INFO - Successfully saved 8 records to database
+2025-08-23 13:24:54,088 - INFO - Sample update - ID: T718779, Text: Frustrated! Account unexpectedly locked after a ro...
+2025-08-23 13:24:54,089 - INFO - Database update complete: 8 records saved
+2025-08-23 13:24:56,089 - INFO - Processing batch 4/106 (5 tweets)...
+2025-08-23 13:25:06,757 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:25:16,805 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:25:21,849 - INFO - Batch 4 processing complete: 5/5 successful
+2025-08-23 13:25:21,849 - INFO - Batch duration: 25.76s
+2025-08-23 13:25:21,849 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:25:21,980 - INFO - Successfully saved 5 records to database
+2025-08-23 13:25:21,980 - INFO - Sample update - ID: T735752, Text: Impressed with how quickly our team resolved a com...
+2025-08-23 13:25:21,980 - INFO - Database update complete: 5 records saved
+2025-08-23 13:25:23,980 - INFO - Processing batch 5/106 (5 tweets)...
+2025-08-23 13:25:34,564 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:25:35,884 - ERROR - HTTP error: 500 - Error: Network connection lost.
+    at async handleRequest (index.js:1249:18)
+    at async handle (index.js:1572:12)
+    at async Object.fetch (index.js:1582:14)
+2025-08-23 13:25:35,884 - INFO - Backing off call_ollama_with_backoff(...) for 0.8s (requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: https://metallic-heel-about-prizes.trycloudflare.com//api/generate)
+2025-08-23 13:25:35,884 - WARNING - Retry 1/3 after 0.8s
+2025-08-23 13:25:46,280 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:25:51,457 - INFO - Batch 5 processing complete: 5/5 successful
+2025-08-23 13:25:51,457 - INFO - Batch duration: 27.48s
+2025-08-23 13:25:51,457 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:25:51,590 - INFO - Successfully saved 5 records to database
+2025-08-23 13:25:51,590 - INFO - Sample update - ID: T207374, Text: Seeing a concerning rise in sophisticated phishing...
+2025-08-23 13:25:51,590 - INFO - Database update complete: 5 records saved
+2025-08-23 13:25:51,590 - INFO - Overall Progress: 4.7% | Batches: 5/106
+2025-08-23 13:25:51,590 - INFO - Success: 23 | Failures: 2 | DB Updates: 23
+2025-08-23 13:25:51,590 - INFO - Rate-limited failures: 2
+2025-08-23 13:25:51,590 - INFO - Rate Limit Status: 11/30 requests used this minute (19 remaining)
+2025-08-23 13:25:51,590 - INFO - Estimated time remaining: 16.8 minutes
+2025-08-23 13:25:51,592 - INFO - System: CPU 2.3% | Memory 6.4%
+2025-08-23 13:25:53,592 - INFO - Processing batch 6/106 (5 tweets)...
+2025-08-23 13:26:04,033 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:26:09,296 - ERROR - Task processing error for T006682: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:26:14,379 - ERROR - Task processing error for T607535: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:26:14,380 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:26:19,289 - INFO - Batch 6 processing complete: 3/5 successful
+2025-08-23 13:26:19,289 - INFO - Batch duration: 25.70s
+2025-08-23 13:26:21,290 - INFO - Processing batch 7/106 (5 tweets)...
+2025-08-23 13:26:31,646 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:26:41,720 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:26:46,858 - INFO - Batch 7 processing complete: 5/5 successful
+2025-08-23 13:26:46,859 - INFO - Batch duration: 25.57s
+2025-08-23 13:26:46,859 - INFO - Saving batch of 8 updates to database...
+2025-08-23 13:26:46,993 - INFO - Successfully saved 8 records to database
+2025-08-23 13:26:46,993 - INFO - Sample update - ID: T446631, Text: Frustrated with intermittent data sync issues foll...
+2025-08-23 13:26:46,993 - INFO - Database update complete: 8 records saved
+2025-08-23 13:26:48,993 - INFO - Processing batch 8/106 (5 tweets)...
+2025-08-23 13:26:59,311 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:27:04,618 - ERROR - Task processing error for T647144: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:27:09,835 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:27:14,922 - INFO - Batch 8 processing complete: 4/5 successful
+2025-08-23 13:27:14,922 - INFO - Batch duration: 25.93s
+2025-08-23 13:27:16,922 - INFO - Processing batch 9/106 (5 tweets)...
+2025-08-23 13:27:27,189 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:27:37,082 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:27:42,208 - INFO - Batch 9 processing complete: 5/5 successful
+2025-08-23 13:27:42,208 - INFO - Batch duration: 25.29s
+2025-08-23 13:27:42,208 - INFO - Saving batch of 9 updates to database...
+2025-08-23 13:27:42,343 - INFO - Successfully saved 9 records to database
+2025-08-23 13:27:42,343 - INFO - Sample update - ID: T396023, Text: Experiencing intermittent connectivity issues affe...
+2025-08-23 13:27:42,343 - INFO - Database update complete: 9 records saved
+2025-08-23 13:27:44,343 - INFO - Processing batch 10/106 (5 tweets)...
+2025-08-23 13:27:54,864 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:28:05,017 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:28:10,018 - INFO - Batch 10 processing complete: 5/5 successful
+2025-08-23 13:28:10,018 - INFO - Batch duration: 25.67s
+2025-08-23 13:28:10,019 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:28:10,150 - INFO - Successfully saved 5 records to database
+2025-08-23 13:28:10,150 - INFO - Sample update - ID: T092407, Text: Received a fraud alert after a small, unusual tran...
+2025-08-23 13:28:10,150 - INFO - Database update complete: 5 records saved
+2025-08-23 13:28:10,150 - INFO - Overall Progress: 9.5% | Batches: 10/106
+2025-08-23 13:28:10,150 - INFO - Success: 45 | Failures: 5 | DB Updates: 45
+2025-08-23 13:28:10,150 - INFO - Rate-limited failures: 5
+2025-08-23 13:28:10,150 - INFO - Rate Limit Status: 10/30 requests used this minute (20 remaining)
+2025-08-23 13:28:10,150 - INFO - Estimated time remaining: 16.0 minutes
+2025-08-23 13:28:10,152 - INFO - System: CPU 2.3% | Memory 6.5%
+2025-08-23 13:28:12,152 - INFO - Processing batch 11/106 (5 tweets)...
+2025-08-23 13:28:22,732 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:28:32,393 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:28:37,261 - INFO - Batch 11 processing complete: 5/5 successful
+2025-08-23 13:28:37,261 - INFO - Batch duration: 25.11s
+2025-08-23 13:28:37,261 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:28:37,392 - INFO - Successfully saved 5 records to database
+2025-08-23 13:28:37,392 - INFO - Sample update - ID: T673294, Text: Navigating the increasing complexity of regulatory...
+2025-08-23 13:28:37,392 - INFO - Database update complete: 5 records saved
+2025-08-23 13:28:39,392 - INFO - Processing batch 12/106 (5 tweets)...
+2025-08-23 13:28:49,945 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:28:59,783 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:29:04,841 - INFO - Batch 12 processing complete: 5/5 successful
+2025-08-23 13:29:04,841 - INFO - Batch duration: 25.45s
+2025-08-23 13:29:04,841 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:29:04,973 - INFO - Successfully saved 5 records to database
+2025-08-23 13:29:04,973 - INFO - Sample update - ID: T588600, Text: Navigating the increasing complexity of compliance...
+2025-08-23 13:29:04,973 - INFO - Database update complete: 5 records saved
+2025-08-23 13:29:06,974 - INFO - Processing batch 13/106 (5 tweets)...
+2025-08-23 13:29:17,402 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:29:27,298 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:29:32,349 - INFO - Batch 13 processing complete: 5/5 successful
+2025-08-23 13:29:32,349 - INFO - Batch duration: 25.38s
+2025-08-23 13:29:32,350 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:29:32,482 - INFO - Successfully saved 5 records to database
+2025-08-23 13:29:32,482 - INFO - Sample update - ID: T545699, Text: Experiencing intermittent issues with mobile depos...
+2025-08-23 13:29:32,483 - INFO - Database update complete: 5 records saved
+2025-08-23 13:29:34,483 - INFO - Processing batch 14/106 (5 tweets)...
+2025-08-23 13:29:44,674 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:29:54,611 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:29:59,561 - INFO - Batch 14 processing complete: 5/5 successful
+2025-08-23 13:29:59,561 - INFO - Batch duration: 25.08s
+2025-08-23 13:29:59,561 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:29:59,693 - INFO - Successfully saved 5 records to database
+2025-08-23 13:29:59,694 - INFO - Sample update - ID: T998658, Text: After a frustrating delay with a recent transactio...
+2025-08-23 13:29:59,694 - INFO - Database update complete: 5 records saved
+2025-08-23 13:30:01,694 - INFO - Processing batch 15/106 (5 tweets)...
+2025-08-23 13:30:12,387 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:30:22,425 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:30:27,512 - INFO - Batch 15 processing complete: 5/5 successful
+2025-08-23 13:30:27,513 - INFO - Batch duration: 25.82s
+2025-08-23 13:30:27,513 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:30:27,645 - INFO - Successfully saved 5 records to database
+2025-08-23 13:30:27,645 - INFO - Sample update - ID: T251593, Text: We've been listening to your feedback & are please...
+2025-08-23 13:30:27,645 - INFO - Database update complete: 5 records saved
+2025-08-23 13:30:27,645 - INFO - Overall Progress: 14.2% | Batches: 15/106
+2025-08-23 13:30:27,645 - INFO - Success: 70 | Failures: 5 | DB Updates: 70
+2025-08-23 13:30:27,645 - INFO - Rate-limited failures: 5
+2025-08-23 13:30:27,646 - INFO - Rate Limit Status: 10/30 requests used this minute (20 remaining)
+2025-08-23 13:30:27,646 - INFO - Estimated time remaining: 15.2 minutes
+2025-08-23 13:30:27,647 - INFO - System: CPU 2.4% | Memory 6.5%
+2025-08-23 13:30:29,648 - INFO - Processing batch 16/106 (5 tweets)...
+2025-08-23 13:30:39,897 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:30:50,200 - ERROR - Task processing error for T177589: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:30:50,201 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:30:55,144 - INFO - Batch 16 processing complete: 4/5 successful
+2025-08-23 13:30:55,144 - INFO - Batch duration: 25.50s
+2025-08-23 13:30:57,145 - INFO - Processing batch 17/106 (5 tweets)...
+2025-08-23 13:31:07,565 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:31:17,589 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:31:22,381 - INFO - Batch 17 processing complete: 5/5 successful
+2025-08-23 13:31:22,381 - INFO - Batch duration: 25.24s
+2025-08-23 13:31:22,381 - INFO - Saving batch of 9 updates to database...
+2025-08-23 13:31:22,518 - INFO - Successfully saved 9 records to database
+2025-08-23 13:31:22,518 - INFO - Sample update - ID: T776868, Text: Experiencing intermittent issues with mobile depos...
+2025-08-23 13:31:22,518 - INFO - Database update complete: 9 records saved
+2025-08-23 13:31:24,519 - INFO - Processing batch 18/106 (5 tweets)...
+2025-08-23 13:31:35,018 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:31:45,596 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:31:50,562 - INFO - Batch 18 processing complete: 5/5 successful
+2025-08-23 13:31:50,562 - INFO - Batch duration: 26.04s
+2025-08-23 13:31:50,562 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:31:50,696 - INFO - Successfully saved 5 records to database
+2025-08-23 13:31:50,696 - INFO - Sample update - ID: T148573, Text: Spent an hour on the phone trying to resolve a sim...
+2025-08-23 13:31:50,696 - INFO - Database update complete: 5 records saved
+2025-08-23 13:31:52,697 - INFO - Processing batch 19/106 (5 tweets)...
+2025-08-23 13:32:03,217 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:32:08,162 - ERROR - Task processing error for T891141: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:32:13,575 - ERROR - Task processing error for T779432: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:32:13,575 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:32:18,479 - INFO - Batch 19 processing complete: 3/5 successful
+2025-08-23 13:32:18,479 - INFO - Batch duration: 25.78s
+2025-08-23 13:32:20,480 - INFO - Processing batch 20/106 (5 tweets)...
+2025-08-23 13:32:30,688 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:32:40,706 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:32:45,285 - INFO - Batch 20 processing complete: 5/5 successful
+2025-08-23 13:32:45,285 - INFO - Batch duration: 24.80s
+2025-08-23 13:32:45,285 - INFO - Saving batch of 8 updates to database...
+2025-08-23 13:32:45,421 - INFO - Successfully saved 8 records to database
+2025-08-23 13:32:45,422 - INFO - Sample update - ID: T091593, Text: Noticed a slight dip in successful logins via our ...
+2025-08-23 13:32:45,422 - INFO - Database update complete: 8 records saved
+2025-08-23 13:32:45,422 - INFO - Overall Progress: 19.0% | Batches: 20/106
+2025-08-23 13:32:45,422 - INFO - Success: 92 | Failures: 8 | DB Updates: 92
+2025-08-23 13:32:45,422 - INFO - Rate-limited failures: 8
+2025-08-23 13:32:45,422 - INFO - Rate Limit Status: 10/30 requests used this minute (20 remaining)
+2025-08-23 13:32:45,422 - INFO - Estimated time remaining: 14.3 minutes
+2025-08-23 13:32:45,424 - INFO - System: CPU 2.3% | Memory 6.5%
+2025-08-23 13:32:47,424 - INFO - Processing batch 21/106 (5 tweets)...
+2025-08-23 13:32:58,009 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:33:03,423 - ERROR - Task processing error for T422165: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:33:08,483 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:33:13,555 - INFO - Batch 21 processing complete: 4/5 successful
+2025-08-23 13:33:13,555 - INFO - Batch duration: 26.13s
+2025-08-23 13:33:15,556 - INFO - Processing batch 22/106 (5 tweets)...
+2025-08-23 13:33:25,836 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:33:30,936 - ERROR - Task processing error for T808855: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:33:35,866 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:33:41,034 - INFO - Batch 22 processing complete: 4/5 successful
+2025-08-23 13:33:41,034 - INFO - Batch duration: 25.48s
+2025-08-23 13:33:41,035 - INFO - Saving batch of 8 updates to database...
+2025-08-23 13:33:41,173 - INFO - Successfully saved 8 records to database
+2025-08-23 13:33:41,173 - INFO - Sample update - ID: T476748, Text: Seeing a concerning trend of premium banking tiers...
+2025-08-23 13:33:41,173 - INFO - Database update complete: 8 records saved
+2025-08-23 13:33:43,174 - INFO - Processing batch 23/106 (5 tweets)...
+2025-08-23 13:33:53,698 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:34:03,902 - ERROR - Task processing error for T229481: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:34:03,902 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:34:09,018 - INFO - Batch 23 processing complete: 4/5 successful
+2025-08-23 13:34:09,018 - INFO - Batch duration: 25.84s
+2025-08-23 13:34:11,019 - INFO - Processing batch 24/106 (5 tweets)...
+2025-08-23 13:34:20,999 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:34:25,880 - ERROR - Task processing error for T450765: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:34:30,734 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:34:35,570 - INFO - Batch 24 processing complete: 4/5 successful
+2025-08-23 13:34:35,570 - INFO - Batch duration: 24.55s
+2025-08-23 13:34:35,570 - INFO - Saving batch of 8 updates to database...
+2025-08-23 13:34:35,706 - INFO - Successfully saved 8 records to database
+2025-08-23 13:34:35,706 - INFO - Sample update - ID: T788000, Text: Seeing continued strong performance in our digital...
+2025-08-23 13:34:35,706 - INFO - Database update complete: 8 records saved
+2025-08-23 13:34:37,707 - INFO - Processing batch 25/106 (5 tweets)...
+2025-08-23 13:34:48,177 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:34:58,256 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:35:03,287 - INFO - Batch 25 processing complete: 5/5 successful
+2025-08-23 13:35:03,287 - INFO - Batch duration: 25.58s
+2025-08-23 13:35:03,287 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:35:03,424 - INFO - Successfully saved 5 records to database
+2025-08-23 13:35:03,424 - INFO - Sample update - ID: T059126, Text: Still navigating the new KYC requirements for digi...
+2025-08-23 13:35:03,424 - INFO - Database update complete: 5 records saved
+2025-08-23 13:35:03,424 - INFO - Overall Progress: 23.7% | Batches: 25/106
+2025-08-23 13:35:03,424 - INFO - Success: 113 | Failures: 12 | DB Updates: 113
+2025-08-23 13:35:03,424 - INFO - Rate-limited failures: 12
+2025-08-23 13:35:03,425 - INFO - Rate Limit Status: 10/30 requests used this minute (20 remaining)
+2025-08-23 13:35:03,425 - INFO - Estimated time remaining: 13.5 minutes
+2025-08-23 13:35:03,426 - INFO - System: CPU 2.2% | Memory 6.5%
+2025-08-23 13:35:05,427 - INFO - Processing batch 26/106 (5 tweets)...
+2025-08-23 13:35:15,718 - ERROR - Task processing error for T382979: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:35:15,719 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:35:26,100 - ERROR - Task processing error for T725757: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:35:26,101 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:35:31,129 - INFO - Batch 26 processing complete: 3/5 successful
+2025-08-23 13:35:31,129 - INFO - Batch duration: 25.70s
+2025-08-23 13:35:33,129 - INFO - Processing batch 27/106 (5 tweets)...
+2025-08-23 13:35:38,606 - ERROR - Task processing error for T065334: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:35:43,636 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:35:54,245 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:35:59,215 - INFO - Batch 27 processing complete: 4/5 successful
+2025-08-23 13:35:59,215 - INFO - Batch duration: 26.08s
+2025-08-23 13:35:59,215 - INFO - Saving batch of 7 updates to database...
+2025-08-23 13:35:59,352 - INFO - Successfully saved 7 records to database
+2025-08-23 13:35:59,353 - INFO - Sample update - ID: T827424, Text: Just processed a large batch of recurring Standing...
+2025-08-23 13:35:59,353 - INFO - Database update complete: 7 records saved
+2025-08-23 13:36:01,353 - INFO - Processing batch 28/106 (5 tweets)...
+2025-08-23 13:36:11,740 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:36:21,705 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:36:26,738 - INFO - Batch 28 processing complete: 5/5 successful
+2025-08-23 13:36:26,739 - INFO - Batch duration: 25.38s
+2025-08-23 13:36:26,739 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:36:26,875 - INFO - Successfully saved 5 records to database
+2025-08-23 13:36:26,875 - INFO - Sample update - ID: T561960, Text: Navigating the new regulatory landscape is proving...
+2025-08-23 13:36:26,875 - INFO - Database update complete: 5 records saved
+2025-08-23 13:36:28,875 - INFO - Processing batch 29/106 (5 tweets)...
+2025-08-23 13:36:34,342 - ERROR - Task processing error for T839781: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:36:39,378 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:36:49,492 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:36:54,624 - INFO - Batch 29 processing complete: 4/5 successful
+2025-08-23 13:36:54,624 - INFO - Batch duration: 25.75s
+2025-08-23 13:36:56,624 - INFO - Processing batch 30/106 (5 tweets)...
+2025-08-23 13:37:06,900 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:37:16,834 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:37:21,842 - INFO - Batch 30 processing complete: 5/5 successful
+2025-08-23 13:37:21,843 - INFO - Batch duration: 25.22s
+2025-08-23 13:37:21,843 - INFO - Saving batch of 9 updates to database...
+2025-08-23 13:37:21,982 - INFO - Successfully saved 9 records to database
+2025-08-23 13:37:21,983 - INFO - Sample update - ID: T095384, Text: Just resolved a complex fraud case for a client th...
+2025-08-23 13:37:21,983 - INFO - Database update complete: 9 records saved
+2025-08-23 13:37:21,983 - INFO - Overall Progress: 28.5% | Batches: 30/106
+2025-08-23 13:37:21,983 - INFO - Success: 134 | Failures: 16 | DB Updates: 134
+2025-08-23 13:37:21,983 - INFO - Rate-limited failures: 16
+2025-08-23 13:37:21,983 - INFO - Rate Limit Status: 10/30 requests used this minute (20 remaining)
+2025-08-23 13:37:21,983 - INFO - Estimated time remaining: 12.7 minutes
+2025-08-23 13:37:21,984 - INFO - System: CPU 2.3% | Memory 6.5%
+2025-08-23 13:37:23,985 - INFO - Processing batch 31/106 (5 tweets)...
+2025-08-23 13:37:34,329 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:37:44,423 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:37:49,411 - INFO - Batch 31 processing complete: 5/5 successful
+2025-08-23 13:37:49,411 - INFO - Batch duration: 25.43s
+2025-08-23 13:37:49,411 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:37:49,549 - INFO - Successfully saved 5 records to database
+2025-08-23 13:37:49,549 - INFO - Sample update - ID: T419513, Text: Spent over an hour on hold trying to reach my rela...
+2025-08-23 13:37:49,549 - INFO - Database update complete: 5 records saved
+2025-08-23 13:37:51,550 - INFO - Processing batch 32/106 (5 tweets)...
+2025-08-23 13:38:01,915 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:38:11,712 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:38:16,764 - INFO - Batch 32 processing complete: 5/5 successful
+2025-08-23 13:38:16,764 - INFO - Batch duration: 25.21s
+2025-08-23 13:38:16,764 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:38:16,900 - INFO - Successfully saved 5 records to database
+2025-08-23 13:38:16,900 - INFO - Sample update - ID: T097144, Text: Seeing a concerning rise in reported phishing atte...
+2025-08-23 13:38:16,901 - INFO - Database update complete: 5 records saved
+2025-08-23 13:38:18,901 - INFO - Processing batch 33/106 (5 tweets)...
+2025-08-23 13:38:29,509 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:38:39,654 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:38:44,620 - INFO - Batch 33 processing complete: 5/5 successful
+2025-08-23 13:38:44,620 - INFO - Batch duration: 25.72s
+2025-08-23 13:38:44,620 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:38:44,757 - INFO - Successfully saved 5 records to database
+2025-08-23 13:38:44,758 - INFO - Sample update - ID: T449719, Text: Noticed a shift in our fee structure recently. Whi...
+2025-08-23 13:38:44,758 - INFO - Database update complete: 5 records saved
+2025-08-23 13:38:46,758 - INFO - Processing batch 34/106 (5 tweets)...
+2025-08-23 13:38:57,148 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:39:06,954 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:39:11,885 - INFO - Batch 34 processing complete: 5/5 successful
+2025-08-23 13:39:11,886 - INFO - Batch duration: 25.13s
+2025-08-23 13:39:11,886 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:39:12,020 - INFO - Successfully saved 5 records to database
+2025-08-23 13:39:12,020 - INFO - Sample update - ID: T093316, Text: Navigating multi-country transactions remains surp...
+2025-08-23 13:39:12,020 - INFO - Database update complete: 5 records saved
+2025-08-23 13:39:14,020 - INFO - Processing batch 35/106 (5 tweets)...
+2025-08-23 13:39:24,052 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:39:34,023 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:39:39,505 - INFO - Batch 35 processing complete: 5/5 successful
+2025-08-23 13:39:39,505 - INFO - Batch duration: 25.48s
+2025-08-23 13:39:39,506 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:39:39,643 - INFO - Successfully saved 5 records to database
+2025-08-23 13:39:39,643 - INFO - Sample update - ID: T265389, Text: Appreciate the recent updates to the mobile app, b...
+2025-08-23 13:39:39,643 - INFO - Database update complete: 5 records saved
+2025-08-23 13:39:39,644 - INFO - Overall Progress: 33.2% | Batches: 35/106
+2025-08-23 13:39:39,644 - INFO - Success: 159 | Failures: 16 | DB Updates: 159
+2025-08-23 13:39:39,644 - INFO - Rate-limited failures: 16
+2025-08-23 13:39:39,644 - INFO - Rate Limit Status: 10/30 requests used this minute (20 remaining)
+2025-08-23 13:39:39,644 - INFO - Estimated time remaining: 11.8 minutes
+2025-08-23 13:39:39,646 - INFO - System: CPU 2.3% | Memory 6.5%
+2025-08-23 13:39:41,646 - INFO - Processing batch 36/106 (5 tweets)...
+2025-08-23 13:39:51,932 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:40:02,027 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:40:07,441 - INFO - Batch 36 processing complete: 5/5 successful
+2025-08-23 13:40:07,441 - INFO - Batch duration: 25.79s
+2025-08-23 13:40:07,442 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:40:07,576 - INFO - Successfully saved 5 records to database
+2025-08-23 13:40:07,576 - INFO - Sample update - ID: T585446, Text: Frustrated with inconsistent access to account det...
+2025-08-23 13:40:07,576 - INFO - Database update complete: 5 records saved
+2025-08-23 13:40:09,577 - INFO - Processing batch 37/106 (5 tweets)...
+2025-08-23 13:40:19,985 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:40:30,039 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:40:34,935 - INFO - Batch 37 processing complete: 5/5 successful
+2025-08-23 13:40:34,935 - INFO - Batch duration: 25.36s
+2025-08-23 13:40:34,936 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:40:35,068 - INFO - Successfully saved 5 records to database
+2025-08-23 13:40:35,068 - INFO - Sample update - ID: T713228, Text: Frustrated that our multilingual support isn't con...
+2025-08-23 13:40:35,068 - INFO - Database update complete: 5 records saved
+2025-08-23 13:40:37,068 - INFO - Processing batch 38/106 (5 tweets)...
+2025-08-23 13:40:47,264 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:40:57,067 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:41:02,200 - INFO - Batch 38 processing complete: 5/5 successful
+2025-08-23 13:41:02,200 - INFO - Batch duration: 25.13s
+2025-08-23 13:41:02,201 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:41:02,338 - INFO - Successfully saved 5 records to database
+2025-08-23 13:41:02,339 - INFO - Sample update - ID: T028324, Text: Seeing a positive shift in how banks handle servic...
+2025-08-23 13:41:02,339 - INFO - Database update complete: 5 records saved
+2025-08-23 13:41:04,339 - INFO - Processing batch 39/106 (5 tweets)...
+2025-08-23 13:41:14,677 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:41:24,566 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:41:29,581 - INFO - Batch 39 processing complete: 5/5 successful
+2025-08-23 13:41:29,581 - INFO - Batch duration: 25.24s
+2025-08-23 13:41:29,581 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:41:29,719 - INFO - Successfully saved 5 records to database
+2025-08-23 13:41:29,719 - INFO - Sample update - ID: T929841, Text: Appreciate the swift resolution to the recent acco...
+2025-08-23 13:41:29,719 - INFO - Database update complete: 5 records saved
+2025-08-23 13:41:31,720 - INFO - Processing batch 40/106 (5 tweets)...
+2025-08-23 13:41:42,255 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:41:52,280 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:41:57,305 - INFO - Batch 40 processing complete: 5/5 successful
+2025-08-23 13:41:57,305 - INFO - Batch duration: 25.58s
+2025-08-23 13:41:57,305 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:41:57,444 - INFO - Successfully saved 5 records to database
+2025-08-23 13:41:57,444 - INFO - Sample update - ID: T838372, Text: Really impressed with the proactive support from o...
+2025-08-23 13:41:57,444 - INFO - Database update complete: 5 records saved
+2025-08-23 13:41:57,444 - INFO - Overall Progress: 38.0% | Batches: 40/106
+2025-08-23 13:41:57,444 - INFO - Success: 184 | Failures: 16 | DB Updates: 184
+2025-08-23 13:41:57,444 - INFO - Rate-limited failures: 16
+2025-08-23 13:41:57,444 - INFO - Rate Limit Status: 10/30 requests used this minute (20 remaining)
+2025-08-23 13:41:57,444 - INFO - Estimated time remaining: 11.0 minutes
+2025-08-23 13:41:57,446 - INFO - System: CPU 2.3% | Memory 6.5%
+2025-08-23 13:41:59,446 - INFO - Processing batch 41/106 (5 tweets)...
+2025-08-23 13:42:09,795 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:42:19,798 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:42:24,902 - ERROR - Task processing error for T010610: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:42:24,902 - INFO - Batch 41 processing complete: 4/5 successful
+2025-08-23 13:42:24,902 - INFO - Batch duration: 25.46s
+2025-08-23 13:42:26,903 - INFO - Processing batch 42/106 (5 tweets)...
+2025-08-23 13:42:37,246 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:42:47,518 - ERROR - Task processing error for T694452: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:42:47,519 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:42:52,432 - INFO - Batch 42 processing complete: 4/5 successful
+2025-08-23 13:42:52,432 - INFO - Batch duration: 25.53s
+2025-08-23 13:42:52,432 - INFO - Saving batch of 8 updates to database...
+2025-08-23 13:42:52,573 - INFO - Successfully saved 8 records to database
+2025-08-23 13:42:52,573 - INFO - Sample update - ID: T659049, Text: We're currently undergoing scheduled maintenance t...
+2025-08-23 13:42:52,573 - INFO - Database update complete: 8 records saved
+2025-08-23 13:42:54,573 - INFO - Processing batch 43/106 (5 tweets)...
+2025-08-23 13:43:05,104 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:43:14,889 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:43:19,693 - INFO - Batch 43 processing complete: 5/5 successful
+2025-08-23 13:43:19,693 - INFO - Batch duration: 25.12s
+2025-08-23 13:43:19,693 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:43:19,834 - INFO - Successfully saved 5 records to database
+2025-08-23 13:43:19,834 - INFO - Sample update - ID: T960761, Text: Experiencing intermittent issues with our mobile a...
+2025-08-23 13:43:19,834 - INFO - Database update complete: 5 records saved
+2025-08-23 13:43:21,834 - INFO - Processing batch 44/106 (5 tweets)...
+2025-08-23 13:43:32,139 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:43:42,134 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:43:47,260 - INFO - Batch 44 processing complete: 5/5 successful
+2025-08-23 13:43:47,260 - INFO - Batch duration: 25.43s
+2025-08-23 13:43:47,260 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:43:47,397 - INFO - Successfully saved 5 records to database
+2025-08-23 13:43:47,397 - INFO - Sample update - ID: T969954, Text: Seeing positive momentum in rebuilding trust follo...
+2025-08-23 13:43:47,397 - INFO - Database update complete: 5 records saved
+2025-08-23 13:43:49,397 - INFO - Processing batch 45/106 (5 tweets)...
+2025-08-23 13:44:00,173 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:44:10,139 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:44:15,036 - INFO - Batch 45 processing complete: 5/5 successful
+2025-08-23 13:44:15,036 - INFO - Batch duration: 25.64s
+2025-08-23 13:44:15,036 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:44:15,176 - INFO - Successfully saved 5 records to database
+2025-08-23 13:44:15,176 - INFO - Sample update - ID: T544058, Text: We're seeing increased sophistication in mobile ba...
+2025-08-23 13:44:15,177 - INFO - Database update complete: 5 records saved
+2025-08-23 13:44:15,177 - INFO - Overall Progress: 42.7% | Batches: 45/106
+2025-08-23 13:44:15,177 - INFO - Success: 207 | Failures: 18 | DB Updates: 207
+2025-08-23 13:44:15,177 - INFO - Rate-limited failures: 18
+2025-08-23 13:44:15,177 - INFO - Rate Limit Status: 10/30 requests used this minute (20 remaining)
+2025-08-23 13:44:15,177 - INFO - Estimated time remaining: 10.2 minutes
+2025-08-23 13:44:15,178 - INFO - System: CPU 2.3% | Memory 6.5%
+2025-08-23 13:44:17,179 - INFO - Processing batch 46/106 (5 tweets)...
+2025-08-23 13:44:27,418 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:44:37,243 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:44:42,145 - INFO - Batch 46 processing complete: 5/5 successful
+2025-08-23 13:44:42,145 - INFO - Batch duration: 24.97s
+2025-08-23 13:44:42,145 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:44:42,285 - INFO - Successfully saved 5 records to database
+2025-08-23 13:44:42,285 - INFO - Sample update - ID: T388175, Text: Navigating the evolving regulatory landscape is pr...
+2025-08-23 13:44:42,285 - INFO - Database update complete: 5 records saved
+2025-08-23 13:44:44,286 - INFO - Processing batch 47/106 (5 tweets)...
+2025-08-23 13:44:54,771 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:45:04,414 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:45:09,304 - ERROR - Task processing error for T631266: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:45:09,305 - INFO - Batch 47 processing complete: 4/5 successful
+2025-08-23 13:45:09,306 - INFO - Batch duration: 25.02s
+2025-08-23 13:45:11,306 - INFO - Processing batch 48/106 (5 tweets)...
+2025-08-23 13:45:21,502 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:45:31,448 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:45:36,462 - INFO - Batch 48 processing complete: 5/5 successful
+2025-08-23 13:45:36,462 - INFO - Batch duration: 25.16s
+2025-08-23 13:45:36,462 - INFO - Saving batch of 9 updates to database...
+2025-08-23 13:45:36,604 - INFO - Successfully saved 9 records to database
+2025-08-23 13:45:36,604 - INFO - Sample update - ID: T555194, Text: Experiencing intermittent login issues on our mobi...
+2025-08-23 13:45:36,604 - INFO - Database update complete: 9 records saved
+2025-08-23 13:45:38,604 - INFO - Processing batch 49/106 (5 tweets)...
+2025-08-23 13:45:44,046 - ERROR - Task processing error for T093396: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:45:49,231 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:45:59,262 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:46:04,239 - INFO - Batch 49 processing complete: 4/5 successful
+2025-08-23 13:46:04,239 - INFO - Batch duration: 25.63s
+2025-08-23 13:46:06,240 - INFO - Processing batch 50/106 (5 tweets)...
+2025-08-23 13:46:16,414 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:46:26,550 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:46:31,475 - INFO - Batch 50 processing complete: 5/5 successful
+2025-08-23 13:46:31,475 - INFO - Batch duration: 25.23s
+2025-08-23 13:46:31,475 - INFO - Saving batch of 9 updates to database...
+2025-08-23 13:46:31,619 - INFO - Successfully saved 9 records to database
+2025-08-23 13:46:31,619 - INFO - Sample update - ID: T025202, Text: Updated our User Authority Matrix & Account Permis...
+2025-08-23 13:46:31,619 - INFO - Database update complete: 9 records saved
+2025-08-23 13:46:31,619 - INFO - Overall Progress: 47.4% | Batches: 50/106
+2025-08-23 13:46:31,619 - INFO - Success: 230 | Failures: 20 | DB Updates: 230
+2025-08-23 13:46:31,619 - INFO - Rate-limited failures: 20
+2025-08-23 13:46:31,619 - INFO - Rate Limit Status: 10/30 requests used this minute (20 remaining)
+2025-08-23 13:46:31,619 - INFO - Estimated time remaining: 9.3 minutes
+2025-08-23 13:46:31,621 - INFO - System: CPU 2.3% | Memory 6.5%
+2025-08-23 13:46:33,621 - INFO - Processing batch 51/106 (5 tweets)...
+2025-08-23 13:46:44,321 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:46:54,130 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:46:59,176 - INFO - Batch 51 processing complete: 5/5 successful
+2025-08-23 13:46:59,177 - INFO - Batch duration: 25.55s
+2025-08-23 13:46:59,177 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:46:59,314 - INFO - Successfully saved 5 records to database
+2025-08-23 13:46:59,314 - INFO - Sample update - ID: T835675, Text: Seeing a higher than usual volume of declined tran...
+2025-08-23 13:46:59,314 - INFO - Database update complete: 5 records saved
+2025-08-23 13:47:01,314 - INFO - Processing batch 52/106 (5 tweets)...
+2025-08-23 13:47:11,913 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:47:16,998 - ERROR - Task processing error for T023222: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:47:21,997 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:47:27,027 - INFO - Batch 52 processing complete: 4/5 successful
+2025-08-23 13:47:27,027 - INFO - Batch duration: 25.71s
+2025-08-23 13:47:29,028 - INFO - Processing batch 53/106 (5 tweets)...
+2025-08-23 13:47:39,244 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:47:49,405 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:47:54,303 - INFO - Batch 53 processing complete: 5/5 successful
+2025-08-23 13:47:54,303 - INFO - Batch duration: 25.28s
+2025-08-23 13:47:54,304 - INFO - Saving batch of 9 updates to database...
+2025-08-23 13:47:54,446 - INFO - Successfully saved 9 records to database
+2025-08-23 13:47:54,446 - INFO - Sample update - ID: T731711, Text: Seeing higher than usual call volumes this week as...
+2025-08-23 13:47:54,446 - INFO - Database update complete: 9 records saved
+2025-08-23 13:47:56,447 - INFO - Processing batch 54/106 (5 tweets)...
+2025-08-23 13:48:06,985 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:48:16,898 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:48:21,530 - INFO - Batch 54 processing complete: 5/5 successful
+2025-08-23 13:48:21,530 - INFO - Batch duration: 25.08s
+2025-08-23 13:48:21,530 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:48:21,670 - INFO - Successfully saved 5 records to database
+2025-08-23 13:48:21,670 - INFO - Sample update - ID: T479320, Text: Experiencing intermittent login issues on our mobi...
+2025-08-23 13:48:21,670 - INFO - Database update complete: 5 records saved
+2025-08-23 13:48:23,671 - INFO - Processing batch 55/106 (5 tweets)...
+2025-08-23 13:48:33,708 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:48:43,741 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:48:48,761 - INFO - Batch 55 processing complete: 5/5 successful
+2025-08-23 13:48:48,761 - INFO - Batch duration: 25.09s
+2025-08-23 13:48:48,762 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:48:48,902 - INFO - Successfully saved 5 records to database
+2025-08-23 13:48:48,902 - INFO - Sample update - ID: T500639, Text: Our latest regional difference reports highlight i...
+2025-08-23 13:48:48,902 - INFO - Database update complete: 5 records saved
+2025-08-23 13:48:48,902 - INFO - Overall Progress: 52.2% | Batches: 55/106
+2025-08-23 13:48:48,903 - INFO - Success: 254 | Failures: 21 | DB Updates: 254
+2025-08-23 13:48:48,903 - INFO - Rate-limited failures: 21
+2025-08-23 13:48:48,903 - INFO - Rate Limit Status: 10/30 requests used this minute (20 remaining)
+2025-08-23 13:48:48,903 - INFO - Estimated time remaining: 8.5 minutes
+2025-08-23 13:48:48,904 - INFO - System: CPU 2.3% | Memory 6.5%
+2025-08-23 13:48:50,912 - INFO - Processing batch 56/106 (5 tweets)...
+2025-08-23 13:49:02,200 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:49:12,546 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:49:17,554 - INFO - Batch 56 processing complete: 5/5 successful
+2025-08-23 13:49:17,554 - INFO - Batch duration: 26.64s
+2025-08-23 13:49:17,554 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:49:17,698 - INFO - Successfully saved 5 records to database
+2025-08-23 13:49:17,698 - INFO - Sample update - ID: T854555, Text: Frustrated! Account locked after a routine update,...
+2025-08-23 13:49:17,698 - INFO - Database update complete: 5 records saved
+2025-08-23 13:49:19,699 - INFO - Processing batch 57/106 (5 tweets)...
+2025-08-23 13:49:29,717 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:49:40,010 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:49:44,947 - INFO - Batch 57 processing complete: 5/5 successful
+2025-08-23 13:49:44,947 - INFO - Batch duration: 25.25s
+2025-08-23 13:49:44,948 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:49:45,089 - INFO - Successfully saved 5 records to database
+2025-08-23 13:49:45,089 - INFO - Sample update - ID: T169952, Text: Mixed bag with my bank lately. Mobile app updates ...
+2025-08-23 13:49:45,090 - INFO - Database update complete: 5 records saved
+2025-08-23 13:49:47,090 - INFO - Processing batch 58/106 (5 tweets)...
+2025-08-23 13:49:57,849 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:50:07,960 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:50:13,554 - INFO - Batch 58 processing complete: 5/5 successful
+2025-08-23 13:50:13,555 - INFO - Batch duration: 26.46s
+2025-08-23 13:50:13,555 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:50:13,697 - INFO - Successfully saved 5 records to database
+2025-08-23 13:50:13,697 - INFO - Sample update - ID: T185601, Text: Account access was smooth this morning, but I'm st...
+2025-08-23 13:50:13,698 - INFO - Database update complete: 5 records saved
+2025-08-23 13:50:15,698 - INFO - Processing batch 59/106 (5 tweets)...
+2025-08-23 13:50:26,350 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:50:36,777 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:50:41,721 - INFO - Batch 59 processing complete: 5/5 successful
+2025-08-23 13:50:41,722 - INFO - Batch duration: 26.02s
+2025-08-23 13:50:41,722 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:50:41,862 - INFO - Successfully saved 5 records to database
+2025-08-23 13:50:41,863 - INFO - Sample update - ID: T606573, Text: Experiencing intermittent API connection issues im...
+2025-08-23 13:50:41,863 - INFO - Database update complete: 5 records saved
+2025-08-23 13:50:43,863 - INFO - Processing batch 60/106 (5 tweets)...
+2025-08-23 13:50:54,222 - ERROR - Task processing error for T557670: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:50:54,222 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:51:03,882 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:51:08,779 - INFO - Batch 60 processing complete: 4/5 successful
+2025-08-23 13:51:08,780 - INFO - Batch duration: 24.92s
+2025-08-23 13:51:08,780 - INFO - Overall Progress: 56.9% | Batches: 60/106
+2025-08-23 13:51:08,780 - INFO - Success: 278 | Failures: 22 | DB Updates: 274
+2025-08-23 13:51:08,780 - INFO - Rate-limited failures: 22
+2025-08-23 13:51:08,780 - INFO - Rate Limit Status: 10/30 requests used this minute (20 remaining)
+2025-08-23 13:51:08,780 - INFO - Estimated time remaining: 7.7 minutes
+2025-08-23 13:51:08,782 - INFO - System: CPU 2.3% | Memory 6.5%
+2025-08-23 13:51:10,782 - INFO - Processing batch 61/106 (5 tweets)...
+2025-08-23 13:51:21,622 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:51:31,648 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:51:36,683 - INFO - Batch 61 processing complete: 5/5 successful
+2025-08-23 13:51:36,683 - INFO - Batch duration: 25.90s
+2025-08-23 13:51:36,683 - INFO - Saving batch of 9 updates to database...
+2025-08-23 13:51:36,828 - INFO - Successfully saved 9 records to database
+2025-08-23 13:51:36,828 - INFO - Sample update - ID: T022774, Text: Experiencing intermittent issues with some payment...
+2025-08-23 13:51:36,828 - INFO - Database update complete: 9 records saved
+2025-08-23 13:51:38,828 - INFO - Processing batch 62/106 (5 tweets)...
+2025-08-23 13:51:49,269 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:51:59,357 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:52:04,339 - INFO - Batch 62 processing complete: 5/5 successful
+2025-08-23 13:52:04,339 - INFO - Batch duration: 25.51s
+2025-08-23 13:52:04,340 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:52:04,482 - INFO - Successfully saved 5 records to database
+2025-08-23 13:52:04,482 - INFO - Sample update - ID: T058931, Text: Spent the morning helping a client navigate recent...
+2025-08-23 13:52:04,482 - INFO - Database update complete: 5 records saved
+2025-08-23 13:52:06,482 - INFO - Processing batch 63/106 (5 tweets)...
+2025-08-23 13:52:16,581 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:52:26,996 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:52:31,979 - INFO - Batch 63 processing complete: 5/5 successful
+2025-08-23 13:52:31,979 - INFO - Batch duration: 25.50s
+2025-08-23 13:52:31,979 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:52:32,115 - INFO - Successfully saved 5 records to database
+2025-08-23 13:52:32,116 - INFO - Sample update - ID: T942378, Text: Navigating recent volatility in FX markets. Our in...
+2025-08-23 13:52:32,116 - INFO - Database update complete: 5 records saved
+2025-08-23 13:52:34,116 - INFO - Processing batch 64/106 (5 tweets)...
+2025-08-23 13:52:44,425 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:52:54,311 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:52:59,647 - INFO - Batch 64 processing complete: 5/5 successful
+2025-08-23 13:52:59,648 - INFO - Batch duration: 25.53s
+2025-08-23 13:52:59,648 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:52:59,791 - INFO - Successfully saved 5 records to database
+2025-08-23 13:52:59,791 - INFO - Sample update - ID: T931197, Text: Seeing a noticeable dip in transaction volume duri...
+2025-08-23 13:52:59,791 - INFO - Database update complete: 5 records saved
+2025-08-23 13:53:01,792 - INFO - Processing batch 65/106 (5 tweets)...
+2025-08-23 13:53:12,389 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:53:22,500 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:53:27,751 - INFO - Batch 65 processing complete: 5/5 successful
+2025-08-23 13:53:27,751 - INFO - Batch duration: 25.96s
+2025-08-23 13:53:27,752 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:53:27,894 - INFO - Successfully saved 5 records to database
+2025-08-23 13:53:27,894 - INFO - Sample update - ID: T554327, Text: Seeing longer processing times on some internation...
+2025-08-23 13:53:27,894 - INFO - Database update complete: 5 records saved
+2025-08-23 13:53:27,894 - INFO - Overall Progress: 61.7% | Batches: 65/106
+2025-08-23 13:53:27,894 - INFO - Success: 303 | Failures: 22 | DB Updates: 303
+2025-08-23 13:53:27,895 - INFO - Rate-limited failures: 22
+2025-08-23 13:53:27,895 - INFO - Rate Limit Status: 10/30 requests used this minute (20 remaining)
+2025-08-23 13:53:27,895 - INFO - Estimated time remaining: 6.8 minutes
+2025-08-23 13:53:27,896 - INFO - System: CPU 2.2% | Memory 6.5%
+2025-08-23 13:53:29,896 - INFO - Processing batch 66/106 (5 tweets)...
+2025-08-23 13:53:40,169 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:53:50,548 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:53:55,668 - INFO - Batch 66 processing complete: 5/5 successful
+2025-08-23 13:53:55,668 - INFO - Batch duration: 25.77s
+2025-08-23 13:53:55,668 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:53:55,813 - INFO - Successfully saved 5 records to database
+2025-08-23 13:53:55,813 - INFO - Sample update - ID: T710225, Text: Seeing a frustrating inconsistency with account ma...
+2025-08-23 13:53:55,813 - INFO - Database update complete: 5 records saved
+2025-08-23 13:53:57,813 - INFO - Processing batch 67/106 (5 tweets)...
+2025-08-23 13:54:08,010 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:54:17,837 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:54:22,743 - INFO - Batch 67 processing complete: 5/5 successful
+2025-08-23 13:54:22,743 - INFO - Batch duration: 24.93s
+2025-08-23 13:54:22,743 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:54:22,887 - INFO - Successfully saved 5 records to database
+2025-08-23 13:54:22,887 - INFO - Sample update - ID: T990524, Text: Glad to see the swift resolution to the recent mob...
+2025-08-23 13:54:22,887 - INFO - Database update complete: 5 records saved
+2025-08-23 13:54:24,887 - INFO - Processing batch 68/106 (5 tweets)...
+2025-08-23 13:54:34,992 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:54:45,082 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:54:50,082 - INFO - Batch 68 processing complete: 5/5 successful
+2025-08-23 13:54:50,082 - INFO - Batch duration: 25.19s
+2025-08-23 13:54:50,082 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:54:50,221 - INFO - Successfully saved 5 records to database
+2025-08-23 13:54:50,221 - INFO - Sample update - ID: T849457, Text: Really impressed with the dedicated support from m...
+2025-08-23 13:54:50,221 - INFO - Database update complete: 5 records saved
+2025-08-23 13:54:52,221 - INFO - Processing batch 69/106 (5 tweets)...
+2025-08-23 13:55:02,770 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:55:12,592 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:55:17,833 - INFO - Batch 69 processing complete: 5/5 successful
+2025-08-23 13:55:17,833 - INFO - Batch duration: 25.61s
+2025-08-23 13:55:17,833 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:55:17,973 - INFO - Successfully saved 5 records to database
+2025-08-23 13:55:17,973 - INFO - Sample update - ID: T694460, Text: Seeing continued delays with correspondent banking...
+2025-08-23 13:55:17,973 - INFO - Database update complete: 5 records saved
+2025-08-23 13:55:19,974 - INFO - Processing batch 70/106 (5 tweets)...
+2025-08-23 13:55:30,303 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:55:40,400 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:55:45,716 - INFO - Batch 70 processing complete: 5/5 successful
+2025-08-23 13:55:45,716 - INFO - Batch duration: 25.74s
+2025-08-23 13:55:45,716 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:55:45,856 - INFO - Successfully saved 5 records to database
+2025-08-23 13:55:45,856 - INFO - Sample update - ID: T666282, Text: Appreciate the direct response from Senior Leaders...
+2025-08-23 13:55:45,856 - INFO - Database update complete: 5 records saved
+2025-08-23 13:55:45,856 - INFO - Overall Progress: 66.4% | Batches: 70/106
+2025-08-23 13:55:45,856 - INFO - Success: 328 | Failures: 22 | DB Updates: 328
+2025-08-23 13:55:45,856 - INFO - Rate-limited failures: 22
+2025-08-23 13:55:45,856 - INFO - Rate Limit Status: 10/30 requests used this minute (20 remaining)
+2025-08-23 13:55:45,856 - INFO - Estimated time remaining: 6.0 minutes
+2025-08-23 13:55:45,858 - INFO - System: CPU 2.3% | Memory 6.5%
+2025-08-23 13:55:47,858 - INFO - Processing batch 71/106 (5 tweets)...
+2025-08-23 13:55:58,172 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:56:08,056 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:56:12,944 - INFO - Batch 71 processing complete: 5/5 successful
+2025-08-23 13:56:12,945 - INFO - Batch duration: 25.09s
+2025-08-23 13:56:12,945 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:56:13,084 - INFO - Successfully saved 5 records to database
+2025-08-23 13:56:13,085 - INFO - Sample update - ID: T711539, Text: Really impressed with the quick turnaround on reso...
+2025-08-23 13:56:13,085 - INFO - Database update complete: 5 records saved
+2025-08-23 13:56:15,085 - INFO - Processing batch 72/106 (5 tweets)...
+2025-08-23 13:56:25,314 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:56:30,346 - ERROR - Task processing error for T715637: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:56:35,347 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:56:40,253 - INFO - Batch 72 processing complete: 4/5 successful
+2025-08-23 13:56:40,253 - INFO - Batch duration: 25.17s
+2025-08-23 13:56:42,254 - INFO - Processing batch 73/106 (5 tweets)...
+2025-08-23 13:56:52,394 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:57:02,057 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:57:07,047 - INFO - Batch 73 processing complete: 5/5 successful
+2025-08-23 13:57:07,048 - INFO - Batch duration: 24.79s
+2025-08-23 13:57:07,048 - INFO - Saving batch of 9 updates to database...
+2025-08-23 13:57:07,190 - INFO - Successfully saved 9 records to database
+2025-08-23 13:57:07,190 - INFO - Sample update - ID: T999865, Text: While the new mobile banking features are a defini...
+2025-08-23 13:57:07,190 - INFO - Database update complete: 9 records saved
+2025-08-23 13:57:09,190 - INFO - Processing batch 74/106 (5 tweets)...
+2025-08-23 13:57:19,139 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:57:24,189 - ERROR - Task processing error for T831579: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:57:29,207 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:57:34,063 - INFO - Batch 74 processing complete: 4/5 successful
+2025-08-23 13:57:34,063 - INFO - Batch duration: 24.87s
+2025-08-23 13:57:36,063 - INFO - Processing batch 75/106 (5 tweets)...
+2025-08-23 13:57:46,603 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:57:56,600 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:58:01,487 - INFO - Batch 75 processing complete: 5/5 successful
+2025-08-23 13:58:01,487 - INFO - Batch duration: 25.42s
+2025-08-23 13:58:01,487 - INFO - Saving batch of 9 updates to database...
+2025-08-23 13:58:01,628 - INFO - Successfully saved 9 records to database
+2025-08-23 13:58:01,629 - INFO - Sample update - ID: T372439, Text: Navigating the evolving regulatory landscape for c...
+2025-08-23 13:58:01,629 - INFO - Database update complete: 9 records saved
+2025-08-23 13:58:01,629 - INFO - Overall Progress: 71.2% | Batches: 75/106
+2025-08-23 13:58:01,629 - INFO - Success: 351 | Failures: 24 | DB Updates: 351
+2025-08-23 13:58:01,629 - INFO - Rate-limited failures: 24
+2025-08-23 13:58:01,629 - INFO - Rate Limit Status: 10/30 requests used this minute (20 remaining)
+2025-08-23 13:58:01,629 - INFO - Estimated time remaining: 5.2 minutes
+2025-08-23 13:58:01,630 - INFO - System: CPU 2.2% | Memory 6.5%
+2025-08-23 13:58:03,631 - INFO - Processing batch 76/106 (5 tweets)...
+2025-08-23 13:58:14,335 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:58:24,310 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:58:29,152 - INFO - Batch 76 processing complete: 5/5 successful
+2025-08-23 13:58:29,152 - INFO - Batch duration: 25.52s
+2025-08-23 13:58:29,152 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:58:29,300 - INFO - Successfully saved 5 records to database
+2025-08-23 13:58:29,300 - INFO - Sample update - ID: T067550, Text: Navigating the evolving regulatory landscape for c...
+2025-08-23 13:58:29,301 - INFO - Database update complete: 5 records saved
+2025-08-23 13:58:31,301 - INFO - Processing batch 77/106 (5 tweets)...
+2025-08-23 13:58:41,707 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:58:51,935 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:58:57,135 - INFO - Batch 77 processing complete: 5/5 successful
+2025-08-23 13:58:57,135 - INFO - Batch duration: 25.83s
+2025-08-23 13:58:57,135 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:58:57,280 - INFO - Successfully saved 5 records to database
+2025-08-23 13:58:57,280 - INFO - Sample update - ID: T849031, Text: Navigating the increased scrutiny around customer ...
+2025-08-23 13:58:57,280 - INFO - Database update complete: 5 records saved
+2025-08-23 13:58:59,281 - INFO - Processing batch 78/106 (5 tweets)...
+2025-08-23 13:59:09,427 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:59:19,380 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:59:24,194 - INFO - Batch 78 processing complete: 5/5 successful
+2025-08-23 13:59:24,195 - INFO - Batch duration: 24.91s
+2025-08-23 13:59:24,195 - INFO - Saving batch of 5 updates to database...
+2025-08-23 13:59:24,334 - INFO - Successfully saved 5 records to database
+2025-08-23 13:59:24,334 - INFO - Sample update - ID: T802677, Text: Successfully processed another Letter of Credit fo...
+2025-08-23 13:59:24,334 - INFO - Database update complete: 5 records saved
+2025-08-23 13:59:26,334 - INFO - Processing batch 79/106 (5 tweets)...
+2025-08-23 13:59:31,817 - ERROR - Task processing error for T214364: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 13:59:36,731 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 13:59:46,501 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 13:59:51,405 - INFO - Batch 79 processing complete: 4/5 successful
+2025-08-23 13:59:51,405 - INFO - Batch duration: 25.07s
+2025-08-23 13:59:53,406 - INFO - Processing batch 80/106 (5 tweets)...
+2025-08-23 14:00:03,621 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:00:13,731 - ERROR - Task processing error for T850347: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:00:13,732 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:00:18,859 - INFO - Batch 80 processing complete: 4/5 successful
+2025-08-23 14:00:18,859 - INFO - Batch duration: 25.45s
+2025-08-23 14:00:18,860 - INFO - Saving batch of 8 updates to database...
+2025-08-23 14:00:19,007 - INFO - Successfully saved 8 records to database
+2025-08-23 14:00:19,008 - INFO - Sample update - ID: T956638, Text: Navigating increased scrutiny on cross-border docu...
+2025-08-23 14:00:19,008 - INFO - Database update complete: 8 records saved
+2025-08-23 14:00:19,008 - INFO - Overall Progress: 75.9% | Batches: 80/106
+2025-08-23 14:00:19,008 - INFO - Success: 374 | Failures: 26 | DB Updates: 374
+2025-08-23 14:00:19,008 - INFO - Rate-limited failures: 26
+2025-08-23 14:00:19,008 - INFO - Rate Limit Status: 10/30 requests used this minute (20 remaining)
+2025-08-23 14:00:19,008 - INFO - Estimated time remaining: 4.3 minutes
+2025-08-23 14:00:19,010 - INFO - System: CPU 2.2% | Memory 6.5%
+2025-08-23 14:00:21,010 - INFO - Processing batch 81/106 (5 tweets)...
+2025-08-23 14:00:31,285 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:00:41,166 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:00:46,163 - INFO - Batch 81 processing complete: 5/5 successful
+2025-08-23 14:00:46,163 - INFO - Batch duration: 25.15s
+2025-08-23 14:00:46,163 - INFO - Saving batch of 5 updates to database...
+2025-08-23 14:00:46,309 - INFO - Successfully saved 5 records to database
+2025-08-23 14:00:46,309 - INFO - Sample update - ID: T144018, Text: Needed to update my account info online & was plea...
+2025-08-23 14:00:46,309 - INFO - Database update complete: 5 records saved
+2025-08-23 14:00:48,309 - INFO - Processing batch 82/106 (5 tweets)...
+2025-08-23 14:00:58,498 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:01:08,950 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:01:13,881 - INFO - Batch 82 processing complete: 5/5 successful
+2025-08-23 14:01:13,882 - INFO - Batch duration: 25.57s
+2025-08-23 14:01:13,882 - INFO - Saving batch of 5 updates to database...
+2025-08-23 14:01:14,027 - INFO - Successfully saved 5 records to database
+2025-08-23 14:01:14,028 - INFO - Sample update - ID: T015697, Text: Seeing increased call volumes this week as folks r...
+2025-08-23 14:01:14,028 - INFO - Database update complete: 5 records saved
+2025-08-23 14:01:16,028 - INFO - Processing batch 83/106 (5 tweets)...
+2025-08-23 14:01:26,631 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:01:36,873 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:01:41,956 - INFO - Batch 83 processing complete: 5/5 successful
+2025-08-23 14:01:41,956 - INFO - Batch duration: 25.93s
+2025-08-23 14:01:41,956 - INFO - Saving batch of 5 updates to database...
+2025-08-23 14:01:42,102 - INFO - Successfully saved 5 records to database
+2025-08-23 14:01:42,102 - INFO - Sample update - ID: T301727, Text: Noticed a real improvement in response times from ...
+2025-08-23 14:01:42,102 - INFO - Database update complete: 5 records saved
+2025-08-23 14:01:44,103 - INFO - Processing batch 84/106 (5 tweets)...
+2025-08-23 14:01:54,769 - ERROR - Task processing error for T015955: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:01:54,770 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:02:04,503 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:02:09,738 - INFO - Batch 84 processing complete: 4/5 successful
+2025-08-23 14:02:09,738 - INFO - Batch duration: 25.64s
+2025-08-23 14:02:11,738 - INFO - Processing batch 85/106 (5 tweets)...
+2025-08-23 14:02:17,070 - ERROR - Task processing error for T644797: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:02:22,005 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:02:32,086 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:02:37,143 - ERROR - Task processing error for T594528: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:02:37,144 - INFO - Batch 85 processing complete: 3/5 successful
+2025-08-23 14:02:37,145 - INFO - Batch duration: 25.41s
+2025-08-23 14:02:37,145 - INFO - Saving batch of 7 updates to database...
+2025-08-23 14:02:37,293 - INFO - Successfully saved 7 records to database
+2025-08-23 14:02:37,294 - INFO - Sample update - ID: T704141, Text: Just spent a frustrating hour on the phone trying ...
+2025-08-23 14:02:37,294 - INFO - Database update complete: 7 records saved
+2025-08-23 14:02:37,294 - INFO - Overall Progress: 80.6% | Batches: 85/106
+2025-08-23 14:02:37,294 - INFO - Success: 396 | Failures: 29 | DB Updates: 396
+2025-08-23 14:02:37,294 - INFO - Rate-limited failures: 29
+2025-08-23 14:02:37,294 - INFO - Rate Limit Status: 10/30 requests used this minute (20 remaining)
+2025-08-23 14:02:37,294 - INFO - Estimated time remaining: 3.5 minutes
+2025-08-23 14:02:37,296 - INFO - System: CPU 2.3% | Memory 6.6%
+2025-08-23 14:02:39,296 - INFO - Processing batch 86/106 (5 tweets)...
+2025-08-23 14:02:49,609 - ERROR - Task processing error for T295925: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:02:49,609 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:02:59,688 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:03:04,952 - INFO - Batch 86 processing complete: 4/5 successful
+2025-08-23 14:03:04,952 - INFO - Batch duration: 25.66s
+2025-08-23 14:03:06,952 - INFO - Processing batch 87/106 (5 tweets)...
+2025-08-23 14:03:17,422 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:03:27,410 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:03:32,233 - INFO - Batch 87 processing complete: 5/5 successful
+2025-08-23 14:03:32,233 - INFO - Batch duration: 25.28s
+2025-08-23 14:03:32,233 - INFO - Saving batch of 9 updates to database...
+2025-08-23 14:03:32,382 - INFO - Successfully saved 9 records to database
+2025-08-23 14:03:32,382 - INFO - Sample update - ID: T705497, Text: Just spent an hour on hold with customer support t...
+2025-08-23 14:03:32,382 - INFO - Database update complete: 9 records saved
+2025-08-23 14:03:34,383 - INFO - Processing batch 88/106 (5 tweets)...
+2025-08-23 14:03:44,646 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:03:54,592 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:03:59,793 - INFO - Batch 88 processing complete: 5/5 successful
+2025-08-23 14:03:59,794 - INFO - Batch duration: 25.41s
+2025-08-23 14:03:59,794 - INFO - Saving batch of 5 updates to database...
+2025-08-23 14:03:59,941 - INFO - Successfully saved 5 records to database
+2025-08-23 14:03:59,941 - INFO - Sample update - ID: T469931, Text: Seeing a spike in reported SEPA transfer rejection...
+2025-08-23 14:03:59,941 - INFO - Database update complete: 5 records saved
+2025-08-23 14:04:01,942 - INFO - Processing batch 89/106 (5 tweets)...
+2025-08-23 14:04:12,470 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:04:22,736 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:04:27,757 - INFO - Batch 89 processing complete: 5/5 successful
+2025-08-23 14:04:27,757 - INFO - Batch duration: 25.82s
+2025-08-23 14:04:27,758 - INFO - Saving batch of 5 updates to database...
+2025-08-23 14:04:27,905 - INFO - Successfully saved 5 records to database
+2025-08-23 14:04:27,905 - INFO - Sample update - ID: T991980, Text: Seeing intermittent errors with mobile check depos...
+2025-08-23 14:04:27,906 - INFO - Database update complete: 5 records saved
+2025-08-23 14:04:29,906 - INFO - Processing batch 90/106 (5 tweets)...
+2025-08-23 14:04:40,084 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:04:50,115 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:04:55,249 - INFO - Batch 90 processing complete: 5/5 successful
+2025-08-23 14:04:55,249 - INFO - Batch duration: 25.34s
+2025-08-23 14:04:55,249 - INFO - Saving batch of 5 updates to database...
+2025-08-23 14:04:55,485 - INFO - Successfully saved 5 records to database
+2025-08-23 14:04:55,485 - INFO - Sample update - ID: T884532, Text: Really impressed with the multilingual support off...
+2025-08-23 14:04:55,485 - INFO - Database update complete: 5 records saved
+2025-08-23 14:04:55,485 - INFO - Overall Progress: 85.4% | Batches: 90/106
+2025-08-23 14:04:55,485 - INFO - Success: 420 | Failures: 30 | DB Updates: 420
+2025-08-23 14:04:55,485 - INFO - Rate-limited failures: 30
+2025-08-23 14:04:55,486 - INFO - Rate Limit Status: 10/30 requests used this minute (20 remaining)
+2025-08-23 14:04:55,486 - INFO - Estimated time remaining: 2.7 minutes
+2025-08-23 14:04:55,487 - INFO - System: CPU 2.3% | Memory 6.5%
+2025-08-23 14:04:57,487 - INFO - Processing batch 91/106 (5 tweets)...
+2025-08-23 14:05:07,723 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:05:17,693 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:05:22,709 - INFO - Batch 91 processing complete: 5/5 successful
+2025-08-23 14:05:22,709 - INFO - Batch duration: 25.22s
+2025-08-23 14:05:22,709 - INFO - Saving batch of 5 updates to database...
+2025-08-23 14:05:22,857 - INFO - Successfully saved 5 records to database
+2025-08-23 14:05:22,857 - INFO - Sample update - ID: T599208, Text: Discovered a discrepancy on my latest statement. A...
+2025-08-23 14:05:22,857 - INFO - Database update complete: 5 records saved
+2025-08-23 14:05:24,857 - INFO - Processing batch 92/106 (5 tweets)...
+2025-08-23 14:05:35,405 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:05:45,242 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:05:50,336 - INFO - Batch 92 processing complete: 5/5 successful
+2025-08-23 14:05:50,336 - INFO - Batch duration: 25.48s
+2025-08-23 14:05:50,337 - INFO - Saving batch of 5 updates to database...
+2025-08-23 14:05:50,485 - INFO - Successfully saved 5 records to database
+2025-08-23 14:05:50,485 - INFO - Sample update - ID: T731857, Text: Frustrated that accessing banking services in lang...
+2025-08-23 14:05:50,485 - INFO - Database update complete: 5 records saved
+2025-08-23 14:05:52,485 - INFO - Processing batch 93/106 (5 tweets)...
+2025-08-23 14:06:02,756 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:06:12,996 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:06:18,212 - INFO - Batch 93 processing complete: 5/5 successful
+2025-08-23 14:06:18,212 - INFO - Batch duration: 25.73s
+2025-08-23 14:06:18,213 - INFO - Saving batch of 5 updates to database...
+2025-08-23 14:06:18,363 - INFO - Successfully saved 5 records to database
+2025-08-23 14:06:18,363 - INFO - Sample update - ID: T238482, Text: Just got off the phone with @BankOfProgress suppor...
+2025-08-23 14:06:18,363 - INFO - Database update complete: 5 records saved
+2025-08-23 14:06:20,363 - INFO - Processing batch 94/106 (5 tweets)...
+2025-08-23 14:06:30,788 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:06:40,856 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:06:45,785 - INFO - Batch 94 processing complete: 5/5 successful
+2025-08-23 14:06:45,785 - INFO - Batch duration: 25.42s
+2025-08-23 14:06:45,785 - INFO - Saving batch of 5 updates to database...
+2025-08-23 14:06:45,926 - INFO - Successfully saved 5 records to database
+2025-08-23 14:06:45,926 - INFO - Sample update - ID: T663570, Text: Experiencing longer than usual processing times fo...
+2025-08-23 14:06:45,926 - INFO - Database update complete: 5 records saved
+2025-08-23 14:06:47,926 - INFO - Processing batch 95/106 (5 tweets)...
+2025-08-23 14:06:58,262 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:06:58,810 - ERROR - HTTP error: 500 - Error: Network connection lost.
+    at async handleRequest (index.js:1249:18)
+    at async handle (index.js:1572:12)
+    at async Object.fetch (index.js:1582:14)
+2025-08-23 14:06:58,810 - INFO - Backing off call_ollama_with_backoff(...) for 0.6s (requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: https://metallic-heel-about-prizes.trycloudflare.com//api/generate)
+2025-08-23 14:06:58,810 - WARNING - Retry 1/3 after 0.6s
+2025-08-23 14:07:09,549 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:07:14,329 - INFO - Batch 95 processing complete: 5/5 successful
+2025-08-23 14:07:14,329 - INFO - Batch duration: 26.40s
+2025-08-23 14:07:14,329 - INFO - Saving batch of 5 updates to database...
+2025-08-23 14:07:14,478 - INFO - Successfully saved 5 records to database
+2025-08-23 14:07:14,478 - INFO - Sample update - ID: T481690, Text: Seeing increased scrutiny on currency conversion r...
+2025-08-23 14:07:14,478 - INFO - Database update complete: 5 records saved
+2025-08-23 14:07:14,478 - INFO - Overall Progress: 90.1% | Batches: 95/106
+2025-08-23 14:07:14,478 - INFO - Success: 445 | Failures: 30 | DB Updates: 445
+2025-08-23 14:07:14,478 - INFO - Rate-limited failures: 30
+2025-08-23 14:07:14,478 - INFO - Rate Limit Status: 11/30 requests used this minute (19 remaining)
+2025-08-23 14:07:14,478 - INFO - Estimated time remaining: 1.8 minutes
+2025-08-23 14:07:14,480 - INFO - System: CPU 2.3% | Memory 6.5%
+2025-08-23 14:07:16,480 - INFO - Processing batch 96/106 (5 tweets)...
+2025-08-23 14:07:26,905 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:07:36,838 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:07:41,871 - INFO - Batch 96 processing complete: 5/5 successful
+2025-08-23 14:07:41,872 - INFO - Batch duration: 25.39s
+2025-08-23 14:07:41,872 - INFO - Saving batch of 5 updates to database...
+2025-08-23 14:07:42,025 - INFO - Successfully saved 5 records to database
+2025-08-23 14:07:42,025 - INFO - Sample update - ID: T315892, Text: Experiencing intermittent issues with security ver...
+2025-08-23 14:07:42,025 - INFO - Database update complete: 5 records saved
+2025-08-23 14:07:44,025 - INFO - Processing batch 97/106 (5 tweets)...
+2025-08-23 14:07:54,371 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:08:04,202 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:08:09,056 - INFO - Batch 97 processing complete: 5/5 successful
+2025-08-23 14:08:09,056 - INFO - Batch duration: 25.03s
+2025-08-23 14:08:09,057 - INFO - Saving batch of 5 updates to database...
+2025-08-23 14:08:09,206 - INFO - Successfully saved 5 records to database
+2025-08-23 14:08:09,206 - INFO - Sample update - ID: T295391, Text: Implementing updated signature authority matrices ...
+2025-08-23 14:08:09,206 - INFO - Database update complete: 5 records saved
+2025-08-23 14:08:11,207 - INFO - Processing batch 98/106 (5 tweets)...
+2025-08-23 14:08:21,407 - ERROR - Task processing error for T059788: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:08:21,407 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:08:31,389 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:08:36,642 - INFO - Batch 98 processing complete: 4/5 successful
+2025-08-23 14:08:36,642 - INFO - Batch duration: 25.44s
+2025-08-23 14:08:38,643 - INFO - Processing batch 99/106 (5 tweets)...
+2025-08-23 14:08:49,314 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:08:59,346 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:09:04,457 - INFO - Batch 99 processing complete: 5/5 successful
+2025-08-23 14:09:04,458 - INFO - Batch duration: 25.81s
+2025-08-23 14:09:04,458 - INFO - Saving batch of 9 updates to database...
+2025-08-23 14:09:04,609 - INFO - Successfully saved 9 records to database
+2025-08-23 14:09:04,609 - INFO - Sample update - ID: T117244, Text: Experiencing intermittent issues with online banki...
+2025-08-23 14:09:04,609 - INFO - Database update complete: 9 records saved
+2025-08-23 14:09:06,609 - INFO - Processing batch 100/106 (5 tweets)...
+2025-08-23 14:09:16,978 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:09:26,942 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:09:32,080 - INFO - Batch 100 processing complete: 5/5 successful
+2025-08-23 14:09:32,080 - INFO - Batch duration: 25.47s
+2025-08-23 14:09:32,080 - INFO - Saving batch of 5 updates to database...
+2025-08-23 14:09:32,229 - INFO - Successfully saved 5 records to database
+2025-08-23 14:09:32,230 - INFO - Sample update - ID: T341843, Text: Frustrated with the delayed processing of my loan ...
+2025-08-23 14:09:32,230 - INFO - Database update complete: 5 records saved
+2025-08-23 14:09:32,230 - INFO - Overall Progress: 94.9% | Batches: 100/106
+2025-08-23 14:09:32,230 - INFO - Success: 469 | Failures: 31 | DB Updates: 469
+2025-08-23 14:09:32,230 - INFO - Rate-limited failures: 31
+2025-08-23 14:09:32,230 - INFO - Rate Limit Status: 10/30 requests used this minute (20 remaining)
+2025-08-23 14:09:32,230 - INFO - Estimated time remaining: 1.0 minutes
+2025-08-23 14:09:32,232 - INFO - System: CPU 2.3% | Memory 6.5%
+2025-08-23 14:09:34,232 - INFO - Processing batch 101/106 (5 tweets)...
+2025-08-23 14:09:45,344 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:09:55,368 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:10:00,363 - INFO - Batch 101 processing complete: 5/5 successful
+2025-08-23 14:10:00,363 - INFO - Batch duration: 26.13s
+2025-08-23 14:10:00,364 - INFO - Saving batch of 5 updates to database...
+2025-08-23 14:10:00,514 - INFO - Successfully saved 5 records to database
+2025-08-23 14:10:00,515 - INFO - Sample update - ID: T146110, Text: Seeing increased customer inquiries regarding the ...
+2025-08-23 14:10:00,515 - INFO - Database update complete: 5 records saved
+2025-08-23 14:10:02,515 - INFO - Processing batch 102/106 (5 tweets)...
+2025-08-23 14:10:12,888 - ERROR - Task processing error for T283702: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:10:12,889 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:10:22,812 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:10:27,763 - INFO - Batch 102 processing complete: 4/5 successful
+2025-08-23 14:10:27,763 - INFO - Batch duration: 25.25s
+2025-08-23 14:10:29,764 - INFO - Processing batch 103/106 (5 tweets)...
+2025-08-23 14:10:40,363 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:10:50,205 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:10:55,351 - INFO - Batch 103 processing complete: 5/5 successful
+2025-08-23 14:10:55,351 - INFO - Batch duration: 25.59s
+2025-08-23 14:10:55,351 - INFO - Saving batch of 9 updates to database...
+2025-08-23 14:10:55,504 - INFO - Successfully saved 9 records to database
+2025-08-23 14:10:55,504 - INFO - Sample update - ID: T299264, Text: Received a confusing fraud alert after a routine t...
+2025-08-23 14:10:55,504 - INFO - Database update complete: 9 records saved
+2025-08-23 14:10:57,504 - INFO - Processing batch 104/106 (5 tweets)...
+2025-08-23 14:11:07,557 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:11:17,493 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:11:22,439 - INFO - Batch 104 processing complete: 5/5 successful
+2025-08-23 14:11:22,439 - INFO - Batch duration: 24.93s
+2025-08-23 14:11:22,439 - INFO - Saving batch of 5 updates to database...
+2025-08-23 14:11:22,590 - INFO - Successfully saved 5 records to database
+2025-08-23 14:11:22,590 - INFO - Sample update - ID: T537647, Text: Just resolved a complex international wire transfe...
+2025-08-23 14:11:22,590 - INFO - Database update complete: 5 records saved
+2025-08-23 14:11:24,591 - INFO - Processing batch 105/106 (5 tweets)...
+2025-08-23 14:11:35,284 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:11:45,298 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:11:50,064 - INFO - Batch 105 processing complete: 5/5 successful
+2025-08-23 14:11:50,064 - INFO - Batch duration: 25.47s
+2025-08-23 14:11:50,064 - INFO - Saving batch of 5 updates to database...
+2025-08-23 14:11:50,207 - INFO - Successfully saved 5 records to database
+2025-08-23 14:11:50,207 - INFO - Sample update - ID: T424196, Text: Our latest Seasonal Variation Report highlights a ...
+2025-08-23 14:11:50,207 - INFO - Database update complete: 5 records saved
+2025-08-23 14:11:50,207 - INFO - Overall Progress: 99.6% | Batches: 105/106
+2025-08-23 14:11:50,207 - INFO - Success: 493 | Failures: 32 | DB Updates: 493
+2025-08-23 14:11:50,207 - INFO - Rate-limited failures: 32
+2025-08-23 14:11:50,207 - INFO - Rate Limit Status: 10/30 requests used this minute (20 remaining)
+2025-08-23 14:11:50,207 - INFO - Estimated time remaining: 0.2 minutes
+2025-08-23 14:11:50,208 - INFO - System: CPU 2.3% | Memory 6.5%
+2025-08-23 14:11:52,208 - INFO - Processing batch 106/106 (2 tweets)...
+2025-08-23 14:12:02,366 - INFO - Batch progress: 100.0% (2/2)
+2025-08-23 14:12:02,366 - INFO - Batch 106 processing complete: 2/2 successful
+2025-08-23 14:12:02,366 - INFO - Batch duration: 10.16s
+2025-08-23 14:12:02,367 - INFO - Overall Progress: 100.6% | Batches: 106/106
+2025-08-23 14:12:02,367 - INFO - Success: 495 | Failures: 32 | DB Updates: 493
+2025-08-23 14:12:02,367 - INFO - Rate-limited failures: 32
+2025-08-23 14:12:02,367 - INFO - Rate Limit Status: 7/30 requests used this minute (23 remaining)
+2025-08-23 14:12:02,368 - INFO - System: CPU 2.1% | Memory 6.5%
+2025-08-23 14:12:02,368 - INFO - Saving batch of 2 updates to database...
+2025-08-23 14:12:02,518 - INFO - Successfully saved 2 records to database
+2025-08-23 14:12:02,518 - INFO - Sample update - ID: T212473, Text: Experiencing intermittent system access today due ...
+2025-08-23 14:12:02,518 - INFO - Final batch saved: 2 records
+2025-08-23 14:12:02,518 - INFO - Attempting to retry 32 rate-limited requests...
+2025-08-23 14:12:02,518 - INFO - Retrying 32 rate-limited requests...
+2025-08-23 14:12:02,518 - INFO - Retry attempt 1/3 for 32 records
+2025-08-23 14:12:24,359 - ERROR - Task processing error for T607535: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:13:02,299 - ERROR - Task processing error for T229481: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:13:13,342 - ERROR - Task processing error for T382979: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:13:24,523 - ERROR - Task processing error for T065334: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:13:35,267 - ERROR - Task processing error for T010610: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:14:07,535 - ERROR - Task processing error for T715637: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:14:34,759 - ERROR - Task processing error for T644797: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:14:45,692 - ERROR - Task processing error for T295925: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:14:51,271 - ERROR - Task processing error for T059788: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:14:56,685 - INFO - Retry attempt 1: 23 succeeded, 9 still failed
+2025-08-23 14:14:56,685 - INFO - Retry attempt 2/3 for 9 records
+2025-08-23 14:14:56,685 - INFO - Waiting 90 seconds before retry...
+2025-08-23 14:16:32,042 - ERROR - Task processing error for T607535: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:16:48,306 - ERROR - Task processing error for T065334: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:16:59,274 - ERROR - Task processing error for T715637: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:17:04,858 - ERROR - Task processing error for T644797: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:17:10,301 - ERROR - Task processing error for T295925: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:17:15,512 - INFO - Retry attempt 2: 27 succeeded, 5 still failed
+2025-08-23 14:17:15,512 - INFO - Retry attempt 3/3 for 5 records
+2025-08-23 14:17:15,512 - INFO - Waiting 120 seconds before retry...
+2025-08-23 14:19:20,862 - ERROR - Task processing error for T607535: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:19:26,490 - ERROR - Task processing error for T065334: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:19:31,897 - ERROR - Task processing error for T715637: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:19:37,241 - ERROR - Task processing error for T644797: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:19:42,542 - ERROR - Task processing error for T295925: int() argument must be a string, a bytes-like object or a real number, not 'list'
+2025-08-23 14:19:42,542 - INFO - Retry attempt 3: 27 succeeded, 5 still failed
+2025-08-23 14:19:42,542 - WARNING - Failed to retry 5 requests after 3 attempts
+2025-08-23 14:19:42,542 - INFO - Saving batch of 27 updates to database...
+2025-08-23 14:19:42,832 - INFO - Successfully saved 27 records to database
+2025-08-23 14:19:42,833 - INFO - Sample update - ID: T453179, Text: Received a concerning email about potential unauth...
+2025-08-23 14:19:42,833 - INFO - Retry successful: 27 additional records saved
+2025-08-23 14:19:42,833 - INFO - EU Banking Twitter content generation complete!
+2025-08-23 14:19:42,833 - INFO - Total tweets updated: 522
+2025-08-23 14:19:42,833 - INFO - Successful generations: 522
+2025-08-23 14:19:42,833 - INFO - Failed generations: 51
+2025-08-23 14:19:42,833 - INFO - Rate-limited failures: 32
+2025-08-23 14:19:42,833 - INFO - Data updated in MongoDB: sparzaai.twitter
+2025-08-23 14:19:43,486 - INFO - Collection Statistics:
+2025-08-23 14:19:43,486 - INFO - Total tweets: 2000
+2025-08-23 14:19:43,486 - INFO - With generated content: 1995
+2025-08-23 14:19:43,486 - INFO - Without generated content: 5
+2025-08-23 14:19:43,486 - INFO - Top Dominant Topics:
+2025-08-23 14:19:43,486 - INFO - 1. Excellent Call Support: 26 tweets
+2025-08-23 14:19:43,486 - INFO - 2. Others Need Improvement: 25 tweets
+2025-08-23 14:19:43,486 - INFO - 3. Customer Service Disappointment: 25 tweets
+2025-08-23 14:19:43,486 - INFO - 4. Call Center Complaints: 24 tweets
+2025-08-23 14:19:43,486 - INFO - 5. Payment Processing Failure: 24 tweets
+2025-08-23 14:19:43,486 - INFO - 6. GDPR Compliance Praise: 23 tweets
+2025-08-23 14:19:43,486 - INFO - 7. Account Access Problems: 23 tweets
+2025-08-23 14:19:43,486 - INFO - 8. Cross Border Issues: 23 tweets
+2025-08-23 14:19:43,486 - INFO - 9. Fee Structure Criticism: 23 tweets
+2025-08-23 14:19:43,486 - INFO - 10. Regulatory Compliance Questions: 23 tweets
+2025-08-23 14:19:43,994 - INFO - Sample Generated Tweet Content:
+2025-08-23 14:19:43,994 - INFO - --- Sample Tweet 1 ---
+2025-08-23 14:19:43,994 - INFO - Tweet ID: T456078
+2025-08-23 14:19:43,994 - INFO - Username: Joshua Garcia
+2025-08-23 14:19:43,994 - INFO - Dominant Topic: Excellent Call Support
+2025-08-23 14:19:43,994 - INFO - Subtopics: Knowledgeable Agent Helped, Professional Service Delivered...
+2025-08-23 14:19:43,994 - INFO - Text: Just finished a call with @BankOfProgress and was incredibly impressed! The agent was exceptionally knowledgeable about recent changes to mortgage rates and explained everything clearly. Professional service and a real understanding of my needs. A great experience! #BankingSer...
+2025-08-23 14:19:43,994 - INFO - Hashtags: ['#BankingService', '#MortgageRates', '#CustomerExperience', '#DigitalBanking']
+2025-08-23 14:19:43,994 - INFO - Sentiment: Positive
+2025-08-23 14:19:43,994 - INFO - Engagement: 115 likes, 28 retweets
+2025-08-23 14:19:43,994 - INFO - Priority: P3 - Low
+2025-08-23 14:19:43,995 - INFO - --- Sample Tweet 2 ---
+2025-08-23 14:19:43,995 - INFO - Tweet ID: T788895
+2025-08-23 14:19:43,995 - INFO - Username: Michele Ochoa
+2025-08-23 14:19:43,995 - INFO - Dominant Topic: Mass Payment Errors
+2025-08-23 14:19:43,995 - INFO - Subtopics: Corporate Transfer Error, Business Processing Slow...
+2025-08-23 14:19:43,995 - INFO - Text: Seeing a concerning uptick in reported corporate transfer errors this week. Slow business processing times are exacerbating the issue, impacting reconciliation efforts. We're working to identify root causes & enhance validation protocols. Transparency is key during these mass ...
+2025-08-23 14:19:43,995 - INFO - Hashtags: ['BankingRisk', 'Compliance', 'FinancialServices', 'BankingNews']
+2025-08-23 14:19:43,995 - INFO - Sentiment: Negative
+2025-08-23 14:19:43,995 - INFO - Engagement: 85 likes, 25 retweets
+2025-08-23 14:19:43,995 - INFO - Priority: P2 - Medium
+2025-08-23 14:19:43,995 - INFO - --- Sample Tweet 3 ---
+2025-08-23 14:19:43,995 - INFO - Tweet ID: T139606
+2025-08-23 14:19:43,995 - INFO - Username: Michael Gibson
+2025-08-23 14:19:43,995 - INFO - Dominant Topic: Documentary Collection Efficient
+2025-08-23 14:19:43,995 - INFO - Subtopics: Trade Document Handling, International Settlement Success...
+2025-08-23 14:19:43,996 - INFO - Text: Navigating the evolving landscape of trade finance! Recent updates to documentary collection processes are streamlining international settlements, but ensuring full compliance with SWIFT gpi standards remains a key challenge. Efficiency gains are great, but risk mitigation is ...
+2025-08-23 14:19:43,996 - INFO - Hashtags: ['TradeFinance', 'BankingCompliance', 'DigitalBanking', 'FinancialServices']
+2025-08-23 14:19:43,996 - INFO - Sentiment: Neutral
+2025-08-23 14:19:43,996 - INFO - Engagement: 115 likes, 25 retweets
+2025-08-23 14:19:43,996 - INFO - Priority: P2 - Medium
+2025-08-23 14:19:44,260 - INFO - Verification: Found 5 tweets with generated content
+2025-08-23 14:19:44,261 - INFO -    tweet_id: T456078 | hashtags: 4 | text_length: 280 | sentiment: Positive
+2025-08-23 14:19:44,261 - INFO -    tweet_id: T788895 | hashtags: 4 | text_length: 280 | sentiment: Negative
+2025-08-23 14:19:44,261 - INFO -    tweet_id: T139606 | hashtags: 4 | text_length: 280 | sentiment: Neutral
+2025-08-23 14:19:44,261 - INFO -    tweet_id: T098665 | hashtags: 4 | text_length: 280 | sentiment: Negative
+2025-08-23 14:19:44,261 - INFO -    tweet_id: T442220 | hashtags: 4 | text_length: 280 | sentiment: Negative
+2025-08-23 14:19:44,261 - INFO - Verification complete: 5 tweets verified
+2025-08-23 14:19:44,546 - INFO - Content validation complete: 0 issues found
+2025-08-23 14:19:44,811 - INFO - Status report generated: logs/status_report_20250823_141944.json
+2025-08-23 14:19:44,811 - INFO - Final session report:
+2025-08-23 14:19:44,811 - INFO - Success Rate: 91.10%
+2025-08-23 14:19:44,811 - INFO - Database Completion: 99.75%
+2025-08-23 14:19:44,953 - INFO - Database connection closed
+2025-08-23 14:19:44,954 - INFO - Session complete. Check log files for detailed information:
+2025-08-23 14:19:44,954 - INFO - Main Log: logs/twitter_generator_20250823_132318.log
+2025-08-23 14:19:44,954 - INFO - Success Log: logs/successful_generations_20250823_132318.log
+2025-08-23 14:19:44,954 - INFO - Failure Log: logs/failed_generations_20250823_132318.log
+2025-08-23 14:19:44,954 - INFO - Progress Log: logs/progress_20250823_132318.log
+2025-08-23 14:19:44,954 - INFO - Intermediate Results: logs/intermediate_results_20250823_132318.json
+2025-08-23 14:19:44,958 - INFO - Database connection closed

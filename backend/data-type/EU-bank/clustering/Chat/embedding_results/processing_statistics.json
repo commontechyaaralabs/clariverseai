@@ -1,0 +1,10 @@
+{
+  "total_documents_processed": 600,
+  "total_keyphrases_extracted": 65,
+  "keyphrases_with_embeddings": 65,
+  "documents_with_embeddings": 600,
+  "embedding_dimension": 3584,
+  "processing_time_seconds": 92.18384122848511,
+  "batch_size_used": 16,
+  "total_batches_processed": 5
+}

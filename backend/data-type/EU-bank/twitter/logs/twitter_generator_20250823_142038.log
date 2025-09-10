@@ -1,0 +1,138 @@
+2025-08-23 14:20:38,205 - INFO - Rate limiter enabled: 30 requests per minute
+2025-08-23 14:20:38,205 - INFO - Recommended delay between requests: 2.00 seconds
+2025-08-23 14:20:38,226 - INFO - EU Banking Twitter Content Generator Starting...
+2025-08-23 14:20:38,227 - INFO - Database: sparzaai
+2025-08-23 14:20:38,227 - INFO - Collection: twitter
+2025-08-23 14:20:38,227 - INFO - Model: gemma3:27b
+2025-08-23 14:20:38,227 - INFO - Ollama URL: https://metallic-heel-about-prizes.trycloudflare.com/
+2025-08-23 14:20:38,227 - INFO - Max Workers: 8
+2025-08-23 14:20:38,227 - INFO - Batch Size: 5
+2025-08-23 14:20:38,227 - INFO - Log Directory: logs
+2025-08-23 14:20:38,227 - INFO - Testing Ollama connection...
+2025-08-23 14:20:38,227 - INFO - Testing connection to Ollama: https://metallic-heel-about-prizes.trycloudflare.com/
+2025-08-23 14:20:38,227 - INFO - Testing model: gemma3:27b
+2025-08-23 14:20:38,227 - INFO - Testing simple generation...
+2025-08-23 14:20:39,010 - INFO - Ollama connection test successful
+2025-08-23 14:20:39,010 - INFO - Test response: ```json
+{"test": "success"}
+```
+...
+2025-08-23 14:20:39,011 - INFO - Ollama connection test successful!
+2025-08-23 14:20:39,899 - INFO - Unique index on tweet_id already exists
+2025-08-23 14:20:39,899 - INFO - Index on user_id already exists
+2025-08-23 14:20:39,899 - INFO - Index on username already exists
+2025-08-23 14:20:39,899 - INFO - Index on dominant_topic already exists
+2025-08-23 14:20:39,899 - INFO - Database connection established and indexes verified
+2025-08-23 14:20:40,295 - INFO - Collection Statistics:
+2025-08-23 14:20:40,295 - INFO - Total tweets: 2000
+2025-08-23 14:20:40,295 - INFO - With generated content: 1995
+2025-08-23 14:20:40,296 - INFO - Without generated content: 5
+2025-08-23 14:20:40,296 - INFO - Top Dominant Topics:
+2025-08-23 14:20:40,296 - INFO - 1. Excellent Call Support: 26 tweets
+2025-08-23 14:20:40,296 - INFO - 2. Customer Service Disappointment: 25 tweets
+2025-08-23 14:20:40,296 - INFO - 3. Others Need Improvement: 25 tweets
+2025-08-23 14:20:40,296 - INFO - 4. Payment Processing Failure: 24 tweets
+2025-08-23 14:20:40,296 - INFO - 5. Call Center Complaints: 24 tweets
+2025-08-23 14:20:40,296 - INFO - 6. Fee Structure Criticism: 23 tweets
+2025-08-23 14:20:40,296 - INFO - 7. Cross Border Issues: 23 tweets
+2025-08-23 14:20:40,296 - INFO - 8. Regulatory Compliance Questions: 23 tweets
+2025-08-23 14:20:40,296 - INFO - 9. GDPR Compliance Praise: 23 tweets
+2025-08-23 14:20:40,296 - INFO - 10. Account Access Problems: 23 tweets
+2025-08-23 14:20:40,297 - INFO - No pending intermediate results to recover
+2025-08-23 14:20:40,297 - INFO - Starting EU Banking Twitter Content Generation...
+2025-08-23 14:20:40,297 - INFO - System Info: 128 CPU cores detected
+2025-08-23 14:20:40,297 - INFO - Batch size: 5
+2025-08-23 14:20:40,297 - INFO - Max workers: 8
+2025-08-23 14:20:40,297 - INFO - Request timeout: 120s
+2025-08-23 14:20:40,297 - INFO - Max retries per request: 3
+2025-08-23 14:20:40,297 - INFO - Fetching tweet records from database...
+2025-08-23 14:20:40,935 - INFO - Found 5 tweets needing content generation
+2025-08-23 14:20:40,935 - INFO - Processing in 1 batches of 5 tweets each
+2025-08-23 14:20:40,935 - INFO - Rate limit: 30 requests per minute
+2025-08-23 14:20:40,935 - INFO - Recommended delay between requests: 2.00 seconds
+2025-08-23 14:20:40,936 - INFO - Processing batch 1/1 (5 tweets)...
+2025-08-23 14:20:51,422 - INFO - Batch progress: 40.0% (2/5)
+2025-08-23 14:21:01,656 - INFO - Batch progress: 80.0% (4/5)
+2025-08-23 14:21:06,673 - INFO - Batch 1 processing complete: 5/5 successful
+2025-08-23 14:21:06,674 - INFO - Batch duration: 25.74s
+2025-08-23 14:21:06,674 - INFO - Saving batch of 5 updates to database...
+2025-08-23 14:21:06,803 - INFO - Successfully saved 5 records to database
+2025-08-23 14:21:06,804 - INFO - Sample update - ID: T607535, Text: Experiencing intermittent connectivity issues impa...
+2025-08-23 14:21:06,804 - INFO - Database update complete: 5 records saved
+2025-08-23 14:21:06,804 - INFO - Overall Progress: 100.0% | Batches: 1/1
+2025-08-23 14:21:06,804 - INFO - Success: 5 | Failures: 0 | DB Updates: 5
+2025-08-23 14:21:06,804 - INFO - Rate-limited failures: 0
+2025-08-23 14:21:06,804 - INFO - Rate Limit Status: 6/30 requests used this minute (24 remaining)
+2025-08-23 14:21:06,805 - INFO - System: CPU 2.8% | Memory 6.5%
+2025-08-23 14:21:06,806 - INFO - EU Banking Twitter content generation complete!
+2025-08-23 14:21:06,806 - INFO - Total tweets updated: 5
+2025-08-23 14:21:06,806 - INFO - Successful generations: 5
+2025-08-23 14:21:06,806 - INFO - Failed generations: 0
+2025-08-23 14:21:06,806 - INFO - Rate-limited failures: 0
+2025-08-23 14:21:06,806 - INFO - Data updated in MongoDB: sparzaai.twitter
+2025-08-23 14:21:07,202 - INFO - Collection Statistics:
+2025-08-23 14:21:07,202 - INFO - Total tweets: 2000
+2025-08-23 14:21:07,203 - INFO - With generated content: 2000
+2025-08-23 14:21:07,203 - INFO - Without generated content: 0
+2025-08-23 14:21:07,203 - INFO - Top Dominant Topics:
+2025-08-23 14:21:07,203 - INFO - 1. Excellent Call Support: 26 tweets
+2025-08-23 14:21:07,203 - INFO - 2. Customer Service Disappointment: 25 tweets
+2025-08-23 14:21:07,203 - INFO - 3. Others Need Improvement: 25 tweets
+2025-08-23 14:21:07,203 - INFO - 4. Payment Processing Failure: 24 tweets
+2025-08-23 14:21:07,203 - INFO - 5. Call Center Complaints: 24 tweets
+2025-08-23 14:21:07,203 - INFO - 6. Fee Structure Criticism: 23 tweets
+2025-08-23 14:21:07,203 - INFO - 7. Cross Border Issues: 23 tweets
+2025-08-23 14:21:07,203 - INFO - 8. Regulatory Compliance Questions: 23 tweets
+2025-08-23 14:21:07,203 - INFO - 9. GDPR Compliance Praise: 23 tweets
+2025-08-23 14:21:07,203 - INFO - 10. Account Access Problems: 23 tweets
+2025-08-23 14:21:07,709 - INFO - Sample Generated Tweet Content:
+2025-08-23 14:21:07,709 - INFO - --- Sample Tweet 1 ---
+2025-08-23 14:21:07,709 - INFO - Tweet ID: T456078
+2025-08-23 14:21:07,709 - INFO - Username: Joshua Garcia
+2025-08-23 14:21:07,709 - INFO - Dominant Topic: Excellent Call Support
+2025-08-23 14:21:07,709 - INFO - Subtopics: Knowledgeable Agent Helped, Professional Service Delivered...
+2025-08-23 14:21:07,709 - INFO - Text: Just finished a call with @BankOfProgress and was incredibly impressed! The agent was exceptionally knowledgeable about recent changes to mortgage rates and explained everything clearly. Professional service and a real understanding of my needs. A great experience! #BankingSer...
+2025-08-23 14:21:07,709 - INFO - Hashtags: ['#BankingService', '#MortgageRates', '#CustomerExperience', '#DigitalBanking']
+2025-08-23 14:21:07,709 - INFO - Sentiment: Positive
+2025-08-23 14:21:07,709 - INFO - Engagement: 115 likes, 28 retweets
+2025-08-23 14:21:07,709 - INFO - Priority: P3 - Low
+2025-08-23 14:21:07,709 - INFO - --- Sample Tweet 2 ---
+2025-08-23 14:21:07,709 - INFO - Tweet ID: T788895
+2025-08-23 14:21:07,709 - INFO - Username: Michele Ochoa
+2025-08-23 14:21:07,709 - INFO - Dominant Topic: Mass Payment Errors
+2025-08-23 14:21:07,709 - INFO - Subtopics: Corporate Transfer Error, Business Processing Slow...
+2025-08-23 14:21:07,709 - INFO - Text: Seeing a concerning uptick in reported corporate transfer errors this week. Slow business processing times are exacerbating the issue, impacting reconciliation efforts. We're working to identify root causes & enhance validation protocols. Transparency is key during these mass ...
+2025-08-23 14:21:07,710 - INFO - Hashtags: ['BankingRisk', 'Compliance', 'FinancialServices', 'BankingNews']
+2025-08-23 14:21:07,710 - INFO - Sentiment: Negative
+2025-08-23 14:21:07,710 - INFO - Engagement: 85 likes, 25 retweets
+2025-08-23 14:21:07,710 - INFO - Priority: P2 - Medium
+2025-08-23 14:21:07,710 - INFO - --- Sample Tweet 3 ---
+2025-08-23 14:21:07,710 - INFO - Tweet ID: T139606
+2025-08-23 14:21:07,710 - INFO - Username: Michael Gibson
+2025-08-23 14:21:07,710 - INFO - Dominant Topic: Documentary Collection Efficient
+2025-08-23 14:21:07,710 - INFO - Subtopics: Trade Document Handling, International Settlement Success...
+2025-08-23 14:21:07,710 - INFO - Text: Navigating the evolving landscape of trade finance! Recent updates to documentary collection processes are streamlining international settlements, but ensuring full compliance with SWIFT gpi standards remains a key challenge. Efficiency gains are great, but risk mitigation is ...
+2025-08-23 14:21:07,710 - INFO - Hashtags: ['TradeFinance', 'BankingCompliance', 'DigitalBanking', 'FinancialServices']
+2025-08-23 14:21:07,710 - INFO - Sentiment: Neutral
+2025-08-23 14:21:07,710 - INFO - Engagement: 115 likes, 25 retweets
+2025-08-23 14:21:07,710 - INFO - Priority: P2 - Medium
+2025-08-23 14:21:07,972 - INFO - Verification: Found 5 tweets with generated content
+2025-08-23 14:21:07,973 - INFO -    tweet_id: T456078 | hashtags: 4 | text_length: 280 | sentiment: Positive
+2025-08-23 14:21:07,973 - INFO -    tweet_id: T788895 | hashtags: 4 | text_length: 280 | sentiment: Negative
+2025-08-23 14:21:07,973 - INFO -    tweet_id: T139606 | hashtags: 4 | text_length: 280 | sentiment: Neutral
+2025-08-23 14:21:07,973 - INFO -    tweet_id: T098665 | hashtags: 4 | text_length: 280 | sentiment: Negative
+2025-08-23 14:21:07,973 - INFO -    tweet_id: T442220 | hashtags: 4 | text_length: 280 | sentiment: Negative
+2025-08-23 14:21:07,973 - INFO - Verification complete: 5 tweets verified
+2025-08-23 14:21:08,262 - INFO - Content validation complete: 0 issues found
+2025-08-23 14:21:08,527 - INFO - Status report generated: logs/status_report_20250823_142108.json
+2025-08-23 14:21:08,528 - INFO - Final session report:
+2025-08-23 14:21:08,528 - INFO - Success Rate: 100.00%
+2025-08-23 14:21:08,528 - INFO - Database Completion: 100.00%
+2025-08-23 14:21:08,654 - INFO - Database connection closed
+2025-08-23 14:21:08,654 - INFO - Session complete. Check log files for detailed information:
+2025-08-23 14:21:08,654 - INFO - Main Log: logs/twitter_generator_20250823_142038.log
+2025-08-23 14:21:08,655 - INFO - Success Log: logs/successful_generations_20250823_142038.log
+2025-08-23 14:21:08,655 - INFO - Failure Log: logs/failed_generations_20250823_142038.log
+2025-08-23 14:21:08,655 - INFO - Progress Log: logs/progress_20250823_142038.log
+2025-08-23 14:21:08,655 - INFO - Intermediate Results: logs/intermediate_results_20250823_142038.json
+2025-08-23 14:21:08,655 - INFO - Database connection closed

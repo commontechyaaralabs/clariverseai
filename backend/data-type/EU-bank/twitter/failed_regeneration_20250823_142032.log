@@ -1,0 +1,8 @@
+2025-08-23 14:20:33,614 - INFO - Found 5 records missing required fields
+2025-08-23 14:20:34,246 - INFO - Processing failed record: T607535
+2025-08-23 14:20:34,246 - INFO - Processing failed record: T065334
+2025-08-23 14:20:34,246 - INFO - Processing failed record: T715637
+2025-08-23 14:20:34,246 - INFO - Processing failed record: T644797
+2025-08-23 14:20:34,246 - INFO - Processing failed record: T295925
+2025-08-23 14:20:34,246 - INFO - Found 5 valid failed records
+2025-08-23 14:20:34,247 - INFO - Saved failed records to failed_tweet_ids_20250823_142034.json

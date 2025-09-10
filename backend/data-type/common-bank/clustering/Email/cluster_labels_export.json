@@ -1,0 +1,1461 @@
+{
+  "export_date": "2025-08-05T10:58:08.936212",
+  "total_clusters": 45,
+  "clusters": [
+    {
+      "cluster_id": 40,
+      "cluster_name": "ach / fraud / detection",
+      "keyphrases": [
+        "ach fraud update",
+        "fraud detection update"
+      ],
+      "dominant_label": "ACH Fraud Pattern Anomaly Engine",
+      "subclusters": {
+        "0": {
+          "label": "Automated Clearing House Fraud Mitigation",
+          "keyphrases": [
+            "ach fraud update"
+          ]
+        },
+        "1": {
+          "label": "Fraud Analytics Platform Enhancement",
+          "keyphrases": [
+            "fraud detection update"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 13,
+      "cluster_name": "aml / system / procedure",
+      "keyphrases": [
+        "aml system update",
+        "aml procedure update",
+        "aml system upgrade",
+        "aml threshold revision",
+        "aml threshold change",
+        "aml rule revision",
+        "aml rule update"
+      ],
+      "dominant_label": "AML Transaction Rule Tuning Engine",
+      "subclusters": {
+        "0": {
+          "label": "AML Regulatory Change Implementation",
+          "keyphrases": [
+            "aml procedure update",
+            "aml threshold change"
+          ]
+        },
+        "1": {
+          "label": "AML System Configuration Management",
+          "keyphrases": [
+            "aml system upgrade"
+          ]
+        },
+        "2": {
+          "label": "AML Alert Tuning and Calibration",
+          "keyphrases": [
+            "aml threshold revision"
+          ]
+        },
+        "3": {
+          "label": "Transaction Monitoring Rule Lifecycle",
+          "keyphrases": [
+            "aml rule update"
+          ]
+        },
+        "4": {
+          "label": "BSA/AML System Maintenance Scheduling",
+          "keyphrases": [
+            "aml system update"
+          ]
+        },
+        "5": {
+          "label": "Anti-Money Laundering Rule Refinement",
+          "keyphrases": [
+            "aml rule revision"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 43,
+      "cluster_name": "aml / audit / bsa",
+      "keyphrases": [
+        "aml audit preparation",
+        "bsa aml audit"
+      ],
+      "dominant_label": "BSA AML Regulatory Reporting Automation",
+      "subclusters": {
+        "0": {
+          "label": "BSA/AML Audit Evidence Documentation",
+          "keyphrases": [
+            "aml audit preparation"
+          ]
+        },
+        "1": {
+          "label": "BSA/AML Regulatory Examination Preparation",
+          "keyphrases": [
+            "bsa aml audit"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 4,
+      "cluster_name": "branch audit preparation",
+      "keyphrases": [
+        "branch audit preparation"
+      ],
+      "dominant_label": "BSA/AML Transaction Monitoring System Audit",
+      "subclusters": {
+        "0": {
+          "label": "Branch Operational Readiness Assessments",
+          "keyphrases": [
+            "branch audit preparation"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 29,
+      "cluster_name": "fraud / threshold / alert",
+      "keyphrases": [
+        "fraud threshold reduction",
+        "fraud alert escalation",
+        "fraud alert threshold",
+        "fraud alert volume",
+        "fraud alert review",
+        "beneficial ownership certification"
+      ],
+      "dominant_label": "Beneficial Ownership Regulatory Reporting System",
+      "subclusters": {
+        "0": {
+          "label": "Fraud Alert Triage & Investigation",
+          "keyphrases": [
+            "fraud alert review",
+            "fraud alert escalation"
+          ]
+        },
+        "1": {
+          "label": "Transaction Fraud Scoring Parameter Optimization",
+          "keyphrases": [
+            "fraud alert threshold",
+            "fraud threshold reduction"
+          ]
+        },
+        "2": {
+          "label": "Beneficial Ownership Compliance Workflow",
+          "keyphrases": [
+            "beneficial ownership certification"
+          ]
+        },
+        "3": {
+          "label": "Fraud Monitoring System Performance Analysis",
+          "keyphrases": [
+            "fraud alert volume"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 42,
+      "cluster_name": "branch audit preparation",
+      "keyphrases": [
+        "branch audit preparation"
+      ],
+      "dominant_label": "Branch Audit Readiness Data Aggregator",
+      "subclusters": {
+        "0": {
+          "label": "Branch Audit Documentation Control Procedures",
+          "keyphrases": [
+            "branch audit preparation"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 0,
+      "cluster_name": "branch audit notification",
+      "keyphrases": [
+        "branch audit notification"
+      ],
+      "dominant_label": "Branch Deposit Exception Review Workflow",
+      "subclusters": {
+        "0": {
+          "label": "Branch Compliance Review Procedures",
+          "keyphrases": [
+            "branch audit notification"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 35,
+      "cluster_name": "branch / audit",
+      "keyphrases": [
+        "branch audit review",
+        "branch audit compliance",
+        "branch audit schedule",
+        "branch audit preparation"
+      ],
+      "dominant_label": "Branch Deposit Regulatory Reporting System",
+      "subclusters": {
+        "0": {
+          "label": "Branch Regulatory Examination Planning",
+          "keyphrases": [
+            "branch audit schedule"
+          ]
+        },
+        "1": {
+          "label": "Branch Operational Compliance Verification",
+          "keyphrases": [
+            "branch audit compliance"
+          ]
+        },
+        "2": {
+          "label": "Branch Audit Remediation Tracking",
+          "keyphrases": [
+            "branch audit preparation"
+          ]
+        },
+        "3": {
+          "label": "Branch Internal Controls Assessment Procedures",
+          "keyphrases": [
+            "branch audit review"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 33,
+      "cluster_name": "branch audit preparation",
+      "keyphrases": [
+        "branch audit preparation"
+      ],
+      "dominant_label": "Branch Regulatory Compliance Audit System",
+      "subclusters": {
+        "0": {
+          "label": "Branch Operational Audit Readiness",
+          "keyphrases": [
+            "branch audit preparation"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 24,
+      "cluster_name": "kyc / verification / update / mfa",
+      "keyphrases": [
+        "kyc verification update",
+        "kyc update procedure",
+        "mfa protocol breach",
+        "kyc procedure update",
+        "kyc documentation update"
+      ],
+      "dominant_label": "Client Identity KYC Data Enrichment",
+      "subclusters": {
+        "0": {
+          "label": "Customer Due Diligence Protocol Updates",
+          "keyphrases": [
+            "kyc verification update",
+            "kyc procedure update"
+          ]
+        },
+        "1": {
+          "label": "Beneficial Ownership Validation Process Enhancement",
+          "keyphrases": [
+            "kyc documentation update"
+          ]
+        },
+        "2": {
+          "label": "Multi-Factor Authentication Security Incident Response",
+          "keyphrases": [
+            "mfa protocol breach"
+          ]
+        },
+        "3": {
+          "label": "AML Regulatory Compliance Procedure Refresh",
+          "keyphrases": []
+        },
+        "4": {
+          "label": "Additional Banking Operations 1754391433",
+          "keyphrases": [
+            "kyc update procedure"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 12,
+      "cluster_name": "loan / documentation / origination",
+      "keyphrases": [
+        "loan documentation update",
+        "loan documentation request",
+        "loan origination upgrade"
+      ],
+      "dominant_label": "Commercial Lending Document Generation System",
+      "subclusters": {
+        "0": {
+          "label": "Commercial Loan Document Management System",
+          "keyphrases": [
+            "loan documentation update",
+            "loan documentation request"
+          ]
+        },
+        "1": {
+          "label": "Loan Origination System (LOS) Enhancement",
+          "keyphrases": [
+            "loan origination upgrade"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 16,
+      "cluster_name": "loan / guideline / commercial",
+      "keyphrases": [
+        "loan guideline revision",
+        "loan guideline update",
+        "commercial loan audit"
+      ],
+      "dominant_label": "Commercial Loan Covenant Monitoring System",
+      "subclusters": {
+        "0": {
+          "label": "Commercial Loan Policy Documentation Control",
+          "keyphrases": [
+            "loan guideline revision"
+          ]
+        },
+        "1": {
+          "label": "Commercial Credit Adherence Framework Update",
+          "keyphrases": [
+            "loan guideline update"
+          ]
+        },
+        "2": {
+          "label": "Commercial Lending Regulatory Audit Procedures",
+          "keyphrases": [
+            "commercial loan audit"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 32,
+      "cluster_name": "loan / procedure / application / dscr",
+      "keyphrases": [
+        "loan procedure update",
+        "loan application clarification",
+        "loan dscr discrepancy",
+        "loan procedure revision"
+      ],
+      "dominant_label": "Commercial Loan DSCR Validation Engine",
+      "subclusters": {
+        "0": {
+          "label": "Commercial Loan Underwriting Guideline Maintenance",
+          "keyphrases": [
+            "loan procedure update",
+            "loan procedure revision"
+          ]
+        },
+        "1": {
+          "label": "Loan Application Documentation Review Process",
+          "keyphrases": [
+            "loan application clarification"
+          ]
+        },
+        "2": {
+          "label": "Debt Service Coverage Ratio (DSCR) Validation Workflow",
+          "keyphrases": [
+            "loan dscr discrepancy"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 38,
+      "cluster_name": "loan / document / documentation",
+      "keyphrases": [
+        "loan document revision",
+        "loan documentation revision"
+      ],
+      "dominant_label": "Commercial Loan Document Version Control",
+      "subclusters": {
+        "0": {
+          "label": "Commercial Loan Portfolio Document Control",
+          "keyphrases": [
+            "loan document revision"
+          ]
+        },
+        "1": {
+          "label": "Credit Agreement Revision Workflow",
+          "keyphrases": [
+            "loan documentation revision"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 37,
+      "cluster_name": "loan documentation revision",
+      "keyphrases": [
+        "loan documentation revision"
+      ],
+      "dominant_label": "Commercial Loan Document Versioning System",
+      "subclusters": {
+        "0": {
+          "label": "Commercial Loan Covenant Compliance Verification",
+          "keyphrases": [
+            "loan documentation revision"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 11,
+      "cluster_name": "loan / system",
+      "keyphrases": [
+        "loan system update",
+        "loan system upgrade"
+      ],
+      "dominant_label": "Commercial Loan Servicing API Gateway",
+      "subclusters": {
+        "0": {
+          "label": "Commercial Loan Platform Technical Refresh",
+          "keyphrases": [
+            "loan system upgrade"
+          ]
+        },
+        "1": {
+          "label": "Loan Servicing Application Patch Deployment",
+          "keyphrases": [
+            "loan system update"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 23,
+      "cluster_name": "phishe attack response",
+      "keyphrases": [
+        "phishe attack response"
+      ],
+      "dominant_label": "CyberArk PAM Privileged Access Security",
+      "subclusters": {
+        "0": {
+          "label": "Cybersecurity Incident - Phishing Remediation",
+          "keyphrases": [
+            "phishe attack response"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 10,
+      "cluster_name": "phishe / threat / attack / campaign",
+      "keyphrases": [
+        "phishe threat detection",
+        "phishe attack vector",
+        "phishe campaign detection",
+        "phishe attack protocol",
+        "phishe attack mitigation",
+        "phishe attack pattern",
+        "phishe attack detection"
+      ],
+      "dominant_label": "DMARC Email Phishing Threat Defense",
+      "subclusters": {
+        "0": {
+          "label": "Digital Banking Phishing Threat Intelligence",
+          "keyphrases": [
+            "phishe threat detection",
+            "phishe attack pattern"
+          ]
+        },
+        "1": {
+          "label": "Fraudulent Email Campaign Analysis",
+          "keyphrases": [
+            "phishe campaign detection"
+          ]
+        },
+        "2": {
+          "label": "Phishing Attack Surface Mapping",
+          "keyphrases": [
+            "phishe attack vector"
+          ]
+        },
+        "3": {
+          "label": "Email-Based Fraud Prevention Controls",
+          "keyphrases": [
+            "phishe attack mitigation"
+          ]
+        },
+        "4": {
+          "label": "Phishing Protocol Vulnerability Assessments",
+          "keyphrases": [
+            "phishe attack protocol"
+          ]
+        },
+        "5": {
+          "label": "Cybersecurity Incident Response - Phishing",
+          "keyphrases": [
+            "phishe attack detection"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 15,
+      "cluster_name": "fraudulent / debit",
+      "keyphrases": [
+        "fraudulent debit activity",
+        "fraudulent debit transaction",
+        "fraudulent debit card"
+      ],
+      "dominant_label": "Debit Card Compromise Detection Engine",
+      "subclusters": {
+        "0": {
+          "label": "Debit Card Fraud Pattern Recognition",
+          "keyphrases": [
+            "fraudulent debit activity"
+          ]
+        },
+        "1": {
+          "label": "Debit Card Transaction Anomaly Detection",
+          "keyphrases": [
+            "fraudulent debit transaction"
+          ]
+        },
+        "2": {
+          "label": "Debit Card Compromise Investigation Protocols",
+          "keyphrases": [
+            "fraudulent debit card"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 18,
+      "cluster_name": "fraud system upgrade",
+      "keyphrases": [
+        "fraud system upgrade"
+      ],
+      "dominant_label": "EML Payment Fraud Detection Engine",
+      "subclusters": {
+        "0": {
+          "label": "Payment System Security Protocol Updates",
+          "keyphrases": [
+            "fraud system upgrade"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 25,
+      "cluster_name": "fraud / detection / swift",
+      "keyphrases": [
+        "fraud detection misconfiguration",
+        "fraud detection protocol",
+        "swift fraud protocol",
+        "fraud verification protocol",
+        "fraud detection system"
+      ],
+      "dominant_label": "FICO Falcon Fraud Scoring Engine",
+      "subclusters": {
+        "0": {
+          "label": "Fraud Detection System Configuration Audit",
+          "keyphrases": [
+            "fraud detection misconfiguration"
+          ]
+        },
+        "1": {
+          "label": "Cross-Border Payment Fraud Protocol",
+          "keyphrases": [
+            "swift fraud protocol"
+          ]
+        },
+        "2": {
+          "label": "Payment Fraud Verification Lifecycle",
+          "keyphrases": [
+            "fraud verification protocol"
+          ]
+        },
+        "3": {
+          "label": "Fraud Detection System Integration Testing",
+          "keyphrases": [
+            "fraud detection system"
+          ]
+        },
+        "4": {
+          "label": "Real-Time Fraud Detection Protocol Enhancement",
+          "keyphrases": [
+            "fraud detection protocol"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 5,
+      "cluster_name": "fraud / patch / detection",
+      "keyphrases": [
+        "fraud patch deployment",
+        "fraud detection adjustment",
+        "fraud detection calibration",
+        "fraud detection patch",
+        "advanced fraud detection",
+        "fraud detection tune",
+        "fraud detection update"
+      ],
+      "dominant_label": "FIS Fraud Detection Model Calibration System",
+      "subclusters": {
+        "0": {
+          "label": "Transaction Fraud Mitigation System Enhancements",
+          "keyphrases": [
+            "fraud patch deployment",
+            "fraud detection update"
+          ]
+        },
+        "1": {
+          "label": "Fraud Detection Engine Parameter Optimization",
+          "keyphrases": [
+            "fraud detection adjustment",
+            "fraud detection tune"
+          ]
+        },
+        "2": {
+          "label": "AML Transaction Monitoring System Calibration",
+          "keyphrases": [
+            "fraud detection calibration"
+          ]
+        },
+        "3": {
+          "label": "Real-Time Fraud Scoring Model Deployment",
+          "keyphrases": [
+            "advanced fraud detection"
+          ]
+        },
+        "4": {
+          "label": "Fraud Detection Patch Management Lifecycle",
+          "keyphrases": [
+            "fraud detection patch"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 3,
+      "cluster_name": "finacle / system / outage",
+      "keyphrases": [
+        "finacle system maintenance",
+        "finacle outage impact",
+        "finacle system outage",
+        "fiserv horizon maintenance",
+        "finacle system upgrade"
+      ],
+      "dominant_label": "Finacle Core System Availability Monitoring",
+      "subclusters": {
+        "0": {
+          "label": "Finacle Core Banking System Scheduled Downtime",
+          "keyphrases": [
+            "finacle system maintenance",
+            "finacle outage impact"
+          ]
+        },
+        "1": {
+          "label": "Finacle System Unplanned Interruption",
+          "keyphrases": [
+            "finacle system outage"
+          ]
+        },
+        "2": {
+          "label": "FISERV Horizon System Preventative Maintenance",
+          "keyphrases": [
+            "fiserv horizon maintenance"
+          ]
+        },
+        "3": {
+          "label": "Finacle System Version Upgrade Rollout",
+          "keyphrases": [
+            "finacle system upgrade"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 41,
+      "cluster_name": "finacle / security / mfa / vulnerability",
+      "keyphrases": [
+        "finacle security upgrade",
+        "finacle security patch",
+        "mfa vulnerability patch",
+        "finserv outage",
+        "finserv platform outage"
+      ],
+      "dominant_label": "Finacle MFA Vulnerability Remediation System",
+      "subclusters": {
+        "0": {
+          "label": "Finacle Core Banking Vulnerability Remediation",
+          "keyphrases": [
+            "finacle security patch",
+            "mfa vulnerability patch"
+          ]
+        },
+        "1": {
+          "label": "Finacle System Planned Maintenance",
+          "keyphrases": [
+            "finacle security upgrade"
+          ]
+        },
+        "2": {
+          "label": "Finserv Platform Incident Management",
+          "keyphrases": [
+            "finserv outage"
+          ]
+        },
+        "3": {
+          "label": "Finserv Core Banking System Redundancy",
+          "keyphrases": [
+            "finserv platform outage"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 22,
+      "cluster_name": "core / banking",
+      "keyphrases": [
+        "core banking upgrade",
+        "core banking outage"
+      ],
+      "dominant_label": "Finastra Core System Availability Monitoring",
+      "subclusters": {
+        "0": {
+          "label": "Core Banking System Lifecycle Management",
+          "keyphrases": [
+            "core banking upgrade"
+          ]
+        },
+        "1": {
+          "label": "Core Banking System Incident Reporting",
+          "keyphrases": [
+            "core banking outage"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 44,
+      "cluster_name": "branch audit preparation",
+      "keyphrases": [
+        "branch audit preparation"
+      ],
+      "dominant_label": "Finastra Fusion Audit Trail System",
+      "subclusters": {
+        "0": {
+          "label": "Branch Audit Pre-Examination Documentation",
+          "keyphrases": [
+            "branch audit preparation"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 27,
+      "cluster_name": "false / positive",
+      "keyphrases": [
+        "false positive increase",
+        "false positive alert",
+        "false positive rate"
+      ],
+      "dominant_label": "KYC Remediation False Positive Engine",
+      "subclusters": {
+        "0": {
+          "label": "AML Transaction Monitoring System False Positive Analysis",
+          "keyphrases": [
+            "false positive increase"
+          ]
+        },
+        "1": {
+          "label": "Fraud Scoring Engine Alert Tuning",
+          "keyphrases": [
+            "false positive alert"
+          ]
+        },
+        "2": {
+          "label": "BSA/AML Compliance Reporting False Positive Rate Optimization",
+          "keyphrases": [
+            "false positive rate"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 28,
+      "cluster_name": "lendsmart / los",
+      "keyphrases": [
+        "lendsmart los implementation",
+        "lendsmart los upgrade",
+        "lendsmart los training"
+      ],
+      "dominant_label": "Lendsmart LOS Data Migration Workflow",
+      "subclusters": {
+        "0": {
+          "label": "Loan Origination System Deployment Lifecycle",
+          "keyphrases": [
+            "lendsmart los implementation"
+          ]
+        },
+        "1": {
+          "label": "Loan Origination System Versioning & Patching",
+          "keyphrases": [
+            "lendsmart los upgrade"
+          ]
+        },
+        "2": {
+          "label": "Lender Application Proficiency Programs",
+          "keyphrases": [
+            "lendsmart los training"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 17,
+      "cluster_name": "lendsmart / system / training / implementation",
+      "keyphrases": [
+        "lendsmart system upgrade",
+        "lendsmart training",
+        "lendsmart implementation",
+        "lendsmart v2.0 upgrade"
+      ],
+      "dominant_label": "Lendsmart Loan Origination System Migration",
+      "subclusters": {
+        "0": {
+          "label": "Loan Origination System Technical Rollout",
+          "keyphrases": [
+            "lendsmart implementation",
+            "lendsmart v2.0 upgrade"
+          ]
+        },
+        "1": {
+          "label": "Loan Platform User Proficiency Enhancement",
+          "keyphrases": [
+            "lendsmart training"
+          ]
+        },
+        "2": {
+          "label": "Commercial Lending System Infrastructure Upgrade",
+          "keyphrases": [
+            "lendsmart system upgrade"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 31,
+      "cluster_name": "los system upgrade",
+      "keyphrases": [
+        "los system upgrade"
+      ],
+      "dominant_label": "Loan Origination System Remediation Workflow",
+      "subclusters": {
+        "0": {
+          "label": "Loan Origination System Technical Infrastructure",
+          "keyphrases": [
+            "los system upgrade"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 2,
+      "cluster_name": "loan documentation revision",
+      "keyphrases": [
+        "loan documentation revision"
+      ],
+      "dominant_label": "Loan Servicing Document Versioning Engine",
+      "subclusters": {
+        "0": {
+          "label": "Commercial Loan Covenant Modification Workflow",
+          "keyphrases": [
+            "loan documentation revision"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 7,
+      "cluster_name": "los / update / staff / training",
+      "keyphrases": [
+        "los update training",
+        "los staff training",
+        "los training update",
+        "los implementation training",
+        "los system training",
+        "los version upgrade",
+        "los training schedule",
+        "los system upgrade"
+      ],
+      "dominant_label": "LoanOriginationSystem Version Upgrade Training",
+      "subclusters": {
+        "0": {
+          "label": "Loan Origination System User Proficiency",
+          "keyphrases": [
+            "los update training",
+            "los staff training"
+          ]
+        },
+        "1": {
+          "label": "Loan Origination System Version Control",
+          "keyphrases": [
+            "los version upgrade"
+          ]
+        },
+        "2": {
+          "label": "Loan Application System Training Delivery",
+          "keyphrases": [
+            "los training update"
+          ]
+        },
+        "3": {
+          "label": "Loan Origination System Technical Training",
+          "keyphrases": [
+            "los system training"
+          ]
+        },
+        "4": {
+          "label": "Loan Workflow System Implementation Training",
+          "keyphrases": [
+            "los implementation training"
+          ]
+        },
+        "5": {
+          "label": "Loan Application System Scheduling",
+          "keyphrases": [
+            "los training schedule"
+          ]
+        },
+        "6": {
+          "label": "Loan System Upgrade Training Materials",
+          "keyphrases": [
+            "los system upgrade"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 39,
+      "cluster_name": "fraudulent / transaction",
+      "keyphrases": [
+        "fraudulent transaction",
+        "fraudulent transaction spike",
+        "fraudulent transaction review",
+        "fraudulent transaction pattern",
+        "fraudulent transaction alert",
+        "fraudulent transfer attempt"
+      ],
+      "dominant_label": "Misys Transaction Bombing Detection System",
+      "subclusters": {
+        "0": {
+          "label": "Card Not Present Fraud Investigation Workflow",
+          "keyphrases": [
+            "fraudulent transaction"
+          ]
+        },
+        "1": {
+          "label": "ACH Transaction Fraud Pattern Analysis",
+          "keyphrases": [
+            "fraudulent transaction pattern"
+          ]
+        },
+        "2": {
+          "label": "Real-Time Fraud Alert Escalation Protocols",
+          "keyphrases": [
+            "fraudulent transaction alert"
+          ]
+        },
+        "3": {
+          "label": "Wire Transfer Fraud Attempt Verification",
+          "keyphrases": [
+            "fraudulent transfer attempt"
+          ]
+        },
+        "4": {
+          "label": "Fraudulent Transaction Volume Anomaly Detection",
+          "keyphrases": [
+            "fraudulent transaction spike"
+          ]
+        },
+        "5": {
+          "label": "Fraudulent Transaction Remediation Procedure",
+          "keyphrases": [
+            "fraudulent transaction review"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 20,
+      "cluster_name": "fraudulent / ach",
+      "keyphrases": [
+        "fraudulent ach transaction",
+        "fraudulent ach activity",
+        "fraudulent ach transfer"
+      ],
+      "dominant_label": "NACHA Rules Payment Exception Handling System",
+      "subclusters": {
+        "0": {
+          "label": "Automated Clearing House Fraud Pattern Identification",
+          "keyphrases": [
+            "fraudulent ach transaction"
+          ]
+        },
+        "1": {
+          "label": "ACH Origination System Anomaly Detection",
+          "keyphrases": [
+            "fraudulent ach activity"
+          ]
+        },
+        "2": {
+          "label": "ACH Payment System Fraud Investigation Protocols",
+          "keyphrases": [
+            "fraudulent ach transfer"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 19,
+      "cluster_name": "mobile / banking / fraud / detection",
+      "keyphrases": [
+        "mobile banking security",
+        "fraud detection upgrade",
+        "fraud detection rollout",
+        "malware signature update",
+        "malware detection update",
+        "enhance fraud detection",
+        "malware threat detection",
+        "mobile fraud detection",
+        "enhance diligence"
+      ],
+      "dominant_label": "NCR Aloha POS Fraud Mitigation",
+      "subclusters": {
+        "0": {
+          "label": "Mobile Banking Authentication Protocol Updates",
+          "keyphrases": [
+            "mobile banking security"
+          ]
+        },
+        "1": {
+          "label": "Fraud Detection System Deployment Lifecycle",
+          "keyphrases": [
+            "fraud detection rollout"
+          ]
+        },
+        "2": {
+          "label": "Fraud Detection Model Versioning Controls",
+          "keyphrases": [
+            "fraud detection upgrade"
+          ]
+        },
+        "3": {
+          "label": "Endpoint Malware Signature Database Refresh",
+          "keyphrases": [
+            "malware signature update"
+          ]
+        },
+        "4": {
+          "label": "Real-Time Malware Threat Intelligence Feed Integration",
+          "keyphrases": [
+            "malware threat detection"
+          ]
+        },
+        "5": {
+          "label": "Mobile Payment Fraud Prevention Controls",
+          "keyphrases": [
+            "mobile fraud detection"
+          ]
+        },
+        "6": {
+          "label": "Enhanced Customer Due Diligence Procedures",
+          "keyphrases": [
+            "enhance diligence"
+          ]
+        },
+        "7": {
+          "label": "Fraud Detection Engine Performance Tuning",
+          "keyphrases": [
+            "enhance fraud detection"
+          ]
+        },
+        "8": {
+          "label": "Malware Detection System Calibration Protocols",
+          "keyphrases": [
+            "malware detection update"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 30,
+      "cluster_name": "account / opening / new",
+      "keyphrases": [
+        "account opening procedure",
+        "new account kyc",
+        "new account procedure"
+      ],
+      "dominant_label": "New Account CIP Verification Engine",
+      "subclusters": {
+        "0": {
+          "label": "New Account Due Diligence Protocols",
+          "keyphrases": [
+            "new account kyc"
+          ]
+        },
+        "1": {
+          "label": "Account Origination KYC Compliance",
+          "keyphrases": [
+            "new account procedure"
+          ]
+        },
+        "2": {
+          "label": "Account Opening Regulatory Adherence",
+          "keyphrases": [
+            "account opening procedure"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 36,
+      "cluster_name": "revise / loan / aml / kyc",
+      "keyphrases": [
+        "revise loan documentation",
+        "revise aml procedure",
+        "revise kyc procedure",
+        "enhance kyc verification",
+        "update kyc procedure",
+        "revise aml rule",
+        "revise aml guideline",
+        "revise loan protocol"
+      ],
+      "dominant_label": "OFAC Compliance Screening Alert Workflow",
+      "subclusters": {
+        "0": {
+          "label": "Credit Policy & Procedure Updates",
+          "keyphrases": [
+            "revise loan documentation",
+            "revise loan protocol"
+          ]
+        },
+        "1": {
+          "label": "AML Compliance Framework Review",
+          "keyphrases": [
+            "revise aml procedure",
+            "revise aml rule",
+            "revise aml guideline"
+          ]
+        },
+        "2": {
+          "label": "Customer Identification Program (CIP) Enhancement",
+          "keyphrases": [
+            "enhance kyc verification"
+          ]
+        },
+        "3": {
+          "label": "Know Your Customer (KYC) Procedure Refresh",
+          "keyphrases": [
+            "update kyc procedure"
+          ]
+        },
+        "4": {
+          "label": "Additional Banking Operations 1754391323",
+          "keyphrases": [
+            "revise kyc procedure"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 14,
+      "cluster_name": "rtgs system upgrade",
+      "keyphrases": [
+        "rtgs system upgrade"
+      ],
+      "dominant_label": "RTGS System Liquidity Stress Testing",
+      "subclusters": {
+        "0": {
+          "label": "High-Value Payment System Lifecycle",
+          "keyphrases": [
+            "rtgs system upgrade"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 9,
+      "cluster_name": "fraud system update",
+      "keyphrases": [
+        "fraud system update"
+      ],
+      "dominant_label": "Realtime Card Fraud Velocity Monitoring",
+      "subclusters": {
+        "0": {
+          "label": "Core Banking System Patch Management",
+          "keyphrases": [
+            "fraud system update"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 8,
+      "cluster_name": "fraudulent / swift / wire / transfer",
+      "keyphrases": [
+        "fraudulent swift message",
+        "wire transfer verification",
+        "fraudulent wire transfer",
+        "wire transfer threshold"
+      ],
+      "dominant_label": "SWIFT Payment Fraud Detection System",
+      "subclusters": {
+        "0": {
+          "label": "International Funds Transfer Validation",
+          "keyphrases": [
+            "wire transfer verification",
+            "wire transfer threshold"
+          ]
+        },
+        "1": {
+          "label": "SWIFT Fraudulent Transaction Analysis",
+          "keyphrases": [
+            "fraudulent swift message",
+            "fraudulent wire transfer"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 26,
+      "cluster_name": "sentinel / update / algorithm",
+      "keyphrases": [
+        "sentinel update impact",
+        "sentinel update procedure",
+        "sentinel algorithm update",
+        "sentinel update deployment",
+        "sentinel update implementation",
+        "sentinel vulnerability patch"
+      ],
+      "dominant_label": "Sentinel Algorithm Anomaly Detection System",
+      "subclusters": {
+        "0": {
+          "label": "Sentinel Algorithm Deployment Procedures",
+          "keyphrases": [
+            "sentinel update procedure",
+            "sentinel update deployment"
+          ]
+        },
+        "1": {
+          "label": "Sentinel System Vulnerability Remediation",
+          "keyphrases": [
+            "sentinel vulnerability patch"
+          ]
+        },
+        "2": {
+          "label": "Realtime Fraud Monitoring System Updates",
+          "keyphrases": [
+            "sentinel update impact"
+          ]
+        },
+        "3": {
+          "label": "Sentinel Algorithm Enhancement Lifecycle",
+          "keyphrases": [
+            "sentinel algorithm update"
+          ]
+        },
+        "4": {
+          "label": "Fraud Detection Algorithm Implementation Protocols",
+          "keyphrases": [
+            "sentinel update implementation"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 1,
+      "cluster_name": "sentinel / system",
+      "keyphrases": [
+        "sentinel system upgrade",
+        "sentinel system launch",
+        "sentinel system update"
+      ],
+      "dominant_label": "SentinelOne XDR Threat Hunting Platform",
+      "subclusters": {
+        "0": {
+          "label": "Sentinel System Deployment Lifecycle",
+          "keyphrases": [
+            "sentinel system launch"
+          ]
+        },
+        "1": {
+          "label": "Sentinel System Patch Management Lifecycle",
+          "keyphrases": [
+            "sentinel system update"
+          ]
+        },
+        "2": {
+          "label": "Sentinel System Version Control Protocols",
+          "keyphrases": [
+            "sentinel system upgrade"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 34,
+      "cluster_name": "hydra / malware / phishe / wire",
+      "keyphrases": [
+        "hydra malware threat",
+        "phishe wire fraud",
+        "phishe wire transfer",
+        "sm phishe detection",
+        "smurfe fraud pattern",
+        "phishe threat update",
+        "phishe detection update",
+        "phishe technique update",
+        "phishe attack review",
+        "phishe attack patch",
+        "phishe campaign impact",
+        "phishe attack update",
+        "cerberus x malware",
+        "hydra-7 malware threat",
+        "smurfing investigation",
+        "smishe attack response",
+        "phishe system update"
+      ],
+      "dominant_label": "Smishe Transaction Fraud Pattern Analysis",
+      "subclusters": {
+        "0": {
+          "label": "Advanced Malware Threat Intelligence Feeds",
+          "keyphrases": [
+            "hydra malware threat",
+            "cerberus x malware",
+            "hydra-7 malware threat"
+          ]
+        },
+        "1": {
+          "label": "Wire Transfer Fraud Pattern Analysis - Phishing Vectors",
+          "keyphrases": [
+            "phishe wire fraud",
+            "phishe wire transfer"
+          ]
+        },
+        "2": {
+          "label": "SMiShing Fraud Detection System Calibration",
+          "keyphrases": [
+            "sm phishe detection"
+          ]
+        },
+        "3": {
+          "label": "Fraudulent Transaction Pattern Identification - Smurfing",
+          "keyphrases": [
+            "smurfe fraud pattern",
+            "smurfing investigation"
+          ]
+        },
+        "4": {
+          "label": "Phishing Threat Intelligence Updates & Remediation",
+          "keyphrases": [
+            "phishe threat update",
+            "phishe detection update",
+            "phishe technique update"
+          ]
+        },
+        "5": {
+          "label": "Phishing Attack Surface Vulnerability Assessments",
+          "keyphrases": [
+            "phishe attack review",
+            "phishe attack patch"
+          ]
+        },
+        "6": {
+          "label": "Phishing Campaign Impact Analysis & Reporting",
+          "keyphrases": [
+            "phishe campaign impact"
+          ]
+        },
+        "7": {
+          "label": "Phishing System Version Control Protocols",
+          "keyphrases": [
+            "phishe attack update"
+          ]
+        },
+        "8": {
+          "label": "SMiShing Attack Incident Response Protocols",
+          "keyphrases": [
+            "smishe attack response"
+          ]
+        },
+        "9": {
+          "label": "Additional Banking Operations 1754391359",
+          "keyphrases": [
+            "phishe system update"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 6,
+      "cluster_name": "branch transaction audit",
+      "keyphrases": [
+        "branch transaction audit"
+      ],
+      "dominant_label": "Teller Balancing Exception Investigation System",
+      "subclusters": {
+        "0": {
+          "label": "Branch Transaction Exception Reporting",
+          "keyphrases": [
+            "branch transaction audit"
+          ]
+        }
+      }
+    },
+    {
+      "cluster_id": 21,
+      "cluster_name": "vigilance / update / system",
+      "keyphrases": [
+        "vigilance update",
+        "vigilance system update",
+        "vigilance update deployment",
+        "vigilance system upgrade"
+      ],
+      "dominant_label": "Vigilance System Transaction Fraud Scoring",
+      "subclusters": {
+        "0": {
+          "label": "Vigilance System Patch Release Management",
+          "keyphrases": [
+            "vigilance update"
+          ]
+        },
+        "1": {
+          "label": "Vigilance System Deployment Protocols",
+          "keyphrases": [
+            "vigilance system update"
+          ]
+        },
+        "2": {
+          "label": "Vigilance System Update Rollout Schedule",
+          "keyphrases": [
+            "vigilance update deployment"
+          ]
+        },
+        "3": {
+          "label": "Vigilance System Version Control Procedures",
+          "keyphrases": [
+            "vigilance system upgrade"
+          ]
+        }
+      }
+    }
+  ]
+}

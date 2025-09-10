@@ -1,0 +1,19 @@
+{
+  "total_documents_processed": 204,
+  "total_keyphrases_clustered": 204,
+  "best_num_clusters": 14,
+  "best_silhouette_score": 0.9367852807044983,
+  "best_coherence_score": 0.894896237898611,
+  "best_avg_similarity": 0.8390597965807921,
+  "best_umap_params": {
+    "n_neighbors": 30,
+    "min_dist": 0.05
+  },
+  "best_hdbscan_params": {
+    "min_cluster_size": 4,
+    "min_samples": 4,
+    "cluster_selection_method": "eom"
+  },
+  "processing_time_seconds": 241.70440578460693,
+  "noise_points": 18
+}

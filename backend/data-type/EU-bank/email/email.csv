@@ -1,0 +1,165 @@
+Dominant_topic,Subtopics,Dominant_topic_weightage,Subtopics_weightage,Subtopics_count
+SEPA Payment Failure,"Instant Payment Rejected, Direct Debit Returned, Cross-Border Transfer Error, Beneficiary Bank Unavailable",0.58,"0.17,0.15,0.13,0.13",4
+GDPR Access Request,"Personal Data Inquiry, Processing Information Need, Third Party Sharing, Data Retention Question, Consent Record Access",0.67,"0.15,0.14,0.13,0.12,0.13",5
+Corporate Account Issue,"Balance Inquiry Problem, Transaction Dispute Report, Account Access Error, Multi-Currency Statement Need",0.54,"0.16,0.14,0.12,0.12",4
+Trade Finance Delay,"Letter Credit Processing, Documentary Collection Issue, Guarantee Execution Problem, Export Documentation Error",0.63,"0.18,0.16,0.15,0.14",4
+Authentication Problem Report,"Digital Banking Login, Mobile App Access, Two-Factor Authentication Failure, Security Token Error",0.59,"0.17,0.16,0.13,0.13",4
+Service Quality Complaint,"Processing Time Delay, Service Standard Violation, Fee Structure Complaint, Response Time Issue",0.52,"0.15,0.14,0.12,0.11",4
+PSD2 Compliance Question,"Strong Customer Authentication, TPP Access Problem, Payment Service Directive, Open Banking Compliance",0.61,"0.18,0.16,0.14,0.13",4
+MiFID Investment Inquiry,"Investment Service Question, Client Categorization Update, Best Execution Report, MiFID Compliance Check",0.64,"0.19,0.17,0.15,0.13",4
+AML Documentation Request,"Enhanced Due Diligence, Beneficial Ownership Declaration, Sanctions Screening Alert, CDD Requirements Update",0.72,"0.21,0.19,0.16,0.16",4
+Cross-Border Transfer Problem,"SEPA Instant Failure, Wire Transfer Delay, Correspondent Bank Issue, Currency Exchange Problem, FX Settlement Error",0.69,"0.20,0.18,0.16,0.15",5
+Digital Banking Error,"Core Banking Malfunction, Digital Platform Error, System Integration Problem, User Interface Issue",0.56,"0.16,0.15,0.13,0.12",4
+Credit Facility Question,"Credit Line Question, Facility Utilization Alert, Covenant Compliance Check, Renewal Documentation Need",0.48,"0.14,0.12,0.11,0.11",4
+Executive Escalation Email,"C-Suite Complaint Email, Board Member Concern, Regulatory Body Escalation, Executive Response Required, VIP Client Issue",0.83,"0.24,0.22,0.19,0.18",5
+Mobile Authentication Error,"Biometric Authentication Failure, SMS Token Error, App Push Notification, Device Registration Problem",0.43,"0.12,0.11,0.10,0.10",4
+Treasury Service Problem,"Cash Management Error, Treasury Platform Issue, Liquidity Management Problem, Payment Processing Delay",0.65,"0.19,0.17,0.15,0.14",4
+Letter Credit Processing,"LC Amendment Request, LC Discrepancy Alert, LC Expiry Notification, Advising Bank Issue",0.57,"0.17,0.15,0.13,0.12",4
+Cash Management Issue,"Account Balance Error, Statement Generation Problem, Multi-Currency Display Issue, Transaction History Request",0.49,"0.14,0.13,0.11,0.11",4
+FX Execution Problem,"Currency Conversion Error, FX Rate Dispute, Hedging Product Issue, Market Risk Alert",0.71,"0.21,0.19,0.16,0.15",4
+Compliance Certificate Request,"Certificate Request Urgent, Regulatory Filing Need, Audit Documentation Request, Compliance Report Need",0.46,"0.13,0.12,0.11,0.10",4
+Audit Trail Need,"Transaction History Request, Audit Trail Missing, Document Retrieval Need, Evidence Collection Request",0.38,"0.11,0.10,0.09,0.08",4
+Fee Dispute Email,"Unauthorized Fee Charge, Service Charge Dispute, Commission Rate Question, Pricing Structure Complaint",0.55,"0.16,0.15,0.12,0.12",4
+Media Inquiry Email,"Press Inquiry Email, Reputation Management Issue, Crisis Communication Need, Public Relations Request",0.62,"0.18,0.17,0.14,0.13",4
+Legal Notice Response,"Legal Notice Response, Court Document Service, Litigation Support Request, Regulatory Investigation Response",0.44,"0.13,0.12,0.10,0.09",4
+Fintech Integration Error,"API Connection Error, Third Party Integration, Fintech Partnership Issue, Technology Vendor Problem",0.53,"0.15,0.14,0.12,0.12",4
+Payment Service Problem,"Payment Gateway Error, Processing System Down, Settlement Delay Issue, Network Connectivity Problem",0.68,"0.20,0.18,0.16,0.14",4
+Digital Wallet Issue,"Mobile Wallet Error, Digital Payment Issue, E-commerce Integration Problem, Contactless Payment Failure",0.41,"0.12,0.11,0.09,0.09",4
+RegTech Alert,"Compliance Software Alert, Risk Monitoring System, Regulatory Reporting Error, Technology Solution Issue",0.75,"0.22,0.20,0.17,0.16",4
+Account Access Error,"System Access Denied, Password Reset Issue, User Permission Problem, Network Login Failure",0.42,"0.12,0.11,0.10,0.09",4
+Multi-Currency Statement Need,"Foreign Currency Statement, Cross-Border Account Summary, Multi-Entity Reporting Need, Consolidated Statement Request",0.51,"0.15,0.14,0.11,0.11",4
+Transaction Dispute Report,"Payment Reversal Request, Fraud Alert Response, Dispute Resolution Need, Chargeback Processing Issue",0.66,"0.19,0.18,0.15,0.14",4
+Balance Inquiry Problem,"Account Freeze Request, Balance Hold Issue, Account Closure Question, Dormant Account Problem",0.47,"0.14,0.12,0.11,0.10",4
+Documentary Collection Issue,"Export Document Issue, Import Letter Problem, Trade Document Discrepancy, Shipping Document Error",0.74,"0.21,0.20,0.17,0.16",4
+Guarantee Execution Problem,"Bank Guarantee Problem, Performance Bond Issue, Standby Letter Credit, Financial Guarantee Error",0.58,"0.17,0.16,0.13,0.12",4
+Export Documentation Error,"Trade Finance Documentation, Export Credit Error, Import Finance Issue, Documentary Credit Problem",0.63,"0.18,0.16,0.15,0.14",4
+Open Banking API,"API Integration Problem, PSD2 Implementation Issue, Open Banking Error, Third Party Connection",0.45,"0.13,0.12,0.10,0.10",4
+Strong Customer Authentication,"Multi-Factor Authentication Problem, Customer Authentication Error, Digital Identity Issue, Access Control Problem",0.69,"0.20,0.18,0.16,0.15",4
+Third Party Provider,"Payment Service Provider, Third Party Processor, Fintech Service Error, Digital Banking Partner",0.56,"0.16,0.15,0.13,0.12",4
+Personal Data Inquiry,"GDPR Subject Request, Data Protection Query, Privacy Policy Question, Information Rights Request",0.78,"0.22,0.21,0.18,0.17",4
+Processing Information Need,"Data Processing Purpose, Legal Basis Question, Consent Management Issue, Processing Activity Query",0.52,"0.15,0.14,0.12,0.11",4
+Data Retention Question,"Data Storage Question, Retention Policy Query, Data Deletion Request, Archive Policy Issue",0.49,"0.14,0.13,0.11,0.11",4
+Instant Payment Rejected,"SEPA Instant Rejection, Real-Time Payment Error, Immediate Transfer Problem, Fast Payment Issue",0.64,"0.19,0.17,0.15,0.13",4
+Direct Debit Returned,"Mandate Cancellation Alert, SDD Rejection Notice, Collection Failure Alert, Debtor Bank Issue",0.47,"0.14,0.12,0.11,0.10",4
+Beneficiary Bank Unavailable,"Correspondent Bank Problem, Intermediary Bank Error, Beneficiary Details Issue, Payment Route Problem",0.39,"0.11,0.10,0.09,0.09",4
+Investment Service Question,"Advisory Service Question, Investment Recommendation Query, Portfolio Management Issue, Financial Planning Question",0.71,"0.21,0.19,0.16,0.15",4
+Client Categorization Update,"Client Classification Change, Professional Investor Status, Retail Client Category, Eligible Counterparty Update",0.58,"0.17,0.16,0.13,0.12",4
+Best Execution Report,"Transaction Cost Analysis, Best Execution Policy, Execution Quality Report, Trading Venue Information",0.65,"0.19,0.17,0.15,0.14",4
+Enhanced Due Diligence,"Customer Due Diligence, Enhanced Screening Required, PEP Status Check, Risk Assessment Update",0.72,"0.21,0.19,0.16,0.16",4
+Beneficial Ownership Declaration,"Ultimate Beneficial Owner, Corporate Structure Disclosure, Ownership Information Update, Control Person Details",0.46,"0.13,0.12,0.11,0.10",4
+Sanctions Screening Alert,"OFAC Screening Alert, EU Sanctions Check, Financial Intelligence Alert, Prohibited Transaction Warning",0.59,"0.17,0.16,0.14,0.12",4
+Covenant Compliance Question,"Financial Covenant Breach, Loan Agreement Violation, Credit Terms Question, Facility Condition Check",0.54,"0.15,0.14,0.13,0.12",4
+Credit Line Utilization,"Credit Facility Usage, Available Limit Query, Drawdown Request Problem, Credit Line Status",0.67,"0.20,0.18,0.15,0.14",4
+Facility Renewal Inquiry,"Renewal Terms Discussion, Facility Extension Request, Credit Review Process, Maturity Date Issue",0.48,"0.14,0.13,0.11,0.10",4
+API Connectivity Issue,"System Integration Error, Data Connectivity Issue, Service Interface Problem, Platform Communication Error",0.61,"0.18,0.16,0.14,0.13",4
+Core Banking System,"Legacy System Problem, Core Banking Issue, Infrastructure Failure Alert, Database Connection Error",0.73,"0.22,0.20,0.16,0.15",4
+Digital Platform Malfunction,"User Interface Problem, System Performance Issue, Software Bug Report, Application Crash Alert",0.42,"0.12,0.11,0.10,0.09",4
+Cybersecurity Incident Report,"Security Breach Report, Cyber Attack Alert, Data Security Issue, System Vulnerability Report",0.56,"0.16,0.15,0.13,0.12",4
+SEPA Processing Error,"Payment Processing Problem, Transaction Settlement Issue, Clearing System Error, Network Communication Problem",0.68,"0.20,0.18,0.15,0.15",4
+Card Network Issue,"Credit Card Issue, Debit Card Problem, Card Authorization Error, Payment Card Dispute",0.51,"0.15,0.14,0.11,0.11",4
+Clearing House Problem,"Settlement System Problem, Clearing House Issue, Interbank Settlement Error, Payment Infrastructure Problem",0.74,"0.21,0.20,0.17,0.16",4
+Monitoring System Alert,"Risk Alert System, Compliance Monitoring Tool, Regulatory Reporting Platform, Surveillance System Issue",0.43,"0.12,0.11,0.10,0.10",4
+Reporting Platform Issue,"Dashboard Error Report, Analytics Platform Issue, Business Intelligence Problem, Reporting Tool Error",0.62,"0.18,0.17,0.14,0.13",4
+Audit Firm Communication,"External Audit Communication, Audit Firm Update, Examination Process Support, Audit Committee Report",0.57,"0.16,0.15,0.13,0.13",4
+Legal Advisor Update,"Legal Counsel Advice, Attorney Communication Update, Legal Opinion Request, Regulatory Legal Issue",0.69,"0.20,0.18,0.16,0.15",4
+Consulting Project Report,"Management Consulting Project, Process Improvement Initiative, Strategic Advisory Update, Transformation Project Report",0.45,"0.13,0.12,0.10,0.10",4
+Data Sharing Problem,"API Data Error, Information Sharing Problem, Data Exchange Issue, System Synchronization Problem",0.58,"0.17,0.16,0.13,0.12",4
+Consent Management Dispute,"Customer Consent Issue, Authorization Problem Alert, Permission Management Error, Consent Withdrawal Process",0.66,"0.19,0.17,0.15,0.15",4
+Integration Problem Report,"System Connection Problem, Network Integration Issue, Platform Communication Error, Service Link Problem",0.52,"0.15,0.14,0.12,0.11",4
+Transaction Processing Error,"Payment Execution Error, Transaction Completion Issue, Processing System Problem, Settlement Completion Error",0.71,"0.21,0.19,0.16,0.15",4
+Compliance Monitoring Alert,"Regulatory Alert System, Compliance Dashboard Issue, Monitoring Tool Problem, Surveillance Platform Error",0.44,"0.13,0.12,0.10,0.09",4
+Risk Assessment Update,"Risk Metrics Update, Assessment Model Change, Rating System Alert, Risk Profile Update",0.63,"0.18,0.17,0.14,0.14",4
+Reporting Discrepancy Alert,"Financial Report Issue, Regulatory Filing Error, Data Submission Problem, Compliance Report Discrepancy",0.56,"0.16,0.15,0.13,0.12",4
+System Outage Notification,"Network Infrastructure Problem, Server Outage Alert, System Unavailability Notice, Service Interruption Report",0.49,"0.14,0.13,0.11,0.11",4
+Security Incident Alert,"Cybersecurity Threat Alert, Data Protection Breach, System Compromise Warning, Security Protocol Violation",0.67,"0.20,0.18,0.15,0.14",4
+Data Breach Warning,"Information Security Issue, Data Loss Alert, Privacy Breach Warning, Confidentiality Violation Report",0.48,"0.14,0.13,0.11,0.10",4
+Cross-Border Regulatory Question,"Multi-Jurisdiction Compliance Question, Cross-Border Regulation Issue, International Banking Law Query, Global Regulatory Requirement",0.55,"0.16,0.15,0.12,0.12",4
+EU Passporting Service,"Banking License Question, Cross-Border Service Issue, EU Banking Permit, Regulatory Passport Problem",0.61,"0.18,0.16,0.14,0.13",4
+Euro Clearing Problem,"Currency Settlement Problem, Euro Payment Issue, SEPA Zone Error, European Clearing Problem",0.73,"0.22,0.20,0.16,0.15",4
+TARGET2 Settlement Issue,"Real-Time Gross Settlement, TARGET Payment Problem, Central Bank Settlement, European Payment System",0.42,"0.12,0.11,0.10,0.09",4
+ECB Policy Update,"European Central Bank, Monetary Policy Update, Banking Supervision Notice, Regulatory Communication Change",0.58,"0.17,0.16,0.13,0.12",4
+Basel III Requirement,"Capital Requirement Update, Risk Management Standard, Banking Regulation Change, Prudential Requirement Update",0.65,"0.19,0.17,0.15,0.14",4
+EU Taxonomy Reporting,"ESG Reporting Requirement, Sustainable Finance Rule, Green Banking Standard, Environmental Compliance Issue",0.51,"0.15,0.14,0.11,0.11",4
+Mobile App Issue,"Smartphone App Problem, Mobile Banking Error, Device Compatibility Issue, Operating System Problem",0.69,"0.20,0.18,0.16,0.15",4
+Two-Factor Authentication Error,"Authentication Token Problem, Security Code Issue, Multi-Factor Problem Alert, Access Verification Error",0.46,"0.13,0.12,0.10,0.11",4
+Processing Delay Complaint,"Service Delivery Problem, Customer Experience Issue, Response Time Problem, Quality Standard Violation",0.62,"0.18,0.17,0.14,0.13",4
+Regulatory Documentation Need,"Banking Document Issue, Certificate Problem Alert, Official Paper Request, Regulatory Filing Need",0.57,"0.16,0.15,0.13,0.13",4
+SEPA Payment Status,"Payment Status Update, Transfer Confirmation Request, Transaction Tracking Issue, Payment Reference Problem",0.74,"0.21,0.20,0.17,0.16",4
+International Transfer Question,"Cross-Border Transfer Query, International Payment Question, Foreign Exchange Transfer, Overseas Payment Issue",0.43,"0.12,0.11,0.10,0.10",4
+Fee Clarification Need,"Commission Rate Question, Service Charge Query, Transaction Cost Issue, Fee Structure Problem",0.68,"0.20,0.18,0.15,0.15",4
+Right Erasure Demand,"Data Erasure Request, Information Deletion Demand, Record Removal Request, Personal Data Destruction",0.52,"0.15,0.14,0.12,0.11",4
+Consent Withdrawal Notification,"Marketing Consent Issue, Communication Preference Change, Opt-Out Request Alert, Subscription Management Problem",0.66,"0.19,0.17,0.16,0.14",4
+TPP Access Problem,"Third Party Access, Payment Service Provider, Account Information Service, Payment Initiation Service",0.47,"0.14,0.13,0.10,0.10",4
+Liquidity Facility Problem,"Cash Flow Problem, Working Capital Issue, Treasury Management Error, Liquidity Planning Problem",0.71,"0.21,0.19,0.16,0.15",4
+Covenant Breach Alert,"Covenant Monitoring Alert, Financial Ratio Problem, Loan Condition Issue, Credit Agreement Breach",0.44,"0.13,0.12,0.10,0.09",4
+SEPA Instant Failure,"Instant Payment Problem, Real-Time Transfer Error, Immediate Settlement Issue, Fast Payment Problem",0.59,"0.17,0.16,0.13,0.13",4
+Card Payment Dispute,"Payment Card Problem, Credit Card Dispute, Debit Card Issue, Card Transaction Error",0.63,"0.18,0.16,0.15,0.14",4
+Treasury System Error,"Treasury Management Problem, Cash Management Issue, Liquidity Management Error, Financial Planning Problem",0.56,"0.16,0.15,0.13,0.12",4
+Cash Flow Issue,"Liquidity Problem Alert, Cash Flow Issue, Working Capital Problem, Treasury Planning Error",0.72,"0.21,0.20,0.16,0.15",4
+Foreign Exchange Problem,"Foreign Exchange Problem, Currency Trading Issue, FX Risk Management, Exchange Rate Problem",0.48,"0.14,0.13,0.11,0.10",4
+Letter Credit Amendment,"Trade Finance Amendment, Letter Credit Change, Documentary Credit Update, Trade Document Modification",0.65,"0.19,0.17,0.15,0.14",4
+Trade Documentation Error,"Import Export Documentation, Trade Paper Problem, Shipping Document Issue, Commercial Invoice Error",0.51,"0.18,0.16,0.14,0.13",4
+Import Finance Question,"Import Financing Question, Import Credit Issue, Trade Finance Query, Import Letter Problem",0.69,"0.21,0.20,0.17,0.16",4
+Export Credit Issue,"Export Credit Problem, Export Finance Issue, Trade Credit Query, Export Guarantee Problem",0.45,"0.13,0.12,0.10,0.10",4
+Corporate Loan Inquiry,"Business Loan Question, Commercial Credit Issue, Corporate Lending Query, Credit Facility Question",0.58,"0.20,0.18,0.16,0.15",4
+Overdraft Facility Request,"Credit Line Request, Overdraft Application Issue, Facility Request Problem, Credit Approval Question",0.62,"0.15,0.14,0.12,0.11",4
+Investment Advisory Question,"Investment Advisory Issue, Portfolio Management Problem, Wealth Advisory Question, Investment Consultation Error",0.74,"0.21,0.19,0.16,0.15",4
+Wealth Management Issue,"Asset Management Problem, Portfolio Service Issue, Investment Management Error, Fund Management Problem",0.43,"0.13,0.12,0.11,0.10",4
+Private Banking Service,"High Net Worth, Premium Banking Service, Exclusive Banking Issue, Elite Client Problem",0.67,"0.18,0.17,0.14,0.13",4
+Relationship Manager Request,"Account Manager Issue, Client Relationship Problem, Relationship Banking Error, Personal Banker Question",0.52,"0.17,0.16,0.13,0.12",4
+Account Opening Issue,"New Account Problem, Account Setup Issue, Customer Onboarding Error, Registration Process Problem",0.71,"0.20,0.18,0.17,0.16",4
+KYC Documentation Problem,"Identity Verification Problem, Customer Due Diligence, Know Your Customer, Identity Documentation Issue",0.46,"0.14,0.13,0.11,0.10",4
+CRS Reporting Question,"Tax Reporting Standard, Cross-Border Tax, International Tax Compliance, Tax Information Exchange",0.64,"0.17,0.16,0.14,0.12",4
+FATCA Compliance Issue,"US Tax Compliance, Foreign Account Reporting, American Tax Law, FATCA Filing Issue",0.57,"0.18,0.16,0.15,0.14",4
+Tax Withholding Problem,"Tax Deduction Problem, Withholding Tax Issue, Tax Rate Question, Tax Calculation Error",0.69,"0.22,0.20,0.16,0.15",4
+Interest Rate Query,"Interest Calculation Question, Rate Application Issue, Interest Payment Problem, Rate Structure Query",0.48,"0.12,0.11,0.10,0.10",4
+Deposit Service Issue,"Savings Account Issue, Deposit Service Problem, Account Balance Error, Deposit Product Question",0.63,"0.17,0.16,0.13,0.12",4
+Certificate Deposit Question,"Fixed Deposit Question, Time Deposit Issue, Term Investment Problem, Certificate Deposit Error",0.56,"0.18,0.17,0.15,0.14",4
+Commercial Paper Issue,"Short-Term Financing Issue, Commercial Paper Problem, Money Market Issue, Corporate Note Problem",0.72,"0.21,0.20,0.17,0.16",4
+Bond Trading Problem,"Corporate Bond Issue, Bond Trading Problem, Fixed Income Error, Debt Security Problem",0.44,"0.13,0.12,0.11,0.10",4
+Derivatives Question Alert,"Financial Derivative Question, Hedging Product Issue, Risk Management Tool, Derivative Trading Problem",0.58,"0.18,0.16,0.14,0.13",4
+Custody Service Problem,"Securities Custody Problem, Asset Safekeeping Issue, Investment Custody Error, Securities Holding Problem",0.65,"0.17,0.16,0.13,0.12",4
+Asset Management Issue,"Investment Fund Issue, Mutual Fund Problem, Collective Investment Error, Fund Management Problem",0.51,"0.20,0.18,0.16,0.15",4
+Fund Transfer Problem,"Money Transfer Problem, Remittance Service Issue, International Transfer Error, Cross-Border Payment Problem",0.67,"0.13,0.12,0.11,0.10",4
+Wire Transfer Delay,"Bank Wire Problem, Wire Transfer Issue, Electronic Transfer Error, SWIFT Payment Problem",0.46,"0.18,0.17,0.14,0.13",4
+ACH Processing Error,"Automated Clearing House, Electronic Payment Problem, Bulk Payment Issue, Direct Deposit Error",0.62,"0.17,0.15,0.13,0.12",4
+Check Clearing Issue,"Check Processing Problem, Cheque Clearing Issue, Paper Payment Error, Check Deposit Problem",0.57,"0.21,0.19,0.16,0.16",4
+Merchant Service Problem,"Business Payment Service, Merchant Account Issue, Payment Processing Problem, Commercial Payment Error",0.74,"0.13,0.12,0.10,0.09",4
+POS Terminal Issue,"Point-of-Sale Problem, Terminal Issue Alert, Payment Device Error, Card Reader Problem",0.43,"0.17,0.16,0.13,0.12",4
+ATM Network Problem,"Cash Machine Problem, ATM Service Issue, Cash Withdrawal Error, Automated Teller Problem",0.69,"0.19,0.17,0.15,0.14",4
+Branch Service Complaint,"Physical Location Issue, Branch Office Problem, In-Person Service Error, Local Branch Question",0.52,"0.15,0.14,0.11,0.11",4
+Online Banking Problem,"Digital Banking Problem, Internet Banking Issue, Online Service Error, Web Banking Problem",0.66,"0.20,0.18,0.15,0.14",4
+Phone Banking Issue,"Telephone Banking Issue, Call Center Problem, Phone Service Error, Voice Banking Problem",0.47,"0.13,0.12,0.11,0.10",4
+Customer Service Escalation,"Service Escalation Issue, Customer Care Problem, Support Request Alert, Resolution Process Error",0.71,"0.18,0.16,0.14,0.14",4
+Complaint Resolution Request,"Customer Complaint Resolution, Dispute Process Issue, Problem Resolution Error, Grievance Process Problem",0.44,"0.16,0.15,0.13,0.13",4
+Service Level Breach,"Service Agreement Violation, Performance Standard Issue, Service Quality Problem, Contract Breach Alert",0.59,"0.21,0.20,0.17,0.16",4
+Quality Assurance Issue,"Process Quality Issue, Service Standard Problem, Quality Control Error, Performance Monitoring Alert",0.63,"0.12,0.11,0.10,0.10",4
+Process Improvement Request,"Business Process Enhancement, Operational Improvement Request, Workflow Optimization Need, Efficiency Improvement Alert",0.56,"0.20,0.18,0.16,0.15",4
+Training Need Alert,"Employee Training Issue, Staff Development Need, Skill Enhancement Request, Competency Training Alert",0.68,"0.15,0.14,0.12,0.11",4
+Staff Performance Issue,"Employee Performance Problem, Staff Productivity Issue, Personnel Management Error, Workforce Performance Alert",0.48,"0.19,0.17,0.15,0.15",4
+Customer Feedback Report,"Client Satisfaction Issue, Customer Experience Problem, Service Feedback Alert, Customer Opinion Report",0.65,"0.14,0.13,0.10,0.10",4
+Satisfaction Survey Result,"Survey Response Analysis, Customer Feedback Review, Satisfaction Metrics Update, Client Survey Results",0.51,"0.21,0.19,0.16,0.15",4
+Vendor Management,"Contract Approval Request, SLA Breach Notification, Payment Authorization Need, Performance Escalation Alert, Service Provider Issue",0.73,"0.13,0.12,0.10,0.09",5
+IT Access Problem,"System Access Failure, Permission Escalation Request, Security Clearance Issue, Emergency Access Need, User Privilege Problem",0.71,"0.17,0.16,0.13,0.13",5
+Internal Audit,"Audit Finding Response, Compliance Breach Notification, Investigation Support Request, Committee Escalation Alert",0.64,"0.18,0.16,0.15,0.14",4
+Compliance Issues,"Regulatory Violation Alert, Policy Breach Notification, Review Request Urgent, Examination Support Need",0.59,"0.16,0.15,0.13,0.12",4
+Approval Required,"Process Exception Request, Workflow Override Need, Emergency Authorization Required, Client Onboarding Exception",0.61,"0.20,0.18,0.15,0.15",4
+Salary Leave Issues,"HR Escalation Alert, Payroll Discrepancy Report, Leave Approval Emergency, Performance Management Alert, Employee Issue Critical",0.67,"0.14,0.13,0.11,0.10",5
+IT Marketing Unresolved,"Campaign System Failure, Digital Platform Issue, Customer Communication Problem, Brand Compliance Alert, Marketing System Error",0.52,"0.19,0.17,0.15,0.14",5
+User Access Approval,"New User Provisioning, Role Change Request, System Privilege Update, Emergency Access Grant, Account Setup Urgent",0.74,"0.15,0.14,0.12,0.11",5
+Process Exception,"Workflow Deviation Request, Policy Override Approval, Emergency Procedure Activation, Compliance Exemption Request, Process Rule Exception",0.68,"0.22,0.20,0.16,0.15",5
+Executive Decision Required,"Senior Management Approval, Strategic Initiative Authorization, Budget Exception Request, Crisis Response Decision, Executive Approval Urgent",0.63,"0.16,0.15,0.14,0.14,0.14",5
+Risk Management Alert,"Operational Risk Incident, Regulatory Risk Notification, Credit Risk Escalation, Market Risk Warning, Risk Event Alert",0.69,"0.15,0.14,0.14,0.14,0.14",5
+Quality Assurance Breach,"Service Standard Violation, Audit Failure Notification, Compliance Gap Alert, Process Breakdown Report, Quality Control Breach",0.56,"0.18,0.16,0.15,0.15",5
+Technology Emergency,"System Outage Notification, Security Incident Alert, Data Breach Warning, Infrastructure Failure Report, Technology Crisis Alert",0.72,"0.17,0.16,0.13,0.13",5
+Legal Escalation,"Litigation Notification Alert, Regulatory Investigation Support, Contract Dispute Escalation, Compliance Violation Response, Legal Action Required",0.58,"0.17,0.16,0.14,0.14",5
+Performance Management,"Staff Disciplinary Action, Training Failure Alert, Productivity Concern Escalation, Skill Gap Emergency, Personnel Performance Crisis",0.65,"0.19,0.18,0.15,0.15",5
+,,,"0.15,0.14,0.12,0.11",0
+,,,"0.21,0.20,0.17,0.16",0
+,,,"0.19,0.18,0.14,0.12",0
+,,,"0.18,0.16,0.15,0.14",0
+,,,"0.20,0.18,0.16,0.15",0
+,,,"0.16,0.15,0.13,0.12",0
+,,,"0.21,0.19,0.16,0.16",0
+,,,"0.17,0.16,0.13,0.12",0
+,,,"0.19,0.17,0.15,0.14",0
