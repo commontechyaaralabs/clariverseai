@@ -266,7 +266,7 @@ async def get_cluster_options(
     domain: Literal["banking"] = "banking",
     channel: str = None,
     db: database.Database = Depends(get_database),
-    # current_user: dict = Depends(get_current_user)  # Commented out for development
+    current_user: dict = Depends(get_current_user)
 ):
     """
     Get available dominant clusters and subclusters for dropdown menus
@@ -723,7 +723,7 @@ async def get_topic_analysis_documents(
     page_size: int = Query(10, ge=1, le=100, description="Number of records per page (max 100) - used as MongoDB limit"),
     channel: Optional[str] = Query(None, description="Optional channel filter for socialmedia (twitter, reddit, trustpilot, app store/google play)"),
     db: database.Database = Depends(get_database),
-    # current_user: dict = Depends(get_current_user)  # Commented out for development
+    current_user: dict = Depends(get_current_user)
 ) -> TopicAnalysisResponse:
     """
     Get filtered documents for topic analysis with pagination using MongoDB skip/limit
@@ -1536,7 +1536,7 @@ async def get_topic_analysis_documents(
 async def search_documents_by_email(
     sender_id: str = Query(..., description="Email address to search for (e.g., 'jamesdavidson5023@gmail.com')"),
     db: database.Database = Depends(get_database),
-    # current_user: dict = Depends(get_current_user)  # Commented out for development
+    current_user: dict = Depends(get_current_user)
 ) -> EmailSearchResponse:
     """
     Search for documents by email address across email and chat collections

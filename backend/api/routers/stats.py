@@ -5,6 +5,9 @@ from pymongo import database
 from dependencies import get_database
 from datetime import datetime
 
+# Import authentication dependencies
+from auth.dependencies import get_current_user
+
 logger = logging.getLogger(__name__)
 
 router = APIRouter(tags=["statistics"])
@@ -14,7 +17,8 @@ async def get_home_statistics(
     data_type: Literal["email", "chat", "ticket", "socialmedia", "voice"],
     domain: Literal["banking"] = "banking",
     channel: str = None,
-    db: database.Database = Depends(get_database)
+    db: database.Database = Depends(get_database),
+    current_user: dict = Depends(get_current_user)
 ):
     """
     Get home page statistics for a specific data type and domain
