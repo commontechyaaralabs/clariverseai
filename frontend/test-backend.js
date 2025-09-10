@@ -1,7 +1,7 @@
 // Simple test script to check backend connectivity
 const testBackend = async () => {
   const backendUrls = [
-    'https://clariversev1-107731139870.us-central1.run.app',
+    'https://clariversev1-153115538723.us-central1.run.app',
     'http://localhost:8000',
     'http://127.0.0.1:8000',
     'http://localhost:3001',

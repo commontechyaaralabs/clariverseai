@@ -18,7 +18,7 @@ NEXTAUTH_SECRET=your-secret-key-here
 NEXTAUTH_URL=http://localhost:3000
 
 # API Configuration
-NEXT_PUBLIC_API_URL=https://clariversev1-107731139870.us-central1.run.app
+NEXT_PUBLIC_API_URL=https://clariversev1-153115538723.us-central1.run.app
 ```
 
 ### Authentication Flow

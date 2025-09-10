@@ -12,7 +12,7 @@
     }
   ],
   "env": {
-    "NEXT_PUBLIC_API_BASE_URL": "https://clariversev1-107731139870.us-central1.run.app",
+    "NEXT_PUBLIC_API_BASE_URL": "https://clariversev1-153115538723.us-central1.run.app",
     "NEXTAUTH_SECRET":"7a1e2f1e0cc74f3e93f0bb09a9ef0c12c3c1a6c870c8b6eb8d2c1b5716a7a329"
   },
   "functions": {

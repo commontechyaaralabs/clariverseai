@@ -46,7 +46,7 @@ export async function signupAction(data: SignupData): Promise<SignupResult> {
     }
 
     // API call to local backend
-    const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "https://clariversev1-107731139870.us-central1.run.app";
+    const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "https://clariversev1-153115538723.us-central1.run.app";
     const response = await fetch(`${apiBaseUrl}/api/auth/register`, {
       method: "POST",
       headers: {

@@ -33,7 +33,7 @@ class AuthService {
   private apiBaseUrl: string;
 
   constructor() {
-    this.apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "https://clariversev1-107731139870.us-central1.run.app";
+    this.apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "https://clariversev1-153115538723.us-central1.run.app";
   }
 
   private async makeRequest<T>(

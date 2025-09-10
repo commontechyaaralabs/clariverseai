@@ -15,7 +15,7 @@ export function useApi() {
     endpoint: string,
     options: RequestInit = {}
   ): Promise<ApiResponse<T>> => {
-    const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "https://clariversev1-107731139870.us-central1.run.app";
+    const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "https://clariversev1-153115538723.us-central1.run.app";
     
     const headers: any = {
       "Content-Type": "application/json",

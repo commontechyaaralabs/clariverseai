@@ -1,7 +1,7 @@
 // API utility functions for fetching data from the backend
 
 // Get API base URL from environment variable or use default
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://clariversev1-107731139870.us-central1.run.app';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://clariversev1-153115538723.us-central1.run.app';
 
 
 export interface Statistics {

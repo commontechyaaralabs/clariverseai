@@ -179,7 +179,7 @@ const userResponse = await authService.getCurrentUser(accessToken);
 Set these environment variables in your `.env.local` file:
 
 ```env
-NEXT_PUBLIC_API_URL=https://clariversev1-107731139870.us-central1.run.app
+NEXT_PUBLIC_API_URL=https://clariversev1-153115538723.us-central1.run.app
 NEXTAUTH_SECRET=your-secret-key-here
 NEXTAUTH_URL=http://localhost:3000
 ```
@@ -288,7 +288,7 @@ The system handles various error scenarios:
 
 1. **Register a new user**:
    ```bash
-   curl -X POST "https://clariversev1-107731139870.us-central1.run.app/api/auth/register" \
+   curl -X POST "https://clariversev1-153115538723.us-central1.run.app/api/auth/register" \
      -H "Content-Type: application/json" \
      -d '{
        "email": "test@example.com",
@@ -299,7 +299,7 @@ The system handles various error scenarios:
 
 2. **Login**:
    ```bash
-   curl -X POST "https://clariversev1-107731139870.us-central1.run.app/api/auth/login" \
+   curl -X POST "https://clariversev1-153115538723.us-central1.run.app/api/auth/login" \
      -H "Content-Type: application/json" \
      -d '{
        "email": "test@example.com",
@@ -309,7 +309,7 @@ The system handles various error scenarios:
 
 3. **Get user info** (use token from login):
    ```bash
-   curl -X GET "https://clariversev1-107731139870.us-central1.run.app/api/auth/me" \
+   curl -X GET "https://clariversev1-153115538723.us-central1.run.app/api/auth/me" \
      -H "Authorization: Bearer YOUR_TOKEN_HERE"
    ```
 

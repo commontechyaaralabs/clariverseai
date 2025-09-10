@@ -11,7 +11,7 @@ export async function GET(request: NextRequest) {
 
     // Try different backend URLs
     const possibleBackendUrls = [
-      'https://clariversev1-107731139870.us-central1.run.app',
+      'https://clariversev1-153115538723.us-central1.run.app',
       process.env.BACKEND_URL,
       'http://localhost:8000',
       'http://127.0.0.1:8000',
