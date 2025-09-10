@@ -60,13 +60,21 @@ export async function GET(request: NextRequest) {
           params.append('platform', platform);
         }
 
+        // Get authorization header from the incoming request
+        const authHeader = request.headers.get('authorization');
+        const headers: HeadersInit = {
+          'Content-Type': 'application/json',
+        };
+        
+        if (authHeader) {
+          headers['Authorization'] = authHeader;
+        }
+
         const response = await fetch(
           `${backendUrl}/api/topic-analysis/documents?${params.toString()}`,
           {
             method: 'GET',
-            headers: {
-              'Content-Type': 'application/json',
-            },
+            headers,
             signal: AbortSignal.timeout(5000),
           }
         );

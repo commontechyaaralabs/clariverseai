@@ -1,10 +1,10 @@
-// API utility functions for fetching data from the backend
+// Client-side API utility functions for fetching data from the backend
 import { getSession } from "next-auth/react";
 
 // Get API base URL from environment variable or use default
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://clariversev1-153115538723.us-central1.run.app';
 
-// Helper function to get authentication headers
+// Helper function to get authentication headers for client-side calls
 async function getAuthHeaders(): Promise<Record<string, string>> {
   const session = await getSession();
   const headers: Record<string, string> = {
@@ -17,7 +17,6 @@ async function getAuthHeaders(): Promise<Record<string, string>> {
   
   return headers;
 }
-
 
 export interface Statistics {
   data_type: string;
@@ -185,6 +184,33 @@ export interface TopicAnalysisResponse {
   documents: DocumentResponse[];
 }
 
+export interface ClusterData {
+  status: string;
+  data_type: string;
+  domain: string;
+  dominant_clusters: Array<{
+    kmeans_cluster_id: number;
+    dominant_cluster_label: string;
+    cluster_name?: string;
+    keyphrases: string[];
+    keyphrase_count: number;
+    document_count: number;
+    urgent_count?: number;
+    urgent_percentage?: number;
+  }>;
+  subclusters: Array<{
+    kmeans_cluster_id: number;
+    dominant_cluster_label: string;
+    subcluster_id: string;
+    subcluster_label: string;
+    keyphrases: string[];
+    keyphrase_count: number;
+    document_count: number;
+    urgent_count?: number;
+    urgent_percentage?: number;
+  }>;
+}
+
 export async function fetchStatistics(dataType: 'email' | 'chat' | 'ticket' | 'socialmedia' | 'voice', domain: string = 'banking', channel?: string): Promise<ApiResponse> {
   try {
     const queryParams = new URLSearchParams({
@@ -336,33 +362,6 @@ export async function fetchTopicAnalysisDocuments(
   }
 } 
 
-export interface ClusterData {
-  status: string;
-  data_type: string;
-  domain: string;
-  dominant_clusters: Array<{
-    kmeans_cluster_id: number;
-    dominant_cluster_label: string;
-    cluster_name?: string;
-    keyphrases: string[];
-    keyphrase_count: number;
-    document_count: number;
-    urgent_count?: number;
-    urgent_percentage?: number;
-  }>;
-  subclusters: Array<{
-    kmeans_cluster_id: number;
-    dominant_cluster_label: string;
-    subcluster_id: string;
-    subcluster_label: string;
-    keyphrases: string[];
-    keyphrase_count: number;
-    document_count: number;
-    urgent_count?: number;
-    urgent_percentage?: number;
-  }>;
-}
-
 export async function fetchClusterData(dataType: string = 'ticket', domain: string = 'banking', channel?: string): Promise<ClusterData> {
   try {
     const queryParams = new URLSearchParams({
@@ -391,4 +390,4 @@ export async function fetchClusterData(dataType: string = 'ticket', domain: stri
     console.error('Error fetching cluster data:', error);
     throw error;
   }
-} 
+}

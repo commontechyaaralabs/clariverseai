@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { BarChart3, Layers, ArrowLeft, ArrowRight, X } from 'lucide-react';
 import DataLayout from '../../layout';
-import { fetchStatistics, Statistics, fetchClusterData, ClusterData, fetchTopicAnalysisDocuments } from '@/lib/api';
+import { fetchStatistics, Statistics, fetchClusterData, ClusterData, fetchTopicAnalysisDocuments } from '@/lib/apiClient';
 import { 
   StatisticsCards, 
   VisualizationSelector, 

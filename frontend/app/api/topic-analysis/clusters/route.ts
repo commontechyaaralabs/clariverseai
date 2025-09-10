@@ -40,13 +40,21 @@ export async function GET(request: NextRequest) {
           queryParams.append('channel', channel);
         }
 
+        // Get authorization header from the incoming request
+        const authHeader = request.headers.get('authorization');
+        const headers: HeadersInit = {
+          'Content-Type': 'application/json',
+        };
+        
+        if (authHeader) {
+          headers['Authorization'] = authHeader;
+        }
+
         const response = await fetch(
           `${backendUrl}/api/topic-analysis/clusters?${queryParams.toString()}`,
           {
             method: 'GET',
-            headers: {
-              'Content-Type': 'application/json',
-            },
+            headers,
             signal: AbortSignal.timeout(30000), // Increased timeout to 30 seconds for heavy processing
           }
         );

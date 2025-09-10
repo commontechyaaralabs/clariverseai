@@ -44,14 +44,22 @@ export async function GET(request: NextRequest) {
           queryParams.append('channel', channel);
         }
         
+        // Get authorization header from the incoming request
+        const authHeader = request.headers.get('authorization');
+        const headers: HeadersInit = {
+          'Content-Type': 'application/json',
+        };
+        
+        if (authHeader) {
+          headers['Authorization'] = authHeader;
+        }
+
         // Try the correct path based on FastAPI router configuration
         const response = await fetch(
           `${backendUrl}/api/v1/home/stats?${queryParams.toString()}`,
           {
             method: 'GET',
-            headers: {
-              'Content-Type': 'application/json',
-            },
+            headers,
             // Add timeout
             signal: AbortSignal.timeout(15000), // Increased timeout to 15 seconds
           }

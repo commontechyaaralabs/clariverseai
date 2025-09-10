@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { ChevronDown, ChevronLeft, ChevronRight, X, Search } from 'lucide-react';
 import { Header } from '@/components/Header/Header';
 import Sidebar from '@/components/Sidebar/Sidebar';
-import { fetchClusterOptions, fetchTopicAnalysisDocuments, DominantCluster, Subcluster, DocumentResponse } from '@/lib/api';
+import { fetchClusterOptions, fetchTopicAnalysisDocuments, DominantCluster, Subcluster, DocumentResponse } from '@/lib/apiClient';
 
 type VoiceMessage = DocumentResponse;
 
