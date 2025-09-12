@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { ChevronRight, Brain, Database, Settings, Users, ArrowRight, Mail, MessageSquare, Ticket, TrendingUp, Shield, Zap } from 'lucide-react';
+import { ChevronRight, Brain, Database, Settings, Users, ArrowRight, Mail, MessageSquare, Ticket, TrendingUp, Shield, Zap, Phone, Share2 } from 'lucide-react';
 import Sidebar from '@/components/Sidebar/Sidebar';
 import { Header } from '@/components/Header/Header';
 import { useSession } from "next-auth/react";
@@ -454,24 +454,29 @@ const HomePage = () => {
 
     const architectureFeatures = [
       {
-        icon: <Mail className="w-8 h-8" />,
+        icon: <Mail className="w-12 h-12" />,
         title: "Email Processing",
         description: "Advanced email analysis with smart length-based routing and topic extraction"
       },
       {
-        icon: <MessageSquare className="w-8 h-8" />,
+        icon: <MessageSquare className="w-12 h-12" />,
         title: "Chat Analysis",
         description: "Intelligent conversation chunking and key-phrase extraction with hallucination checks"
       },
       {
-        icon: <Ticket className="w-8 h-8" />,
+        icon: <Ticket className="w-12 h-12" />,
         title: "Ticket Classification",
         description: "Bifurcated processing for support and alert tickets with specialized LLM extraction"
       },
       {
-        icon: <TrendingUp className="w-8 h-8" />,
-        title: "Clustering & Insights",
-        description: "K-Means and HDBSCAN clustering for pattern recognition and trend analysis"
+        icon: <Phone className="w-12 h-12" />,
+        title: "Voice Transcript",
+        description: "Convert and analyze customer support calls with agent performance tracking and issue resolution insights"
+      },
+      {
+        icon: <Share2 className="w-12 h-12" />,
+        title: "Social Media",
+        description: "Monitor and analyze social interactions with brand sentiment tracking and trend detection"
       }
     ];
 
@@ -518,7 +523,7 @@ const HomePage = () => {
         <div className={`fixed inset-y-0 left-0 z-40 transform transition-transform duration-300 ease-in-out ${
           isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
         }`}>
-          <Sidebar />
+          <Sidebar onClose={closeSidebar} />
         </div>
 
         {/* Sidebar Overlay */}
@@ -583,110 +588,108 @@ const HomePage = () => {
                 <div className="text-center mb-16">
                   <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">System Overview</h2>
                   <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                    This topic modeling system represents an integrated approach to analyze three distinct customer 
-                    communication channels (email, chat, and ticket data). The architecture employs various large language models 
-                    (specifically Gemma models in 27b parameter sizes) along with advanced clustering techniques to extract 
+                    This topic modeling system represents an integrated approach to analyze five distinct customer 
+                    communication channels (email, chat, ticket, voice, and social media data). The architecture employs various large language models 
+                    (specifically Gemma models) along with advanced clustering techniques to extract 
                     meaningful topics from customer communications.
                   </p>
                 </div>
 
-                                 {/* System Architecture Image with Zoom Controls */}
-                 <div className="bg-gray-800 rounded-lg p-8 mb-16">
-                   <div 
-                     className="relative flex items-center justify-center"
-                     onMouseEnter={() => setIsImageHovered(true)}
-                     onMouseLeave={() => setIsImageHovered(false)}
-                   >
-                     {/* Zoom Controls */}
-                     <div className={`absolute top-4 left-4 flex gap-2 z-10 transition-opacity duration-300 ${
-                       isImageHovered ? 'opacity-100' : 'opacity-0'
-                     }`}>
-                       <button
-                         onClick={() => setZoomLevel(prev => Math.min(prev + 0.5, 5))}
-                         className="bg-black bg-opacity-70 text-white px-3 py-1 rounded hover:bg-opacity-90 transition-colors"
-                       >
-                         +
-                       </button>
-                       <button
-                         onClick={() => setZoomLevel(prev => Math.max(prev - 0.5, 0.5))}
-                         className="bg-black bg-opacity-70 text-white px-3 py-1 rounded hover:bg-opacity-90 transition-colors"
-                       >
-                         -
-                       </button>
-                       <button
-                         onClick={() => {
-                           setZoomLevel(1);
-                           setPanPosition({ x: 0, y: 0 });
-                         }}
-                         className="bg-black bg-opacity-70 text-white px-3 py-1 rounded hover:bg-opacity-90 transition-colors"
-                       >
-                         Reset
-                       </button>
-                     </div>
+                {/* System Architecture Heading */}
+                <h3 className="text-2xl font-bold text-white text-center mb-2">System Architecture</h3>
 
-                     {/* Zoom Level Display */}
-                     <div className={`absolute top-4 left-1/2 transform -translate-x-1/2 bg-black bg-opacity-70 text-white px-3 py-1 rounded z-10 transition-opacity duration-300 ${
-                       isImageHovered ? 'opacity-100' : 'opacity-0'
-                     }`}>
-                       {Math.round(zoomLevel * 100)}%
-                     </div>
+                {/* System Architecture Image with Zoom Controls */}
+                <div 
+                  className="relative flex items-center justify-center mb-16 mt-6"
+                  onMouseEnter={() => setIsImageHovered(true)}
+                  onMouseLeave={() => setIsImageHovered(false)}
+                >
 
-                     {/* Image Container */}
-                     <div 
-                       className="overflow-hidden rounded-lg"
-                       style={{ 
-                         maxWidth: '100%', 
-                         maxHeight: '600px',
-                         cursor: isDragging ? 'grabbing' : 'grab'
-                       }}
-                       onMouseDown={(e) => {
-                         if (zoomLevel > 1) {
-                           setIsDragging(true);
-                           setDragStart({ x: e.clientX - panPosition.x, y: e.clientY - panPosition.y });
-                         }
-                       }}
-                       onMouseMove={(e) => {
-                         if (isDragging && zoomLevel > 1) {
-                           setPanPosition({
-                             x: e.clientX - dragStart.x,
-                             y: e.clientY - dragStart.y
-                           });
-                         }
-                       }}
-                       onMouseUp={() => setIsDragging(false)}
-                       onMouseLeave={() => setIsDragging(false)}
-                       onWheel={(e) => {
-                         e.preventDefault();
-                         const delta = e.deltaY > 0 ? -0.2 : 0.2;
-                         setZoomLevel(prev => Math.max(0.5, Math.min(5, prev + delta)));
-                       }}
-                     >
-                       <img 
-                         src="/Diagram 1.png" 
-                         alt="System Architecture - Multi-channel topic modeling pipeline showing Email, Chat, and Ticket data processing with LLM operations, clustering, and post-processing workflows"
-                         className="rounded-lg shadow-2xl transition-transform duration-200"
-                         style={{ 
-                           transform: `scale(${zoomLevel}) translate(${panPosition.x / zoomLevel}px, ${panPosition.y / zoomLevel}px)`,
-                           transformOrigin: 'center',
-                           maxWidth: '100%',
-                           maxHeight: '600px',
-                           objectFit: 'contain'
-                         }}
-                         draggable={false}
-                       />
-                     </div>
-                   </div>
-                 </div>
+                    {/* Image Container */}
+                    <div 
+                      className="overflow-hidden rounded-2xl relative"
+                      style={{ 
+                        width: '100%', 
+                        maxHeight: '600px',
+                        cursor: isDragging ? 'grabbing' : 'grab'
+                      }}
+                      onMouseDown={(e) => {
+                        if (zoomLevel > 1) {
+                          setIsDragging(true);
+                          setDragStart({ x: e.clientX - panPosition.x, y: e.clientY - panPosition.y });
+                        }
+                      }}
+                      onMouseMove={(e) => {
+                        if (isDragging && zoomLevel > 1) {
+                          setPanPosition({
+                            x: e.clientX - dragStart.x,
+                            y: e.clientY - dragStart.y
+                          });
+                        }
+                      }}
+                      onMouseUp={() => setIsDragging(false)}
+                      onMouseLeave={() => setIsDragging(false)}
+                    >
+                      {/* Zoom Controls - Top Left Corner */}
+                      <div className={`absolute -top-1 left-1 flex gap-2 z-10 transition-opacity duration-300 ${
+                        isImageHovered ? 'opacity-100' : 'opacity-0'
+                      }`}>
+                        <button
+                          onClick={() => setZoomLevel(prev => Math.min(prev + 0.5, 5))}
+                          className="bg-black bg-opacity-70 text-white px-3 py-1 rounded hover:bg-opacity-90 transition-colors"
+                        >
+                          +
+                        </button>
+                        <button
+                          onClick={() => setZoomLevel(prev => Math.max(prev - 0.5, 0.5))}
+                          className="bg-black bg-opacity-70 text-white px-3 py-1 rounded hover:bg-opacity-90 transition-colors"
+                        >
+                          -
+                        </button>
+                        <button
+                          onClick={() => {
+                            setZoomLevel(1);
+                            setPanPosition({ x: 0, y: 0 });
+                          }}
+                          className="bg-black bg-opacity-70 text-white px-3 py-1 rounded hover:bg-opacity-90 transition-colors"
+                        >
+                          Reset
+                        </button>
+                      </div>
+
+                      {/* Zoom Level Display - Top Right Corner */}
+                      <div className={`absolute -top-1 right-1 bg-black bg-opacity-70 text-white px-3 py-1 rounded z-10 transition-opacity duration-300 ${
+                        isImageHovered ? 'opacity-100' : 'opacity-0'
+                      }`}>
+                        {Math.round(zoomLevel * 100)}%
+                      </div>
+
+                      <img 
+                        src="/dia - Copy (3).svg" 
+                        alt="System Architecture - Multi-channel topic modeling pipeline showing Email, Chat, and Ticket data processing with LLM operations, clustering, and post-processing workflows"
+                        style={{ 
+                          transform: `scale(${zoomLevel}) translate(${panPosition.x / zoomLevel}px, ${panPosition.y / zoomLevel}px)`,
+                          transformOrigin: 'center',
+                          width: '100%',
+                          height: 'auto',
+                          objectFit: 'contain'
+                        }}
+                        draggable={false}
+                      />
+                    </div>
+                </div>
 
                 {/* Architecture Features */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="flex flex-col md:flex-row gap-2">
                   {architectureFeatures.map((feature, index) => (
-                    <div key={index} className="group bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition-all duration-300 hover:scale-105">
-                      <div className="text-pink-400 mb-4 group-hover:text-purple-400 transition-colors">
-                        {feature.icon}
+                    <div key={index} className="group bg-gray-800 rounded-lg px-10 py-8 hover:bg-gray-700 transition-all duration-300 hover:scale-105 flex-1">
+                      <div className="text-pink-400 mb-6 group-hover:text-purple-400 transition-colors">
+                        <div className="w-12 h-12 flex items-center justify-center">
+                          {feature.icon}
+                        </div>
                       </div>
-                      <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                      <p className="text-gray-300">{feature.description}</p>
+                      <h3 className="text-lg font-semibold text-white mb-4">{feature.title}</h3>
+                      <p className="text-gray-300 text-sm">{feature.description}</p>
                     </div>
                   ))}
                 </div>
@@ -718,7 +721,7 @@ const HomePage = () => {
                         <div className="flex items-start gap-3">
                           <div className="w-2 h-2 bg-purple-400 rounded-full mt-2"></div>
                           <div>
-                            <strong>LLM Content Extractor (Gemma 3 27b):</strong> Extracts key information elements including customer issue type, requested actions, product mentions, and historical context
+                            <strong>LLM Content Extractor:</strong> Extracts key information elements including customer issue type, requested actions, product mentions, and historical context
                           </div>
                         </div>
                       </div>
@@ -782,7 +785,7 @@ const HomePage = () => {
                     <h3 className="text-xl font-semibold text-purple-400 mb-4">Word Count Routing</h3>
                     <div className="space-y-4 text-gray-200">
                       <div className="p-3 bg-gray-700 rounded">
-                        <strong>Emails {'>'} 700 words:</strong> Routed to Gemma 3 27b for summarization
+                        <strong>Emails {'>'} 700 words:</strong> Routed to Gemma 3 for summarization
                       </div>
                       <div className="p-3 bg-gray-700 rounded">
                         <strong>Emails ≤ 700 words:</strong> Direct to topic extraction
@@ -828,7 +831,7 @@ const HomePage = () => {
                         </p>
                       </div>
                       <div className="bg-gray-700 rounded-lg p-4">
-                        <h4 className="font-semibold text-white mb-2">LLM Chunking (Gemma 3 27b)</h4>
+                        <h4 className="font-semibold text-white mb-2">LLM Chunking</h4>
                         <p className="text-gray-300 text-sm">
                           Applies chunking logic to create semantically coherent conversation segments 
                           while preserving contextual relationships
@@ -852,6 +855,116 @@ const HomePage = () => {
                         <p className="text-gray-300 text-sm">
                           Hierarchical clustering with outlier detection, creating primary and sub-clusters 
                           with automated label generation
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Voice Transcript Processing Pipeline */}
+            <section className="py-20 px-4">
+              <div className="max-w-6xl mx-auto">
+                <h2 className="text-4xl font-bold text-white mb-12 text-center">Voice Transcript Processing Pipeline</h2>
+                
+                <div className="grid md:grid-cols-2 gap-12">
+                  <div className="space-y-8">
+                    <div className="bg-gray-700 rounded-lg p-6 h-48 flex flex-col">
+                      <h3 className="text-2xl font-semibold text-pink-400 mb-4">Audio Processing</h3>
+                      <div className="space-y-3 text-gray-200 flex-1">
+                        <div className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-pink-400 rounded-full mt-2"></div>
+                          <div>
+                            <strong>Call Transcription:</strong> High-accuracy speech-to-text conversion of customer support calls, handling multiple languages, accents, and call quality variations
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-gray-700 rounded-lg p-6 h-48 flex flex-col">
+                      <h3 className="text-2xl font-semibold text-purple-400 mb-4">Content Analysis</h3>
+                      <div className="space-y-3 text-gray-200 flex-1">
+                        <div className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-purple-400 rounded-full mt-2"></div>
+                          <div>
+                            <strong>Customer-Agent Analysis:</strong> Analyze customer sentiment, agent performance, issue resolution patterns, and call outcome effectiveness from support conversations
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-8">
+                    <div className="bg-gray-700 rounded-lg p-6 h-48 flex flex-col">
+                      <h3 className="text-2xl font-semibold text-pink-400 mb-4">Topic Extraction</h3>
+                      <div className="space-y-3 text-gray-200 flex-1">
+                        <div className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-pink-400 rounded-full mt-2"></div>
+                          <div>
+                            <strong>Support Call Topic Extraction:</strong> Extract customer issues, resolution steps, product mentions, and escalation patterns from support call transcripts
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="bg-gray-700 rounded-lg p-6 h-48 flex flex-col">
+                      <h3 className="text-2xl font-semibold text-purple-400 mb-4">Quality Assurance</h3>
+                      <div className="space-y-3 text-gray-200 flex-1">
+                        <div className="flex items-start gap-3">
+                          <div className="w-2 h-2 bg-purple-400 rounded-full mt-2"></div>
+                          <div>
+                            <strong>Call Quality Metrics:</strong> Validate transcription accuracy, measure call resolution success rates, and track agent performance indicators for support optimization
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Social Media Processing Pipeline */}
+            <section className="py-20 px-4 bg-gradient-to-r from-gray-800 to-gray-900">
+              <div className="max-w-6xl mx-auto">
+                <h2 className="text-4xl font-bold text-white mb-12 text-center">Social Media Processing Pipeline</h2>
+                
+                <div className="grid md:grid-cols-2 gap-12">
+                  <div>
+                    <h3 className="text-2xl font-semibold text-pink-400 mb-6">Data Collection & Filtering</h3>
+                    <div className="space-y-4">
+                      <div className="bg-gray-700 rounded-lg p-4">
+                        <h4 className="font-semibold text-white mb-2">Multi-Platform Aggregation</h4>
+                        <p className="text-gray-300 text-sm">
+                          Collect posts, comments, mentions, and reviews from Twitter, Trustpilot, Reddit, 
+                          Google Play Store, and App Store with real-time monitoring capabilities
+                        </p>
+                      </div>
+                      <div className="bg-gray-700 rounded-lg p-4">
+                        <h4 className="font-semibold text-white mb-2">Content Preprocessing</h4>
+                        <p className="text-gray-300 text-sm">
+                          Clean and standardize content from Twitter (tweets, replies), Trustpilot (reviews), 
+                          Reddit (posts, comments), and app stores (reviews, ratings) for consistent analysis
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-2xl font-semibold text-purple-400 mb-6">Sentiment & Trend Analysis</h3>
+                    <div className="space-y-4">
+                      <div className="bg-gray-700 rounded-lg p-4">
+                        <h4 className="font-semibold text-white mb-2">Brand Sentiment Tracking</h4>
+                        <p className="text-gray-300 text-sm">
+                          Analyze brand mentions across Twitter, Trustpilot reviews, Reddit discussions, 
+                          and app store feedback with real-time sentiment scoring and trend identification
+                        </p>
+                      </div>
+                      <div className="bg-gray-700 rounded-lg p-4">
+                        <h4 className="font-semibold text-white mb-2">Review & Discussion Analysis</h4>
+                        <p className="text-gray-300 text-sm">
+                          Track review trends, identify key discussion topics on Reddit, monitor 
+                          Twitter engagement, and analyze app store rating patterns for strategic insights
                         </p>
                       </div>
                     </div>

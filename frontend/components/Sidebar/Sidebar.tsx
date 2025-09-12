@@ -155,6 +155,11 @@ const Sidebar: React.FC<SidebarProps> = ({ className = '', onClose }) => {
       }
       // You can add more routes for other keys here if needed
       console.log('selected', key);
+      
+      // Close sidebar after navigation
+      if (onClose) {
+        onClose();
+      }
     }
   };
 

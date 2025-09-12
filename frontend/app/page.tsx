@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef } from 'react';
-import { Brain, Mail, MessageSquare, Ticket, TrendingUp, ArrowRight, Database, Settings, Shield, Zap } from 'lucide-react';
+import { Brain, Mail, MessageSquare, Ticket, TrendingUp, ArrowRight, Database, Settings, Shield, Zap, Phone, Share2 } from 'lucide-react';
 import {Header} from '@/components/Header/Header';
 import * as THREE from 'three';
 import './globals.css';
@@ -204,29 +204,34 @@ const HomePage: React.FC = () => {
 
   const productFeatures = [
     {
-      icon: <Mail className="w-8 h-8" />,
+      icon: <Mail className="w-12 h-12" />,
       title: "Email Analysis",
       description: "Automatically categorize and prioritize emails to streamline customer support"
     },
     {
-      icon: <MessageSquare className="w-8 h-8" />,
+      icon: <MessageSquare className="w-12 h-12" />,
       title: "Chat Insights",
       description: "Extract key insights from chat conversations to enhance customer engagement"
     },
     {
-      icon: <Ticket className="w-8 h-8" />,
+      icon: <Ticket className="w-12 h-12" />,
       title: "Ticket Management",
       description: "Smart ticket classification for faster resolution and better resource allocation"
     },
     {
-      icon: <TrendingUp className="w-8 h-8" />,
-      title: "Trend Detection",
-      description: "Find the emerging trends and issues across all communication channels"
+      icon: <Phone className="w-12 h-12" />,
+      title: "Voice Transcript",
+      description: "Convert and analyze voice conversations to understand customer sentiment and needs"
+    },
+    {
+      icon: <Share2 className="w-12 h-12" />,
+      title: "Social Media",
+      description: "Monitor and analyze social media interactions to track brand sentiment and trends"
     }
   ];
 
   const businessBenefits = [
-    { icon: <Database className="w-6 h-6" />, title: "Cross-Channel Intelligence", description: "Unified analysis across email, chat, and ticket data" },
+    { icon: <Database className="w-6 h-6" />, title: "Cross-Channel Intelligence", description: "Unified analysis across email, chat, ticket, voice, and social media data" },
     { icon: <Settings className="w-6 h-6" />, title: "Automated Categorization", description: "Efficient routing and prioritization of customer issues" },
     { icon: <TrendingUp className="w-6 h-6" />, title: "Trend Identification", description: "Early detection of emerging problems and opportunities" },
     { icon: <Brain className="w-6 h-6" />, title: "Knowledge Discovery", description: "Surface insights missed in manual review processes" },
@@ -302,20 +307,22 @@ const HomePage: React.FC = () => {
         <section id="product-features" className="py-20 px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Why Choose Our Platform?</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Why Use Our Platform?</h2>
               <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
                 Our Topic Modeling Platform leverages advanced AI to analyze customer communications, providing businesses with the tools to make data-driven decisions
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
               {productFeatures.map((feature, index) => (
-                <div key={index} className="group bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition-all duration-300 hover:scale-105">
+                <div key={index} className="group bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-all duration-300 hover:scale-105 min-h-[240px] flex flex-col">
                   <div className="text-pink-400 mb-4 group-hover:text-purple-400 transition-colors">
-                    {feature.icon}
+                    <div className="w-12 h-12 flex items-center justify-center">
+                      {feature.icon}
+                    </div>
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                  <p className="text-gray-300">{feature.description}</p>
+                  <p className="text-gray-300 leading-relaxed flex-grow text-sm">{feature.description}</p>
                 </div>
               ))}
             </div>
