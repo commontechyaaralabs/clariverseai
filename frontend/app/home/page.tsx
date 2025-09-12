@@ -700,9 +700,9 @@ const HomePage = () => {
                 
                 <div className="grid md:grid-cols-2 gap-12">
                   <div className="space-y-8">
-                    <div className="bg-gray-700 rounded-lg p-6">
+                    <div className="bg-gray-700 rounded-lg p-6 h-48 flex flex-col">
                       <h3 className="text-2xl font-semibold text-pink-400 mb-4">Initial Processing</h3>
-                      <div className="space-y-3 text-gray-200">
+                      <div className="space-y-3 text-gray-200 flex-1">
                         <div className="flex items-start gap-3">
                           <div className="w-2 h-2 bg-pink-400 rounded-full mt-2"></div>
                           <div>
@@ -712,9 +712,9 @@ const HomePage = () => {
                       </div>
                     </div>
 
-                    <div className="bg-gray-700 rounded-lg p-6">
+                    <div className="bg-gray-700 rounded-lg p-6 h-48 flex flex-col">
                       <h3 className="text-2xl font-semibold text-purple-400 mb-4">Support Ticket Path</h3>
-                      <div className="space-y-3 text-gray-200">
+                      <div className="space-y-3 text-gray-200 flex-1">
                         <div className="flex items-start gap-3">
                           <div className="w-2 h-2 bg-purple-400 rounded-full mt-2"></div>
                           <div>
@@ -726,9 +726,9 @@ const HomePage = () => {
                   </div>
 
                   <div className="space-y-8">
-                    <div className="bg-gray-700 rounded-lg p-6">
+                    <div className="bg-gray-700 rounded-lg p-6 h-48 flex flex-col">
                       <h3 className="text-2xl font-semibold text-pink-400 mb-4">Alert Ticket Path</h3>
-                      <div className="space-y-3 text-gray-200">
+                      <div className="space-y-3 text-gray-200 flex-1">
                         <div className="flex items-start gap-3">
                           <div className="w-2 h-2 bg-pink-400 rounded-full mt-2"></div>
                           <div>
@@ -738,9 +738,9 @@ const HomePage = () => {
                       </div>
                     </div>
 
-                    <div className="bg-gray-700 rounded-lg p-6">
+                    <div className="bg-gray-700 rounded-lg p-6 h-48 flex flex-col">
                       <h3 className="text-2xl font-semibold text-purple-400 mb-4">K-Means Clustering</h3>
-                      <div className="space-y-3 text-gray-200">
+                      <div className="space-y-3 text-gray-200 flex-1">
                         <div className="flex items-start gap-3">
                           <div className="w-2 h-2 bg-purple-400 rounded-full mt-2"></div>
                           <div>
