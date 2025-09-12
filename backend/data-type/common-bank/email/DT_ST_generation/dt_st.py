@@ -7,7 +7,7 @@ import os
 
 class EuropeanBankTopicGenerator:
     def __init__(self):
-        self.api_key = "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"
+        self.api_key = "sk-orxxxxx"
         # Using the specified model
         self.model = "google/gemma-3-27b-it:free"
         self.base_url = "https://openrouter.ai/api/v1/chat/completions"

@@ -93,7 +93,7 @@ db = None
 social_media_col = None
 
 # OpenRouter setup
-OPENROUTER_API_KEY = "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"
+OPENROUTER_API_KEY = "sk-xxxx"
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1/chat/completions"
 OPENROUTER_MODEL = "google/gemma-3-27b-it:free"
 
