@@ -279,7 +279,10 @@ const HomePage: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="group bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-pink-600 hover:to-purple-700 transition-all duration-300 flex items-center gap-2">
+            <button 
+              onClick={() => router.push('/login')}
+              className="group bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-pink-600 hover:to-purple-700 transition-all duration-300 flex items-center gap-2"
+            >
               Request a Demo
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
@@ -367,41 +370,23 @@ const HomePage: React.FC = () => {
         {/* Footer */}
         <footer className="py-12 px-4 bg-gray-900 border-t border-gray-800">
           <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-4 gap-8">
-              <div>
-                                 <div className="flex items-center mb-4">
-                   <div className="w-8 h-8 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center">
-                     <span className="text-white font-bold">C</span>
-                   </div>
-                   <span className="text-white text-lg ml-2 font-semibold">Clariverse</span>
-                 </div>
-                <p className="text-gray-400">Empowering businesses with AI-driven insights</p>
+            <div className="grid md:grid-cols-2 gap-12 items-start">
+              <div className="space-y-4">
+                <div className="flex items-center">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center">
+                    <span className="text-white font-bold">C</span>
+                  </div>
+                  <span className="text-white text-lg ml-2 font-semibold">Clariverse</span>
+                </div>
+                <p className="text-gray-400 max-w-md">Empowering businesses with AI-driven insights</p>
               </div>
-              <div>
-                <h4 className="text-white font-semibold mb-4">Product</h4>
-                <ul className="space-y-2 text-gray-400">
-                  <li><a href="#" className="hover:text-pink-400 transition-colors">Email Analysis</a></li>
-                  <li><a href="#" className="hover:text-pink-400 transition-colors">Chat Insights</a></li>
-                  <li><a href="#" className="hover:text-pink-400 transition-colors">Ticket Management</a></li>
-                  <li><a href="#" className="hover:text-pink-400 transition-colors">Trend Detection</a></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-white font-semibold mb-4">Company</h4>
-                <ul className="space-y-2 text-gray-400">
-                  <li><a href="#" className="hover:text-pink-400 transition-colors">About Us</a></li>
-                  <li><a href="#" className="hover:text-pink-400 transition-colors">Careers</a></li>
-                  <li><a href="#" className="hover:text-pink-400 transition-colors">Case Studies</a></li>
-                  <li><a href="#" className="hover:text-pink-400 transition-colors">Blog</a></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-white font-semibold mb-4">Contact</h4>
-                <ul className="space-y-2 text-gray-400">
-                  <li>contact@clariverse.com</li>
-                  <li>+1 (555) 123-4567</li>
-                  <li>San Francisco, CA</li>
-                </ul>
+              <div className="space-y-4">
+                <h4 className="text-white font-semibold text-lg">Contact</h4>
+                <div className="space-y-3 text-gray-400">
+                  <div>contact@clariverse.com</div>
+                  <div>+1 (555) 123-4567</div>
+                  <div>San Francisco, CA</div>
+                </div>
               </div>
             </div>
                          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">

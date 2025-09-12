@@ -235,41 +235,23 @@ export function LandingPage() {
         {/* Footer */}
         <footer className="py-12 px-4 bg-gray-900 border-t border-gray-800">
           <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-4 gap-8">
-              <div>
-                <div className="flex items-center mb-4">
+            <div className="grid md:grid-cols-2 gap-12 items-start">
+              <div className="space-y-4">
+                <div className="flex items-center">
                   <div className="w-8 h-8 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center">
                     <span className="text-white font-bold">C</span>
                   </div>
                   <span className="text-white text-lg ml-2 font-semibold">Clariverse</span>
                 </div>
-                <p className="text-gray-400">AI-driven solutions for tomorrow&apos;s challenges</p>
+                <p className="text-gray-400 max-w-md">AI-driven solutions for tomorrow&apos;s challenges</p>
               </div>
-              <div>
-                <h4 className="text-white font-semibold mb-4">Solutions</h4>
-                <ul className="space-y-2 text-gray-400">
-                  <li><a href="#" className="hover:text-pink-400 transition-colors">AI Strategy</a></li>
-                  <li><a href="#" className="hover:text-pink-400 transition-colors">Custom Development</a></li>
-                  <li><a href="#" className="hover:text-pink-400 transition-colors">Topic Modeling</a></li>
-                  <li><a href="#" className="hover:text-pink-400 transition-colors">Implementation</a></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-white font-semibold mb-4">Company</h4>
-                <ul className="space-y-2 text-gray-400">
-                  <li><a href="#" className="hover:text-pink-400 transition-colors">About Us</a></li>
-                  <li><a href="#" className="hover:text-pink-400 transition-colors">Careers</a></li>
-                  <li><a href="#" className="hover:text-pink-400 transition-colors">Case Studies</a></li>
-                  <li><a href="#" className="hover:text-pink-400 transition-colors">Blog</a></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-white font-semibold mb-4">Contact</h4>
-                <ul className="space-y-2 text-gray-400">
-                  <li>contact@clariverse.com</li>
-                  <li>+1 (555) 123-4567</li>
-                  <li>San Francisco, CA</li>
-                </ul>
+              <div className="space-y-4">
+                <h4 className="text-white font-semibold text-lg">Contact</h4>
+                <div className="space-y-3 text-gray-400">
+                  <div>contact@clariverse.com</div>
+                  <div>+1 (555) 123-4567</div>
+                  <div>San Francisco, CA</div>
+                </div>
               </div>
             </div>
             <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
