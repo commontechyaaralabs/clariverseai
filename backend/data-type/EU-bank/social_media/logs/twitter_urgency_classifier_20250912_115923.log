@@ -1,0 +1,80 @@
+2025-09-12 11:59:23,981 - INFO - Twitter Urgency Classifier Starting...
+2025-09-12 11:59:23,981 - INFO - Database: sparzaai
+2025-09-12 11:59:23,982 - INFO - Collection: socialmedia
+2025-09-12 11:59:23,982 - INFO - Target Channel: Twitter (case-insensitive)
+2025-09-12 11:59:23,982 - INFO - Model: google/gemma-3-27b-it:free
+2025-09-12 11:59:26,008 - INFO - Database connection established and indexes created
+2025-09-12 11:59:27,001 - INFO - Twitter Collection Statistics:
+2025-09-12 11:59:27,002 - INFO - Total Twitter records: 282
+2025-09-12 11:59:27,002 - INFO - With urgency classification: 156
+2025-09-12 11:59:27,002 - INFO - Without urgency classification: 126
+2025-09-12 11:59:27,005 - INFO - Urgent records: 71
+2025-09-12 11:59:27,006 - INFO - Non-urgent records: 85
+2025-09-12 11:59:27,252 - INFO - Sample record structure:
+2025-09-12 11:59:27,253 - INFO -   _id: 68bb12eb35db675a8b09a223
+2025-09-12 11:59:27,254 - INFO -   email_id: travishanna9819@gmail.com
+2025-09-12 11:59:27,254 - INFO -   username: Travis Hanna
+2025-09-12 11:59:27,255 - INFO -   channel: Twitter
+2025-09-12 11:59:27,255 - INFO -   dominant_topic: Balance Update Delayed
+2025-09-12 11:59:27,256 - INFO -   subtopics: Real-time Processing Problems, Process Optimization
+2025-09-12 11:59:27,256 - INFO -   created_at: 2024-11-14T23:14:43Z
+2025-09-12 11:59:27,257 - INFO -   domain: banking
+2025-09-12 11:59:27,257 - INFO -   tweet_id: T784232
+2025-09-12 11:59:27,257 - INFO -   user_id: 167052
+2025-09-12 11:59:27,258 - INFO -   content_generated_at: 2025-09-06T12:30:12.856793
+2025-09-12 11:59:27,258 - INFO -   hashtags: ['#BankingFail', '#DigitalBanking', '#PaymentIssues']
+2025-09-12 11:59:27,258 - INFO -   like_count: 42
+2025-09-12 11:59:27,259 - INFO -   priority: P2 - Medium
+2025-09-12 11:59:27,260 - INFO -   quote_count: 3
+2025-09-12 11:59:27,260 - INFO -   reply_count: 11
+2025-09-12 11:59:27,260 - INFO -   retweet_count: 9
+2025-09-12 11:59:27,261 - INFO -   sentiment: Negative
+2025-09-12 11:59:27,261 - INFO -   text: Honestly, @MyEUBank, still waiting for my balance ...
+2025-09-12 11:59:27,262 - INFO -   dominant_cluster_label: API, Features & Bugs
+2025-09-12 11:59:27,262 - INFO -   kmeans_cluster_id: 6
+2025-09-12 11:59:27,263 - INFO -   subcluster_id: 1
+2025-09-12 11:59:27,264 - INFO -   subcluster_label: Software & Feature Errors
+2025-09-12 11:59:27,265 - INFO -   kmeans_cluster_keyphrase: Balance Update Delayed
+2025-09-12 11:59:27,266 - INFO -   urgency: False
+2025-09-12 11:59:27,266 - INFO - Starting Twitter Urgency Classification...
+2025-09-12 11:59:27,267 - INFO - Testing connection to OpenRouter...
+2025-09-12 11:59:27,267 - INFO - Using model: google/gemma-3-27b-it:free
+2025-09-12 11:59:28,436 - ERROR - OpenRouter test failed with status: 429
+2025-09-12 11:59:28,437 - ERROR - Cannot proceed without OpenRouter connection
+2025-09-12 11:59:29,429 - INFO - Twitter Collection Statistics:
+2025-09-12 11:59:29,430 - INFO - Total Twitter records: 282
+2025-09-12 11:59:29,430 - INFO - With urgency classification: 156
+2025-09-12 11:59:29,431 - INFO - Without urgency classification: 126
+2025-09-12 11:59:29,431 - INFO - Urgent records: 71
+2025-09-12 11:59:29,431 - INFO - Non-urgent records: 85
+2025-09-12 11:59:29,678 - INFO - Sample record structure:
+2025-09-12 11:59:29,678 - INFO -   _id: 68bb12eb35db675a8b09a223
+2025-09-12 11:59:29,678 - INFO -   email_id: travishanna9819@gmail.com
+2025-09-12 11:59:29,678 - INFO -   username: Travis Hanna
+2025-09-12 11:59:29,679 - INFO -   channel: Twitter
+2025-09-12 11:59:29,679 - INFO -   dominant_topic: Balance Update Delayed
+2025-09-12 11:59:29,679 - INFO -   subtopics: Real-time Processing Problems, Process Optimization
+2025-09-12 11:59:29,680 - INFO -   created_at: 2024-11-14T23:14:43Z
+2025-09-12 11:59:29,680 - INFO -   domain: banking
+2025-09-12 11:59:29,680 - INFO -   tweet_id: T784232
+2025-09-12 11:59:29,681 - INFO -   user_id: 167052
+2025-09-12 11:59:29,681 - INFO -   content_generated_at: 2025-09-06T12:30:12.856793
+2025-09-12 11:59:29,682 - INFO -   hashtags: ['#BankingFail', '#DigitalBanking', '#PaymentIssues']
+2025-09-12 11:59:29,682 - INFO -   like_count: 42
+2025-09-12 11:59:29,682 - INFO -   priority: P2 - Medium
+2025-09-12 11:59:29,682 - INFO -   quote_count: 3
+2025-09-12 11:59:29,683 - INFO -   reply_count: 11
+2025-09-12 11:59:29,683 - INFO -   retweet_count: 9
+2025-09-12 11:59:29,684 - INFO -   sentiment: Negative
+2025-09-12 11:59:29,684 - INFO -   text: Honestly, @MyEUBank, still waiting for my balance ...
+2025-09-12 11:59:29,685 - INFO -   dominant_cluster_label: API, Features & Bugs
+2025-09-12 11:59:29,685 - INFO -   kmeans_cluster_id: 6
+2025-09-12 11:59:29,685 - INFO -   subcluster_id: 1
+2025-09-12 11:59:29,686 - INFO -   subcluster_label: Software & Feature Errors
+2025-09-12 11:59:29,686 - INFO -   kmeans_cluster_keyphrase: Balance Update Delayed
+2025-09-12 11:59:29,686 - INFO -   urgency: False
+2025-09-12 11:59:29,929 - INFO - Database connection closed
+2025-09-12 11:59:29,930 - INFO - Session complete. Check log files:
+2025-09-12 11:59:29,931 - INFO - Main Log: logs\twitter_urgency_classifier_20250912_115923.log
+2025-09-12 11:59:29,931 - INFO - Success Log: logs\successful_urgency_classifications_20250912_115923.log
+2025-09-12 11:59:29,932 - INFO - Failure Log: logs\failed_urgency_classifications_20250912_115923.log

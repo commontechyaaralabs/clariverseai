@@ -1,13 +1,28 @@
 import React from 'react';
 import { Brain } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
 
 interface LogoProps {
   className?: string;
 }
 
 const Logo: React.FC<LogoProps> = ({ className = "" }) => {
+  const router = useRouter();
+  const { status } = useSession();
+
+  const handleLogoClick = () => {
+    // Only navigate if user is authenticated
+    if (status === 'authenticated') {
+      router.push('/home');
+    }
+  };
+
   return (
-    <div className={`flex items-center ${className}`}>
+    <div 
+      className={`flex items-center cursor-pointer hover:opacity-80 transition-opacity ${className}`}
+      onClick={handleLogoClick}
+    >
       <div className="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center">
         <Brain className="w-5 h-5 text-white" />
       </div>
