@@ -137,17 +137,6 @@ export function LoginForm() {
         </button>
       </form>
 
-      <div className="mt-8 text-center">
-        <p className="text-gray-400">
-          Don&apos;t have an account yet?{" "}
-          <button 
-            onClick={() => router.push("/signup")}
-            className="text-pink-400 hover:text-pink-300 font-semibold transition-colors"
-          >
-            Sign up
-          </button>
-        </p>
-      </div>
     </>
   );
 } 
