@@ -390,9 +390,7 @@ const HomePage: React.FC = () => {
               <div className="space-y-4">
                 <h4 className="text-white font-semibold text-lg">Contact</h4>
                 <div className="space-y-3 text-gray-400">
-                  <div>contact@clariverse.com</div>
-                  <div>+1 (555) 123-4567</div>
-                  <div>San Francisco, CA</div>
+                  <div>hello@yaaralabs.ai</div>
                 </div>
               </div>
             </div>
