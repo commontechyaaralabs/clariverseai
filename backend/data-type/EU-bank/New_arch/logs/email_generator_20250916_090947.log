@@ -1,0 +1,117 @@
+2025-09-16 09:09:47,603 - INFO - EU Banking Email Content Generator Starting...
+2025-09-16 09:09:47,603 - INFO - Database: sparzaai
+2025-09-16 09:09:47,603 - INFO - Collection: email
+2025-09-16 09:09:47,603 - INFO - Model: gemma3:27b
+2025-09-16 09:09:47,603 - INFO - Ollama URL: https://quiet-accompanied-holland-candidate.trycloudflare.com
+2025-09-16 09:09:47,603 - INFO - Max Workers: 5
+2025-09-16 09:09:47,603 - INFO - Batch Size: 3
+2025-09-16 09:09:47,603 - INFO - Log Directory: logs
+2025-09-16 09:09:48,621 - INFO - Database connection established and indexes created
+2025-09-16 09:09:49,014 - INFO - Collection Statistics:
+2025-09-16 09:09:49,014 - INFO - Total emails: 2004
+2025-09-16 09:09:49,014 - INFO - With analysis fields: 0
+2025-09-16 09:09:49,014 - INFO - Without analysis fields: 2004
+2025-09-16 09:09:49,014 - INFO - Top Dominant Topics:
+2025-09-16 09:09:49,014 - INFO - 1. Risk Management Alert: 31 emails
+2025-09-16 09:09:49,015 - INFO - 2. User Access Approval: 30 emails
+2025-09-16 09:09:49,015 - INFO - 3. Quality Assurance Breach: 28 emails
+2025-09-16 09:09:49,015 - INFO - 4. IT Marketing Unresolved: 27 emails
+2025-09-16 09:09:49,015 - INFO - 5. IT Access Problem: 26 emails
+2025-09-16 09:09:49,015 - INFO - 6. Salary Leave Issues: 23 emails
+2025-09-16 09:09:49,015 - INFO - 7. Legal Escalation: 22 emails
+2025-09-16 09:09:49,015 - INFO - 8. Process Exception: 22 emails
+2025-09-16 09:09:49,015 - INFO - 9. Performance Management: 22 emails
+2025-09-16 09:09:49,015 - INFO - 10. Vendor Management: 22 emails
+2025-09-16 09:09:49,015 - INFO - No pending intermediate results to recover
+2025-09-16 09:09:49,015 - INFO - Starting EU Banking Email Content Generation...
+2025-09-16 09:09:49,015 - INFO - System Info: 128 CPU cores detected
+2025-09-16 09:09:49,015 - INFO - Batch size: 3
+2025-09-16 09:09:49,015 - INFO - Max workers: 5
+2025-09-16 09:09:49,015 - INFO - Request timeout: 120s
+2025-09-16 09:09:49,015 - INFO - Max retries per request: 5
+2025-09-16 09:09:49,016 - INFO - Testing connection to remote Ollama: https://quiet-accompanied-holland-candidate.trycloudflare.com
+2025-09-16 09:09:49,016 - INFO - Testing simple generation...
+2025-09-16 09:09:56,990 - INFO - Generation test status: 200
+2025-09-16 09:09:56,990 - INFO - Ollama connection test successful
+2025-09-16 09:09:56,990 - INFO - Test response: ```json
+{
+  "test": "success"
+}
+```
+...
+2025-09-16 09:09:56,992 - INFO - Fetching email records from database...
+2025-09-16 09:09:58,358 - INFO - Found 2004 emails needing content generation
+2025-09-16 09:09:58,359 - INFO - Processing in 668 batches of 3 emails each
+2025-09-16 09:09:58,359 - INFO - Processing batch 1/668 (3 emails)...
+2025-09-16 09:11:19,226 - INFO - Batch 1 processing complete: 3/3 successful
+2025-09-16 09:11:19,226 - INFO - Batch duration: 80.87s
+2025-09-16 09:11:19,226 - INFO - Saving batch of 3 updates to database...
+2025-09-16 09:11:19,357 - INFO - Successfully saved 3 records to database
+2025-09-16 09:11:19,357 - INFO - Sample update - Thread ID: conv_m365_b1014ac35f75
+2025-09-16 09:11:19,357 - INFO - Database update complete: 3 records saved
+2025-09-16 09:11:24,358 - INFO - Processing batch 2/668 (3 emails)...
+2025-09-16 09:12:33,261 - INFO - Batch 2 processing complete: 3/3 successful
+2025-09-16 09:12:33,261 - INFO - Batch duration: 68.90s
+2025-09-16 09:12:33,262 - INFO - Saving batch of 3 updates to database...
+2025-09-16 09:12:33,389 - INFO - Successfully saved 3 records to database
+2025-09-16 09:12:33,389 - INFO - Sample update - Thread ID: conv_m365_cafc4146ffa3
+2025-09-16 09:12:33,389 - INFO - Database update complete: 3 records saved
+2025-09-16 09:12:36,621 - INFO - Received signal 15. Initiating graceful shutdown...
+2025-09-16 09:12:36,622 - INFO - Please wait for current operations to complete...
+2025-09-16 09:12:38,389 - INFO - Shutdown requested. Stopping at batch 2/668
+2025-09-16 09:12:38,390 - INFO - Content generation interrupted gracefully!
+2025-09-16 09:12:38,390 - INFO - Total emails updated: 6
+2025-09-16 09:12:38,390 - INFO - Successful generations: 6
+2025-09-16 09:12:38,390 - INFO - Failed generations: 0
+2025-09-16 09:12:38,390 - INFO - Data updated in MongoDB: sparzaai.email
+2025-09-16 09:12:38,807 - INFO - Collection Statistics:
+2025-09-16 09:12:38,807 - INFO - Total emails: 2004
+2025-09-16 09:12:38,807 - INFO - With analysis fields: 6
+2025-09-16 09:12:38,807 - INFO - Without analysis fields: 1998
+2025-09-16 09:12:38,807 - INFO - Top Dominant Topics:
+2025-09-16 09:12:38,807 - INFO - 1. Risk Management Alert: 31 emails
+2025-09-16 09:12:38,807 - INFO - 2. User Access Approval: 30 emails
+2025-09-16 09:12:38,807 - INFO - 3. Quality Assurance Breach: 28 emails
+2025-09-16 09:12:38,808 - INFO - 4. IT Marketing Unresolved: 27 emails
+2025-09-16 09:12:38,808 - INFO - 5. IT Access Problem: 26 emails
+2025-09-16 09:12:38,808 - INFO - 6. Salary Leave Issues: 23 emails
+2025-09-16 09:12:38,808 - INFO - 7. Legal Escalation: 22 emails
+2025-09-16 09:12:38,808 - INFO - 8. Process Exception: 22 emails
+2025-09-16 09:12:38,808 - INFO - 9. Performance Management: 22 emails
+2025-09-16 09:12:38,808 - INFO - 10. Vendor Management: 22 emails
+2025-09-16 09:12:39,057 - INFO - Sample Generated Email Content:
+2025-09-16 09:12:39,058 - INFO - --- Sample Email 1 ---
+2025-09-16 09:12:39,058 - INFO - Thread ID: conv_m365_b95922d34b8a
+2025-09-16 09:12:39,058 - INFO - Dominant Topic: Internal Audit
+2025-09-16 09:12:39,058 - INFO - Subtopics: Audit Finding Response, Committee Escalation Alert...
+2025-09-16 09:12:39,058 - INFO - Stages: Escalate/Investigate
+2025-09-16 09:12:39,058 - INFO - Email Summary: This email from Victoria Alvarez, a Senior Compliance Officer at Eurobank AG, responds to an internal audit finding (#2024-IA-007) regarding inconsistencies in KYC documentation for corporate clients....
+2025-09-16 09:12:39,058 - INFO - Urgent: False
+2025-09-16 09:12:39,058 - INFO - --- Sample Email 2 ---
+2025-09-16 09:12:39,058 - INFO - Thread ID: conv_m365_b1014ac35f75
+2025-09-16 09:12:39,058 - INFO - Dominant Topic: Cross-Border Transfer Problem
+2025-09-16 09:12:39,058 - INFO - Subtopics: FX Settlement Error...
+2025-09-16 09:12:39,058 - INFO - Stages: Attempt Resolution
+2025-09-16 09:12:39,058 - INFO - Email Summary: This email thread consists of a single message from James Davidson of Eurobank AG to Shawn Robertson, reporting a discrepancy in a cross-border transfer. A EUR 10,000 transfer from Germany to Spain re...
+2025-09-16 09:12:39,058 - INFO - Urgent: False
+2025-09-16 09:12:39,058 - INFO - --- Sample Email 3 ---
+2025-09-16 09:12:39,058 - INFO - Thread ID: conv_m365_30d11d7521a5
+2025-09-16 09:12:39,059 - INFO - Dominant Topic: Covenant Breach Alert
+2025-09-16 09:12:39,059 - INFO - Subtopics: Covenant Monitoring Alert, Financial Ratio Problem, Loan Condition Issue...
+2025-09-16 09:12:39,059 - INFO - Stages: Attempt Resolution
+2025-09-16 09:12:39,059 - INFO - Email Summary: This email thread consists of a single message from Justin Wright, a Relationship Manager at EuroBank AG, to Jennifer Valdez. The message serves as a formal notification of a potential breach of finan...
+2025-09-16 09:12:39,059 - INFO - Urgent: False
+2025-09-16 09:12:39,192 - INFO - Content validation complete: 6 issues found
+2025-09-16 09:12:39,192 - WARNING - Found 6 content validation issues
+2025-09-16 09:12:39,449 - INFO - Status report generated: logs/status_report_20250916_091239.json
+2025-09-16 09:12:39,450 - INFO - Final session report:
+2025-09-16 09:12:39,450 - INFO - Success Rate: 100.00%
+2025-09-16 09:12:39,450 - INFO - Database Completion: 0.30%
+2025-09-16 09:12:39,576 - INFO - Database connection closed
+2025-09-16 09:12:39,576 - INFO - Session complete. Check log files for detailed information:
+2025-09-16 09:12:39,576 - INFO - Main Log: logs/email_generator_20250916_090947.log
+2025-09-16 09:12:39,576 - INFO - Success Log: logs/successful_generations_20250916_090947.log
+2025-09-16 09:12:39,576 - INFO - Failure Log: logs/failed_generations_20250916_090947.log
+2025-09-16 09:12:39,577 - INFO - Progress Log: logs/progress_20250916_090947.log
+2025-09-16 09:12:39,577 - INFO - Intermediate Results: logs/intermediate_results_20250916_090947.json
+2025-09-16 09:12:39,577 - INFO - Database connection closed

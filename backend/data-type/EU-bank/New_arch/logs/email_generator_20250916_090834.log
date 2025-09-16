@@ -1,0 +1,13 @@
+2025-09-16 09:08:34,732 - INFO - EU Banking Email Content Generator Starting...
+2025-09-16 09:08:34,732 - INFO - Database: sparzaai
+2025-09-16 09:08:34,732 - INFO - Collection: email
+2025-09-16 09:08:34,732 - INFO - Model: gemma3:27b
+2025-09-16 09:08:34,732 - INFO - Ollama URL: https://quiet-accompanied-holland-candidate.trycloudflare.com
+2025-09-16 09:08:34,732 - INFO - Max Workers: 5
+2025-09-16 09:08:34,732 - INFO - Batch Size: 3
+2025-09-16 09:08:34,732 - INFO - Log Directory: logs
+2025-09-16 09:08:36,516 - INFO - Received signal 2. Initiating graceful shutdown...
+2025-09-16 09:08:36,516 - INFO - Please wait for current operations to complete...
+2025-09-16 09:08:39,743 - ERROR - Database connection failed: localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 5.0s, Topology Description: <TopologyDescription id: 68c929122c58d7c82cced5d0, topology_type: Unknown, servers: [<ServerDescription ('localhost', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('localhost:27017: [Errno 111] Connection refused (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+2025-09-16 09:08:39,743 - ERROR - Cannot proceed without database connection
+2025-09-16 09:08:39,743 - INFO - Database connection closed
