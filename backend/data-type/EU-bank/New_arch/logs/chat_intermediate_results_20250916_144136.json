@@ -1,0 +1,494 @@
+[
+  {
+    "chat_id": "19:a8b1c2d3e4f5g6h7i8j9k0l1m2n3o4p5@thread.v2",
+    "chat_document": {
+      "provider": "m365",
+      "dominant_topic": "Transaction Support",
+      "subtopics": "Payment processing, Transaction disputes, Transfer delays",
+      "chat": {
+        "chat_id": "19:a8b1c2d3e4f5g6h7i8j9k0l1m2n3o4p5@thread.v2",
+        "chatType": "oneOnOne",
+        "topic": "Transaction Dispute & Delay",
+        "createdDateTime": "2025-02-10T09:30:00Z",
+        "lastUpdatedDateTime": "2025-02-10T10:15:00Z",
+        "message_count": 7,
+        "members": [
+          {
+            "id": "donna.fowler@unicredit.it",
+            "displayName": "Hans Mueller",
+            "userIdentityType": "aadUser"
+          },
+          {
+            "id": "erik.flores@hernandez-hood.com",
+            "displayName": "David Garcia",
+            "userIdentityType": "aadUser"
+          }
+        ]
+      },
+      "messages": [
+        {
+          "id": "msg_1",
+          "chatId": "19:a8b1c2d3e4f5g6h7i8j9k0l1m2n3o4p5@thread.v2",
+          "createdDateTime": "2025-02-10T09:30:00Z",
+          "from": {
+            "user": {
+              "id": "donna.fowler@unicredit.it",
+              "displayName": "Hans Mueller",
+              "userIdentityType": "aadUser"
+            }
+          },
+          "body": {
+            "contentType": "text",
+            "content": "Good morning David, I hope you're having a good start to the week. I'm following up on a SEPA transfer initiated on 03/02/2025 from account DE89370400440532012000 to ES12345678901234567890. The beneficiary reports not receiving the funds. Could you please investigate?  We need to ensure compliance with PSD2 regulations regarding timely payment processing."
+          }
+        },
+        {
+          "id": "msg_2",
+          "chatId": "19:a8b1c2d3e4f5g6h7i8j9k0l1m2n3o4p5@thread.v2",
+          "createdDateTime": "2025-02-10T09:32:00Z",
+          "from": {
+            "user": {
+              "id": "erik.flores@hernandez-hood.com",
+              "displayName": "David Garcia",
+              "userIdentityType": "aadUser"
+            }
+          },
+          "body": {
+            "contentType": "text",
+            "content": "Morning Hans, thanks for reaching out.  I'll check on that immediately. Can you confirm the exact amount transferred, please?  Just need to cross-reference with our records.  Also, is this the first time this beneficiary has experienced a delay with transfers from Unicredit?"
+          }
+        },
+        {
+          "id": "msg_3",
+          "chatId": "19:a8b1c2d3e4f5g6h7i8j9k0l1m2n3o4p5@thread.v2",
+          "createdDateTime": "2025-02-10T09:35:00Z",
+          "from": {
+            "user": {
+              "id": "donna.fowler@unicredit.it",
+              "displayName": "Hans Mueller",
+              "userIdentityType": "aadUser"
+            }
+          },
+          "body": {
+            "contentType": "text",
+            "content": "The amount was \u20ac2,500.00. And no, this is the first instance of a delay with this beneficiary. They usually receive funds within 1-2 business days. We're keen to resolve this quickly to maintain a good relationship with our client and avoid any potential complaints under the SEPA scheme."
+          }
+        },
+        {
+          "id": "msg_4",
+          "chatId": "19:a8b1c2d3e4f5g6h7i8j9k0l1m2n3o4p5@thread.v2",
+          "createdDateTime": "2025-02-10T09:40:00Z",
+          "from": {
+            "user": {
+              "id": "erik.flores@hernandez-hood.com",
+              "displayName": "David Garcia",
+              "userIdentityType": "aadUser"
+            }
+          },
+          "body": {
+            "contentType": "text",
+            "content": "Thanks, Hans. I've checked our system, and it appears the transfer was flagged for a manual review due to a potential AML alert. It's now been cleared. I'm initiating the release of funds now. It should reflect in the beneficiary's account within 2-3 hours. Apologies for the delay."
+          }
+        },
+        {
+          "id": "msg_5",
+          "chatId": "19:a8b1c2d3e4f5g6h7i8j9k0l1m2n3o4p5@thread.v2",
+          "createdDateTime": "2025-02-10T09:45:00Z",
+          "from": {
+            "user": {
+              "id": "donna.fowler@unicredit.it",
+              "displayName": "Hans Mueller",
+              "userIdentityType": "aadUser"
+            }
+          },
+          "body": {
+            "contentType": "text",
+            "content": "That's excellent news, David. Thank you for the swift resolution. It's good to know the AML checks are functioning correctly, even if it caused a temporary delay. Could you please provide a reference number for this incident for our records?"
+          }
+        },
+        {
+          "id": "msg_6",
+          "chatId": "19:a8b1c2d3e4f5g6h7i8j9k0l1m2n3o4p5@thread.v2",
+          "createdDateTime": "2025-02-10T09:50:00Z",
+          "from": {
+            "user": {
+              "id": "erik.flores@hernandez-hood.com",
+              "displayName": "David Garcia",
+              "userIdentityType": "aadUser"
+            }
+          },
+          "body": {
+            "contentType": "text",
+            "content": "Certainly. The reference number is AML-20250210-001. I've also added a note to the transaction history detailing the manual review.  We're continuously refining our AML processes to minimize these occurrences while maintaining compliance."
+          }
+        },
+        {
+          "id": "msg_7",
+          "chatId": "19:a8b1c2d3e4f5g6h7i8j9k0l1m2n3o4p5@thread.v2",
+          "createdDateTime": "2025-02-10T10:15:00Z",
+          "from": {
+            "user": {
+              "id": "donna.fowler@unicredit.it",
+              "displayName": "Hans Mueller",
+              "userIdentityType": "aadUser"
+            }
+          },
+          "body": {
+            "contentType": "text",
+            "content": "Perfect, thank you again for your help, David. I'll pass this information on to our client. Have a good day."
+          }
+        }
+      ],
+      "stages": "Resolve",
+      "chat_summary": "This chat thread details a transaction dispute regarding a SEPA transfer of \u20ac2,500.00. The beneficiary hadn't received the funds, prompting Hans Mueller (Unicredit) to contact David Garcia (Hernandez-Hood) for investigation. The delay was due to a manual AML review, which was subsequently cleared. David released the funds and provided a reference number for the incident. The issue was resolved, and Hans confirmed he would update the client. The conversation demonstrates effective communication and resolution of a payment issue within the EU banking framework, adhering to PSD2 and AML regulations.",
+      "action_pending_status": "no",
+      "action_pending_from": null,
+      "resolution_status": "closed",
+      "follow_up_required": "no",
+      "follow_up_date": null,
+      "follow_up_reason": null,
+      "next_action_suggestion": "Implement automated alerts for AML flagged transactions to proactively inform clients of potential delays. This enhances transparency and builds trust, improving customer retention and reducing support requests.",
+      "urgency": false,
+      "sentiment": {
+        "0": 0,
+        "1": 1,
+        "2": 1,
+        "3": 1,
+        "4": 1,
+        "5": 1,
+        "6": 0
+      },
+      "overall_sentiment": 1
+    },
+    "timestamp": "2025-09-16T14:42:47.950239"
+  },
+  {
+    "chat_id": "19:a8b1c2d3e4f5g6h7i8j9k0l1m2n3o4p5@thread.v2",
+    "chat_document": {
+      "provider": "m365",
+      "dominant_topic": "Transaction Support",
+      "subtopics": "Transaction disputes, Currency exchange, Transfer delays",
+      "chat": {
+        "chat_id": "19:a8b1c2d3e4f5g6h7i8j9k0l1m2n3o4p5@thread.v2",
+        "chatType": "oneOnOne",
+        "topic": null,
+        "createdDateTime": "2025-03-10T09:30:00Z",
+        "lastUpdatedDateTime": "2025-03-10T09:38:00Z",
+        "message_count": 2,
+        "members": [
+          {
+            "id": "chad.walsh@unicredit.it",
+            "displayName": "Carlos Santos",
+            "userIdentityType": "aadUser"
+          },
+          {
+            "id": "susan.franklin@avila-harper.com",
+            "displayName": "Jennifer Martinez",
+            "userIdentityType": "aadUser"
+          }
+        ]
+      },
+      "messages": [
+        {
+          "id": "msg_1234567890",
+          "chatId": "19:a8b1c2d3e4f5g6h7i8j9k0l1m2n3o4p5@thread.v2",
+          "createdDateTime": "2025-03-10T09:30:00Z",
+          "from": {
+            "user": {
+              "id": "chad.walsh@unicredit.it",
+              "displayName": "Carlos Santos",
+              "userIdentityType": "aadUser"
+            }
+          },
+          "body": {
+            "contentType": "text",
+            "content": "Good morning Jennifer, Carlos here from UniCredit. I\u2019m following up on a SEPA transfer you initiated on 05/03/2025 \u2013 reference number AVH20250305-01. Our system shows a slight delay \u2013 it hasn\u2019t cleared yet, and I wanted to check if you\u2019ve received confirmation from your end, or if there's anything I can assist with?  We're seeing slightly higher processing times due to the new PSD3 compliance checks, but this shouldn't be causing significant delays.  Let me know if you have the transaction details handy."
+          }
+        },
+        {
+          "id": "msg_0987654321",
+          "chatId": "19:a8b1c2d3e4f5g6h7i8j9k0l1m2n3o4p5@thread.v2",
+          "createdDateTime": "2025-03-10T09:38:00Z",
+          "from": {
+            "user": {
+              "id": "susan.franklin@avila-harper.com",
+              "displayName": "Jennifer Martinez",
+              "userIdentityType": "aadUser"
+            }
+          },
+          "body": {
+            "contentType": "text",
+            "content": "Hi Carlos, thanks for checking in. No, I haven\u2019t received confirmation yet, and the client is starting to ask questions. The reference number is correct. I\u2019ve double-checked our records, and the transfer was authorized on our side.  It's a fairly substantial amount \u2013 around \u20ac25,000 \u2013 so the client is understandably concerned. Could you please investigate further and let me know what's causing the delay?  Perhaps a SWIFT message trace would help? Thanks!"
+          }
+        }
+      ],
+      "stages": "Attempt Resolution",
+      "chat_summary": "This chat conversation involves Jennifer Martinez from Avila-Harper contacting Carlos Santos at UniCredit regarding a delayed SEPA transfer of \u20ac25,000. Jennifer initiated the transfer on 05/03/2025, and the client is now inquiring about the status. Carlos proactively followed up to investigate the delay, citing potential issues with new PSD3 compliance checks. Jennifer confirmed the transfer was authorized on her side and requested further investigation, suggesting a SWIFT message trace. The issue is still unresolved, and Carlos is expected to investigate further.",
+      "action_pending_status": "yes",
+      "action_pending_from": "company",
+      "resolution_status": "open",
+      "follow_up_required": "yes",
+      "follow_up_date": "2025-03-11T09:00:00Z",
+      "follow_up_reason": "Carlos needs to investigate the SEPA transfer delay and provide Jennifer with an update. A SWIFT trace should be initiated to pinpoint the issue.",
+      "next_action_suggestion": "Prioritize the investigation of the delayed transfer and proactively communicate updates to Jennifer. Consider offering a temporary credit to the client as a goodwill gesture to maintain a strong relationship.",
+      "urgency": false,
+      "sentiment": {
+        "0": 1,
+        "1": 2
+      },
+      "overall_sentiment": 1.5
+    },
+    "timestamp": "2025-09-16T14:43:19.041690"
+  },
+  {
+    "chat_id": "19:a8f2d9c1e5b7@thread.v2",
+    "chat_document": {
+      "provider": "m365",
+      "dominant_topic": "Investment Advisory",
+      "subtopics": "Market analysis, Risk assessment, Retirement planning",
+      "chat": {
+        "chat_id": "19:a8f2d9c1e5b7@thread.v2",
+        "chatType": "oneOnOne",
+        "topic": "Investment Advisory",
+        "createdDateTime": "2025-03-10T09:30:00Z",
+        "lastUpdatedDateTime": "2025-03-10T09:45:00Z",
+        "message_count": 3,
+        "members": [
+          {
+            "id": "cheryl.hampton@santander.es",
+            "displayName": "Maria Rodriguez",
+            "userIdentityType": "aadUser"
+          },
+          {
+            "id": "robert.melendez@cobb.com",
+            "displayName": "Robert Johnson",
+            "userIdentityType": "aadUser"
+          }
+        ]
+      },
+      "messages": [
+        {
+          "id": "19:a8f2d9c1e5b7_1",
+          "chatId": "19:a8f2d9c1e5b7@thread.v2",
+          "createdDateTime": "2025-03-10T09:30:00Z",
+          "from": {
+            "user": {
+              "id": "cheryl.hampton@santander.es",
+              "displayName": "Maria Rodriguez",
+              "userIdentityType": "aadUser"
+            }
+          },
+          "body": {
+            "contentType": "text",
+            "content": "Good morning Robert, hope you're having a good start to the week. Following our call last week, I've prepared a preliminary portfolio review based on your retirement goals.  We're seeing some volatility in the Eurozone bond market, but opportunities in sustainable energy funds.  I've attached a document outlining the proposed changes, considering your risk profile (moderate).  Let me know your initial thoughts.  We need to ensure compliance with MiFID II regulations, so transparency is key."
+          }
+        },
+        {
+          "id": "19:a8f2d9c1e5b7_2",
+          "chatId": "19:a8f2d9c1e5b7@thread.v2",
+          "createdDateTime": "2025-03-10T09:38:00Z",
+          "from": {
+            "user": {
+              "id": "robert.melendez@cobb.com",
+              "displayName": "Robert Johnson",
+              "userIdentityType": "aadUser"
+            }
+          },
+          "body": {
+            "contentType": "text",
+            "content": "Hi Maria, thanks for sending this over so quickly.  I've had a quick look at the document. The sustainable energy funds sound interesting, and I'm happy with the moderate risk assessment.  Just one question - how does this impact my current exposure to UK gilts, given the recent inflation data?  Also, can we schedule a brief call tomorrow to discuss the details further? I'm available after 14:00 CET."
+          }
+        },
+        {
+          "id": "19:a8f2d9c1e5b7_3",
+          "chatId": "19:a8f2d9c1e5b7@thread.v2",
+          "createdDateTime": "2025-03-10T09:45:00Z",
+          "from": {
+            "user": {
+              "id": "cheryl.hampton@santander.es",
+              "displayName": "Maria Rodriguez",
+              "userIdentityType": "aadUser"
+            }
+          },
+          "body": {
+            "contentType": "text",
+            "content": "Hi Robert, good questions. The proposed changes would reduce your UK gilt exposure by approximately 15%, reallocating those funds to the diversified sustainable energy portfolio. I've updated the document to reflect this.  Yes, tomorrow after 14:00 CET works perfectly. I'll send you a calendar invite.  We can also discuss the potential impact of the upcoming ECB rate decision.  Looking forward to our call!"
+          }
+        }
+      ],
+      "stages": "Attempt Resolution",
+      "chat_summary": "This chat thread revolves around Maria Rodriguez, a Santander investment advisor, providing a portfolio review to Robert Johnson, a client. Maria presents a revised portfolio incorporating sustainable energy funds and adjusting UK gilt exposure, considering market volatility and the client's moderate risk profile. Robert asks clarifying questions about the impact on his existing holdings and requests a follow-up call to discuss the details further. Maria confirms the adjustments and schedules the call, also mentioning the upcoming ECB rate decision. The conversation focuses on providing investment advice and ensuring client understanding.",
+      "action_pending_status": "yes",
+      "action_pending_from": "company",
+      "resolution_status": "open",
+      "follow_up_required": "yes",
+      "follow_up_date": "2025-03-11T14:00:00Z",
+      "follow_up_reason": "Scheduled follow-up call to discuss portfolio details further.\nConfirm the call and prepare to address any remaining client questions.",
+      "next_action_suggestion": "Proactively send Robert a brief market update before the call to demonstrate value and build trust. This reinforces Santander's expertise and commitment to client success.",
+      "urgency": false,
+      "sentiment": {
+        "0": 1,
+        "1": 1,
+        "2": 1
+      },
+      "overall_sentiment": 1
+    },
+    "timestamp": "2025-09-16T14:44:00.362842"
+  },
+  {
+    "chat_id": "19:a8f29d3c7e1b@thread.v2",
+    "chat_document": {
+      "provider": "m365",
+      "dominant_topic": "Compliance & Regulations",
+      "subtopics": "AML procedures, KYC documentation, PCI DSS standards",
+      "chat": {
+        "chat_id": "19:a8f29d3c7e1b@thread.v2",
+        "chatType": "oneOnOne",
+        "topic": null,
+        "createdDateTime": "2025-03-10T09:32:00Z",
+        "lastUpdatedDateTime": "2025-03-10T09:45:00Z",
+        "message_count": 2,
+        "members": [
+          {
+            "id": "fernando.taylor@santander.es",
+            "displayName": "Emma Thompson",
+            "userIdentityType": "aadUser"
+          },
+          {
+            "id": "kristina.dixon@conley.com",
+            "displayName": "David Garcia",
+            "userIdentityType": "aadUser"
+          }
+        ]
+      },
+      "messages": [
+        {
+          "id": "19:a8f29d3c7e1b_1",
+          "chatId": "19:a8f29d3c7e1b@thread.v2",
+          "createdDateTime": "2025-03-10T09:32:00Z",
+          "from": {
+            "user": {
+              "id": "fernando.taylor@santander.es",
+              "displayName": "Emma Thompson",
+              "userIdentityType": "aadUser"
+            }
+          },
+          "body": {
+            "contentType": "text",
+            "content": "Hi David, quick question regarding a recent transaction flagged during our AML checks. We've received documentation for a client, Mr. Schmidt, but the source of funds declaration seems slightly ambiguous. It references a property sale in Germany dated 22/01/2025, but the supporting documentation isn't entirely clear on the net proceeds. Could you quickly check if Conley.com has any record of this transaction or the originating bank? It's impacting our ability to release funds. Thanks!"
+          }
+        },
+        {
+          "id": "19:a8f29d3c7e1b_2",
+          "chatId": "19:a8f29d3c7e1b@thread.v2",
+          "createdDateTime": "2025-03-10T09:45:00Z",
+          "from": {
+            "user": {
+              "id": "kristina.dixon@conley.com",
+              "displayName": "David Garcia",
+              "userIdentityType": "aadUser"
+            }
+          },
+          "body": {
+            "contentType": "text",
+            "content": "Hi Emma, yes, we do have a record of that property sale. It was processed through Deutsche Bank, account number DE89370400440532012000. The net proceeds were \u20ac285,000, after deducting realtor fees and taxes. I've attached a copy of the confirmation slip to this chat. It should satisfy your AML requirements. Let me know if you need anything else. We're fully PCI DSS compliant, of course, so data security isn't a concern."
+          }
+        }
+      ],
+      "stages": "Attempt Resolution",
+      "chat_summary": "Emma Thompson from Santander reached out to David Garcia at Conley.com regarding an ambiguous source of funds declaration for a client, Mr. Schmidt. Santander flagged a transaction during AML checks and requested confirmation of a property sale in Germany. David quickly verified the transaction details through Conley.com's records, confirming the net proceeds and providing supporting documentation. The issue appears resolved with the provided information, satisfying Santander's AML requirements and allowing them to proceed with releasing the funds.",
+      "action_pending_status": "no",
+      "action_pending_from": null,
+      "resolution_status": "closed",
+      "follow_up_required": "no",
+      "follow_up_date": null,
+      "follow_up_reason": null,
+      "next_action_suggestion": "Implement automated data sharing protocols between Santander and Conley.com for quicker AML verification. This will streamline processes, reduce manual effort, and enhance customer experience. Consider a secure API integration for real-time transaction confirmation.",
+      "urgency": false,
+      "sentiment": {
+        "0": 1,
+        "1": 1
+      },
+      "overall_sentiment": 1
+    },
+    "timestamp": "2025-09-16T14:44:28.486200"
+  },
+  {
+    "chat_id": "19:a8b1c2d3e4f5g6h7i8j9k0l1m2n3o4p5@thread.v2",
+    "chat_document": {
+      "provider": "m365",
+      "dominant_topic": "Compliance & Regulations",
+      "subtopics": "Regulatory reporting, AML procedures, PCI DSS standards",
+      "chat": {
+        "chat_id": "19:a8b1c2d3e4f5g6h7i8j9k0l1m2n3o4p5@thread.v2",
+        "chatType": "oneOnOne",
+        "topic": null,
+        "createdDateTime": "2025-03-10T09:30:00Z",
+        "lastUpdatedDateTime": "2025-03-10T09:45:00Z",
+        "message_count": 2,
+        "members": [
+          {
+            "id": "shannon.mcintyre@bundesbank.de",
+            "displayName": "Jean Dupont",
+            "userIdentityType": "aadUser"
+          },
+          {
+            "id": "cynthia.castillo@hicks.com",
+            "displayName": "Amanda Taylor",
+            "userIdentityType": "aadUser"
+          }
+        ]
+      },
+      "messages": [
+        {
+          "id": "19:q9r8s7t6u5v4w3x2y1z0a9b8c7d6e5f4",
+          "chatId": "19:a8b1c2d3e4f5g6h7i8j9k0l1m2n3o4p5@thread.v2",
+          "createdDateTime": "2025-03-10T09:30:00Z",
+          "from": {
+            "user": {
+              "id": "shannon.mcintyre@bundesbank.de",
+              "displayName": "Jean Dupont",
+              "userIdentityType": "aadUser"
+            }
+          },
+          "body": {
+            "contentType": "text",
+            "content": "Hi Amanda, quick question regarding the upcoming regulatory reporting deadline (28/03/2025). We're seeing some discrepancies in the pre-submission data for the AML transaction monitoring reports. Specifically, a few transactions flagged under PSD2 are missing the expected remittance information. Could you check if your team has applied the latest schema updates? It\u2019s crucial we align before submitting to BaFin. Let me know your thoughts."
+          }
+        },
+        {
+          "id": "19:z0a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5",
+          "chatId": "19:a8b1c2d3e4f5g6h7i8j9k0l1m2n3o4p5@thread.v2",
+          "createdDateTime": "2025-03-10T09:45:00Z",
+          "from": {
+            "user": {
+              "id": "cynthia.castillo@hicks.com",
+              "displayName": "Amanda Taylor",
+              "userIdentityType": "aadUser"
+            }
+          },
+          "body": {
+            "contentType": "text",
+            "content": "Hi Jean, thanks for flagging this. Yes, we had a minor rollout issue with the schema update on 05/03/2025. It seems a segment of transactions weren't correctly mapped. I've initiated a re-processing job \u2013 should be completed within the hour. I'll send you a confirmation once it\u2019s finished and the data is validated. Apologies for the inconvenience! We're also reviewing our PCI DSS compliance checks to prevent similar issues in the future."
+          }
+        }
+      ],
+      "stages": "Attempt Resolution",
+      "chat_summary": "Jean Dupont from Bundesbank reached out to Amanda Taylor regarding discrepancies in AML transaction monitoring reports due to a schema update issue. Jean was concerned about the upcoming regulatory reporting deadline to BaFin. Amanda confirmed a recent rollout issue with the schema update, initiated a re-processing job to correct the data, and assured Jean of completion within the hour. They also mentioned a review of PCI DSS compliance to prevent future issues. The conversation focused on ensuring data accuracy for regulatory reporting and proactive prevention of similar errors.",
+      "action_pending_status": "yes",
+      "action_pending_from": "company",
+      "resolution_status": "open",
+      "follow_up_required": "yes",
+      "follow_up_date": "2025-03-10T10:45:00Z",
+      "follow_up_reason": "Confirm data validation completion and successful re-processing of transactions.\nEnsure the re-processed data aligns with BaFin reporting requirements.",
+      "next_action_suggestion": "Implement automated data validation checks post-schema updates to proactively identify and resolve discrepancies. This will reduce manual intervention and improve data quality for regulatory reporting, fostering stronger relationships with regulatory bodies.",
+      "urgency": false,
+      "sentiment": {
+        "0": 1,
+        "1": 1
+      },
+      "overall_sentiment": 1
+    },
+    "timestamp": "2025-09-16T14:44:59.693029"
+  }
+]

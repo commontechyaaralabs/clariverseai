@@ -1,0 +1,64 @@
+2025-09-16 14:26:02,327 - INFO - EU Banking Chat Message Generator Starting...
+2025-09-16 14:26:02,327 - INFO - Database: sparzaai
+2025-09-16 14:26:02,327 - INFO - Collection: chatmessages
+2025-09-16 14:26:02,327 - INFO - Model: gemma3:27b
+2025-09-16 14:26:02,327 - INFO - Ollama URL: http://80.188.223.202:11472
+2025-09-16 14:26:02,327 - INFO - Max Workers: 5
+2025-09-16 14:26:02,328 - INFO - Batch Size: 5
+2025-09-16 14:26:02,328 - INFO - Total chats to generate: 100
+2025-09-16 14:26:02,328 - INFO - Log Directory: logs
+2025-09-16 14:26:03,504 - INFO - Database connection established and indexes created
+2025-09-16 14:26:03,886 - INFO - Collection Statistics:
+2025-09-16 14:26:03,886 - INFO - Total chats: 600
+2025-09-16 14:26:03,886 - INFO - With analysis fields: 0
+2025-09-16 14:26:03,887 - INFO - Top Dominant Topics:
+2025-09-16 14:26:03,887 - INFO - 1. Attendance Management Alert: 16 chats
+2025-09-16 14:26:03,887 - INFO - 2. Network Performance Issue: 16 chats
+2025-09-16 14:26:03,887 - INFO - 3. Documentation Request Alert: 14 chats
+2025-09-16 14:26:03,887 - INFO - 4. Monthly Compliance Audit: 14 chats
+2025-09-16 14:26:03,887 - INFO - 5. Compliance Monitoring Update: 14 chats
+2025-09-16 14:26:03,887 - INFO - 6. Software Issue Resolution: 14 chats
+2025-09-16 14:26:03,887 - INFO - 7. Performance Metric Tracking: 13 chats
+2025-09-16 14:26:03,887 - INFO - 8. Risk Assessment Update: 13 chats
+2025-09-16 14:26:03,887 - INFO - 9. Financial Reporting Procedure: 13 chats
+2025-09-16 14:26:03,887 - INFO - 10. Pipeline Management Discussion: 13 chats
+2025-09-16 14:26:03,887 - INFO - No pending intermediate results to recover
+2025-09-16 14:26:03,887 - INFO - Starting EU Banking Chat Generation...
+2025-09-16 14:26:03,887 - INFO - System Info: 128 CPU cores detected
+2025-09-16 14:26:03,887 - INFO - Batch size: 5
+2025-09-16 14:26:03,887 - INFO - Max workers: 5
+2025-09-16 14:26:03,887 - INFO - Total chats to generate: 100
+2025-09-16 14:26:03,887 - INFO - Request timeout: 120s
+2025-09-16 14:26:03,887 - INFO - Max retries per request: 5
+2025-09-16 14:26:03,887 - INFO - Testing connection to remote Ollama: http://80.188.223.202:11472
+2025-09-16 14:26:03,887 - INFO - Testing simple generation...
+2025-09-16 14:26:33,919 - ERROR - Connection test failed: HTTPConnectionPool(host='80.188.223.202', port=11472): Max retries exceeded with url: /api/generate (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x7baca7b7ac30>, 'Connection to 80.188.223.202 timed out. (connect timeout=30)'))
+2025-09-16 14:26:33,919 - ERROR - Cannot proceed without Ollama connection
+2025-09-16 14:26:34,301 - INFO - Collection Statistics:
+2025-09-16 14:26:34,301 - INFO - Total chats: 600
+2025-09-16 14:26:34,301 - INFO - With analysis fields: 0
+2025-09-16 14:26:34,301 - INFO - Top Dominant Topics:
+2025-09-16 14:26:34,301 - INFO - 1. Attendance Management Alert: 16 chats
+2025-09-16 14:26:34,301 - INFO - 2. Network Performance Issue: 16 chats
+2025-09-16 14:26:34,301 - INFO - 3. Documentation Request Alert: 14 chats
+2025-09-16 14:26:34,301 - INFO - 4. Monthly Compliance Audit: 14 chats
+2025-09-16 14:26:34,301 - INFO - 5. Compliance Monitoring Update: 14 chats
+2025-09-16 14:26:34,301 - INFO - 6. Software Issue Resolution: 14 chats
+2025-09-16 14:26:34,302 - INFO - 7. Performance Metric Tracking: 13 chats
+2025-09-16 14:26:34,302 - INFO - 8. Risk Assessment Update: 13 chats
+2025-09-16 14:26:34,302 - INFO - 9. Financial Reporting Procedure: 13 chats
+2025-09-16 14:26:34,302 - INFO - 10. Pipeline Management Discussion: 13 chats
+2025-09-16 14:26:34,428 - INFO - Sample Generated Chat Content:
+2025-09-16 14:26:34,554 - INFO - Content validation complete: 0 issues found
+2025-09-16 14:26:34,808 - INFO - Status report generated: logs/chat_status_report_20250916_142634.json
+2025-09-16 14:26:34,808 - INFO - Final session report:
+2025-09-16 14:26:34,808 - INFO - Success Rate: 0.00%
+2025-09-16 14:26:34,808 - INFO - Total chats generated: 0
+2025-09-16 14:26:34,933 - INFO - Database connection closed
+2025-09-16 14:26:34,933 - INFO - Session complete. Check log files for detailed information:
+2025-09-16 14:26:34,933 - INFO - Main Log: logs/chat_generator_20250916_142602.log
+2025-09-16 14:26:34,933 - INFO - Success Log: logs/successful_chat_generations_20250916_142602.log
+2025-09-16 14:26:34,933 - INFO - Failure Log: logs/failed_chat_generations_20250916_142602.log
+2025-09-16 14:26:34,933 - INFO - Progress Log: logs/chat_progress_20250916_142602.log
+2025-09-16 14:26:34,933 - INFO - Intermediate Results: logs/chat_intermediate_results_20250916_142602.json
+2025-09-16 14:26:34,934 - INFO - Database connection closed

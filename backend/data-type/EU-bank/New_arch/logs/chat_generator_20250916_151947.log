@@ -1,0 +1,147 @@
+2025-09-16 15:19:48,017 - INFO - EU Banking Chat Content Generator Starting...
+2025-09-16 15:19:48,017 - INFO - Database: sparzaai
+2025-09-16 15:19:48,017 - INFO - Collection: chatmessages
+2025-09-16 15:19:48,017 - INFO - Model: gemma3:27b
+2025-09-16 15:19:48,017 - INFO - Ollama URL: https://provide-certainly-comes-carnival.trycloudflare.com
+2025-09-16 15:19:48,017 - INFO - Max Workers: 5
+2025-09-16 15:19:48,017 - INFO - Batch Size: 5
+2025-09-16 15:19:48,017 - INFO - Log Directory: logs
+2025-09-16 15:19:49,030 - INFO - Database connection established and indexes created
+2025-09-16 15:19:49,413 - INFO - Collection Statistics:
+2025-09-16 15:19:49,414 - INFO - Total chats: 600
+2025-09-16 15:19:49,414 - INFO - With analysis fields: 0
+2025-09-16 15:19:49,414 - INFO - Top Dominant Topics:
+2025-09-16 15:19:49,414 - INFO - 1. Network Performance Issue: 16 chats
+2025-09-16 15:19:49,414 - INFO - 2. Attendance Management Alert: 16 chats
+2025-09-16 15:19:49,414 - INFO - 3. Documentation Request Alert: 14 chats
+2025-09-16 15:19:49,414 - INFO - 4. Monthly Compliance Audit: 14 chats
+2025-09-16 15:19:49,414 - INFO - 5. Compliance Monitoring Update: 14 chats
+2025-09-16 15:19:49,414 - INFO - 6. Software Issue Resolution: 14 chats
+2025-09-16 15:19:49,414 - INFO - 7. Financial Reporting Procedure: 13 chats
+2025-09-16 15:19:49,414 - INFO - 8. Performance Metric Tracking: 13 chats
+2025-09-16 15:19:49,414 - INFO - 9. Risk Assessment Update: 13 chats
+2025-09-16 15:19:49,414 - INFO - 10. Technology Provider Communication: 13 chats
+2025-09-16 15:19:49,414 - INFO - No pending intermediate results to recover
+2025-09-16 15:19:49,414 - INFO - Starting EU Banking Chat Content Generation...
+2025-09-16 15:19:49,414 - INFO - System Info: 128 CPU cores detected
+2025-09-16 15:19:49,414 - INFO - Batch size: 5
+2025-09-16 15:19:49,414 - INFO - Max workers: 5
+2025-09-16 15:19:49,414 - INFO - Request timeout: 120s
+2025-09-16 15:19:49,414 - INFO - Max retries per request: 5
+2025-09-16 15:19:49,414 - INFO - Testing connection to remote Ollama: https://provide-certainly-comes-carnival.trycloudflare.com
+2025-09-16 15:19:49,414 - INFO - Testing simple generation...
+2025-09-16 15:19:55,653 - INFO - Generation test status: 200
+2025-09-16 15:19:55,653 - INFO - Ollama connection test successful
+2025-09-16 15:19:55,653 - INFO - Test response: ```json
+{
+  "test": "success"
+}
+```
+...
+2025-09-16 15:19:55,654 - INFO - Fetching chat records from database...
+2025-09-16 15:19:56,843 - INFO - Found 600 chats needing content generation
+2025-09-16 15:19:56,844 - INFO - Processing in 120 batches of 5 chats each
+2025-09-16 15:19:56,844 - INFO - Processing batch 1/120 (5 chats)...
+2025-09-16 15:19:56,844 - INFO - Starting 5 tasks with 5 workers
+2025-09-16 15:19:56,845 - ERROR - Chat update error for 19:deefca54f22297d217c940eb@thread.v2: 'name'
+2025-09-16 15:19:56,845 - ERROR - Chat update error for 19:b9dfb1c6a2fc7d4fbac36afc@thread.v2: 'name'
+2025-09-16 15:19:56,845 - ERROR - Chat update error for 19:ba15dbb16d84065ae18d10ad@thread.v2: 'name'
+2025-09-16 15:19:56,846 - ERROR - Chat update error for 19:16adc0b3fbdb453575026d18@thread.v2: 'name'
+2025-09-16 15:19:56,846 - INFO - Submitted 5 tasks to worker pool
+2025-09-16 15:19:56,846 - ERROR - Chat update error for 19:543d858bbe5014ca52eb67d8@thread.v2: 'name'
+2025-09-16 15:19:56,846 - INFO - Batch progress: 40.0% (2/5) - Active workers: 5
+2025-09-16 15:19:56,846 - INFO - Batch progress: 80.0% (4/5) - Active workers: 5
+2025-09-16 15:19:56,846 - INFO - Batch 1 processing complete: 0/5 successful
+2025-09-16 15:19:56,847 - INFO - Batch duration: 0.00s
+2025-09-16 15:19:56,847 - INFO - Worker utilization: 5 workers processed 5 tasks
+2025-09-16 15:20:01,847 - INFO - Processing batch 2/120 (5 chats)...
+2025-09-16 15:20:01,847 - INFO - Starting 5 tasks with 5 workers
+2025-09-16 15:20:01,848 - ERROR - Chat update error for 19:6d6d2c4ee7e891215ae2fce9@thread.v2: 'name'
+2025-09-16 15:20:01,849 - ERROR - Chat update error for 19:29e6ecc0deee435c0d22ed0c@thread.v2: 'name'
+2025-09-16 15:20:01,849 - INFO - Submitted 5 tasks to worker pool
+2025-09-16 15:20:01,849 - ERROR - Chat update error for 19:e0860f845ea74db6c0f54a98@thread.v2: 'name'
+2025-09-16 15:20:01,850 - INFO - Batch progress: 40.0% (2/5) - Active workers: 5
+2025-09-16 15:20:01,850 - ERROR - Chat update error for 19:b3e5ed8ecbddb2e8fc0a3120@thread.v2: 'name'
+2025-09-16 15:20:01,850 - ERROR - Chat update error for 19:20f024874edbbcb45c3058db@thread.v2: 'name'
+2025-09-16 15:20:01,850 - INFO - Batch progress: 80.0% (4/5) - Active workers: 5
+2025-09-16 15:20:01,851 - INFO - Batch 2 processing complete: 0/5 successful
+2025-09-16 15:20:01,851 - INFO - Batch duration: 0.00s
+2025-09-16 15:20:01,851 - INFO - Worker utilization: 5 workers processed 5 tasks
+2025-09-16 15:20:06,851 - INFO - Processing batch 3/120 (5 chats)...
+2025-09-16 15:20:06,851 - INFO - Starting 5 tasks with 5 workers
+2025-09-16 15:20:06,853 - ERROR - Chat update error for 19:ce55dfd924849344a89fc146@thread.v2: 'name'
+2025-09-16 15:20:06,853 - ERROR - Chat update error for 19:a6ae005d72d8ffd81401b984@thread.v2: 'name'
+2025-09-16 15:20:06,853 - ERROR - Chat update error for 19:1a8ad13d6083d5da8baa355a@thread.v2: 'name'
+2025-09-16 15:20:06,854 - INFO - Submitted 5 tasks to worker pool
+2025-09-16 15:20:06,854 - ERROR - Chat update error for 19:2a54d8e80364e6bcd27523d0@thread.v2: 'name'
+2025-09-16 15:20:06,854 - INFO - Batch progress: 40.0% (2/5) - Active workers: 5
+2025-09-16 15:20:06,854 - ERROR - Chat update error for 19:b1f9fd693b66f52ff0e484d4@thread.v2: 'name'
+2025-09-16 15:20:06,854 - INFO - Batch progress: 80.0% (4/5) - Active workers: 5
+2025-09-16 15:20:06,855 - INFO - Batch 3 processing complete: 0/5 successful
+2025-09-16 15:20:06,855 - INFO - Batch duration: 0.00s
+2025-09-16 15:20:06,855 - INFO - Worker utilization: 5 workers processed 5 tasks
+2025-09-16 15:20:11,855 - INFO - Processing batch 4/120 (5 chats)...
+2025-09-16 15:20:11,856 - INFO - Starting 5 tasks with 5 workers
+2025-09-16 15:20:11,857 - ERROR - Chat update error for 19:32c2d312803c3ba80fb812cf@thread.v2: 'name'
+2025-09-16 15:20:11,857 - ERROR - Chat update error for 19:d844b2c1d85d98257f5b1052@thread.v2: 'name'
+2025-09-16 15:20:11,858 - ERROR - Chat update error for 19:4bbb73fc6cd7e55e367c7ffd@thread.v2: 'name'
+2025-09-16 15:20:11,858 - INFO - Submitted 5 tasks to worker pool
+2025-09-16 15:20:11,858 - ERROR - Chat update error for 19:88c048f3d5d88c698dc127f2@thread.v2: 'name'
+2025-09-16 15:20:11,858 - INFO - Batch progress: 40.0% (2/5) - Active workers: 5
+2025-09-16 15:20:11,859 - ERROR - Chat update error for 19:973544b42fea84efef04fe97@thread.v2: 'name'
+2025-09-16 15:20:11,859 - INFO - Batch progress: 80.0% (4/5) - Active workers: 5
+2025-09-16 15:20:11,859 - INFO - Batch 4 processing complete: 0/5 successful
+2025-09-16 15:20:11,860 - INFO - Batch duration: 0.00s
+2025-09-16 15:20:11,860 - INFO - Worker utilization: 5 workers processed 5 tasks
+2025-09-16 15:20:16,860 - INFO - Processing batch 5/120 (5 chats)...
+2025-09-16 15:20:16,860 - INFO - Starting 5 tasks with 5 workers
+2025-09-16 15:20:16,861 - ERROR - Chat update error for 19:a9a968bcfe308ab42cccede1@thread.v2: 'name'
+2025-09-16 15:20:16,861 - ERROR - Chat update error for 19:f8998d28115a6fddb5d1fa1f@thread.v2: 'name'
+2025-09-16 15:20:16,862 - ERROR - Chat update error for 19:01d703474d021a5a10268fc1@thread.v2: 'name'
+2025-09-16 15:20:16,862 - INFO - Submitted 5 tasks to worker pool
+2025-09-16 15:20:16,862 - ERROR - Chat update error for 19:65627ac6e5560c0078e10b41@thread.v2: 'name'
+2025-09-16 15:20:16,862 - INFO - Batch progress: 40.0% (2/5) - Active workers: 5
+2025-09-16 15:20:16,862 - ERROR - Chat update error for 19:f05a4b9b1ecd96e824176736@thread.v2: 'name'
+2025-09-16 15:20:16,863 - INFO - Batch progress: 80.0% (4/5) - Active workers: 5
+2025-09-16 15:20:16,863 - INFO - Batch 5 processing complete: 0/5 successful
+2025-09-16 15:20:16,863 - INFO - Batch duration: 0.00s
+2025-09-16 15:20:16,863 - INFO - Worker utilization: 5 workers processed 5 tasks
+2025-09-16 15:20:16,863 - INFO - Overall Progress: 4.2% | Batches: 5/120
+2025-09-16 15:20:16,863 - INFO - Success: 0 | Failures: 25 | DB Updates: 0
+2025-09-16 15:20:16,864 - INFO - System: CPU 2.5% | Memory 13.9%
+2025-09-16 15:20:21,226 - INFO - Received signal 2. Initiating graceful shutdown...
+2025-09-16 15:20:21,226 - INFO - Please wait for current operations to complete...
+2025-09-16 15:20:21,864 - INFO - Shutdown requested. Stopping at batch 5/120
+2025-09-16 15:20:21,864 - INFO - Chat content generation interrupted gracefully!
+2025-09-16 15:20:21,864 - INFO - Total chats updated: 0
+2025-09-16 15:20:21,864 - INFO - Successful generations: 0
+2025-09-16 15:20:21,864 - INFO - Failed generations: 25
+2025-09-16 15:20:21,864 - INFO - Data updated in MongoDB: sparzaai.chatmessages
+2025-09-16 15:20:22,257 - INFO - Collection Statistics:
+2025-09-16 15:20:22,257 - INFO - Total chats: 600
+2025-09-16 15:20:22,257 - INFO - With analysis fields: 0
+2025-09-16 15:20:22,257 - INFO - Top Dominant Topics:
+2025-09-16 15:20:22,257 - INFO - 1. Network Performance Issue: 16 chats
+2025-09-16 15:20:22,257 - INFO - 2. Attendance Management Alert: 16 chats
+2025-09-16 15:20:22,257 - INFO - 3. Documentation Request Alert: 14 chats
+2025-09-16 15:20:22,257 - INFO - 4. Monthly Compliance Audit: 14 chats
+2025-09-16 15:20:22,257 - INFO - 5. Compliance Monitoring Update: 14 chats
+2025-09-16 15:20:22,257 - INFO - 6. Software Issue Resolution: 14 chats
+2025-09-16 15:20:22,258 - INFO - 7. Financial Reporting Procedure: 13 chats
+2025-09-16 15:20:22,258 - INFO - 8. Performance Metric Tracking: 13 chats
+2025-09-16 15:20:22,258 - INFO - 9. Risk Assessment Update: 13 chats
+2025-09-16 15:20:22,258 - INFO - 10. Technology Provider Communication: 13 chats
+2025-09-16 15:20:22,385 - INFO - Sample Generated Chat Content:
+2025-09-16 15:20:22,513 - INFO - Content validation complete: 0 issues found
+2025-09-16 15:20:22,769 - INFO - Status report generated: logs/chat_status_report_20250916_152022.json
+2025-09-16 15:20:22,769 - INFO - Final session report:
+2025-09-16 15:20:22,769 - INFO - Success Rate: 0.00%
+2025-09-16 15:20:22,769 - INFO - Database Completion: 0.00%
+2025-09-16 15:20:22,895 - INFO - Database connection closed
+2025-09-16 15:20:22,895 - INFO - Session complete. Check log files for detailed information:
+2025-09-16 15:20:22,895 - INFO - Main Log: logs/chat_generator_20250916_151947.log
+2025-09-16 15:20:22,896 - INFO - Success Log: logs/successful_chat_generations_20250916_151947.log
+2025-09-16 15:20:22,896 - INFO - Failure Log: logs/failed_chat_generations_20250916_151947.log
+2025-09-16 15:20:22,896 - INFO - Progress Log: logs/chat_progress_20250916_151947.log
+2025-09-16 15:20:22,896 - INFO - Intermediate Results: logs/chat_intermediate_results_20250916_151947.json
+2025-09-16 15:20:22,896 - INFO - Database connection closed

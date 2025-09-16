@@ -1,0 +1,104 @@
+2025-09-16 15:12:12,428 - INFO - EU Banking Chat Message Generator Starting...
+2025-09-16 15:12:12,428 - INFO - Database: sparzaai
+2025-09-16 15:12:12,428 - INFO - Collection: chatmessages
+2025-09-16 15:12:12,428 - INFO - Model: gemma3:27b
+2025-09-16 15:12:12,428 - INFO - Ollama URL: https://provide-certainly-comes-carnival.trycloudflare.com
+2025-09-16 15:12:12,428 - INFO - Max Workers: 5
+2025-09-16 15:12:12,428 - INFO - Batch Size: 5
+2025-09-16 15:12:12,428 - INFO - Total chats to generate: 100
+2025-09-16 15:12:12,428 - INFO - Log Directory: logs
+2025-09-16 15:12:13,436 - INFO - Database connection established and indexes created
+2025-09-16 15:12:13,818 - INFO - Collection Statistics:
+2025-09-16 15:12:13,818 - INFO - Total chats: 600
+2025-09-16 15:12:13,818 - INFO - With analysis fields: 0
+2025-09-16 15:12:13,818 - INFO - Top Dominant Topics:
+2025-09-16 15:12:13,818 - INFO - 1. Network Performance Issue: 16 chats
+2025-09-16 15:12:13,818 - INFO - 2. Attendance Management Alert: 16 chats
+2025-09-16 15:12:13,818 - INFO - 3. Documentation Request Alert: 14 chats
+2025-09-16 15:12:13,818 - INFO - 4. Monthly Compliance Audit: 14 chats
+2025-09-16 15:12:13,819 - INFO - 5. Compliance Monitoring Update: 14 chats
+2025-09-16 15:12:13,819 - INFO - 6. Software Issue Resolution: 14 chats
+2025-09-16 15:12:13,819 - INFO - 7. Financial Reporting Procedure: 13 chats
+2025-09-16 15:12:13,819 - INFO - 8. Performance Metric Tracking: 13 chats
+2025-09-16 15:12:13,819 - INFO - 9. Risk Assessment Update: 13 chats
+2025-09-16 15:12:13,819 - INFO - 10. Technology Provider Communication: 13 chats
+2025-09-16 15:12:13,819 - INFO - No pending intermediate results to recover
+2025-09-16 15:12:13,819 - INFO - Starting EU Banking Chat Generation...
+2025-09-16 15:12:13,819 - INFO - System Info: 128 CPU cores detected
+2025-09-16 15:12:13,819 - INFO - Batch size: 5
+2025-09-16 15:12:13,819 - INFO - Max workers: 5
+2025-09-16 15:12:13,819 - INFO - Total chats to generate: 100
+2025-09-16 15:12:13,819 - INFO - Request timeout: 120s
+2025-09-16 15:12:13,819 - INFO - Max retries per request: 5
+2025-09-16 15:12:13,819 - INFO - Testing connection to remote Ollama: https://provide-certainly-comes-carnival.trycloudflare.com
+2025-09-16 15:12:13,819 - INFO - Testing simple generation...
+2025-09-16 15:12:19,833 - INFO - Generation test status: 200
+2025-09-16 15:12:19,833 - INFO - Ollama connection test successful
+2025-09-16 15:12:19,833 - INFO - Test response: ```json
+{
+  "test": "success"
+}
+```
+...
+2025-09-16 15:12:19,834 - INFO - Processing in 20 batches of 5 chats each
+2025-09-16 15:12:19,834 - INFO - Processing batch 1/20 (5 chats)...
+2025-09-16 15:12:19,834 - INFO - Starting 5 tasks with 5 workers
+2025-09-16 15:12:19,840 - INFO - Submitted 5 tasks to worker pool
+2025-09-16 15:12:21,502 - INFO - Received signal 2. Initiating graceful shutdown...
+2025-09-16 15:12:21,503 - INFO - Please wait for current operations to complete...
+2025-09-16 15:12:55,587 - WARNING - Cancelling remaining tasks...
+2025-09-16 15:13:59,948 - ERROR - HTTP error: 524 - <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-
+2025-09-16 15:13:59,948 - INFO - Backing off call_ollama_with_backoff(...) for 0.9s (requests.exceptions.HTTPError: 524 Server Error:  for url: https://provide-certainly-comes-carnival.trycloudflare.com/api/generate)
+2025-09-16 15:13:59,948 - WARNING - Retry 1/5 after 0.9s
+2025-09-16 15:13:59,949 - ERROR - HTTP error: 524 - <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-
+2025-09-16 15:13:59,949 - INFO - Backing off call_ollama_with_backoff(...) for 0.5s (requests.exceptions.HTTPError: 524 Server Error:  for url: https://provide-certainly-comes-carnival.trycloudflare.com/api/generate)
+2025-09-16 15:13:59,949 - WARNING - Retry 1/5 after 0.5s
+2025-09-16 15:13:59,957 - ERROR - HTTP error: 524 - <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-
+2025-09-16 15:13:59,957 - INFO - Backing off call_ollama_with_backoff(...) for 0.4s (requests.exceptions.HTTPError: 524 Server Error:  for url: https://provide-certainly-comes-carnival.trycloudflare.com/api/generate)
+2025-09-16 15:13:59,957 - WARNING - Retry 1/5 after 0.4s
+2025-09-16 15:14:00,855 - INFO - Batch 1 processing complete: 0/5 successful
+2025-09-16 15:14:00,855 - INFO - Batch duration: 101.02s
+2025-09-16 15:14:00,855 - INFO - Worker utilization: 5 workers processed 5 tasks
+2025-09-16 15:14:00,855 - INFO - Shutdown requested. Stopping at batch 1/20
+2025-09-16 15:14:00,855 - INFO - Chat generation interrupted gracefully!
+2025-09-16 15:14:00,855 - INFO - Total chats saved: 0
+2025-09-16 15:14:00,855 - INFO - Successful generations: 2
+2025-09-16 15:14:00,855 - INFO - Failed generations: 0
+2025-09-16 15:14:00,855 - INFO - Data saved in MongoDB: sparzaai.chatmessages
+2025-09-16 15:14:01,236 - INFO - Collection Statistics:
+2025-09-16 15:14:01,236 - INFO - Total chats: 600
+2025-09-16 15:14:01,236 - INFO - With analysis fields: 0
+2025-09-16 15:14:01,236 - INFO - Top Dominant Topics:
+2025-09-16 15:14:01,237 - INFO - 1. Network Performance Issue: 16 chats
+2025-09-16 15:14:01,237 - INFO - 2. Attendance Management Alert: 16 chats
+2025-09-16 15:14:01,237 - INFO - 3. Documentation Request Alert: 14 chats
+2025-09-16 15:14:01,237 - INFO - 4. Monthly Compliance Audit: 14 chats
+2025-09-16 15:14:01,237 - INFO - 5. Compliance Monitoring Update: 14 chats
+2025-09-16 15:14:01,237 - INFO - 6. Software Issue Resolution: 14 chats
+2025-09-16 15:14:01,237 - INFO - 7. Financial Reporting Procedure: 13 chats
+2025-09-16 15:14:01,237 - INFO - 8. Performance Metric Tracking: 13 chats
+2025-09-16 15:14:01,237 - INFO - 9. Risk Assessment Update: 13 chats
+2025-09-16 15:14:01,237 - INFO - 10. Technology Provider Communication: 13 chats
+2025-09-16 15:14:01,364 - INFO - Sample Generated Chat Content:
+2025-09-16 15:14:01,491 - INFO - Content validation complete: 0 issues found
+2025-09-16 15:14:01,745 - INFO - Status report generated: logs/chat_status_report_20250916_151401.json
+2025-09-16 15:14:01,745 - INFO - Final session report:
+2025-09-16 15:14:01,745 - INFO - Success Rate: 100.00%
+2025-09-16 15:14:01,746 - INFO - Total chats generated: 0
+2025-09-16 15:14:01,871 - INFO - Database connection closed
+2025-09-16 15:14:01,871 - INFO - Session complete. Check log files for detailed information:
+2025-09-16 15:14:01,871 - INFO - Main Log: logs/chat_generator_20250916_151212.log
+2025-09-16 15:14:01,871 - INFO - Success Log: logs/successful_chat_generations_20250916_151212.log
+2025-09-16 15:14:01,871 - INFO - Failure Log: logs/failed_chat_generations_20250916_151212.log
+2025-09-16 15:14:01,871 - INFO - Progress Log: logs/chat_progress_20250916_151212.log
+2025-09-16 15:14:01,871 - INFO - Intermediate Results: logs/chat_intermediate_results_20250916_151212.json
+2025-09-16 15:14:01,872 - INFO - Database connection closed

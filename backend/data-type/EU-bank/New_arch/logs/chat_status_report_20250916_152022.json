@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-09-16T15:20:22.767954",
+  "session_stats": {
+    "successful_generations": 0,
+    "failed_generations": 25,
+    "database_saves": 0,
+    "success_rate": 0.0
+  },
+  "intermediate_results": {
+    "total_results": 0,
+    "pending_database_saves": 0,
+    "intermediate_file": "logs/chat_intermediate_results_20250916_151947.json"
+  },
+  "database_stats": {
+    "total_chats": 600,
+    "chats_with_analysis": 0,
+    "completion_percentage": 0.0
+  },
+  "system_info": {
+    "cpu_cores": 128,
+    "max_workers": 5,
+    "batch_size": 5,
+    "cpu_usage": 2.0,
+    "memory_usage": 13.9
+  },
+  "log_files": {
+    "main_log": "logs/chat_generator_20250916_151947.log",
+    "success_log": "logs/successful_chat_generations_20250916_151947.log",
+    "failure_log": "logs/failed_chat_generations_20250916_151947.log",
+    "progress_log": "logs/chat_progress_20250916_151947.log"
+  }
+}
