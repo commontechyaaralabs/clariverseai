@@ -81,19 +81,25 @@ client = None
 db = None
 chat_col = None
 
+# Circuit breaker for 524 errors
+circuit_breaker_failures = 0
+circuit_breaker_threshold = 5
+circuit_breaker_reset_time = 300  # 5 minutes
+circuit_breaker_last_failure = 0
+
 # Ollama configuration
 OLLAMA_BASE_URL = "https://provide-certainly-comes-carnival.trycloudflare.com"
 OLLAMA_TOKEN = "0498e4b8b133576a247380e8b302f0467ae689769449dc7e3e8c4338739605ed"
 OLLAMA_MODEL = "gemma3:27b"
 
-# Performance configuration
-BATCH_SIZE = 5
-MAX_WORKERS = 5
-REQUEST_TIMEOUT = 120
-MAX_RETRIES = 5
-RETRY_DELAY = 3
-BATCH_DELAY = 5.0
-API_CALL_DELAY = 1.0
+# Performance configuration - Optimized for stability
+BATCH_SIZE = 2  # Reduced batch size to reduce load
+MAX_WORKERS = 2  # Reduced workers to prevent overload
+REQUEST_TIMEOUT = 60  # Reduced timeout to fail faster
+MAX_RETRIES = 3  # Reduced retries to fail faster
+RETRY_DELAY = 5  # Increased delay between retries
+BATCH_DELAY = 10.0  # Increased delay between batches
+API_CALL_DELAY = 3.0  # Increased delay between API calls
 
 # Ollama setup
 OLLAMA_URL = f"{OLLAMA_BASE_URL}/api/generate"
@@ -267,7 +273,7 @@ TASK: Generate a realistic EU banking chat conversation with {message_count} mes
 
 2. **Chat Content Generation:**
    - Create {message_count} realistic chat messages
-   - Message 1: Initial message from {sender['name']}
+   - Message 1: Initial message from {sender['displayName']}
    - Subsequent messages: Natural conversation flow alternating between participants
    - Mix of professional and conversational tone appropriate for business chat
    - Each message: 50-150 words (vary naturally - some short, some longer)
@@ -367,9 +373,9 @@ Return ONLY a JSON object with this structure:
 
 {{
   "chat_data": {{
-    "chat_id": "[generated_chat_id_similar_to_teams_format]",
+    "chat_id": "{chat_data.get('chat_id', 'unknown')}",
     "chatType": "oneOnOne",
-    "topic": null,
+    "topic": "{chat_data.get('topic', '')}",
     "first_message_at": "[ISO_timestamp_first_message]",
     "last_message_at": "[ISO_timestamp_last_message]",
     "message_count": {message_count}
@@ -388,13 +394,13 @@ Return ONLY a JSON object with this structure:
   ],
   "messages": [
     {{
-      "id": "[generated_message_id]",
-      "chatId": "[same_chat_id_as_above]",
+      "id": "[use_existing_message_id_from_database]",
+      "chatId": "{chat_data.get('chat_id', 'unknown')}",
       "createdDateTime": "[ISO_timestamp]",
       "from": {{
         "user": {{
-          "id": "[sender_or_recipient_email]",
-          "displayName": "[sender_or_recipient_name]",
+          "id": "[sender_or_recipient_id]",
+          "displayName": "[sender_or_recipient_displayName]",
           "userIdentityType": "aadUser"
         }}
       }},
@@ -437,8 +443,8 @@ Return ONLY a JSON object with this structure:
 9. **Action-Oriented:** Next action suggestions should focus on business improvement and customer retention
 10. **Stage Analysis:** Determine where in the customer service process the chat actually ended
 11. **Banking Compliance:** Include relevant EU banking regulations and compliance considerations
-12. **Chat ID Generation:** Generate realistic Teams-style chat IDs (format: "19:xxxxxxxx@thread.v2")
-13. **Message ID Generation:** Generate unique message IDs for each message
+12. **Use Existing IDs:** Use the existing chat_id and message IDs from the database - do NOT generate new ones
+13. **Message Structure:** Each message must have the correct from.user.id and from.user.displayName matching the existing participants
 14. **Action Pending Logic:** If action_pending_status is "no", then action_pending_from must be null
 15. **Chat Timing:** Use realistic chat response times (seconds to minutes, not hours like email)
 16. **Message Length:** Keep individual messages chat-appropriate (50-150 words, with natural variation)
@@ -453,14 +459,31 @@ Generate the EU banking chat conversation and comprehensive analysis now.
     backoff.expo,
     (requests.exceptions.RequestException, json.JSONDecodeError, KeyError, ValueError),
     max_tries=MAX_RETRIES,
-    max_time=180,
+    max_time=300,  # Increased max time for 524 errors
     base=RETRY_DELAY,
     on_backoff=lambda details: logger.warning(f"Retry {details['tries']}/{MAX_RETRIES} after {details['wait']:.1f}s")
 )
 def call_ollama_with_backoff(prompt, timeout=REQUEST_TIMEOUT):
     """Call Ollama API with exponential backoff and better error handling"""
+    global circuit_breaker_failures, circuit_breaker_last_failure
+    
     if shutdown_flag.is_set():
         raise KeyboardInterrupt("Shutdown requested")
+    
+    # Check circuit breaker
+    current_time = time.time()
+    if circuit_breaker_failures >= circuit_breaker_threshold:
+        if current_time - circuit_breaker_last_failure < circuit_breaker_reset_time:
+            wait_time = circuit_breaker_reset_time - (current_time - circuit_breaker_last_failure)
+            logger.warning(f"Circuit breaker open - waiting {wait_time:.1f}s before retry")
+            time.sleep(wait_time)
+        else:
+            # Reset circuit breaker
+            circuit_breaker_failures = 0
+            logger.info("Circuit breaker reset - resuming API calls")
+    
+    # Add delay between API calls to reduce load
+    time.sleep(API_CALL_DELAY)
     
     # Prepare headers for remote endpoint
     headers = {
@@ -506,7 +529,10 @@ def call_ollama_with_backoff(prompt, timeout=REQUEST_TIMEOUT):
         if "response" not in result:
             logger.error(f"No 'response' field. Available fields: {list(result.keys())}")
             raise KeyError("No 'response' field in Ollama response")
-            
+        
+        # Reset circuit breaker on successful call
+        circuit_breaker_failures = 0
+        
         return result["response"]
         
     except requests.exceptions.Timeout:
@@ -516,7 +542,13 @@ def call_ollama_with_backoff(prompt, timeout=REQUEST_TIMEOUT):
         logger.error("Connection error - check remote Ollama endpoint")
         raise
     except requests.exceptions.HTTPError as e:
-        logger.error(f"HTTP error: {e.response.status_code} - {e.response.text[:200]}")
+        if e.response.status_code == 524:
+            circuit_breaker_failures += 1
+            circuit_breaker_last_failure = time.time()
+            logger.error(f"Cloudflare timeout (524) - Ollama server overloaded. Failures: {circuit_breaker_failures}/{circuit_breaker_threshold}")
+            time.sleep(10)  # Wait 10 seconds for 524 errors
+        else:
+            logger.error(f"HTTP error: {e.response.status_code} - {e.response.text[:200]}")
         raise
     except requests.exceptions.RequestException as e:
         logger.error(f"Ollama API error: {e}")
@@ -578,10 +610,18 @@ def generate_chat_content(chat_record):
             # Update messages with generated content
             if 'messages' in result:
                 messages = result['messages']
+                existing_messages = chat_record.get('messages', [])
                 for i, message in enumerate(messages):
-                    if i < len(chat_record.get('messages', [])):
+                    if i < len(existing_messages):
+                        # Use existing message ID and structure
+                        existing_message = existing_messages[i]
                         update_doc[f'messages.{i}.body.content'] = message.get('body', {}).get('content', '')
                         update_doc[f'messages.{i}.createdDateTime'] = message.get('createdDateTime', '')
+                        # Keep existing from user information but update if provided
+                        if 'from' in message and 'user' in message['from']:
+                            update_doc[f'messages.{i}.from.user.id'] = message['from']['user'].get('id', existing_message.get('from', {}).get('user', {}).get('id', ''))
+                            update_doc[f'messages.{i}.from.user.displayName'] = message['from']['user'].get('displayName', existing_message.get('from', {}).get('user', {}).get('displayName', ''))
+                            update_doc[f'messages.{i}.from.user.userIdentityType'] = message['from']['user'].get('userIdentityType', existing_message.get('from', {}).get('user', {}).get('userIdentityType', 'aadUser'))
             
             # Update analysis fields
             if 'analysis' in result:
@@ -759,7 +799,6 @@ def update_chats_with_content_parallel():
         # Query for chats that have empty content fields
         query = {
             "$or": [
-                {"messages.0.body.content": {"$exists": False}},
                 {"messages.0.body.content": None},
                 {"messages.0.body.content": ""},
                 {"stages": {"$exists": False}},

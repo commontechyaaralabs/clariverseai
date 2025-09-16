@@ -1,0 +1,182 @@
+2025-09-16 15:25:37,214 - INFO - EU Banking Chat Content Generator Starting...
+2025-09-16 15:25:37,214 - INFO - Database: sparzaai
+2025-09-16 15:25:37,214 - INFO - Collection: chatmessages
+2025-09-16 15:25:37,214 - INFO - Model: gemma3:27b
+2025-09-16 15:25:37,214 - INFO - Ollama URL: https://provide-certainly-comes-carnival.trycloudflare.com
+2025-09-16 15:25:37,214 - INFO - Max Workers: 5
+2025-09-16 15:25:37,214 - INFO - Batch Size: 5
+2025-09-16 15:25:37,214 - INFO - Log Directory: logs
+2025-09-16 15:25:38,226 - INFO - Database connection established and indexes created
+2025-09-16 15:25:38,608 - INFO - Collection Statistics:
+2025-09-16 15:25:38,608 - INFO - Total chats: 600
+2025-09-16 15:25:38,608 - INFO - With analysis fields: 0
+2025-09-16 15:25:38,608 - INFO - Top Dominant Topics:
+2025-09-16 15:25:38,608 - INFO - 1. Network Performance Issue: 16 chats
+2025-09-16 15:25:38,608 - INFO - 2. Attendance Management Alert: 16 chats
+2025-09-16 15:25:38,608 - INFO - 3. Compliance Monitoring Update: 14 chats
+2025-09-16 15:25:38,608 - INFO - 4. Software Issue Resolution: 14 chats
+2025-09-16 15:25:38,609 - INFO - 5. Documentation Request Alert: 14 chats
+2025-09-16 15:25:38,609 - INFO - 6. Monthly Compliance Audit: 14 chats
+2025-09-16 15:25:38,609 - INFO - 7. Pipeline Management Discussion: 13 chats
+2025-09-16 15:25:38,609 - INFO - 8. Performance Metric Tracking: 13 chats
+2025-09-16 15:25:38,609 - INFO - 9. Technology Provider Communication: 13 chats
+2025-09-16 15:25:38,609 - INFO - 10. Risk Assessment Update: 13 chats
+2025-09-16 15:25:38,609 - INFO - No pending intermediate results to recover
+2025-09-16 15:25:38,609 - INFO - Starting EU Banking Chat Content Generation...
+2025-09-16 15:25:38,609 - INFO - System Info: 128 CPU cores detected
+2025-09-16 15:25:38,609 - INFO - Batch size: 5
+2025-09-16 15:25:38,609 - INFO - Max workers: 5
+2025-09-16 15:25:38,609 - INFO - Request timeout: 120s
+2025-09-16 15:25:38,609 - INFO - Max retries per request: 5
+2025-09-16 15:25:38,609 - INFO - Testing connection to remote Ollama: https://provide-certainly-comes-carnival.trycloudflare.com
+2025-09-16 15:25:38,609 - INFO - Testing simple generation...
+2025-09-16 15:25:58,660 - INFO - Generation test status: 200
+2025-09-16 15:25:58,660 - INFO - Ollama connection test successful
+2025-09-16 15:25:58,660 - INFO - Test response: ```json
+{
+  "test": "success"
+}
+```
+...
+2025-09-16 15:25:58,661 - INFO - Fetching chat records from database...
+2025-09-16 15:25:59,843 - INFO - Found 600 chats needing content generation
+2025-09-16 15:25:59,843 - INFO - Processing in 120 batches of 5 chats each
+2025-09-16 15:25:59,843 - INFO - Processing batch 1/120 (5 chats)...
+2025-09-16 15:25:59,843 - INFO - Starting 5 tasks with 5 workers
+2025-09-16 15:25:59,850 - INFO - Submitted 5 tasks to worker pool
+2025-09-16 15:27:39,950 - ERROR - HTTP error: 524 - <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-
+2025-09-16 15:27:39,950 - INFO - Backing off call_ollama_with_backoff(...) for 0.2s (requests.exceptions.HTTPError: 524 Server Error:  for url: https://provide-certainly-comes-carnival.trycloudflare.com/api/generate)
+2025-09-16 15:27:39,950 - WARNING - Retry 1/5 after 0.2s
+2025-09-16 15:27:39,953 - ERROR - HTTP error: 524 - <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-
+2025-09-16 15:27:39,954 - INFO - Backing off call_ollama_with_backoff(...) for 0.3s (requests.exceptions.HTTPError: 524 Server Error:  for url: https://provide-certainly-comes-carnival.trycloudflare.com/api/generate)
+2025-09-16 15:27:39,954 - WARNING - Retry 1/5 after 0.3s
+2025-09-16 15:27:39,958 - ERROR - HTTP error: 524 - <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-
+2025-09-16 15:27:39,958 - INFO - Backing off call_ollama_with_backoff(...) for 0.3s (requests.exceptions.HTTPError: 524 Server Error:  for url: https://provide-certainly-comes-carnival.trycloudflare.com/api/generate)
+2025-09-16 15:27:39,959 - WARNING - Retry 1/5 after 0.3s
+2025-09-16 15:27:39,959 - ERROR - HTTP error: 524 - <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-
+2025-09-16 15:27:39,959 - INFO - Backing off call_ollama_with_backoff(...) for 0.6s (requests.exceptions.HTTPError: 524 Server Error:  for url: https://provide-certainly-comes-carnival.trycloudflare.com/api/generate)
+2025-09-16 15:27:39,959 - WARNING - Retry 1/5 after 0.6s
+2025-09-16 15:27:39,986 - ERROR - HTTP error: 524 - <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-
+2025-09-16 15:27:39,986 - INFO - Backing off call_ollama_with_backoff(...) for 0.4s (requests.exceptions.HTTPError: 524 Server Error:  for url: https://provide-certainly-comes-carnival.trycloudflare.com/api/generate)
+2025-09-16 15:27:39,986 - WARNING - Retry 1/5 after 0.4s
+2025-09-16 15:29:20,277 - ERROR - HTTP error: 524 - <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-
+2025-09-16 15:29:20,277 - INFO - Backing off call_ollama_with_backoff(...) for 0.4s (requests.exceptions.HTTPError: 524 Server Error:  for url: https://provide-certainly-comes-carnival.trycloudflare.com/api/generate)
+2025-09-16 15:29:20,277 - WARNING - Retry 2/5 after 0.4s
+2025-09-16 15:29:20,321 - ERROR - HTTP error: 524 - <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-
+2025-09-16 15:29:20,321 - INFO - Backing off call_ollama_with_backoff(...) for 0.8s (requests.exceptions.HTTPError: 524 Server Error:  for url: https://provide-certainly-comes-carnival.trycloudflare.com/api/generate)
+2025-09-16 15:29:20,321 - WARNING - Retry 2/5 after 0.8s
+2025-09-16 15:29:20,403 - ERROR - HTTP error: 524 - <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-
+2025-09-16 15:29:20,403 - INFO - Backing off call_ollama_with_backoff(...) for 0.6s (requests.exceptions.HTTPError: 524 Server Error:  for url: https://provide-certainly-comes-carnival.trycloudflare.com/api/generate)
+2025-09-16 15:29:20,403 - WARNING - Retry 2/5 after 0.6s
+2025-09-16 15:29:20,499 - ERROR - HTTP error: 524 - <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-
+2025-09-16 15:29:20,500 - INFO - Backing off call_ollama_with_backoff(...) for 0.7s (requests.exceptions.HTTPError: 524 Server Error:  for url: https://provide-certainly-comes-carnival.trycloudflare.com/api/generate)
+2025-09-16 15:29:20,500 - WARNING - Retry 2/5 after 0.7s
+2025-09-16 15:29:20,729 - ERROR - HTTP error: 524 - <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-
+2025-09-16 15:29:20,729 - INFO - Backing off call_ollama_with_backoff(...) for 0.9s (requests.exceptions.HTTPError: 524 Server Error:  for url: https://provide-certainly-comes-carnival.trycloudflare.com/api/generate)
+2025-09-16 15:29:20,729 - WARNING - Retry 2/5 after 0.9s
+2025-09-16 15:29:55,447 - INFO - Received signal 2. Initiating graceful shutdown...
+2025-09-16 15:29:55,447 - INFO - Please wait for current operations to complete...
+2025-09-16 15:29:59,850 - ERROR - Error collecting batch results: 5 (of 5) futures unfinished
+2025-09-16 15:30:31,427 - INFO - Received signal 2. Initiating graceful shutdown...
+2025-09-16 15:30:31,427 - INFO - Please wait for current operations to complete...
+2025-09-16 15:30:31,629 - INFO - Received signal 2. Initiating graceful shutdown...
+2025-09-16 15:30:31,629 - INFO - Please wait for current operations to complete...
+2025-09-16 15:30:31,797 - INFO - Received signal 2. Initiating graceful shutdown...
+2025-09-16 15:30:31,797 - INFO - Please wait for current operations to complete...
+2025-09-16 15:30:31,925 - INFO - Received signal 2. Initiating graceful shutdown...
+2025-09-16 15:30:31,926 - INFO - Please wait for current operations to complete...
+2025-09-16 15:30:32,111 - INFO - Received signal 2. Initiating graceful shutdown...
+2025-09-16 15:30:32,111 - INFO - Please wait for current operations to complete...
+2025-09-16 15:30:33,459 - INFO - Received signal 2. Initiating graceful shutdown...
+2025-09-16 15:30:33,459 - INFO - Please wait for current operations to complete...
+2025-09-16 15:31:01,145 - ERROR - HTTP error: 524 - <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-
+2025-09-16 15:31:01,145 - ERROR - Giving up call_ollama_with_backoff(...) after 3 tries (requests.exceptions.HTTPError: 524 Server Error:  for url: https://provide-certainly-comes-carnival.trycloudflare.com/api/generate)
+2025-09-16 15:31:01,145 - ERROR - Chat update error for 19:b9dfb1c6a2fc7d4fbac36afc@thread.v2: 524 Server Error:  for url: https://provide-certainly-comes-carnival.trycloudflare.com/api/generate
+2025-09-16 15:31:01,280 - ERROR - HTTP error: 524 - <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-
+2025-09-16 15:31:01,280 - ERROR - Giving up call_ollama_with_backoff(...) after 3 tries (requests.exceptions.HTTPError: 524 Server Error:  for url: https://provide-certainly-comes-carnival.trycloudflare.com/api/generate)
+2025-09-16 15:31:01,280 - ERROR - Chat update error for 19:deefca54f22297d217c940eb@thread.v2: 524 Server Error:  for url: https://provide-certainly-comes-carnival.trycloudflare.com/api/generate
+2025-09-16 15:31:01,285 - ERROR - HTTP error: 524 - <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-
+2025-09-16 15:31:01,285 - ERROR - Giving up call_ollama_with_backoff(...) after 3 tries (requests.exceptions.HTTPError: 524 Server Error:  for url: https://provide-certainly-comes-carnival.trycloudflare.com/api/generate)
+2025-09-16 15:31:01,285 - ERROR - Chat update error for 19:543d858bbe5014ca52eb67d8@thread.v2: 524 Server Error:  for url: https://provide-certainly-comes-carnival.trycloudflare.com/api/generate
+2025-09-16 15:31:01,785 - ERROR - HTTP error: 524 - <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-
+2025-09-16 15:31:01,785 - ERROR - Giving up call_ollama_with_backoff(...) after 3 tries (requests.exceptions.HTTPError: 524 Server Error:  for url: https://provide-certainly-comes-carnival.trycloudflare.com/api/generate)
+2025-09-16 15:31:01,785 - ERROR - Chat update error for 19:16adc0b3fbdb453575026d18@thread.v2: 524 Server Error:  for url: https://provide-certainly-comes-carnival.trycloudflare.com/api/generate
+2025-09-16 15:31:01,786 - INFO - Batch 1 processing complete: 0/5 successful
+2025-09-16 15:31:01,786 - INFO - Batch duration: 301.94s
+2025-09-16 15:31:01,786 - INFO - Worker utilization: 5 workers processed 5 tasks
+2025-09-16 15:31:01,786 - INFO - Shutdown requested. Stopping at batch 1/120
+2025-09-16 15:31:01,786 - INFO - Chat content generation interrupted gracefully!
+2025-09-16 15:31:01,786 - INFO - Total chats updated: 0
+2025-09-16 15:31:01,786 - INFO - Successful generations: 1
+2025-09-16 15:31:01,787 - INFO - Failed generations: 4
+2025-09-16 15:31:01,787 - INFO - Data updated in MongoDB: sparzaai.chatmessages
+2025-09-16 15:31:02,177 - INFO - Collection Statistics:
+2025-09-16 15:31:02,177 - INFO - Total chats: 600
+2025-09-16 15:31:02,177 - INFO - With analysis fields: 0
+2025-09-16 15:31:02,177 - INFO - Top Dominant Topics:
+2025-09-16 15:31:02,177 - INFO - 1. Network Performance Issue: 16 chats
+2025-09-16 15:31:02,177 - INFO - 2. Attendance Management Alert: 16 chats
+2025-09-16 15:31:02,177 - INFO - 3. Compliance Monitoring Update: 14 chats
+2025-09-16 15:31:02,177 - INFO - 4. Software Issue Resolution: 14 chats
+2025-09-16 15:31:02,177 - INFO - 5. Documentation Request Alert: 14 chats
+2025-09-16 15:31:02,177 - INFO - 6. Monthly Compliance Audit: 14 chats
+2025-09-16 15:31:02,178 - INFO - 7. Pipeline Management Discussion: 13 chats
+2025-09-16 15:31:02,178 - INFO - 8. Performance Metric Tracking: 13 chats
+2025-09-16 15:31:02,178 - INFO - 9. Technology Provider Communication: 13 chats
+2025-09-16 15:31:02,178 - INFO - 10. Risk Assessment Update: 13 chats
+2025-09-16 15:31:02,304 - INFO - Sample Generated Chat Content:
+2025-09-16 15:31:02,431 - INFO - Content validation complete: 0 issues found
+2025-09-16 15:31:02,685 - INFO - Status report generated: logs/chat_status_report_20250916_153102.json
+2025-09-16 15:31:02,685 - INFO - Final session report:
+2025-09-16 15:31:02,685 - INFO - Success Rate: 20.00%
+2025-09-16 15:31:02,686 - INFO - Database Completion: 0.00%
+2025-09-16 15:31:02,811 - INFO - Database connection closed
+2025-09-16 15:31:02,811 - INFO - Session complete. Check log files for detailed information:
+2025-09-16 15:31:02,811 - INFO - Main Log: logs/chat_generator_20250916_152537.log
+2025-09-16 15:31:02,811 - INFO - Success Log: logs/successful_chat_generations_20250916_152537.log
+2025-09-16 15:31:02,811 - INFO - Failure Log: logs/failed_chat_generations_20250916_152537.log
+2025-09-16 15:31:02,811 - INFO - Progress Log: logs/chat_progress_20250916_152537.log
+2025-09-16 15:31:02,811 - INFO - Intermediate Results: logs/chat_intermediate_results_20250916_152537.json
+2025-09-16 15:31:02,811 - INFO - Database connection closed

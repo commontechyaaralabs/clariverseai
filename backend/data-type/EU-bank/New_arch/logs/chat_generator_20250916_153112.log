@@ -1,0 +1,46 @@
+2025-09-16 15:31:12,833 - INFO - EU Banking Chat Content Generator Starting...
+2025-09-16 15:31:12,833 - INFO - Database: sparzaai
+2025-09-16 15:31:12,833 - INFO - Collection: chatmessages
+2025-09-16 15:31:12,833 - INFO - Model: gemma3:27b
+2025-09-16 15:31:12,833 - INFO - Ollama URL: https://provide-certainly-comes-carnival.trycloudflare.com
+2025-09-16 15:31:12,833 - INFO - Max Workers: 2
+2025-09-16 15:31:12,833 - INFO - Batch Size: 2
+2025-09-16 15:31:12,833 - INFO - Log Directory: logs
+2025-09-16 15:31:13,839 - INFO - Database connection established and indexes created
+2025-09-16 15:31:14,218 - INFO - Collection Statistics:
+2025-09-16 15:31:14,218 - INFO - Total chats: 600
+2025-09-16 15:31:14,218 - INFO - With analysis fields: 0
+2025-09-16 15:31:14,219 - INFO - Top Dominant Topics:
+2025-09-16 15:31:14,219 - INFO - 1. Network Performance Issue: 16 chats
+2025-09-16 15:31:14,219 - INFO - 2. Attendance Management Alert: 16 chats
+2025-09-16 15:31:14,219 - INFO - 3. Compliance Monitoring Update: 14 chats
+2025-09-16 15:31:14,219 - INFO - 4. Software Issue Resolution: 14 chats
+2025-09-16 15:31:14,219 - INFO - 5. Documentation Request Alert: 14 chats
+2025-09-16 15:31:14,219 - INFO - 6. Monthly Compliance Audit: 14 chats
+2025-09-16 15:31:14,219 - INFO - 7. Pipeline Management Discussion: 13 chats
+2025-09-16 15:31:14,219 - INFO - 8. Performance Metric Tracking: 13 chats
+2025-09-16 15:31:14,219 - INFO - 9. Technology Provider Communication: 13 chats
+2025-09-16 15:31:14,219 - INFO - 10. Risk Assessment Update: 13 chats
+2025-09-16 15:31:14,219 - INFO - No pending intermediate results to recover
+2025-09-16 15:31:14,219 - INFO - Starting EU Banking Chat Content Generation...
+2025-09-16 15:31:14,219 - INFO - System Info: 128 CPU cores detected
+2025-09-16 15:31:14,219 - INFO - Batch size: 2
+2025-09-16 15:31:14,219 - INFO - Max workers: 2
+2025-09-16 15:31:14,219 - INFO - Request timeout: 60s
+2025-09-16 15:31:14,219 - INFO - Max retries per request: 3
+2025-09-16 15:31:14,219 - INFO - Testing connection to remote Ollama: https://provide-certainly-comes-carnival.trycloudflare.com
+2025-09-16 15:31:14,219 - INFO - Testing simple generation...
+2025-09-16 15:31:21,441 - INFO - Generation test status: 200
+2025-09-16 15:31:21,441 - INFO - Ollama connection test successful
+2025-09-16 15:31:21,441 - INFO - Test response: ```json
+{
+  "test": "success"
+}
+```
+...
+2025-09-16 15:31:21,442 - INFO - Fetching chat records from database...
+2025-09-16 15:31:22,616 - INFO - Found 600 chats needing content generation
+2025-09-16 15:31:22,617 - INFO - Processing in 300 batches of 2 chats each
+2025-09-16 15:31:22,617 - INFO - Processing batch 1/300 (2 chats)...
+2025-09-16 15:31:22,617 - INFO - Starting 2 tasks with 2 workers
+2025-09-16 15:31:22,618 - INFO - Submitted 2 tasks to worker pool
