@@ -1,0 +1,187 @@
+2025-09-17 01:03:58,906 - INFO - EU Banking Chat Content Generator Starting...
+2025-09-17 01:03:58,906 - INFO - Database: sparzaai
+2025-09-17 01:03:58,906 - INFO - Collection: chatmessages
+2025-09-17 01:03:58,907 - INFO - Model: google/gemma-3-27b-it:free
+2025-09-17 01:03:58,907 - INFO - OpenRouter URL: https://openrouter.ai/api/v1/chat/completions
+2025-09-17 01:03:58,907 - INFO - Max Workers: 2
+2025-09-17 01:03:58,908 - INFO - Batch Size: 3
+2025-09-17 01:03:58,909 - INFO - Log Directory: logs
+2025-09-17 01:04:01,074 - INFO - Database connection established and indexes created
+2025-09-17 01:04:01,989 - INFO - Collection Statistics:
+2025-09-17 01:04:01,991 - INFO - Total chats: 600
+2025-09-17 01:04:01,996 - INFO - With analysis fields: 0
+2025-09-17 01:04:01,996 - INFO - Without analysis fields: 600
+2025-09-17 01:04:01,997 - INFO - Top Dominant Topics:
+2025-09-17 01:04:01,998 - INFO - 1. Attendance Management Alert: 16 chats
+2025-09-17 01:04:01,998 - INFO - 2. Network Performance Issue: 16 chats
+2025-09-17 01:04:01,999 - INFO - 3. Software Issue Resolution: 14 chats
+2025-09-17 01:04:01,999 - INFO - 4. Compliance Monitoring Update: 14 chats
+2025-09-17 01:04:02,000 - INFO - 5. Documentation Request Alert: 14 chats
+2025-09-17 01:04:02,000 - INFO - 6. Monthly Compliance Audit: 14 chats
+2025-09-17 01:04:02,001 - INFO - 7. Technology Provider Communication: 13 chats
+2025-09-17 01:04:02,001 - INFO - 8. Pipeline Management Discussion: 13 chats
+2025-09-17 01:04:02,002 - INFO - 9. Financial Reporting Procedure: 13 chats
+2025-09-17 01:04:02,002 - INFO - 10. Risk Assessment Update: 13 chats
+2025-09-17 01:04:02,002 - INFO - No pending intermediate results to recover
+2025-09-17 01:04:02,003 - INFO - Starting EU Banking Chat Content Generation...
+2025-09-17 01:04:02,003 - INFO - System Info: 16 CPU cores detected
+2025-09-17 01:04:02,003 - INFO - Batch size: 3
+2025-09-17 01:04:02,003 - INFO - Max workers: 2
+2025-09-17 01:04:02,004 - INFO - Request timeout: 120s
+2025-09-17 01:04:02,004 - INFO - Max retries per request: 5
+2025-09-17 01:04:02,004 - INFO - Testing connection to OpenRouter: https://openrouter.ai/api/v1/chat/completions
+2025-09-17 01:04:02,005 - INFO - Testing simple generation...
+2025-09-17 01:04:04,979 - INFO - Generation test status: 200
+2025-09-17 01:04:04,980 - INFO - OpenRouter connection test successful
+2025-09-17 01:04:04,980 - INFO - Test response: ```json
+{
+  "test": "success"
+}
+```
+...
+2025-09-17 01:04:04,981 - INFO - Fetching chat records from database...
+2025-09-17 01:04:11,261 - INFO - Found 600 chats needing content generation
+2025-09-17 01:04:11,261 - INFO - Processing in 200 batches of 3 chats each
+2025-09-17 01:04:11,262 - INFO - Processing batch 1/200 (3 chats)...
+2025-09-17 01:06:12,740 - INFO - Batch 1 processing complete: 3/3 successful
+2025-09-17 01:06:12,741 - INFO - Batch duration: 121.48s
+2025-09-17 01:06:12,741 - INFO - Saving batch of 3 updates to database...
+2025-09-17 01:06:13,276 - INFO - Successfully saved 3 records to database
+2025-09-17 01:06:13,277 - INFO - Sample update - Chat ID: 19:b9dfb1c6a2fc7d4fbac36afc@thread.v2
+2025-09-17 01:06:13,277 - INFO - Database update complete: 3 records saved
+2025-09-17 01:06:18,279 - INFO - Processing batch 2/200 (3 chats)...
+2025-09-17 01:07:36,285 - ERROR - Task processing error for 19:543d858bbe5014ca52eb67d8@thread.v2: Missing required field: analysis
+2025-09-17 01:08:11,953 - INFO - Batch 2 processing complete: 2/3 successful
+2025-09-17 01:08:11,954 - INFO - Batch duration: 113.67s
+2025-09-17 01:08:16,957 - INFO - Processing batch 3/200 (3 chats)...
+2025-09-17 01:08:38,076 - ERROR - Connection error - check OpenRouter endpoint
+2025-09-17 01:08:38,227 - INFO - Backing off call_openrouter_with_backoff(...) for 0.5s (requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response')))
+2025-09-17 01:08:38,228 - WARNING - Retry 1/5 after 0.5s
+2025-09-17 01:09:39,484 - ERROR - Task processing error for 19:e0860f845ea74db6c0f54a98@thread.v2: Missing required field: analysis
+2025-09-17 01:11:08,083 - INFO - Batch 3 processing complete: 2/3 successful
+2025-09-17 01:11:08,084 - INFO - Batch duration: 171.12s
+2025-09-17 01:11:08,085 - INFO - Saving batch of 4 updates to database...
+2025-09-17 01:11:08,359 - INFO - Successfully saved 4 records to database
+2025-09-17 01:11:08,360 - INFO - Sample update - Chat ID: 19:16adc0b3fbdb453575026d18@thread.v2
+2025-09-17 01:11:08,361 - INFO - Database update complete: 4 records saved
+2025-09-17 01:11:13,361 - INFO - Processing batch 4/200 (3 chats)...
+2025-09-17 01:12:02,532 - ERROR - Task processing error for 19:20f024874edbbcb45c3058db@thread.v2: Missing required field: analysis
+2025-09-17 01:12:22,471 - ERROR - API response error: Empty response from OpenRouter API
+2025-09-17 01:12:22,473 - INFO - Backing off call_openrouter_with_backoff(...) for 0.6s (ValueError: Empty response from OpenRouter API)
+2025-09-17 01:12:22,474 - WARNING - Retry 1/5 after 0.6s
+2025-09-17 01:13:28,660 - INFO - Batch 4 processing complete: 2/3 successful
+2025-09-17 01:13:28,660 - INFO - Batch duration: 135.30s
+2025-09-17 01:13:33,662 - INFO - Processing batch 5/200 (3 chats)...
+2025-09-17 01:15:42,502 - INFO - Batch 5 processing complete: 3/3 successful
+2025-09-17 01:15:42,504 - INFO - Batch duration: 128.84s
+2025-09-17 01:15:42,504 - INFO - Saving batch of 5 updates to database...
+2025-09-17 01:15:42,826 - INFO - Successfully saved 5 records to database
+2025-09-17 01:15:42,827 - INFO - Sample update - Chat ID: 19:a6ae005d72d8ffd81401b984@thread.v2
+2025-09-17 01:15:42,828 - INFO - Database update complete: 5 records saved
+2025-09-17 01:15:42,828 - INFO - Overall Progress: 2.5% | Batches: 5/200
+2025-09-17 01:15:42,828 - INFO - Success: 12 | Failures: 3 | DB Updates: 12
+2025-09-17 01:15:42,828 - INFO - System: CPU 6.3% | Memory 78.8%
+2025-09-17 01:15:47,830 - INFO - Processing batch 6/200 (3 chats)...
+2025-09-17 01:17:07,365 - ERROR - Task processing error for 19:32c2d312803c3ba80fb812cf@thread.v2: Missing required field: analysis
+2025-09-17 01:17:46,221 - INFO - Batch 6 processing complete: 2/3 successful
+2025-09-17 01:17:46,221 - INFO - Batch duration: 118.39s
+2025-09-17 01:17:51,223 - INFO - Processing batch 7/200 (3 chats)...
+2025-09-17 01:18:47,869 - ERROR - Task processing error for 19:88c048f3d5d88c698dc127f2@thread.v2: Missing required field: analysis
+2025-09-17 01:19:35,841 - ERROR - Task processing error for 19:a9a968bcfe308ab42cccede1@thread.v2: Missing required field: analysis
+2025-09-17 01:19:35,842 - INFO - Batch 7 processing complete: 1/3 successful
+2025-09-17 01:19:35,843 - INFO - Batch duration: 104.62s
+2025-09-17 01:19:35,844 - INFO - Saving batch of 3 updates to database...
+2025-09-17 01:19:36,107 - INFO - Successfully saved 3 records to database
+2025-09-17 01:19:36,107 - INFO - Sample update - Chat ID: 19:d844b2c1d85d98257f5b1052@thread.v2
+2025-09-17 01:19:36,108 - INFO - Database update complete: 3 records saved
+2025-09-17 01:19:41,109 - INFO - Processing batch 8/200 (3 chats)...
+2025-09-17 01:20:23,803 - ERROR - API response error: Empty response from OpenRouter API
+2025-09-17 01:20:23,804 - INFO - Backing off call_openrouter_with_backoff(...) for 0.9s (ValueError: Empty response from OpenRouter API)
+2025-09-17 01:20:23,804 - WARNING - Retry 1/5 after 0.9s
+2025-09-17 01:21:45,181 - ERROR - Task processing error for 19:f8998d28115a6fddb5d1fa1f@thread.v2: Missing required field: analysis
+2025-09-17 01:22:04,650 - ERROR - Task processing error for 19:65627ac6e5560c0078e10b41@thread.v2: Missing required field: analysis
+2025-09-17 01:22:04,652 - INFO - Batch 8 processing complete: 1/3 successful
+2025-09-17 01:22:04,652 - INFO - Batch duration: 143.54s
+2025-09-17 01:22:09,654 - INFO - Processing batch 9/200 (3 chats)...
+2025-09-17 01:23:03,822 - ERROR - API response error: Empty response from OpenRouter API
+2025-09-17 01:23:03,823 - INFO - Backing off call_openrouter_with_backoff(...) for 0.8s (ValueError: Empty response from OpenRouter API)
+2025-09-17 01:23:03,824 - WARNING - Retry 1/5 after 0.8s
+2025-09-17 01:23:49,967 - ERROR - Task processing error for 19:f05a4b9b1ecd96e824176736@thread.v2: Missing required field: analysis
+2025-09-17 01:23:53,750 - ERROR - Task processing error for 19:5c1d8bfbc9d698ac33306a23@thread.v2: Missing required field: analysis
+2025-09-17 01:24:37,005 - ERROR - Task processing error for 19:e05b918f00d7cefcfe9e0e3a@thread.v2: Missing required field: analysis
+2025-09-17 01:24:37,006 - INFO - Batch 9 processing complete: 0/3 successful
+2025-09-17 01:24:37,007 - INFO - Batch duration: 147.35s
+2025-09-17 01:24:42,008 - INFO - Processing batch 10/200 (3 chats)...
+2025-09-17 01:27:07,938 - INFO - Batch 10 processing complete: 3/3 successful
+2025-09-17 01:27:07,939 - INFO - Batch duration: 145.93s
+2025-09-17 01:27:07,939 - INFO - Saving batch of 4 updates to database...
+2025-09-17 01:27:08,207 - INFO - Successfully saved 4 records to database
+2025-09-17 01:27:08,208 - INFO - Sample update - Chat ID: 19:01d703474d021a5a10268fc1@thread.v2
+2025-09-17 01:27:08,208 - INFO - Database update complete: 4 records saved
+2025-09-17 01:27:08,209 - INFO - Overall Progress: 5.0% | Batches: 10/200
+2025-09-17 01:27:08,210 - INFO - Success: 19 | Failures: 11 | DB Updates: 19
+2025-09-17 01:27:08,212 - INFO - System: CPU 7.1% | Memory 76.3%
+2025-09-17 01:27:13,214 - INFO - Processing batch 11/200 (3 chats)...
+2025-09-17 01:29:21,874 - ERROR - Task processing error for 19:43e6859e89f733bb3ceb20f0@thread.v2: Missing required field: analysis
+2025-09-17 01:29:21,875 - INFO - Received signal 2. Initiating graceful shutdown...
+2025-09-17 01:29:21,875 - INFO - Please wait for current operations to complete...
+2025-09-17 01:29:21,876 - WARNING - Cancelling remaining tasks...
+2025-09-17 01:29:21,877 - INFO - Batch 11 processing complete: 2/3 successful
+2025-09-17 01:29:21,877 - INFO - Batch duration: 128.66s
+2025-09-17 01:29:21,878 - INFO - Shutdown requested. Stopping at batch 11/200
+2025-09-17 01:29:21,878 - INFO - Content generation interrupted gracefully!
+2025-09-17 01:29:21,879 - INFO - Total chats updated: 19
+2025-09-17 01:29:21,879 - INFO - Successful generations: 21
+2025-09-17 01:29:21,880 - INFO - Failed generations: 12
+2025-09-17 01:29:21,881 - INFO - Data updated in MongoDB: sparzaai.chatmessages
+2025-09-17 01:29:22,645 - INFO - Collection Statistics:
+2025-09-17 01:29:22,646 - INFO - Total chats: 600
+2025-09-17 01:29:22,646 - INFO - With analysis fields: 19
+2025-09-17 01:29:22,646 - INFO - Without analysis fields: 581
+2025-09-17 01:29:22,648 - INFO - Top Dominant Topics:
+2025-09-17 01:29:22,648 - INFO - 1. Attendance Management Alert: 16 chats
+2025-09-17 01:29:22,649 - INFO - 2. Network Performance Issue: 16 chats
+2025-09-17 01:29:22,649 - INFO - 3. Software Issue Resolution: 14 chats
+2025-09-17 01:29:22,650 - INFO - 4. Documentation Request Alert: 14 chats
+2025-09-17 01:29:22,650 - INFO - 5. Compliance Monitoring Update: 14 chats
+2025-09-17 01:29:22,652 - INFO - 6. Monthly Compliance Audit: 14 chats
+2025-09-17 01:29:22,652 - INFO - 7. Pipeline Management Discussion: 13 chats
+2025-09-17 01:29:22,653 - INFO - 8. Performance Metric Tracking: 13 chats
+2025-09-17 01:29:22,653 - INFO - 9. Risk Assessment Update: 13 chats
+2025-09-17 01:29:22,653 - INFO - 10. Financial Reporting Procedure: 13 chats
+2025-09-17 01:29:23,175 - INFO - Sample Generated Chat Content:
+2025-09-17 01:29:23,176 - INFO - --- Sample Chat 1 ---
+2025-09-17 01:29:23,176 - INFO - Chat ID: 19:deefca54f22297d217c940eb@thread.v2
+2025-09-17 01:29:23,177 - INFO - Dominant Topic: Financial Reporting Procedure
+2025-09-17 01:29:23,177 - INFO - Subtopics: Regular Reporting Process, Audit Preparation Coordination...
+2025-09-17 01:29:23,177 - INFO - Stages: Confirm/Close
+2025-09-17 01:29:23,178 - INFO - Chat Summary: This chat conversation between Derrick and Alexa focuses on the preparation for the Q1 2025 FINREP reporting to the ECB and coordination for the upcoming KPMG audit. They discuss the latest reporting ...
+2025-09-17 01:29:23,178 - INFO - Urgent: False
+2025-09-17 01:29:23,178 - INFO - --- Sample Chat 2 ---
+2025-09-17 01:29:23,179 - INFO - Chat ID: 19:b9dfb1c6a2fc7d4fbac36afc@thread.v2
+2025-09-17 01:29:23,180 - INFO - Dominant Topic: Software Issue Resolution
+2025-09-17 01:29:23,180 - INFO - Subtopics: Application Bug Fix, System Problem Solving, Configuration Help...
+2025-09-17 01:29:23,181 - INFO - Stages: Resolve
+2025-09-17 01:29:23,181 - INFO - Chat Summary: Michelle Brown was locked out of the corporate banking portal and unable to reset her password, preventing her from approving a critical €25,000 SEPA payment to a German supplier. Nancy Myers, a suppo...
+2025-09-17 01:29:23,181 - INFO - Urgent: True
+2025-09-17 01:29:23,182 - INFO - --- Sample Chat 3 ---
+2025-09-17 01:29:23,183 - INFO - Chat ID: 19:ba15dbb16d84065ae18d10ad@thread.v2
+2025-09-17 01:29:23,183 - INFO - Dominant Topic: Audit Feedback Review
+2025-09-17 01:29:23,184 - INFO - Subtopics: Control Weakness Discussion, Corrective Action Timeline...
+2025-09-17 01:29:23,184 - INFO - Stages: Resolve
+2025-09-17 01:29:23,185 - INFO - Chat Summary: This chat conversation details the review of audit feedback regarding AML transaction monitoring weaknesses, specifically concerning KYC data validation for high-risk clients and PEPs. Keith and Chris...
+2025-09-17 01:29:23,187 - INFO - Urgent: False
+2025-09-17 01:29:23,963 - INFO - Content validation complete: 19 issues found
+2025-09-17 01:29:23,964 - WARNING - Found 19 content validation issues
+2025-09-17 01:29:24,468 - INFO - Status report generated: logs\status_report_20250917_012923.json
+2025-09-17 01:29:24,469 - INFO - Final session report:
+2025-09-17 01:29:24,469 - INFO - Success Rate: 63.64%
+2025-09-17 01:29:24,470 - INFO - Database Completion: 3.17%
+2025-09-17 01:29:24,767 - INFO - Database connection closed
+2025-09-17 01:29:24,768 - INFO - Session complete. Check log files for detailed information:
+2025-09-17 01:29:24,769 - INFO - Main Log: logs\chat_generator_20250917_010358.log
+2025-09-17 01:29:24,769 - INFO - Success Log: logs\successful_generations_20250917_010358.log
+2025-09-17 01:29:24,769 - INFO - Failure Log: logs\failed_generations_20250917_010358.log
+2025-09-17 01:29:24,770 - INFO - Progress Log: logs\progress_20250917_010358.log
+2025-09-17 01:29:24,770 - INFO - Intermediate Results: logs\intermediate_results_20250917_010358.json
+2025-09-17 01:29:24,772 - INFO - Database connection closed

@@ -1,0 +1,6 @@
+2025-09-17 00:31:09,644 - COLLECTION_STATS: total=600, with_analysis=0
+2025-09-17 00:31:14,047 - BATCH_START: total_chats=600, batch_size=3
+2025-09-17 00:31:14,048 - BATCH_START: batch=1/200, records=3
+2025-09-17 00:36:08,267 - BATCH_COMPLETE: batch=1, successful=0, duration=294.22s, workers=2
+2025-09-17 00:36:08,270 - FINAL_SUMMARY: total_updated=0, success=0, failures=0
+2025-09-17 00:36:09,068 - COLLECTION_STATS: total=600, with_analysis=0

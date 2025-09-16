@@ -1,0 +1,2 @@
+2025-09-17 00:42:49,545 - ERROR - {"chat_id": "19:b9dfb1c6a2fc7d4fbac36afc@thread.v2", "dominant_topic": "Software Issue Resolution", "error": "Missing required field: messages", "generation_time": 301.1672658920288, "attempts": 3}
+2025-09-17 00:42:52,105 - ERROR - {"chat_id": "19:deefca54f22297d217c940eb@thread.v2", "dominant_topic": "Financial Reporting Procedure", "error": "Missing required field: messages", "generation_time": 303.7286202907562, "attempts": 3}

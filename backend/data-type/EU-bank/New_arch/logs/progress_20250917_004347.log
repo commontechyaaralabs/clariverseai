@@ -1,0 +1,8 @@
+2025-09-17 00:43:50,360 - COLLECTION_STATS: total=600, with_analysis=0, without_analysis=600
+2025-09-17 00:43:57,343 - BATCH_START: total_chats=600, batch_size=3
+2025-09-17 00:43:57,343 - BATCH_START: batch=1/200, records=3
+2025-09-17 00:48:57,872 - FAILURE_COUNT: 1
+2025-09-17 00:49:07,533 - FAILURE_COUNT: 2
+2025-09-17 00:49:07,535 - BATCH_COMPLETE: batch=1, successful=0, duration=310.19s
+2025-09-17 00:49:07,537 - FINAL_SUMMARY: total_updated=0, success=0, failures=2
+2025-09-17 00:49:09,932 - COLLECTION_STATS: total=600, with_analysis=0, without_analysis=600

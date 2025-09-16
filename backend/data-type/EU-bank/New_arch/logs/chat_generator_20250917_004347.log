@@ -1,0 +1,93 @@
+2025-09-17 00:43:47,407 - INFO - EU Banking Chat Content Generator Starting...
+2025-09-17 00:43:47,408 - INFO - Database: sparzaai
+2025-09-17 00:43:47,408 - INFO - Collection: chatmessages
+2025-09-17 00:43:47,408 - INFO - Model: google/gemma-3-27b-it:free
+2025-09-17 00:43:47,409 - INFO - OpenRouter URL: https://openrouter.ai/api/v1/chat/completions
+2025-09-17 00:43:47,409 - INFO - Max Workers: 2
+2025-09-17 00:43:47,409 - INFO - Batch Size: 3
+2025-09-17 00:43:47,410 - INFO - Log Directory: logs
+2025-09-17 00:43:49,586 - INFO - Database connection established and indexes created
+2025-09-17 00:43:50,349 - INFO - Collection Statistics:
+2025-09-17 00:43:50,351 - INFO - Total chats: 600
+2025-09-17 00:43:50,354 - INFO - With analysis fields: 0
+2025-09-17 00:43:50,354 - INFO - Without analysis fields: 600
+2025-09-17 00:43:50,354 - INFO - Top Dominant Topics:
+2025-09-17 00:43:50,355 - INFO - 1. Attendance Management Alert: 16 chats
+2025-09-17 00:43:50,355 - INFO - 2. Network Performance Issue: 16 chats
+2025-09-17 00:43:50,355 - INFO - 3. Software Issue Resolution: 14 chats
+2025-09-17 00:43:50,355 - INFO - 4. Compliance Monitoring Update: 14 chats
+2025-09-17 00:43:50,356 - INFO - 5. Documentation Request Alert: 14 chats
+2025-09-17 00:43:50,357 - INFO - 6. Monthly Compliance Audit: 14 chats
+2025-09-17 00:43:50,358 - INFO - 7. Technology Provider Communication: 13 chats
+2025-09-17 00:43:50,358 - INFO - 8. Pipeline Management Discussion: 13 chats
+2025-09-17 00:43:50,359 - INFO - 9. Financial Reporting Procedure: 13 chats
+2025-09-17 00:43:50,359 - INFO - 10. Risk Assessment Update: 13 chats
+2025-09-17 00:43:50,360 - INFO - No pending intermediate results to recover
+2025-09-17 00:43:50,360 - INFO - Starting EU Banking Chat Content Generation...
+2025-09-17 00:43:50,360 - INFO - System Info: 16 CPU cores detected
+2025-09-17 00:43:50,361 - INFO - Batch size: 3
+2025-09-17 00:43:50,361 - INFO - Max workers: 2
+2025-09-17 00:43:50,362 - INFO - Request timeout: 120s
+2025-09-17 00:43:50,362 - INFO - Max retries per request: 5
+2025-09-17 00:43:50,363 - INFO - Testing connection to OpenRouter: https://openrouter.ai/api/v1/chat/completions
+2025-09-17 00:43:50,363 - INFO - Testing simple generation...
+2025-09-17 00:43:53,692 - INFO - Generation test status: 200
+2025-09-17 00:43:53,693 - INFO - OpenRouter connection test successful
+2025-09-17 00:43:53,694 - INFO - Test response: ```json
+{
+  "test": "success"
+}
+```
+...
+2025-09-17 00:43:53,695 - INFO - Fetching chat records from database...
+2025-09-17 00:43:57,342 - INFO - Found 600 chats needing content generation
+2025-09-17 00:43:57,343 - INFO - Processing in 200 batches of 3 chats each
+2025-09-17 00:43:57,343 - INFO - Processing batch 1/200 (3 chats)...
+2025-09-17 00:46:46,618 - ERROR - Connection error - check OpenRouter endpoint
+2025-09-17 00:46:46,650 - INFO - Backing off call_openrouter_with_backoff(...) for 0.4s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='openrouter.ai', port=443): Read timed out.)
+2025-09-17 00:46:46,650 - WARNING - Retry 1/5 after 0.4s
+2025-09-17 00:46:46,665 - ERROR - Connection error - check OpenRouter endpoint
+2025-09-17 00:46:46,666 - INFO - Backing off call_openrouter_with_backoff(...) for 0.4s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='openrouter.ai', port=443): Read timed out.)
+2025-09-17 00:46:46,667 - WARNING - Retry 1/5 after 0.4s
+2025-09-17 00:47:57,361 - INFO - Received signal 2. Initiating graceful shutdown...
+2025-09-17 00:47:57,362 - INFO - Please wait for current operations to complete...
+2025-09-17 00:47:57,363 - ERROR - Error collecting batch results: 3 (of 3) futures unfinished
+2025-09-17 00:48:57,871 - ERROR - Task processing error for 19:deefca54f22297d217c940eb@thread.v2: JSON parsing failed: Expecting ',' delimiter: line 289 column 8 (char 11063)
+2025-09-17 00:49:07,532 - ERROR - Task processing error for 19:b9dfb1c6a2fc7d4fbac36afc@thread.v2: JSON parsing failed: Expecting ',' delimiter: line 293 column 8 (char 11262)
+2025-09-17 00:49:07,534 - INFO - Batch 1 processing complete: 0/3 successful
+2025-09-17 00:49:07,534 - INFO - Batch duration: 310.19s
+2025-09-17 00:49:07,535 - INFO - Shutdown requested. Stopping at batch 1/200
+2025-09-17 00:49:07,535 - INFO - Content generation interrupted gracefully!
+2025-09-17 00:49:07,536 - INFO - Total chats updated: 0
+2025-09-17 00:49:07,536 - INFO - Successful generations: 0
+2025-09-17 00:49:07,537 - INFO - Failed generations: 2
+2025-09-17 00:49:07,537 - INFO - Data updated in MongoDB: sparzaai.chatmessages
+2025-09-17 00:49:09,930 - INFO - Collection Statistics:
+2025-09-17 00:49:09,930 - INFO - Total chats: 600
+2025-09-17 00:49:09,931 - INFO - With analysis fields: 0
+2025-09-17 00:49:09,931 - INFO - Without analysis fields: 600
+2025-09-17 00:49:09,931 - INFO - Top Dominant Topics:
+2025-09-17 00:49:09,931 - INFO - 1. Network Performance Issue: 16 chats
+2025-09-17 00:49:09,931 - INFO - 2. Attendance Management Alert: 16 chats
+2025-09-17 00:49:09,931 - INFO - 3. Compliance Monitoring Update: 14 chats
+2025-09-17 00:49:09,931 - INFO - 4. Monthly Compliance Audit: 14 chats
+2025-09-17 00:49:09,931 - INFO - 5. Software Issue Resolution: 14 chats
+2025-09-17 00:49:09,932 - INFO - 6. Documentation Request Alert: 14 chats
+2025-09-17 00:49:09,932 - INFO - 7. Financial Reporting Procedure: 13 chats
+2025-09-17 00:49:09,932 - INFO - 8. Technology Provider Communication: 13 chats
+2025-09-17 00:49:09,932 - INFO - 9. Pipeline Management Discussion: 13 chats
+2025-09-17 00:49:09,932 - INFO - 10. Performance Metric Tracking: 13 chats
+2025-09-17 00:49:10,385 - INFO - Sample Generated Chat Content:
+2025-09-17 00:49:10,864 - INFO - Content validation complete: 0 issues found
+2025-09-17 00:49:11,791 - INFO - Status report generated: logs\status_report_20250917_004910.json
+2025-09-17 00:49:11,792 - INFO - Final session report:
+2025-09-17 00:49:11,793 - INFO - Success Rate: 0.00%
+2025-09-17 00:49:11,793 - INFO - Database Completion: 0.00%
+2025-09-17 00:49:12,198 - INFO - Database connection closed
+2025-09-17 00:49:12,199 - INFO - Session complete. Check log files for detailed information:
+2025-09-17 00:49:12,200 - INFO - Main Log: logs\chat_generator_20250917_004347.log
+2025-09-17 00:49:12,200 - INFO - Success Log: logs\successful_generations_20250917_004347.log
+2025-09-17 00:49:12,201 - INFO - Failure Log: logs\failed_generations_20250917_004347.log
+2025-09-17 00:49:12,201 - INFO - Progress Log: logs\progress_20250917_004347.log
+2025-09-17 00:49:12,201 - INFO - Intermediate Results: logs\intermediate_results_20250917_004347.json
+2025-09-17 00:49:12,206 - INFO - Database connection closed

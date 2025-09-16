@@ -1,0 +1,107 @@
+2025-09-17 00:31:06,790 - INFO - EU Banking Chat Content Generator with OpenRouter Starting...
+2025-09-17 00:31:06,790 - INFO - Database: sparzaai
+2025-09-17 00:31:06,790 - INFO - Collection: chatmessages
+2025-09-17 00:31:06,791 - INFO - Model: google/gemma-3-27b-it:free
+2025-09-17 00:31:06,791 - INFO - OpenRouter URL: https://openrouter.ai/api/v1/chat/completions
+2025-09-17 00:31:06,791 - INFO - Max Workers: 2
+2025-09-17 00:31:06,791 - INFO - Batch Size: 3
+2025-09-17 00:31:06,791 - INFO - Log Directory: logs
+2025-09-17 00:31:08,871 - INFO - Database connection established and indexes created
+2025-09-17 00:31:09,638 - INFO - Collection Statistics:
+2025-09-17 00:31:09,642 - INFO - Total chats: 600
+2025-09-17 00:31:09,642 - INFO - With analysis fields: 0
+2025-09-17 00:31:09,642 - INFO - Top Dominant Topics:
+2025-09-17 00:31:09,642 - INFO - 1. Attendance Management Alert: 16 chats
+2025-09-17 00:31:09,642 - INFO - 2. Network Performance Issue: 16 chats
+2025-09-17 00:31:09,643 - INFO - 3. Documentation Request Alert: 14 chats
+2025-09-17 00:31:09,643 - INFO - 4. Software Issue Resolution: 14 chats
+2025-09-17 00:31:09,643 - INFO - 5. Monthly Compliance Audit: 14 chats
+2025-09-17 00:31:09,643 - INFO - 6. Compliance Monitoring Update: 14 chats
+2025-09-17 00:31:09,644 - INFO - 7. Performance Metric Tracking: 13 chats
+2025-09-17 00:31:09,644 - INFO - 8. Financial Reporting Procedure: 13 chats
+2025-09-17 00:31:09,644 - INFO - 9. Pipeline Management Discussion: 13 chats
+2025-09-17 00:31:09,644 - INFO - 10. Technology Provider Communication: 13 chats
+2025-09-17 00:31:09,645 - INFO - No pending intermediate results to recover
+2025-09-17 00:31:09,645 - INFO - Starting EU Banking Chat Content Generation with OpenRouter...
+2025-09-17 00:31:09,645 - INFO - System Info: 16 CPU cores detected
+2025-09-17 00:31:09,645 - INFO - Batch size: 3
+2025-09-17 00:31:09,645 - INFO - Max workers: 2
+2025-09-17 00:31:09,645 - INFO - Request timeout: 120s
+2025-09-17 00:31:09,645 - INFO - Max retries per request: 5
+2025-09-17 00:31:09,645 - INFO - Testing connection to OpenRouter: https://openrouter.ai/api/v1/chat/completions
+2025-09-17 00:31:09,645 - INFO - Testing simple generation...
+2025-09-17 00:31:11,392 - INFO - Generation test status: 200
+2025-09-17 00:31:11,394 - INFO - OpenRouter connection test successful
+2025-09-17 00:31:11,394 - INFO - Test response: ```json
+{
+  "test": "success"
+}
+```
+...
+2025-09-17 00:31:11,395 - INFO - Fetching chat records from database...
+2025-09-17 00:31:14,046 - INFO - Found 600 chats needing content generation
+2025-09-17 00:31:14,047 - INFO - Processing in 200 batches of 3 chats each
+2025-09-17 00:31:14,047 - INFO - Processing batch 1/200 (3 chats)...
+2025-09-17 00:31:14,048 - INFO - Starting 3 tasks with 2 workers
+2025-09-17 00:31:14,051 - INFO - Submitted 3 tasks to worker pool
+2025-09-17 00:33:34,477 - ERROR - JSON parsing failed (attempt 1/3). Error: Expecting ',' delimiter: line 1 column 10757 (char 10756)
+2025-09-17 00:33:34,477 - ERROR - Problematic JSON (first 500 chars): {   "chat_data": {     "chat_id": "19:b9dfb1c6a2fc7d4fbac36afc@thread.v2",     "chatType": "oneOnOne",     "topic": "Software Issue Resolution",     "first_message_at": "2025-01-15T09:30:00Z",     "last_message_at": "2025-01-15T11:15:00Z",     "message_count": 17   },   "members": [     {       "id": "michellebrown@example.com",       "displayName": "Michelle Brown",       "userIdentityType": "aadUser"     },     {       "id": "nancymyers@example.com",       "displayName": "Nancy Myers",       "
+2025-09-17 00:33:34,477 - ERROR - Problematic JSON (last 500 chars): in!"       }     },     {       "id": "msg_17",       "chatId": "19:b9dfb1c6a2fc7d4fbac36afc@thread.v2",       "createdDateTime": "2025-01-15T11:15:00Z",       "from": {         "user": {           "id": "nancymyers@example.com",           "displayName": "Nancy Myers",           "userIdentityType": "aadUser"         }       },       "body": {         "contentType": "text",         "content": "That's fantastic news, Michelle! Excellent to hear it's fully resolved. Have a great day!"       }     }
+2025-09-17 00:33:34,479 - WARNING - Used partial JSON (length: 476)
+2025-09-17 00:33:34,479 - WARNING - Missing required field 'messages', retrying... (attempt 1/3)
+2025-09-17 00:33:45,077 - ERROR - JSON parsing failed (attempt 1/3). Error: Expecting ',' delimiter: line 1 column 11765 (char 11764)
+2025-09-17 00:33:45,078 - ERROR - Problematic JSON (first 500 chars): {   "chat_data": {     "chat_id": "19:deefca54f22297d217c940eb@thread.v2",     "chatType": "oneOnOne",     "topic": "Financial Reporting Procedure",     "first_message_at": "2025-01-15T09:30:00Z",     "last_message_at": "2025-01-16T16:45:00Z",     "message_count": 17   },   "members": [     {       "id": "derrickperry@example.com",       "displayName": "Derrick Perry",       "userIdentityType": "aadUser"     },     {       "id": "alexathomas@example.com",       "displayName": "Alexa Thomas",    
+2025-09-17 00:33:45,079 - ERROR - Problematic JSON (last 500 chars): : "19:deefca54f22297d217c940eb@thread.v2",       "createdDateTime": "2025-01-16T16:45:00Z",       "from": {         "user": {           "id": "derrickperry@example.com",           "displayName": "Derrick Perry",           "userIdentityType": "aadUser"         }       },       "body": {         "contentType": "text",         "content": "Thanks Alexa, you too! Just confirming I received the ECB guidance link. All clear on my end for now. Appreciate your help coordinating everything."       }     }
+2025-09-17 00:33:45,082 - WARNING - Used partial JSON (length: 538)
+2025-09-17 00:33:45,084 - WARNING - Missing required field 'messages', retrying... (attempt 1/3)
+2025-09-17 00:35:14,059 - INFO - Received signal 2. Initiating graceful shutdown...
+2025-09-17 00:35:14,061 - INFO - Please wait for current operations to complete...
+2025-09-17 00:35:14,067 - ERROR - Error collecting batch results: 3 (of 3) futures unfinished
+2025-09-17 00:36:02,702 - ERROR - JSON parsing failed (attempt 2/3). Error: Expecting ',' delimiter: line 1 column 10926 (char 10925)
+2025-09-17 00:36:02,703 - ERROR - Problematic JSON (first 500 chars): {   "chat_data": {     "chat_id": "19:b9dfb1c6a2fc7d4fbac36afc@thread.v2",     "chatType": "oneOnOne",     "topic": "Software Issue Resolution",     "first_message_at": "2025-01-15T09:30:00Z",     "last_message_at": "2025-01-15T11:15:00Z",     "message_count": 17   },   "members": [     {       "id": "michellebrown@example.com",       "displayName": "Michelle Brown",       "userIdentityType": "aadUser"     },     {       "id": "nancymyers@example.com",       "displayName": "Nancy Myers",       "
+2025-09-17 00:36:02,704 - ERROR - Problematic JSON (last 500 chars):  again for your patience and collaboration."       }     },     {       "id": "msg_17",       "chatId": "19:b9dfb1c6a2fc7d4fbac36afc@thread.v2",       "createdDateTime": "2025-01-15T11:15:00Z",       "from": {         "user": {           "id": "michellebrown@example.com",           "displayName": "Michelle Brown",           "userIdentityType": "aadUser"         }       },       "body": {         "contentType": "text",         "content": "Perfect, thank you! Have a good day, Nancy."       }     }
+2025-09-17 00:36:02,712 - WARNING - Used partial JSON (length: 436)
+2025-09-17 00:36:02,712 - WARNING - Missing required field 'messages', retrying... (attempt 2/3)
+2025-09-17 00:36:06,253 - ERROR - JSON parsing failed (attempt 2/3). Error: Expecting ',' delimiter: line 1 column 11049 (char 11048)
+2025-09-17 00:36:06,255 - ERROR - Problematic JSON (first 500 chars): {   "chat_data": {     "chat_id": "19:deefca54f22297d217c940eb@thread.v2",     "chatType": "oneOnOne",     "topic": "Financial Reporting Procedure",     "first_message_at": "2025-01-15T09:30:00Z",     "last_message_at": "2025-06-28T16:45:00Z",     "message_count": 17   },   "members": [     {       "id": "derrickperry@example.com",       "displayName": "Derrick Perry",       "userIdentityType": "aadUser"     },     {       "id": "alexathomas@example.com",       "displayName": "Alexa Thomas",    
+2025-09-17 00:36:06,255 - ERROR - Problematic JSON (last 500 chars): :deefca54f22297d217c940eb@thread.v2",       "createdDateTime": "2025-06-28T16:45:00Z",       "from": {         "user": {           "id": "alexathomas@example.com",           "displayName": "Alexa Thomas",           "userIdentityType": "aadUser"         }       },       "body": {         "contentType": "text",         "content": "Excellent! Thanks, Derrick. I'll do a final review on my end, but it sounds like we're all set.  Great work coordinating everything.  Have a good weekend!"       }     }
+2025-09-17 00:36:06,259 - WARNING - Used partial JSON (length: 543)
+2025-09-17 00:36:06,262 - WARNING - Missing required field 'messages', retrying... (attempt 2/3)
+2025-09-17 00:36:08,265 - INFO - Received signal 2. Initiating graceful shutdown...
+2025-09-17 00:36:08,266 - INFO - Please wait for current operations to complete...
+2025-09-17 00:36:08,266 - INFO - Batch 1 processing complete: 0/3 successful
+2025-09-17 00:36:08,267 - INFO - Batch duration: 294.22s
+2025-09-17 00:36:08,267 - INFO - Worker utilization: 2 workers processed 3 tasks
+2025-09-17 00:36:08,268 - INFO - Shutdown requested. Stopping at batch 1/200
+2025-09-17 00:36:08,268 - INFO - Chat content generation interrupted gracefully!
+2025-09-17 00:36:08,268 - INFO - Total chats updated: 0
+2025-09-17 00:36:08,269 - INFO - Successful generations: 0
+2025-09-17 00:36:08,269 - INFO - Failed generations: 0
+2025-09-17 00:36:08,270 - INFO - Data updated in MongoDB: sparzaai.chatmessages
+2025-09-17 00:36:09,058 - INFO - Collection Statistics:
+2025-09-17 00:36:09,059 - INFO - Total chats: 600
+2025-09-17 00:36:09,060 - INFO - With analysis fields: 0
+2025-09-17 00:36:09,060 - INFO - Top Dominant Topics:
+2025-09-17 00:36:09,061 - INFO - 1. Attendance Management Alert: 16 chats
+2025-09-17 00:36:09,062 - INFO - 2. Network Performance Issue: 16 chats
+2025-09-17 00:36:09,062 - INFO - 3. Compliance Monitoring Update: 14 chats
+2025-09-17 00:36:09,063 - INFO - 4. Software Issue Resolution: 14 chats
+2025-09-17 00:36:09,064 - INFO - 5. Documentation Request Alert: 14 chats
+2025-09-17 00:36:09,064 - INFO - 6. Monthly Compliance Audit: 14 chats
+2025-09-17 00:36:09,065 - INFO - 7. Financial Reporting Procedure: 13 chats
+2025-09-17 00:36:09,066 - INFO - 8. Performance Metric Tracking: 13 chats
+2025-09-17 00:36:09,067 - INFO - 9. Pipeline Management Discussion: 13 chats
+2025-09-17 00:36:09,068 - INFO - 10. Technology Provider Communication: 13 chats
+2025-09-17 00:36:09,325 - INFO - Sample Generated Chat Content:
+2025-09-17 00:36:09,851 - INFO - Status report generated: logs\chat_status_report_20250917_003609.json
+2025-09-17 00:36:09,852 - INFO - Final session report:
+2025-09-17 00:36:09,852 - INFO - Success Rate: 0.00%
+2025-09-17 00:36:09,854 - INFO - Database Completion: 0.00%
+2025-09-17 00:36:10,110 - INFO - Database connection closed
+2025-09-17 00:36:10,118 - INFO - Session complete. Check log files for detailed information:
+2025-09-17 00:36:10,118 - INFO - Main Log: logs\chat_openrouter_generator_20250917_003106.log
+2025-09-17 00:36:10,119 - INFO - Success Log: logs\successful_chat_generations_20250917_003106.log
+2025-09-17 00:36:10,119 - INFO - Failure Log: logs\failed_chat_generations_20250917_003106.log
+2025-09-17 00:36:10,120 - INFO - Progress Log: logs\chat_progress_20250917_003106.log
+2025-09-17 00:36:10,120 - INFO - Intermediate Results: logs\chat_intermediate_results_20250917_003106.json
+2025-09-17 00:36:10,121 - INFO - Database connection closed

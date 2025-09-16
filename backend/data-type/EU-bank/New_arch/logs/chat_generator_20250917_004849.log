@@ -1,0 +1,47 @@
+2025-09-17 00:48:49,737 - INFO - EU Banking Chat Content Generator Starting...
+2025-09-17 00:48:49,737 - INFO - Database: sparzaai
+2025-09-17 00:48:49,737 - INFO - Collection: chatmessages
+2025-09-17 00:48:49,738 - INFO - Model: google/gemma-3-27b-it:free
+2025-09-17 00:48:49,739 - INFO - OpenRouter URL: https://openrouter.ai/api/v1/chat/completions
+2025-09-17 00:48:49,739 - INFO - Max Workers: 2
+2025-09-17 00:48:49,739 - INFO - Batch Size: 3
+2025-09-17 00:48:49,739 - INFO - Log Directory: logs
+2025-09-17 00:48:53,241 - INFO - Database connection established and indexes created
+2025-09-17 00:48:54,063 - INFO - Collection Statistics:
+2025-09-17 00:48:54,064 - INFO - Total chats: 600
+2025-09-17 00:48:54,067 - INFO - With analysis fields: 0
+2025-09-17 00:48:54,067 - INFO - Without analysis fields: 600
+2025-09-17 00:48:54,068 - INFO - Top Dominant Topics:
+2025-09-17 00:48:54,068 - INFO - 1. Attendance Management Alert: 16 chats
+2025-09-17 00:48:54,069 - INFO - 2. Network Performance Issue: 16 chats
+2025-09-17 00:48:54,069 - INFO - 3. Documentation Request Alert: 14 chats
+2025-09-17 00:48:54,069 - INFO - 4. Software Issue Resolution: 14 chats
+2025-09-17 00:48:54,070 - INFO - 5. Monthly Compliance Audit: 14 chats
+2025-09-17 00:48:54,070 - INFO - 6. Compliance Monitoring Update: 14 chats
+2025-09-17 00:48:54,070 - INFO - 7. Financial Reporting Procedure: 13 chats
+2025-09-17 00:48:54,070 - INFO - 8. Technology Provider Communication: 13 chats
+2025-09-17 00:48:54,071 - INFO - 9. Pipeline Management Discussion: 13 chats
+2025-09-17 00:48:54,071 - INFO - 10. Performance Metric Tracking: 13 chats
+2025-09-17 00:48:54,072 - INFO - No pending intermediate results to recover
+2025-09-17 00:48:54,072 - INFO - Starting EU Banking Chat Content Generation...
+2025-09-17 00:48:54,073 - INFO - System Info: 16 CPU cores detected
+2025-09-17 00:48:54,073 - INFO - Batch size: 3
+2025-09-17 00:48:54,073 - INFO - Max workers: 2
+2025-09-17 00:48:54,074 - INFO - Request timeout: 120s
+2025-09-17 00:48:54,074 - INFO - Max retries per request: 5
+2025-09-17 00:48:54,074 - INFO - Testing connection to OpenRouter: https://openrouter.ai/api/v1/chat/completions
+2025-09-17 00:48:54,075 - INFO - Testing simple generation...
+2025-09-17 00:48:57,535 - INFO - Generation test status: 200
+2025-09-17 00:48:57,535 - INFO - OpenRouter connection test successful
+2025-09-17 00:48:57,535 - INFO - Test response: ```json
+{
+  "test": "success"
+}
+```
+...
+2025-09-17 00:48:57,536 - INFO - Fetching chat records from database...
+2025-09-17 00:49:24,322 - INFO - Found 600 chats needing content generation
+2025-09-17 00:49:24,323 - INFO - Processing in 200 batches of 3 chats each
+2025-09-17 00:49:24,323 - INFO - Processing batch 1/200 (3 chats)...
+2025-09-17 00:51:44,039 - ERROR - Task processing error for 19:b9dfb1c6a2fc7d4fbac36afc@thread.v2: JSON parsing failed: Expecting ',' delimiter: line 294 column 6 (char 11017)
+2025-09-17 00:51:50,035 - ERROR - Task processing error for 19:deefca54f22297d217c940eb@thread.v2: JSON parsing failed: Expecting ',' delimiter: line 294 column 6 (char 11102)
