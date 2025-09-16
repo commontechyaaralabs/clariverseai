@@ -358,7 +358,8 @@ TASK: Generate a realistic EU banking email thread with {message_count} messages
    - Generate realistic banking-related subject lines
    - Reply messages use "Re: [original subject]" format
    - Generate realistic timestamps showing natural progression (minutes to days apart)
-   - Use recent dates (within last 6 months)
+   - **CRITICAL: All dates must be between 2025-01-01 and 2025-06-30 (6 months only)**
+   - Ensure meaningful timeframes between messages (minutes for quick replies, hours for business hours, days for complex issues)
 
 **SEMANTIC ANALYSIS FIELD DEFINITIONS:**
 
@@ -377,7 +378,7 @@ TASK: Generate a realistic EU banking email thread with {message_count} messages
 
 **action_pending_status**: After reading all messages, determine if there are any pending actions required: "yes" or "no"
 
-**action_pending_from**: If action is pending, specify who needs to act next: "company" or "customer"
+**action_pending_from**: If action_pending_status is "yes", specify who needs to act next: "company" or "customer". If action_pending_status is "no", this field should be null.
 
 **resolution_status**: Based on the complete thread, determine if the main issue/request has been resolved: "open" (unresolved) or "closed" (resolved)
 
@@ -433,7 +434,7 @@ Return ONLY a JSON object with this structure:
     "stages": "[single_final_stage_based_on_complete_thread_analysis]",
     "email_summary": "[100-150_word_comprehensive_thread_summary_explaining_full_context]",
     "action_pending_status": "[yes/no_based_on_thread_analysis]",
-    "action_pending_from": "[company/customer_based_on_who_needs_to_act]",
+    "action_pending_from": "[company/customer_if_pending_yes_or_null_if_pending_no]",
     "resolution_status": "[open/closed_based_on_issue_resolution_in_thread]",
     "follow_up_required": "[yes/no_based_on_conversation_needs]",
     "follow_up_date": "[ISO_timestamp_or_null]",
@@ -452,15 +453,17 @@ Return ONLY a JSON object with this structure:
 **CRITICAL INSTRUCTIONS:**
 
 1. **EU Banking Focus:** Generate authentic European banking scenarios with relevant regulations, terminology, and business practices
-2. **Semantic Analysis:** Read and analyze the ENTIRE thread before determining each analysis field
-3. **Natural Communication:** Generate normal banking emails - avoid defaulting to crisis scenarios
-4. **Urgency Assessment:** Only mark as urgent if content semantically requires immediate action (target: ~7-8%)
-5. **Human Sentiment:** Analyze the emotional tone of human communication in each message
-6. **Comprehensive Summary:** Email summary must explain the complete story of the thread
-7. **Action-Oriented:** Next action suggestions should focus on business improvement and customer retention
-8. **Stage Analysis:** Determine where in the customer service process the thread actually ended
-9. **Banking Compliance:** Include relevant EU banking regulations and compliance considerations
-10. **Subject/Body Separation:** NEVER include the subject line in the email body content - they are separate fields
+2. **Date Range:** ALL dates must be between 2025-01-01 and 2025-06-30 (6 months only) with meaningful timeframes
+3. **Semantic Analysis:** Read and analyze the ENTIRE thread before determining each analysis field
+4. **Natural Communication:** Generate normal banking emails - avoid defaulting to crisis scenarios
+5. **Urgency Assessment:** Only mark as urgent if content semantically requires immediate action (target: ~7-8%)
+6. **Human Sentiment:** Analyze the emotional tone of human communication in each message
+7. **Comprehensive Summary:** Email summary must explain the complete story of the thread
+8. **Action-Oriented:** Next action suggestions should focus on business improvement and customer retention
+9. **Stage Analysis:** Determine where in the customer service process the thread actually ended
+10. **Banking Compliance:** Include relevant EU banking regulations and compliance considerations
+11. **Subject/Body Separation:** NEVER include the subject line in the email body content - they are separate fields
+12. **Action Pending Logic:** If action_pending_status is "no", then action_pending_from must be null
 
 Generate the EU banking email thread and comprehensive analysis now.
 """.strip()
