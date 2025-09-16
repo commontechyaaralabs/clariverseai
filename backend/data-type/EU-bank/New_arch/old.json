@@ -1,0 +1,96 @@
+{
+    "_id": "<unique_document_id>",                
+    "provider": "gmail | m365 | zoho",            
+    "account": {
+      "account_id": "<internal_account_id>",
+      "email": "<account_email>",
+      "display_name": "<account_display_name>",
+      "status": "active | inactive",
+      "connected_at": "2025-09-15T07:10:00Z",
+      "provider_meta": {
+        "gmail": { "historyId": "optional" },
+        "m365": { "tenantId": "optional", "userId": "optional" },
+        "zoho": { "orgId": "optional", "accountId": "optional" }
+      }
+    },
+    "thread": {
+      "thread_id": "<internal_thread_id>",        
+      "thread_key": {
+        "gmail_thread_id": "optional",
+        "m365_conversation_id": "optional",
+        "zoho_thread_id": "optional"
+      },
+      "subject_norm": "<normalized_subject>",
+      "participants": [
+        { "type": "from", "name": "Sender Name", "email": "sender@example.com" },
+        { "type": "to", "name": "Receiver Name", "email": "receiver@example.com" }
+      ],
+      "first_message_at": "2025-09-01T09:00:00Z",
+      "last_message_at": "2025-09-01T10:15:00Z",
+      "message_count": 3,
+      "provider_labels": {
+        "gmail": ["INBOX", "SENT"],
+        "m365": ["Focused", "Other"],
+        "zoho": ["Inbox"]
+      },
+      "state": { "archived": false, "spam": false, "trash": false }
+    },
+    "messages": [
+      {
+        "provider_ids": {
+          "gmail": { "id": "GMAIL_MESSAGE_ID", "threadId": "GMAIL_THREAD_ID" },
+          "m365": {
+            "id": "M365_MESSAGE_ID",
+            "conversationId": "M365_CONVERSATION_ID",
+            "internetMessageId": "<MSG@domain>"
+          },
+          "zoho": { "messageId": "ZOHO_MESSAGE_ID", "threadId": "ZOHO_THREAD_ID" }
+        },
+        "internet_message_id": "<InternetMessageId@domain>",
+        "headers": {
+          "date": "2025-09-01T09:00:00Z",
+          "subject": "Subject here",
+          "from": [{ "name": "Sender Name", "email": "sender@example.com" }],
+          "to": [{ "name": "Receiver Name", "email": "receiver@example.com" }],
+          "cc": [],
+          "bcc": []
+        },
+        "snippet": "Short preview text…",
+        "body": {
+          "mime_type": "text/plain",
+          "text": {
+            "plain": "Plain text version…",
+            "html": "<p>HTML version…</p>"
+          }
+        },
+        "attachments": [
+          {
+            "attachment_id": "ATT123",
+            "file_name": "invoice.pdf",
+            "mime_type": "application/pdf",
+            "size": 12345,
+            "download_url": "<provider_specific_download_url>"
+          }
+        ],
+        "flags": { "is_read": true, "is_starred": false },
+        "timestamps": {
+          "received_at": "2025-09-01T09:00:00Z",
+          "sent_at": "2025-09-01T09:00:00Z"
+        }
+      }
+    ],
+    "stages": "Receive | Authenticate | Categorize | Attempt Resolution | Escalate/Investigate | Update Customer | Resolve | Confirm/Close | Report/Analyze",
+    "email_summary": "Internal audit identified GBP 5605.13 loan repayment discrepancy for account 264446536615 due to system rounding error during currency conversion. Investigation confirmed data entry error, matter escalated to Audit Committee for regulatory compliance review under MiFID II and PSD2 requirements. IT fix scheduled for deployment.",
+    "action_pending_status": "yes",
+    "action_pending_from": "company",
+    "resolution_status": "open",
+    "follow_up_required": "yes",
+    "follow_up_date": "2025-07-15T00:00:00Z",
+    "follow_up_reason": "Monitor IT system fix deployment and confirm resolution of currency conversion rounding error",
+    "next_action_suggestion": "Coordinate with IT team to ensure successful deployment of currency conversion fix on July 15th, conduct post-deployment testing, and prepare closure report for Audit Committee confirming resolution of the discrepancy",
+    "urgency": true,
+    "sentiment": {
+      "0": 1,
+      "1": 2
+    }
+  }

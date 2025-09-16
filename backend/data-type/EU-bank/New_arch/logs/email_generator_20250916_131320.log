@@ -1,0 +1,176 @@
+2025-09-16 13:13:20,909 - INFO - EU Banking Email Content Generator Starting...
+2025-09-16 13:13:20,909 - INFO - Database: sparzaai
+2025-09-16 13:13:20,910 - INFO - Collection: email
+2025-09-16 13:13:20,910 - INFO - Model: google/gemma-3-27b-it:free
+2025-09-16 13:13:20,910 - INFO - OpenRouter URL: https://openrouter.ai/api/v1/chat/completions
+2025-09-16 13:13:20,910 - INFO - Max Workers: 2
+2025-09-16 13:13:20,911 - INFO - Batch Size: 3
+2025-09-16 13:13:20,911 - INFO - Log Directory: logs
+2025-09-16 13:13:23,572 - INFO - Database connection established and indexes created
+2025-09-16 13:13:24,499 - INFO - Collection Statistics:
+2025-09-16 13:13:24,501 - INFO - Total emails: 2004
+2025-09-16 13:13:24,504 - INFO - With analysis fields: 0
+2025-09-16 13:13:24,505 - INFO - Without analysis fields: 2004
+2025-09-16 13:13:24,505 - INFO - Top Dominant Topics:
+2025-09-16 13:13:24,506 - INFO - 1. Risk Management Alert: 31 emails
+2025-09-16 13:13:24,506 - INFO - 2. User Access Approval: 30 emails
+2025-09-16 13:13:24,507 - INFO - 3. Quality Assurance Breach: 28 emails
+2025-09-16 13:13:24,508 - INFO - 4. IT Marketing Unresolved: 27 emails
+2025-09-16 13:13:24,508 - INFO - 5. IT Access Problem: 26 emails
+2025-09-16 13:13:24,508 - INFO - 6. Salary Leave Issues: 23 emails
+2025-09-16 13:13:24,509 - INFO - 7. Vendor Management: 22 emails
+2025-09-16 13:13:24,509 - INFO - 8. Legal Escalation: 22 emails
+2025-09-16 13:13:24,509 - INFO - 9. Performance Management: 22 emails
+2025-09-16 13:13:24,510 - INFO - 10. Process Exception: 22 emails
+2025-09-16 13:13:24,510 - INFO - No pending intermediate results to recover
+2025-09-16 13:13:24,510 - INFO - Starting EU Banking Email Content Generation...
+2025-09-16 13:13:24,511 - INFO - System Info: 16 CPU cores detected
+2025-09-16 13:13:24,511 - INFO - Batch size: 3
+2025-09-16 13:13:24,511 - INFO - Max workers: 2
+2025-09-16 13:13:24,512 - INFO - Request timeout: 120s
+2025-09-16 13:13:24,514 - INFO - Max retries per request: 5
+2025-09-16 13:13:24,515 - INFO - Testing connection to OpenRouter: https://openrouter.ai/api/v1/chat/completions
+2025-09-16 13:13:24,515 - INFO - Testing simple generation...
+2025-09-16 13:13:26,740 - INFO - Generation test status: 200
+2025-09-16 13:13:26,741 - INFO - OpenRouter connection test successful
+2025-09-16 13:13:26,742 - INFO - Test response: ```json
+{
+  "test": "success"
+}
+```
+...
+2025-09-16 13:13:26,743 - INFO - Fetching email records from database...
+2025-09-16 13:13:38,945 - INFO - Found 2004 emails needing content generation
+2025-09-16 13:13:38,946 - INFO - Processing in 668 batches of 3 emails each
+2025-09-16 13:13:38,947 - INFO - Processing batch 1/668 (3 emails)...
+2025-09-16 13:14:38,555 - INFO - Batch 1 processing complete: 3/3 successful
+2025-09-16 13:14:38,555 - INFO - Batch duration: 59.61s
+2025-09-16 13:14:38,555 - INFO - Saving batch of 3 updates to database...
+2025-09-16 13:14:38,934 - INFO - Successfully saved 3 records to database
+2025-09-16 13:14:38,935 - INFO - Sample update - Thread ID: conv_m365_b95922d34b8a
+2025-09-16 13:14:38,935 - INFO - Database update complete: 3 records saved
+2025-09-16 13:14:43,936 - INFO - Processing batch 2/668 (3 emails)...
+2025-09-16 13:15:46,720 - INFO - Batch 2 processing complete: 3/3 successful
+2025-09-16 13:15:46,721 - INFO - Batch duration: 62.78s
+2025-09-16 13:15:46,721 - INFO - Saving batch of 3 updates to database...
+2025-09-16 13:15:47,040 - INFO - Successfully saved 3 records to database
+2025-09-16 13:15:47,041 - INFO - Sample update - Thread ID: conv_m365_e3b872ca3b3e
+2025-09-16 13:15:47,041 - INFO - Database update complete: 3 records saved
+2025-09-16 13:15:52,042 - INFO - Processing batch 3/668 (3 emails)...
+2025-09-16 13:16:49,643 - INFO - Batch 3 processing complete: 3/3 successful
+2025-09-16 13:16:49,643 - INFO - Batch duration: 57.60s
+2025-09-16 13:16:49,645 - INFO - Saving batch of 3 updates to database...
+2025-09-16 13:16:50,020 - INFO - Successfully saved 3 records to database
+2025-09-16 13:16:50,020 - INFO - Sample update - Thread ID: conv_m365_e41e9197f527
+2025-09-16 13:16:50,021 - INFO - Database update complete: 3 records saved
+2025-09-16 13:16:55,023 - INFO - Processing batch 4/668 (3 emails)...
+2025-09-16 13:17:51,639 - INFO - Batch 4 processing complete: 3/3 successful
+2025-09-16 13:17:51,640 - INFO - Batch duration: 56.62s
+2025-09-16 13:17:51,640 - INFO - Saving batch of 3 updates to database...
+2025-09-16 13:17:51,970 - INFO - Successfully saved 3 records to database
+2025-09-16 13:17:51,971 - INFO - Sample update - Thread ID: conv_m365_efe62972ec55
+2025-09-16 13:17:51,971 - INFO - Database update complete: 3 records saved
+2025-09-16 13:17:56,973 - INFO - Processing batch 5/668 (3 emails)...
+2025-09-16 13:18:57,505 - INFO - Batch 5 processing complete: 3/3 successful
+2025-09-16 13:18:57,505 - INFO - Batch duration: 60.53s
+2025-09-16 13:18:57,507 - INFO - Saving batch of 3 updates to database...
+2025-09-16 13:18:57,813 - INFO - Successfully saved 3 records to database
+2025-09-16 13:18:57,815 - INFO - Sample update - Thread ID: conv_m365_b8169003540e
+2025-09-16 13:18:57,815 - INFO - Database update complete: 3 records saved
+2025-09-16 13:18:57,815 - INFO - Overall Progress: 0.7% | Batches: 5/668
+2025-09-16 13:18:57,816 - INFO - Success: 15 | Failures: 0 | DB Updates: 15
+2025-09-16 13:18:57,816 - INFO - System: CPU 10.3% | Memory 84.4%
+2025-09-16 13:19:02,818 - INFO - Processing batch 6/668 (3 emails)...
+2025-09-16 13:20:00,640 - INFO - Batch 6 processing complete: 3/3 successful
+2025-09-16 13:20:00,640 - INFO - Batch duration: 57.82s
+2025-09-16 13:20:00,641 - INFO - Saving batch of 3 updates to database...
+2025-09-16 13:20:00,970 - INFO - Successfully saved 3 records to database
+2025-09-16 13:20:00,971 - INFO - Sample update - Thread ID: conv_m365_e9750752b518
+2025-09-16 13:20:00,971 - INFO - Database update complete: 3 records saved
+2025-09-16 13:20:05,973 - INFO - Processing batch 7/668 (3 emails)...
+2025-09-16 13:21:04,256 - INFO - Batch 7 processing complete: 3/3 successful
+2025-09-16 13:21:04,257 - INFO - Batch duration: 58.28s
+2025-09-16 13:21:04,257 - INFO - Saving batch of 3 updates to database...
+2025-09-16 13:21:04,583 - INFO - Successfully saved 3 records to database
+2025-09-16 13:21:04,584 - INFO - Sample update - Thread ID: conv_m365_6763743cc47f
+2025-09-16 13:21:04,584 - INFO - Database update complete: 3 records saved
+2025-09-16 13:21:09,586 - INFO - Processing batch 8/668 (3 emails)...
+2025-09-16 13:22:04,372 - INFO - Batch 8 processing complete: 3/3 successful
+2025-09-16 13:22:04,373 - INFO - Batch duration: 54.79s
+2025-09-16 13:22:04,374 - INFO - Saving batch of 3 updates to database...
+2025-09-16 13:22:04,781 - INFO - Successfully saved 3 records to database
+2025-09-16 13:22:04,782 - INFO - Sample update - Thread ID: conv_m365_64016817a74a
+2025-09-16 13:22:04,782 - INFO - Database update complete: 3 records saved
+2025-09-16 13:22:09,783 - INFO - Processing batch 9/668 (3 emails)...
+2025-09-16 13:23:07,239 - INFO - Batch 9 processing complete: 3/3 successful
+2025-09-16 13:23:07,239 - INFO - Batch duration: 57.45s
+2025-09-16 13:23:07,240 - INFO - Saving batch of 3 updates to database...
+2025-09-16 13:23:08,462 - INFO - Successfully saved 3 records to database
+2025-09-16 13:23:08,462 - INFO - Sample update - Thread ID: conv_m365_1be93b94be7d
+2025-09-16 13:23:08,463 - INFO - Database update complete: 3 records saved
+2025-09-16 13:23:13,463 - INFO - Processing batch 10/668 (3 emails)...
+2025-09-16 13:24:06,263 - INFO - Received signal 2. Initiating graceful shutdown...
+2025-09-16 13:24:06,264 - INFO - Please wait for current operations to complete...
+2025-09-16 13:24:06,265 - WARNING - Cancelling remaining tasks...
+2025-09-16 13:24:06,265 - INFO - Batch 10 processing complete: 2/3 successful
+2025-09-16 13:24:06,266 - INFO - Batch duration: 52.80s
+2025-09-16 13:24:06,267 - INFO - Overall Progress: 1.5% | Batches: 10/668
+2025-09-16 13:24:06,267 - INFO - Success: 30 | Failures: 0 | DB Updates: 27
+2025-09-16 13:24:06,269 - INFO - System: CPU 10.7% | Memory 85.9%
+2025-09-16 13:24:06,270 - INFO - Shutdown requested. Stopping at batch 10/668
+2025-09-16 13:24:06,270 - INFO - Content generation interrupted gracefully!
+2025-09-16 13:24:06,270 - INFO - Total emails updated: 27
+2025-09-16 13:24:06,270 - INFO - Successful generations: 30
+2025-09-16 13:24:06,270 - INFO - Failed generations: 0
+2025-09-16 13:24:06,271 - INFO - Data updated in MongoDB: sparzaai.email
+2025-09-16 13:24:07,258 - INFO - Collection Statistics:
+2025-09-16 13:24:07,258 - INFO - Total emails: 2004
+2025-09-16 13:24:07,259 - INFO - With analysis fields: 27
+2025-09-16 13:24:07,259 - INFO - Without analysis fields: 1977
+2025-09-16 13:24:07,259 - INFO - Top Dominant Topics:
+2025-09-16 13:24:07,259 - INFO - 1. Risk Management Alert: 31 emails
+2025-09-16 13:24:07,260 - INFO - 2. User Access Approval: 30 emails
+2025-09-16 13:24:07,260 - INFO - 3. Quality Assurance Breach: 28 emails
+2025-09-16 13:24:07,260 - INFO - 4. IT Marketing Unresolved: 27 emails
+2025-09-16 13:24:07,261 - INFO - 5. IT Access Problem: 26 emails
+2025-09-16 13:24:07,261 - INFO - 6. Salary Leave Issues: 23 emails
+2025-09-16 13:24:07,261 - INFO - 7. Vendor Management: 22 emails
+2025-09-16 13:24:07,262 - INFO - 8. Legal Escalation: 22 emails
+2025-09-16 13:24:07,262 - INFO - 9. Performance Management: 22 emails
+2025-09-16 13:24:07,262 - INFO - 10. Process Exception: 22 emails
+2025-09-16 13:24:07,873 - INFO - Sample Generated Email Content:
+2025-09-16 13:24:07,873 - INFO - --- Sample Email 1 ---
+2025-09-16 13:24:07,874 - INFO - Thread ID: conv_m365_b95922d34b8a
+2025-09-16 13:24:07,874 - INFO - Dominant Topic: Internal Audit
+2025-09-16 13:24:07,875 - INFO - Subtopics: Audit Finding Response, Committee Escalation Alert...
+2025-09-16 13:24:07,875 - INFO - Stages: Escalate/Investigate
+2025-09-16 13:24:07,876 - INFO - Email Summary: This email thread consists of a single message from Victoria Alvarez to James Hernandez regarding an internal audit finding. The audit identified insufficient KYC documentation for a client, Mr. Jean-...
+2025-09-16 13:24:07,876 - INFO - Urgent: False
+2025-09-16 13:24:07,877 - INFO - --- Sample Email 2 ---
+2025-09-16 13:24:07,877 - INFO - Thread ID: conv_m365_b1014ac35f75
+2025-09-16 13:24:07,878 - INFO - Dominant Topic: Cross-Border Transfer Problem
+2025-09-16 13:24:07,878 - INFO - Subtopics: FX Settlement Error...
+2025-09-16 13:24:07,879 - INFO - Stages: Escalate/Investigate
+2025-09-16 13:24:07,879 - INFO - Email Summary: James Davidson from Eurobank Brussels contacted Shawn Robertson regarding a potential FX discrepancy in a EUR 50,000 cross-border transfer to Deutsche Bank. The beneficiary reported receiving a lower ...
+2025-09-16 13:24:07,880 - INFO - Urgent: False
+2025-09-16 13:24:07,880 - INFO - --- Sample Email 3 ---
+2025-09-16 13:24:07,881 - INFO - Thread ID: conv_m365_30d11d7521a5
+2025-09-16 13:24:07,882 - INFO - Dominant Topic: Covenant Breach Alert
+2025-09-16 13:24:07,882 - INFO - Subtopics: Covenant Monitoring Alert, Financial Ratio Problem, Loan Condition Issue...
+2025-09-16 13:24:07,883 - INFO - Stages: Categorize
+2025-09-16 13:24:07,883 - INFO - Email Summary: This email from Justin Wright to Jennifer Valdez alerts her to a potential covenant breach on a loan extended to AlphaTech GmbH. The Debt Service Coverage Ratio (DSCR) has fallen below the agreed-upon...
+2025-09-16 13:24:07,884 - INFO - Urgent: False
+2025-09-16 13:24:10,501 - INFO - Content validation complete: 20 issues found
+2025-09-16 13:24:10,501 - WARNING - Found 20 content validation issues
+2025-09-16 13:24:11,091 - INFO - Status report generated: logs\status_report_20250916_132410.json
+2025-09-16 13:24:11,091 - INFO - Final session report:
+2025-09-16 13:24:11,091 - INFO - Success Rate: 100.00%
+2025-09-16 13:24:11,092 - INFO - Database Completion: 1.35%
+2025-09-16 13:24:11,457 - INFO - Database connection closed
+2025-09-16 13:24:11,458 - INFO - Session complete. Check log files for detailed information:
+2025-09-16 13:24:11,458 - INFO - Main Log: logs\email_generator_20250916_131320.log
+2025-09-16 13:24:11,458 - INFO - Success Log: logs\successful_generations_20250916_131320.log
+2025-09-16 13:24:11,459 - INFO - Failure Log: logs\failed_generations_20250916_131320.log
+2025-09-16 13:24:11,459 - INFO - Progress Log: logs\progress_20250916_131320.log
+2025-09-16 13:24:11,459 - INFO - Intermediate Results: logs\intermediate_results_20250916_131320.json
+2025-09-16 13:24:11,460 - INFO - Database connection closed

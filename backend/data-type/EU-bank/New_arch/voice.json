@@ -1,0 +1,94 @@
+{
+    "_id": {
+      "$oid": "68a89e5db21812ca3cfb3611"
+    },
+    "call_id": "CALL67725",
+    "timestamp": "2023-02-15T12:20:42Z",
+    "customer_name": "Mary Gillespie",
+    "customer_id": "CUST0888",
+    "email": "marygillespie3170@gmail.com",
+    "dominant_topic": "Security Warning Call",
+    "subtopics": "Fraud Prevention Tips, Safe Banking Practices",
+    "conversation": [
+      {
+        "speaker": "user",
+        "text": "Hello, I received a text message warning me about potential fraudulent activity on my account and it said to call this number. I'm a bit concerned and honestly quite worried about what might have happened."
+      },
+      {
+        "speaker": "agent",
+        "text": "Good morning, Mrs. Gillespie. Thank you for calling EuroBank. I completely understand your concern, and I'm here to help you with this matter. To verify your identity and access your account securely, could you please provide the last four digits of your account number and your date of birth?"
+      },
+      {
+        "speaker": "user",
+        "text": "Certainly, it's 1234 and my date of birth is 15th of March 1968. What kind of fraud are you seeing? Is my money safe? I've heard so many horror stories about people losing their entire savings."
+      },
+      {
+        "speaker": "agent",
+        "text": "Thank you for providing that information. Let me assure you first that your money is completely safe and secure. We've detected some unusual login attempts from a new device location that we didn't recognize. As a precaution, we automatically flagged these attempts and wanted to confirm it wasn't you accessing your account from this new location."
+      },
+      {
+        "speaker": "user",
+        "text": "No, that definitely wasn't me. I only use my laptop at home and sometimes my phone when I'm out. I never access my account from anywhere else. What should I be looking out for to prevent this from happening again? This whole situation has made me quite anxious."
+      },
+      {
+        "speaker": "agent",
+        "text": "I completely understand your anxiety, Mrs. Gillespie, and your caution is actually very good for your security. Let me give you some practical advice. We strongly advise against clicking on links in unsolicited emails or text messages, and always access your online banking directly through our official website or mobile app. Have you enabled two-factor authentication on your account? It adds an extra layer of security that makes it much harder for unauthorized access."
+      },
+      {
+        "speaker": "user",
+        "text": "I think I have that enabled, but I'll double check when I get home. Is there anything else I should be doing? I'm particularly worried about phishing scams because my neighbor recently fell victim to one and lost quite a bit of money. I don't want that to happen to me."
+      },
+      {
+        "speaker": "agent",
+        "text": "Your neighbor's experience is unfortunately common, but the good news is that being aware makes you much less vulnerable. Here are the key things to remember: never share your PIN, full password, or any security codes with anyone, even someone claiming to be from the bank. We will never ask for that complete information over the phone. Also, regularly review your transaction history for any unrecognized activity, and if you see anything suspicious, call us immediately."
+      },
+      {
+        "speaker": "user",
+        "text": "That's very helpful advice, thank you. Should I be concerned about using ATMs? And what about online shopping? I do quite a bit of shopping online, especially since the pandemic."
+      },
+      {
+        "speaker": "agent",
+        "text": "Great questions! For ATMs, stick to machines at bank branches or well-lit, busy locations. Avoid standalone ATMs in isolated areas. For online shopping, only shop on secure websites - look for 'https' and a padlock icon in your browser. Use a credit card rather than a debit card when possible, as credit cards offer better fraud protection. Consider setting up account alerts so you're notified of any transactions immediately."
+      },
+      {
+        "speaker": "user",
+        "text": "I hadn't thought about the credit card versus debit card difference. That's really valuable information. I feel much more confident now about protecting myself. You've been incredibly helpful and patient with all my questions."
+      },
+      {
+        "speaker": "agent",
+        "text": "You're absolutely welcome, Mrs. Gillespie. I'm so glad I could help ease your concerns and provide you with practical security tips. Your vigilance is your best defense against fraud. I'll make a note in your account about today's discussion. If you notice any suspicious activity or have any other security concerns in the future, please don't hesitate to call us immediately at this same number. We're here 24/7 to help protect your accounts. Have a wonderful day and stay safe!"
+      },
+      {
+        "speaker": "user",
+        "text": "Thank you so much for all your help and for making me feel so much more secure. I really appreciate the time you've taken with me today."
+      },
+      {
+        "speaker": "agent",
+        "text": "It was truly my pleasure to help you, Mrs. Gillespie. Remember, we're always here when you need us. Take care and have a great rest of your day!"
+      }
+    ],
+    "conversation_duration_minutes": 5.2,
+    "sentiment_journey": [3, 2, 3, 5, 4, 6, 5, 7, 6, 8],
+    "priority": "P2 - High",
+    "resolution_status": "Resolved",
+    "sentiment": "Positive",
+    "urgency": true,
+    "embeddings": [],
+    "kmeans_cluster_id": 11,
+    "subcluster_id": "1",
+    "subcluster_label": "Fraud Detection & Prevention",
+    "dominant_cluster_label": "Security & Fraud Management",
+    "kmeans_cluster_keyphrase": "Security Warning Call",
+    "domain": "banking",
+    "processed_at": "2025-08-01 13:06:59",
+    "stages": "closed",
+    "call_summary": "Customer inquiry regarding fraudulent activity warning. Confirmed unauthorized login attempts from new device, provided comprehensive fraud prevention guidance including 2FA verification, safe banking practices, ATM usage tips, online shopping security, and transaction monitoring advice. Customer expressed satisfaction and increased confidence in security measures.",
+    "pending_status": "no",
+    "pending_from": null,
+    "follow_up_required": "no",
+    "follow_up_date": null,
+    "follow_up_reason": null,
+    "deployment_status": "deployed",
+    "deployment_date": "2023-02-15T12:20:42Z",
+    "next_action_suggestion": "Consider implementing proactive fraud education campaigns for all customers. Enhance automated fraud detection systems to reduce false positives. Develop self-service security tips in mobile app for better customer empowerment."
+  }

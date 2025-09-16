@@ -1,0 +1,82 @@
+{
+    "_id": "conv_m365_456",
+    "provider": "m365",
+    "account": {
+      "account_id": "acct_yaara_ranjith_m365",
+      "provider_meta": { "m365": { "tenantId": "t123", "userId": "u456" } },
+      "email": "ranjith@yaaralabs.ai",
+      "display_name": "Ranjith Melarkode"
+    },
+    "thread": {
+      "thread_id": "conv_m365_456",
+      "thread_key": { "m365_conversation_id": "AAQkAD..." },
+      "subject_norm": "Invoice Follow-up",
+      "participants": [
+        { "type": "from", "name": "Ranjith", "email": "ranjith@yaaralabs.ai" },
+        { "type": "to", "name": "Bob", "email": "bob@client.com" }
+      ],
+      "first_message_at": "2025-09-01T09:00:00Z",
+      "last_message_at": "2025-09-01T10:15:00Z",
+      "message_count": 3
+    },
+    "messages": [
+      {
+        "provider_ids": {
+          "m365": {
+            "id": "AAMkAG1",
+            "conversationId": "AAQkAD...",
+            "internetMessageId": "<MSG1@yaaralabs.ai>"
+          }
+        },
+        "headers": {
+          "date": "2025-09-01T09:00:00Z",
+          "subject": "Invoice Follow-up",
+          "from": [{ "name": "Ranjith", "email": "ranjith@yaaralabs.ai" }],
+          "to": [{ "name": "Bob", "email": "bob@client.com" }]
+        },
+        "body": {
+          "mime_type": "text/plain",
+          "text": { "plain": "Hi Bob,\nFollowing up on the invoice #345.\nRegards,\nRanjith" }
+        }
+      },
+      {
+        "provider_ids": {
+          "m365": {
+            "id": "AAMkAG2",
+            "conversationId": "AAQkAD...",
+            "internetMessageId": "<MSG2@client.com>"
+          }
+        },
+        "headers": {
+          "date": "2025-09-01T09:30:00Z",
+          "subject": "Re: Invoice Follow-up",
+          "from": [{ "name": "Bob", "email": "bob@client.com" }],
+          "to": [{ "name": "Ranjith", "email": "ranjith@yaaralabs.ai" }]
+        },
+        "body": {
+          "mime_type": "text/plain",
+          "text": { "plain": "Hi Ranjith,\nWe processed invoice #345 today.\nBob" }
+        }
+      },
+      {
+        "provider_ids": {
+          "m365": {
+            "id": "AAMkAG3",
+            "conversationId": "AAQkAD...",
+            "internetMessageId": "<MSG3@yaaralabs.ai>"
+          }
+        },
+        "headers": {
+          "date": "2025-09-01T10:15:00Z",
+          "subject": "Re: Invoice Follow-up",
+          "from": [{ "name": "Ranjith", "email": "ranjith@yaaralabs.ai" }],
+          "to": [{ "name": "Bob", "email": "bob@client.com" }]
+        },
+        "body": {
+          "mime_type": "text/plain",
+          "text": { "plain": "Thanks Bob,\nNoted.\nRanjith" }
+        }
+      }
+    ]
+  }
+  

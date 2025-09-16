@@ -1,0 +1,22 @@
+{
+    "_id": {
+      "$oid": "6889ba7ca4f4718f70978ff5"
+    },
+    "ticket_number": "T20250309.1682",
+    "dominant_topic": "Cross Border Failed",
+    "subtopics": "International Payment Problem, Cross Border Issue, Foreign Exchange Problem, Correspondent Banking Issue, Regulatory Compliance Problem",
+    "description": "Incident detected at 20/08/2025 17:20 via automated monitoring of the MobileApp system on server SRV-PROD-435. A failed cross-border payment initiated from account 689376594083, transaction ID TXN74506298, for EUR 14565.53 to IBAN NL85 ABNA 1223 5411 40 via SWIFT code HSBCFR2X808 is reported. The system logs indicate error code ERR_2903, specifically a 'Correspondent Banking Gateway Timeout' during the SWIFT message processing. Initial investigation reveals the payment failed during the foreign exchange conversion stage. The originating branch is BR7300, and the attempted transaction does not appear in the outgoing SWIFT queue. This impacts the customer's ability to complete international transactions and potentially violates SEPA payment processing timelines.  The incident is further complicated by the potential for non-compliance with PSD2 requirements regarding payment initiation and confirmation.  We are observing a similar, though lower volume, pattern of failures for cross-border payments originating from the MobileApp.  Immediate action is required to determine if this is a systemic issue with the SWIFT gateway or a configuration problem within the MobileApp's FX module.  Initial troubleshooting steps include verifying the SWIFT connectivity, checking the FX rate feed, and reviewing the MobileApp's configuration for the affected IBAN. Escalation to the Level 3 support team and the Correspondent Banking team is recommended.  This incident requires immediate investigation to ensure compliance with EBA guidelines regarding system availability and operational risk as outlined in Basel III.  Further investigation is needed to determine if GDPR regulations are being violated regarding the handling of transaction data.",
+    "priority": "P1 - Critical",
+    "urgency": true,
+    "title": "MobileApp - Payment Failure - Cross-Border SWIFT Gateway Timeout - EUR 14565.53",
+    "stages": "investigation",
+    "ticket_summary": "Critical cross-border payment failure for EUR 14565.53 from account 689376594083 due to SWIFT gateway timeout (ERR_2903) during FX conversion. System connectivity and configuration under investigation to determine if systemic issue with SWIFT gateway or MobileApp FX module configuration problem.",
+    "pending_status": "yes",
+    "pending_from": "company",
+    "follow_up_required": "yes",
+    "follow_up_date": "2025-08-22T00:00:00Z",
+    "follow_up_reason": "Monitor Level 3 support investigation results and SWIFT gateway connectivity restoration",
+    "deployment_status": "needs_deployment",
+    "deployment_date": "2025-08-25T00:00:00Z",
+    "next_action_suggestion": "Coordinate with Level 3 support team to complete SWIFT gateway investigation, verify FX rate feed connectivity, test MobileApp configuration for affected IBAN, and implement system fixes to restore cross-border payment functionality while ensuring PSD2 and EBA compliance"
+  }
