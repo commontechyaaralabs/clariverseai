@@ -1,5 +1,0 @@
-2025-09-17 00:56:36,034 - ERROR - {"chat_id": "19:b9dfb1c6a2fc7d4fbac36afc@thread.v2", "dominant_topic": "Software Issue Resolution", "error": "Missing required field: chat_data", "generation_time": 48.93751788139343}
-2025-09-17 00:57:18,272 - ERROR - {"chat_id": "19:deefca54f22297d217c940eb@thread.v2", "dominant_topic": "Financial Reporting Procedure", "error": "Missing required field: chat_data", "generation_time": 91.17648959159851}
-2025-09-17 00:57:22,589 - ERROR - {"chat_id": "19:ba15dbb16d84065ae18d10ad@thread.v2", "dominant_topic": "Audit Feedback Review", "error": "Missing required field: chat_data", "generation_time": 46.55317831039429}
-2025-09-17 00:59:37,996 - ERROR - {"chat_id": "19:543d858bbe5014ca52eb67d8@thread.v2", "dominant_topic": "Risk Assessment Update", "error": "No matching closing brace found in LLM response", "generation_time": 130.39805936813354}
-2025-09-17 00:59:48,526 - ERROR - {"chat_id": "19:16adc0b3fbdb453575026d18@thread.v2", "dominant_topic": "Employee Relations Coordination", "error": "No matching closing brace found in LLM response", "generation_time": 140.9305567741394}

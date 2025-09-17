@@ -1,2 +1,0 @@
-2025-09-17 00:48:57,871 - ERROR - {"chat_id": "19:deefca54f22297d217c940eb@thread.v2", "dominant_topic": "Financial Reporting Procedure", "error": "JSON parsing failed: Expecting ',' delimiter: line 289 column 8 (char 11063)", "generation_time": 300.52665996551514}
-2025-09-17 00:49:07,530 - ERROR - {"chat_id": "19:b9dfb1c6a2fc7d4fbac36afc@thread.v2", "dominant_topic": "Software Issue Resolution", "error": "JSON parsing failed: Expecting ',' delimiter: line 293 column 8 (char 11262)", "generation_time": 310.1855278015137}

@@ -1,0 +1,261 @@
+nohup: ignoring input
+2025-09-17 20:05:02,633 - INFO - EU Banking Chat Content Generator Starting...
+2025-09-17 20:05:02,633 - INFO - Database: sparzaai
+2025-09-17 20:05:02,633 - INFO - Collection: chatmessages
+2025-09-17 20:05:02,633 - INFO - Model: gemma3:27b
+2025-09-17 20:05:02,633 - INFO - Ollama URL: http://20.66.111.167:7651/api/chat
+2025-09-17 20:05:02,633 - INFO - Max Workers: 5
+2025-09-17 20:05:02,633 - INFO - Batch Size: 3
+2025-09-17 20:05:02,633 - INFO - Log Directory: logs
+2025-09-17 20:05:03,061 - INFO - Database connection established and indexes created
+2025-09-17 20:05:03,223 - INFO - Collection Statistics:
+2025-09-17 20:05:03,223 - INFO - Total chats: 600
+2025-09-17 20:05:03,223 - INFO - With analysis fields: 477
+2025-09-17 20:05:03,223 - INFO - Without analysis fields: 123
+2025-09-17 20:05:03,223 - INFO - Top Dominant Topics:
+2025-09-17 20:05:03,223 - INFO - 1. Network Performance Issue: 16 chats
+2025-09-17 20:05:03,223 - INFO - 2. Attendance Management Alert: 16 chats
+2025-09-17 20:05:03,223 - INFO - 3. Documentation Request Alert: 14 chats
+2025-09-17 20:05:03,223 - INFO - 4. Monthly Compliance Audit: 14 chats
+2025-09-17 20:05:03,223 - INFO - 5. Compliance Monitoring Update: 14 chats
+2025-09-17 20:05:03,224 - INFO - 6. Software Issue Resolution: 14 chats
+2025-09-17 20:05:03,224 - INFO - 7. Financial Reporting Procedure: 13 chats
+2025-09-17 20:05:03,224 - INFO - 8. Performance Metric Tracking: 13 chats
+2025-09-17 20:05:03,224 - INFO - 9. Risk Assessment Update: 13 chats
+2025-09-17 20:05:03,224 - INFO - 10. Technology Provider Communication: 13 chats
+2025-09-17 20:05:03,224 - INFO - No pending intermediate results to recover
+2025-09-17 20:05:03,224 - INFO - Starting EU Banking Chat Content Generation...
+2025-09-17 20:05:03,224 - INFO - System Info: 48 CPU cores detected
+2025-09-17 20:05:03,224 - INFO - Batch size: 3
+2025-09-17 20:05:03,224 - INFO - Max workers: 5
+2025-09-17 20:05:03,224 - INFO - Request timeout: 120s
+2025-09-17 20:05:03,224 - INFO - Max retries per request: 5
+2025-09-17 20:05:03,224 - INFO - Testing connection to Ollama: http://20.66.111.167:7651/api/chat
+2025-09-17 20:05:03,224 - INFO - Testing simple generation...
+2025-09-17 20:05:08,137 - INFO - Generation test status: 200
+2025-09-17 20:05:08,137 - INFO - Ollama connection test successful
+2025-09-17 20:05:08,137 - INFO - Test response: ```json
+{
+  "test": "success"
+}
+```
+...
+2025-09-17 20:05:08,137 - INFO - Fetching chat records from database...
+2025-09-17 20:05:08,417 - INFO - Found 59 chats needing content generation
+2025-09-17 20:05:08,417 - INFO - Processing in 20 batches of 3 chats each
+2025-09-17 20:05:08,417 - INFO - Using 5 workers for parallel processing
+2025-09-17 20:05:08,417 - INFO - Processing batch 1/20 (3 chats)...
+2025-09-17 20:05:51,547 - INFO - Task completed: 33.3% (1/3)
+2025-09-17 20:07:08,454 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:07:08,457 - INFO - Backing off call_ollama_with_backoff(...) for 0.6s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:07:08,457 - WARNING - Retry 1/5 after 0.6s
+2025-09-17 20:07:08,523 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:07:08,524 - INFO - Backing off call_ollama_with_backoff(...) for 0.6s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:07:08,524 - WARNING - Retry 1/5 after 0.6s
+2025-09-17 20:07:51,916 - INFO - Task completed: 66.7% (2/3)
+2025-09-17 20:08:37,830 - INFO - Saving batch of 3 updates to database...
+2025-09-17 20:08:37,937 - INFO - Successfully saved 3 records to database
+2025-09-17 20:08:37,937 - INFO - Sample update - Chat ID: 19:2ec27fc60caf8a629e7b2d6b@thread.v2
+2025-09-17 20:08:37,937 - INFO - Immediate save: 3 records
+2025-09-17 20:08:37,937 - INFO - Task completed: 100.0% (3/3)
+2025-09-17 20:08:37,938 - INFO - Batch 1 processing complete: 0/3 successful
+2025-09-17 20:08:37,938 - INFO - Batch duration: 209.52s
+2025-09-17 20:08:42,938 - INFO - Processing batch 2/20 (3 chats)...
+2025-09-17 20:09:26,119 - INFO - Task completed: 33.3% (1/3)
+2025-09-17 20:10:17,344 - INFO - Task completed: 66.7% (2/3)
+2025-09-17 20:10:43,022 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:10:43,023 - INFO - Backing off call_ollama_with_backoff(...) for 0.4s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:10:43,023 - WARNING - Retry 1/5 after 0.4s
+2025-09-17 20:11:27,989 - INFO - Saving batch of 3 updates to database...
+2025-09-17 20:11:28,045 - INFO - Successfully saved 3 records to database
+2025-09-17 20:11:28,045 - INFO - Sample update - Chat ID: 19:a0a19b2b285720b2f4b4ec3a@thread.v2
+2025-09-17 20:11:28,045 - INFO - Immediate save: 3 records
+2025-09-17 20:11:28,045 - INFO - Task completed: 100.0% (3/3)
+2025-09-17 20:11:28,046 - INFO - Batch 2 processing complete: 0/3 successful
+2025-09-17 20:11:28,046 - INFO - Batch duration: 165.11s
+2025-09-17 20:11:33,046 - INFO - Processing batch 3/20 (3 chats)...
+2025-09-17 20:13:19,873 - ERROR - Task processing error for 19:07b1729483bfb9bd3a2275d7@thread.v2: JSON parsing failed: Expecting ',' delimiter: line 300 column 6 (char 14844)
+2025-09-17 20:13:19,873 - WARNING - Will retry 19:07b1729483bfb9bd3a2275d7@thread.v2 due to error (attempt 1/3)
+2025-09-17 20:13:19,874 - INFO - Task completed: 33.3% (1/3)
+2025-09-17 20:13:33,106 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:13:33,107 - INFO - Backing off call_ollama_with_backoff(...) for 0.8s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:13:33,107 - WARNING - Retry 1/5 after 0.8s
+2025-09-17 20:13:33,151 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:13:33,152 - INFO - Backing off call_ollama_with_backoff(...) for 0.7s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:13:33,152 - WARNING - Retry 1/5 after 0.7s
+2025-09-17 20:14:16,007 - INFO - Task completed: 66.7% (2/3)
+2025-09-17 20:15:34,047 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:15:34,048 - INFO - Backing off call_ollama_with_backoff(...) for 0.4s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:15:34,048 - WARNING - Retry 2/5 after 0.4s
+2025-09-17 20:17:21,462 - ERROR - Task processing error for 19:caf837f82e26c4914c507ff5@thread.v2: JSON parsing failed: Expecting ',' delimiter: line 342 column 6 (char 14267)
+2025-09-17 20:17:21,462 - WARNING - Will retry 19:caf837f82e26c4914c507ff5@thread.v2 due to error (attempt 1/3)
+2025-09-17 20:17:21,463 - INFO - Task completed: 100.0% (3/3)
+2025-09-17 20:17:21,463 - INFO - Saving batch of 1 updates to database...
+2025-09-17 20:17:21,517 - INFO - Successfully saved 1 records to database
+2025-09-17 20:17:21,517 - INFO - Sample update - Chat ID: 19:69dbb01000b0af9b79a87827@thread.v2
+2025-09-17 20:17:21,517 - INFO - Final batch save: 1 records
+2025-09-17 20:17:21,517 - INFO - Batch 3 processing complete: 1/3 successful
+2025-09-17 20:17:21,517 - INFO - Batch duration: 348.42s
+2025-09-17 20:17:21,517 - INFO - Overall Progress: 15.3% | Batches: 3/20
+2025-09-17 20:17:21,517 - INFO - Success: 7 | Failures: 0 | Retries: 0 | DB Updates: 7
+2025-09-17 20:17:21,518 - INFO - System: CPU 3.2% | Memory 8.5%
+2025-09-17 20:17:26,518 - INFO - Processing batch 4/20 (3 chats)...
+2025-09-17 20:18:11,392 - INFO - Task completed: 33.3% (1/3)
+2025-09-17 20:18:53,910 - INFO - Task completed: 66.7% (2/3)
+2025-09-17 20:19:26,582 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:19:26,582 - INFO - Backing off call_ollama_with_backoff(...) for 0.5s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:19:26,583 - WARNING - Retry 1/5 after 0.5s
+2025-09-17 20:21:14,065 - ERROR - Task processing error for 19:86dcc29cbcb934b84c1af5c7@thread.v2: JSON parsing failed: Expecting ',' delimiter: line 307 column 6 (char 12245)
+2025-09-17 20:21:14,065 - WARNING - Will retry 19:86dcc29cbcb934b84c1af5c7@thread.v2 due to error (attempt 1/3)
+2025-09-17 20:21:14,065 - INFO - Task completed: 100.0% (3/3)
+2025-09-17 20:21:14,066 - INFO - Saving batch of 2 updates to database...
+2025-09-17 20:21:14,120 - INFO - Successfully saved 2 records to database
+2025-09-17 20:21:14,120 - INFO - Sample update - Chat ID: 19:56562508fd5fc1446efc1a4a@thread.v2
+2025-09-17 20:21:14,120 - INFO - Final batch save: 2 records
+2025-09-17 20:21:14,120 - INFO - Batch 4 processing complete: 2/3 successful
+2025-09-17 20:21:14,121 - INFO - Batch duration: 227.55s
+2025-09-17 20:21:19,121 - INFO - Processing batch 5/20 (3 chats)...
+2025-09-17 20:23:05,952 - ERROR - Task processing error for 19:c28a5f4a20d881452be085bf@thread.v2: JSON parsing failed: Expecting ',' delimiter: line 342 column 6 (char 15322)
+2025-09-17 20:23:05,952 - WARNING - Will retry 19:c28a5f4a20d881452be085bf@thread.v2 due to error (attempt 1/3)
+2025-09-17 20:23:05,953 - INFO - Task completed: 33.3% (1/3)
+2025-09-17 20:23:19,169 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:23:19,170 - INFO - Backing off call_ollama_with_backoff(...) for 0.5s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:23:19,170 - WARNING - Retry 1/5 after 0.5s
+2025-09-17 20:23:19,181 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:23:19,182 - INFO - Backing off call_ollama_with_backoff(...) for 0.6s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:23:19,182 - WARNING - Retry 1/5 after 0.6s
+2025-09-17 20:25:06,590 - ERROR - Task processing error for 19:9cd304607073ad5345c5da58@thread.v2: JSON parsing failed: Expecting ',' delimiter: line 349 column 6 (char 14660)
+2025-09-17 20:25:06,590 - WARNING - Will retry 19:9cd304607073ad5345c5da58@thread.v2 due to error (attempt 1/3)
+2025-09-17 20:25:06,590 - INFO - Task completed: 66.7% (2/3)
+2025-09-17 20:25:19,827 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:25:19,828 - INFO - Backing off call_ollama_with_backoff(...) for 2.5s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:25:19,828 - WARNING - Retry 2/5 after 2.5s
+2025-09-17 20:27:09,246 - ERROR - Task processing error for 19:efab128b88c94ff92ea3a698@thread.v2: JSON parsing failed: Expecting ',' delimiter: line 314 column 6 (char 15016)
+2025-09-17 20:27:09,246 - WARNING - Will retry 19:efab128b88c94ff92ea3a698@thread.v2 due to error (attempt 1/3)
+2025-09-17 20:27:09,246 - INFO - Task completed: 100.0% (3/3)
+2025-09-17 20:27:09,248 - INFO - Batch 5 processing complete: 0/3 successful
+2025-09-17 20:27:09,248 - INFO - Batch duration: 350.13s
+2025-09-17 20:27:14,248 - INFO - Processing batch 6/20 (3 chats)...
+2025-09-17 20:27:59,514 - INFO - Task completed: 33.3% (1/3)
+2025-09-17 20:29:14,310 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:29:14,311 - INFO - Backing off call_ollama_with_backoff(...) for 0.3s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:29:14,311 - WARNING - Retry 1/5 after 0.3s
+2025-09-17 20:29:14,354 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:29:14,355 - INFO - Backing off call_ollama_with_backoff(...) for 0.1s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:29:14,355 - WARNING - Retry 1/5 after 0.1s
+2025-09-17 20:31:01,349 - ERROR - Task processing error for 19:0c1210650324e111fcc3f0b1@thread.v2: JSON parsing failed: Expecting ',' delimiter: line 376 column 8 (char 14620)
+2025-09-17 20:31:01,350 - WARNING - Will retry 19:0c1210650324e111fcc3f0b1@thread.v2 due to error (attempt 1/3)
+2025-09-17 20:31:01,350 - INFO - Task completed: 66.7% (2/3)
+2025-09-17 20:31:14,736 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:31:14,737 - INFO - Backing off call_ollama_with_backoff(...) for 0.1s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:31:14,737 - WARNING - Retry 2/5 after 0.1s
+2025-09-17 20:32:40,138 - INFO - Task completed: 100.0% (3/3)
+2025-09-17 20:32:40,139 - INFO - Saving batch of 2 updates to database...
+2025-09-17 20:32:40,194 - INFO - Successfully saved 2 records to database
+2025-09-17 20:32:40,194 - INFO - Sample update - Chat ID: 19:0004fefd8a51ee0dd2a96ce4@thread.v2
+2025-09-17 20:32:40,194 - INFO - Final batch save: 2 records
+2025-09-17 20:32:40,194 - INFO - Batch 6 processing complete: 2/3 successful
+2025-09-17 20:32:40,194 - INFO - Batch duration: 325.89s
+2025-09-17 20:32:40,194 - INFO - Overall Progress: 30.5% | Batches: 6/20
+2025-09-17 20:32:40,194 - INFO - Success: 11 | Failures: 0 | Retries: 0 | DB Updates: 11
+2025-09-17 20:32:40,194 - INFO - System: CPU 3.2% | Memory 8.5%
+2025-09-17 20:32:45,195 - INFO - Processing batch 7/20 (3 chats)...
+2025-09-17 20:34:32,078 - ERROR - Task processing error for 19:4f5c6bd7218131449ecbf55a@thread.v2: JSON parsing failed: Expecting ',' delimiter: line 307 column 6 (char 15031)
+2025-09-17 20:34:32,078 - WARNING - Will retry 19:4f5c6bd7218131449ecbf55a@thread.v2 due to error (attempt 1/3)
+2025-09-17 20:34:32,079 - INFO - Task completed: 33.3% (1/3)
+2025-09-17 20:34:45,214 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:34:45,215 - INFO - Backing off call_ollama_with_backoff(...) for 0.5s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:34:45,215 - WARNING - Retry 1/5 after 0.5s
+2025-09-17 20:34:45,302 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:34:45,303 - INFO - Backing off call_ollama_with_backoff(...) for 0.7s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:34:45,303 - WARNING - Retry 1/5 after 0.7s
+2025-09-17 20:36:32,603 - ERROR - Task processing error for 19:8fac233f09f7421fc4ec48bd@thread.v2: JSON parsing failed: Expecting ',' delimiter: line 314 column 6 (char 14433)
+2025-09-17 20:36:32,603 - WARNING - Will retry 19:8fac233f09f7421fc4ec48bd@thread.v2 due to error (attempt 1/3)
+2025-09-17 20:36:32,603 - INFO - Task completed: 66.7% (2/3)
+2025-09-17 20:36:46,083 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:36:46,084 - INFO - Backing off call_ollama_with_backoff(...) for 1.1s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:36:46,084 - WARNING - Retry 2/5 after 1.1s
+2025-09-17 20:38:34,015 - ERROR - Task processing error for 19:c9a04f3fce0be1940c0f7397@thread.v2: JSON parsing failed: Expecting ',' delimiter: line 307 column 6 (char 14625)
+2025-09-17 20:38:34,015 - WARNING - Will retry 19:c9a04f3fce0be1940c0f7397@thread.v2 due to error (attempt 1/3)
+2025-09-17 20:38:34,016 - INFO - Task completed: 100.0% (3/3)
+2025-09-17 20:38:34,016 - INFO - Batch 7 processing complete: 0/3 successful
+2025-09-17 20:38:34,016 - INFO - Batch duration: 348.82s
+2025-09-17 20:38:39,016 - INFO - Processing batch 8/20 (3 chats)...
+2025-09-17 20:40:25,845 - ERROR - Task processing error for 19:06523e0a84d056dd710db949@thread.v2: JSON parsing failed: Expecting ',' delimiter: line 377 column 6 (char 14496)
+2025-09-17 20:40:25,845 - WARNING - Will retry 19:06523e0a84d056dd710db949@thread.v2 due to error (attempt 1/3)
+2025-09-17 20:40:25,845 - INFO - Task completed: 33.3% (1/3)
+2025-09-17 20:40:39,072 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:40:39,073 - INFO - Backing off call_ollama_with_backoff(...) for 0.3s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:40:39,073 - WARNING - Retry 1/5 after 0.3s
+2025-09-17 20:40:39,123 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:40:39,124 - INFO - Backing off call_ollama_with_backoff(...) for 0.2s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:40:39,124 - WARNING - Retry 1/5 after 0.2s
+2025-09-17 20:42:02,479 - INFO - Task completed: 66.7% (2/3)
+2025-09-17 20:42:39,441 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:42:39,442 - INFO - Backing off call_ollama_with_backoff(...) for 2.8s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:42:39,442 - WARNING - Retry 2/5 after 2.8s
+2025-09-17 20:44:05,927 - INFO - Task completed: 100.0% (3/3)
+2025-09-17 20:44:05,927 - INFO - Saving batch of 2 updates to database...
+2025-09-17 20:44:05,982 - INFO - Successfully saved 2 records to database
+2025-09-17 20:44:05,982 - INFO - Sample update - Chat ID: 19:218f1398535048e97ab935f7@thread.v2
+2025-09-17 20:44:05,982 - INFO - Final batch save: 2 records
+2025-09-17 20:44:05,982 - INFO - Batch 8 processing complete: 2/3 successful
+2025-09-17 20:44:05,982 - INFO - Batch duration: 326.91s
+2025-09-17 20:44:10,983 - INFO - Processing batch 9/20 (3 chats)...
+2025-09-17 20:45:57,685 - ERROR - Task processing error for 19:dfa39368cd9f4017968c26b3@thread.v2: JSON parsing failed: Expecting ',' delimiter: line 314 column 6 (char 15023)
+2025-09-17 20:45:57,685 - WARNING - Will retry 19:dfa39368cd9f4017968c26b3@thread.v2 due to error (attempt 1/3)
+2025-09-17 20:45:57,685 - INFO - Task completed: 33.3% (1/3)
+2025-09-17 20:46:11,086 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:46:11,087 - INFO - Backing off call_ollama_with_backoff(...) for 0.9s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:46:11,087 - WARNING - Retry 1/5 after 0.9s
+2025-09-17 20:46:11,087 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:46:11,088 - INFO - Backing off call_ollama_with_backoff(...) for 0.8s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:46:11,088 - WARNING - Retry 1/5 after 0.8s
+2025-09-17 20:46:54,130 - INFO - Task completed: 66.7% (2/3)
+2025-09-17 20:48:12,052 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:48:12,053 - INFO - Backing off call_ollama_with_backoff(...) for 1.1s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:48:12,054 - WARNING - Retry 2/5 after 1.1s
+2025-09-17 20:49:59,890 - ERROR - Task processing error for 19:b0c121167221c12f657bfc55@thread.v2: JSON parsing failed: Expecting ',' delimiter: line 307 column 6 (char 14292)
+2025-09-17 20:49:59,890 - WARNING - Will retry 19:b0c121167221c12f657bfc55@thread.v2 due to error (attempt 1/3)
+2025-09-17 20:49:59,890 - INFO - Task completed: 100.0% (3/3)
+2025-09-17 20:49:59,891 - INFO - Saving batch of 1 updates to database...
+2025-09-17 20:49:59,947 - INFO - Successfully saved 1 records to database
+2025-09-17 20:49:59,947 - INFO - Sample update - Chat ID: 19:88d5db54a0ae32479d52fb34@thread.v2
+2025-09-17 20:49:59,947 - INFO - Final batch save: 1 records
+2025-09-17 20:49:59,947 - INFO - Batch 9 processing complete: 1/3 successful
+2025-09-17 20:49:59,947 - INFO - Batch duration: 348.91s
+2025-09-17 20:49:59,947 - INFO - Overall Progress: 45.8% | Batches: 9/20
+2025-09-17 20:49:59,947 - INFO - Success: 14 | Failures: 0 | Retries: 0 | DB Updates: 14
+2025-09-17 20:49:59,947 - INFO - System: CPU 3.2% | Memory 8.6%
+2025-09-17 20:50:04,948 - INFO - Processing batch 10/20 (3 chats)...
+2025-09-17 20:51:51,530 - ERROR - Task processing error for 19:e400717e6958b87ad2572ef5@thread.v2: JSON parsing failed: Expecting ',' delimiter: line 307 column 6 (char 15001)
+2025-09-17 20:51:51,530 - WARNING - Will retry 19:e400717e6958b87ad2572ef5@thread.v2 due to error (attempt 1/3)
+2025-09-17 20:51:51,530 - INFO - Task completed: 33.3% (1/3)
+2025-09-17 20:52:04,966 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:52:04,967 - INFO - Backing off call_ollama_with_backoff(...) for 0.7s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:52:04,967 - WARNING - Retry 1/5 after 0.7s
+2025-09-17 20:52:05,053 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:52:05,053 - INFO - Backing off call_ollama_with_backoff(...) for 0.6s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:52:05,054 - WARNING - Retry 1/5 after 0.6s
+2025-09-17 20:53:52,349 - ERROR - Task processing error for 19:e193de3cc1b3f2e18b6e2740@thread.v2: JSON parsing failed: Expecting ',' delimiter: line 321 column 6 (char 14764)
+2025-09-17 20:53:52,349 - WARNING - Will retry 19:e193de3cc1b3f2e18b6e2740@thread.v2 due to error (attempt 1/3)
+2025-09-17 20:53:52,349 - INFO - Task completed: 66.7% (2/3)
+2025-09-17 20:54:05,706 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:54:05,707 - INFO - Backing off call_ollama_with_backoff(...) for 0.8s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:54:05,707 - WARNING - Retry 2/5 after 0.8s
+2025-09-17 20:54:50,752 - INFO - Task completed: 100.0% (3/3)
+2025-09-17 20:54:50,753 - INFO - Saving batch of 1 updates to database...
+2025-09-17 20:54:50,808 - INFO - Successfully saved 1 records to database
+2025-09-17 20:54:50,808 - INFO - Sample update - Chat ID: 19:642aa5ca5e8116cba61003d8@thread.v2
+2025-09-17 20:54:50,808 - INFO - Final batch save: 1 records
+2025-09-17 20:54:50,808 - INFO - Batch 10 processing complete: 1/3 successful
+2025-09-17 20:54:50,808 - INFO - Batch duration: 285.81s
+2025-09-17 20:54:55,808 - INFO - Processing batch 11/20 (3 chats)...
+2025-09-17 20:56:13,590 - INFO - Task completed: 33.3% (1/3)
+2025-09-17 20:56:55,914 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:56:55,914 - INFO - Backing off call_ollama_with_backoff(...) for 1.0s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:56:55,914 - WARNING - Retry 1/5 after 1.0s
+2025-09-17 20:56:55,915 - ERROR - Request timed out after 120 seconds
+2025-09-17 20:56:55,916 - INFO - Backing off call_ollama_with_backoff(...) for 0.5s (requests.exceptions.ReadTimeout: HTTPConnectionPool(host='20.66.111.167', port=7651): Read timed out. (read timeout=120))
+2025-09-17 20:56:55,916 - WARNING - Retry 1/5 after 0.5s
+2025-09-17 20:57:40,556 - INFO - Task completed: 66.7% (2/3)
