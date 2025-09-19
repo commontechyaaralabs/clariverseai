@@ -1,4 +1,4 @@
-# EU Banking Email Thread Generation and Analysis System
+# EU Banking Email Thread Generation and Analysis System - Two Phase Approach
 import os
 import random
 import time
@@ -95,20 +95,25 @@ try:
     API_CALL_DELAY = rate_config["api_call_delay"]
 except ImportError:
     # Fallback configuration if config.py doesn't exist
-    OLLAMA_BASE_URL = "https://quiet-accompanied-holland-candidate.trycloudflare.com"
-    OLLAMA_TOKEN = "8e5ded514b6e62c4b3faaf7e9f6d4179e0190ca9523fba2ce0ba4ebdf6cd0842"
+    OLLAMA_BASE_URL = "http://34.147.17.26:22496/api/generate"
+    OLLAMA_TOKEN = "ee38bf0916633586f9267541fbc717bb8a0ee3cec69539a765a83a50d0bff624"
     OLLAMA_MODEL = "gemma3:27b"
-    BATCH_SIZE = 5
-    MAX_WORKERS = 5
-    REQUEST_TIMEOUT = 120
-    MAX_RETRIES = 5
-    RETRY_DELAY = 3
-    BATCH_DELAY = 5.0
-    API_CALL_DELAY = 1.0
+    BATCH_SIZE = 3
+    MAX_WORKERS = 3
+    REQUEST_TIMEOUT = 300
+    MAX_RETRIES = 8
+    RETRY_DELAY = 5
+    BATCH_DELAY = 10.0
+    API_CALL_DELAY = 3.0
 
-# Ollama setup - Optimized for maximum performance
-OLLAMA_URL = f"{OLLAMA_BASE_URL}/api/generate"
-OLLAMA_TAGS_URL = f"{OLLAMA_BASE_URL}/api/tags"
+# Ollama setup - Optimized for localhost Ollama with token authentication
+# Check if base URL already includes /api/generate
+if OLLAMA_BASE_URL.endswith('/api/generate'):
+    OLLAMA_URL = OLLAMA_BASE_URL
+    OLLAMA_TAGS_URL = OLLAMA_BASE_URL.replace('/api/generate', '/api/tags')
+else:
+    OLLAMA_URL = f"{OLLAMA_BASE_URL}/api/generate"
+    OLLAMA_TAGS_URL = f"{OLLAMA_BASE_URL}/api/tags"
 
 # Additional configuration
 CPU_COUNT = multiprocessing.cpu_count()
@@ -117,6 +122,105 @@ CPU_COUNT = multiprocessing.cpu_count()
 INTERMEDIATE_RESULTS_FILE = LOG_DIR / f"intermediate_results_{timestamp}.json"
 
 fake = Faker()
+
+def clean_json_response(json_string):
+    """Clean and fix common JSON issues from LLM responses"""
+    import re
+    import string
+    
+    # Remove markdown formatting
+    if "```" in json_string:
+        json_string = json_string.replace("```json", "").replace("```", "")
+    
+    # Find JSON object boundaries
+    json_start = json_string.find('{')
+    json_end = json_string.rfind('}') + 1
+    
+    if json_start == -1 or json_end <= json_start:
+        raise ValueError("No valid JSON found in response")
+    
+    json_string = json_string[json_start:json_end]
+    
+    # Remove control characters that cause JSON parsing issues
+    # This is more aggressive than the previous approach
+    json_string = ''.join(char for char in json_string if ord(char) >= 32 and ord(char) <= 126 or char in '\n\r\t')
+    
+    # Fix common escape sequence issues
+    json_string = json_string.replace('\\"', '"')  # Fix escaped quotes
+    json_string = json_string.replace('\\n', '\n')  # Fix escaped newlines
+    json_string = json_string.replace('\\t', '\t')  # Fix escaped tabs
+    json_string = json_string.replace('\\r', '\r')  # Fix escaped carriage returns
+    json_string = json_string.replace('\\\\', '\\')  # Fix double backslashes
+    
+    # Fix any remaining problematic escape sequences
+    json_string = re.sub(r'\\(?!["\\/bfnrt])', '', json_string)
+    
+    # Final cleanup of any remaining control characters
+    json_string = re.sub(r'[\x00-\x1f\x7f-\x9f]', '', json_string)
+    
+    return json_string
+
+def debug_json_issues(json_string, phase_name, thread_id):
+    """Debug function to identify problematic characters in JSON"""
+    import re
+    
+    # Find control characters
+    control_chars = []
+    for i, char in enumerate(json_string):
+        if ord(char) < 32 or ord(char) > 126:
+            if char not in '\n\r\t':
+                control_chars.append((i, char, ord(char)))
+    
+    if control_chars:
+        logger.error(f"Found {len(control_chars)} control characters in {phase_name} for thread {thread_id}")
+        for pos, char, code in control_chars[:10]:  # Show first 10
+            logger.error(f"  Position {pos}: '{char}' (ASCII {code})")
+    
+    return control_chars
+
+def parse_json_with_fallback(json_string, phase_name, thread_id):
+    """Parse JSON with multiple fallback strategies"""
+    try:
+        # First attempt with basic cleaning
+        cleaned_json = clean_json_response(json_string)
+        return json.loads(cleaned_json)
+        
+    except json.JSONDecodeError as e:
+        logger.error(f"JSON parsing failed in {phase_name} for thread {thread_id}: {e}")
+        logger.error(f"Problematic JSON (first 500 chars): {json_string[:500]}")
+        
+        # Debug the issues
+        debug_json_issues(json_string, phase_name, thread_id)
+        
+        try:
+            # Second attempt with more aggressive cleaning
+            import re
+            cleaned_json = clean_json_response(json_string)
+            # Remove any characters that might cause issues
+            cleaned_json = re.sub(r'\\[^"\\/bfnrt]', '', cleaned_json)
+            return json.loads(cleaned_json)
+            
+        except (json.JSONDecodeError, ValueError) as e2:
+            logger.error(f"JSON parsing failed in {phase_name} after aggressive cleaning: {e2}")
+            
+            try:
+                # Third attempt with even more aggressive cleaning
+                # Remove all non-ASCII characters and control characters
+                cleaned_json = ''.join(char for char in json_string if ord(char) >= 32 and ord(char) <= 126 or char in '\n\r\t')
+                # Remove markdown
+                cleaned_json = cleaned_json.replace("```json", "").replace("```", "")
+                # Find JSON boundaries
+                json_start = cleaned_json.find('{')
+                json_end = cleaned_json.rfind('}') + 1
+                if json_start != -1 and json_end > json_start:
+                    cleaned_json = cleaned_json[json_start:json_end]
+                    return json.loads(cleaned_json)
+                else:
+                    raise ValueError("No valid JSON structure found")
+                    
+            except (json.JSONDecodeError, ValueError) as e3:
+                logger.error(f"JSON parsing failed in {phase_name} after all cleaning attempts: {e3}")
+                raise ValueError(f"JSON parsing failed in {phase_name} after all cleaning attempts: {e3}")
 
 # Thread-safe counters with logging
 class LoggingCounter:
@@ -243,7 +347,7 @@ def init_database():
     backoff.expo,
     (requests.exceptions.RequestException, json.JSONDecodeError, KeyError, ValueError),
     max_tries=MAX_RETRIES,
-    max_time=180,
+    max_time=600,
     base=RETRY_DELAY,
     on_backoff=lambda details: logger.warning(f"Retry {details['tries']}/{MAX_RETRIES} after {details['wait']:.1f}s")
 )
@@ -252,7 +356,7 @@ def call_ollama_with_backoff(prompt, timeout=REQUEST_TIMEOUT):
     if shutdown_flag.is_set():
         raise KeyboardInterrupt("Shutdown requested")
     
-    # Prepare headers for remote endpoint
+    # Prepare headers for localhost Ollama endpoint with Bearer token
     headers = {
         'Content-Type': 'application/json',
         'Authorization': f'Bearer {OLLAMA_TOKEN}' if OLLAMA_TOKEN else None
@@ -303,7 +407,7 @@ def call_ollama_with_backoff(prompt, timeout=REQUEST_TIMEOUT):
         logger.error(f"Request timed out after {timeout} seconds")
         raise
     except requests.exceptions.ConnectionError:
-        logger.error("Connection error - check remote Ollama endpoint")
+        logger.error("Connection error - check localhost Ollama endpoint")
         raise
     except requests.exceptions.HTTPError as e:
         logger.error(f"HTTP error: {e.response.status_code} - {e.response.text[:200]}")
@@ -318,9 +422,9 @@ def call_ollama_with_backoff(prompt, timeout=REQUEST_TIMEOUT):
         logger.error(f"API response error: {e}")
         raise
 
-def generate_eu_banking_email_prompt(dominant_topic, subtopics, participants, message_count):
+def generate_email_content_prompt(dominant_topic, subtopics, participants, message_count):
     """
-    Generate EU banking email thread content and semantic analysis
+    PHASE 1: Generate EU banking email thread content only (body, subject, dates)
     """
     
     # Extract participant details for reference
@@ -328,7 +432,7 @@ def generate_eu_banking_email_prompt(dominant_topic, subtopics, participants, me
     recipient = next((p for p in participants if p['type'] == 'to'), participants[1] if len(participants) > 1 else participants[0])
     
     prompt = f"""
-TASK: Generate a realistic EU banking email thread with {message_count} messages and provide comprehensive semantic analysis.
+TASK: Generate a realistic EU banking email thread with {message_count} messages focusing ONLY on email content (subject, body, dates).
 
 **CONTEXT:**
 - Dominant Topic: {dominant_topic}
@@ -361,53 +465,6 @@ TASK: Generate a realistic EU banking email thread with {message_count} messages
    - **CRITICAL: All dates must be between 2025-01-01 and 2025-06-30 (6 months only)**
    - Ensure meaningful timeframes between messages (minutes for quick replies, hours for business hours, days for complex issues)
 
-**SEMANTIC ANALYSIS FIELD DEFINITIONS:**
-
-**stages**: Based on reading the ENTIRE email thread, determine at which customer service stage the conversation concludes. Read all messages and assess where the process ended:
-- "Receive": Customer inquiry just received, no response yet
-- "Authenticate": Verifying customer identity/credentials
-- "Categorize": Understanding and classifying the issue/request
-- "Attempt Resolution": Actively working to solve the problem
-- "Escalate/Investigate": Issue requires higher-level attention or investigation
-- "Update Customer": Providing progress updates or additional information
-- "Resolve": Issue has been successfully resolved
-- "Confirm/Close": Final confirmation and case closure
-- "Report/Analyze": Post-resolution analysis or reporting phase
-
-**email_summary**: Based on the ENTIRE thread, provide a comprehensive summary (100-150 words) that explains what the entire conversation was about. Even for single messages, explain the full context and meaning. The summary should convey the complete story of the email exchange and its purpose.
-
-**action_pending_status**: After reading all messages, determine if there are any pending actions required: "yes" or "no"
-
-**action_pending_from**: If action_pending_status is "yes", specify who needs to act next: "company" or "customer". If action_pending_status is "no", this field should be null.
-
-**resolution_status**: Based on the complete thread, determine if the main issue/request has been resolved: "open" (unresolved) or "closed" (resolved)
-
-**follow_up_required**: Based on the conversation flow, determine if follow-up communication is needed: "yes" or "no"
-
-**follow_up_date**: If follow-up is required, provide realistic ISO timestamp, otherwise null
-
-**follow_up_reason**: If follow-up is required, explain why and what needs to be followed up in 2 lines maximum
-
-**next_action_suggestion**: Provide AI-agent style recommendation (30-50 words) for the next best action to take. Focus on:
-- Customer retention strategies
-- Company operational improvements  
-- Internal staff satisfaction
-- Service quality enhancement
-- Compliance requirements
-- Relationship building opportunities
-
-**urgency**: Semantic analysis of the email content to determine if IMMEDIATE action is required. Only mark as "true" for emails that genuinely need urgent attention. Target: Only ~7-8% should be urgent. Base decision on actual semantic content, not default assumptions.
-
-**sentiment**: Individual message sentiment analysis using human emotional tone:
-- 0: Neutral/Calm (baseline for professional communication)
-- 1: Slightly Concerned/Mildly Positive  
-- 2: Moderately Concerned/Happy
-- 3: Worried/Excited
-- 4: Very Concerned/Very Happy
-- 5: Extremely Distressed/Extremely Pleased
-
-**overall_sentiment**: Average sentiment across the entire thread (0-5 scale)
-
 **OUTPUT FORMAT:**
 Return ONLY a JSON object with this structure:
 
@@ -429,50 +486,138 @@ Return ONLY a JSON object with this structure:
         }}
       }}
     }}
-  ],
-  "analysis": {{
-    "stages": "[single_final_stage_based_on_complete_thread_analysis]",
-    "email_summary": "[100-150_word_comprehensive_thread_summary_explaining_full_context]",
-    "action_pending_status": "[yes/no_based_on_thread_analysis]",
-    "action_pending_from": "[company/customer_if_pending_yes_or_null_if_pending_no]",
-    "resolution_status": "[open/closed_based_on_issue_resolution_in_thread]",
-    "follow_up_required": "[yes/no_based_on_conversation_needs]",
-    "follow_up_date": "[ISO_timestamp_or_null]",
-    "follow_up_reason": "[2_lines_explaining_why_followup_needed_or_null]",
-    "next_action_suggestion": "[30-50_word_AI_agent_recommendation_for_customer_retention_improvement]",
-    "urgency": [true/false_based_on_semantic_urgent_need_analysis],
-    "sentiment": {{
-      "0": [0-5_human_sentiment_score_message_1],
-      "1": [0-5_human_sentiment_score_message_2],
-      "[message_index]": [0-5_human_sentiment_score]
-    }},
-    "overall_sentiment": [0-5_average_sentiment_across_thread]
-  }}
+  ]
 }}
 
 **CRITICAL INSTRUCTIONS:**
 
 1. **EU Banking Focus:** Generate authentic European banking scenarios with relevant regulations, terminology, and business practices
 2. **Date Range:** ALL dates must be between 2025-01-01 and 2025-06-30 (6 months only) with meaningful timeframes
-3. **Semantic Analysis:** Read and analyze the ENTIRE thread before determining each analysis field
-4. **Natural Communication:** Generate normal banking emails - avoid defaulting to crisis scenarios
-5. **Urgency Assessment:** Only mark as urgent if content semantically requires immediate action (target: ~7-8%)
-6. **Human Sentiment:** Analyze the emotional tone of human communication in each message
-7. **Comprehensive Summary:** Email summary must explain the complete story of the thread
-8. **Action-Oriented:** Next action suggestions should focus on business improvement and customer retention
-9. **Stage Analysis:** Determine where in the customer service process the thread actually ended
-10. **Banking Compliance:** Include relevant EU banking regulations and compliance considerations
-11. **Subject/Body Separation:** NEVER include the subject line in the email body content - they are separate fields
-12. **Action Pending Logic:** If action_pending_status is "no", then action_pending_from must be null
+3. **Natural Communication:** Generate normal banking emails - avoid defaulting to crisis scenarios
+4. **Banking Compliance:** Include relevant EU banking regulations and compliance considerations
+5. **Subject/Body Separation:** NEVER include the subject line in the email body content - they are separate fields
 
-Generate the EU banking email thread and comprehensive analysis now.
+Generate the EU banking email thread content now.
 """.strip()
     
     return prompt
 
+def generate_email_analysis_prompt(email_thread_data):
+    """
+    PHASE 2: Generate semantic analysis based on the generated email thread
+    """
+    
+    # Extract thread information for analysis
+    subject = email_thread_data.get('thread_data', {}).get('subject_norm', '')
+    messages = email_thread_data.get('messages', [])
+    
+    # Format the email thread for analysis
+    thread_display = f"Subject: {subject}\n\n"
+    for i, message in enumerate(messages):
+        date = message.get('headers', {}).get('date', '')
+        subject_line = message.get('headers', {}).get('subject', '')
+        body = message.get('body', {}).get('text', {}).get('plain', '')
+        
+        thread_display += f"Message {i+1}:\n"
+        thread_display += f"Date: {date}\n"
+        thread_display += f"Subject: {subject_line}\n"
+        thread_display += f"Body:\n{body}\n"
+        thread_display += f"{'-'*50}\n\n"
+    
+    prompt = f"""
+TASK: Analyze the following EU banking email thread and provide comprehensive semantic analysis.
+
+**EMAIL THREAD TO ANALYZE:**
+{thread_display}
+
+**SEMANTIC ANALYSIS FIELD DEFINITIONS:**
+
+**stages**: Based on reading the ENTIRE email thread, determine at which customer service stage the conversation concludes. Read all messages and assess where the process ended:
+- "Receive": Customer inquiry just received, no response yet
+- "Authenticate": Verifying customer identity/credentials
+- "Categorize": Understanding and classifying the issue/request
+- "Attempt Resolution": Actively working to solve the problem
+- "Escalate/Investigate": Issue requires higher-level attention or investigation
+- "Update Customer": Providing progress updates or additional information
+- "Resolve": Issue has been successfully resolved
+- "Confirm/Close": Final confirmation and case closure
+- "Report/Analyze": Post-resolution analysis or reporting phase
+
+**email_summary**: Based on the ENTIRE thread, provide a comprehensive summary (100-150 words) that explains what the entire conversation was about. Even for single messages, explain the full context and meaning. The summary should convey the complete story of the email exchange and its purpose.
+
+**action_pending_status**: After reading all messages, determine if there are any pending actions required: "yes" or "no"
+
+**action_pending_from**: If action_pending_status is "yes", specify who needs to act next: "company" or "customer". If action_pending_status is "no", this field should be null.
+
+**resolution_status**: Based on the complete thread, determine if the main issue/request has been resolved: "open" (unresolved), "inprogress" (work is in process), or "closed" (resolved)
+
+**follow_up_required**: Based on the conversation flow, determine if follow-up communication is needed: "yes" or "no"
+
+**follow_up_date**: If follow-up is required, provide realistic ISO timestamp, otherwise null
+
+**follow_up_reason**: If follow-up is required, explain why and what needs to be followed up in 2 lines maximum
+
+**next_action_suggestion**: Provide AI-agent style recommendation (30-50 words) for the next best action to take. Focus on:
+- Customer retention strategies
+- Company operational improvements  
+- Internal staff satisfaction
+- Service quality enhancement
+- Compliance requirements
+- Relationship building opportunities
+
+**urgency**: Semantic analysis of the email content to determine if IMMEDIATE action is required. Only mark as "true" for emails that genuinely need urgent attention. Target: Only ~7-8% should be urgent. Base decision on actual semantic content, not default assumptions.
+
+**sentiment**: Individual message sentiment analysis using human emotional tone (0-5 scale):
+- 0: Happy (pleased, satisfied, positive)
+- 1: Calm (baseline for professional communication)
+- 2: Bit Irritated (slight annoyance or impatience)
+- 3: Moderately Concerned (growing unease or worry)
+- 4: Anger (clear frustration or anger)
+- 5: Frustrated (extreme frustration, very upset)
+
+**overall_sentiment**: Average sentiment across the entire thread (0-5 scale)
+
+**OUTPUT FORMAT:**
+Return ONLY a JSON object with this structure:
+
+{{
+  "analysis": {{
+    "stages": "[single_final_stage_based_on_complete_thread_analysis]",
+    "email_summary": "[100-150_word_comprehensive_thread_summary_explaining_full_context]",
+    "action_pending_status": "[yes/no_based_on_thread_analysis]",
+    "action_pending_from": "[company/customer_if_pending_yes_or_null_if_pending_no]",
+    "resolution_status": "[open/inprogress/closed_based_on_issue_resolution_in_thread]",
+    "follow_up_required": "[yes/no_based_on_conversation_needs]",
+    "follow_up_date": "[ISO_timestamp_or_null]",
+    "follow_up_reason": "[2_lines_explaining_why_followup_needed_or_null]",
+    "next_action_suggestion": "[30-50_word_AI_agent_recommendation_for_customer_retention_improvement]",
+    "urgency": [true/false_based_on_semantic_urgent_need_analysis],
+    "sentiment": {{
+      "0": [0-5_human_emotional_state_message_1],
+      "1": [0-5_human_emotional_state_message_2],
+      "[message_index]": [0-5_human_emotional_state]
+    }},
+    "overall_sentiment": [0-5_average_emotional_state_across_thread]
+  }}
+}}
+
+**CRITICAL INSTRUCTIONS:**
+
+1. **Semantic Analysis:** Read and analyze the ENTIRE thread before determining each analysis field
+2. **Urgency Assessment:** Only mark as urgent if content semantically requires immediate action (target: ~7-8%)
+3. **Human Emotional State:** Analyze the emotional cycle from happy (0) to frustrated (5) in each message based on customer's emotional state
+4. **Comprehensive Summary:** Email summary must explain the complete story of the thread
+5. **Action-Oriented:** Next action suggestions should focus on business improvement and customer retention
+6. **Stage Analysis:** Determine where in the customer service process the thread actually ended
+7. **Action Pending Logic:** If action_pending_status is "no", then action_pending_from must be null
+
+Generate the comprehensive analysis now.
+""".strip()
+    
+    return prompt
 
 def generate_eu_banking_email_content(email_data):
-    """Generate EU banking email content based on dominant topic and subtopics"""
+    """Generate EU banking email content in two phases"""
     if shutdown_flag.is_set():
         return None
     
@@ -486,97 +631,145 @@ def generate_eu_banking_email_content(email_data):
         participants = email_data.get('thread', {}).get('participants', [])
         message_count = email_data.get('thread', {}).get('message_count', 2)
         
-        # Generate the prompt using the existing function
-        prompt = generate_eu_banking_email_prompt(dominant_topic, subtopics, participants, message_count)
+        logger.info(f"Phase 1: Generating email content for thread {thread_id}")
         
-        response = call_ollama_with_backoff(prompt)
+        # PHASE 1: Generate email content (body, subject, dates)
+        content_prompt = generate_email_content_prompt(dominant_topic, subtopics, participants, message_count)
+        content_response = call_ollama_with_backoff(content_prompt)
         
-        if not response or not response.strip():
-            raise ValueError("Empty response from LLM")
+        if not content_response or not content_response.strip():
+            raise ValueError("Empty response from LLM in Phase 1")
         
-        # Clean response
-        reply = response.strip()
+        # Clean and parse Phase 1 response using the same logic as old code
+        content_reply = content_response.strip()
         
         # Remove markdown formatting
-        if "```" in reply:
-            reply = reply.replace("```json", "").replace("```", "")
+        if "```" in content_reply:
+            content_reply = content_reply.replace("```json", "").replace("```", "")
         
         # Find JSON object
-        json_start = reply.find('{')
-        json_end = reply.rfind('}') + 1
+        json_start = content_reply.find('{')
+        json_end = content_reply.rfind('}') + 1
         
         if json_start == -1 or json_end <= json_start:
-            raise ValueError("No valid JSON found in LLM response")
+            raise ValueError("No valid JSON found in Phase 1 LLM response")
         
-        reply = reply[json_start:json_end]
+        content_reply = content_reply[json_start:json_end]
         
         try:
-            result = json.loads(reply)
+            email_thread_data = json.loads(content_reply)
             
-            # Validate required fields
-            required_fields = ['thread_data', 'messages', 'analysis']
+            # Validate Phase 1 required fields
+            required_fields = ['thread_data', 'messages']
             for field in required_fields:
-                if field not in result:
-                    raise ValueError(f"Missing required field: {field}")
-            
-            # Clean up any subject lines that might appear in body content
-            if 'messages' in result:
-                for message in result['messages']:
-                    if 'body' in message and 'text' in message['body'] and 'plain' in message['body']['text']:
-                        body_content = message['body']['text']['plain']
-                        
-                        # Check for various subject line patterns and remove them
-                        subject_patterns = [
-                            'Subject:',
-                            'SUBJECT:',
-                            'subject:',
-                            'Re:',
-                            'RE:',
-                            'Fwd:',
-                            'FWD:'
-                        ]
-                        
-                        cleaned_body = body_content
-                        for pattern in subject_patterns:
-                            if pattern in cleaned_body:
-                                # Find the line containing the subject and remove it
-                                lines = cleaned_body.split('\n')
-                                cleaned_lines = []
-                                skip_next = False
-                                
-                                for line in lines:
-                                    if skip_next:
-                                        skip_next = False
-                                        continue
-                                    
-                                    # Check if this line starts with a subject pattern
-                                    if any(line.strip().startswith(p) for p in subject_patterns):
-                                        # Skip this line (the subject line)
-                                        logger.warning(f"Removed subject line '{line.strip()}' from body content for thread {thread_id}")
-                                        continue
-                                    
-                                    cleaned_lines.append(line)
-                                
-                                cleaned_body = '\n'.join(cleaned_lines)
-                        
-                        # Update the body content
-                        message['body']['text']['plain'] = cleaned_body
-            
-            generation_time = time.time() - start_time
-            
-            # Log successful generation
-            success_info = {
-                'thread_id': thread_id,
-                'dominant_topic': dominant_topic,
-                'generation_time': generation_time,
-                'message_count': len(result.get('messages', []))
-            }
-            success_logger.info(json.dumps(success_info))
-            
-            return result
+                if field not in email_thread_data:
+                    raise ValueError(f"Missing required field in Phase 1: {field}")
             
         except json.JSONDecodeError as e:
-            raise ValueError(f"JSON parsing failed: {e}")
+            raise ValueError(f"JSON parsing failed in Phase 1: {e}")
+        
+        logger.info(f"Phase 2: Generating analysis for thread {thread_id}")
+        
+        # Add delay between phases
+        time.sleep(API_CALL_DELAY)
+        logger.info(f"Waiting {API_CALL_DELAY}s between phases for thread {thread_id}")
+        
+        # PHASE 2: Generate semantic analysis
+        analysis_prompt = generate_email_analysis_prompt(email_thread_data)
+        analysis_response = call_ollama_with_backoff(analysis_prompt)
+        
+        if not analysis_response or not analysis_response.strip():
+            raise ValueError("Empty response from LLM in Phase 2")
+        
+        # Clean and parse Phase 2 response using the same logic as old code
+        analysis_reply = analysis_response.strip()
+        
+        # Remove markdown formatting
+        if "```" in analysis_reply:
+            analysis_reply = analysis_reply.replace("```json", "").replace("```", "")
+        
+        # Find JSON object
+        json_start = analysis_reply.find('{')
+        json_end = analysis_reply.rfind('}') + 1
+        
+        if json_start == -1 or json_end <= json_start:
+            raise ValueError("No valid JSON found in Phase 2 LLM response")
+        
+        analysis_reply = analysis_reply[json_start:json_end]
+        
+        try:
+            analysis_data = json.loads(analysis_reply)
+            
+            # Validate Phase 2 required fields
+            if 'analysis' not in analysis_data:
+                raise ValueError("Missing required field in Phase 2: analysis")
+            
+        except json.JSONDecodeError as e:
+            raise ValueError(f"JSON parsing failed in Phase 2: {e}")
+        
+        # Combine both phases into final result
+        final_result = {
+            "thread_data": email_thread_data["thread_data"],
+            "messages": email_thread_data["messages"],
+            "analysis": analysis_data["analysis"]
+        }
+        
+        # Clean up any subject lines that might appear in body content
+        if 'messages' in final_result:
+            for message in final_result['messages']:
+                if 'body' in message and 'text' in message['body'] and 'plain' in message['body']['text']:
+                    body_content = message['body']['text']['plain']
+                    
+                    # Check for various subject line patterns and remove them
+                    subject_patterns = [
+                        'Subject:',
+                        'SUBJECT:',
+                        'subject:',
+                        'Re:',
+                        'RE:',
+                        'Fwd:',
+                        'FWD:'
+                    ]
+                    
+                    cleaned_body = body_content
+                    for pattern in subject_patterns:
+                        if pattern in cleaned_body:
+                            # Find the line containing the subject and remove it
+                            lines = cleaned_body.split('\n')
+                            cleaned_lines = []
+                            skip_next = False
+                            
+                            for line in lines:
+                                if skip_next:
+                                    skip_next = False
+                                    continue
+                                
+                                # Check if this line starts with a subject pattern
+                                if any(line.strip().startswith(p) for p in subject_patterns):
+                                    # Skip this line (the subject line)
+                                    logger.warning(f"Removed subject line '{line.strip()}' from body content for thread {thread_id}")
+                                    continue
+                                
+                                cleaned_lines.append(line)
+                            
+                            cleaned_body = '\n'.join(cleaned_lines)
+                    
+                    # Update the body content
+                    message['body']['text']['plain'] = cleaned_body
+        
+        generation_time = time.time() - start_time
+        
+        # Log successful generation
+        success_info = {
+            'thread_id': thread_id,
+            'dominant_topic': dominant_topic,
+            'generation_time': generation_time,
+            'message_count': len(final_result.get('messages', [])),
+            'phases_completed': 2
+        }
+        success_logger.info(json.dumps(success_info))
+        
+        return final_result
         
     except Exception as e:
         generation_time = time.time() - start_time
@@ -584,18 +777,19 @@ def generate_eu_banking_email_content(email_data):
             'thread_id': thread_id,
             'dominant_topic': email_data.get('dominant_topic', 'Unknown'),
             'error': str(e),
-            'generation_time': generation_time
+            'generation_time': generation_time,
+            'phase': 'Phase 1' if 'Phase 1' in str(e) else 'Phase 2' if 'Phase 2' in str(e) else 'Unknown'
         }
         failure_logger.error(json.dumps(error_info))
         raise
 
 def process_single_email_update(email_record):
-    """Process a single email record to generate content and analysis"""
+    """Process a single email record to generate content and analysis using two-phase approach"""
     if shutdown_flag.is_set():
         return None
         
     try:
-        # Generate email content based on existing data
+        # Generate email content based on existing data using two-phase approach
         email_content = generate_eu_banking_email_content(email_record)
         
         if not email_content:
@@ -737,14 +931,15 @@ def save_batch_to_database(batch_updates):
         return 0
 
 def update_emails_with_content_parallel():
-    """Update existing emails with generated content and analysis using optimized batch processing"""
+    """Update existing emails with generated content and analysis using optimized two-phase batch processing"""
     
-    logger.info("Starting EU Banking Email Content Generation...")
+    logger.info("Starting EU Banking Email Content Generation (Two-Phase Approach)...")
     logger.info(f"System Info: {CPU_COUNT} CPU cores detected")
     logger.info(f"Batch size: {BATCH_SIZE}")
     logger.info(f"Max workers: {MAX_WORKERS}")
     logger.info(f"Request timeout: {REQUEST_TIMEOUT}s")
     logger.info(f"Max retries per request: {MAX_RETRIES}")
+    logger.info("Two-phase generation: Phase 1 (Content) → Phase 2 (Analysis)")
     
     # Test Ollama connection
     if not test_ollama_connection():
@@ -776,8 +971,8 @@ def update_emails_with_content_parallel():
             logger.info("All emails already have analysis fields!")
             return
             
-        logger.info(f"Found {total_emails} emails needing content generation")
-        progress_logger.info(f"BATCH_START: total_emails={total_emails}, batch_size={BATCH_SIZE}")
+        logger.info(f"Found {total_emails} emails needing two-phase content generation")
+        progress_logger.info(f"BATCH_START: total_emails={total_emails}, batch_size={BATCH_SIZE}, two_phase=true")
         
     except Exception as e:
         logger.error(f"Error fetching email records: {e}")
@@ -788,7 +983,7 @@ def update_emails_with_content_parallel():
     total_updated = 0
     batch_updates = []  # Accumulate updates for batch saving
     
-    logger.info(f"Processing in {total_batches} batches of {BATCH_SIZE} emails each")
+    logger.info(f"Processing in {total_batches} batches of {BATCH_SIZE} emails each (Two-phase approach)")
     
     try:
         for batch_num in range(1, total_batches + 1):
@@ -800,27 +995,27 @@ def update_emails_with_content_parallel():
             batch_end = min(batch_start + BATCH_SIZE, total_emails)
             batch_records = email_records[batch_start:batch_end]
             
-            logger.info(f"Processing batch {batch_num}/{total_batches} ({len(batch_records)} emails)...")
-            progress_logger.info(f"BATCH_START: batch={batch_num}/{total_batches}, records={len(batch_records)}")
+            logger.info(f"Processing batch {batch_num}/{total_batches} ({len(batch_records)} emails) - Two-phase generation...")
+            progress_logger.info(f"BATCH_START: batch={batch_num}/{total_batches}, records={len(batch_records)}, two_phase=true")
             
             # Process batch with parallelization
             successful_updates = []
             batch_start_time = time.time()
             
             # Use ThreadPoolExecutor for I/O bound operations (API calls)
-            logger.info(f"Starting {len(batch_records)} tasks with {MAX_WORKERS} workers")
+            logger.info(f"Starting {len(batch_records)} two-phase tasks with {MAX_WORKERS} workers")
             with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
                 # Submit all tasks for this batch
                 futures = {
                     executor.submit(process_single_email_update, record): record 
                     for record in batch_records
                 }
-                logger.info(f"Submitted {len(futures)} tasks to worker pool")
+                logger.info(f"Submitted {len(futures)} two-phase tasks to worker pool")
                 
                 # Collect results with progress tracking
                 completed = 0
                 try:
-                    for future in as_completed(futures, timeout=REQUEST_TIMEOUT * 2):
+                    for future in as_completed(futures, timeout=REQUEST_TIMEOUT * 4):  # Increased timeout for two-phase
                         if shutdown_flag.is_set():
                             logger.warning("Cancelling remaining tasks...")
                             for f in futures:
@@ -828,24 +1023,24 @@ def update_emails_with_content_parallel():
                             break
                             
                         try:
-                            result = future.result(timeout=30)
+                            result = future.result(timeout=120)  # Increased timeout for two-phase
                             completed += 1
                             
                             if result:
                                 successful_updates.append(result)
-                                logger.info(f"Worker completed task {completed}/{len(batch_records)} - Thread ID: {result.get('thread_id', 'unknown')}")
+                                logger.info(f"Two-phase worker completed task {completed}/{len(batch_records)} - Thread ID: {result.get('thread_id', 'unknown')}")
                             
                             # Progress indicator
                             if completed % 2 == 0:  # Show progress every 2 completions
                                 progress = (completed / len(batch_records)) * 100
-                                logger.info(f"Batch progress: {progress:.1f}% ({completed}/{len(batch_records)}) - Active workers: {MAX_WORKERS}")
+                                logger.info(f"Two-phase batch progress: {progress:.1f}% ({completed}/{len(batch_records)}) - Active workers: {MAX_WORKERS}")
                                 
                         except Exception as e:
-                            logger.error(f"Error processing future result: {e}")
+                            logger.error(f"Error processing two-phase future result: {e}")
                             completed += 1
                             
                 except Exception as e:
-                    logger.error(f"Error collecting batch results: {e}")
+                    logger.error(f"Error collecting two-phase batch results: {e}")
             
             batch_end_time = time.time()
             batch_duration = batch_end_time - batch_start_time
@@ -853,10 +1048,10 @@ def update_emails_with_content_parallel():
             # Add successful updates to accumulator
             batch_updates.extend(successful_updates)
             
-            logger.info(f"Batch {batch_num} processing complete: {len(successful_updates)}/{len(batch_records)} successful")
-            logger.info(f"Batch duration: {batch_duration:.2f}s")
-            logger.info(f"Worker utilization: {MAX_WORKERS} workers processed {len(batch_records)} tasks")
-            progress_logger.info(f"BATCH_COMPLETE: batch={batch_num}, successful={len(successful_updates)}, duration={batch_duration:.2f}s, workers={MAX_WORKERS}")
+            logger.info(f"Two-phase batch {batch_num} processing complete: {len(successful_updates)}/{len(batch_records)} successful")
+            logger.info(f"Two-phase batch duration: {batch_duration:.2f}s")
+            logger.info(f"Worker utilization: {MAX_WORKERS} workers processed {len(batch_records)} two-phase tasks")
+            progress_logger.info(f"BATCH_COMPLETE: batch={batch_num}, successful={len(successful_updates)}, duration={batch_duration:.2f}s, workers={MAX_WORKERS}, two_phase=true")
             
             # Save to database every 5 records (one batch)
             if len(batch_updates) >= BATCH_SIZE and not shutdown_flag.is_set():
@@ -864,68 +1059,70 @@ def update_emails_with_content_parallel():
                 total_updated += saved_count
                 batch_updates = []  # Clear the accumulator
                 
-                logger.info(f"Database update complete: {saved_count} records saved")
+                logger.info(f"Two-phase database update complete: {saved_count} records saved")
             
             # Progress summary every 5 batches
             if batch_num % 5 == 0 or batch_num == total_batches:
                 overall_progress = ((batch_num * BATCH_SIZE) / total_emails) * 100
-                logger.info(f"Overall Progress: {overall_progress:.1f}% | Batches: {batch_num}/{total_batches}")
+                logger.info(f"Overall Two-phase Progress: {overall_progress:.1f}% | Batches: {batch_num}/{total_batches}")
                 logger.info(f"Success: {success_counter.value} | Failures: {failure_counter.value} | DB Updates: {total_updated}")
                 
                 # System resource info
                 cpu_percent = psutil.cpu_percent()
                 memory_percent = psutil.virtual_memory().percent
                 logger.info(f"System: CPU {cpu_percent:.1f}% | Memory {memory_percent:.1f}%")
-                progress_logger.info(f"PROGRESS_SUMMARY: batch={batch_num}/{total_batches}, success={success_counter.value}, failures={failure_counter.value}, db_updates={total_updated}")
+                progress_logger.info(f"PROGRESS_SUMMARY: batch={batch_num}/{total_batches}, success={success_counter.value}, failures={failure_counter.value}, db_updates={total_updated}, two_phase=true")
             
             # Brief pause between batches to help with rate limiting
             if not shutdown_flag.is_set() and batch_num < total_batches:
+                logger.info(f"Waiting {BATCH_DELAY}s between batches to reduce load...")
                 time.sleep(BATCH_DELAY)
         
         # Save any remaining updates
         if batch_updates and not shutdown_flag.is_set():
             saved_count = save_batch_to_database(batch_updates)
             total_updated += saved_count
-            logger.info(f"Final batch saved: {saved_count} records")
+            logger.info(f"Final two-phase batch saved: {saved_count} records")
         
         if shutdown_flag.is_set():
-            logger.info("Content generation interrupted gracefully!")
+            logger.info("Two-phase content generation interrupted gracefully!")
         else:
-            logger.info("EU Banking email content generation complete!")
+            logger.info("EU Banking email two-phase content generation complete!")
             
-        logger.info(f"Total emails updated: {total_updated}")
-        logger.info(f"Successful generations: {success_counter.value}")
-        logger.info(f"Failed generations: {failure_counter.value}")
+        logger.info(f"Total emails updated (two-phase): {total_updated}")
+        logger.info(f"Successful two-phase generations: {success_counter.value}")
+        logger.info(f"Failed two-phase generations: {failure_counter.value}")
         logger.info(f"Data updated in MongoDB: {DB_NAME}.{EMAIL_COLLECTION}")
         
         # Final progress log
-        progress_logger.info(f"FINAL_SUMMARY: total_updated={total_updated}, success={success_counter.value}, failures={failure_counter.value}")
+        progress_logger.info(f"FINAL_SUMMARY: total_updated={total_updated}, success={success_counter.value}, failures={failure_counter.value}, two_phase=true")
         
     except KeyboardInterrupt:
-        logger.info("Generation interrupted by user!")
+        logger.info("Two-phase generation interrupted by user!")
         shutdown_flag.set()
     except Exception as e:
-        logger.error(f"Unexpected error: {e}")
+        logger.error(f"Unexpected error in two-phase generation: {e}")
         shutdown_flag.set()
 
 def test_ollama_connection():
-    """Test if remote Ollama is running and model is available"""
+    """Test if localhost Ollama is running and model is available"""
     try:
-        logger.info(f"Testing connection to remote Ollama: {OLLAMA_BASE_URL}")
+        logger.info(f"Testing connection to localhost Ollama: {OLLAMA_BASE_URL}")
         
-        # Prepare headers for remote endpoint
+        # Prepare headers for localhost endpoint with Bearer token
         headers = {
             'Content-Type': 'application/json',
             'Authorization': f'Bearer {OLLAMA_TOKEN}' if OLLAMA_TOKEN else None
         }
+        # Remove None values
         headers = {k: v for k, v in headers.items() if v is not None}
         
         # Test basic connection with simple generation
-        logger.info("Testing simple generation...")
+        logger.info("Testing simple generation for two-phase approach...")
         
         test_payload = {
             "model": OLLAMA_MODEL,
-            "prompt": "Generate a JSON object with 'test': 'success'",
+            "prompt": "Generate a JSON object with 'test': 'success' for two-phase email generation",
             "stream": False,
             "options": {"num_predict": 20}
         }
@@ -934,10 +1131,10 @@ def test_ollama_connection():
             OLLAMA_URL, 
             json=test_payload,
             headers=headers,
-            timeout=30
+            timeout=60
         )
         
-        logger.info(f"Generation test status: {test_response.status_code}")
+        logger.info(f"Two-phase generation test status: {test_response.status_code}")
         
         if not test_response.text.strip():
             logger.error("Empty response from generation endpoint")
@@ -948,7 +1145,7 @@ def test_ollama_connection():
         try:
             result = test_response.json()
             if "response" in result:
-                logger.info("Ollama connection test successful")
+                logger.info("Ollama connection test successful for two-phase approach")
                 logger.info(f"Test response: {result['response'][:100]}...")
                 return True
             else:
@@ -959,10 +1156,8 @@ def test_ollama_connection():
             return False
             
     except requests.exceptions.RequestException as e:
-        logger.error(f"Connection test failed: {e}")
+        logger.error(f"Localhost Ollama connection test failed: {e}")
         return False
-
-
 
 def get_collection_stats():
     """Get collection statistics"""
@@ -986,7 +1181,7 @@ def get_collection_stats():
         
         top_topics = list(email_col.aggregate(pipeline))
         
-        logger.info("Collection Statistics:")
+        logger.info("Collection Statistics (Two-phase Approach):")
         logger.info(f"Total emails: {total_count}")
         logger.info(f"With analysis fields: {with_analysis}")
         logger.info(f"Without analysis fields: {without_analysis}")
@@ -995,7 +1190,7 @@ def get_collection_stats():
         for i, topic in enumerate(top_topics, 1):
             logger.info(f"{i}. {topic['_id']}: {topic['count']} emails")
             
-        progress_logger.info(f"COLLECTION_STATS: total={total_count}, with_analysis={with_analysis}, without_analysis={without_analysis}")
+        progress_logger.info(f"COLLECTION_STATS: total={total_count}, with_analysis={with_analysis}, without_analysis={without_analysis}, two_phase=true")
             
     except Exception as e:
         logger.error(f"Error getting collection stats: {e}")
@@ -1008,9 +1203,9 @@ def get_sample_generated_emails(limit=3):
             "email_summary": {"$exists": True, "$ne": "", "$ne": None}
         }).limit(limit))
         
-        logger.info("Sample Generated Email Content:")
+        logger.info("Sample Generated Email Content (Two-phase Approach):")
         for i, email in enumerate(samples, 1):
-            logger.info(f"--- Sample Email {i} ---")
+            logger.info(f"--- Sample Two-phase Email {i} ---")
             logger.info(f"Thread ID: {email.get('thread', {}).get('thread_id', 'N/A')}")
             logger.info(f"Dominant Topic: {email.get('dominant_topic', 'N/A')}")
             logger.info(f"Subtopics: {str(email.get('subtopics', 'N/A'))[:100]}...")
@@ -1023,9 +1218,9 @@ def get_sample_generated_emails(limit=3):
         logger.error(f"Error getting sample emails: {e}")
 
 def generate_status_report():
-    """Generate comprehensive status report"""
+    """Generate comprehensive status report for two-phase approach"""
     try:
-        report_file = LOG_DIR / f"status_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        report_file = LOG_DIR / f"two_phase_status_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
         
         # Get intermediate results stats
         pending_results = results_manager.get_pending_updates()
@@ -1041,6 +1236,7 @@ def generate_status_report():
         # Generate report
         status_report = {
             "timestamp": datetime.now().isoformat(),
+            "generation_approach": "two_phase",
             "session_stats": {
                 "successful_generations": success_counter.value,
                 "failed_generations": failure_counter.value,
@@ -1070,6 +1266,12 @@ def generate_status_report():
                 "success_log": str(SUCCESS_LOG_FILE),
                 "failure_log": str(FAILURE_LOG_FILE),
                 "progress_log": str(PROGRESS_LOG_FILE)
+            },
+            "two_phase_info": {
+                "phase_1": "Email content generation (subject, body, dates)",
+                "phase_2": "Semantic analysis generation",
+                "api_calls_per_record": 2,
+                "estimated_time_per_record": "Approximately 2x single-phase time"
             }
         }
         
@@ -1077,11 +1279,11 @@ def generate_status_report():
         with open(report_file, 'w') as f:
             json.dump(status_report, f, indent=2)
         
-        logger.info(f"Status report generated: {report_file}")
+        logger.info(f"Two-phase status report generated: {report_file}")
         return status_report
         
     except Exception as e:
-        logger.error(f"Error generating status report: {e}")
+        logger.error(f"Error generating two-phase status report: {e}")
         return None
 
 def recover_from_intermediate_results():
@@ -1093,7 +1295,7 @@ def recover_from_intermediate_results():
             logger.info("No pending intermediate results to recover")
             return 0
         
-        logger.info(f"Recovering {len(pending_results)} pending intermediate results...")
+        logger.info(f"Recovering {len(pending_results)} pending two-phase intermediate results...")
         
         # Convert to database update format
         batch_updates = []
@@ -1111,15 +1313,15 @@ def recover_from_intermediate_results():
                 batch = batch_updates[i:i + BATCH_SIZE]
                 saved_count = save_batch_to_database(batch)
                 total_recovered += saved_count
-                logger.info(f"Recovered batch: {saved_count} records")
+                logger.info(f"Recovered two-phase batch: {saved_count} records")
             
-            logger.info(f"Successfully recovered {total_recovered} records from intermediate results")
+            logger.info(f"Successfully recovered {total_recovered} records from two-phase intermediate results")
             return total_recovered
         
         return 0
         
     except Exception as e:
-        logger.error(f"Error recovering intermediate results: {e}")
+        logger.error(f"Error recovering two-phase intermediate results: {e}")
         return 0
 
 def validate_generated_content():
@@ -1138,7 +1340,8 @@ def validate_generated_content():
                 "avg_summary_length": 0,
                 "emails_with_urgency": 0,
                 "emails_with_sentiment": 0
-            }
+            },
+            "generation_approach": "two_phase"
         }
         
         summary_lengths = []
@@ -1176,12 +1379,12 @@ def validate_generated_content():
         validation_results["quality_metrics"]["emails_with_urgency"] = urgency_count
         validation_results["quality_metrics"]["emails_with_sentiment"] = sentiment_count
         
-        logger.info(f"Content validation complete: {len(validation_results['validation_issues'])} issues found")
+        logger.info(f"Two-phase content validation complete: {len(validation_results['validation_issues'])} issues found")
         
         return validation_results
         
     except Exception as e:
-        logger.error(f"Error validating content: {e}")
+        logger.error(f"Error validating two-phase content: {e}")
         return None
 
 def cleanup_old_logs(days_to_keep=7):
@@ -1208,15 +1411,17 @@ def cleanup_old_logs(days_to_keep=7):
 
 # Main execution function
 def main():
-    """Main function to initialize and run the email content generator"""
-    logger.info("EU Banking Email Content Generator Starting...")
+    """Main function to initialize and run the two-phase email content generator"""
+    logger.info("EU Banking Email Content Generator Starting (Two-Phase Approach)...")
     logger.info(f"Database: {DB_NAME}")
     logger.info(f"Collection: {EMAIL_COLLECTION}")
     logger.info(f"Model: {OLLAMA_MODEL}")
     logger.info(f"Ollama URL: {OLLAMA_BASE_URL}")
+    logger.info(f"Token: {OLLAMA_TOKEN[:20]}..." if OLLAMA_TOKEN else "No token")
     logger.info(f"Max Workers: {MAX_WORKERS}")
     logger.info(f"Batch Size: {BATCH_SIZE}")
     logger.info(f"Log Directory: {LOG_DIR}")
+    logger.info("Generation Approach: Two-Phase (Content → Analysis)")
     
     # Setup signal handlers and cleanup
     setup_signal_handlers()
@@ -1237,9 +1442,9 @@ def main():
         # Try to recover any pending intermediate results first
         recovered_count = recover_from_intermediate_results()
         if recovered_count > 0:
-            logger.info(f"Recovered {recovered_count} records from previous session")
+            logger.info(f"Recovered {recovered_count} records from previous two-phase session")
         
-        # Run the email content generation
+        # Run the two-phase email content generation
         update_emails_with_content_parallel()
         
         # Show final statistics
@@ -1251,31 +1456,31 @@ def main():
         # Validate content quality
         validation_results = validate_generated_content()
         if validation_results and validation_results["validation_issues"]:
-            logger.warning(f"Found {len(validation_results['validation_issues'])} content validation issues")
+            logger.warning(f"Found {len(validation_results['validation_issues'])} two-phase content validation issues")
         
         # Generate final status report
         status_report = generate_status_report()
         if status_report:
-            logger.info("Final session report:")
+            logger.info("Final two-phase session report:")
             logger.info(f"Success Rate: {status_report['session_stats']['success_rate']:.2f}%")
             logger.info(f"Database Completion: {status_report['database_stats']['completion_percentage']:.2f}%")
         
     except KeyboardInterrupt:
-        logger.info("Content generation interrupted by user!")
+        logger.info("Two-phase content generation interrupted by user!")
     except Exception as e:
-        logger.error(f"Unexpected error in main: {e}")
+        logger.error(f"Unexpected error in two-phase main: {e}")
     finally:
         # Save final intermediate results
         results_manager.save_to_file()
         cleanup_resources()
         
-        logger.info("Session complete. Check log files for detailed information:")
+        logger.info("Two-phase session complete. Check log files for detailed information:")
         logger.info(f"Main Log: {MAIN_LOG_FILE}")
         logger.info(f"Success Log: {SUCCESS_LOG_FILE}")
         logger.info(f"Failure Log: {FAILURE_LOG_FILE}")
         logger.info(f"Progress Log: {PROGRESS_LOG_FILE}")
         logger.info(f"Intermediate Results: {INTERMEDIATE_RESULTS_FILE}")
 
-# Run the content generator
+# Run the two-phase content generator
 if __name__ == "__main__":
     main()
