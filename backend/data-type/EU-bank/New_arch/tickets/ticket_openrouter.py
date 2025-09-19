@@ -516,12 +516,6 @@ Available Departments:
 - **VALID MONTHS**: January, February, March, April, May, June 2025 ONLY
 - **INVALID MONTHS**: July, August, September, October, November, December 2025
 
-**VALID DATE EXAMPLES:**
-- **ticket_raised**: "2025-02-15T10:30:00Z" (February 2025)
-- **ticket_raised**: "2025-05-20T14:45:00Z" (May 2025)
-- **follow_up_date**: "2025-04-10T16:20:00Z" (April 2025)
-- **follow_up_date**: "2025-06-25T09:15:00Z" (June 2025)
-
 **INVALID DATE EXAMPLES (DO NOT USE):**
 - **ticket_raised**: "2025-09-12T14:30:00Z" (September 2025 - INVALID)
 - **ticket_raised**: "2025-07-15T10:30:00Z" (July 2025 - INVALID)
