@@ -81,10 +81,10 @@ client = None
 db = None
 ticket_col = None
 
-# Import configuration - Based on working example
+# Import configuration
 try:
     from config import (
-        OLLAMA_BASE_URL, OLLAMA_TOKEN, OLLAMA_MODEL, BATCH_SIZE, MAX_WORKERS, REQUEST_TIMEOUT, 
+        OPENROUTER_MODEL, BATCH_SIZE, MAX_WORKERS, REQUEST_TIMEOUT, 
         MAX_RETRIES, RETRY_DELAY, BATCH_DELAY, API_CALL_DELAY,
         get_rate_limit_config
     )
@@ -95,24 +95,19 @@ try:
     BATCH_DELAY = rate_config["batch_delay"]
     API_CALL_DELAY = rate_config["api_call_delay"]
 except ImportError:
-    # Fallback configuration if config.py doesn't exist - matching your exact URL format
-    OLLAMA_BASE_URL = "http://80.188.223.202:13267"
-    OLLAMA_TOKEN = "3812231de835b2593fa5bd9ea0b41d49929a03103dcab7e687ba674fe4707fbd"
-    OLLAMA_MODEL = "gemma3:27b"
+    # Fallback configuration if config.py doesn't exist
+    OPENROUTER_MODEL = "google/gemma-3-27b-it:free"
     BATCH_SIZE = 3
-    MAX_WORKERS = 3
-    REQUEST_TIMEOUT = 300
-    MAX_RETRIES = 8
-    RETRY_DELAY = 5
-    BATCH_DELAY = 10.0
-    API_CALL_DELAY = 3.0
+    MAX_WORKERS = 2
+    REQUEST_TIMEOUT = 120
+    MAX_RETRIES = 5
+    RETRY_DELAY = 3
+    BATCH_DELAY = 5.0
+    API_CALL_DELAY = 1.0
 
-# Ollama setup - Optimized for Ollama with token authentication
-# Check if base URL already includes /api/generate
-if OLLAMA_BASE_URL.endswith('/api/generate'):
-    OLLAMA_URL = OLLAMA_BASE_URL
-else:
-    OLLAMA_URL = f"{OLLAMA_BASE_URL}/api/generate"
+# OpenRouter setup
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 # Additional configuration
 CPU_COUNT = multiprocessing.cpu_count()
@@ -315,39 +310,37 @@ def determine_urgency_distribution():
     backoff.expo,
     (requests.exceptions.RequestException, json.JSONDecodeError, KeyError, ValueError),
     max_tries=MAX_RETRIES,
-    max_time=600,
+    max_time=300,  # Increased max time for rate limiting
     base=RETRY_DELAY,
     on_backoff=lambda details: logger.warning(f"Retry {details['tries']}/{MAX_RETRIES} after {details['wait']:.1f}s")
 )
-def call_ollama_with_backoff(prompt, timeout=REQUEST_TIMEOUT):
-    """Call Ollama API with exponential backoff and better error handling - Token as URL parameter"""
+def call_openrouter_with_backoff(prompt, timeout=REQUEST_TIMEOUT):
+    """Call OpenRouter API with exponential backoff and better error handling"""
     if shutdown_flag.is_set():
         raise KeyboardInterrupt("Shutdown requested")
     
-    # Simple headers - no Bearer token
     headers = {
-        'Content-Type': 'application/json'
-    }
-        
-    payload = {
-        "model": OLLAMA_MODEL,
-        "prompt": prompt,
-        "stream": False,
-        "options": {
-            "temperature": 0.4,
-            "num_predict": 4000,
-            "top_k": 30,
-            "top_p": 0.9,
-            "num_ctx": 6144
-        }
+        'Authorization': f'Bearer {OPENROUTER_API_KEY}',
+        'Content-Type': 'application/json',
+        'HTTP-Referer': 'http://localhost:3000',
+        'X-Title': 'EU Banking Ticket Generator'
     }
     
-    # Add token as URL query parameter (matching your working URL format)
-    url_with_token = f"{OLLAMA_URL}?token={OLLAMA_TOKEN}"
+    payload = {
+        "model": OPENROUTER_MODEL,
+        "messages": [
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ],
+        "max_tokens": 4000,
+        "temperature": 0.4
+    }
     
     try:
         response = requests.post(
-            url_with_token, 
+            OPENROUTER_URL, 
             json=payload, 
             headers=headers,
             timeout=timeout
@@ -355,7 +348,7 @@ def call_ollama_with_backoff(prompt, timeout=REQUEST_TIMEOUT):
         
         # Check if response is empty
         if not response.text.strip():
-            raise ValueError("Empty response from Ollama API")
+            raise ValueError("Empty response from OpenRouter API")
         
         response.raise_for_status()
         
@@ -365,23 +358,28 @@ def call_ollama_with_backoff(prompt, timeout=REQUEST_TIMEOUT):
             logger.error(f"JSON decode error. Response text: {response.text[:200]}...")
             raise
         
-        if "response" not in result:
-            logger.error(f"No 'response' field. Available fields: {list(result.keys())}")
-            raise KeyError("No 'response' field in Ollama response")
+        if "choices" not in result or not result["choices"]:
+            logger.error(f"No 'choices' field. Available fields: {list(result.keys())}")
+            raise KeyError("No 'choices' field in OpenRouter response")
             
-        return result["response"]
+        # Add delay to help with rate limiting
+        time.sleep(API_CALL_DELAY)
+        return result["choices"][0]["message"]["content"]
         
     except requests.exceptions.Timeout:
         logger.error(f"Request timed out after {timeout} seconds")
         raise
     except requests.exceptions.ConnectionError:
-        logger.error("Connection error - check Ollama endpoint")
+        logger.error("Connection error - check OpenRouter endpoint")
         raise
     except requests.exceptions.HTTPError as e:
-        logger.error(f"HTTP error: {e.response.status_code} - {e.response.text[:200]}")
+        if e.response.status_code == 429:
+            logger.warning(f"Rate limited (429) - will retry with backoff")
+        else:
+            logger.error(f"HTTP error: {e.response.status_code} - {e.response.text[:200]}")
         raise
     except requests.exceptions.RequestException as e:
-        logger.error(f"Ollama API error: {e}")
+        logger.error(f"OpenRouter API error: {e}")
         raise
     except json.JSONDecodeError as e:
         logger.error(f"Invalid JSON response: {e}")
@@ -402,6 +400,7 @@ def generate_eu_banking_ticket_content(ticket_data):
         # Extract data from ticket record
         dominant_topic = ticket_data.get('dominant_topic', 'General Banking System Issue')
         subtopics = ticket_data.get('subtopics', 'System malfunction')
+        message_count = ticket_data.get('thread', {}).get('message_count', 2)
         
         # Generate realistic banking details
         banking_details = generate_realistic_banking_details()
@@ -411,13 +410,26 @@ def generate_eu_banking_ticket_content(ticket_data):
         
         # Let LLM determine urgency based on description content (no pre-determined value)
         
-        # Enhanced prompt for EU banking trouble tickets with all new fields
+        # Enhanced prompt for EU banking trouble tickets - generating only remaining missing fields
         prompt = f"""
-Generate a realistic EU banking trouble ticket. Analyze the topic to determine if this is a CUSTOMER-REPORTED issue or an INTERNAL COMPANY issue.
+Generate the remaining fields for an EU banking trouble ticket. The following fields already exist in the database and should NOT be generated:
+- stages: {ticket_data.get('stages', 'Not provided')}
+- follow_up_required: {ticket_data.get('follow_up_required', 'Not provided')}
+- urgency: {ticket_data.get('urgency', 'Not provided')}
 
 **Context Analysis:**
 Topic: {dominant_topic}
 Subtopics: {subtopics}
+Message Count: {message_count}
+
+**Available Teams for Routing:**
+- Customer Service Team: customerservice@eubank.com (General customer inquiries, account issues, basic support)
+- Financial Crime Investigation Team: financialcrime@eubank.com (Suspicious transactions, fraud reports, AML issues)
+- Loan & Credit Card Support Team: loansupport@eubank.com (Loan applications, credit card issues, payment problems)
+- Compliance / KYC Team: kyc@eubank.com (Identity verification, compliance issues, regulatory matters)
+- Card Operations Team: cardoperations@eubank.com (Card activation, PIN issues, card replacement)
+- Digital Banking Support Team: digitalbanking@eubank.com (Online banking, mobile app, digital platform issues)
+- Internal IT Helpdesk: internalithelpdesk@eubank.com (Internal system issues, IT infrastructure problems)
 
 **Available System Details:**
 Ticket: {banking_details['ticket_number']} | System: {banking_details['system_name']} | Server: {banking_details['server_name']}
@@ -428,7 +440,7 @@ Error: {banking_details['error_code']} | IP: {banking_details['ip_address']} | T
 **CUSTOMER-REPORTED EXAMPLE:**
 {{
   "title": "Customer Unable to Access Mobile Banking - Login Failure",
-  "description": "Customer contacted support reporting inability to access mobile banking application since yesterday. Customer states: 'I'm facing a problem with my banking app. The app is not turning on. It was working fine until yesterday, but now it doesn't respond. I really need to check my account balance urgently.' Customer attempted multiple login attempts using original credentials registered with account {banking_details['account_number']}. Initial troubleshooting revealed no server-side issues with authentication system. Customer device appears to be iOS 16.3 running latest app version 3.2.1. No recent password changes detected in customer profile. Issue may be related to local app cache or device-specific compatibility problems. Customer expressing moderate frustration due to inability to access funds information before important payment deadline.",
+  "description": "Dear Support Team, I am writing to report a critical issue with my mobile banking application. Since yesterday morning, I have been unable to access my account through the mobile app on my iPhone. The application simply will not open - it crashes immediately upon launching. This is extremely concerning as I need to check my account balance and make an urgent payment before the weekend. I have tried restarting my phone, deleting and reinstalling the app, and using different network connections, but the problem persists. My account number is {banking_details['account_number']} and I am a customer at branch {banking_details['branch_code']}. I have been a loyal customer for over 5 years and this is the first time I've experienced such issues. Could you please investigate this matter urgently and provide me with a resolution? I need to access my funds for an important transaction. Thank you for your prompt attention to this matter. Best regards, [Customer Name]",
   "urgency": false,
   "stages": "Attempt Resolution",
   "ticket_summary": "Customer {banking_details['customer_id']} reports mobile banking app unresponsive since yesterday. App fails to launch on iOS device despite working previously. No server-side authentication issues detected. Customer needs urgent account access for payment verification. Troubleshooting indicates potential local app cache or device compatibility issue. Customer showing moderate frustration but cooperative with support process. Resolution pending further device diagnostics.",
@@ -438,7 +450,7 @@ Error: {banking_details['error_code']} | IP: {banking_details['ip_address']} | T
 **INTERNAL COMPANY EXAMPLE:**
 {{
   "title": "Payment Processing System - Database Connection Timeout",
-  "description": "Internal monitoring detected intermittent database connection timeouts affecting payment processing system {banking_details['system_name']} on server {banking_details['server_name']}. Error code {banking_details['error_code']} logged at {banking_details['time']} indicating connection pool exhaustion. Approximately 15% of payment transactions experiencing 30-second delays during peak processing hours. Database performance metrics show increased response times correlating with high concurrent user load. System automatically implementing connection retry logic but success rate dropping to 85%. No customer data integrity issues detected. Infrastructure team investigating database cluster performance and connection pooling configuration. Potential impact on SLA compliance if issue persists beyond current business day.",
+  "description": "To: IT Operations Team, From: System Monitoring, Subject: Critical Database Performance Issue. We are experiencing intermittent database connection timeouts affecting our payment processing system {banking_details['system_name']} on server {banking_details['server_name']}. The issue was first detected at {banking_details['time']} on {banking_details['date']} when error code {banking_details['error_code']} was logged, indicating connection pool exhaustion. Current impact: Approximately 15% of payment transactions are experiencing 30-second delays during peak processing hours (9:00-17:00 CET). Database performance metrics show response times increased from 50ms to 800ms during high concurrent user load periods. Our automatic retry logic is functioning but success rate has dropped from 99.5% to 85%. Customer transaction {banking_details['transaction_id']} for amount {banking_details['currency']} {banking_details['amount']} was affected. No data integrity issues detected, but this poses significant risk to SLA compliance if unresolved. Immediate investigation required by database administration team. Please escalate to senior infrastructure team for urgent resolution. Regards, Monitoring Team",
   "urgency": true,
   "stages": "Escalate/Investigate",
   "ticket_summary": "Payment processing system experiencing database connection timeouts during peak hours. Error {banking_details['error_code']} indicates connection pool exhaustion affecting 15% of transactions. 30-second processing delays observed with 85% retry success rate. No data integrity issues but SLA compliance at risk. Infrastructure team investigating database cluster performance and connection pooling. Requires immediate escalation to prevent customer impact.",
@@ -450,20 +462,16 @@ Error: {banking_details['error_code']} | IP: {banking_details['ip_address']} | T
 2. **If Internal Issue**: System failures, server problems, database issues, network outages, compliance violations → Generate INTERNAL COMPANY ticket
 3. **Use Realistic Language**: Customer tickets use natural, frustrated language. Internal tickets use technical terminology
 4. **Apply Real Details**: Use provided banking details naturally in context
-5. **Set Appropriate Urgency**: Only 10-14% should be urgent 
+5. **Realistic Description Requirements**:
+   - **Customer tickets**: Start with "Dear Support Team" or similar greeting, include customer's frustration level, specific account details, attempts to resolve, urgency of need, polite closing
+   - **Internal tickets**: Include proper addressing (To/From/Subject), technical details, impact assessment, specific metrics, escalation requests, professional closing
+   - **Length**: 300-400 words with natural flow and realistic banking context
+   - **Include**: Account numbers, transaction IDs, error codes, timestamps, specific system names naturally integrated
+   - **Tone**: Customer tickets should sound like real customer complaints, internal tickets should sound like professional incident reports 
 
-**Field Definitions and Requirements:**
+**Field Definitions and Requirements (ONLY generate these missing fields):**
 
-**stages**: Based on reading the ENTIRE chat thread context, determine at which customer service stage the conversation concludes:
-- "Receive": Customer inquiry just received, no response yet
-- "Authenticate": Verifying customer identity/credentials
-- "Categorize": Understanding and classifying the issue/request
-- "Attempt Resolution": Actively working to solve the problem
-- "Escalate/Investigate": Issue requires higher-level attention or investigation
-- "Update Customer": Providing progress updates or additional information
-- "Resolve": Issue has been successfully resolved
-- "Confirm/Close": Final confirmation and case closure
-- "Report/Analyze": Post-resolution analysis or reporting phase
+**assigned_team_email**: Based on the topic and subtopics, determine which team should handle this ticket. Choose the most appropriate team email from the available teams above. This will be used to populate empty email addresses in the database.
 
 **action_pending_status**: Determine if there are any pending actions required: "yes" or "no"
 
@@ -471,23 +479,22 @@ Error: {banking_details['error_code']} | IP: {banking_details['ip_address']} | T
 
 **resolution_status**: Determine if the main issue/request has been resolved: "open" (unresolved), "inprogress" (work is actively being processed), or "closed" (resolved)
 
-**follow_up_required**: Determine if follow-up communication is needed: "yes" or "no"
+**follow_up_date**: ONLY generate this if follow_up_required is "yes". If follow_up_required is "yes", provide realistic ISO timestamp for follow-up. If follow_up_required is "no", this field should be null.
 
-**follow_up_date**: If follow-up is required, provide realistic ISO timestamp for follow-up, otherwise null
-
-**follow_up_reason**: If follow-up is required, explain why and what needs to be followed up in 2 lines maximum, otherwise null
+**follow_up_reason**: ONLY generate this if follow_up_required is "yes". If follow_up_required is "yes", explain why and what needs to be followed up in 2 lines maximum. If follow_up_required is "no", this field should be null.
 
 **next_action_suggestion**: Provide AI-agent style recommendation (30-50 words) for the next best action to take focusing on customer retention, operational improvements, staff satisfaction, service quality, compliance, or relationship building.
 
-**urgency**: CRITICAL - Only mark as TRUE if the description content genuinely requires immediate action. Base this decision SOLELY on the semantic content of the description you generate. Only 10-14% of tickets should be urgent.
+**sentiment**: Individual message sentiment analysis using human emotional tone (0-5 scale). Generate sentiment for each message in the conversation based on message_count:
+- 0: Neutral/Calm (baseline for professional communication)
+- 1: Slightly Concerned/Mildly Positive  
+- 2: Moderately Concerned/Happy
+- 3: Worried/Excited
+- 4: Very Concerned/Very Happy
+- 5: Extremely Distressed/Extremely Pleased
+- Format: {{"0": sentiment_score_message_1, "1": sentiment_score_message_2, ...}}
 
-**overall_sentiment**: Individual sentiment analysis using human emotional tone (0-5 scale):
-- 0: Happy (pleased, satisfied, positive emotional state)
-- 1: Calm (baseline for professional communication, neutral tone)
-- 2: Bit Irritated (slight annoyance, impatience, minor frustration)
-- 3: Moderately Concerned (growing unease, worry, noticeable concern)
-- 4: Anger (clear frustration, anger, strong negative emotion)
-- 5: Frustrated (extreme frustration, very upset, highly distressed)
+**overall_sentiment**: Average sentiment across the entire ticket conversation (0-5 scale)
 
 **Priority Guidelines:**
 - P1 - Critical: Complete system outage, security breach, regulatory compliance failure
@@ -501,32 +508,41 @@ Error: {banking_details['error_code']} | IP: {banking_details['ip_address']} | T
 2. NEVER use placeholders like [Account Number] - always use the specific details provided
 3. Create content that feels authentic and professional for EU banking operations
 4. Reference relevant EU regulations (GDPR, PSD2, CRD IV) where applicable
-5. Ensure urgency distribution is realistic (only mark urgent for genuinely severe issues)
+5. **DESCRIPTION MUST BE REALISTIC**: Include proper addressing, natural language flow, specific banking details, and realistic customer/internal communication style
+6. **Customer descriptions**: Sound like genuine customer complaints with proper greeting, account details, frustration level, and polite closing
+7. **Internal descriptions**: Sound like professional incident reports with proper addressing, technical metrics, and escalation language
+8. Ensure urgency distribution is realistic (only mark urgent for genuinely severe issues)
 
-**CRITICAL: You MUST return ONLY a valid JSON object with ALL these fields:**
+**CRITICAL: You MUST return ONLY a valid JSON object with these fields (excluding stages, follow_up_required, urgency which already exist):**
 
 {{
   "title": "Professional title (50-100 chars)",
-  "description": "Realistic description (300-400 words)",
+  "description": "Realistic description with proper addressing - Customer: 'Dear Support Team, I am writing to report...' or Internal: 'To: IT Team, From: Monitoring, Subject: Critical Issue...' (300-400 words)",
   "priority": "P3 - Medium",
-  "urgency": false,
-  "stages": "Receive",
+  "assigned_team_email": "customerservice@eubank.com",
   "ticket_summary": "Summary (100-110 words)",
   "action_pending_status": "yes",
   "action_pending_from": "company",
   "resolution_status": "open",
-  "follow_up_required": "yes",
   "follow_up_date": null,
   "follow_up_reason": null,
   "next_action_suggestion": "Recommendation text",
-  "overall_sentiment": 2.0,
+  "sentiment": {
+    "0": 2,
+    "1": 1,
+    "2": 3,
+    "3": 2,
+    "4": 1,
+    "5": 0
+  },
+  "overall_sentiment": 1.5,
   "ticket_raised": "{ticket_raised}"
 }}
 
 **IMPORTANT:** Return ONLY the JSON object above with realistic values. No other text.
 """.strip()
 
-        response = call_ollama_with_backoff(prompt)
+        response = call_openrouter_with_backoff(prompt)
         
         if not response or not response.strip():
             raise ValueError("Empty response from LLM")
@@ -553,118 +569,97 @@ Error: {banking_details['error_code']} | IP: {banking_details['ip_address']} | T
             # Debug logging to see what fields the LLM actually returned
             logger.info(f"LLM returned fields for ticket {ticket_id}: {list(result.keys())}")
             
-            # Ensure ticket_raised is set first (fallback if LLM didn't generate it)
+            # Ensure ticket_raised is set (this is generated by our function, not LLM)
             if 'ticket_raised' not in result or not result['ticket_raised']:
                 result['ticket_raised'] = ticket_raised
             
-            # Add fallbacks for critical fields that might be missing
-            if 'priority' not in result or not result['priority']:
-                result['priority'] = 'P3 - Medium'  # Default to medium priority
-                logger.warning(f"Missing priority field for ticket {ticket_id}, defaulting to P3 - Medium")
-            
-            if 'urgency' not in result:
-                result['urgency'] = False  # Default to non-urgent
-                logger.warning(f"Missing urgency field for ticket {ticket_id}, defaulting to false")
-            
-            if 'stages' not in result or not result['stages']:
-                result['stages'] = 'Receive'  # Default to initial stage
-                logger.warning(f"Missing stages field for ticket {ticket_id}, defaulting to Receive")
-            
-            if 'overall_sentiment' not in result:
-                result['overall_sentiment'] = 2.0  # Default to slightly irritated
-                logger.warning(f"Missing overall_sentiment field for ticket {ticket_id}, defaulting to 2.0")
-            
-            if 'title' not in result or not result['title']:
-                result['title'] = f"{dominant_topic} - Support Ticket"
-                logger.warning(f"Missing title field for ticket {ticket_id}, using default")
-            
-            if 'description' not in result or not result['description']:
-                result['description'] = f"Support ticket related to {dominant_topic}. Subtopics: {subtopics}. Please review and provide appropriate resolution."
-                logger.warning(f"Missing description field for ticket {ticket_id}, using default")
-            
-            # Validate required fields (after fallbacks)
+            # Validate required fields - excluding stages, follow_up_required, urgency which already exist
             required_fields = [
-                'title', 'description', 'priority', 'urgency', 'stages', 'ticket_summary',
+                'title', 'description', 'priority', 'assigned_team_email', 'ticket_summary',
                 'action_pending_status', 'action_pending_from', 'resolution_status',
-                'follow_up_required', 'follow_up_date', 'follow_up_reason',
-                'next_action_suggestion', 'overall_sentiment', 'ticket_raised'
+                'follow_up_date', 'follow_up_reason', 'next_action_suggestion', 
+                'sentiment', 'overall_sentiment', 'ticket_raised'
             ]
             
-            for field in required_fields:
-                if field not in result:
-                    # Add final fallbacks for any remaining missing fields
-                    if field == 'ticket_summary':
-                        result[field] = f"Summary for {dominant_topic} related issue. Requires further investigation and appropriate resolution based on customer needs and system requirements."
-                    elif field == 'action_pending_status':
-                        result[field] = 'yes'
-                    elif field == 'action_pending_from':
-                        result[field] = 'company'
-                    elif field == 'resolution_status':
-                        result[field] = 'open'
-                    elif field == 'follow_up_required':
-                        result[field] = 'yes'
-                    elif field == 'follow_up_date':
-                        result[field] = None
-                    elif field == 'follow_up_reason':
-                        result[field] = None
-                    elif field == 'next_action_suggestion':
-                        result[field] = 'Review ticket details and assign to appropriate support team for resolution.'
-                    else:
-                        raise ValueError(f"Missing required field: {field}")
-                    logger.warning(f"Applied fallback for missing field '{field}' in ticket {ticket_id}")
+            # Check for missing required fields and raise error if any are missing
+            missing_fields = [field for field in required_fields if field not in result]
+            if missing_fields:
+                raise ValueError(f"Missing required fields from LLM response: {missing_fields}")
             
-            # Validate specific field values
+            # Validate specific field values (no defaults, just validation)
             valid_priorities = ['P1 - Critical', 'P2 - High', 'P3 - Medium', 'P4 - Low', 'P5 - Very Low']
             if result['priority'] not in valid_priorities:
-                logger.warning(f"Invalid priority '{result['priority']}' for ticket {ticket_id}, defaulting to P3 - Medium")
-                result['priority'] = 'P3 - Medium'
+                raise ValueError(f"Invalid priority '{result['priority']}' for ticket {ticket_id}. Must be one of: {valid_priorities}")
             
-            valid_stages = [
-                'Receive', 'Authenticate', 'Categorize', 'Attempt Resolution', 
-                'Escalate/Investigate', 'Update Customer', 'Resolve', 'Confirm/Close', 'Report/Analyze'
+            # Validate assigned_team_email
+            valid_team_emails = [
+                'customerservice@eubank.com',
+                'financialcrime@eubank.com', 
+                'loansupport@eubank.com',
+                'kyc@eubank.com',
+                'cardoperations@eubank.com',
+                'digitalbanking@eubank.com',
+                'internalithelpdesk@eubank.com'
             ]
-            if result['stages'] not in valid_stages:
-                logger.warning(f"Invalid stage '{result['stages']}' for ticket {ticket_id}, defaulting to Receive")
-                result['stages'] = 'Receive'
+            if result['assigned_team_email'] not in valid_team_emails:
+                raise ValueError(f"Invalid team email '{result['assigned_team_email']}' for ticket {ticket_id}. Must be one of: {valid_team_emails}")
             
             valid_resolution_status = ['open', 'inprogress', 'closed']
             if result['resolution_status'] not in valid_resolution_status:
-                logger.warning(f"Invalid resolution_status '{result['resolution_status']}' for ticket {ticket_id}, defaulting to open")
-                result['resolution_status'] = 'open'
+                raise ValueError(f"Invalid resolution_status '{result['resolution_status']}' for ticket {ticket_id}. Must be one of: {valid_resolution_status}")
             
             # Validate action_pending_from
             if result['action_pending_status'] == 'yes':
                 if result['action_pending_from'] not in ['company', 'customer']:
-                    result['action_pending_from'] = 'company'
+                    raise ValueError(f"Invalid action_pending_from '{result['action_pending_from']}' for ticket {ticket_id}. Must be 'company' or 'customer' when action_pending_status is 'yes'")
             else:
                 result['action_pending_from'] = None
             
-            # Validate follow_up fields
-            if result['follow_up_required'] == 'no':
-                result['follow_up_date'] = None
-                result['follow_up_reason'] = None
+            # Handle conditional follow_up fields based on existing follow_up_required value
+            existing_follow_up_required = ticket_data.get('follow_up_required')
+            if existing_follow_up_required == 'no':
+                # If follow_up_required is 'no', validate that follow_up fields are null
+                if result.get('follow_up_date') is not None:
+                    raise ValueError(f"Ticket {ticket_id}: follow_up_required is 'no' but follow_up_date is not null")
+                if result.get('follow_up_reason') is not None:
+                    raise ValueError(f"Ticket {ticket_id}: follow_up_required is 'no' but follow_up_reason is not null")
+            elif existing_follow_up_required == 'yes':
+                # If follow_up_required is 'yes', validate that follow_up fields are provided
+                if not result.get('follow_up_date'):
+                    raise ValueError(f"Ticket {ticket_id}: follow_up_required is 'yes' but follow_up_date is missing or null")
+                if not result.get('follow_up_reason'):
+                    raise ValueError(f"Ticket {ticket_id}: follow_up_required is 'yes' but follow_up_reason is missing or null")
             
-            # Validate urgency as boolean
-            if not isinstance(result['urgency'], bool):
-                result['urgency'] = False  # Default to non-urgent if not boolean
+            
+            # Validate sentiment structure
+            if not isinstance(result.get('sentiment'), dict):
+                raise ValueError(f"Invalid sentiment structure for ticket {ticket_id}. Sentiment must be a dictionary with message indices as keys")
+            else:
+                # Validate individual sentiment values
+                for key, value in result['sentiment'].items():
+                    try:
+                        sentiment_val = float(value)
+                        if not (0.0 <= sentiment_val <= 5.0):
+                            raise ValueError(f"Invalid sentiment value {value} for message {key} in ticket {ticket_id}. Must be between 0-5")
+                        result['sentiment'][key] = int(sentiment_val)
+                    except (ValueError, TypeError):
+                        raise ValueError(f"Invalid sentiment value '{value}' for message {key} in ticket {ticket_id}. Must be a number between 0-5")
             
             # Validate overall_sentiment range
             try:
                 sentiment = float(result['overall_sentiment'])
                 if not (0.0 <= sentiment <= 5.0):
-                    result['overall_sentiment'] = 2.0
-                else:
-                    result['overall_sentiment'] = round(sentiment, 1)
+                    raise ValueError(f"Invalid overall_sentiment value {sentiment} for ticket {ticket_id}. Must be between 0-5")
+                result['overall_sentiment'] = round(sentiment, 1)
             except (ValueError, TypeError):
-                result['overall_sentiment'] = 2.0
+                raise ValueError(f"Invalid overall_sentiment value '{result['overall_sentiment']}' for ticket {ticket_id}. Must be a number between 0-5")
             
             # Validate title length
             title = result['title'].strip()
             if len(title) < 50:
-                if dominant_topic and len(title) + len(dominant_topic) + 3 <= 100:
-                    result['title'] = f"{title} - {dominant_topic}"
+                raise ValueError(f"Title too short for ticket {ticket_id}: '{title}' (length: {len(title)}). Must be at least 50 characters")
             elif len(title) > 100:
-                result['title'] = title[:97] + "..."
+                raise ValueError(f"Title too long for ticket {ticket_id}: '{title}' (length: {len(title)}). Must be at most 100 characters")
             
             generation_time = time.time() - start_time
             
@@ -699,6 +694,47 @@ Error: {banking_details['error_code']} | IP: {banking_details['ip_address']} | T
         failure_logger.error(json.dumps(error_info, cls=ObjectIdEncoder))
         raise
 
+def populate_email_addresses(ticket_record, assigned_team_email):
+    """Populate empty email addresses in participants and messages based on assigned team"""
+    updates = {}
+    
+    # Get the customer email from the first participant
+    customer_email = None
+    customer_name = None
+    if ticket_record.get('thread', {}).get('participants'):
+        for participant in ticket_record['thread']['participants']:
+            if participant.get('type') == 'from' and participant.get('email'):
+                customer_email = participant['email']
+                customer_name = participant.get('name')
+                break
+    
+    # Update participants - fill empty 'to' email
+    if ticket_record.get('thread', {}).get('participants'):
+        for i, participant in enumerate(ticket_record['thread']['participants']):
+            if participant.get('type') == 'to' and not participant.get('email'):
+                updates[f'thread.participants.{i}.email'] = assigned_team_email
+                updates[f'thread.participants.{i}.name'] = assigned_team_email.split('@')[0].replace('.', ' ').title()
+    
+    # Update messages - fill empty email addresses based on message pattern
+    if ticket_record.get('messages'):
+        for msg_idx, message in enumerate(ticket_record['messages']):
+            if message.get('headers'):
+                # Handle 'from' field - if empty, it should be the team email (company responses)
+                if message['headers'].get('from') and len(message['headers']['from']) > 0:
+                    from_participant = message['headers']['from'][0]
+                    if not from_participant.get('email'):
+                        updates[f'messages.{msg_idx}.headers.from.0.email'] = assigned_team_email
+                        updates[f'messages.{msg_idx}.headers.from.0.name'] = assigned_team_email.split('@')[0].replace('.', ' ').title()
+                
+                # Handle 'to' field - if empty, it should be the customer email
+                if message['headers'].get('to') and len(message['headers']['to']) > 0:
+                    to_participant = message['headers']['to'][0]
+                    if not to_participant.get('email') and customer_email:
+                        updates[f'messages.{msg_idx}.headers.to.0.email'] = customer_email
+                        updates[f'messages.{msg_idx}.headers.to.0.name'] = customer_name
+    
+    return updates
+
 def process_single_ticket_update(ticket_record):
     """Process a single ticket record to generate all content fields"""
     if shutdown_flag.is_set():
@@ -712,24 +748,27 @@ def process_single_ticket_update(ticket_record):
             failure_counter.increment()
             return None
         
-        # Prepare update document with all new fields
+        # Prepare update document with only the fields being generated (excluding stages, follow_up_required, urgency which already exist)
         update_doc = {
             "title": ticket_content['title'],
             "description": ticket_content['description'],
             "priority": ticket_content['priority'],
-            "urgency": ticket_content['urgency'],
-            "stages": ticket_content['stages'],
+            "assigned_team_email": ticket_content['assigned_team_email'],
             "ticket_summary": ticket_content['ticket_summary'],
             "action_pending_status": ticket_content['action_pending_status'],
             "action_pending_from": ticket_content['action_pending_from'],
             "resolution_status": ticket_content['resolution_status'],
-            "follow_up_required": ticket_content['follow_up_required'],
             "follow_up_date": ticket_content['follow_up_date'],
             "follow_up_reason": ticket_content['follow_up_reason'],
             "next_action_suggestion": ticket_content['next_action_suggestion'],
+            "sentiment": ticket_content['sentiment'],
             "overall_sentiment": ticket_content['overall_sentiment'],
             "ticket_raised": ticket_content['ticket_raised']
         }
+        
+        # Add email address updates
+        email_updates = populate_email_addresses(ticket_record, ticket_content['assigned_team_email'])
+        update_doc.update(email_updates)
         
         success_counter.increment()
         
@@ -846,35 +885,40 @@ def update_tickets_with_content_parallel():
     logger.info(f"Max workers: {MAX_WORKERS}")
     logger.info(f"Request timeout: {REQUEST_TIMEOUT}s")
     logger.info(f"Max retries per request: {MAX_RETRIES}")
-    logger.info(f"Ollama Model: {OLLAMA_MODEL}")
+    logger.info(f"OpenRouter Model: {OPENROUTER_MODEL}")
     
-    # Test Ollama connection
-    logger.info("Testing Ollama connection...")
-    if not test_ollama_connection():
-        logger.warning("Ollama connection test failed - this may be due to network restrictions")
-        logger.warning("Proceeding anyway since the server may be accessible from your environment")
-        logger.info("If generation fails, check Ollama server status and token validity")
+    # Test OpenRouter connection
+    if not test_openrouter_connection():
+        logger.error("Cannot proceed without OpenRouter connection")
+        return
     
     # Get all ticket records that need content generation
     logger.info("Fetching ticket records from database...")
     try:
-        # Query for tickets that don't have the new fields
+        # Query for tickets that don't have the remaining fields OR have empty email addresses in participants/messages
         query = {
             "$or": [
+                {"title": {"$exists": False}},
                 {"description": {"$exists": False}},
                 {"priority": {"$exists": False}},
-                {"urgency": {"$exists": False}},
-                {"stages": {"$exists": False}},
-                {"chat_summary": {"$exists": False}},
+                {"ticket_summary": {"$exists": False}},
                 {"action_pending_status": {"$exists": False}},
+                {"action_pending_from": {"$exists": False}},
                 {"resolution_status": {"$exists": False}},
-                {"follow_up_required": {"$exists": False}},
+                {"follow_up_date": {"$exists": False}},
+                {"follow_up_reason": {"$exists": False}},
                 {"next_action_suggestion": {"$exists": False}},
                 {"overall_sentiment": {"$exists": False}},
                 {"ticket_raised": {"$exists": False}},
+                {"title": {"$in": [None, ""]}},
                 {"description": {"$in": [None, ""]}},
                 {"priority": {"$in": [None, ""]}},
-                {"urgency": {"$in": [None, ""]}}
+                {"ticket_summary": {"$in": [None, ""]}},
+                # Also include tickets with empty email addresses in participants
+                {"thread.participants.1.email": {"$in": [None, ""]}},
+                # Include tickets with empty email addresses in messages
+                {"messages.headers.from.0.email": {"$in": [None, ""]}},
+                {"messages.headers.to.0.email": {"$in": [None, ""]}}
             ]
         }
         
@@ -882,7 +926,7 @@ def update_tickets_with_content_parallel():
         total_tickets = len(ticket_records)
         
         if total_tickets == 0:
-            logger.info("All tickets already have complete content!")
+            logger.info("All tickets already have the remaining fields (excluding stages, follow_up_required, urgency which already exist)!")
             return
         
         # Convert all ObjectId fields to strings to prevent JSON serialization issues
@@ -1018,41 +1062,40 @@ def update_tickets_with_content_parallel():
         logger.error(f"Unexpected error: {e}")
         shutdown_flag.set()
 
-def test_ollama_connection():
-    """Test if Ollama is accessible and model is available - Token as URL parameter"""
+def test_openrouter_connection():
+    """Test if OpenRouter is accessible and model is available"""
     try:
-        logger.info(f"Testing connection to Ollama: {OLLAMA_BASE_URL}")
+        logger.info(f"Testing connection to OpenRouter: {OPENROUTER_URL}")
         
-        if not OLLAMA_TOKEN:
-            logger.error("Ollama token not found in configuration")
-            return False
+        headers = {
+            'Authorization': f'Bearer {OPENROUTER_API_KEY}',
+            'Content-Type': 'application/json',
+            'HTTP-Referer': 'http://localhost:3000',
+            'X-Title': 'EU Banking Ticket Generator'
+        }
         
         # Test basic connection with simple generation
         logger.info("Testing simple generation...")
         
-        # Simple headers - no Bearer token
-        headers = {
-            'Content-Type': 'application/json'
-        }
-        
         test_payload = {
-            "model": OLLAMA_MODEL,
-            "prompt": "Generate a JSON object with 'test': 'success'",
-            "stream": False,
-            "options": {"num_predict": 20}
+            "model": OPENROUTER_MODEL,
+            "messages": [
+                {
+                    "role": "user",
+                    "content": "Generate a JSON object with 'test': 'success'"
+                }
+            ],
+            "max_tokens": 20
         }
-        
-        # Add token as URL query parameter (matching your working URL format)
-        url_with_token = f"{OLLAMA_URL}?token={OLLAMA_TOKEN}"
         
         test_response = requests.post(
-            url_with_token, 
+            OPENROUTER_URL, 
             json=test_payload,
             headers=headers,
-            timeout=60
+            timeout=30
         )
         
-        logger.info(f"Test status: {test_response.status_code}")
+        logger.info(f"Generation test status: {test_response.status_code}")
         
         if not test_response.text.strip():
             logger.error("Empty response from generation endpoint")
@@ -1062,19 +1105,19 @@ def test_ollama_connection():
         
         try:
             result = test_response.json()
-            if "response" in result:
-                logger.info("Ollama connection test successful")
-                logger.info(f"Test response: {result['response'][:100]}...")
+            if "choices" in result and result["choices"]:
+                logger.info("OpenRouter connection test successful")
+                logger.info(f"Test response: {result['choices'][0]['message']['content'][:100]}...")
                 return True
             else:
-                logger.error(f"No 'response' field in test. Fields: {list(result.keys())}")
+                logger.error(f"No 'choices' field in test. Fields: {list(result.keys())}")
                 return False
         except json.JSONDecodeError as e:
             logger.error(f"Generation test returned invalid JSON: {e}")
             return False
             
     except requests.exceptions.RequestException as e:
-        logger.error(f"Ollama connection test failed: {e}")
+        logger.error(f"Connection test failed: {e}")
         return False
 
 def get_collection_stats():
@@ -1082,18 +1125,20 @@ def get_collection_stats():
     try:
         total_count = ticket_col.count_documents({})
         
-        # Count records with complete new fields
+        # Count records with complete new fields (excluding stages, follow_up_required, urgency which already exist)
         with_all_new_fields = ticket_col.count_documents({
             "title": {"$exists": True, "$ne": "", "$ne": None},
             "description": {"$exists": True, "$ne": "", "$ne": None},
             "priority": {"$exists": True, "$ne": "", "$ne": None},
-            "urgency": {"$exists": True, "$ne": "", "$ne": None},
-            "stages": {"$exists": True, "$ne": "", "$ne": None},
+            "assigned_team_email": {"$exists": True, "$ne": "", "$ne": None},
             "ticket_summary": {"$exists": True, "$ne": "", "$ne": None},
             "action_pending_status": {"$exists": True, "$ne": "", "$ne": None},
+            "action_pending_from": {"$exists": True},
             "resolution_status": {"$exists": True, "$ne": "", "$ne": None},
-            "follow_up_required": {"$exists": True, "$ne": "", "$ne": None},
+            "follow_up_date": {"$exists": True},
+            "follow_up_reason": {"$exists": True},
             "next_action_suggestion": {"$exists": True, "$ne": "", "$ne": None},
+            "sentiment": {"$exists": True},
             "overall_sentiment": {"$exists": True, "$ne": "", "$ne": None},
             "ticket_raised": {"$exists": True, "$ne": "", "$ne": None}
         })
@@ -1226,10 +1271,15 @@ def generate_status_report():
             "title": {"$exists": True, "$ne": "", "$ne": None},
             "description": {"$exists": True, "$ne": "", "$ne": None},
             "priority": {"$exists": True, "$ne": "", "$ne": None},
-            "urgency": {"$exists": True, "$ne": "", "$ne": None},
-            "stages": {"$exists": True, "$ne": "", "$ne": None},
+            "assigned_team_email": {"$exists": True, "$ne": "", "$ne": None},
             "ticket_summary": {"$exists": True, "$ne": "", "$ne": None},
+            "action_pending_status": {"$exists": True, "$ne": "", "$ne": None},
+            "action_pending_from": {"$exists": True},
             "resolution_status": {"$exists": True, "$ne": "", "$ne": None},
+            "follow_up_date": {"$exists": True},
+            "follow_up_reason": {"$exists": True},
+            "next_action_suggestion": {"$exists": True, "$ne": "", "$ne": None},
+            "sentiment": {"$exists": True},
             "overall_sentiment": {"$exists": True, "$ne": "", "$ne": None},
             "ticket_raised": {"$exists": True, "$ne": "", "$ne": None}
         })
@@ -1264,7 +1314,7 @@ def generate_status_report():
                 "batch_size": BATCH_SIZE,
                 "cpu_usage": psutil.cpu_percent(),
                 "memory_usage": psutil.virtual_memory().percent,
-                "ollama_model": OLLAMA_MODEL
+                "openrouter_model": OPENROUTER_MODEL
             },
             "log_files": {
                 "main_log": str(MAIN_LOG_FILE),
@@ -1348,12 +1398,12 @@ def cleanup_old_logs(days_to_keep=7):
 # Main execution function
 def main():
     """Main function to initialize and run the trouble ticket content generator"""
-    logger.info("EU Banking Trouble Ticket Content Generator - Ollama Version Starting...")
+    logger.info("EU Banking Trouble Ticket Content Generator - OpenRouter Version Starting...")
     logger.info(f"Database: {DB_NAME}")
     logger.info(f"Collection: {TICKET_COLLECTION}")
-    logger.info(f"Model: {OLLAMA_MODEL}")
-    logger.info(f"Ollama URL: {OLLAMA_BASE_URL}")
-    logger.info(f"Using token authentication")
+    logger.info(f"Model: {OPENROUTER_MODEL}")
+    logger.info(f"OpenRouter URL: {OPENROUTER_URL}")
+    logger.info(f"Using API key authentication")
     logger.info(f"Max Workers: {MAX_WORKERS}")
     logger.info(f"Batch Size: {BATCH_SIZE}")
     logger.info(f"Log Directory: {LOG_DIR}")
