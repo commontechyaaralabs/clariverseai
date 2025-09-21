@@ -103,3 +103,4 @@ else:
         logger.warning(f"WARNING: {remaining_docs} documents still have the 'follow_up_required' field")
 
 logger.info("Script finished.")
+
