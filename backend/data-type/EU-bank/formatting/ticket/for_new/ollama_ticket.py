@@ -139,29 +139,33 @@ class PerformanceMonitor:
         self.failed_requests = 0
         self._lock = asyncio.Lock()
     
-    async def record_success(self):
+    async def record_success(self, total_tickets=None):
         async with self._lock:
             self.successful_requests += 1
             self.tickets_processed += 1
-            await self.log_progress()
+            await self.log_progress(total_tickets)
     
-    async def record_failure(self):
+    async def record_failure(self, total_tickets=None):
         async with self._lock:
             self.failed_requests += 1
-            await self.log_progress()
+            await self.log_progress(total_tickets)
     
-    async def log_progress(self):
+    async def log_progress(self, total_tickets=None):
         if self.tickets_processed % 100 == 0 and self.tickets_processed > 0:
             elapsed = time.time() - self.start_time
             rate = self.tickets_processed / elapsed if elapsed > 0 else 0
-            remaining_tickets = 2000 - self.tickets_processed
-            eta = remaining_tickets / rate if rate > 0 else 0
+            remaining_tickets = (total_tickets - self.tickets_processed) if total_tickets else 0
+            eta = remaining_tickets / rate if rate > 0 and remaining_tickets > 0 else 0
             
             logger.info(f"Performance Stats:")
-            logger.info(f"  Processed: {self.tickets_processed}/2000 tickets")
+            if total_tickets:
+                logger.info(f"  Processed: {self.tickets_processed}/{total_tickets} tickets")
+            else:
+                logger.info(f"  Processed: {self.tickets_processed} tickets")
             logger.info(f"  Rate: {rate:.2f} tickets/second ({rate*3600:.0f} tickets/hour)")
             logger.info(f"  Success rate: {self.successful_requests/(self.successful_requests + self.failed_requests)*100:.1f}%")
-            logger.info(f"  ETA: {eta/3600:.1f} hours remaining")
+            if eta > 0:
+                logger.info(f"  ETA: {eta/3600:.1f} hours remaining")
 
 performance_monitor = PerformanceMonitor()
 
@@ -697,7 +701,7 @@ def populate_email_addresses(ticket_record, assigned_team_email, generated_messa
     
     return updates
 
-async def process_single_ticket(ticket_record):
+async def process_single_ticket(ticket_record, total_tickets=None):
     """Process a single ticket with all optimizations"""
     if shutdown_flag.is_set():
         return None
@@ -706,15 +710,15 @@ async def process_single_ticket(ticket_record):
     
     try:
         # NO TIMEOUT - let the task complete naturally
-        return await _process_single_ticket_internal(ticket_record)
+        return await _process_single_ticket_internal(ticket_record, total_tickets)
     except Exception as e:
         logger.error(f"Ticket {ticket_id} processing failed with error: {str(e)[:100]}")
-        await performance_monitor.record_failure()
+        await performance_monitor.record_failure(total_tickets)
         await failure_counter.increment()
         await checkpoint_manager.mark_processed(ticket_id, success=False)
         return None
 
-async def _process_single_ticket_internal(ticket_record):
+async def _process_single_ticket_internal(ticket_record, total_tickets=None):
     """Internal ticket processing logic"""
     ticket_id = str(ticket_record.get('_id', 'unknown'))
     
@@ -723,7 +727,7 @@ async def _process_single_ticket_internal(ticket_record):
         ticket_content = await generate_ticket_content(ticket_record)
         
         if not ticket_content:
-            await performance_monitor.record_failure()
+            await performance_monitor.record_failure(total_tickets)
             return None
         
         # Debug: Log the generated content structure
@@ -733,7 +737,7 @@ async def _process_single_ticket_internal(ticket_record):
         else:
             logger.error(f"Ticket {ticket_id}: Title field missing from generated content")
             logger.error(f"Ticket {ticket_id}: Full content structure: {ticket_content}")
-            await performance_monitor.record_failure()
+            await performance_monitor.record_failure(total_tickets)
             return None
         
         # Debug: Check messages structure
@@ -783,7 +787,11 @@ async def _process_single_ticket_internal(ticket_record):
             "next_action_suggestion": ticket_content['next_action_suggestion'],
             "sentiment": ticket_content['sentiment'],
             "overall_sentiment": ticket_content['overall_sentiment'],
-            "ticket_raised": ticket_content['ticket_raised']
+            "ticket_raised": ticket_content['ticket_raised'],
+            # Add LLM processing tracking
+            "llm_processed": True,
+            "llm_processed_at": datetime.now().isoformat(),
+            "llm_model_used": OPENROUTER_MODEL
         }
         
         # Add email and message updates
@@ -840,7 +848,7 @@ async def _process_single_ticket_internal(ticket_record):
             logger.info(f"Ticket {ticket_id}: Message dates set successfully")
         
         logger.info(f"Ticket {ticket_id}: About to record success...")
-        await performance_monitor.record_success()
+        await performance_monitor.record_success(total_tickets)
         logger.info(f"Ticket {ticket_id}: Success recorded, incrementing counter...")
         await success_counter.increment()
         logger.info(f"Ticket {ticket_id}: Counter incremented, returning result...")
@@ -927,34 +935,31 @@ async def process_tickets_optimized():
         logger.error("Cannot proceed without OpenRouter connection")
         return
     
-    # Get tickets to process
+    # Get tickets to process - only those that have NEVER been processed by LLM
     try:
+        # Simple and accurate query: tickets that are missing ALL LLM fields
+        # This ensures we only process tickets that haven't been touched by the LLM
         query = {
-            "$or": [
-                {"title": {"$exists": False}},
-                {"priority": {"$exists": False}},
-                {"assigned_team_email": {"$exists": False}},
-                {"ticket_summary": {"$exists": False}},
-                {"resolution_status": {"$exists": False}},
-                {"overall_sentiment": {"$exists": False}},
-                {"ticket_raised": {"$exists": False}},
-                {"action_pending_status": {"$exists": False}},
-                {"action_pending_from": {"$exists": False}},
-                {"follow_up_required": {"$exists": False}},
-                {"next_action_suggestion": {"$exists": False}},
-                {"sentiment": {"$exists": False}},
-                {"title": {"$in": [None, ""]}},
-                {"priority": {"$in": [None, ""]}},
-                {"assigned_team_email": {"$in": [None, ""]}},
-                {"ticket_summary": {"$in": [None, ""]}},
-                {"resolution_status": {"$in": [None, ""]}},
-                {"overall_sentiment": {"$in": [None, ""]}},
-                {"ticket_raised": {"$in": [None, ""]}},
-                {"action_pending_status": {"$in": [None, ""]}},
-                {"action_pending_from": {"$in": [None, ""]}},
-                {"follow_up_required": {"$in": [None, ""]}},
-                {"next_action_suggestion": {"$in": [None, ""]}},
-                {"sentiment": {"$in": [None, ""]}}
+            "$and": [
+                # Must have basic ticket structure
+                {"_id": {"$exists": True}},
+                {"thread": {"$exists": True}},
+                # Must be missing ALL core LLM fields
+                {
+                    "$and": [
+                        {"title": {"$exists": False}},
+                        {"priority": {"$exists": False}},
+                        {"assigned_team_email": {"$exists": False}},
+                        {"ticket_summary": {"$exists": False}},
+                        {"resolution_status": {"$exists": False}},
+                        {"overall_sentiment": {"$exists": False}},
+                        {"ticket_raised": {"$exists": False}},
+                        {"action_pending_status": {"$exists": False}},
+                        {"action_pending_from": {"$exists": False}},
+                        {"next_action_suggestion": {"$exists": False}},
+                        {"sentiment": {"$exists": False}}
+                    ]
+                }
             ]
         }
         
@@ -963,15 +968,53 @@ async def process_tickets_optimized():
             processed_ids = [ObjectId(tid) for tid in checkpoint_manager.processed_tickets if ObjectId.is_valid(tid)]
             query["_id"] = {"$nin": processed_ids}
         
+        # First, let's check what tickets exist and their status
+        total_tickets_in_db = ticket_col.count_documents({})
+        tickets_processed_by_llm = ticket_col.count_documents({"llm_processed": True})
+        tickets_with_some_llm_fields = ticket_col.count_documents({
+            "$or": [
+                {"title": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"priority": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"assigned_team_email": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"ticket_summary": {"$exists": True, "$ne": None, "$ne": ""}}
+            ]
+        })
+        tickets_with_all_llm_fields = ticket_col.count_documents({
+            "$and": [
+                {"title": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"priority": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"assigned_team_email": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"ticket_summary": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"resolution_status": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"overall_sentiment": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"ticket_raised": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"action_pending_status": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"action_pending_from": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"next_action_suggestion": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"sentiment": {"$exists": True, "$ne": None, "$ne": ""}}
+            ]
+        })
+        
+        # Calculate actual tickets needing processing using the same query
+        tickets_needing_processing = ticket_col.count_documents(query)
+        
+        logger.info(f"Database Status:")
+        logger.info(f"  Total tickets in DB: {total_tickets_in_db}")
+        logger.info(f"  Tickets processed by LLM (llm_processed=True): {tickets_processed_by_llm}")
+        logger.info(f"  Tickets with some LLM fields: {tickets_with_some_llm_fields}")
+        logger.info(f"  Tickets with ALL LLM fields: {tickets_with_all_llm_fields}")
+        logger.info(f"  Tickets needing processing: {tickets_needing_processing}")
+        
         ticket_records = list(ticket_col.find(query))
         total_tickets = len(ticket_records)
         
         if total_tickets == 0:
             logger.info("No tickets found that need processing!")
+            logger.info("All tickets appear to have been processed by LLM already.")
             return
         
-        logger.info(f"Found {total_tickets} tickets to process")
-        logger.info(f"Previously processed: {len(checkpoint_manager.processed_tickets)} tickets")
+        logger.info(f"Found {total_tickets} tickets that need LLM processing")
+        logger.info(f"Previously processed (checkpoint): {len(checkpoint_manager.processed_tickets)} tickets")
         progress_logger.info(f"BATCH_START: total_tickets={total_tickets}")
         
     except Exception as e:
@@ -998,7 +1041,7 @@ async def process_tickets_optimized():
             batch_tasks = []
             for ticket in batch:
                 if not checkpoint_manager.is_processed(ticket['_id']):
-                    task = process_single_ticket(ticket)
+                    task = process_single_ticket(ticket, total_tickets)
                     batch_tasks.append(task)
             
             logger.info(f"Created {len(batch_tasks)} tasks for batch {batch_num}")
@@ -1013,15 +1056,15 @@ async def process_tickets_optimized():
                 failed_count = 0
                 
                 # Process each task individually with reasonable timeout
-                for i, task in enumerate(batch_tasks, 1):
-                    logger.info(f"Starting task {i}/{len(batch_tasks)} in batch {batch_num}")
+                for task_idx, task in enumerate(batch_tasks, 1):
+                    logger.info(f"Starting task {task_idx}/{len(batch_tasks)} in batch {batch_num}")
                     start_time = time.time()
                     try:
                         # Add reasonable timeout to prevent infinite hanging
-                        logger.info(f"Waiting for task {i} to complete (max {REQUEST_TIMEOUT * 3}s)...")
+                        logger.info(f"Waiting for task {task_idx} to complete (max {REQUEST_TIMEOUT * 3}s)...")
                         result = await asyncio.wait_for(task, timeout=REQUEST_TIMEOUT * 3)  # 6 minutes per task
                         elapsed = time.time() - start_time
-                        logger.info(f"Task {i} finished, processing result...")
+                        logger.info(f"Task {task_idx} finished, processing result...")
                         if result:
                             successful_results.append(result)
                             try:
@@ -1029,23 +1072,23 @@ async def process_tickets_optimized():
                                     checkpoint_manager.mark_processed(result['ticket_id'], success=True),
                                     timeout=10.0  # 10 second timeout for checkpoint
                                 )
-                                logger.info(f"Task {i}/{len(batch_tasks)} completed successfully in {elapsed:.1f}s")
+                                logger.info(f"Task {task_idx}/{len(batch_tasks)} completed successfully in {elapsed:.1f}s")
                             except asyncio.TimeoutError:
-                                logger.warning(f"Checkpoint save timed out for task {i}, but task completed successfully")
-                                logger.info(f"Task {i}/{len(batch_tasks)} completed successfully in {elapsed:.1f}s")
+                                logger.warning(f"Checkpoint save timed out for task {task_idx}, but task completed successfully")
+                                logger.info(f"Task {task_idx}/{len(batch_tasks)} completed successfully in {elapsed:.1f}s")
                         else:
                             failed_count += 1
-                            logger.warning(f"Task {i}/{len(batch_tasks)} returned no result after {elapsed:.1f}s")
+                            logger.warning(f"Task {task_idx}/{len(batch_tasks)} returned no result after {elapsed:.1f}s")
                     except asyncio.TimeoutError:
                         elapsed = time.time() - start_time
-                        logger.error(f"Task {i}/{len(batch_tasks)} timed out after {elapsed:.1f}s, continuing to next task...")
+                        logger.error(f"Task {task_idx}/{len(batch_tasks)} timed out after {elapsed:.1f}s, continuing to next task...")
                         failed_count += 1
                     except Exception as e:
                         elapsed = time.time() - start_time
-                        logger.error(f"Task {i}/{len(batch_tasks)} failed after {elapsed:.1f}s with error: {e}")
+                        logger.error(f"Task {task_idx}/{len(batch_tasks)} failed after {elapsed:.1f}s with error: {e}")
                         failed_count += 1
                     
-                    logger.info(f"Finished processing task {i}/{len(batch_tasks)}, moving to next...")
+                    logger.info(f"Finished processing task {task_idx}/{len(batch_tasks)}, moving to next...")
                 
                 if successful_results:
                     batch_updates.extend(successful_results)
@@ -1063,6 +1106,9 @@ async def process_tickets_optimized():
             processed_so_far = min(i + BATCH_SIZE, total_tickets)
             progress_pct = (processed_so_far / total_tickets) * 100
             logger.info(f"Overall Progress: {progress_pct:.1f}% ({processed_so_far}/{total_tickets})")
+            
+            # Update performance monitor with actual total
+            await performance_monitor.log_progress(total_tickets)
             
             # Brief delay between batches to manage rate limits
             if i + BATCH_SIZE < total_tickets and not shutdown_flag.is_set():

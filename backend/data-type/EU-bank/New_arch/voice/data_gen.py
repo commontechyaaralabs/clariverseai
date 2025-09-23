@@ -90,7 +90,7 @@ API_CALL_DELAY = 2.0  # Much longer API delay between calls
 CHECKPOINT_SAVE_INTERVAL = 10  # Very frequent checkpoints
 
 # OpenRouter setup
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY2")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 # Global variables for graceful shutdown
@@ -340,9 +340,34 @@ def generate_realistic_banking_details(voice_record=None):
 def derive_roles_from_messages(voice_record):
     """Derive speaker roles from message structure"""
     roles = []
-    for msg in voice_record.get('messages', []):
-        sender_id = msg.get('from', {}).get('user', {}).get('id')
-        if sender_id == 'agent@bank.com':
+    messages = voice_record.get('messages', [])
+    if not messages:
+        return roles
+    
+    # Get agent email from thread members
+    agent_emails = set()
+    thread_info = voice_record.get('thread', {})
+    if isinstance(thread_info, dict):
+        members = thread_info.get('members', [])
+        if isinstance(members, list):
+            for member in members:
+                if isinstance(member, dict) and member.get('id', '').endswith('@bank.com'):
+                    agent_emails.add(member.get('id', ''))
+    
+    for msg in messages:
+        if not isinstance(msg, dict):
+            continue
+            
+        from_info = msg.get('from', {})
+        if not isinstance(from_info, dict):
+            continue
+            
+        user_info = from_info.get('user', {})
+        if not isinstance(user_info, dict):
+            continue
+            
+        sender_id = user_info.get('id', '')
+        if sender_id in agent_emails or sender_id.endswith('@bank.com'):
             roles.append('company')
         else:
             roles.append('customer')
@@ -353,17 +378,30 @@ def get_participant_names(voice_record):
     customer_name = 'Customer'
     agent_name = 'Bank Agent'
     
-    members = voice_record.get('thread', {}).get('members', [])
+    thread_info = voice_record.get('thread', {})
+    if not isinstance(thread_info, dict):
+        return {'customer': customer_name, 'agent': agent_name}
+    
+    members = thread_info.get('members', [])
+    if not isinstance(members, list):
+        return {'customer': customer_name, 'agent': agent_name}
+    
     for member in members:
-        if member.get('id') == 'agent@bank.com':
-            agent_name = member.get('displayName', agent_name)
+        if not isinstance(member, dict):
+            continue
+            
+        member_id = member.get('id', '')
+        display_name = member.get('displayName', '')
+        
+        if member_id.endswith('@bank.com'):
+            agent_name = display_name or agent_name
         else:
-            customer_name = member.get('displayName', customer_name)
+            customer_name = display_name or customer_name
     
     return {'customer': customer_name, 'agent': agent_name}
 
 def generate_optimized_voice_prompt(voice_data):
-    """Generate highly optimized prompt for voice transcript generation"""
+    """Generate highly optimized, shorter prompt while maintaining quality output for voice transcripts"""
     dominant_topic = voice_data.get('dominant_topic', 'General Banking Inquiry')
     subtopics = voice_data.get('subtopics', 'Account information')
     message_count = voice_data.get('thread', {}).get('message_count', 30)
@@ -387,61 +425,37 @@ def generate_optimized_voice_prompt(voice_data):
     # Truncate if we have too many roles
     roles = roles[:message_count]
     
-    prompt = f"""Generate EU banking voice call transcript JSON. CRITICAL: Return ONLY valid JSON, no other text.
+    prompt = f"""Generate EU banking voice call transcript JSON. Return ONLY valid JSON.
 
-CONTEXT:
-Topic: {dominant_topic} | Subtopic: {subtopics}
-Call Messages: {message_count} | Urgency: {urgency_context} ({existing_urgency})
-Follow-up Required: {existing_follow_up} (MUST PRESERVE THIS VALUE)
-Customer: {banking_details['customer_name']} | Account: {banking_details['account_number']}
-Call ID: {call_id} | System: {banking_details['system_name']}
-Participants: customer='{names['customer']}', company='{names['agent']}'
-Speaker sequence (must align): {roles}
+CONTEXT: {dominant_topic} | Customer: {banking_details['customer_name']} | Account: {banking_details['account_number']} | Urgency: {urgency_context}
 
-VOICE CALL CHARACTERISTICS:
-- Natural spoken conversation with interruptions, "um", "ah", pauses
-- Phone call quality issues: "Can you hear me?", "Sorry, line broke up"
-- Authentic customer emotions: frustration, confusion, relief, gratitude
-- Agent professional tone with empathy and clear explanations
-- Call opening: greetings, verification, reason for calling
-- Call closing: summary, next steps, thank you, goodbye
+Generate exactly {message_count} messages alternating: {roles}
 
-OUTPUT FORMAT REQUIRED - EXACTLY THIS STRUCTURE:
 {{
-  "call_summary": "Professional call summary 150-200 words describing conversation outcome, resolution, and next steps",
+  "call_summary": "Brief call summary 100 words",
   "messages": [
     {{
-      "content": "Spoken utterance for message 1 - natural conversational style with realistic speech patterns. Include:\n\n[For CUSTOMER messages - choose appropriate style based on call flow]:\n• Call Opening: 'Hello, is this {banking_details['customer_name']} calling about...?'\n• Issue Description: 'I'm having trouble with... [detailed problem description with natural speech patterns, hesitations, emotional tone matching urgency level]'\n• Clarification: 'What I mean is... let me explain better...'\n• Frustration: 'This is really frustrating because... I've been trying for days...'\n• Relief/Gratitude: 'Oh thank goodness! That's exactly what I needed...'\n• Confirmation: 'So just to confirm, you're saying that...?'\n• Closing: 'Thank you so much for your help. Have a great day!'\n\n[For COMPANY messages - choose appropriate professional style]:\n• Call Opening: 'Good [morning/afternoon], this is {names['agent']} from EU Bank customer service. How may I help you today?'\n• Verification: 'For security purposes, can you please confirm your account number and date of birth?'\n• Problem Acknowledgment: 'I understand your concern about... Let me look into this for you right away.'\n• Investigation: 'I can see here in your account that... Let me check our system for more details.'\n• Solution Explanation: 'What I can do for you is... This should resolve the issue because...'\n• Next Steps: 'I'm going to... You should see this reflected in your account within...'\n• Closing: 'Is there anything else I can help you with today? Thank you for calling EU Bank.'\n\nUse natural speech patterns: 'Um, let me see...', 'Actually, what happened was...', 'Can you hold on just one moment?', 'Sorry, could you repeat that?', realistic pauses and conversational flow. Make each utterance feel genuinely spoken, not written.",
-      "sender_type": "customer|company",
+      "content": "Customer message 50-100 words about {dominant_topic}. Include account {banking_details['account_number']} and natural speech patterns.",
+      "sender_type": "customer",
       "headers": {{
-        "date": "2025-MM-DD HH:MM:SS (Generate date between 2025-01-01 and 2025-06-30)"
+        "date": "2025-MM-DD HH:MM:SS (Generate date between 2025-01-01 and 2025-06-30, use realistic business hours 08:00-18:00 for routine issues, 00:00-23:59 for urgent issues)"
       }}
     }}{"," if message_count > 1 else ""}
-    {"..." if message_count > 2 else "continue alternating pattern for " + str(message_count) + " total messages with same detailed conversational format"}
+    {"{"}"content": "Agent response 50-100 words. Professional and helpful about {dominant_topic}. Include call reference {call_id}.",
+    "sender_type": "company",
+    "headers": {{
+      "date": "2025-MM-DD HH:MM:SS (Generate date between 2025-01-01 and 2025-06-30, use realistic business hours 08:00-18:00 for routine issues, 00:00-23:59 for urgent issues)"
+    }}{"}"}{"" if message_count <= 2 else "... continue alternating pattern for " + str(message_count) + " total messages with same detailed conversational format"}
   ],
-  "sentiment": {{"0": sentiment_score_message_1, "1": sentiment_score_message_2{"..." if message_count > 2 else ""}}}, 
-  "overall_sentiment": 0.0-5.0 (Call sentiment: 0=Happy/satisfied, 1=Calm/professional, 2=Slightly concerned, 3=Moderately frustrated, 4=Angry/upset, 5=Very frustrated),
+  "sentiment": {{"0": 2, "1": 1, "2": 2, "3": 1}},
+  "overall_sentiment": 2.0,
   "thread_dates": {{
-    "first_message_at": "2025-MM-DD HH:MM:SS",
-    "last_message_at": "2025-MM-DD HH:MM:SS"
+    "first_message_at": "2025-03-15 09:30:00",
+    "last_message_at": "2025-03-15 09:35:00"
   }}
 }}
 
-VALIDATION REQUIREMENTS:
-✓ Generate exactly {message_count} messages alternating by speaker sequence: {roles}
-✓ Match urgency={existing_urgency} in call tone and customer emotion
-✓ Use realistic banking language with account details, reference numbers
-✓ Each message should sound naturally SPOKEN, not written - include speech hesitations, natural pauses
-✓ Customer messages: Show emotion appropriate to urgency level, use conversational tone
-✓ Agent messages: Professional but empathetic, clear explanations, follow call center protocols
-✓ Include realistic call flow: greeting → verification → problem → investigation → solution → closing
-✓ Sentiment matches message count: {message_count} entries (0-5 scale matching emotional progression)
-✓ Follow_up_required MUST match existing value {existing_follow_up}
-✓ Dates within 2025-01-01 to 2025-06-30, chronological order, realistic call duration
-✓ Natural phone conversation elements: "Can you hear me?", "Hold on", "Let me check", etc.
-✓ Authentic speech patterns with appropriate regional/cultural context for EU banking
-
-Return ONLY the JSON object above with realistic conversational values.
+Return ONLY the JSON object above.
 """
     
     return prompt
@@ -474,8 +488,8 @@ class RateLimitedProcessor:
             payload = {
                 "model": OPENROUTER_MODEL,
                 "messages": [{"role": "user", "content": prompt}],
-                "max_tokens": 6000,  # Increased for longer conversations
-                "temperature": 0.5   # Slightly higher for more natural speech variation
+                "max_tokens": 1000,  # Reduced for very short conversations (4 messages)
+                "temperature": 0.4   # Lower temperature for more consistent output
             }
             
             for attempt in range(max_retries):
@@ -584,7 +598,7 @@ async def generate_voice_transcript_content(voice_data):
             raise ValueError(f"Missing required fields: {missing_fields}")
         
         # Validate messages count
-        message_count = voice_data.get('thread', {}).get('message_count', 30)
+        message_count = 4  # Fixed to 4 messages for very fast generation
         if len(result['messages']) != message_count:
             logger.warning(f"Call {call_id}: Expected {message_count} messages, got {len(result['messages'])}")
             # Adjust to correct count
@@ -598,7 +612,9 @@ async def generate_voice_transcript_content(voice_data):
         
         # Validate follow_up_required matches existing value
         existing_follow_up = voice_data.get('follow_up_required', 'no')
-        # Note: Voice transcripts might not have follow_up_required in the generated output by design
+        if result.get('follow_up_required') != existing_follow_up:
+            logger.warning(f"Call {call_id}: LLM generated follow_up_required='{result.get('follow_up_required')}' but existing value is '{existing_follow_up}'. Correcting...")
+            result['follow_up_required'] = existing_follow_up
         
         generation_time = time.time() - start_time
         
@@ -661,6 +677,33 @@ def build_update_from_voice_result(voice_record, generated):
     if 'call_summary' in generated:
         update['call_summary'] = str(generated.get('call_summary', '')).strip()
     
+    # Handle follow_up fields logic programmatically - RESPECT EXISTING DB VALUES
+    existing_follow_up_required = voice_record.get('follow_up_required', 'no')
+    
+    if existing_follow_up_required == 'no':
+        # If DB has follow_up_required='no', keep it as 'no' and set date/reason to null
+        follow_up_required = 'no'
+        follow_up_date = None
+        follow_up_reason = None
+        logger.info(f"Call {voice_record.get('_id', 'unknown')}: DB has follow_up_required='no', keeping as 'no' and setting date/reason=null")
+    else:
+        # If DB has follow_up_required='yes', use LLM generated values but validate
+        llm_follow_up = generated.get('follow_up_required', 'no')
+        if llm_follow_up != 'yes':
+            logger.warning(f"Call {voice_record.get('_id', 'unknown')}: LLM generated follow_up_required='{llm_follow_up}' but DB has 'yes'. Forcing to 'yes'.")
+            follow_up_required = 'yes'
+        else:
+            follow_up_required = 'yes'
+        
+        follow_up_date = generated.get('follow_up_date')
+        follow_up_reason = generated.get('follow_up_reason')
+        logger.info(f"Call {voice_record.get('_id', 'unknown')}: DB has follow_up_required='{existing_follow_up_required}', using LLM values: required={follow_up_required}, date={follow_up_date}, reason={follow_up_reason}")
+    
+    # Add follow-up fields to update
+    update['follow_up_required'] = follow_up_required
+    update['follow_up_date'] = follow_up_date
+    update['follow_up_reason'] = follow_up_reason
+    
     # Add thread dates from LLM generated content
     thread_dates = generated.get('thread_dates') or {}
     if isinstance(thread_dates, dict):
@@ -677,6 +720,11 @@ def build_update_from_voice_result(voice_record, generated):
     
     # Always update lastUpdated
     update['thread.lastUpdatedDateTime'] = datetime.utcnow().isoformat() + 'Z'
+    
+    # Add LLM processing tracking
+    update['llm_processed'] = True
+    update['llm_processed_at'] = datetime.now().isoformat()
+    update['llm_model_used'] = OPENROUTER_MODEL
     
     return update
 
@@ -824,10 +872,27 @@ async def process_voice_calls_optimized():
         logger.error("Cannot proceed without OpenRouter connection")
         return
     
-    # Get voice calls to process
+    # Get voice calls to process - only those that have NEVER been processed by LLM
     try:
+        # Query for voice calls that need LLM processing
+        # Look for calls that are missing the main LLM-generated content
         query = {
-            "messages.0.body.content": None  # Voice calls where first message content is null
+            "$and": [
+                # Must have basic voice call structure
+                {"_id": {"$exists": True}},
+                {"thread": {"$exists": True}},
+                {"messages": {"$exists": True}},
+                # Must be missing the main LLM-generated content
+                {
+                    "$or": [
+                        {"call_summary": {"$exists": False}},
+                        {"call_summary": {"$eq": None}},
+                        {"call_summary": {"$eq": ""}},
+                        {"messages.0.body.content": {"$eq": None}},
+                        {"messages.0.body.content": {"$eq": ""}}
+                    ]
+                }
+            ]
         }
         
         # Exclude already processed calls
@@ -835,15 +900,43 @@ async def process_voice_calls_optimized():
             processed_ids = [ObjectId(cid) for cid in checkpoint_manager.processed_calls if ObjectId.is_valid(cid)]
             query["_id"] = {"$nin": processed_ids}
         
+        # First, let's check what calls exist and their status
+        total_calls_in_db = voice_col.count_documents({})
+        calls_processed_by_llm = voice_col.count_documents({"llm_processed": True})
+        calls_with_call_summary = voice_col.count_documents({
+            "call_summary": {"$exists": True, "$ne": None, "$ne": ""}
+        })
+        calls_with_message_content = voice_col.count_documents({
+            "messages.0.body.content": {"$ne": None, "$ne": ""}
+        })
+        calls_with_complete_content = voice_col.count_documents({
+            "$and": [
+                {"call_summary": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"messages.0.body.content": {"$ne": None, "$ne": ""}}
+            ]
+        })
+        
+        # Calculate actual calls needing processing using the same query
+        calls_needing_processing = voice_col.count_documents(query)
+        
+        logger.info(f"Database Status:")
+        logger.info(f"  Total voice calls in DB: {total_calls_in_db}")
+        logger.info(f"  Calls processed by LLM (llm_processed=True): {calls_processed_by_llm}")
+        logger.info(f"  Calls with call_summary: {calls_with_call_summary}")
+        logger.info(f"  Calls with message content: {calls_with_message_content}")
+        logger.info(f"  Calls with complete content: {calls_with_complete_content}")
+        logger.info(f"  Calls needing processing: {calls_needing_processing}")
+        
         voice_records = list(voice_col.find(query))
         total_calls = len(voice_records)
         
         if total_calls == 0:
             logger.info("No voice calls found that need processing!")
+            logger.info("All voice calls appear to have been processed by LLM already.")
             return
         
-        logger.info(f"Found {total_calls} voice calls to process")
-        logger.info(f"Previously processed: {len(checkpoint_manager.processed_calls)} calls")
+        logger.info(f"Found {total_calls} voice calls that need LLM processing")
+        logger.info(f"Previously processed (checkpoint): {len(checkpoint_manager.processed_calls)} calls")
         progress_logger.info(f"BATCH_START: total_calls={total_calls}")
         
     except Exception as e:
@@ -1013,24 +1106,32 @@ def get_collection_stats():
     try:
         total_count = voice_col.count_documents({})
         
-        with_content = voice_col.count_documents({
-            "messages.0.body.content": {"$ne": None, "$exists": True}
+        with_complete_fields = voice_col.count_documents({
+            "call_summary": {"$exists": True, "$ne": "", "$ne": None},
+            "overall_sentiment": {"$exists": True, "$ne": "", "$ne": None},
+            "sentiment": {"$exists": True, "$ne": "", "$ne": None},
+            "messages.0.body.content": {"$ne": "", "$ne": None}
         })
         
-        with_call_summary = voice_col.count_documents({
-            "call_summary": {"$exists": True, "$ne": "", "$ne": None}
+        with_some_llm_fields = voice_col.count_documents({
+            "$or": [
+                {"call_summary": {"$exists": True, "$ne": "", "$ne": None}},
+                {"overall_sentiment": {"$exists": True, "$ne": "", "$ne": None}},
+                {"sentiment": {"$exists": True, "$ne": "", "$ne": None}},
+                {"messages.0.body.content": {"$ne": "", "$ne": None}}
+            ]
         })
         
         urgent_calls = voice_col.count_documents({"urgency": True})
-        without_content = voice_col.count_documents({"messages.0.body.content": None})
+        without_complete_fields = total_count - with_complete_fields
         
         logger.info("Voice Collection Statistics:")
         logger.info(f"  Total voice calls: {total_count}")
-        logger.info(f"  With message content: {with_content}")
-        logger.info(f"  Without message content: {without_content}")
-        logger.info(f"  With call summary: {with_call_summary}")
+        logger.info(f"  With complete LLM fields: {with_complete_fields}")
+        logger.info(f"  With some LLM fields: {with_some_llm_fields}")
+        logger.info(f"  Without complete LLM fields: {without_complete_fields}")
         logger.info(f"  Urgent calls: {urgent_calls} ({(urgent_calls/total_count)*100:.1f}%)" if total_count > 0 else "  Urgent calls: 0")
-        logger.info(f"  Content completion rate: {(with_content/total_count)*100:.1f}%" if total_count > 0 else "  Content completion rate: 0%")
+        logger.info(f"  Completion rate: {(with_complete_fields/total_count)*100:.1f}%" if total_count > 0 else "  Completion rate: 0%")
         
     except Exception as e:
         logger.error(f"Error getting collection stats: {e}")
