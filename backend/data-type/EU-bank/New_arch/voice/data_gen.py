@@ -440,7 +440,7 @@ def generate_optimized_voice_prompt(voice_data, retry_attempt=0):
         
         if sender_type == 'customer':
             template = f'''    {{
-      "content": "Customer message {message_number} about {dominant_topic}. Include account {banking_details['account_number']} and natural speech patterns. 50-100 words.",
+      "content": "Customer message {message_number} about {dominant_topic}. Include account {banking_details['account_number']} and natural speech patterns. 10-100 words.",
       "sender_type": "customer",
       "headers": {{
         "date": "2025-MM-DD HH:MM:SS"
@@ -448,7 +448,7 @@ def generate_optimized_voice_prompt(voice_data, retry_attempt=0):
     }}'''
         else:
             template = f'''    {{
-      "content": "Voice agent response {message_number} in call-center spoken style: concise confirmations, read-back of details, brief hold/transition phrases. Professional tone. Include call reference {call_id}. 50-100 words.",
+      "content": "Voice agent response {message_number} in call-center spoken style: concise confirmations, read-back of details, brief hold/transition phrases. Professional tone. Include call reference {call_id}. 10-100 words.",
       "sender_type": "company", 
       "headers": {{
         "date": "2025-MM-DD HH:MM:SS"
@@ -471,7 +471,7 @@ CONTEXT: {dominant_topic} | Customer: {banking_details['customer_name']} | Accou
 1. GENERATE EXACTLY {message_count} MESSAGES IN THE "messages" ARRAY - NO MORE, NO LESS
 2. GENERATE EXACTLY {message_count} SENTIMENT ENTRIES WITH KEYS "0" TO "{message_count-1}"
 3. FOLLOW EXACT ROLES PATTERN: {roles}
-4. EACH MESSAGE MUST BE 50-100 WORDS
+4. EACH MESSAGE MUST BE 10-100 WORDS
 5. OUTPUT MUST BE VALID JSON WITH NO EXTRA TEXT, MARKDOWN, OR CODE BLOCKS
 
 🔥 COUNTING VERIFICATION - DO THIS BEFORE RESPONDING:
@@ -492,7 +492,7 @@ CONTEXT: {dominant_topic} | Customer: {banking_details['customer_name']} | Accou
 □ messages array has exactly {message_count} entries
 □ sentiment object has exactly {message_count} keys: "0", "1", "2", ..., "{message_count-1}"
 □ sender_type pattern matches: {roles}
-□ All messages 50-100 words
+□ All messages 10-100 words
 □ Valid JSON structure
 □ No extra formatting or text
 
