@@ -79,7 +79,7 @@ progress_logger.propagate = False
 logger = logging.getLogger(__name__)
 
 # Conservative configuration to avoid rate limiting
-OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gemma3:27b")
+OLLAMA_MODEL = "gemma3:27b"  # Force gemma3:27b instead of reading from environment
 BATCH_SIZE = 3  # Very small batch size to reduce load
 MAX_CONCURRENT = 1  # Single concurrent call to avoid rate limits
 REQUEST_TIMEOUT = 120  # Keep timeout for detailed generation
