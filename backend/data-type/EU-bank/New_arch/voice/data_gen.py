@@ -1,4 +1,4 @@
-# EU Banking Voice Transcript Content Generator - Optimized Version
+# EU Banking Voice Transcript Content Generator - Enhanced Version with Strict Message Count
 import os
 import random
 import time
@@ -128,6 +128,8 @@ class AtomicCounter:
 success_counter = AtomicCounter("SUCCESS_COUNT")
 failure_counter = AtomicCounter("FAILURE_COUNT")
 update_counter = AtomicCounter("UPDATE_COUNT")
+retry_counter = AtomicCounter("RETRY_COUNT")
+message_count_mismatch_counter = AtomicCounter("MESSAGE_COUNT_MISMATCH_COUNT")
 
 # Performance Monitor
 class PerformanceMonitor:
@@ -404,8 +406,8 @@ def get_participant_names(voice_record):
     
     return {'customer': customer_name, 'agent': agent_name}
 
-def generate_optimized_voice_prompt(voice_data):
-    """Generate highly optimized, shorter prompt while maintaining quality output for voice transcripts"""
+def generate_optimized_voice_prompt(voice_data, retry_attempt=0):
+    """Generate extremely strict prompt for voice transcripts with MANDATORY message count enforcement"""
     dominant_topic = voice_data.get('dominant_topic', 'General Banking Inquiry')
     subtopics = voice_data.get('subtopics', 'Account information')
     message_count = voice_data.get('thread', {}).get('message_count', 30)
@@ -418,6 +420,7 @@ def generate_optimized_voice_prompt(voice_data):
     names = get_participant_names(voice_data)
     
     urgency_context = "URGENT" if existing_urgency else "NON-URGENT"
+    retry_warning = f" [RETRY ATTEMPT {retry_attempt}/10 - PREVIOUS ATTEMPTS FAILED MESSAGE COUNT VALIDATION]" if retry_attempt > 0 else ""
     
     # Ensure we have enough roles for the message count
     if len(roles) < message_count:
@@ -429,38 +432,94 @@ def generate_optimized_voice_prompt(voice_data):
     # Truncate if we have too many roles
     roles = roles[:message_count]
     
-    prompt = f"""Generate EU banking voice call transcript JSON. Return ONLY valid JSON.
+    # Build explicit message templates for each index - FIXED INDEXING
+    message_templates = []
+    for i in range(message_count):
+        sender_type = roles[i]
+        message_number = i + 1  # Human-readable numbering
+        
+        if sender_type == 'customer':
+            template = f'''    {{
+      "content": "Customer message {message_number} about {dominant_topic}. Include account {banking_details['account_number']} and natural speech patterns. 50-100 words.",
+      "sender_type": "customer",
+      "headers": {{
+        "date": "2025-MM-DD HH:MM:SS"
+      }}
+    }}'''
+        else:
+            template = f'''    {{
+      "content": "Voice agent response {message_number} in call-center spoken style: concise confirmations, read-back of details, brief hold/transition phrases. Professional tone. Include call reference {call_id}. 50-100 words.",
+      "sender_type": "company", 
+      "headers": {{
+        "date": "2025-MM-DD HH:MM:SS"
+      }}
+    }}'''
+        message_templates.append(template)
+    
+    # Join templates with commas
+    messages_section = ",\n".join(message_templates)
+    
+    # Build sentiment indices explicitly - FIXED TO USE CORRECT RANGE
+    sentiment_indices = [f'"{i}": "sentiment_score_between_0_and_5_for_message_{i+1}"' for i in range(message_count)]
+    sentiment_section = ", ".join(sentiment_indices)
+    
+    prompt = f"""CRITICAL TASK{retry_warning}: Generate EU banking voice call transcript JSON. Return ONLY valid JSON.
 
 CONTEXT: {dominant_topic} | Customer: {banking_details['customer_name']} | Account: {banking_details['account_number']} | Urgency: {urgency_context}
 
-Generate exactly {message_count} messages alternating: {roles}
+⚠️⚠️⚠️ ABSOLUTE MANDATORY REQUIREMENTS - ZERO TOLERANCE FOR DEVIATION ⚠️⚠️⚠️
+1. GENERATE EXACTLY {message_count} MESSAGES IN THE "messages" ARRAY - NO MORE, NO LESS
+2. GENERATE EXACTLY {message_count} SENTIMENT ENTRIES WITH KEYS "0" TO "{message_count-1}"
+3. FOLLOW EXACT ROLES PATTERN: {roles}
+4. EACH MESSAGE MUST BE 50-100 WORDS
+5. OUTPUT MUST BE VALID JSON WITH NO EXTRA TEXT, MARKDOWN, OR CODE BLOCKS
 
+🔥 COUNTING VERIFICATION - DO THIS BEFORE RESPONDING:
+- Count messages array entries: MUST = {message_count} (currently required: {message_count})
+- Count sentiment object keys: MUST = {message_count} (currently required: {message_count})
+- Verify sender_type matches roles: {roles}
+- Verify JSON syntax is perfect
+
+❌ FAILURE CONDITIONS THAT WILL CAUSE REJECTION:
+- messages.length ≠ {message_count}
+- sentiment object key count ≠ {message_count}
+- Any markdown formatting (```, ```json, etc.)
+- Any explanatory text outside JSON
+- Invalid JSON syntax
+- Missing required fields
+
+✅ SUCCESS CHECKLIST (VERIFY ALL BEFORE RESPONDING):
+□ messages array has exactly {message_count} entries
+□ sentiment object has exactly {message_count} keys: "0", "1", "2", ..., "{message_count-1}"
+□ sender_type pattern matches: {roles}
+□ All messages 50-100 words
+□ Valid JSON structure
+□ No extra formatting or text
+
+REQUIRED JSON STRUCTURE (GENERATE EXACTLY THIS):
 {{
-  "call_summary": "Brief call summary 100 words",
+  "call_summary": "Brief call summary describing the main issue and outcome in 100 words",
+  "action_pending_status": "yes|no",
+  "action_pending_from": "company|customer|null (null if action_pending_status=no)",
+  "resolution_status": "open|inprogress|closed",
+  "next_action_suggestion": "Next step recommendation 50-80 words",
   "messages": [
-    {{
-      "content": "Customer message 50-100 words about {dominant_topic}. Include account {banking_details['account_number']} and natural speech patterns.",
-      "sender_type": "customer",
-      "headers": {{
-        "date": "2025-MM-DD HH:MM:SS (Generate date between 2025-01-01 and 2025-06-30, use realistic business hours 08:00-18:00 for routine issues, 00:00-23:59 for urgent issues)"
-      }}
-    }}{"," if message_count > 1 else ""}
-    {"{"}"content": "Agent response 50-100 words. Professional and helpful about {dominant_topic}. Include call reference {call_id}.",
-    "sender_type": "company",
-    "headers": {{
-      "date": "2025-MM-DD HH:MM:SS (Generate date between 2025-01-01 and 2025-06-30, use realistic business hours 08:00-18:00 for routine issues, 00:00-23:59 for urgent issues)"
-    }}{"}"}{"" if message_count <= 2 else "... continue alternating pattern for " + str(message_count) + " total messages with same detailed conversational format"}
+{messages_section}
   ],
-  "sentiment": {{"0": 2, "1": 1, "2": 2, "3": 1}},
-  "overall_sentiment": 2.0,
+  "sentiment": {{{sentiment_section}}},
+  "overall_sentiment": 0.0 to 5.0 based on the sentiment of the messages,
   "thread_dates": {{
     "first_message_at": "2025-03-15 09:30:00",
     "last_message_at": "2025-03-15 09:35:00"
   }}
 }}
 
-Return ONLY the JSON object above.
-"""
+SENTIMENT SCALE (0-5 ONLY):
+0=Happy, 1=Calm, 2=Bit Irritated, 3=Moderately Concerned, 4=Anger, 5=Frustrated
+
+🚨 FINAL WARNING: If you generate {message_count-1} or {message_count+1} or any number other than EXACTLY {message_count} messages, this will be REJECTED and you will be asked to retry. COUNT CAREFULLY!
+
+Generate the JSON response with EXACTLY {message_count} messages and EXACTLY {message_count} sentiment entries:"""
     
     return prompt
 
@@ -497,8 +556,8 @@ class RateLimitedProcessor:
                 ],
                 "stream": False,
                 "options": {
-                    "temperature": 0.4,
-                    "num_predict": 4000
+                    "temperature": 0.5,
+                    "num_predict": 100000
                 }
             }
             
@@ -547,112 +606,176 @@ class RateLimitedProcessor:
 
 processor = RateLimitedProcessor()
 
-async def generate_voice_transcript_content(voice_data):
-    """Generate voice transcript content with optimized processing"""
+
+async def generate_voice_transcript_content(voice_data, max_retries=10):
+    """Generate voice transcript content with strict retry mechanism for message count validation"""
     if shutdown_flag.is_set():
         return None
     
     start_time = time.time()
     call_id = str(voice_data.get('_id', 'unknown'))
+    requested_message_count = voice_data.get('thread', {}).get('message_count')
     
-    try:
-        prompt = generate_optimized_voice_prompt(voice_data)
-        
-        # Create session for this batch
-        connector = aiohttp.TCPConnector(limit=10, force_close=True, enable_cleanup_closed=True)
-        timeout = aiohttp.ClientTimeout(total=REQUEST_TIMEOUT + 10)
-        
-        async with aiohttp.ClientSession(connector=connector, timeout=timeout) as session:
-            response = await circuit_breaker.call(
-                processor.call_ollama_async,
-                session,
-                prompt
-            )
-        
-        if not response or not response.strip():
-            raise ValueError("Empty response from LLM")
-        
-        # Clean and parse JSON response
-        reply = response.strip()
-        
-        # Remove markdown formatting if present
-        if "```" in reply:
-            reply = reply.replace("```json", "").replace("```", "")
-        
-        # Extract JSON
-        json_start = reply.find('{')
-        json_end = reply.rfind('}') + 1
-        
-        if json_start == -1 or json_end <= json_start:
-            raise ValueError("No valid JSON found in LLM response")
-        
-        reply = reply[json_start:json_end]
-        
+    if not isinstance(requested_message_count, int) or requested_message_count <= 0:
+        logger.error(f"Call {call_id}: Invalid message_count: {requested_message_count}")
+        raise ValueError(f"Invalid message_count: {requested_message_count}")
+    
+    # Retry loop for message count validation
+    for retry_attempt in range(max_retries):
         try:
-            result = json.loads(reply)
-            logger.info(f"Call {call_id}: JSON parsing successful. Keys: {list(result.keys())}")
-        except json.JSONDecodeError as json_err:
-            logger.error(f"JSON parsing failed for call {call_id}. Raw response: {reply[:300]}...")
-            raise ValueError(f"Invalid JSON response from LLM: {json_err}")
+            # Generate prompt with retry attempt information
+            prompt = generate_optimized_voice_prompt(voice_data, retry_attempt)
+            
+            # Create session for this batch
+            connector = aiohttp.TCPConnector(limit=10, force_close=True, enable_cleanup_closed=True)
+            timeout = aiohttp.ClientTimeout(total=REQUEST_TIMEOUT + 10)
+            
+            async with aiohttp.ClientSession(connector=connector, timeout=timeout) as session:
+                response = await circuit_breaker.call(
+                    processor.call_ollama_async,
+                    session,
+                    prompt
+                )
+            
+            if not response or not response.strip():
+                logger.warning(f"Call {call_id}: Empty response from LLM on attempt {retry_attempt + 1}/{max_retries}")
+                if retry_attempt < max_retries - 1:
+                    continue
+                raise ValueError("Empty response from LLM after all retries")
+            
+            # Clean and parse JSON response
+            reply = response.strip()
+            
+            # Remove markdown formatting if present
+            if "```" in reply:
+                reply = reply.replace("```json", "").replace("```", "")
+            
+            # Extract JSON
+            json_start = reply.find('{')
+            json_end = reply.rfind('}') + 1
+            
+            if json_start == -1 or json_end <= json_start:
+                logger.warning(f"Call {call_id}: No valid JSON found in LLM response on attempt {retry_attempt + 1}/{max_retries}")
+                if retry_attempt < max_retries - 1:
+                    continue
+                raise ValueError("No valid JSON found in LLM response after all retries")
+            
+            reply = reply[json_start:json_end]
+            
+            try:
+                result = json.loads(reply)
+                logger.info(f"Call {call_id}: JSON parsing successful on attempt {retry_attempt + 1}. Keys: {list(result.keys())}")
+            except json.JSONDecodeError as json_err:
+                logger.warning(f"Call {call_id}: JSON parsing failed on attempt {retry_attempt + 1}/{max_retries}. Error: {json_err}")
+                if retry_attempt < max_retries - 1:
+                    continue
+                logger.error(f"Call {call_id}: JSON parsing failed on all attempts. Raw response: {reply[:300]}...")
+                raise ValueError(f"Invalid JSON response from LLM after all retries: {json_err}")
+            
+            # Validate required fields
+            required_fields = [
+                'call_summary', 'messages', 'sentiment', 'overall_sentiment', 
+                'thread_dates'
+            ]
+            
+            missing_fields = [field for field in required_fields if field not in result]
+            if missing_fields:
+                logger.warning(f"Call {call_id}: Missing required fields on attempt {retry_attempt + 1}/{max_retries}: {missing_fields}")
+                if retry_attempt < max_retries - 1:
+                    await retry_counter.increment()
+                    continue
+                logger.error(f"Call {call_id}: Missing required fields after all attempts: {missing_fields}")
+                raise ValueError(f"Missing required fields after all retries: {missing_fields}")
+            
+            # CRITICAL VALIDATION: Check messages count vs requested - THIS IS THE PRIMARY RETRY TRIGGER
+            actual_count = len(result.get('messages', [])) if isinstance(result.get('messages'), list) else 0
+            
+            if actual_count != requested_message_count:
+                await message_count_mismatch_counter.increment()
+                logger.warning(f"Call {call_id}: MESSAGE COUNT MISMATCH on attempt {retry_attempt + 1}/{max_retries}: generated {actual_count}, requested {requested_message_count}")
+                if retry_attempt < max_retries - 1:
+                    # This is the key condition that triggers retries
+                    await retry_counter.increment()
+                    await asyncio.sleep(1.0)  # Brief pause between retries
+                    continue
+                logger.error(f"Call {call_id}: MESSAGE COUNT MISMATCH after all {max_retries} attempts: generated {actual_count}, requested {requested_message_count}. GIVING UP.")
+                raise ValueError(f"Message count mismatch after {max_retries} retries: generated {actual_count}, requested {requested_message_count}")
+            
+            # CRITICAL VALIDATION: Check sentiment count matches message count
+            sentiment_data = result.get('sentiment', {})
+            if isinstance(sentiment_data, dict):
+                sentiment_count = len(sentiment_data)
+                if sentiment_count != actual_count:
+                    logger.warning(f"Call {call_id}: SENTIMENT COUNT MISMATCH on attempt {retry_attempt + 1}/{max_retries}: {sentiment_count} sentiments for {actual_count} messages")
+                    if retry_attempt < max_retries - 1:
+                        await retry_counter.increment()
+                        continue
+                    logger.error(f"Call {call_id}: SENTIMENT COUNT MISMATCH after all attempts: {sentiment_count} sentiments for {actual_count} messages")
+                    raise ValueError(f"Sentiment count mismatch after {max_retries} retries: {sentiment_count} sentiments for {actual_count} messages")
+            
+            # SUCCESS! All validations passed
+            logger.info(f"Call {call_id}: ✅ SUCCESS on attempt {retry_attempt + 1}/{max_retries} - Message count: {actual_count}, Sentiment count: {len(sentiment_data)}")
+            
+            # If sentiment is an array, convert to indexed dict for storage
+            if 'sentiment' in result:
+                sent = result['sentiment']
+                if isinstance(sent, list):
+                    result['sentiment'] = {str(i): sent[i] for i in range(len(sent))}
+            
+            # Validate follow_up_required matches existing value
+            existing_follow_up = voice_data.get('follow_up_required', 'no')
+            if result.get('follow_up_required') != existing_follow_up:
+                logger.warning(f"Call {call_id}: LLM generated follow_up_required='{result.get('follow_up_required')}' but existing value is '{existing_follow_up}'. Correcting...")
+                result['follow_up_required'] = existing_follow_up
+            
+            generation_time = time.time() - start_time
+            
+            # Log success with enhanced metrics including retry info
+            success_info = {
+                'call_id': call_id,
+                'dominant_topic': voice_data.get('dominant_topic'),
+                'call_summary': result['call_summary'][:100] + "..." if len(result['call_summary']) > 100 else result['call_summary'],
+                'urgency': voice_data.get('urgency'),
+                'overall_sentiment': result['overall_sentiment'],
+                'requested_message_count': requested_message_count,
+                'actual_message_count': actual_count,
+                'sentiment_count': len(result.get('sentiment', {})),
+                'retry_attempts': retry_attempt + 1,
+                'generation_time': generation_time
+            }
+            success_logger.info(json.dumps(success_info, cls=ObjectIdEncoder))
+            
+            return result
         
-        # Validate required fields
-        required_fields = [
-            'call_summary', 'messages', 'sentiment', 'overall_sentiment', 
-            'thread_dates'
-        ]
-        
-        missing_fields = [field for field in required_fields if field not in result]
-        if missing_fields:
-            logger.error(f"Call {call_id}: Missing required fields: {missing_fields}")
-            raise ValueError(f"Missing required fields: {missing_fields}")
-        
-        # Validate messages count
-        message_count = 4  # Fixed to 4 messages for very fast generation
-        if len(result['messages']) != message_count:
-            logger.warning(f"Call {call_id}: Expected {message_count} messages, got {len(result['messages'])}")
-            # Adjust to correct count
-            if len(result['messages']) > message_count:
-                result['messages'] = result['messages'][:message_count]
-        
-        # Validate sentiment count matches message count
-        if len(result['sentiment']) != len(result['messages']):
-            logger.warning(f"Call {call_id}: Sentiment count mismatch, adjusting...")
-            result['sentiment'] = {str(i): result['sentiment'].get(str(i), 1) for i in range(len(result['messages']))}
-        
-        # Validate follow_up_required matches existing value
-        existing_follow_up = voice_data.get('follow_up_required', 'no')
-        if result.get('follow_up_required') != existing_follow_up:
-            logger.warning(f"Call {call_id}: LLM generated follow_up_required='{result.get('follow_up_required')}' but existing value is '{existing_follow_up}'. Correcting...")
-            result['follow_up_required'] = existing_follow_up
-        
-        generation_time = time.time() - start_time
-        
-        # Log success
-        success_info = {
-            'call_id': call_id,
-            'dominant_topic': voice_data.get('dominant_topic'),
-            'call_summary': result['call_summary'][:100] + "..." if len(result['call_summary']) > 100 else result['call_summary'],
-            'urgency': voice_data.get('urgency'),
-            'overall_sentiment': result['overall_sentiment'],
-            'generation_time': generation_time
-        }
-        success_logger.info(json.dumps(success_info, cls=ObjectIdEncoder))
-        
-        return result
-        
-    except Exception as e:
-        generation_time = time.time() - start_time
-        error_info = {
-            'call_id': call_id,
-            'dominant_topic': voice_data.get('dominant_topic', 'Unknown'),
-            'error': str(e)[:200],
-            'generation_time': generation_time
-        }
-        failure_logger.error(json.dumps(error_info, cls=ObjectIdEncoder))
-        raise
+        except Exception as e:
+            if "count mismatch" in str(e).lower() and retry_attempt < max_retries - 1:
+                # This is a count mismatch, continue to next retry
+                logger.warning(f"Call {call_id}: Retry {retry_attempt + 1}/{max_retries} failed due to count mismatch: {e}")
+                await asyncio.sleep(1.0)  # Brief pause between retries
+                continue
+            elif retry_attempt < max_retries - 1:
+                # Other error, but still have retries left
+                logger.warning(f"Call {call_id}: Attempt {retry_attempt + 1}/{max_retries} failed: {e}")
+                await asyncio.sleep(1.0)
+                continue
+            else:
+                # Last attempt or non-recoverable error
+                generation_time = time.time() - start_time
+                error_info = {
+                    'call_id': call_id,
+                    'dominant_topic': voice_data.get('dominant_topic', 'Unknown'),
+                    'error': str(e)[:200],
+                    'retry_attempts': retry_attempt + 1,
+                    'generation_time': generation_time
+                }
+                failure_logger.error(json.dumps(error_info, cls=ObjectIdEncoder))
+                raise
+    
+    # This should never be reached, but just in case
+    raise ValueError(f"Call {call_id}: Exhausted all {max_retries} retry attempts without success")
 
 def normalize_message_contents(messages_json, target_count):
-    """Normalize message contents from generated JSON"""
+    """Deprecated: No longer normalizing to target_count; kept for backward compatibility."""
     contents = []
     for m in messages_json:
         if isinstance(m, dict) and 'content' in m:
@@ -661,26 +784,26 @@ def normalize_message_contents(messages_json, target_count):
             contents.append(m.strip())
         else:
             contents.append(str(m))
-    
-    if len(contents) > target_count:
-        contents = contents[:target_count]
-    elif len(contents) < target_count:
-        while len(contents) < target_count:
-            contents.append("")
-    
     return contents
 
 def build_update_from_voice_result(voice_record, generated):
     """Build update document from generated voice transcript result"""
-    message_count = voice_record.get('thread', {}).get('message_count', 30)
-    msgs = generated.get('messages', [])
-    contents = normalize_message_contents(msgs, message_count)
+    msgs = generated.get('messages', []) if isinstance(generated.get('messages'), list) else []
     
     update = {}
     
-    # Update message contents
-    for i in range(message_count):
-        update[f'messages.{i}.body.content'] = contents[i]
+    # Update message contents only for messages actually generated (no padding/truncation)
+    existing_messages_len = len(voice_record.get('messages', [])) if isinstance(voice_record.get('messages'), list) else 0
+    for i, msg in enumerate(msgs):
+        if existing_messages_len == 0 or i < existing_messages_len:
+            content_value = ""
+            if isinstance(msg, dict):
+                content_value = str(msg.get('content', '')).strip()
+            elif isinstance(msg, str):
+                content_value = msg.strip()
+            else:
+                content_value = str(msg)
+            update[f'messages.{i}.body.content'] = content_value
     
     # Map call_summary
     if 'call_summary' in generated:
@@ -713,6 +836,17 @@ def build_update_from_voice_result(voice_record, generated):
     update['follow_up_date'] = follow_up_date
     update['follow_up_reason'] = follow_up_reason
     
+    # Add action/status fields similar to ticket logic if present
+    if isinstance(generated, dict):
+        if 'action_pending_status' in generated:
+            update['action_pending_status'] = generated.get('action_pending_status')
+        if 'action_pending_from' in generated:
+            update['action_pending_from'] = generated.get('action_pending_from')
+        if 'resolution_status' in generated:
+            update['resolution_status'] = generated.get('resolution_status')
+        if 'next_action_suggestion' in generated:
+            update['next_action_suggestion'] = generated.get('next_action_suggestion')
+    
     # Add thread dates from LLM generated content
     thread_dates = generated.get('thread_dates') or {}
     if isinstance(thread_dates, dict):
@@ -721,10 +855,10 @@ def build_update_from_voice_result(voice_record, generated):
         if 'last_message_at' in thread_dates:
             update['thread.last_message_at'] = thread_dates['last_message_at']
     
-    # Add message dates from LLM generated content
-    if generated.get('messages'):
+    # Add message dates from LLM generated content for all generated messages
+    if isinstance(generated.get('messages'), list):
         for i, message in enumerate(generated['messages']):
-            if message.get('headers', {}).get('date'):
+            if isinstance(message, dict) and message.get('headers', {}).get('date'):
                 update[f'messages.{i}.createdDateTime'] = message['headers']['date']
     
     # Always update lastUpdated
@@ -988,8 +1122,8 @@ async def process_voice_calls_optimized():
                     start_time = time.time()
                     try:
                         # Add reasonable timeout to prevent infinite hanging
-                        logger.info(f"Waiting for task {i} to complete (max {REQUEST_TIMEOUT * 3}s)...")
-                        result = await asyncio.wait_for(task, timeout=REQUEST_TIMEOUT * 3)
+                        logger.info(f"Waiting for task {i} to complete (max {REQUEST_TIMEOUT * 5}s)...")
+                        result = await asyncio.wait_for(task, timeout=REQUEST_TIMEOUT * 5)
                         elapsed = time.time() - start_time
                         logger.info(f"Task {i} finished, processing result...")
                         if result:
@@ -1055,7 +1189,10 @@ async def process_voice_calls_optimized():
         logger.info(f"  Total voice calls updated: {total_updated}")
         logger.info(f"  Successful generations: {success_counter.value}")
         logger.info(f"  Failed generations: {failure_counter.value}")
+        logger.info(f"  Total retry attempts: {retry_counter.value}")
+        logger.info(f"  Message count mismatches detected: {message_count_mismatch_counter.value}")
         logger.info(f"  Success rate: {(success_counter.value/(success_counter.value + failure_counter.value))*100:.1f}%" if (success_counter.value + failure_counter.value) > 0 else "Success rate: N/A")
+        logger.info(f"  Average retries per call: {(retry_counter.value/success_counter.value):.2f}" if success_counter.value > 0 else "Average retries per call: N/A")
         
         # Performance summary
         total_time = time.time() - performance_monitor.start_time
@@ -1064,7 +1201,7 @@ async def process_voice_calls_optimized():
         logger.info(f"  Average time per call: {avg_time_per_call:.1f} seconds")
         logger.info(f"  Processing rate: {success_counter.value/(total_time/3600):.0f} calls/hour" if total_time > 0 else "Processing rate: N/A")
         
-        progress_logger.info(f"FINAL_SUMMARY: total_updated={total_updated}, success={success_counter.value}, failures={failure_counter.value}, total_time={total_time/3600:.2f}h, rate={success_counter.value/(total_time/3600):.0f}/h" if total_time > 0 else f"FINAL_SUMMARY: total_updated={total_updated}, success={success_counter.value}, failures={failure_counter.value}")
+        progress_logger.info(f"FINAL_SUMMARY: total_updated={total_updated}, success={success_counter.value}, failures={failure_counter.value}, retries={retry_counter.value}, message_mismatches={message_count_mismatch_counter.value}, total_time={total_time/3600:.2f}h, rate={success_counter.value/(total_time/3600):.0f}/h" if total_time > 0 else f"FINAL_SUMMARY: total_updated={total_updated}, success={success_counter.value}, failures={failure_counter.value}, retries={retry_counter.value}, message_mismatches={message_count_mismatch_counter.value}")
         
     except Exception as e:
         logger.error(f"Unexpected error in main processing: {e}")
@@ -1146,11 +1283,12 @@ def get_collection_stats():
 
 async def main():
     """Main async function"""
-    logger.info("Optimized EU Banking Voice Transcript Content Generator Starting...")
+    logger.info("Enhanced EU Banking Voice Transcript Content Generator Starting...")
     logger.info(f"Database: {DB_NAME}.{VOICE_COLLECTION}")
     logger.info(f"Model: {OLLAMA_MODEL}")
     logger.info(f"Ollama URL: {OLLAMA_URL}")
     logger.info(f"Configuration: {MAX_CONCURRENT} concurrent, {BATCH_SIZE} batch size")
+    logger.info("ENHANCEMENT: Strict message count validation enabled")
     
     # Setup signal handlers
     setup_signal_handlers()
@@ -1189,6 +1327,6 @@ async def main():
         logger.info(f"  Progress: {PROGRESS_LOG_FILE}")
         logger.info(f"  Checkpoint: {CHECKPOINT_FILE}")
 
-# Run the optimized voice transcript generator
+# Run the enhanced voice transcript generator
 if __name__ == "__main__":
     asyncio.run(main())
