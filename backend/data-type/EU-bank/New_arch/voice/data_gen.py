@@ -79,7 +79,7 @@ progress_logger.propagate = False
 logger = logging.getLogger(__name__)
 
 # Conservative configuration to avoid rate limiting
-OPENROUTER_MODEL = "google/gemma-3-27b-it:free"
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gemma3:27b")
 BATCH_SIZE = 3  # Very small batch size to reduce load
 MAX_CONCURRENT = 1  # Single concurrent call to avoid rate limits
 REQUEST_TIMEOUT = 120  # Keep timeout for detailed generation
@@ -89,9 +89,9 @@ BATCH_DELAY = 5.0  # Much longer batch delay
 API_CALL_DELAY = 2.0  # Much longer API delay between calls
 CHECKPOINT_SAVE_INTERVAL = 10  # Very frequent checkpoints
 
-# OpenRouter setup
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
+# Ollama setup (chat-style, like chat_ollama.py)
+OLLAMA_API_KEY = os.getenv("OLLAMA_API_KEY", "bb5beda97d9aee7559d30061452b9fcf402b93818eb0d23d815292f5c479ae93")
+OLLAMA_URL = os.getenv("OLLAMA_URL", "http://34.147.17.26:29020/api/chat")
 
 # Global variables for graceful shutdown
 shutdown_flag = asyncio.Event()
@@ -272,7 +272,11 @@ def setup_signal_handlers():
     """Setup signal handlers for graceful shutdown"""
     def signal_handler(signum, frame):
         logger.info(f"Received signal {signum}. Initiating graceful shutdown...")
-        asyncio.create_task(shutdown_flag.set())
+        # shutdown_flag is an asyncio.Event; set() is synchronous
+        try:
+            shutdown_flag.set()
+        except Exception as e:
+            logger.warning(f"Failed to set shutdown flag: {e}")
         logger.info("Please wait for current operations to complete...")
     
     signal.signal(signal.SIGINT, signal_handler)
@@ -467,8 +471,8 @@ class RateLimitedProcessor:
         self.last_request_time = 0
         self._lock = asyncio.Lock()
     
-    async def call_openrouter_async(self, session, prompt, max_retries=MAX_RETRIES):
-        """Async OpenRouter API call with rate limiting and retries"""
+    async def call_ollama_async(self, session, prompt, max_retries=MAX_RETRIES):
+        """Async Ollama API call (chat-style) with rate limiting and retries"""
         async with self.semaphore:
             # Rate limiting - ensure minimum delay between requests
             async with self._lock:
@@ -479,38 +483,40 @@ class RateLimitedProcessor:
                 self.last_request_time = time.time()
             
             headers = {
-                'Authorization': f'Bearer {OPENROUTER_API_KEY}',
-                'Content-Type': 'application/json',
-                'HTTP-Referer': 'http://localhost:3000',
-                'X-Title': 'EU Banking Voice Transcript Generator'
+                'Authorization': f'Bearer {OLLAMA_API_KEY}',
+                'Content-Type': 'application/json'
             }
             
             payload = {
-                "model": OPENROUTER_MODEL,
-                "messages": [{"role": "user", "content": prompt}],
-                "max_tokens": 1000,  # Reduced for very short conversations (4 messages)
-                "temperature": 0.4   # Lower temperature for more consistent output
+                "model": OLLAMA_MODEL,
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": prompt
+                    }
+                ],
+                "stream": False,
+                "options": {
+                    "temperature": 0.4,
+                    "num_predict": 4000
+                }
             }
             
             for attempt in range(max_retries):
                 try:
                     timeout = aiohttp.ClientTimeout(total=REQUEST_TIMEOUT)
-                    async with session.post(OPENROUTER_URL, json=payload, headers=headers, timeout=timeout) as response:
-                        
-                        if response.status == 429:  # Rate limited
-                            wait_time = min(30, 5 * (2 ** attempt))  # Exponential backoff with max 30s
+                    async with session.post(OLLAMA_URL, json=payload, headers=headers, timeout=timeout) as response:
+                        if response.status == 429:
+                            wait_time = min(30, 5 * (2 ** attempt))
                             logger.warning(f"Rate limited, waiting {wait_time}s before retry {attempt+1}/{max_retries}")
                             await asyncio.sleep(wait_time)
                             continue
-                        
                         response.raise_for_status()
                         result = await response.json()
-                        
-                        if "choices" not in result or not result["choices"]:
-                            raise ValueError("No 'choices' field in OpenRouter response")
-                        
-                        return result["choices"][0]["message"]["content"]
-                        
+                        if "message" not in result or "content" not in result["message"]:
+                            logger.error(f"No 'message.content' field. Fields: {list(result.keys())}")
+                            raise KeyError("No 'message.content' field in Ollama response")
+                        return result["message"]["content"]
                 except asyncio.TimeoutError:
                     logger.warning(f"Request timeout on attempt {attempt+1}/{max_retries}")
                     if attempt < max_retries - 1:
@@ -519,7 +525,10 @@ class RateLimitedProcessor:
                     raise
                 
                 except aiohttp.ClientResponseError as e:
-                    if e.status == 429:  # Rate limit - already handled above
+                    if e.status == 429:
+                        wait_time = min(30, 5 * (2 ** attempt))
+                        logger.warning(f"Rate limited, waiting {wait_time}s before retry {attempt+1}/{max_retries}")
+                        await asyncio.sleep(wait_time)
                         continue
                     logger.error(f"HTTP error {e.status} on attempt {attempt+1}/{max_retries}")
                     if attempt < max_retries - 1:
@@ -555,8 +564,8 @@ async def generate_voice_transcript_content(voice_data):
         
         async with aiohttp.ClientSession(connector=connector, timeout=timeout) as session:
             response = await circuit_breaker.call(
-                processor.call_openrouter_async, 
-                session, 
+                processor.call_ollama_async,
+                session,
                 prompt
             )
         
@@ -724,7 +733,7 @@ def build_update_from_voice_result(voice_record, generated):
     # Add LLM processing tracking
     update['llm_processed'] = True
     update['llm_processed_at'] = datetime.now().isoformat()
-    update['llm_model_used'] = OPENROUTER_MODEL
+    update['llm_model_used'] = OLLAMA_MODEL
     
     return update
 
@@ -865,11 +874,11 @@ async def process_voice_calls_optimized():
     logger.info(f"  Batch Size: {BATCH_SIZE}")
     logger.info(f"  API Delay: {API_CALL_DELAY}s")
     logger.info(f"  Request Timeout: {REQUEST_TIMEOUT}s")
-    logger.info(f"  Model: {OPENROUTER_MODEL}")
+    logger.info(f"  Model: {OLLAMA_MODEL}")
     
     # Test connection
-    if not await test_openrouter_connection():
-        logger.error("Cannot proceed without OpenRouter connection")
+    if not await test_ollama_connection():
+        logger.error("Cannot proceed without Ollama connection")
         return
     
     # Get voice calls to process - only those that have NEVER been processed by LLM
@@ -1063,42 +1072,41 @@ async def process_voice_calls_optimized():
     finally:
         await checkpoint_manager.save_checkpoint()
 
-async def test_openrouter_connection():
-    """Test OpenRouter connection with async client"""
+async def test_ollama_connection():
+    """Test Ollama connection with async client"""
     try:
-        logger.info("Testing OpenRouter connection...")
-        
+        logger.info("Testing Ollama connection...")
+
         headers = {
-            'Authorization': f'Bearer {OPENROUTER_API_KEY}',
-            'Content-Type': 'application/json',
-            'HTTP-Referer': 'http://localhost:3000',
-            'X-Title': 'EU Banking Voice Transcript Generator'
+            'Authorization': f'Bearer {OLLAMA_API_KEY}',
+            'Content-Type': 'application/json'
         }
-        
+
         test_payload = {
-            "model": OPENROUTER_MODEL,
-            "messages": [{"role": "user", "content": 'Generate JSON: {"test": "success"}'}],
-            "max_tokens": 50
+            "model": OLLAMA_MODEL,
+            "messages": [{"role": "user", "content": "Generate a JSON object with 'test': 'success'"}],
+            "stream": False,
+            "options": {"num_predict": 20}
         }
-        
+
         connector = aiohttp.TCPConnector(force_close=True, enable_cleanup_closed=True)
         timeout = aiohttp.ClientTimeout(total=30)
         
         async with aiohttp.ClientSession(connector=connector, timeout=timeout) as session:
-            async with session.post(OPENROUTER_URL, json=test_payload, headers=headers) as response:
+            # Direct POST to chat-style endpoint
+            async with session.post(OLLAMA_URL, json=test_payload, headers=headers) as response:
                 response.raise_for_status()
                 result = await response.json()
-                
-                if "choices" in result and result["choices"]:
-                    logger.info("OpenRouter connection test successful")
-                    logger.info(f"Test response: {result['choices'][0]['message']['content'][:100]}...")
+                if "message" in result and "content" in result["message"]:
+                    logger.info("Ollama connection test successful")
+                    logger.info(f"Test response: {result['message']['content'][:100]}...")
                     return True
                 else:
-                    logger.error("Invalid response structure from OpenRouter")
+                    logger.error(f"No 'message.content' field in test. Fields: {list(result.keys())}")
                     return False
         
     except Exception as e:
-        logger.error(f"OpenRouter connection test failed: {e}")
+        logger.error(f"Ollama connection test failed: {e}")
         return False
 
 def get_collection_stats():
@@ -1140,7 +1148,8 @@ async def main():
     """Main async function"""
     logger.info("Optimized EU Banking Voice Transcript Content Generator Starting...")
     logger.info(f"Database: {DB_NAME}.{VOICE_COLLECTION}")
-    logger.info(f"Model: {OPENROUTER_MODEL}")
+    logger.info(f"Model: {OLLAMA_MODEL}")
+    logger.info(f"Ollama URL: {OLLAMA_URL}")
     logger.info(f"Configuration: {MAX_CONCURRENT} concurrent, {BATCH_SIZE} batch size")
     
     # Setup signal handlers
