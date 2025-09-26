@@ -1,4 +1,4 @@
-# EU Banking Chat Content Generator - Optimized Version
+# EU Banking Voice Transcript Content Generator - Enhanced Version
 import os
 import random
 import time
@@ -31,7 +31,7 @@ load_dotenv()
 # MongoDB setup
 MONGO_URI = os.getenv("MONGO_CONNECTION_STRING")
 DB_NAME = "sparzaai"
-CHAT_COLLECTION = "chat"
+VOICE_COLLECTION = "voice_transcripts"
 
 # Logging setup
 LOG_DIR = Path("logs")
@@ -39,11 +39,11 @@ LOG_DIR.mkdir(exist_ok=True)
 
 # Create timestamped log files
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-MAIN_LOG_FILE = LOG_DIR / f"optimized_chat_generator_{timestamp}.log"
-SUCCESS_LOG_FILE = LOG_DIR / f"successful_generations_{timestamp}.log"
-FAILURE_LOG_FILE = LOG_DIR / f"failed_generations_{timestamp}.log"
-PROGRESS_LOG_FILE = LOG_DIR / f"progress_{timestamp}.log"
-CHECKPOINT_FILE = LOG_DIR / f"checkpoint_{timestamp}.json"
+MAIN_LOG_FILE = LOG_DIR / f"voice_transcript_generator_{timestamp}.log"
+SUCCESS_LOG_FILE = LOG_DIR / f"successful_voice_generations_{timestamp}.log"
+FAILURE_LOG_FILE = LOG_DIR / f"failed_voice_generations_{timestamp}.log"
+PROGRESS_LOG_FILE = LOG_DIR / f"voice_progress_{timestamp}.log"
+CHECKPOINT_FILE = LOG_DIR / f"voice_checkpoint_{timestamp}.json"
 
 # Configure main logger
 logging.basicConfig(
@@ -98,7 +98,7 @@ OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 shutdown_flag = asyncio.Event()
 client = None
 db = None
-chat_col = None
+voice_col = None
 
 # Custom JSON encoder to handle ObjectId serialization
 class ObjectIdEncoder(json.JSONEncoder):
@@ -134,35 +134,35 @@ update_counter = AtomicCounter("UPDATE_COUNT")
 class PerformanceMonitor:
     def __init__(self):
         self.start_time = time.time()
-        self.chats_processed = 0
+        self.calls_processed = 0
         self.successful_requests = 0
         self.failed_requests = 0
         self._lock = asyncio.Lock()
     
-    async def record_success(self, total_chats=None):
+    async def record_success(self, total_calls=None):
         async with self._lock:
             self.successful_requests += 1
-            self.chats_processed += 1
-            await self.log_progress(total_chats)
+            self.calls_processed += 1
+            await self.log_progress(total_calls)
     
-    async def record_failure(self, total_chats=None):
+    async def record_failure(self, total_calls=None):
         async with self._lock:
             self.failed_requests += 1
-            await self.log_progress(total_chats)
+            await self.log_progress(total_calls)
     
-    async def log_progress(self, total_chats=None):
-        if self.chats_processed % 100 == 0 and self.chats_processed > 0:
+    async def log_progress(self, total_calls=None):
+        if self.calls_processed % 100 == 0 and self.calls_processed > 0:
             elapsed = time.time() - self.start_time
-            rate = self.chats_processed / elapsed if elapsed > 0 else 0
-            remaining_chats = (total_chats - self.chats_processed) if total_chats else 0
-            eta = remaining_chats / rate if rate > 0 and remaining_chats > 0 else 0
+            rate = self.calls_processed / elapsed if elapsed > 0 else 0
+            remaining_calls = (total_calls - self.calls_processed) if total_calls else 0
+            eta = remaining_calls / rate if rate > 0 and remaining_calls > 0 else 0
             
             logger.info(f"Performance Stats:")
-            if total_chats:
-                logger.info(f"  Processed: {self.chats_processed}/{total_chats} chats")
+            if total_calls:
+                logger.info(f"  Processed: {self.calls_processed}/{total_calls} voice calls")
             else:
-                logger.info(f"  Processed: {self.chats_processed} chats")
-            logger.info(f"  Rate: {rate:.2f} chats/second ({rate*3600:.0f} chats/hour)")
+                logger.info(f"  Processed: {self.calls_processed} voice calls")
+            logger.info(f"  Rate: {rate:.2f} calls/second ({rate*3600:.0f} calls/hour)")
             logger.info(f"  Success rate: {self.successful_requests/(self.successful_requests + self.failed_requests)*100:.1f}%")
             if eta > 0:
                 logger.info(f"  ETA: {eta/3600:.1f} hours remaining")
@@ -217,8 +217,8 @@ circuit_breaker = CircuitBreaker()
 class CheckpointManager:
     def __init__(self, checkpoint_file):
         self.checkpoint_file = checkpoint_file
-        self.processed_chats = set()
-        self.failed_chats = set()
+        self.processed_calls = set()
+        self.failed_calls = set()
         self.stats = {
             'start_time': time.time(),
             'processed_count': 0,
@@ -233,10 +233,10 @@ class CheckpointManager:
             if os.path.exists(self.checkpoint_file):
                 with open(self.checkpoint_file, 'r') as f:
                     data = json.load(f)
-                    self.processed_chats = set(data.get('processed_chats', []))
-                    self.failed_chats = set(data.get('failed_chats', []))
+                    self.processed_calls = set(data.get('processed_calls', []))
+                    self.failed_calls = set(data.get('failed_calls', []))
                     self.stats.update(data.get('stats', {}))
-                logger.info(f"Loaded checkpoint: {len(self.processed_chats)} processed, {len(self.failed_chats)} failed")
+                logger.info(f"Loaded checkpoint: {len(self.processed_calls)} processed, {len(self.failed_calls)} failed")
         except Exception as e:
             logger.warning(f"Could not load checkpoint: {e}")
     
@@ -244,8 +244,8 @@ class CheckpointManager:
         async with self._lock:
             try:
                 checkpoint_data = {
-                    'processed_chats': list(self.processed_chats),
-                    'failed_chats': list(self.failed_chats),
+                    'processed_calls': list(self.processed_calls),
+                    'failed_calls': list(self.failed_calls),
                     'stats': self.stats,
                     'timestamp': datetime.now().isoformat()
                 }
@@ -254,21 +254,21 @@ class CheckpointManager:
             except Exception as e:
                 logger.error(f"Could not save checkpoint: {e}")
     
-    def is_processed(self, chat_id):
-        return str(chat_id) in self.processed_chats
+    def is_processed(self, call_id):
+        return str(call_id) in self.processed_calls
     
-    async def mark_processed(self, chat_id, success=True):
+    async def mark_processed(self, call_id, success=True):
         async with self._lock:
-            chat_id_str = str(chat_id)
-            self.processed_chats.add(chat_id_str)
+            call_id_str = str(call_id)
+            self.processed_calls.add(call_id_str)
             self.stats['processed_count'] += 1
             
             if success:
                 self.stats['success_count'] += 1
-                self.failed_chats.discard(chat_id_str)
+                self.failed_calls.discard(call_id_str)
             else:
                 self.stats['failure_count'] += 1
-                self.failed_chats.add(chat_id_str)
+                self.failed_calls.add(call_id_str)
             
             # Auto-save every CHECKPOINT_SAVE_INTERVAL
             if self.stats['processed_count'] % CHECKPOINT_SAVE_INTERVAL == 0:
@@ -298,17 +298,17 @@ def cleanup_resources():
 
 def init_database():
     """Initialize database connection with error handling"""
-    global client, db, chat_col
+    global client, db, voice_col
     try:
         client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=5000)
         client.admin.command('ping')
         db = client[DB_NAME]
-        chat_col = db[CHAT_COLLECTION]
+        voice_col = db[VOICE_COLLECTION]
         
         # Create indexes for better performance
-        chat_col.create_index("_id")
-        chat_col.create_index("dominant_topic")
-        chat_col.create_index("urgency")
+        voice_col.create_index("_id")
+        voice_col.create_index("dominant_topic")
+        voice_col.create_index("urgency")
         logger.info("Database connection established and indexes created")
         return True
         
@@ -316,94 +316,155 @@ def init_database():
         logger.error(f"Database connection failed: {e}")
         return False
 
-def generate_optimized_prompt(chat_data):
-    """Generate highly optimized prompt for chat content"""
-    dominant_topic = chat_data.get('dominant_topic', 'General Banking Discussion')
-    subtopics = chat_data.get('subtopics', 'Business discussion')
-    message_count = chat_data.get('chat', {}).get('message_count', 2)
-    existing_urgency = chat_data.get('urgency', False)
-    existing_follow_up = chat_data.get('follow_up_required', 'no')
+def get_participant_names_and_roles(voice_data):
+    """Get participant names and their roles from voice record - FIXED LOGIC"""
+    # Default values
+    customer_name = 'Customer'
+    agent_name = 'Bank Agent'
     
-    # Get participant names from chat record
-    participants = chat_data.get('chat', {}).get('members', [])
-    participant_names = [member.get('displayName', 'User') for member in participants[:2]]  # Get first 2 participants
-    if len(participant_names) < 2:
-        participant_names = ['Alexa Thomas', 'Derrick Perry']  # Default names
+    # Get participant names and roles from voice record
+    thread_info = voice_data.get('thread', {})
+    if isinstance(thread_info, dict):
+        members = thread_info.get('members', [])
+        if isinstance(members, list):
+            for member in members:
+                if isinstance(member, dict):
+                    display_name = member.get('displayName', '')
+                    member_id = member.get('id', '')
+                    
+                    # FIXED LOGIC: If display name is "Bank Agent", this person is the agent
+                    if display_name == 'Bank Agent' or member_id.endswith('@bank.com'):
+                        agent_name = display_name or 'Bank Agent'
+                    else:
+                        # If display name is a common person name (not "Bank Agent"), this is the customer
+                        customer_name = display_name or 'Customer'
+    
+    return {
+        'customer': customer_name, 
+        'agent': agent_name,
+        # For conversation logic: determine who starts based on call flow (customer always calls first)
+        'customer_starts': True  # Banking calls always start with customer calling
+    }
+
+def generate_optimized_voice_prompt(voice_data):
+    """Generate highly optimized prompt for voice transcript content - FIXED CONVERSATION FLOW"""
+    dominant_topic = voice_data.get('dominant_topic', 'General Banking Inquiry')
+    subtopics = voice_data.get('subtopics', 'Account information')
+    message_count = voice_data.get('thread', {}).get('message_count', 2)
+    existing_urgency = voice_data.get('urgency', False)
+    existing_follow_up = voice_data.get('follow_up_required', 'no')
+    
+    # Get participant names and roles - FIXED
+    participant_info = get_participant_names_and_roles(voice_data)
+    customer_name = participant_info['customer']
+    agent_name = participant_info['agent']
     
     urgency_context = "URGENT" if existing_urgency else "NON-URGENT"
     
-    prompt = f"""Generate EU banking chat conversation JSON. CRITICAL: Return ONLY valid JSON, no other text.
+    # Generate realistic banking details
+    account_number = f"{random.randint(100000000000, 999999999999)}"
+    call_reference = f"CALL{random.randint(10000, 99999)}"
+    
+    prompt = f"""Generate EU banking voice call transcript JSON. CRITICAL: Return ONLY valid JSON, no other text.
 
 CONTEXT:
 Topic: {dominant_topic} | Subtopic: {subtopics}
 Messages: {message_count} | Urgency: {urgency_context} ({existing_urgency})
 Follow-up Required: {existing_follow_up} (MUST PRESERVE THIS VALUE)
-Participants: {participant_names[0]} and {participant_names[1]}
+Customer: {customer_name} | Agent: {agent_name}
+Account: {account_number} | Call Reference: {call_reference}
 
-DEPARTMENTS AVAILABLE:
-- Finance Department
-- Risk Management
-- Compliance Department  
-- IT Department
-- Operations Department
-- Human Resources
-- Audit Department
-- Customer Service
-- Legal Department
+CRITICAL CONVERSATION RULES - SPEAKER ASSIGNMENT:
+- Customer ({customer_name}): ALWAYS speaks first (calls the bank), uses emotional/natural language
+- Agent ({agent_name}): Responds professionally, uses bank terminology, NEVER says "I am a bank agent" or "I am {agent_name}"
+- Alternate speakers: Customer → Agent → Customer → Agent (strict pattern)
+- Agent responses should be helpful without mentioning their role/title: "I'm here to help", "Let me check that", "I'll guide you through this"
+
+CONVERSATION FLOW (MANDATORY SEQUENCE):
+1. Customer calls and states their problem briefly (emotional tone appropriate to {urgency_context})
+2. Agent greets professionally: "Thank you for calling EU Bank, I'm here to help. Can I get your full name for verification?"
+3. Agent asks for specific details based on the problem and {dominant_topic}
+4. Customer provides requested information
+5. Agent investigates/processes, asks clarifying questions if needed
+6. Agent provides resolution or next steps
+7. Professional call closure: "Thank you for your patience", "Have a great day"
+
+VOICE CONVERSATION REQUIREMENTS:
+- Natural spoken language with "um", "uh", contractions, pauses
+- Agent uses helpful phrases: "I understand", "Let me check that", "I'll help you resolve this"
+- Customer uses emotional tone appropriate to {urgency_context}
+- NO repetition - each message progresses the conversation
+- End properly when resolved - don't continue unnecessarily
+- Messages should be 30-100 words (natural voice call length)
+- Agent NEVER mentions being "bank agent" or their title - just be helpful and professional
 
 OUTPUT FORMAT REQUIRED - EXACTLY THIS STRUCTURE:
 {{
-  "assigned_department": "exact department name from list above",
-  "chat_summary": "Business summary 150-200 words describing discussion topic, participants, key points",
+  "call_summary": "Professional call summary 100-150 words describing customer issue, verification process, resolution/action taken",
   "action_pending_status": "yes|no",
   "action_pending_from": "company|customer|null (null if action_pending_status=no)",
-  "chat_status": "active|resolved|archived",
+  "resolution_status": "open|inprogress|closed",
   "follow_up_required": "yes|no (MUST match existing value: {existing_follow_up})",
   "follow_up_date": "2025-MM-DDTHH:MM:SS or null (provide date if follow_up_required=yes, can be null if no)",
-  "follow_up_reason": "specific reason WHY follow-up is needed or null (examples: 'To finalize quarterly budget review', 'To complete compliance documentation', 'To review implementation progress', 'To gather additional stakeholder feedback', 'To confirm action items completion', 'To schedule follow-up meeting', 'To validate proposed solutions', 'To monitor project status', 'To ensure regulatory requirements are met' - provide contextual reason if follow_up_required=yes, null if no)",
+  "follow_up_reason": "specific reason WHY follow-up is needed or null (if follow_up_required=yes, provide contextual reason like 'To confirm transaction reversal completed', 'To verify card replacement received', null if no)",
   "next_action_suggestion": "Next step recommendation 50-80 words",
   "messages": [
     {{
-      "content": "Professional chat message 10-150 words from {participant_names[0]}. Use natural business conversation style with proper formatting. Base content on {dominant_topic} and {subtopics}. Message should be contextually relevant to banking business discussion. Use professional but conversational tone appropriate for internal team chat. Vary message length realistically - some messages can be short (10-30 words) for quick responses, others longer (50-150 words) for detailed discussions.",
-      "from_user": "{participant_names[0]}",
-      "timestamp": "2025-MM-DD HH:MM:SS (Generate date between 2025-01-01 and 2025-06-30, use realistic business hours 08:00-18:00 for routine discussions, 00:00-23:59 for urgent matters)"
+      "content": "Customer voice message - initial problem description. Use natural spoken language: 'Hi, um, I'm calling because...'. Brief but clear about the issue. 30-100 words. Express appropriate emotion for {urgency_context}. DO NOT include 'Customer:' or 'Customer (name):' prefix - just the actual spoken content.",
+      "sender_type": "customer",
+      "headers": {{
+        "date": "2025-MM-DD HH:MM:SS (Generate date between 2025-01-01 and 2025-06-30, use business hours 08:00-18:00 for routine, any time for urgent)"
+      }}
     }}{"," if message_count > 1 else ""}
-    {"{"}"content": "Professional chat message 10-150 words from {participant_names[1]}. Use natural business conversation style responding to previous message. Base content on {dominant_topic} and {subtopics}. Message should continue the conversation naturally. Use professional but conversational tone appropriate for internal team chat. Vary message length realistically - some messages can be short (10-30 words) for quick responses, others longer (50-150 words) for detailed discussions.",
-    "from_user": "{participant_names[1]}",
-    "timestamp": "2025-MM-DD HH:MM:SS (Generate date between 2025-01-01 and 2025-06-30, use realistic business hours 08:00-18:00 for routine discussions, 00:00-23:59 for urgent matters)"
-    {"}"}{"" if message_count <= 2 else "... continue alternating pattern for " + str(message_count) + " total messages with same detailed format"}
+    {"{"}"content": "Agent response - Professional greeting and name request. DO NOT say 'I am a bank agent' or mention your title. Use: 'Thank you for calling EU Bank, I'm here to help you today. Can I get your full name please for verification?'. 40-80 words. DO NOT include 'Agent:' or 'Bank Agent:' prefix - just the actual spoken content.",
+    "sender_type": "company",
+    "headers": {{
+      "date": "2025-MM-DD HH:MM:SS (Few seconds after customer call)"
+    }}
+    {"}"}{"" if message_count <= 2 else "... continue alternating pattern for " + str(message_count) + " total messages following conversation flow. Agent NEVER mentions being 'bank agent' - just be helpful: 'I'll help you with this', 'Let me guide you', 'I understand your concern'. DO NOT include speaker prefixes like 'Agent:' or 'Customer:' - just the actual spoken content"}
   ],
-  "sentiment": {{"0": sentiment_score_message_1, "1": sentiment_score_message_2{"..." if message_count > 2 else ""}}} (Individual message sentiment analysis using human emotional tone 0-5 scale. Generate sentiment for each message based on message_count:
-- 0: Happy (pleased, satisfied, positive)
-- 1: Calm (baseline for professional communication)  
-- 2: Bit Concerned (slight concern or questioning)
-- 3: Moderately Concerned (growing concern or urgency)
-- 4: Stressed (clear stress or pressure)
-- 5: Very Stressed (high stress, very urgent)
-CRITICAL: If message_count is 1, only generate sentiment for message "0". If message_count is 2, generate sentiment for "0" and "1", etc.),
-  "overall_sentiment": 0.0-5.0 (overall chat sentiment based on discussion urgency and tone),
-  "chat_started": "2025-01-01T08:00:00 to 2025-06-30T18:00:00 (business hours for routine, after-hours for urgent)",
+  "sentiment": {{"0": sentiment_score_message_1, "1": sentiment_score_message_2{"..." if message_count > 2 else ""}}} (Individual message sentiment analysis using voice emotional tone 0-5 scale:
+- 0: Happy/Satisfied (pleased with service)
+- 1: Calm/Professional (baseline conversation tone)  
+- 2: Bit Concerned (slight worry or questioning)
+- 3: Moderately Concerned (worried about issue)
+- 4: Stressed/Frustrated (clear stress in voice)
+- 5: Very Stressed/Urgent (high stress, very emotional)
+CRITICAL: Generate sentiment for exactly {message_count} messages),
+  "overall_sentiment": 0.0-5.0 (overall call sentiment based on issue resolution and customer satisfaction),
+  "call_started": "2025-01-01T08:00:00 to 2025-06-30T18:00:00 (business hours for routine, after-hours for urgent)",
   "thread_dates": {{
-    "first_message_at": "2025-MM-DD HH:MM:SS (Use the earliest timestamp from messages)",
-    "last_message_at": "2025-MM-DD HH:MM:SS (Use the latest timestamp from messages)"
+    "first_message_at": "2025-MM-DD HH:MM:SS (earliest timestamp from messages)",
+    "last_message_at": "2025-MM-DD HH:MM:SS (latest timestamp from messages)"
   }}
 }}
 
 VALIDATION REQUIREMENTS:
-✓ Generate exactly {message_count} messages alternating between {participant_names[0]} and {participant_names[1]}
-✓ Match urgency={existing_urgency} in content tone
-✓ Each message must be 10-150 words with realistic business chat format (vary length naturally - short responses 10-30 words, detailed messages 50-150 words)
-✓ Messages should be natural conversation about {dominant_topic} related to banking business
-✓ Use professional but conversational tone suitable for internal team communication
-✓ Sentiment matches message count: {message_count} entries (CRITICAL: If message_count=1, only generate sentiment for "0". If message_count=2, generate for "0" and "1", etc.)
-✓ Sentiment analysis: Use business communication tone scale (0: Happy/positive, 1: Calm/professional baseline, 2: Bit Concerned/questioning, 3: Moderately Concerned/urgent, 4: Stressed/pressured, 5: Very Stressed/critical)
-✓ Overall sentiment: Consider discussion urgency and business impact
-✓ Follow-up fields: CRITICAL - follow_up_required MUST match existing value "{existing_follow_up}". If existing value is "no", set follow_up_required="no" and leave date/reason as null. If existing value is "yes", set follow_up_required="yes" and provide meaningful follow_up_date and specific follow_up_reason explaining WHY follow-up is needed
-✓ Date generation: CRITICAL - All dates must be between 2025-01-01 and 2025-06-30. Use format "2025-MM-DD HH:MM:SS". Generate realistic chronological order. Use business hours (08:00-18:00) for routine discussions, any time (00:00-23:59) for urgent matters. Set thread_dates properly based on message timestamps.
-✓ Include realistic banking business terminology appropriate to the specific topic
-✓ Department assignment should be contextually relevant to the discussion topic
+✓ Generate exactly {message_count} messages alternating customer/company (start with customer: {customer_name})
+✓ Follow MANDATORY conversation sequence: problem → name verification → details → resolution → closure
+✓ Agent MUST ask for customer's full name early in conversation
+✓ Each message progresses conversation forward - NO repetition
+✓ Use natural voice call language with spoken patterns, contractions
+✓ Customer messages: Natural speech with emotional tone, include hesitations "um", "uh"
+✓ Agent messages: Professional but friendly. NEVER say "I am a bank agent" or mention title/role
+✓ Agent helpful phrases: "I'm here to help", "Let me check that", "I'll guide you", "I understand", "We'll resolve this"
+✓ Agent closing: Professional conclusion like "Thank you for your patience", "Is there anything else I can help you with?", "Thank you for choosing EU Bank"
+✓ CRITICAL: Message content must NOT include speaker prefixes like "Agent:", "Customer:", "Customer (Name):", "Bank Agent:" - only the actual spoken words
+✓ Match urgency={existing_urgency} in conversation tone
+✓ Sentiment matches message count: {message_count} entries exactly
+✓ Follow-up fields: CRITICAL - follow_up_required MUST match existing value "{existing_follow_up}"
+✓ Date generation: All dates between 2025-01-01 and 2025-06-30, chronological order
+✓ Include realistic banking references: account {account_number}, call reference {call_reference}
+✓ End conversation properly when issue is resolved - don't continue unnecessarily
+✓ Use "thread_dates" (plural) with "first_message_at" and "last_message_at"
 
-Return ONLY the JSON object above with realistic values.
+CRITICAL SPEAKER RULES:
+- Message 1: ALWAYS customer ({customer_name}) - states problem
+- Message 2: ALWAYS agent - professional greeting, asks for name, NO mention of being "bank agent"  
+- Messages 3+: Alternate customer/agent - agent stays helpful without role mentions
+- CONTENT RULE: Never include speaker prefixes in message content - only the actual spoken words
+
+Return ONLY the JSON object above with realistic voice call values.
 """
     
     return prompt
@@ -430,7 +491,7 @@ class RateLimitedProcessor:
                 'Authorization': f'Bearer {OPENROUTER_API_KEY}',
                 'Content-Type': 'application/json',
                 'HTTP-Referer': 'http://localhost:3000',
-                'X-Title': 'EU Banking Chat Generator'
+                'X-Title': 'EU Banking Voice Generator'
             }
             
             payload = {
@@ -486,16 +547,16 @@ class RateLimitedProcessor:
 
 processor = RateLimitedProcessor()
 
-async def generate_chat_content(chat_data):
-    """Generate chat content with optimized processing"""
+async def generate_voice_transcript_content(voice_data):
+    """Generate voice transcript content with optimized processing"""
     if shutdown_flag.is_set():
         return None
     
     start_time = time.time()
-    chat_id = str(chat_data.get('_id', 'unknown'))
+    call_id = str(voice_data.get('_id', 'unknown'))
     
     try:
-        prompt = generate_optimized_prompt(chat_data)
+        prompt = generate_optimized_voice_prompt(voice_data)
         
         # Create session for this batch
         connector = aiohttp.TCPConnector(limit=10, force_close=True, enable_cleanup_closed=True)
@@ -529,94 +590,59 @@ async def generate_chat_content(chat_data):
         
         try:
             result = json.loads(reply)
-            logger.info(f"Chat {chat_id}: JSON parsing successful. Keys: {list(result.keys())}")
+            logger.info(f"Call {call_id}: JSON parsing successful. Keys: {list(result.keys())}")
         except json.JSONDecodeError as json_err:
-            logger.error(f"JSON parsing failed for chat {chat_id}. Raw response: {reply[:300]}...")
-            logger.error(f"Chat {chat_id}: Full LLM response: {response[:500]}...")
+            logger.error(f"JSON parsing failed for call {call_id}. Raw response: {reply[:300]}...")
             raise ValueError(f"Invalid JSON response from LLM: {json_err}")
         
         # Validate required fields
         required_fields = [
-            'assigned_department', 'chat_summary',
-            'action_pending_status', 'action_pending_from', 'chat_status',
-            'follow_up_required', 'follow_up_date', 'follow_up_reason', 'next_action_suggestion', 
-            'sentiment', 'overall_sentiment', 'chat_started', 'messages'
+            'call_summary', 'action_pending_status', 'action_pending_from', 'resolution_status',
+            'follow_up_required', 'follow_up_date', 'follow_up_reason', 'next_action_suggestion',
+            'sentiment', 'overall_sentiment', 'call_started', 'messages'
         ]
         
         missing_fields = [field for field in required_fields if field not in result]
         if missing_fields:
-            logger.error(f"Chat {chat_id}: Missing required fields: {missing_fields}")
-            logger.error(f"Chat {chat_id}: Generated result keys: {list(result.keys())}")
-            logger.error(f"Chat {chat_id}: Raw LLM response: {response[:500]}...")
+            logger.error(f"Call {call_id}: Missing required fields: {missing_fields}")
             raise ValueError(f"Missing required fields: {missing_fields}")
         
         # Validate messages count
-        message_count = chat_data.get('chat', {}).get('message_count', 2)
+        message_count = voice_data.get('thread', {}).get('message_count', 2)
         if len(result['messages']) != message_count:
-            logger.warning(f"Chat {chat_id}: Expected {message_count} messages, got {len(result['messages'])}")
+            logger.warning(f"Call {call_id}: Expected {message_count} messages, got {len(result['messages'])}")
             # Adjust to correct count
             if len(result['messages']) > message_count:
                 result['messages'] = result['messages'][:message_count]
         
         # Validate sentiment count matches message count
         if len(result['sentiment']) != len(result['messages']):
-            logger.warning(f"Chat {chat_id}: Sentiment count mismatch, adjusting...")
+            logger.warning(f"Call {call_id}: Sentiment count mismatch, adjusting...")
             result['sentiment'] = {str(i): result['sentiment'].get(str(i), 1) for i in range(len(result['messages']))}
         
-        # Validate message word counts for realism
-        for i, message in enumerate(result.get('messages', [])):
-            if isinstance(message, dict) and 'content' in message:
-                content = message['content']
-                word_count = len(content.split())
-                if word_count < 10:
-                    logger.warning(f"Chat {chat_id}: Message {i} too short ({word_count} words), expanding...")
-                    # Add some context to make it more realistic
-                    message['content'] = f"{content} Let me provide more details about this matter."
-                elif word_count > 150:
-                    logger.warning(f"Chat {chat_id}: Message {i} too long ({word_count} words), truncating...")
-                    # Truncate to 150 words
-                    words = content.split()
-                    message['content'] = ' '.join(words[:150])
-        
         # Validate follow_up_required matches existing value
-        existing_follow_up = chat_data.get('follow_up_required', 'no')
+        existing_follow_up = voice_data.get('follow_up_required', 'no')
         if result.get('follow_up_required') != existing_follow_up:
-            logger.warning(f"Chat {chat_id}: LLM generated follow_up_required='{result.get('follow_up_required')}' but existing value is '{existing_follow_up}'. Correcting...")
+            logger.warning(f"Call {call_id}: LLM generated follow_up_required='{result.get('follow_up_required')}' but existing value is '{existing_follow_up}'. Correcting...")
             result['follow_up_required'] = existing_follow_up
         
         # Validate action_pending_from values
         valid_action_sources = ['company', 'customer', None, 'null']
         action_pending_from = result.get('action_pending_from')
         if action_pending_from not in valid_action_sources:
-            logger.warning(f"Chat {chat_id}: Invalid action_pending_from='{action_pending_from}', correcting to 'company'")
+            logger.warning(f"Call {call_id}: Invalid action_pending_from='{action_pending_from}', correcting to 'company'")
             result['action_pending_from'] = 'company'
         elif action_pending_from == 'null':
             result['action_pending_from'] = None
-        
-        # Validate date format and range
-        try:
-            chat_date = datetime.fromisoformat(result['chat_started'].replace('Z', ''))
-            start_date = datetime(2025, 1, 1)
-            end_date = datetime(2025, 6, 30, 23, 59, 59)
-            
-            if not (start_date <= chat_date <= end_date):
-                if chat_date > end_date:
-                    chat_date = end_date
-                elif chat_date < start_date:
-                    chat_date = start_date
-                result['chat_started'] = chat_date.strftime('%Y-%m-%dT%H:%M:%S')
-        except:
-            # Default date if parsing fails
-            result['chat_started'] = '2025-03-15T12:00:00'
         
         generation_time = time.time() - start_time
         
         # Log success
         success_info = {
-            'chat_id': chat_id,
-            'dominant_topic': chat_data.get('dominant_topic'),
-            'urgency': chat_data.get('urgency'),
-            'chat_status': result['chat_status'],
+            'call_id': call_id,
+            'dominant_topic': voice_data.get('dominant_topic'),
+            'urgency': voice_data.get('urgency'),
+            'resolution_status': result['resolution_status'],
             'generation_time': generation_time
         }
         success_logger.info(json.dumps(success_info, cls=ObjectIdEncoder))
@@ -626,117 +652,152 @@ async def generate_chat_content(chat_data):
     except Exception as e:
         generation_time = time.time() - start_time
         error_info = {
-            'chat_id': chat_id,
-            'dominant_topic': chat_data.get('dominant_topic', 'Unknown'),
+            'call_id': call_id,
+            'dominant_topic': voice_data.get('dominant_topic', 'Unknown'),
             'error': str(e)[:200],
             'generation_time': generation_time
         }
         failure_logger.error(json.dumps(error_info, cls=ObjectIdEncoder))
         raise
 
-def populate_chat_messages(chat_record, generated_messages):
-    """Populate chat messages with generated content"""
+def clean_speaker_prefixes(content):
+    """Remove speaker prefixes from message content before saving to database"""
+    if not content or not isinstance(content, str):
+        return content
+    
+    original_content = content
+    # Remove common speaker prefix patterns
+    import re
+    
+    # Pattern 1: "Agent: " or "Agent:" at the start
+    content = re.sub(r'^Agent:\s*', '', content, flags=re.IGNORECASE)
+    
+    # Pattern 2: "Customer (Name): " or "Customer (Name):" at the start
+    content = re.sub(r'^Customer\s*\([^)]+\):\s*', '', content, flags=re.IGNORECASE)
+    
+    # Pattern 3: "Customer: " or "Customer:" at the start
+    content = re.sub(r'^Customer:\s*', '', content, flags=re.IGNORECASE)
+    
+    # Pattern 4: "Bank Agent: " or "Bank Agent:" at the start
+    content = re.sub(r'^Bank\s+Agent:\s*', '', content, flags=re.IGNORECASE)
+    
+    # Pattern 5: Any other "Name: " pattern at the start (fallback)
+    content = re.sub(r'^[A-Za-z\s]+\([^)]+\):\s*', '', content)
+    
+    # Clean up any extra whitespace
+    content = content.strip()
+    
+    # Log if content was modified
+    if content != original_content:
+        logger.debug(f"Cleaned speaker prefix: '{original_content[:50]}...' -> '{content[:50]}...'")
+    
+    return content
+
+def populate_voice_messages(voice_record, generated_messages):
+    """Populate voice messages with generated content"""
     updates = {}
     
     # Update messages with generated content
-    if chat_record.get('messages') and generated_messages:
-        for msg_idx, message in enumerate(chat_record['messages']):
+    if voice_record.get('messages') and generated_messages:
+        for msg_idx, message in enumerate(voice_record['messages']):
             if msg_idx < len(generated_messages):
                 generated_msg = generated_messages[msg_idx]
                 
-                # Update message content
-                updates[f'messages.{msg_idx}.body.content'] = generated_msg['content']
+                # Clean speaker prefixes from content before saving
+                cleaned_content = clean_speaker_prefixes(generated_msg['content'])
+                
+                # Update message content with cleaned version
+                updates[f'messages.{msg_idx}.body.content'] = cleaned_content
                 
                 # Update timestamp
-                if 'timestamp' in generated_msg:
-                    updates[f'messages.{msg_idx}.createdDateTime'] = generated_msg['timestamp']
+                if 'headers' in generated_msg and 'date' in generated_msg['headers']:
+                    updates[f'messages.{msg_idx}.createdDateTime'] = generated_msg['headers']['date']
     
     return updates
 
-async def process_single_chat(chat_record, total_chats=None):
-    """Process a single chat with all optimizations"""
+async def process_single_voice_call(voice_record, total_calls=None):
+    """Process a single voice call with all optimizations"""
     if shutdown_flag.is_set():
         return None
     
-    chat_id = str(chat_record.get('_id', 'unknown'))
+    call_id = str(voice_record.get('_id', 'unknown'))
     
     try:
-        return await _process_single_chat_internal(chat_record, total_chats)
+        return await _process_single_voice_call_internal(voice_record, total_calls)
     except Exception as e:
-        logger.error(f"Chat {chat_id} processing failed with error: {str(e)[:100]}")
-        await performance_monitor.record_failure(total_chats)
+        logger.error(f"Call {call_id} processing failed with error: {str(e)[:100]}")
+        await performance_monitor.record_failure(total_calls)
         await failure_counter.increment()
-        await checkpoint_manager.mark_processed(chat_id, success=False)
+        await checkpoint_manager.mark_processed(call_id, success=False)
         return None
 
-async def _process_single_chat_internal(chat_record, total_chats=None):
-    """Internal chat processing logic"""
-    chat_id = str(chat_record.get('_id', 'unknown'))
+async def _process_single_voice_call_internal(voice_record, total_calls=None):
+    """Internal voice call processing logic"""
+    call_id = str(voice_record.get('_id', 'unknown'))
     
     try:
         # Generate content
-        chat_content = await generate_chat_content(chat_record)
+        voice_content = await generate_voice_transcript_content(voice_record)
         
-        if not chat_content:
-            await performance_monitor.record_failure(total_chats)
+        if not voice_content:
+            await performance_monitor.record_failure(total_calls)
             return None
         
         # Debug: Log the generated content structure
-        logger.info(f"Chat {chat_id}: Generated content keys: {list(chat_content.keys()) if isinstance(chat_content, dict) else 'Not a dict'}")
-        if isinstance(chat_content, dict) and 'chat_summary' in chat_content:
-            logger.info(f"Chat {chat_id}: Chat summary field found: {chat_content['chat_summary'][:50]}...")
+        logger.info(f"Call {call_id}: Generated content keys: {list(voice_content.keys()) if isinstance(voice_content, dict) else 'Not a dict'}")
+        if isinstance(voice_content, dict) and 'call_summary' in voice_content:
+            logger.info(f"Call {call_id}: Call summary field found: {voice_content['call_summary'][:50]}...")
         else:
-            logger.error(f"Chat {chat_id}: Chat summary field missing from generated content")
-            logger.error(f"Chat {chat_id}: Full content structure: {chat_content}")
-            await performance_monitor.record_failure(total_chats)
+            logger.error(f"Call {call_id}: Call summary field missing from generated content")
+            logger.error(f"Call {call_id}: Full content structure: {voice_content}")
+            await performance_monitor.record_failure(total_calls)
             return None
         
         # Debug: Check messages structure
-        if 'messages' in chat_content and chat_content['messages']:
-            logger.info(f"Chat {chat_id}: Messages count: {len(chat_content['messages'])}")
-            for i, msg in enumerate(chat_content['messages']):
-                logger.info(f"Chat {chat_id}: Message {i} keys: {list(msg.keys()) if isinstance(msg, dict) else 'Not a dict'}")
-                if isinstance(msg, dict) and 'from_user' in msg:
-                    logger.info(f"Chat {chat_id}: Message {i} from_user: {msg['from_user']}")
+        if 'messages' in voice_content and voice_content['messages']:
+            logger.info(f"Call {call_id}: Messages count: {len(voice_content['messages'])}")
+            for i, msg in enumerate(voice_content['messages']):
+                logger.info(f"Call {call_id}: Message {i} keys: {list(msg.keys()) if isinstance(msg, dict) else 'Not a dict'}")
+                if isinstance(msg, dict) and 'sender_type' in msg:
+                    logger.info(f"Call {call_id}: Message {i} sender_type: {msg['sender_type']}")
         else:
-            logger.error(f"Chat {chat_id}: No messages or empty messages array")
+            logger.error(f"Call {call_id}: No messages or empty messages array")
         
         # Handle follow_up fields logic programmatically - RESPECT EXISTING DB VALUES
-        existing_follow_up_required = chat_record.get('follow_up_required', 'no')
+        existing_follow_up_required = voice_record.get('follow_up_required', 'no')
         
         if existing_follow_up_required == 'no':
             # If DB has follow_up_required='no', keep it as 'no' and set date/reason to null
             follow_up_required = 'no'
             follow_up_date = None
             follow_up_reason = None
-            logger.info(f"Chat {chat_id}: DB has follow_up_required='no', keeping as 'no' and setting date/reason=null")
+            logger.info(f"Call {call_id}: DB has follow_up_required='no', keeping as 'no' and setting date/reason=null")
         else:
             # If DB has follow_up_required='yes', use LLM generated values but validate
-            llm_follow_up = chat_content.get('follow_up_required', 'no')
+            llm_follow_up = voice_content.get('follow_up_required', 'no')
             if llm_follow_up != 'yes':
-                logger.warning(f"Chat {chat_id}: LLM generated follow_up_required='{llm_follow_up}' but DB has 'yes'. Forcing to 'yes'.")
+                logger.warning(f"Call {call_id}: LLM generated follow_up_required='{llm_follow_up}' but DB has 'yes'. Forcing to 'yes'.")
                 follow_up_required = 'yes'
             else:
                 follow_up_required = 'yes'
             
-            follow_up_date = chat_content.get('follow_up_date')
-            follow_up_reason = chat_content.get('follow_up_reason')
-            logger.info(f"Chat {chat_id}: DB has follow_up_required='{existing_follow_up_required}', using LLM values: required={follow_up_required}, date={follow_up_date}, reason={follow_up_reason}")
+            follow_up_date = voice_content.get('follow_up_date')
+            follow_up_reason = voice_content.get('follow_up_reason')
+            logger.info(f"Call {call_id}: DB has follow_up_required='{existing_follow_up_required}', using LLM values: required={follow_up_required}, date={follow_up_date}, reason={follow_up_reason}")
         
         # Prepare update document
         update_doc = {
-            "assigned_department": chat_content['assigned_department'],
-            "chat_summary": chat_content['chat_summary'],
-            "action_pending_status": chat_content['action_pending_status'],
-            "action_pending_from": chat_content['action_pending_from'],
-            "chat_status": chat_content['chat_status'],
+            "call_summary": voice_content['call_summary'],
+            "action_pending_status": voice_content['action_pending_status'],
+            "action_pending_from": voice_content['action_pending_from'],
+            "resolution_status": voice_content['resolution_status'],
             "follow_up_required": follow_up_required,
             "follow_up_date": follow_up_date,
             "follow_up_reason": follow_up_reason,
-            "next_action_suggestion": chat_content['next_action_suggestion'],
-            "sentiment": chat_content['sentiment'],
-            "overall_sentiment": chat_content['overall_sentiment'],
-            "chat_started": chat_content['chat_started'],
+            "next_action_suggestion": voice_content['next_action_suggestion'],
+            "sentiment": voice_content['sentiment'],
+            "overall_sentiment": voice_content['overall_sentiment'],
+            "call_started": voice_content['call_started'],
             # Add LLM processing tracking
             "llm_processed": True,
             "llm_processed_at": datetime.now().isoformat(),
@@ -744,45 +805,45 @@ async def _process_single_chat_internal(chat_record, total_chats=None):
         }
         
         # Add message updates
-        logger.info(f"Chat {chat_id}: About to populate chat messages...")
+        logger.info(f"Call {call_id}: About to populate voice messages...")
         try:
-            message_updates = populate_chat_messages(chat_record, chat_content['messages'])
+            message_updates = populate_voice_messages(voice_record, voice_content['messages'])
             update_doc.update(message_updates)
-            logger.info(f"Chat {chat_id}: Message updates completed successfully")
+            logger.info(f"Call {call_id}: Message updates completed successfully")
         except Exception as message_err:
-            logger.error(f"Chat {chat_id}: Error in populate_chat_messages: {message_err}")
+            logger.error(f"Call {call_id}: Error in populate_voice_messages: {message_err}")
             raise
         
         # Add thread dates from LLM generated content
-        if 'thread_dates' in chat_content:
-            thread_dates = chat_content['thread_dates']
+        if 'thread_dates' in voice_content:
+            thread_dates = voice_content['thread_dates']
             if 'first_message_at' in thread_dates:
-                update_doc['chat.createdDateTime'] = thread_dates['first_message_at']
+                update_doc['thread.createdDateTime'] = thread_dates['first_message_at']
             if 'last_message_at' in thread_dates:
-                update_doc['chat.lastUpdatedDateTime'] = thread_dates['last_message_at']
-            logger.info(f"Chat {chat_id}: Thread dates set successfully")
+                update_doc['thread.lastUpdatedDateTime'] = thread_dates['last_message_at']
+            logger.info(f"Call {call_id}: Thread dates set successfully")
         
         # Add message timestamps from LLM generated content
-        if chat_content.get('messages'):
-            logger.info(f"Chat {chat_id}: Setting timestamps for {len(chat_content['messages'])} messages...")
-            for i, message in enumerate(chat_content['messages']):
-                if message.get('timestamp'):
-                    update_doc[f'messages.{i}.createdDateTime'] = message['timestamp']
-            logger.info(f"Chat {chat_id}: Message timestamps set successfully")
+        if voice_content.get('messages'):
+            logger.info(f"Call {call_id}: Setting timestamps for {len(voice_content['messages'])} messages...")
+            for i, message in enumerate(voice_content['messages']):
+                if message.get('headers', {}).get('date'):
+                    update_doc[f'messages.{i}.createdDateTime'] = message['headers']['date']
+            logger.info(f"Call {call_id}: Message timestamps set successfully")
         
-        logger.info(f"Chat {chat_id}: About to record success...")
-        await performance_monitor.record_success(total_chats)
-        logger.info(f"Chat {chat_id}: Success recorded, incrementing counter...")
+        logger.info(f"Call {call_id}: About to record success...")
+        await performance_monitor.record_success(total_calls)
+        logger.info(f"Call {call_id}: Success recorded, incrementing counter...")
         await success_counter.increment()
-        logger.info(f"Chat {chat_id}: Counter incremented, returning result...")
+        logger.info(f"Call {call_id}: Counter incremented, returning result...")
         
         return {
-            'chat_id': str(chat_record['_id']),
+            'call_id': str(voice_record['_id']),
             'update_doc': update_doc
         }
         
     except Exception as e:
-        logger.error(f"Chat {chat_id} internal processing failed: {str(e)[:100]}")
+        logger.error(f"Call {call_id} internal processing failed: {str(e)[:100]}")
         raise  # Re-raise to be caught by the outer timeout handler
 
 async def save_batch_to_database(batch_updates):
@@ -791,30 +852,30 @@ async def save_batch_to_database(batch_updates):
         return 0
     
     try:
-        logger.info(f"Saving batch of {len(batch_updates)} updates to database...")
+        logger.info(f"Saving batch of {len(batch_updates)} voice updates to database...")
         
         # Create bulk operations
         bulk_operations = []
-        chat_ids = []
+        call_ids = []
         
         for update_data in batch_updates:
             operation = UpdateOne(
-                filter={"_id": ObjectId(update_data['chat_id'])},
+                filter={"_id": ObjectId(update_data['call_id'])},
                 update={"$set": update_data['update_doc']}
             )
             bulk_operations.append(operation)
-            chat_ids.append(update_data['chat_id'])
+            call_ids.append(update_data['call_id'])
         
         if bulk_operations:
             try:
-                result = chat_col.bulk_write(bulk_operations, ordered=False)
+                result = voice_col.bulk_write(bulk_operations, ordered=False)
                 updated_count = result.modified_count
                 
                 # Update counter
                 await update_counter.increment()
                 
-                logger.info(f"Successfully saved {updated_count} records to database")
-                progress_logger.info(f"DATABASE_SAVE: {updated_count} records saved")
+                logger.info(f"Successfully saved {updated_count} voice records to database")
+                progress_logger.info(f"DATABASE_SAVE: {updated_count} voice records saved")
                 
                 return updated_count
                 
@@ -825,16 +886,16 @@ async def save_batch_to_database(batch_updates):
                 individual_success = 0
                 for update_data in batch_updates:
                     try:
-                        result = chat_col.update_one(
-                            {"_id": ObjectId(update_data['chat_id'])},
+                        result = voice_col.update_one(
+                            {"_id": ObjectId(update_data['call_id'])},
                             {"$set": update_data['update_doc']}
                         )
                         if result.modified_count > 0:
                             individual_success += 1
                     except Exception as individual_error:
-                        logger.error(f"Individual update failed for {update_data['chat_id']}: {individual_error}")
+                        logger.error(f"Individual update failed for {update_data['call_id']}: {individual_error}")
                 
-                logger.info(f"Fallback: {individual_success} records saved individually")
+                logger.info(f"Fallback: {individual_success} voice records saved individually")
                 return individual_success
         
         return 0
@@ -843,9 +904,9 @@ async def save_batch_to_database(batch_updates):
         logger.error(f"Database save error: {e}")
         return 0
 
-async def process_chats_optimized():
+async def process_voice_calls_optimized():
     """Main optimized processing function"""
-    logger.info("Starting Optimized EU Banking Chat Content Generation...")
+    logger.info("Starting Optimized EU Banking Voice Transcript Content Generation...")
     logger.info(f"Optimized Configuration:")
     logger.info(f"  Max Concurrent: {MAX_CONCURRENT}")
     logger.info(f"  Batch Size: {BATCH_SIZE}")
@@ -858,22 +919,21 @@ async def process_chats_optimized():
         logger.error("Cannot proceed without OpenRouter connection")
         return
     
-    # Get chats to process - only those that have NEVER been processed by LLM
+    # Get voice calls to process - only those that have NEVER been processed by LLM
     try:
-        # Simple and accurate query: chats that are missing ALL LLM fields
+        # Simple and accurate query: voice calls that are missing ALL LLM fields
         query = {
             "$and": [
-                # Must have basic chat structure
+                # Must have basic voice call structure
                 {"_id": {"$exists": True}},
-                {"chat": {"$exists": True}},
+                {"thread": {"$exists": True}},
                 # Must be missing ALL core LLM fields
                 {
                     "$and": [
-                        {"assigned_department": {"$exists": False}},
-                        {"chat_summary": {"$exists": False}},
-                        {"chat_status": {"$exists": False}},
+                        {"call_summary": {"$exists": False}},
+                        {"resolution_status": {"$exists": False}},
                         {"overall_sentiment": {"$exists": False}},
-                        {"chat_started": {"$exists": False}},
+                        {"call_started": {"$exists": False}},
                         {"action_pending_status": {"$exists": False}},
                         {"action_pending_from": {"$exists": False}},
                         {"next_action_suggestion": {"$exists": False}},
@@ -883,28 +943,27 @@ async def process_chats_optimized():
             ]
         }
         
-        # Exclude already processed chats
-        if checkpoint_manager.processed_chats:
-            processed_ids = [ObjectId(cid) for cid in checkpoint_manager.processed_chats if ObjectId.is_valid(cid)]
+        # Exclude already processed calls
+        if checkpoint_manager.processed_calls:
+            processed_ids = [ObjectId(cid) for cid in checkpoint_manager.processed_calls if ObjectId.is_valid(cid)]
             query["_id"] = {"$nin": processed_ids}
         
-        # First, let's check what chats exist and their status
-        total_chats_in_db = chat_col.count_documents({})
-        chats_processed_by_llm = chat_col.count_documents({"llm_processed": True})
-        chats_with_some_llm_fields = chat_col.count_documents({
+        # First, let's check what calls exist and their status
+        total_calls_in_db = voice_col.count_documents({})
+        calls_processed_by_llm = voice_col.count_documents({"llm_processed": True})
+        calls_with_some_llm_fields = voice_col.count_documents({
             "$or": [
-                {"assigned_department": {"$exists": True, "$ne": None, "$ne": ""}},
-                {"chat_summary": {"$exists": True, "$ne": None, "$ne": ""}},
-                {"chat_status": {"$exists": True, "$ne": None, "$ne": ""}}
+                {"call_summary": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"resolution_status": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"overall_sentiment": {"$exists": True, "$ne": None, "$ne": ""}}
             ]
         })
-        chats_with_all_llm_fields = chat_col.count_documents({
+        calls_with_all_llm_fields = voice_col.count_documents({
             "$and": [
-                {"assigned_department": {"$exists": True, "$ne": None, "$ne": ""}},
-                {"chat_summary": {"$exists": True, "$ne": None, "$ne": ""}},
-                {"chat_status": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"call_summary": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"resolution_status": {"$exists": True, "$ne": None, "$ne": ""}},
                 {"overall_sentiment": {"$exists": True, "$ne": None, "$ne": ""}},
-                {"chat_started": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"call_started": {"$exists": True, "$ne": None, "$ne": ""}},
                 {"action_pending_status": {"$exists": True, "$ne": None, "$ne": ""}},
                 {"action_pending_from": {"$exists": True, "$ne": None, "$ne": ""}},
                 {"next_action_suggestion": {"$exists": True, "$ne": None, "$ne": ""}},
@@ -912,53 +971,53 @@ async def process_chats_optimized():
             ]
         })
         
-        # Calculate actual chats needing processing using the same query
-        chats_needing_processing = chat_col.count_documents(query)
+        # Calculate actual calls needing processing using the same query
+        calls_needing_processing = voice_col.count_documents(query)
         
         logger.info(f"Database Status:")
-        logger.info(f"  Total chats in DB: {total_chats_in_db}")
-        logger.info(f"  Chats processed by LLM (llm_processed=True): {chats_processed_by_llm}")
-        logger.info(f"  Chats with some LLM fields: {chats_with_some_llm_fields}")
-        logger.info(f"  Chats with ALL LLM fields: {chats_with_all_llm_fields}")
-        logger.info(f"  Chats needing processing: {chats_needing_processing}")
+        logger.info(f"  Total voice calls in DB: {total_calls_in_db}")
+        logger.info(f"  Calls processed by LLM (llm_processed=True): {calls_processed_by_llm}")
+        logger.info(f"  Calls with some LLM fields: {calls_with_some_llm_fields}")
+        logger.info(f"  Calls with ALL LLM fields: {calls_with_all_llm_fields}")
+        logger.info(f"  Calls needing processing: {calls_needing_processing}")
         
-        chat_records = list(chat_col.find(query))
-        total_chats = len(chat_records)
+        voice_records = list(voice_col.find(query))
+        total_calls = len(voice_records)
         
-        if total_chats == 0:
-            logger.info("No chats found that need processing!")
-            logger.info("All chats appear to have been processed by LLM already.")
+        if total_calls == 0:
+            logger.info("No voice calls found that need processing!")
+            logger.info("All voice calls appear to have been processed by LLM already.")
             return
         
-        logger.info(f"Found {total_chats} chats that need LLM processing")
-        logger.info(f"Previously processed (checkpoint): {len(checkpoint_manager.processed_chats)} chats")
-        progress_logger.info(f"BATCH_START: total_chats={total_chats}")
+        logger.info(f"Found {total_calls} voice calls that need LLM processing")
+        logger.info(f"Previously processed (checkpoint): {len(checkpoint_manager.processed_calls)} calls")
+        progress_logger.info(f"BATCH_START: total_calls={total_calls}")
         
     except Exception as e:
-        logger.error(f"Error fetching chat records: {e}")
+        logger.error(f"Error fetching voice call records: {e}")
         return
     
-    # Process chats in optimized batches
+    # Process calls in optimized batches
     total_updated = 0
     batch_updates = []
     
     try:
-        # Process chats in concurrent batches
-        for i in range(0, total_chats, BATCH_SIZE):
+        # Process calls in concurrent batches
+        for i in range(0, total_calls, BATCH_SIZE):
             if shutdown_flag.is_set():
                 logger.info("Shutdown requested, stopping processing")
                 break
             
-            batch = chat_records[i:i + BATCH_SIZE]
+            batch = voice_records[i:i + BATCH_SIZE]
             batch_num = i//BATCH_SIZE + 1
-            total_batches = (total_chats + BATCH_SIZE - 1)//BATCH_SIZE
-            logger.info(f"Processing batch {batch_num}/{total_batches} (chats {i+1}-{min(i+BATCH_SIZE, total_chats)})")
+            total_batches = (total_calls + BATCH_SIZE - 1)//BATCH_SIZE
+            logger.info(f"Processing batch {batch_num}/{total_batches} (calls {i+1}-{min(i+BATCH_SIZE, total_calls)})")
             
             # Process batch concurrently
             batch_tasks = []
-            for chat in batch:
-                if not checkpoint_manager.is_processed(chat['_id']):
-                    task = process_single_chat(chat, total_chats)
+            for voice_call in batch:
+                if not checkpoint_manager.is_processed(voice_call['_id']):
+                    task = process_single_voice_call(voice_call, total_calls)
                     batch_tasks.append(task)
             
             logger.info(f"Created {len(batch_tasks)} tasks for batch {batch_num}")
@@ -986,7 +1045,7 @@ async def process_chats_optimized():
                             successful_results.append(result)
                             try:
                                 await asyncio.wait_for(
-                                    checkpoint_manager.mark_processed(result['chat_id'], success=True),
+                                    checkpoint_manager.mark_processed(result['call_id'], success=True),
                                     timeout=10.0  # 10 second timeout for checkpoint
                                 )
                                 logger.info(f"Task {task_idx}/{len(batch_tasks)} completed successfully in {elapsed:.1f}s")
@@ -1020,15 +1079,15 @@ async def process_chats_optimized():
                 batch_updates = []  # Clear batch
             
             # Progress update
-            processed_so_far = min(i + BATCH_SIZE, total_chats)
-            progress_pct = (processed_so_far / total_chats) * 100
-            logger.info(f"Overall Progress: {progress_pct:.1f}% ({processed_so_far}/{total_chats})")
+            processed_so_far = min(i + BATCH_SIZE, total_calls)
+            progress_pct = (processed_so_far / total_calls) * 100
+            logger.info(f"Overall Progress: {progress_pct:.1f}% ({processed_so_far}/{total_calls})")
             
             # Update performance monitor with actual total
-            await performance_monitor.log_progress(total_chats)
+            await performance_monitor.log_progress(total_calls)
             
             # Brief delay between batches to manage rate limits
-            if i + BATCH_SIZE < total_chats and not shutdown_flag.is_set():
+            if i + BATCH_SIZE < total_calls and not shutdown_flag.is_set():
                 await asyncio.sleep(BATCH_DELAY)
         
         # Save any remaining updates
@@ -1042,20 +1101,20 @@ async def process_chats_optimized():
         if shutdown_flag.is_set():
             logger.info("Processing interrupted gracefully!")
         else:
-            logger.info("Optimized chat content generation complete!")
+            logger.info("Optimized voice transcript content generation complete!")
         
         logger.info(f"Final Results:")
-        logger.info(f"  Total chats updated: {total_updated}")
+        logger.info(f"  Total voice calls updated: {total_updated}")
         logger.info(f"  Successful generations: {success_counter.value}")
         logger.info(f"  Failed generations: {failure_counter.value}")
         logger.info(f"  Success rate: {(success_counter.value/(success_counter.value + failure_counter.value))*100:.1f}%" if (success_counter.value + failure_counter.value) > 0 else "Success rate: N/A")
         
         # Performance summary
         total_time = time.time() - performance_monitor.start_time
-        avg_time_per_chat = total_time / success_counter.value if success_counter.value > 0 else 0
+        avg_time_per_call = total_time / success_counter.value if success_counter.value > 0 else 0
         logger.info(f"  Total processing time: {total_time/3600:.2f} hours")
-        logger.info(f"  Average time per chat: {avg_time_per_chat:.1f} seconds")
-        logger.info(f"  Processing rate: {success_counter.value/(total_time/3600):.0f} chats/hour" if total_time > 0 else "Processing rate: N/A")
+        logger.info(f"  Average time per call: {avg_time_per_call:.1f} seconds")
+        logger.info(f"  Processing rate: {success_counter.value/(total_time/3600):.0f} calls/hour" if total_time > 0 else "Processing rate: N/A")
         
         progress_logger.info(f"FINAL_SUMMARY: total_updated={total_updated}, success={success_counter.value}, failures={failure_counter.value}, total_time={total_time/3600:.2f}h, rate={success_counter.value/(total_time/3600):.0f}/h" if total_time > 0 else f"FINAL_SUMMARY: total_updated={total_updated}, success={success_counter.value}, failures={failure_counter.value}")
         
@@ -1074,7 +1133,7 @@ async def test_openrouter_connection():
             'Authorization': f'Bearer {OPENROUTER_API_KEY}',
             'Content-Type': 'application/json',
             'HTTP-Referer': 'http://localhost:3000',
-            'X-Title': 'EU Banking Chat Generator'
+            'X-Title': 'EU Banking Voice Generator'
         }
         
         test_payload = {
@@ -1106,29 +1165,27 @@ async def test_openrouter_connection():
 def get_collection_stats():
     """Get collection statistics"""
     try:
-        total_count = chat_col.count_documents({})
+        total_count = voice_col.count_documents({})
         
-        with_complete_fields = chat_col.count_documents({
-            "assigned_department": {"$exists": True, "$ne": "", "$ne": None},
-            "chat_summary": {"$exists": True, "$ne": "", "$ne": None},
-            "chat_status": {"$exists": True, "$ne": "", "$ne": None},
+        with_complete_fields = voice_col.count_documents({
+            "call_summary": {"$exists": True, "$ne": "", "$ne": None},
+            "resolution_status": {"$exists": True, "$ne": "", "$ne": None},
             "overall_sentiment": {"$exists": True, "$ne": "", "$ne": None},
-            "chat_started": {"$exists": True, "$ne": "", "$ne": None},
+            "call_started": {"$exists": True, "$ne": "", "$ne": None},
             "action_pending_status": {"$exists": True, "$ne": "", "$ne": None},
             "action_pending_from": {"$exists": True, "$ne": "", "$ne": None},
-            "follow_up_required": {"$exists": True, "$ne": "", "$ne": None},
             "next_action_suggestion": {"$exists": True, "$ne": "", "$ne": None},
             "sentiment": {"$exists": True, "$ne": "", "$ne": None}
         })
         
-        urgent_chats = chat_col.count_documents({"urgency": True})
+        urgent_calls = voice_col.count_documents({"urgency": True})
         without_complete_fields = total_count - with_complete_fields
         
-        logger.info("Collection Statistics:")
-        logger.info(f"  Total chats: {total_count}")
+        logger.info("Voice Collection Statistics:")
+        logger.info(f"  Total voice calls: {total_count}")
         logger.info(f"  With complete fields: {with_complete_fields}")
         logger.info(f"  Without complete fields: {without_complete_fields}")
-        logger.info(f"  Urgent chats: {urgent_chats} ({(urgent_chats/total_count)*100:.1f}%)" if total_count > 0 else "  Urgent chats: 0")
+        logger.info(f"  Urgent calls: {urgent_calls} ({(urgent_calls/total_count)*100:.1f}%)" if total_count > 0 else "  Urgent calls: 0")
         logger.info(f"  Completion rate: {(with_complete_fields/total_count)*100:.1f}%" if total_count > 0 else "  Completion rate: 0%")
         
     except Exception as e:
@@ -1136,8 +1193,8 @@ def get_collection_stats():
 
 async def main():
     """Main async function"""
-    logger.info("Optimized EU Banking Chat Content Generator Starting...")
-    logger.info(f"Database: {DB_NAME}.{CHAT_COLLECTION}")
+    logger.info("Optimized EU Banking Voice Transcript Content Generator Starting...")
+    logger.info(f"Database: {DB_NAME}.{VOICE_COLLECTION}")
     logger.info(f"Model: {OPENROUTER_MODEL}")
     logger.info(f"Configuration: {MAX_CONCURRENT} concurrent, {BATCH_SIZE} batch size")
     
@@ -1155,7 +1212,7 @@ async def main():
         get_collection_stats()
         
         # Run optimized processing
-        await process_chats_optimized()
+        await process_voice_calls_optimized()
         
         # Show final stats
         logger.info("="*60)
@@ -1178,6 +1235,6 @@ async def main():
         logger.info(f"  Progress: {PROGRESS_LOG_FILE}")
         logger.info(f"  Checkpoint: {CHECKPOINT_FILE}")
 
-# Run the optimized generator
+# Run the optimized voice transcript generator
 if __name__ == "__main__":
     asyncio.run(main())
