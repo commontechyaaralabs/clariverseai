@@ -429,23 +429,25 @@ TASK: Generate a realistic EU banking email thread with {message_count} messages
 
 **EMAIL GENERATION REQUIREMENTS:**
 
-1. **EU Banking Context:**
-   - Generate emails relevant to European banking operations
-   - Use European business communication style
-   - Use European date formats (DD/MM/YYYY) and business terminology
+1. **AUTHENTIC EU Banking Context:**
+   - Generate completely authentic emails relevant to European banking operations
+   - Use real European business communication style and terminology
+   - Use European date formats (DD/MM/YYYY) and authentic business terminology
+   - Include specific banking scenarios, regulations, and compliance requirements
 
-2. **Email Content Generation:**
-   - Create {message_count} realistic email messages
-   - Message 1: Initial email from {sender['name']}
+2. **Authentic Email Content Generation:**
+   - Create {message_count} completely authentic email messages with real banking scenarios
+   - Message 1: Initial email from {sender['name']} with specific banking context
    - Subsequent messages: Natural conversation flow alternating between participants
-   - Professional banking tone appropriate to EU standards
-   - Each message: 200-300 words (vary naturally)
+   - Professional banking tone appropriate to EU standards with real business language
+   - Each message: 200-300 words (vary naturally) with specific banking details
    - Include proper email greetings and professional closings
-   - Incorporate banking-specific terminology and scenarios
+   - Incorporate authentic banking-specific terminology, scenarios, and business processes
    - **CRITICAL: Do NOT include the subject line in the email body content**
+   - **CRITICAL: Generate authentic content - NO placeholder text, mock data, or generic examples**
 
-3. **Subject and Dating:**
-   - Generate realistic banking-related subject lines
+3. **Authentic Subject and Dating:**
+   - Generate realistic banking-related subject lines with specific business context
    - Reply messages use "Re: [original subject]" format
    - Generate realistic timestamps showing natural progression (minutes to days apart)
    - **CRITICAL: All dates must be between 2025-01-01 and 2025-06-30 (6 months only)**
@@ -474,12 +476,12 @@ Return ONLY a JSON object with this structure:
     }}
   ],
   "analysis": {{
-    "stages": "{stages} (MUST preserve existing value)",
+    "stages": "{stages}",
     "email_summary": "[100-150 word comprehensive thread summary explaining full context]",
     "action_pending_status": "[yes/no based on thread analysis]",
     "action_pending_from": "[company/customer if pending yes or null if pending no]",
     "resolution_status": "[open/inprogress/closed based on issue resolution in thread]",
-    "follow_up_required": "{follow_up_required} (MUST preserve existing value)",
+    "follow_up_required": "{follow_up_required}",
     "follow_up_date": "[ISO_timestamp or null - provide realistic date if follow_up_required=yes, null if no]",
     "follow_up_reason": "[2 lines explaining why followup needed or null - provide contextual reason if follow_up_required=yes, null if no]",
     "next_action_suggestion": "[30-50 word AI agent recommendation for customer retention improvement]",
@@ -495,13 +497,27 @@ Return ONLY a JSON object with this structure:
 
 **CRITICAL INSTRUCTIONS:**
 
-1. **EU Banking Focus:** Generate authentic European banking scenarios with relevant regulations, terminology, and business practices
-2. **Date Range:** ALL dates must be between 2025-01-01 and 2025-06-30 (6 months only) with meaningful timeframes
-3. **Natural Communication:** Generate normal banking emails - avoid defaulting to crisis scenarios
-4. **Banking Compliance:** Include relevant EU banking regulations and compliance considerations
-5. **Subject/Body Separation:** NEVER include the subject line in the email body content - they are separate fields
-6. **Preserve Values:** MUST preserve urgency={urgency}, stages="{stages}", follow_up_required="{follow_up_required}" exactly as provided
-7. **Sentiment Analysis:** Individual message sentiment analysis using human emotional tone (0-5 scale):
+1. **AUTHENTIC DATA ONLY:** Generate completely authentic, realistic EU banking email content. NO mock data, placeholder text, or generic examples. Create genuine banking scenarios with specific details, real business contexts, and authentic communication patterns.
+
+2. **EU Banking Focus:** Generate authentic European banking scenarios with relevant regulations, terminology, and business practices. Use real EU banking terminology, compliance requirements, and business processes.
+
+3. **Date Range:** ALL dates must be between 2025-01-01 and 2025-06-30 (6 months only) with meaningful timeframes
+
+4. **Natural Communication:** Generate normal banking emails - avoid defaulting to crisis scenarios. Create realistic business communications that reflect actual banking operations.
+
+5. **Banking Compliance:** Include relevant EU banking regulations and compliance considerations with specific details.
+
+6. **Subject/Body Separation:** NEVER include the subject line in the email body content - they are separate fields
+
+7. **Preserve Values:** MUST preserve urgency={urgency}, stages="{stages}", follow_up_required="{follow_up_required}" exactly as provided
+
+8. **Action Pending From Field:** The action_pending_from field MUST contain ONLY one of these exact values:
+   - "company" (if action is pending from the bank/company side)
+   - "customer" (if action is pending from the customer side)  
+   - null (if action_pending_status is "no")
+   DO NOT include any names, departments, or other text in this field.
+
+9. **Sentiment Analysis:** Individual message sentiment analysis using human emotional tone (0-5 scale):
    - 0: Happy (pleased, satisfied, positive)
    - 1: Calm (baseline for professional communication)
    - 2: Bit Irritated (slight annoyance or impatience)
@@ -509,6 +525,8 @@ Return ONLY a JSON object with this structure:
    - 4: Anger (clear frustration or anger)
    - 5: Frustrated (extreme frustration, very upset)
    Generate exactly {message_count} sentiment entries
+
+10. **Content Authenticity:** Generate realistic email content that reflects actual banking operations, customer interactions, and business processes. Include specific details, realistic scenarios, and authentic business language.
 
 Generate the EU banking email thread content now.
 """.strip()
@@ -613,6 +631,29 @@ async def generate_email_content(email_data):
         if result['analysis'].get('urgency') != existing_urgency:
             logger.warning(f"Thread {thread_id}: LLM generated urgency='{result['analysis'].get('urgency')}' but existing value is '{existing_urgency}'. Correcting...")
             result['analysis']['urgency'] = existing_urgency
+        
+        # Validate action_pending_from values - must be only company/customer/null
+        valid_action_sources = ['company', 'customer', None, 'null']
+        action_pending_from = result['analysis'].get('action_pending_from')
+        
+        # Clean up any names or extra text that might be in the field
+        if action_pending_from and isinstance(action_pending_from, str):
+            action_pending_from = action_pending_from.strip().lower()
+            # Extract only the valid part if it contains extra text
+            if 'company' in action_pending_from:
+                action_pending_from = 'company'
+            elif 'customer' in action_pending_from:
+                action_pending_from = 'customer'
+            elif action_pending_from in ['null', 'none', '']:
+                action_pending_from = None
+        
+        if action_pending_from not in valid_action_sources:
+            logger.warning(f"Thread {thread_id}: Invalid action_pending_from='{action_pending_from}', correcting to 'company'")
+            result['analysis']['action_pending_from'] = 'company'
+        elif action_pending_from == 'null':
+            result['analysis']['action_pending_from'] = None
+        else:
+            result['analysis']['action_pending_from'] = action_pending_from
         
         # Clean up any subject lines that might appear in body content
         if 'messages' in result:
