@@ -1,0 +1,908 @@
+nohup: ignoring input
+2025-09-27 06:58:46,546 - INFO - Optimized EU Banking Email Content Generator with Ollama Starting...
+2025-09-27 06:58:46,546 - INFO - Database: sparzaai.email
+2025-09-27 06:58:46,546 - INFO - Model: gemma3:27b
+2025-09-27 06:58:46,546 - INFO - Configuration: 1 concurrent, 2 batch size
+2025-09-27 06:58:47,604 - INFO - Database connection established and indexes created
+2025-09-27 06:58:48,042 - INFO - Collection Statistics:
+2025-09-27 06:58:48,042 - INFO -   Total emails: 2004
+2025-09-27 06:58:48,042 - INFO -   With complete analysis: 1028
+2025-09-27 06:58:48,042 - INFO -   Without complete analysis: 976
+2025-09-27 06:58:48,042 - INFO -   Urgent emails: 160 (8.0%)
+2025-09-27 06:58:48,042 - INFO -   Completion rate: 51.3%
+2025-09-27 06:58:48,042 - INFO - Top Dominant Topics:
+2025-09-27 06:58:48,043 - INFO -   1. Risk Management Alert: 31 emails
+2025-09-27 06:58:48,043 - INFO -   2. User Access Approval: 30 emails
+2025-09-27 06:58:48,043 - INFO -   3. Quality Assurance Breach: 28 emails
+2025-09-27 06:58:48,043 - INFO -   4. IT Marketing Unresolved: 27 emails
+2025-09-27 06:58:48,043 - INFO -   5. IT Access Problem: 26 emails
+2025-09-27 06:58:48,043 - INFO -   6. Salary Leave Issues: 23 emails
+2025-09-27 06:58:48,043 - INFO -   7. Vendor Management: 22 emails
+2025-09-27 06:58:48,043 - INFO -   8. Legal Escalation: 22 emails
+2025-09-27 06:58:48,043 - INFO -   9. Performance Management: 22 emails
+2025-09-27 06:58:48,043 - INFO -   10. Process Exception: 22 emails
+2025-09-27 06:58:48,043 - INFO - Starting Optimized EU Banking Email Content Generation with Ollama...
+2025-09-27 06:58:48,043 - INFO - Ollama Configuration:
+2025-09-27 06:58:48,043 - INFO -   Model: gemma3:27b
+2025-09-27 06:58:48,043 - INFO -   URL: http://34.147.17.26:23908/api/generate
+2025-09-27 06:58:48,043 - INFO -   Max Concurrent: 1
+2025-09-27 06:58:48,043 - INFO -   Batch Size: 2
+2025-09-27 06:58:48,043 - INFO -   API Delay: 1.0s
+2025-09-27 06:58:48,043 - INFO -   Request Timeout: 180s
+2025-09-27 06:58:48,043 - INFO - Testing Ollama connection...
+2025-09-27 06:58:57,700 - INFO - Ollama connection test successful
+2025-09-27 06:58:57,700 - INFO - Test response: ```json
+{"test": "success"}
+```
+...
+2025-09-27 06:58:58,373 - INFO - Database Status:
+2025-09-27 06:58:58,374 - INFO -   Total emails in DB: 2004
+2025-09-27 06:58:58,374 - INFO -   Emails with basic fields (stages, urgency, follow_up_required): 2004
+2025-09-27 06:58:58,374 - INFO -   Emails processed by LLM (llm_processed=True): 1028
+2025-09-27 06:58:58,374 - INFO -   Emails with some LLM fields: 1028
+2025-09-27 06:58:58,374 - INFO -   Emails with ALL LLM fields: 1028
+2025-09-27 06:58:58,374 - INFO -   Emails needing processing: 976
+2025-09-27 06:58:59,402 - INFO - Found 976 emails that need LLM processing
+2025-09-27 06:58:59,402 - INFO - Previously processed (checkpoint): 0 emails
+2025-09-27 06:58:59,403 - INFO - Processing batch 1/488 (emails 1-2)
+2025-09-27 06:58:59,403 - INFO - Created 2 tasks for batch 1
+2025-09-27 06:58:59,403 - INFO - Processing 2 tasks individually in batch 1
+2025-09-27 06:58:59,403 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 06:58:59,403 - INFO - Starting task 1/2 in batch 1
+2025-09-27 06:58:59,403 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 06:59:19,080 - ERROR - JSON parsing failed for thread conv_m365_7d5cffc82a9c. Raw response: {
+  "thread_data": {
+    "subject_norm": "GDPR Data Access Request - Account 789456123",
+    "first_message_at": "2025-03-15T09:32:00Z",
+    "last_message_at": "2025-03-15T09:32:00Z"
+  },
+  "messages": [
+    {
+      "headers": {
+        "date": "2025-03-15T09:32:00Z",
+        "subject": "GDPR Data A...
+2025-09-27 06:59:19,080 - ERROR - Thread conv_m365_7d5cffc82a9c: Full Ollama response: ```json
+{
+  "thread_data": {
+    "subject_norm": "GDPR Data Access Request - Account 789456123",
+    "first_message_at": "2025-03-15T09:32:00Z",
+    "last_message_at": "2025-03-15T09:32:00Z"
+  },
+  "messages": [
+    {
+      "headers": {
+        "date": "2025-03-15T09:32:00Z",
+        "subject": "GDPR Data Access Request - Account 789456123"
+      },
+      "body": {
+        "text": {
+          "plain": "Dear Data Protection Officer,\n\nI am writing to formally request access to my personal data h...
+2025-09-27 06:59:19,080 - ERROR - Thread conv_m365_7d5cffc82a9c internal processing failed: Invalid JSON response from Ollama: Invalid \escape: line 15 column 919 (char 1296)
+2025-09-27 06:59:19,081 - ERROR - Thread conv_m365_7d5cffc82a9c processing failed with error: Invalid JSON response from Ollama: Invalid \escape: line 15 column 919 (char 1296)
+2025-09-27 06:59:19,081 - INFO - Task 1 finished, processing result...
+2025-09-27 06:59:19,081 - WARNING - Task 1/2 returned no result after 19.7s
+2025-09-27 06:59:19,081 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 06:59:19,081 - INFO - Starting task 2/2 in batch 1
+2025-09-27 06:59:19,081 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 07:00:14,980 - INFO - Thread conv_m365_f0f388b0d58d: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis', 'sentiment_scores']
+2025-09-27 07:00:14,980 - WARNING - Thread conv_m365_f0f388b0d58d: Missing overall_sentiment, retrying...
+2025-09-27 07:00:14,981 - INFO - Thread conv_m365_f0f388b0d58d: Starting overall sentiment retry for 8 messages
+2025-09-27 07:00:14,981 - WARNING - Request failed on attempt 1/3: Session is closed
+2025-09-27 07:00:17,984 - WARNING - Request failed on attempt 2/3: Session is closed
+2025-09-27 07:00:20,987 - WARNING - Request failed on attempt 3/3: Session is closed
+2025-09-27 07:00:20,987 - ERROR - Thread conv_m365_f0f388b0d58d: Overall sentiment retry failed: Session is closed
+2025-09-27 07:00:20,987 - INFO - Thread conv_m365_f0f388b0d58d: Retrieved overall sentiment: 1
+2025-09-27 07:00:20,988 - INFO - Thread conv_m365_f0f388b0d58d: Generated content keys: ['thread_data', 'messages', 'analysis', 'sentiment_scores']
+2025-09-27 07:00:20,988 - INFO - Task 2 finished, processing result...
+2025-09-27 07:00:20,988 - INFO - Task 2/2 completed successfully in 61.9s
+2025-09-27 07:00:20,988 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 07:00:20,988 - INFO - Batch 1 FULLY completed in 81.6s: 1/2 successful, 1 failed
+2025-09-27 07:00:20,988 - INFO - Overall Progress: 0.2% (2/976)
+2025-09-27 07:00:23,992 - INFO - Processing batch 2/488 (emails 3-4)
+2025-09-27 07:00:23,992 - INFO - Created 2 tasks for batch 2
+2025-09-27 07:00:23,992 - INFO - Processing 2 tasks individually in batch 2
+2025-09-27 07:00:23,992 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 07:00:23,992 - INFO - Starting task 1/2 in batch 2
+2025-09-27 07:00:23,992 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 07:01:19,731 - INFO - Thread conv_m365_f6806550ad9a: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:01:19,731 - WARNING - Thread conv_m365_f6806550ad9a: Missing overall_sentiment, retrying...
+2025-09-27 07:01:19,731 - INFO - Thread conv_m365_f6806550ad9a: Starting overall sentiment retry for 8 messages
+2025-09-27 07:01:19,731 - WARNING - Request failed on attempt 1/3: Session is closed
+2025-09-27 07:01:22,735 - WARNING - Request failed on attempt 2/3: Session is closed
+2025-09-27 07:01:25,738 - WARNING - Request failed on attempt 3/3: Session is closed
+2025-09-27 07:01:25,738 - ERROR - Thread conv_m365_f6806550ad9a: Overall sentiment retry failed: Session is closed
+2025-09-27 07:01:25,738 - INFO - Thread conv_m365_f6806550ad9a: Retrieved overall sentiment: 1
+2025-09-27 07:01:25,739 - INFO - Thread conv_m365_f6806550ad9a: Generated content keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:01:25,739 - INFO - Task 1 finished, processing result...
+2025-09-27 07:01:25,739 - INFO - Task 1/2 completed successfully in 61.7s
+2025-09-27 07:01:25,739 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 07:01:25,739 - INFO - Starting task 2/2 in batch 2
+2025-09-27 07:01:25,739 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 07:02:19,413 - INFO - Thread conv_m365_d85cd55fea5e: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:02:19,413 - INFO - Thread conv_m365_d85cd55fea5e: Generated content keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:02:19,413 - INFO - Task 2 finished, processing result...
+2025-09-27 07:02:19,414 - INFO - Task 2/2 completed successfully in 53.7s
+2025-09-27 07:02:19,414 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 07:02:19,414 - INFO - Batch 2 FULLY completed in 115.4s: 2/2 successful, 0 failed
+2025-09-27 07:02:19,414 - INFO - Saving batch of 3 updates to database...
+2025-09-27 07:02:19,622 - INFO - Successfully saved 3 records to database
+2025-09-27 07:02:19,622 - INFO - Overall Progress: 0.4% (4/976)
+2025-09-27 07:02:22,626 - INFO - Processing batch 3/488 (emails 5-6)
+2025-09-27 07:02:22,626 - INFO - Created 2 tasks for batch 3
+2025-09-27 07:02:22,626 - INFO - Processing 2 tasks individually in batch 3
+2025-09-27 07:02:22,626 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 07:02:22,626 - INFO - Starting task 1/2 in batch 3
+2025-09-27 07:02:22,626 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 07:03:20,839 - INFO - Thread conv_m365_7bafde431cf2: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:03:20,839 - ERROR - Thread conv_m365_7bafde431cf2: Missing analysis field: action_pending_status
+2025-09-27 07:03:20,840 - ERROR - Thread conv_m365_7bafde431cf2 internal processing failed: Missing analysis field: action_pending_status
+2025-09-27 07:03:20,840 - ERROR - Thread conv_m365_7bafde431cf2 processing failed with error: Missing analysis field: action_pending_status
+2025-09-27 07:03:20,840 - INFO - Task 1 finished, processing result...
+2025-09-27 07:03:20,840 - WARNING - Task 1/2 returned no result after 58.2s
+2025-09-27 07:03:20,840 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 07:03:20,840 - INFO - Starting task 2/2 in batch 3
+2025-09-27 07:03:20,840 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 07:04:16,907 - INFO - Thread conv_m365_c656e351163a: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis', 'sentiments']
+2025-09-27 07:04:16,907 - ERROR - Thread conv_m365_c656e351163a: Missing analysis field: next_action_suggestion
+2025-09-27 07:04:16,907 - ERROR - Thread conv_m365_c656e351163a internal processing failed: Missing analysis field: next_action_suggestion
+2025-09-27 07:04:16,907 - ERROR - Thread conv_m365_c656e351163a processing failed with error: Missing analysis field: next_action_suggestion
+2025-09-27 07:04:16,907 - INFO - Task 2 finished, processing result...
+2025-09-27 07:04:16,908 - WARNING - Task 2/2 returned no result after 56.1s
+2025-09-27 07:04:16,908 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 07:04:16,908 - INFO - Batch 3 FULLY completed in 114.3s: 0/2 successful, 2 failed
+2025-09-27 07:04:16,908 - INFO - Overall Progress: 0.6% (6/976)
+2025-09-27 07:04:19,911 - INFO - Processing batch 4/488 (emails 7-8)
+2025-09-27 07:04:19,911 - INFO - Created 2 tasks for batch 4
+2025-09-27 07:04:19,911 - INFO - Processing 2 tasks individually in batch 4
+2025-09-27 07:04:19,911 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 07:04:19,911 - INFO - Starting task 1/2 in batch 4
+2025-09-27 07:04:19,911 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 07:05:29,989 - INFO - Thread conv_m365_a0850aa584d2: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:05:29,989 - WARNING - Thread conv_m365_a0850aa584d2: Missing overall_sentiment, retrying...
+2025-09-27 07:05:29,989 - INFO - Thread conv_m365_a0850aa584d2: Starting overall sentiment retry for 8 messages
+2025-09-27 07:05:29,989 - WARNING - Request failed on attempt 1/3: Session is closed
+2025-09-27 07:05:32,992 - WARNING - Request failed on attempt 2/3: Session is closed
+2025-09-27 07:05:35,995 - WARNING - Request failed on attempt 3/3: Session is closed
+2025-09-27 07:05:35,995 - ERROR - Thread conv_m365_a0850aa584d2: Overall sentiment retry failed: Session is closed
+2025-09-27 07:05:35,995 - INFO - Thread conv_m365_a0850aa584d2: Retrieved overall sentiment: 1
+2025-09-27 07:05:35,996 - INFO - Thread conv_m365_a0850aa584d2: Generated content keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:05:35,996 - INFO - Task 1 finished, processing result...
+2025-09-27 07:05:35,996 - INFO - Task 1/2 completed successfully in 76.1s
+2025-09-27 07:05:35,996 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 07:05:35,996 - INFO - Starting task 2/2 in batch 4
+2025-09-27 07:05:35,996 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 07:07:20,798 - INFO - Thread conv_m365_a83770a9d548: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:07:20,799 - INFO - Thread conv_m365_a83770a9d548: Generated content keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:07:20,799 - INFO - Task 2 finished, processing result...
+2025-09-27 07:07:20,799 - INFO - Task 2/2 completed successfully in 104.8s
+2025-09-27 07:07:20,799 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 07:07:20,799 - INFO - Batch 4 FULLY completed in 180.9s: 2/2 successful, 0 failed
+2025-09-27 07:07:20,799 - INFO - Saving batch of 2 updates to database...
+2025-09-27 07:07:20,905 - INFO - Successfully saved 2 records to database
+2025-09-27 07:07:20,905 - INFO - Overall Progress: 0.8% (8/976)
+2025-09-27 07:07:23,908 - INFO - Processing batch 5/488 (emails 9-10)
+2025-09-27 07:07:23,908 - INFO - Created 2 tasks for batch 5
+2025-09-27 07:07:23,908 - INFO - Processing 2 tasks individually in batch 5
+2025-09-27 07:07:23,908 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 07:07:23,908 - INFO - Starting task 1/2 in batch 5
+2025-09-27 07:07:23,909 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 07:08:28,197 - INFO - Thread conv_m365_210a2334b9be: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:08:28,197 - INFO - Thread conv_m365_210a2334b9be: Generated content keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:08:28,197 - INFO - Task 1 finished, processing result...
+2025-09-27 07:08:28,198 - INFO - Task 1/2 completed successfully in 64.3s
+2025-09-27 07:08:28,198 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 07:08:28,198 - INFO - Starting task 2/2 in batch 5
+2025-09-27 07:08:28,198 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 07:09:20,509 - INFO - Thread conv_m365_c42bae39005d: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:09:20,509 - INFO - Thread conv_m365_c42bae39005d: Generated content keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:09:20,509 - INFO - Task 2 finished, processing result...
+2025-09-27 07:09:30,519 - WARNING - Checkpoint save timed out for task 2, but task completed successfully
+2025-09-27 07:09:30,519 - INFO - Task 2/2 completed successfully in 52.3s
+2025-09-27 07:09:30,519 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 07:09:30,519 - INFO - Batch 5 FULLY completed in 126.6s: 2/2 successful, 0 failed
+2025-09-27 07:09:30,519 - INFO - Saving batch of 2 updates to database...
+2025-09-27 07:09:30,728 - INFO - Successfully saved 2 records to database
+2025-09-27 07:09:30,728 - INFO - Overall Progress: 1.0% (10/976)
+2025-09-27 07:09:33,731 - INFO - Processing batch 6/488 (emails 11-12)
+2025-09-27 07:09:33,731 - INFO - Created 2 tasks for batch 6
+2025-09-27 07:09:33,732 - INFO - Processing 2 tasks individually in batch 6
+2025-09-27 07:09:33,732 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 07:09:33,732 - INFO - Starting task 1/2 in batch 6
+2025-09-27 07:09:33,732 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 07:10:30,547 - INFO - Thread conv_m365_e4215e53a497: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:10:30,547 - ERROR - Thread conv_m365_e4215e53a497: Missing analysis field: stages
+2025-09-27 07:10:30,548 - ERROR - Thread conv_m365_e4215e53a497 internal processing failed: Missing analysis field: stages
+2025-09-27 07:10:30,548 - ERROR - Thread conv_m365_e4215e53a497 processing failed with error: Missing analysis field: stages
+2025-09-27 07:10:30,548 - INFO - Task 1 finished, processing result...
+2025-09-27 07:10:30,548 - WARNING - Task 1/2 returned no result after 56.8s
+2025-09-27 07:10:30,548 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 07:10:30,548 - INFO - Starting task 2/2 in batch 6
+2025-09-27 07:10:30,548 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 07:11:26,195 - INFO - Thread conv_m365_b7c9fe7664cb: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:11:26,195 - ERROR - Thread conv_m365_b7c9fe7664cb: Missing analysis field: next_action_suggestion
+2025-09-27 07:11:26,195 - ERROR - Thread conv_m365_b7c9fe7664cb internal processing failed: Missing analysis field: next_action_suggestion
+2025-09-27 07:11:26,195 - ERROR - Thread conv_m365_b7c9fe7664cb processing failed with error: Missing analysis field: next_action_suggestion
+2025-09-27 07:11:26,195 - INFO - Task 2 finished, processing result...
+2025-09-27 07:11:26,195 - WARNING - Task 2/2 returned no result after 55.6s
+2025-09-27 07:11:26,195 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 07:11:26,195 - INFO - Batch 6 FULLY completed in 112.5s: 0/2 successful, 2 failed
+2025-09-27 07:11:26,195 - INFO - Overall Progress: 1.2% (12/976)
+2025-09-27 07:11:29,199 - INFO - Processing batch 7/488 (emails 13-14)
+2025-09-27 07:11:29,199 - INFO - Created 2 tasks for batch 7
+2025-09-27 07:11:29,199 - INFO - Processing 2 tasks individually in batch 7
+2025-09-27 07:11:29,199 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 07:11:29,199 - INFO - Starting task 1/2 in batch 7
+2025-09-27 07:11:29,199 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 07:12:42,550 - INFO - Thread conv_m365_1b4520d9af2c: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:12:42,550 - WARNING - Thread conv_m365_1b4520d9af2c: Missing overall_sentiment, retrying...
+2025-09-27 07:12:42,551 - INFO - Thread conv_m365_1b4520d9af2c: Starting overall sentiment retry for 8 messages
+2025-09-27 07:12:42,551 - WARNING - Request failed on attempt 1/3: Session is closed
+2025-09-27 07:12:45,554 - WARNING - Request failed on attempt 2/3: Session is closed
+2025-09-27 07:12:48,557 - WARNING - Request failed on attempt 3/3: Session is closed
+2025-09-27 07:12:48,558 - ERROR - Thread conv_m365_1b4520d9af2c: Overall sentiment retry failed: Session is closed
+2025-09-27 07:12:48,558 - INFO - Thread conv_m365_1b4520d9af2c: Retrieved overall sentiment: 1
+2025-09-27 07:12:48,558 - INFO - Thread conv_m365_1b4520d9af2c: Generated content keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:12:48,558 - INFO - Task 1 finished, processing result...
+2025-09-27 07:12:48,558 - INFO - Task 1/2 completed successfully in 79.4s
+2025-09-27 07:12:48,558 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 07:12:48,558 - INFO - Starting task 2/2 in batch 7
+2025-09-27 07:12:48,559 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 07:14:36,706 - INFO - Thread conv_m365_2bbc0e7329ae: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:14:36,707 - ERROR - Thread conv_m365_2bbc0e7329ae: Missing analysis field: urgency
+2025-09-27 07:14:36,707 - ERROR - Thread conv_m365_2bbc0e7329ae internal processing failed: Missing analysis field: urgency
+2025-09-27 07:14:36,707 - ERROR - Thread conv_m365_2bbc0e7329ae processing failed with error: Missing analysis field: urgency
+2025-09-27 07:14:36,707 - INFO - Task 2 finished, processing result...
+2025-09-27 07:14:36,707 - WARNING - Task 2/2 returned no result after 108.1s
+2025-09-27 07:14:36,707 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 07:14:36,707 - INFO - Batch 7 FULLY completed in 187.5s: 1/2 successful, 1 failed
+2025-09-27 07:14:36,707 - INFO - Overall Progress: 1.4% (14/976)
+2025-09-27 07:14:39,711 - INFO - Processing batch 8/488 (emails 15-16)
+2025-09-27 07:14:39,711 - INFO - Created 2 tasks for batch 8
+2025-09-27 07:14:39,711 - INFO - Processing 2 tasks individually in batch 8
+2025-09-27 07:14:39,711 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 07:14:39,711 - INFO - Starting task 1/2 in batch 8
+2025-09-27 07:14:39,711 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 07:17:39,832 - WARNING - Request timeout on attempt 1/3
+2025-09-27 07:19:00,557 - INFO - Thread conv_m365_c883756cf320: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:19:00,557 - ERROR - Thread conv_m365_c883756cf320: Missing analysis field: stages
+2025-09-27 07:19:00,557 - ERROR - Thread conv_m365_c883756cf320 internal processing failed: Missing analysis field: stages
+2025-09-27 07:19:00,557 - ERROR - Thread conv_m365_c883756cf320 processing failed with error: Missing analysis field: stages
+2025-09-27 07:19:00,557 - INFO - Task 1 finished, processing result...
+2025-09-27 07:19:00,557 - WARNING - Task 1/2 returned no result after 260.8s
+2025-09-27 07:19:00,557 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 07:19:00,557 - INFO - Starting task 2/2 in batch 8
+2025-09-27 07:19:00,557 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 07:20:54,029 - INFO - Thread conv_m365_7fa7c63433ec: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:20:54,029 - ERROR - Thread conv_m365_7fa7c63433ec: Missing analysis field: follow_up_date
+2025-09-27 07:20:54,029 - ERROR - Thread conv_m365_7fa7c63433ec internal processing failed: Missing analysis field: follow_up_date
+2025-09-27 07:20:54,029 - ERROR - Thread conv_m365_7fa7c63433ec processing failed with error: Missing analysis field: follow_up_date
+2025-09-27 07:20:54,030 - INFO - Task 2 finished, processing result...
+2025-09-27 07:20:54,030 - WARNING - Task 2/2 returned no result after 113.5s
+2025-09-27 07:20:54,030 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 07:20:54,030 - INFO - Batch 8 FULLY completed in 374.3s: 0/2 successful, 2 failed
+2025-09-27 07:20:54,030 - INFO - Overall Progress: 1.6% (16/976)
+2025-09-27 07:20:57,031 - INFO - Processing batch 9/488 (emails 17-18)
+2025-09-27 07:20:57,031 - INFO - Created 2 tasks for batch 9
+2025-09-27 07:20:57,031 - INFO - Processing 2 tasks individually in batch 9
+2025-09-27 07:20:57,031 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 07:20:57,031 - INFO - Starting task 1/2 in batch 9
+2025-09-27 07:20:57,031 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 07:22:11,015 - INFO - Thread conv_m365_b08c1fe97d19: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:22:11,016 - ERROR - Thread conv_m365_b08c1fe97d19: Missing analysis field: stages
+2025-09-27 07:22:11,016 - ERROR - Thread conv_m365_b08c1fe97d19 internal processing failed: Missing analysis field: stages
+2025-09-27 07:22:11,016 - ERROR - Thread conv_m365_b08c1fe97d19 processing failed with error: Missing analysis field: stages
+2025-09-27 07:22:11,016 - INFO - Task 1 finished, processing result...
+2025-09-27 07:22:11,016 - WARNING - Task 1/2 returned no result after 74.0s
+2025-09-27 07:22:11,016 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 07:22:11,016 - INFO - Starting task 2/2 in batch 9
+2025-09-27 07:22:11,016 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 07:24:06,520 - INFO - Thread conv_m365_9312f6324445: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:24:06,520 - ERROR - Thread conv_m365_9312f6324445: Missing analysis field: action_pending_status
+2025-09-27 07:24:06,520 - ERROR - Thread conv_m365_9312f6324445 internal processing failed: Missing analysis field: action_pending_status
+2025-09-27 07:24:06,520 - ERROR - Thread conv_m365_9312f6324445 processing failed with error: Missing analysis field: action_pending_status
+2025-09-27 07:24:06,521 - INFO - Task 2 finished, processing result...
+2025-09-27 07:24:06,521 - WARNING - Task 2/2 returned no result after 115.5s
+2025-09-27 07:24:06,521 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 07:24:06,521 - INFO - Batch 9 FULLY completed in 189.5s: 0/2 successful, 2 failed
+2025-09-27 07:24:06,521 - INFO - Overall Progress: 1.8% (18/976)
+2025-09-27 07:24:09,524 - INFO - Processing batch 10/488 (emails 19-20)
+2025-09-27 07:24:09,524 - INFO - Created 2 tasks for batch 10
+2025-09-27 07:24:09,524 - INFO - Processing 2 tasks individually in batch 10
+2025-09-27 07:24:09,524 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 07:24:09,524 - INFO - Starting task 1/2 in batch 10
+2025-09-27 07:24:09,525 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 07:25:31,140 - INFO - Thread conv_m365_18393cd4606d: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:25:31,141 - INFO - Thread conv_m365_18393cd4606d: Generated content keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:25:31,141 - INFO - Task 1 finished, processing result...
+2025-09-27 07:25:31,141 - INFO - Task 1/2 completed successfully in 81.6s
+2025-09-27 07:25:31,141 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 07:25:31,141 - INFO - Starting task 2/2 in batch 10
+2025-09-27 07:25:31,141 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 07:26:26,035 - INFO - Thread conv_m365_2c8747f05b68: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:26:26,035 - WARNING - Thread conv_m365_2c8747f05b68: Missing overall_sentiment, retrying...
+2025-09-27 07:26:26,035 - INFO - Thread conv_m365_2c8747f05b68: Starting overall sentiment retry for 8 messages
+2025-09-27 07:26:26,035 - WARNING - Request failed on attempt 1/3: Session is closed
+2025-09-27 07:26:29,038 - WARNING - Request failed on attempt 2/3: Session is closed
+2025-09-27 07:26:32,041 - WARNING - Request failed on attempt 3/3: Session is closed
+2025-09-27 07:26:32,041 - ERROR - Thread conv_m365_2c8747f05b68: Overall sentiment retry failed: Session is closed
+2025-09-27 07:26:32,041 - INFO - Thread conv_m365_2c8747f05b68: Retrieved overall sentiment: 1
+2025-09-27 07:26:32,042 - INFO - Thread conv_m365_2c8747f05b68: Generated content keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:26:32,042 - INFO - Task 2 finished, processing result...
+2025-09-27 07:26:42,052 - WARNING - Checkpoint save timed out for task 2, but task completed successfully
+2025-09-27 07:26:42,053 - INFO - Task 2/2 completed successfully in 60.9s
+2025-09-27 07:26:42,053 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 07:26:42,053 - INFO - Batch 10 FULLY completed in 152.5s: 2/2 successful, 0 failed
+2025-09-27 07:26:42,053 - INFO - Saving batch of 3 updates to database...
+2025-09-27 07:26:42,261 - INFO - Successfully saved 3 records to database
+2025-09-27 07:26:42,261 - INFO - Overall Progress: 2.0% (20/976)
+2025-09-27 07:26:45,264 - INFO - Processing batch 11/488 (emails 21-22)
+2025-09-27 07:26:45,264 - INFO - Created 2 tasks for batch 11
+2025-09-27 07:26:45,264 - INFO - Processing 2 tasks individually in batch 11
+2025-09-27 07:26:45,264 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 07:26:45,264 - INFO - Starting task 1/2 in batch 11
+2025-09-27 07:26:45,264 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 07:29:45,831 - WARNING - Request timeout on attempt 1/3
+2025-09-27 07:31:43,190 - INFO - Thread conv_m365_66149925a48a: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis', 'metadata']
+2025-09-27 07:31:43,190 - ERROR - Thread conv_m365_66149925a48a: Missing analysis field: stages
+2025-09-27 07:31:43,190 - ERROR - Thread conv_m365_66149925a48a internal processing failed: Missing analysis field: stages
+2025-09-27 07:31:43,190 - ERROR - Thread conv_m365_66149925a48a processing failed with error: Missing analysis field: stages
+2025-09-27 07:31:43,190 - INFO - Task 1 finished, processing result...
+2025-09-27 07:31:43,191 - WARNING - Task 1/2 returned no result after 297.9s
+2025-09-27 07:31:43,191 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 07:31:43,191 - INFO - Starting task 2/2 in batch 11
+2025-09-27 07:31:43,191 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 07:34:43,830 - WARNING - Request timeout on attempt 1/3
+2025-09-27 07:35:44,197 - INFO - Thread conv_m365_aa91a3a274e5: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:35:44,197 - ERROR - Thread conv_m365_aa91a3a274e5: Missing analysis field: follow_up_reason
+2025-09-27 07:35:44,197 - ERROR - Thread conv_m365_aa91a3a274e5 internal processing failed: Missing analysis field: follow_up_reason
+2025-09-27 07:35:44,197 - ERROR - Thread conv_m365_aa91a3a274e5 processing failed with error: Missing analysis field: follow_up_reason
+2025-09-27 07:35:44,197 - INFO - Task 2 finished, processing result...
+2025-09-27 07:35:44,197 - WARNING - Task 2/2 returned no result after 241.0s
+2025-09-27 07:35:44,197 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 07:35:44,197 - INFO - Batch 11 FULLY completed in 538.9s: 0/2 successful, 2 failed
+2025-09-27 07:35:44,197 - INFO - Overall Progress: 2.3% (22/976)
+2025-09-27 07:35:47,201 - INFO - Processing batch 12/488 (emails 23-24)
+2025-09-27 07:35:47,201 - INFO - Created 2 tasks for batch 12
+2025-09-27 07:35:47,201 - INFO - Processing 2 tasks individually in batch 12
+2025-09-27 07:35:47,201 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 07:35:47,201 - INFO - Starting task 1/2 in batch 12
+2025-09-27 07:35:47,201 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 07:36:44,284 - INFO - Thread conv_m365_b5b0f0b02dbf: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:36:44,284 - ERROR - Thread conv_m365_b5b0f0b02dbf: Missing analysis field: stages
+2025-09-27 07:36:44,284 - ERROR - Thread conv_m365_b5b0f0b02dbf internal processing failed: Missing analysis field: stages
+2025-09-27 07:36:44,284 - ERROR - Thread conv_m365_b5b0f0b02dbf processing failed with error: Missing analysis field: stages
+2025-09-27 07:36:44,284 - INFO - Task 1 finished, processing result...
+2025-09-27 07:36:44,284 - WARNING - Task 1/2 returned no result after 57.1s
+2025-09-27 07:36:44,285 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 07:36:44,285 - INFO - Starting task 2/2 in batch 12
+2025-09-27 07:36:44,285 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 07:37:35,869 - INFO - Thread conv_m365_b08ac1e71011: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:37:35,870 - INFO - Thread conv_m365_b08ac1e71011: Generated content keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:37:35,870 - INFO - Task 2 finished, processing result...
+2025-09-27 07:37:35,870 - INFO - Task 2/2 completed successfully in 51.6s
+2025-09-27 07:37:35,870 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 07:37:35,870 - INFO - Batch 12 FULLY completed in 108.7s: 1/2 successful, 1 failed
+2025-09-27 07:37:35,870 - INFO - Overall Progress: 2.5% (24/976)
+2025-09-27 07:37:38,874 - INFO - Processing batch 13/488 (emails 25-26)
+2025-09-27 07:37:38,874 - INFO - Created 2 tasks for batch 13
+2025-09-27 07:37:38,874 - INFO - Processing 2 tasks individually in batch 13
+2025-09-27 07:37:38,874 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 07:37:38,874 - INFO - Starting task 1/2 in batch 13
+2025-09-27 07:37:38,874 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 07:38:50,443 - INFO - Thread conv_m365_5538d56c1672: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:38:50,443 - ERROR - Thread conv_m365_5538d56c1672: Missing analysis field: urgency
+2025-09-27 07:38:50,443 - ERROR - Thread conv_m365_5538d56c1672 internal processing failed: Missing analysis field: urgency
+2025-09-27 07:38:50,443 - ERROR - Thread conv_m365_5538d56c1672 processing failed with error: Missing analysis field: urgency
+2025-09-27 07:38:50,444 - INFO - Task 1 finished, processing result...
+2025-09-27 07:38:50,444 - WARNING - Task 1/2 returned no result after 71.6s
+2025-09-27 07:38:50,444 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 07:38:50,444 - INFO - Starting task 2/2 in batch 13
+2025-09-27 07:38:50,444 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 07:40:42,817 - INFO - Thread conv_m365_a9102403194c: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:40:42,817 - ERROR - Thread conv_m365_a9102403194c: Missing analysis field: action_pending_status
+2025-09-27 07:40:42,817 - ERROR - Thread conv_m365_a9102403194c internal processing failed: Missing analysis field: action_pending_status
+2025-09-27 07:40:42,817 - ERROR - Thread conv_m365_a9102403194c processing failed with error: Missing analysis field: action_pending_status
+2025-09-27 07:40:42,817 - INFO - Task 2 finished, processing result...
+2025-09-27 07:40:42,817 - WARNING - Task 2/2 returned no result after 112.4s
+2025-09-27 07:40:42,817 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 07:40:42,817 - INFO - Batch 13 FULLY completed in 183.9s: 0/2 successful, 2 failed
+2025-09-27 07:40:42,817 - INFO - Overall Progress: 2.7% (26/976)
+2025-09-27 07:40:45,821 - INFO - Processing batch 14/488 (emails 27-28)
+2025-09-27 07:40:45,821 - INFO - Created 2 tasks for batch 14
+2025-09-27 07:40:45,821 - INFO - Processing 2 tasks individually in batch 14
+2025-09-27 07:40:45,821 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 07:40:45,821 - INFO - Starting task 1/2 in batch 14
+2025-09-27 07:40:45,821 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 07:42:34,065 - INFO - Thread conv_m365_1ba92d328109: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:42:34,066 - WARNING - Thread conv_m365_1ba92d328109: Missing overall_sentiment, retrying...
+2025-09-27 07:42:34,066 - INFO - Thread conv_m365_1ba92d328109: Starting overall sentiment retry for 8 messages
+2025-09-27 07:42:34,066 - WARNING - Request failed on attempt 1/3: Session is closed
+2025-09-27 07:42:37,069 - WARNING - Request failed on attempt 2/3: Session is closed
+2025-09-27 07:42:40,073 - WARNING - Request failed on attempt 3/3: Session is closed
+2025-09-27 07:42:40,073 - ERROR - Thread conv_m365_1ba92d328109: Overall sentiment retry failed: Session is closed
+2025-09-27 07:42:40,073 - INFO - Thread conv_m365_1ba92d328109: Retrieved overall sentiment: 1
+2025-09-27 07:42:40,073 - WARNING - Thread conv_m365_1ba92d328109: Ollama generated urgency='low' but existing value is 'False'. Correcting...
+2025-09-27 07:42:40,073 - INFO - Thread conv_m365_1ba92d328109: Generated content keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:42:40,073 - INFO - Task 1 finished, processing result...
+2025-09-27 07:42:40,074 - INFO - Task 1/2 completed successfully in 114.3s
+2025-09-27 07:42:40,074 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 07:42:40,074 - INFO - Starting task 2/2 in batch 14
+2025-09-27 07:42:40,074 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 07:45:40,831 - WARNING - Request timeout on attempt 1/3
+2025-09-27 07:47:26,596 - INFO - Thread conv_m365_d6f5dd6242c3: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:47:26,597 - ERROR - Thread conv_m365_d6f5dd6242c3: Missing analysis field: stages
+2025-09-27 07:47:26,597 - ERROR - Thread conv_m365_d6f5dd6242c3 internal processing failed: Missing analysis field: stages
+2025-09-27 07:47:26,597 - ERROR - Thread conv_m365_d6f5dd6242c3 processing failed with error: Missing analysis field: stages
+2025-09-27 07:47:26,597 - INFO - Task 2 finished, processing result...
+2025-09-27 07:47:26,597 - WARNING - Task 2/2 returned no result after 286.5s
+2025-09-27 07:47:26,597 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 07:47:26,597 - INFO - Batch 14 FULLY completed in 400.8s: 1/2 successful, 1 failed
+2025-09-27 07:47:26,597 - INFO - Saving batch of 2 updates to database...
+2025-09-27 07:47:26,704 - INFO - Successfully saved 2 records to database
+2025-09-27 07:47:26,705 - INFO - Overall Progress: 2.9% (28/976)
+2025-09-27 07:47:29,708 - INFO - Processing batch 15/488 (emails 29-30)
+2025-09-27 07:47:29,708 - INFO - Created 2 tasks for batch 15
+2025-09-27 07:47:29,708 - INFO - Processing 2 tasks individually in batch 15
+2025-09-27 07:47:29,708 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 07:47:29,708 - INFO - Starting task 1/2 in batch 15
+2025-09-27 07:47:29,709 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 07:50:28,042 - INFO - Thread conv_m365_20b800eb5249: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis', 'metadata']
+2025-09-27 07:50:28,043 - ERROR - Thread conv_m365_20b800eb5249: Missing analysis field: stages
+2025-09-27 07:50:28,043 - ERROR - Thread conv_m365_20b800eb5249 internal processing failed: Missing analysis field: stages
+2025-09-27 07:50:28,043 - ERROR - Thread conv_m365_20b800eb5249 processing failed with error: Missing analysis field: stages
+2025-09-27 07:50:28,043 - INFO - Task 1 finished, processing result...
+2025-09-27 07:50:28,043 - WARNING - Task 1/2 returned no result after 178.3s
+2025-09-27 07:50:28,043 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 07:50:28,043 - INFO - Starting task 2/2 in batch 15
+2025-09-27 07:50:28,043 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 07:52:16,000 - INFO - Thread conv_m365_4a81b621aeec: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:52:16,001 - INFO - Thread conv_m365_4a81b621aeec: Generated content keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:52:16,001 - INFO - Task 2 finished, processing result...
+2025-09-27 07:52:26,010 - WARNING - Checkpoint save timed out for task 2, but task completed successfully
+2025-09-27 07:52:26,010 - INFO - Task 2/2 completed successfully in 108.0s
+2025-09-27 07:52:26,010 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 07:52:26,010 - INFO - Batch 15 FULLY completed in 296.3s: 1/2 successful, 1 failed
+2025-09-27 07:52:26,010 - INFO - Overall Progress: 3.1% (30/976)
+2025-09-27 07:52:29,013 - INFO - Processing batch 16/488 (emails 31-32)
+2025-09-27 07:52:29,013 - INFO - Created 2 tasks for batch 16
+2025-09-27 07:52:29,014 - INFO - Processing 2 tasks individually in batch 16
+2025-09-27 07:52:29,014 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 07:52:29,014 - INFO - Starting task 1/2 in batch 16
+2025-09-27 07:52:29,014 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 07:53:23,972 - INFO - Thread conv_m365_e20c26875431: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:53:23,972 - WARNING - Thread conv_m365_e20c26875431: Missing overall_sentiment, retrying...
+2025-09-27 07:53:23,972 - INFO - Thread conv_m365_e20c26875431: Starting overall sentiment retry for 8 messages
+2025-09-27 07:53:23,972 - WARNING - Request failed on attempt 1/3: Session is closed
+2025-09-27 07:53:26,975 - WARNING - Request failed on attempt 2/3: Session is closed
+2025-09-27 07:53:29,979 - WARNING - Request failed on attempt 3/3: Session is closed
+2025-09-27 07:53:29,979 - ERROR - Thread conv_m365_e20c26875431: Overall sentiment retry failed: Session is closed
+2025-09-27 07:53:29,979 - INFO - Thread conv_m365_e20c26875431: Retrieved overall sentiment: 1
+2025-09-27 07:53:29,979 - INFO - Thread conv_m365_e20c26875431: Generated content keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:53:29,979 - INFO - Task 1 finished, processing result...
+2025-09-27 07:53:29,979 - INFO - Task 1/2 completed successfully in 61.0s
+2025-09-27 07:53:29,980 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 07:53:29,980 - INFO - Starting task 2/2 in batch 16
+2025-09-27 07:53:29,980 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 07:55:11,412 - INFO - Thread conv_m365_4a724efd1fb6: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:55:11,413 - INFO - Thread conv_m365_4a724efd1fb6: Generated content keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:55:11,413 - INFO - Task 2 finished, processing result...
+2025-09-27 07:55:11,413 - INFO - Task 2/2 completed successfully in 101.4s
+2025-09-27 07:55:11,413 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 07:55:11,413 - INFO - Batch 16 FULLY completed in 162.4s: 2/2 successful, 0 failed
+2025-09-27 07:55:11,413 - INFO - Saving batch of 3 updates to database...
+2025-09-27 07:55:11,624 - INFO - Successfully saved 3 records to database
+2025-09-27 07:55:11,625 - INFO - Overall Progress: 3.3% (32/976)
+2025-09-27 07:55:14,628 - INFO - Processing batch 17/488 (emails 33-34)
+2025-09-27 07:55:14,628 - INFO - Created 2 tasks for batch 17
+2025-09-27 07:55:14,628 - INFO - Processing 2 tasks individually in batch 17
+2025-09-27 07:55:14,628 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 07:55:14,628 - INFO - Starting task 1/2 in batch 17
+2025-09-27 07:55:14,628 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 07:57:02,090 - INFO - Thread conv_m365_72da11cc48c6: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:57:02,090 - ERROR - Thread conv_m365_72da11cc48c6: Missing analysis field: stages
+2025-09-27 07:57:02,091 - ERROR - Thread conv_m365_72da11cc48c6 internal processing failed: Missing analysis field: stages
+2025-09-27 07:57:02,091 - ERROR - Thread conv_m365_72da11cc48c6 processing failed with error: Missing analysis field: stages
+2025-09-27 07:57:02,091 - INFO - Task 1 finished, processing result...
+2025-09-27 07:57:02,091 - WARNING - Task 1/2 returned no result after 107.5s
+2025-09-27 07:57:02,091 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 07:57:02,091 - INFO - Starting task 2/2 in batch 17
+2025-09-27 07:57:02,091 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 07:58:00,501 - INFO - Thread conv_m365_56a59a43ffd3: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 07:58:00,501 - ERROR - Thread conv_m365_56a59a43ffd3: Missing analysis field: action_pending_status
+2025-09-27 07:58:00,501 - ERROR - Thread conv_m365_56a59a43ffd3 internal processing failed: Missing analysis field: action_pending_status
+2025-09-27 07:58:00,501 - ERROR - Thread conv_m365_56a59a43ffd3 processing failed with error: Missing analysis field: action_pending_status
+2025-09-27 07:58:00,502 - INFO - Task 2 finished, processing result...
+2025-09-27 07:58:00,502 - WARNING - Task 2/2 returned no result after 58.4s
+2025-09-27 07:58:00,502 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 07:58:00,502 - INFO - Batch 17 FULLY completed in 165.9s: 0/2 successful, 2 failed
+2025-09-27 07:58:00,502 - INFO - Overall Progress: 3.5% (34/976)
+2025-09-27 07:58:03,505 - INFO - Processing batch 18/488 (emails 35-36)
+2025-09-27 07:58:03,505 - INFO - Created 2 tasks for batch 18
+2025-09-27 07:58:03,505 - INFO - Processing 2 tasks individually in batch 18
+2025-09-27 07:58:03,505 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 07:58:03,506 - INFO - Starting task 1/2 in batch 18
+2025-09-27 07:58:03,506 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 08:01:03,830 - WARNING - Request timeout on attempt 1/3
+2025-09-27 08:02:59,134 - INFO - Thread conv_m365_24caa20ec905: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:02:59,135 - ERROR - Thread conv_m365_24caa20ec905: Missing analysis field: follow_up_date
+2025-09-27 08:02:59,135 - ERROR - Thread conv_m365_24caa20ec905 internal processing failed: Missing analysis field: follow_up_date
+2025-09-27 08:02:59,135 - ERROR - Thread conv_m365_24caa20ec905 processing failed with error: Missing analysis field: follow_up_date
+2025-09-27 08:02:59,135 - INFO - Task 1 finished, processing result...
+2025-09-27 08:02:59,135 - WARNING - Task 1/2 returned no result after 295.6s
+2025-09-27 08:02:59,135 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 08:02:59,135 - INFO - Starting task 2/2 in batch 18
+2025-09-27 08:02:59,135 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 08:04:50,360 - INFO - Thread conv_m365_7cd35c753d73: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:04:50,360 - ERROR - Thread conv_m365_7cd35c753d73: Missing analysis field: urgency
+2025-09-27 08:04:50,360 - ERROR - Thread conv_m365_7cd35c753d73 internal processing failed: Missing analysis field: urgency
+2025-09-27 08:04:50,360 - ERROR - Thread conv_m365_7cd35c753d73 processing failed with error: Missing analysis field: urgency
+2025-09-27 08:04:50,360 - INFO - Task 2 finished, processing result...
+2025-09-27 08:04:50,360 - WARNING - Task 2/2 returned no result after 111.2s
+2025-09-27 08:04:50,360 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 08:04:50,361 - INFO - Batch 18 FULLY completed in 406.9s: 0/2 successful, 2 failed
+2025-09-27 08:04:50,361 - INFO - Overall Progress: 3.7% (36/976)
+2025-09-27 08:04:53,364 - INFO - Processing batch 19/488 (emails 37-38)
+2025-09-27 08:04:53,364 - INFO - Created 2 tasks for batch 19
+2025-09-27 08:04:53,364 - INFO - Processing 2 tasks individually in batch 19
+2025-09-27 08:04:53,364 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 08:04:53,364 - INFO - Starting task 1/2 in batch 19
+2025-09-27 08:04:53,364 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 08:06:41,361 - INFO - Thread conv_m365_731c5360765d: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:06:41,362 - INFO - Thread conv_m365_731c5360765d: Generated content keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:06:41,362 - INFO - Task 1 finished, processing result...
+2025-09-27 08:06:41,362 - INFO - Task 1/2 completed successfully in 108.0s
+2025-09-27 08:06:41,363 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 08:06:41,363 - INFO - Starting task 2/2 in batch 19
+2025-09-27 08:06:41,363 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 08:07:48,307 - INFO - Thread conv_m365_b0a81f37b7e9: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:07:48,307 - ERROR - Thread conv_m365_b0a81f37b7e9: Missing analysis field: follow_up_reason
+2025-09-27 08:07:48,308 - ERROR - Thread conv_m365_b0a81f37b7e9 internal processing failed: Missing analysis field: follow_up_reason
+2025-09-27 08:07:48,308 - ERROR - Thread conv_m365_b0a81f37b7e9 processing failed with error: Missing analysis field: follow_up_reason
+2025-09-27 08:07:48,308 - INFO - Task 2 finished, processing result...
+2025-09-27 08:07:48,308 - WARNING - Task 2/2 returned no result after 66.9s
+2025-09-27 08:07:48,308 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 08:07:48,308 - INFO - Batch 19 FULLY completed in 174.9s: 1/2 successful, 1 failed
+2025-09-27 08:07:48,308 - INFO - Overall Progress: 3.9% (38/976)
+2025-09-27 08:07:51,312 - INFO - Processing batch 20/488 (emails 39-40)
+2025-09-27 08:07:51,312 - INFO - Created 2 tasks for batch 20
+2025-09-27 08:07:51,312 - INFO - Processing 2 tasks individually in batch 20
+2025-09-27 08:07:51,312 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 08:07:51,312 - INFO - Starting task 1/2 in batch 20
+2025-09-27 08:07:51,312 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 08:09:46,634 - INFO - Thread conv_m365_eadf9bb941fd: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:09:46,634 - ERROR - Thread conv_m365_eadf9bb941fd: Missing analysis field: follow_up_reason
+2025-09-27 08:09:46,635 - ERROR - Thread conv_m365_eadf9bb941fd internal processing failed: Missing analysis field: follow_up_reason
+2025-09-27 08:09:46,635 - ERROR - Thread conv_m365_eadf9bb941fd processing failed with error: Missing analysis field: follow_up_reason
+2025-09-27 08:09:46,635 - INFO - Task 1 finished, processing result...
+2025-09-27 08:09:46,635 - WARNING - Task 1/2 returned no result after 115.3s
+2025-09-27 08:09:46,635 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 08:09:46,635 - INFO - Starting task 2/2 in batch 20
+2025-09-27 08:09:46,635 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 08:11:35,304 - INFO - Thread conv_m365_56dceaed7905: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:11:35,304 - WARNING - Removed subject line 'Subject: Liquidity Monitoring - Branch Network - Alert' from body content for thread conv_m365_56dceaed7905
+2025-09-27 08:11:35,305 - WARNING - Removed subject line 'Subject: Re: Liquidity Monitoring - Branch Network - Alert' from body content for thread conv_m365_56dceaed7905
+2025-09-27 08:11:35,305 - WARNING - Removed subject line 'Subject: Re: Liquidity Monitoring - Branch Network - Alert' from body content for thread conv_m365_56dceaed7905
+2025-09-27 08:11:35,305 - WARNING - Removed subject line 'Subject: Re: Liquidity Monitoring - Branch Network - Alert' from body content for thread conv_m365_56dceaed7905
+2025-09-27 08:11:35,305 - WARNING - Removed subject line 'Subject: Re: Liquidity Monitoring - Branch Network - Alert' from body content for thread conv_m365_56dceaed7905
+2025-09-27 08:11:35,305 - WARNING - Removed subject line 'Subject: Re: Liquidity Monitoring - Branch Network - Alert' from body content for thread conv_m365_56dceaed7905
+2025-09-27 08:11:35,305 - INFO - Thread conv_m365_56dceaed7905: Generated content keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:11:35,305 - INFO - Task 2 finished, processing result...
+2025-09-27 08:11:45,316 - WARNING - Checkpoint save timed out for task 2, but task completed successfully
+2025-09-27 08:11:45,316 - INFO - Task 2/2 completed successfully in 108.7s
+2025-09-27 08:11:45,316 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 08:11:45,316 - INFO - Batch 20 FULLY completed in 234.0s: 1/2 successful, 1 failed
+2025-09-27 08:11:45,316 - INFO - Saving batch of 2 updates to database...
+2025-09-27 08:11:45,527 - INFO - Successfully saved 2 records to database
+2025-09-27 08:11:45,527 - INFO - Overall Progress: 4.1% (40/976)
+2025-09-27 08:11:48,531 - INFO - Processing batch 21/488 (emails 41-42)
+2025-09-27 08:11:48,531 - INFO - Created 2 tasks for batch 21
+2025-09-27 08:11:48,531 - INFO - Processing 2 tasks individually in batch 21
+2025-09-27 08:11:48,531 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 08:11:48,531 - INFO - Starting task 1/2 in batch 21
+2025-09-27 08:11:48,531 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 08:13:42,681 - INFO - Thread conv_m365_c5877166cfca: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:13:42,681 - ERROR - Thread conv_m365_c5877166cfca: Missing analysis field: resolution_status
+2025-09-27 08:13:42,681 - ERROR - Thread conv_m365_c5877166cfca internal processing failed: Missing analysis field: resolution_status
+2025-09-27 08:13:42,681 - ERROR - Thread conv_m365_c5877166cfca processing failed with error: Missing analysis field: resolution_status
+2025-09-27 08:13:42,681 - INFO - Task 1 finished, processing result...
+2025-09-27 08:13:42,681 - WARNING - Task 1/2 returned no result after 114.2s
+2025-09-27 08:13:42,681 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 08:13:42,681 - INFO - Starting task 2/2 in batch 21
+2025-09-27 08:13:42,682 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 08:14:49,164 - INFO - Thread conv_m365_f0fd5dd1d0be: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:14:49,164 - ERROR - Thread conv_m365_f0fd5dd1d0be: Missing analysis field: follow_up_reason
+2025-09-27 08:14:49,164 - ERROR - Thread conv_m365_f0fd5dd1d0be internal processing failed: Missing analysis field: follow_up_reason
+2025-09-27 08:14:49,165 - ERROR - Thread conv_m365_f0fd5dd1d0be processing failed with error: Missing analysis field: follow_up_reason
+2025-09-27 08:14:49,165 - INFO - Task 2 finished, processing result...
+2025-09-27 08:14:49,165 - WARNING - Task 2/2 returned no result after 66.5s
+2025-09-27 08:14:49,165 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 08:14:49,165 - INFO - Batch 21 FULLY completed in 180.6s: 0/2 successful, 2 failed
+2025-09-27 08:14:49,165 - INFO - Overall Progress: 4.3% (42/976)
+2025-09-27 08:14:52,168 - INFO - Processing batch 22/488 (emails 43-44)
+2025-09-27 08:14:52,168 - INFO - Created 2 tasks for batch 22
+2025-09-27 08:14:52,168 - INFO - Processing 2 tasks individually in batch 22
+2025-09-27 08:14:52,169 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 08:14:52,169 - INFO - Starting task 1/2 in batch 22
+2025-09-27 08:14:52,169 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 08:16:40,265 - INFO - Thread conv_m365_7a30fe2eedb8: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:16:40,265 - ERROR - Thread conv_m365_7a30fe2eedb8: Missing analysis field: stages
+2025-09-27 08:16:40,265 - ERROR - Thread conv_m365_7a30fe2eedb8 internal processing failed: Missing analysis field: stages
+2025-09-27 08:16:40,265 - ERROR - Thread conv_m365_7a30fe2eedb8 processing failed with error: Missing analysis field: stages
+2025-09-27 08:16:40,265 - INFO - Task 1 finished, processing result...
+2025-09-27 08:16:40,265 - WARNING - Task 1/2 returned no result after 108.1s
+2025-09-27 08:16:40,265 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 08:16:40,266 - INFO - Starting task 2/2 in batch 22
+2025-09-27 08:16:40,266 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 08:18:39,793 - INFO - Thread conv_m365_df6586e948d4: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:18:39,793 - ERROR - Thread conv_m365_df6586e948d4: Missing analysis field: next_action_suggestion
+2025-09-27 08:18:39,793 - ERROR - Thread conv_m365_df6586e948d4 internal processing failed: Missing analysis field: next_action_suggestion
+2025-09-27 08:18:39,793 - ERROR - Thread conv_m365_df6586e948d4 processing failed with error: Missing analysis field: next_action_suggestion
+2025-09-27 08:18:39,794 - INFO - Task 2 finished, processing result...
+2025-09-27 08:18:39,794 - WARNING - Task 2/2 returned no result after 119.5s
+2025-09-27 08:18:39,794 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 08:18:39,794 - INFO - Batch 22 FULLY completed in 227.6s: 0/2 successful, 2 failed
+2025-09-27 08:18:39,794 - INFO - Overall Progress: 4.5% (44/976)
+2025-09-27 08:18:42,797 - INFO - Processing batch 23/488 (emails 45-46)
+2025-09-27 08:18:42,797 - INFO - Created 2 tasks for batch 23
+2025-09-27 08:18:42,797 - INFO - Processing 2 tasks individually in batch 23
+2025-09-27 08:18:42,797 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 08:18:42,798 - INFO - Starting task 1/2 in batch 23
+2025-09-27 08:18:42,798 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 08:20:36,686 - INFO - Thread conv_m365_019f88d87764: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:20:36,687 - ERROR - Thread conv_m365_019f88d87764: Missing analysis field: stages
+2025-09-27 08:20:36,687 - ERROR - Thread conv_m365_019f88d87764 internal processing failed: Missing analysis field: stages
+2025-09-27 08:20:36,687 - ERROR - Thread conv_m365_019f88d87764 processing failed with error: Missing analysis field: stages
+2025-09-27 08:20:36,687 - INFO - Task 1 finished, processing result...
+2025-09-27 08:20:36,687 - WARNING - Task 1/2 returned no result after 113.9s
+2025-09-27 08:20:36,687 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 08:20:36,687 - INFO - Starting task 2/2 in batch 23
+2025-09-27 08:20:36,687 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 08:21:36,022 - INFO - Thread conv_m365_d2eb8ba4386f: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:21:36,023 - INFO - Thread conv_m365_d2eb8ba4386f: Generated content keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:21:36,023 - INFO - Task 2 finished, processing result...
+2025-09-27 08:21:36,023 - INFO - Task 2/2 completed successfully in 59.3s
+2025-09-27 08:21:36,023 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 08:21:36,023 - INFO - Batch 23 FULLY completed in 173.2s: 1/2 successful, 1 failed
+2025-09-27 08:21:36,023 - INFO - Overall Progress: 4.7% (46/976)
+2025-09-27 08:21:39,027 - INFO - Processing batch 24/488 (emails 47-48)
+2025-09-27 08:21:39,027 - INFO - Created 2 tasks for batch 24
+2025-09-27 08:21:39,027 - INFO - Processing 2 tasks individually in batch 24
+2025-09-27 08:21:39,027 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 08:21:39,027 - INFO - Starting task 1/2 in batch 24
+2025-09-27 08:21:39,027 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 08:23:41,505 - INFO - Thread conv_m365_96e3b72e73c6: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:23:41,505 - ERROR - Thread conv_m365_96e3b72e73c6: Missing analysis field: urgency
+2025-09-27 08:23:41,505 - ERROR - Thread conv_m365_96e3b72e73c6 internal processing failed: Missing analysis field: urgency
+2025-09-27 08:23:41,505 - ERROR - Thread conv_m365_96e3b72e73c6 processing failed with error: Missing analysis field: urgency
+2025-09-27 08:23:41,505 - INFO - Task 1 finished, processing result...
+2025-09-27 08:23:41,505 - WARNING - Task 1/2 returned no result after 122.5s
+2025-09-27 08:23:41,506 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 08:23:41,506 - INFO - Starting task 2/2 in batch 24
+2025-09-27 08:23:41,506 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 08:25:38,110 - INFO - Thread conv_m365_86fd8cfed66f: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:25:38,110 - ERROR - Thread conv_m365_86fd8cfed66f: Missing analysis field: follow_up_reason
+2025-09-27 08:25:38,110 - ERROR - Thread conv_m365_86fd8cfed66f internal processing failed: Missing analysis field: follow_up_reason
+2025-09-27 08:25:38,110 - ERROR - Thread conv_m365_86fd8cfed66f processing failed with error: Missing analysis field: follow_up_reason
+2025-09-27 08:25:38,110 - INFO - Task 2 finished, processing result...
+2025-09-27 08:25:38,110 - WARNING - Task 2/2 returned no result after 116.6s
+2025-09-27 08:25:38,110 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 08:25:38,110 - INFO - Batch 24 FULLY completed in 239.1s: 0/2 successful, 2 failed
+2025-09-27 08:25:38,111 - INFO - Overall Progress: 4.9% (48/976)
+2025-09-27 08:25:41,114 - INFO - Processing batch 25/488 (emails 49-50)
+2025-09-27 08:25:41,114 - INFO - Created 2 tasks for batch 25
+2025-09-27 08:25:41,114 - INFO - Processing 2 tasks individually in batch 25
+2025-09-27 08:25:41,114 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 08:25:41,114 - INFO - Starting task 1/2 in batch 25
+2025-09-27 08:25:41,114 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 08:26:41,114 - INFO - Thread conv_m365_99d472eb6c1c: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:26:41,114 - ERROR - Thread conv_m365_99d472eb6c1c: Missing analysis field: next_action_suggestion
+2025-09-27 08:26:41,114 - ERROR - Thread conv_m365_99d472eb6c1c internal processing failed: Missing analysis field: next_action_suggestion
+2025-09-27 08:26:41,114 - ERROR - Thread conv_m365_99d472eb6c1c processing failed with error: Missing analysis field: next_action_suggestion
+2025-09-27 08:26:41,115 - INFO - Task 1 finished, processing result...
+2025-09-27 08:26:41,115 - WARNING - Task 1/2 returned no result after 60.0s
+2025-09-27 08:26:41,115 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 08:26:41,115 - INFO - Starting task 2/2 in batch 25
+2025-09-27 08:26:41,115 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 08:28:34,986 - INFO - Thread conv_m365_f13417a3bae6: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:28:34,986 - WARNING - Thread conv_m365_f13417a3bae6: Missing overall_sentiment, retrying...
+2025-09-27 08:28:34,986 - INFO - Thread conv_m365_f13417a3bae6: Starting overall sentiment retry for 8 messages
+2025-09-27 08:28:34,986 - WARNING - Request failed on attempt 1/3: Session is closed
+2025-09-27 08:28:37,990 - WARNING - Request failed on attempt 2/3: Session is closed
+2025-09-27 08:28:40,993 - WARNING - Request failed on attempt 3/3: Session is closed
+2025-09-27 08:28:40,993 - ERROR - Thread conv_m365_f13417a3bae6: Overall sentiment retry failed: Session is closed
+2025-09-27 08:28:40,993 - INFO - Thread conv_m365_f13417a3bae6: Retrieved overall sentiment: 1
+2025-09-27 08:28:40,993 - INFO - Thread conv_m365_f13417a3bae6: Generated content keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:28:40,993 - INFO - Task 2 finished, processing result...
+2025-09-27 08:28:51,004 - WARNING - Checkpoint save timed out for task 2, but task completed successfully
+2025-09-27 08:28:51,004 - INFO - Task 2/2 completed successfully in 119.9s
+2025-09-27 08:28:51,004 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 08:28:51,004 - INFO - Batch 25 FULLY completed in 189.9s: 1/2 successful, 1 failed
+2025-09-27 08:28:51,004 - INFO - Saving batch of 2 updates to database...
+2025-09-27 08:28:51,212 - INFO - Successfully saved 2 records to database
+2025-09-27 08:28:51,212 - INFO - Overall Progress: 5.1% (50/976)
+2025-09-27 08:28:54,216 - INFO - Processing batch 26/488 (emails 51-52)
+2025-09-27 08:28:54,216 - INFO - Created 2 tasks for batch 26
+2025-09-27 08:28:54,216 - INFO - Processing 2 tasks individually in batch 26
+2025-09-27 08:28:54,216 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 08:28:54,216 - INFO - Starting task 1/2 in batch 26
+2025-09-27 08:28:54,216 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 08:30:28,920 - INFO - Thread conv_m365_4ccae84b6866: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:30:28,920 - WARNING - Thread conv_m365_4ccae84b6866: Missing overall_sentiment, retrying...
+2025-09-27 08:30:28,920 - INFO - Thread conv_m365_4ccae84b6866: Starting overall sentiment retry for 8 messages
+2025-09-27 08:30:28,920 - WARNING - Request failed on attempt 1/3: Session is closed
+2025-09-27 08:30:31,924 - WARNING - Request failed on attempt 2/3: Session is closed
+2025-09-27 08:30:34,927 - WARNING - Request failed on attempt 3/3: Session is closed
+2025-09-27 08:30:34,927 - ERROR - Thread conv_m365_4ccae84b6866: Overall sentiment retry failed: Session is closed
+2025-09-27 08:30:34,927 - INFO - Thread conv_m365_4ccae84b6866: Retrieved overall sentiment: 1
+2025-09-27 08:30:34,927 - INFO - Thread conv_m365_4ccae84b6866: Generated content keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:30:34,927 - INFO - Task 1 finished, processing result...
+2025-09-27 08:30:34,928 - INFO - Task 1/2 completed successfully in 100.7s
+2025-09-27 08:30:34,928 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 08:30:34,928 - INFO - Starting task 2/2 in batch 26
+2025-09-27 08:30:34,928 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 08:31:51,527 - INFO - Thread conv_m365_76059138013b: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:31:51,528 - ERROR - Thread conv_m365_76059138013b: Missing analysis field: follow_up_required
+2025-09-27 08:31:51,528 - ERROR - Thread conv_m365_76059138013b internal processing failed: Missing analysis field: follow_up_required
+2025-09-27 08:31:51,528 - ERROR - Thread conv_m365_76059138013b processing failed with error: Missing analysis field: follow_up_required
+2025-09-27 08:31:51,528 - INFO - Task 2 finished, processing result...
+2025-09-27 08:31:51,528 - WARNING - Task 2/2 returned no result after 76.6s
+2025-09-27 08:31:51,528 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 08:31:51,528 - INFO - Batch 26 FULLY completed in 177.3s: 1/2 successful, 1 failed
+2025-09-27 08:31:51,528 - INFO - Overall Progress: 5.3% (52/976)
+2025-09-27 08:31:54,532 - INFO - Processing batch 27/488 (emails 53-54)
+2025-09-27 08:31:54,532 - INFO - Created 2 tasks for batch 27
+2025-09-27 08:31:54,532 - INFO - Processing 2 tasks individually in batch 27
+2025-09-27 08:31:54,532 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 08:31:54,532 - INFO - Starting task 1/2 in batch 27
+2025-09-27 08:31:54,532 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 08:34:33,582 - INFO - Thread conv_m365_8a7c1da0b110: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:34:33,583 - INFO - Thread conv_m365_8a7c1da0b110: Generated content keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:34:33,583 - INFO - Task 1 finished, processing result...
+2025-09-27 08:34:33,583 - INFO - Task 1/2 completed successfully in 159.1s
+2025-09-27 08:34:33,584 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 08:34:33,584 - INFO - Starting task 2/2 in batch 27
+2025-09-27 08:34:33,584 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 08:36:25,342 - INFO - Thread conv_m365_054787be48b2: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:36:25,343 - WARNING - Thread conv_m365_054787be48b2: Missing overall_sentiment, retrying...
+2025-09-27 08:36:25,343 - INFO - Thread conv_m365_054787be48b2: Starting overall sentiment retry for 6 messages
+2025-09-27 08:36:25,343 - WARNING - Request failed on attempt 1/3: Session is closed
+2025-09-27 08:36:28,346 - WARNING - Request failed on attempt 2/3: Session is closed
+2025-09-27 08:36:31,349 - WARNING - Request failed on attempt 3/3: Session is closed
+2025-09-27 08:36:31,349 - ERROR - Thread conv_m365_054787be48b2: Overall sentiment retry failed: Session is closed
+2025-09-27 08:36:31,349 - INFO - Thread conv_m365_054787be48b2: Retrieved overall sentiment: 1
+2025-09-27 08:36:31,350 - INFO - Thread conv_m365_054787be48b2: Generated content keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:36:31,350 - INFO - Task 2 finished, processing result...
+2025-09-27 08:36:31,350 - INFO - Task 2/2 completed successfully in 117.8s
+2025-09-27 08:36:31,350 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 08:36:31,350 - INFO - Batch 27 FULLY completed in 276.8s: 2/2 successful, 0 failed
+2025-09-27 08:36:31,350 - INFO - Saving batch of 3 updates to database...
+2025-09-27 08:36:31,566 - INFO - Successfully saved 3 records to database
+2025-09-27 08:36:31,566 - INFO - Overall Progress: 5.5% (54/976)
+2025-09-27 08:36:34,570 - INFO - Processing batch 28/488 (emails 55-56)
+2025-09-27 08:36:34,570 - INFO - Created 2 tasks for batch 28
+2025-09-27 08:36:34,570 - INFO - Processing 2 tasks individually in batch 28
+2025-09-27 08:36:34,570 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 08:36:34,570 - INFO - Starting task 1/2 in batch 28
+2025-09-27 08:36:34,570 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 08:38:18,003 - INFO - Thread conv_m365_6580436da8f0: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:38:18,003 - ERROR - Thread conv_m365_6580436da8f0: Missing analysis field: follow_up_reason
+2025-09-27 08:38:18,003 - ERROR - Thread conv_m365_6580436da8f0 internal processing failed: Missing analysis field: follow_up_reason
+2025-09-27 08:38:18,003 - ERROR - Thread conv_m365_6580436da8f0 processing failed with error: Missing analysis field: follow_up_reason
+2025-09-27 08:38:18,003 - INFO - Task 1 finished, processing result...
+2025-09-27 08:38:18,003 - WARNING - Task 1/2 returned no result after 103.4s
+2025-09-27 08:38:18,003 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 08:38:18,003 - INFO - Starting task 2/2 in batch 28
+2025-09-27 08:38:18,003 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 08:39:23,459 - INFO - Thread conv_m365_8a7975b8aaf8: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:39:23,459 - ERROR - Thread conv_m365_8a7975b8aaf8: Missing analysis field: action_pending_status
+2025-09-27 08:39:23,459 - ERROR - Thread conv_m365_8a7975b8aaf8 internal processing failed: Missing analysis field: action_pending_status
+2025-09-27 08:39:23,460 - ERROR - Thread conv_m365_8a7975b8aaf8 processing failed with error: Missing analysis field: action_pending_status
+2025-09-27 08:39:23,460 - INFO - Task 2 finished, processing result...
+2025-09-27 08:39:23,460 - WARNING - Task 2/2 returned no result after 65.5s
+2025-09-27 08:39:23,460 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 08:39:23,460 - INFO - Batch 28 FULLY completed in 168.9s: 0/2 successful, 2 failed
+2025-09-27 08:39:23,460 - INFO - Overall Progress: 5.7% (56/976)
+2025-09-27 08:39:26,463 - INFO - Processing batch 29/488 (emails 57-58)
+2025-09-27 08:39:26,463 - INFO - Created 2 tasks for batch 29
+2025-09-27 08:39:26,463 - INFO - Processing 2 tasks individually in batch 29
+2025-09-27 08:39:26,463 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 08:39:26,464 - INFO - Starting task 1/2 in batch 29
+2025-09-27 08:39:26,464 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 08:41:13,881 - INFO - Thread conv_m365_9365bd8c615c: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:41:13,882 - INFO - Thread conv_m365_9365bd8c615c: Generated content keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:41:13,882 - INFO - Task 1 finished, processing result...
+2025-09-27 08:41:13,882 - INFO - Task 1/2 completed successfully in 107.4s
+2025-09-27 08:41:13,882 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 08:41:13,882 - INFO - Starting task 2/2 in batch 29
+2025-09-27 08:41:13,882 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 08:43:07,275 - INFO - Thread conv_m365_fbb8be7bf58d: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis', 'sentiments']
+2025-09-27 08:43:07,276 - ERROR - Thread conv_m365_fbb8be7bf58d: Missing analysis field: urgency
+2025-09-27 08:43:07,276 - ERROR - Thread conv_m365_fbb8be7bf58d internal processing failed: Missing analysis field: urgency
+2025-09-27 08:43:07,276 - ERROR - Thread conv_m365_fbb8be7bf58d processing failed with error: Missing analysis field: urgency
+2025-09-27 08:43:07,276 - INFO - Task 2 finished, processing result...
+2025-09-27 08:43:07,276 - WARNING - Task 2/2 returned no result after 113.4s
+2025-09-27 08:43:07,276 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 08:43:07,276 - INFO - Batch 29 FULLY completed in 220.8s: 1/2 successful, 1 failed
+2025-09-27 08:43:07,276 - INFO - Overall Progress: 5.9% (58/976)
+2025-09-27 08:43:10,280 - INFO - Processing batch 30/488 (emails 59-60)
+2025-09-27 08:43:10,280 - INFO - Created 2 tasks for batch 30
+2025-09-27 08:43:10,280 - INFO - Processing 2 tasks individually in batch 30
+2025-09-27 08:43:10,280 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 08:43:10,280 - INFO - Starting task 1/2 in batch 30
+2025-09-27 08:43:10,280 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 08:44:08,969 - INFO - Thread conv_m365_63a63824b2fa: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:44:08,970 - WARNING - Thread conv_m365_63a63824b2fa: Missing overall_sentiment, retrying...
+2025-09-27 08:44:08,970 - INFO - Thread conv_m365_63a63824b2fa: Starting overall sentiment retry for 8 messages
+2025-09-27 08:44:08,970 - WARNING - Request failed on attempt 1/3: Session is closed
+2025-09-27 08:44:11,973 - WARNING - Request failed on attempt 2/3: Session is closed
+2025-09-27 08:44:14,977 - WARNING - Request failed on attempt 3/3: Session is closed
+2025-09-27 08:44:14,977 - ERROR - Thread conv_m365_63a63824b2fa: Overall sentiment retry failed: Session is closed
+2025-09-27 08:44:14,977 - INFO - Thread conv_m365_63a63824b2fa: Retrieved overall sentiment: 1
+2025-09-27 08:44:14,977 - INFO - Thread conv_m365_63a63824b2fa: Generated content keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:44:14,978 - INFO - Task 1 finished, processing result...
+2025-09-27 08:44:14,978 - INFO - Task 1/2 completed successfully in 64.7s
+2025-09-27 08:44:14,978 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 08:44:14,978 - INFO - Starting task 2/2 in batch 30
+2025-09-27 08:44:14,978 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 08:46:04,449 - INFO - Thread conv_m365_1406162db484: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:46:04,449 - ERROR - Thread conv_m365_1406162db484: Missing analysis field: action_pending_status
+2025-09-27 08:46:04,449 - ERROR - Thread conv_m365_1406162db484 internal processing failed: Missing analysis field: action_pending_status
+2025-09-27 08:46:04,449 - ERROR - Thread conv_m365_1406162db484 processing failed with error: Missing analysis field: action_pending_status
+2025-09-27 08:53:15,035 - ERROR - Task 2/2 timed out after 540.1s, continuing to next task...
+2025-09-27 08:53:15,035 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 08:53:15,035 - INFO - Batch 30 FULLY completed in 604.8s: 1/2 successful, 1 failed
+2025-09-27 08:53:15,035 - INFO - Saving batch of 2 updates to database...
+2025-09-27 08:53:15,243 - INFO - Successfully saved 2 records to database
+2025-09-27 08:53:15,243 - INFO - Overall Progress: 6.1% (60/976)
+2025-09-27 08:53:18,246 - INFO - Processing batch 31/488 (emails 61-62)
+2025-09-27 08:53:18,247 - INFO - Created 2 tasks for batch 31
+2025-09-27 08:53:18,247 - INFO - Processing 2 tasks individually in batch 31
+2025-09-27 08:53:18,247 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 08:53:18,247 - INFO - Starting task 1/2 in batch 31
+2025-09-27 08:53:18,247 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 08:54:34,711 - INFO - Thread conv_m365_260548e35a1f: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:54:34,711 - ERROR - Thread conv_m365_260548e35a1f: Missing analysis field: action_pending_from
+2025-09-27 08:54:34,711 - ERROR - Thread conv_m365_260548e35a1f internal processing failed: Missing analysis field: action_pending_from
+2025-09-27 08:54:34,711 - ERROR - Thread conv_m365_260548e35a1f processing failed with error: Missing analysis field: action_pending_from
+2025-09-27 08:54:34,712 - INFO - Task 1 finished, processing result...
+2025-09-27 08:54:34,712 - WARNING - Task 1/2 returned no result after 76.5s
+2025-09-27 08:54:34,712 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 08:54:34,712 - INFO - Starting task 2/2 in batch 31
+2025-09-27 08:54:34,712 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 08:55:41,673 - INFO - Thread conv_m365_306d493e3929: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:55:41,673 - ERROR - Thread conv_m365_306d493e3929: Missing analysis field: stages
+2025-09-27 08:55:41,673 - ERROR - Thread conv_m365_306d493e3929 internal processing failed: Missing analysis field: stages
+2025-09-27 08:55:41,674 - ERROR - Thread conv_m365_306d493e3929 processing failed with error: Missing analysis field: stages
+2025-09-27 08:55:41,674 - INFO - Task 2 finished, processing result...
+2025-09-27 08:55:41,674 - WARNING - Task 2/2 returned no result after 67.0s
+2025-09-27 08:55:41,674 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 08:55:41,674 - INFO - Batch 31 FULLY completed in 143.4s: 0/2 successful, 2 failed
+2025-09-27 08:55:41,674 - INFO - Overall Progress: 6.4% (62/976)
+2025-09-27 08:55:44,677 - INFO - Processing batch 32/488 (emails 63-64)
+2025-09-27 08:55:44,677 - INFO - Created 2 tasks for batch 32
+2025-09-27 08:55:44,677 - INFO - Processing 2 tasks individually in batch 32
+2025-09-27 08:55:44,677 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 08:55:44,678 - INFO - Starting task 1/2 in batch 32
+2025-09-27 08:55:44,678 - INFO - Waiting for task 1 to complete (max 540s)...
+2025-09-27 08:57:27,678 - INFO - Thread conv_m365_748b2259d524: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:57:27,679 - INFO - Thread conv_m365_748b2259d524: Generated content keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:57:27,679 - INFO - Task 1 finished, processing result...
+2025-09-27 08:57:27,679 - INFO - Task 1/2 completed successfully in 103.0s
+2025-09-27 08:57:27,679 - INFO - Finished processing task 1/2, moving to next...
+2025-09-27 08:57:27,679 - INFO - Starting task 2/2 in batch 32
+2025-09-27 08:57:27,679 - INFO - Waiting for task 2 to complete (max 540s)...
+2025-09-27 08:59:24,909 - INFO - Thread conv_m365_e87c6f3ce755: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-09-27 08:59:24,910 - ERROR - Thread conv_m365_e87c6f3ce755: Missing analysis field: stages
+2025-09-27 08:59:24,910 - ERROR - Thread conv_m365_e87c6f3ce755 internal processing failed: Missing analysis field: stages
+2025-09-27 08:59:24,910 - ERROR - Thread conv_m365_e87c6f3ce755 processing failed with error: Missing analysis field: stages
+2025-09-27 08:59:24,910 - INFO - Task 2 finished, processing result...
+2025-09-27 08:59:24,910 - WARNING - Task 2/2 returned no result after 117.2s
+2025-09-27 08:59:24,910 - INFO - Finished processing task 2/2, moving to next...
+2025-09-27 08:59:24,910 - INFO - Batch 32 FULLY completed in 220.2s: 1/2 successful, 1 failed
+2025-09-27 08:59:24,910 - INFO - Overall Progress: 6.6% (64/976)
+2025-09-27 08:59:27,914 - INFO - Processing batch 33/488 (emails 65-66)
+2025-09-27 08:59:27,914 - INFO - Created 2 tasks for batch 33
+2025-09-27 08:59:27,914 - INFO - Processing 2 tasks individually in batch 33
+2025-09-27 08:59:27,914 - INFO - Will wait for ALL tasks to complete before moving to next batch...
+2025-09-27 08:59:27,914 - INFO - Starting task 1/2 in batch 33
+2025-09-27 08:59:27,914 - INFO - Waiting for task 1 to complete (max 540s)...
