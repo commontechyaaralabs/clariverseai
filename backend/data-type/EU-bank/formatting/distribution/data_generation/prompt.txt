@@ -1,0 +1,382 @@
+TASK: Generate a realistic EU banking email thread with {message_count} messages based on the EXACT data from email_new collection.
+
+**EXISTING DATA FROM email_new COLLECTION (USE THESE EXACT VALUES):**
+
+1. **STAGES** (Bank Lifecycle Stage): {stages}
+   - Current Stage: {stages}
+   - Stage Meanings:
+     * Receive: Initial email received, not yet processed
+     * Authenticate: Verifying sender identity and email legitimacy  
+     * Categorize: Email has been categorized by topic/department
+     * Resolution: Actively working on resolving the issue
+     * Escalation: Issue escalated to higher authority
+     * Update: Providing status updates to customer
+     * Resolved: Issue has been resolved, awaiting confirmation
+     * Close: Case closed, final communication
+     * Report: Generating reports or documentation
+   - GENERATE EMAILS REFLECTING THIS EXACT STAGE: {stages}
+
+2. **CATEGORY**: {category}
+   - Current Category: {category}
+   - External: Email FROM external sources (customers, vendors, regulatory bodies, other banks) TO EU Bank
+   - Internal: Email WITHIN EU Bank between departments, employees, or internal systems
+   - COMMUNICATION DIRECTION: {communication_direction}
+   - GENERATE {category_context} emails
+
+3. **OVERALL_SENTIMENT**: {overall_sentiment}
+   - Current Sentiment: {overall_sentiment}
+   - Sentiment Scale (0-5):
+     * 0: Happy (pleased, satisfied, positive)
+     * 1: Calm (baseline for professional communication)
+     * 2: Bit Irritated (slight annoyance or impatience)
+     * 3: Moderately Concerned (growing unease or worry)
+     * 4: Anger (clear frustration or anger)
+     * 5: Frustrated (extreme frustration, very upset)
+   - **CRITICAL SENTIMENT RULES:**
+     * If overall_sentiment=5: ENTIRE THREAD must reflect extreme frustration throughout ALL messages
+     * If overall_sentiment=4: ENTIRE THREAD must reflect clear anger and frustration
+     * If overall_sentiment=3: ENTIRE THREAD must reflect moderate concern and unease
+     * If overall_sentiment=2: ENTIRE THREAD must reflect slight irritation and impatience
+     * If overall_sentiment=1: ENTIRE THREAD must reflect calm, professional baseline
+     * If overall_sentiment=0: ENTIRE THREAD must reflect positive, satisfied communication
+   - **BANK CONTACT CENTER RESPONSE RULE:** ALL bank employee responses (regardless of customer sentiment) must ALWAYS be calm, professional, and helpful - never frustrated or angry
+
+4. **URGENCY**: {urgency}
+   - Current Urgency: {urgency}
+   - true: High priority, time-sensitive, requires immediate action
+   - false: Normal priority, standard processing timeline
+   - GENERATE EMAILS REFLECTING URGENCY: {urgency}
+
+5. **FOLLOW_UP_REQUIRED**: {follow_up_required}
+   - Current Follow-up Required: {follow_up_required}
+   - yes: Requires scheduled follow-up action after resolution
+   - no: No additional follow-up needed
+   - END CONVERSATION BASED ON: {follow_up_required}
+
+6. **ACTION_PENDING_STATUS**: {action_pending_status}
+   - Current Action Pending: {action_pending_status}
+   - yes: Action is pending from either company or customer
+   - no: No pending actions, thread is complete or informational
+   - GENERATE CONTENT BASED ON: {action_pending_status}
+
+7. **ACTION_PENDING_FROM**: {action_pending_from}
+   - Current Action Pending From: {action_pending_from}
+   - company: Bank/company needs to take action
+   - customer: Customer needs to take action
+   - null: No pending action (when action_pending_status is "no")
+   - GENERATE CONTENT SHOWING ACTION FROM: {action_pending_from}
+
+8. **PRIORITY**: {priority}
+   - Current Priority: {priority}
+   - P1-Critical: System outages, security breaches, regulatory deadlines
+   - P2-High: Major customer issues, compliance matters, senior management requests
+   - P3-Medium: Standard customer inquiries, routine operations
+   - P4-Low: General information requests, non-urgent matters
+   - P5-Very Low: FYI communications, newsletters, optional items
+   - GENERATE CONTENT MATCHING PRIORITY: {priority}
+
+9. **RESOLUTION_STATUS**: {resolution_status}
+   - Current Resolution Status: {resolution_status}
+   - open: Issue not yet addressed, awaiting initial response
+   - inprogress: Actively working on resolution, ongoing communication
+   - closed: Issue fully resolved, no further action needed
+   - GENERATE CONTENT REFLECTING STATUS: {resolution_status}
+
+**ADDITIONAL CONTEXT:**
+- Dominant Topic: {dominant_topic}
+- Subtopics: {subtopics}
+- Messages: {message_count}
+- Industry: EU Banking Sector
+
+**ACTUAL EMAIL PARTICIPANTS (USE THESE EXACT EMAIL ADDRESSES):**
+{participants_text}
+
+**COMMUNICATION FLOW:**
+- Category: {category} ({category_context})
+- Direction: {communication_direction}
+- Sender Context: {sender_context}
+- Recipient Context: {recipient_context}
+
+**EMAIL GENERATION REQUIREMENTS:**
+
+1. **STRICT DATA-DRIVEN GENERATION (USE EXACT VALUES FROM email_new COLLECTION):**
+   - **URGENCY={urgency}**: 
+     * If True: Generate URGENT emails with immediate attention, time-sensitive language, fast response requests
+     * If False: Generate NORMAL emails with standard processing timelines, regular business pace
+   - **FOLLOW_UP_REQUIRED={follow_up_required}**:
+     * If "yes": End conversation with clear follow-up action needed, schedule next steps, leave open for future action
+     * If "no": End conversation as resolved/complete, issue fully resolved, no further action needed
+   - **ACTION_PENDING_STATUS={action_pending_status}**:
+     * If "yes": Show pending action in email content, waiting for response/action, unresolved issues
+     * If "no": Show completed action, issue resolved, no pending items
+   - **ACTION_PENDING_FROM={action_pending_from}**:
+     * If "company": Show bank/company needs to take action, customer waiting for bank response
+     * If "customer": Show customer needs to provide info/take action, bank waiting for customer response
+     * If null: Show no pending action (when action_pending_status="no")
+   - **STAGES={stages}**: Generate content reflecting this exact bank lifecycle stage
+   - **PRIORITY={priority}**: Generate content matching this exact priority level (P1-Critical to P5-Very Low)
+   - **RESOLUTION_STATUS={resolution_status}**: Generate content reflecting this exact resolution state
+   - **OVERALL_SENTIMENT={overall_sentiment}**: Generate thread with average sentiment matching this value (0-5 scale)
+
+2. **AUTHENTIC EU Banking Context:**
+   - Generate completely authentic emails relevant to European banking operations
+   - Use real European business communication style and terminology
+   - Use European date formats (DD/MM/YYYY) and authentic business terminology
+   - Include specific banking scenarios, regulations, and compliance requirements
+   - **COMMUNICATION DIRECTION**: {communication_direction}
+   - **SENDER**: {sender_context}
+   - **RECIPIENT**: {recipient_context}
+   - Reflect the category: {category_context}
+
+3. **DATA-DRIVEN EMAIL CONTENT GENERATION:**
+   - Create {message_count} completely authentic email messages with real banking scenarios
+   - **USE ACTUAL PARTICIPANTS**: Generate emails using the exact participant names and email addresses provided above
+   - **COMMUNICATION FLOW**: {communication_direction}
+   - **SENDER**: {sender_context}
+   - **RECIPIENT**: {recipient_context}
+   
+   **STRICT CONTENT RULES BASED ON DATA (CONCEPTUAL IMPLEMENTATION):**
+   - **OVERALL_SENTIMENT={overall_sentiment}**: 
+     * If 5: ENTIRE THREAD must reflect extreme frustration, angry language, strong complaints, exasperation (throughout ALL messages)
+     * If 4: ENTIRE THREAD must reflect clear anger, frustration, strong dissatisfaction (throughout ALL messages)
+     * If 3: ENTIRE THREAD must reflect moderate concern, unease, worry, growing dissatisfaction (throughout ALL messages)
+     * If 2: ENTIRE THREAD must reflect slight irritation, impatience, mild annoyance (throughout ALL messages)
+     * If 1: ENTIRE THREAD must reflect calm, professional, baseline communication (throughout ALL messages)
+     * If 0: ENTIRE THREAD must reflect positive, satisfied, happy communication (throughout ALL messages)
+     * **BANK EMPLOYEE RESPONSE RULE:** ALL bank employee responses must ALWAYS be calm, professional, helpful (regardless of customer sentiment)
+   - **URGENCY={urgency}**: 
+     * If True: Generate emails with time-sensitive scenarios, immediate deadlines, urgent banking matters (without explicitly stating "urgent")
+     * If False: Generate emails with standard timelines, routine banking processes
+   - **FOLLOW_UP_REQUIRED={follow_up_required}**:
+     * If "yes": End conversation naturally with open-ended scenarios requiring future communication (without explicitly mentioning "follow-up")
+     * If "no": End conversation with complete resolution, closed matters
+   - **ACTION_PENDING_STATUS={action_pending_status}**:
+     * If "yes": Show natural waiting scenarios, incomplete processes, pending information (without explicitly stating "action pending")
+     * If "no": Show completed processes, resolved matters, finished transactions
+   - **ACTION_PENDING_FROM={action_pending_from}**:
+     * If "company": Show bank processes in progress, customer awaiting bank response (without explicitly stating "company action")
+     * If "customer": Show customer needs to provide information or complete steps (without explicitly stating "customer action")
+     * If null: Show complete transactions, resolved matters
+   
+   **AUTHENTIC BANKING DETAILS REQUIREMENTS:**
+   - **REALISTIC ACCOUNT NUMBERS**: Use realistic EU bank account formats (e.g., DE89 3704 0044 0532 0130 00, FR14 2004 1010 0505 0001 3M02 606, GB29 NWBK 6016 1331 9268 19)
+   - **REALISTIC CUSTOMER DETAILS**: Include realistic names, addresses, phone numbers, DOB (e.g., 15/03/1985, 22/11/1978)
+   - **REALISTIC TRANSACTION REFERENCES**: Use realistic transaction IDs (e.g., TXN-2025-001234567, REF-789456123)
+   - **REALISTIC BANKING SCENARIOS**: Include specific amounts (€1,250.00, £850.50), account types (Current Account, Savings Account, Business Account)
+   - **REALISTIC COMPLIANCE REFERENCES**: Include realistic case numbers, compliance IDs, regulatory references
+   - **NO EMAIL ADDRESSES IN SIGNATURES**: Do NOT include email addresses in email signatures - only names and titles
+   
+   - Message 1: Initial email reflecting stage "{stages}" and priority "{priority}" (conceptually, not explicitly)
+   - Subsequent messages: Natural conversation flow showing progression through lifecycle stage
+   - **SENTIMENT CONSISTENCY:** ALL messages must maintain overall_sentiment={overall_sentiment} throughout the ENTIRE thread
+   - **BANK EMPLOYEE PROFESSIONALISM:** ALL bank employee responses must ALWAYS be calm, professional, helpful (regardless of customer sentiment)
+   - Each message: 200-300 words (vary naturally) with specific banking details
+   - **CRITICAL EMAIL STRUCTURE:** Each email must follow this exact format:
+     * Opening: "Dear [Name/Title],"
+     * Body: Complete email content (200-300 words)
+     * Closing: "Thanks," or "Thank you," or "Best regards," or "Sincerely,"
+     * Signature: Name and title only (no email addresses)
+   - Include proper email greetings and professional closings using actual participant names
+   - Incorporate authentic banking-specific terminology, scenarios, and business processes
+   - **CRITICAL: Do NOT include the subject line in the email body content**
+   - **CRITICAL: Do NOT include "From:" and "To:" headers in email body content (these are handled by database)**
+   - **CRITICAL: Generate authentic content - NO placeholder text, mock data, or generic examples**
+   - **CRITICAL: Use the actual participant email addresses and names provided above**
+   - **CRITICAL: Ensure email direction matches category - External=TO bank, Internal=WITHIN bank**
+   - **CRITICAL: Generate content STRICTLY based on the data values provided above - but CONCEPTUALLY, not explicitly**
+   - **CRITICAL: Include realistic banking details with specific values, amounts, and references**
+   - **CRITICAL: Do NOT include email addresses in signatures - only names and titles**
+   - **CRITICAL: Do NOT explicitly mention metadata fields like "priority", "urgency", "follow-up", "action pending" in email content**
+   - **CRITICAL: If overall_sentiment=5, ENTIRE THREAD must reflect extreme frustration throughout ALL messages**
+   - **CRITICAL: Bank contact center responses must ALWAYS remain calm and professional regardless of customer sentiment**
+   - **CRITICAL: Do NOT regenerate metadata fields that already exist in database (urgency, follow_up_required, action_pending_status, etc.)**
+
+3. **Authentic Subject and Dating:**
+   - Generate realistic banking-related subject lines reflecting priority and urgency (conceptually, not explicitly)
+   - **CRITICAL SUBJECT RULE:** If urgency=false, DO NOT include ANY words denoting urgency such as "URGENT", "urgent", "Urgent", "URGENT:", "IMMEDIATE", "immediate", "ASAP", "asap", "PRIORITY", "priority", "CRITICAL", "critical", "EMERGENCY", "emergency", "ATTENTION", "attention", "REQUIRED", "required", "NEEDED", "needed", "EXPEDITE", "expedite", "RUSH", "rush", "HURRY", "hurry", "FAST", "fast", "QUICK", "quick", "TIMELY", "timely", "DEADLINE", "deadline", "TIME-SENSITIVE", "time-sensitive", "PENDING", "pending", "OVERDUE", "overdue" in subject line
+   - **CRITICAL SUBJECT RULE:** If urgency=true, subject should reflect time-sensitive nature using words like "immediate", "priority", "time-sensitive", "urgent", "critical", "expedite", "rush", "deadline", "attention required", "asap", "pending", "overdue"
+   - **CRITICAL SUBJECT RULE:** If urgency=false, use normal, routine subject lines like "Account Inquiry", "Service Request", "General Information", "Account Update", "Consent Withdrawal Request", "Account Information", "Service Inquiry", "General Question", "Account Status", "Service Update"
+   - Reply messages use "Re: [original subject]" format
+   - Generate realistic timestamps showing natural progression (minutes to days apart)
+   - **CRITICAL: All dates must be between 2025-01-01 and 2025-06-30 (January 2025 to June 2025 - 6 months only)**
+   - Ensure meaningful timeframes between messages (minutes for urgent scenarios, hours for normal, days for low priority scenarios)
+
+**OUTPUT FORMAT:**
+Return ONLY a JSON object with this structure:
+
+{{
+  "thread_data": {{
+    "subject_norm": "[original_subject_line_reflecting_priority_and_category]",
+    "first_message_at": "[ISO_timestamp_first_message]",
+    "last_message_at": "[ISO_timestamp_last_message]"
+  }},
+  "messages": [
+    {{
+      "headers": {{
+        "date": "[ISO_timestamp]",
+        "subject": "[email_subject]"
+      }},
+      "body": {{
+        "text": {{
+          "plain": "[complete_email_body_content - DO NOT include subject line here]"
+        }}
+      }}
+    }}
+  ],
+  "analysis": {{
+    "email_summary": "[100-150 word comprehensive thread summary explaining full context, stage, priority, and resolution]",
+    "follow_up_date": "[ISO_timestamp or null - provide realistic date if follow_up_required=yes, null if no]",
+    "follow_up_reason": "specific reason WHY follow-up is needed or null (examples: 'To verify the issue is resolved after system update', 'To confirm customer satisfaction with resolution', 'To check if additional support is required', 'To monitor for recurring problems', 'To gather feedback on implemented solution', 'To ensure transaction processing is working correctly', 'To validate that account access is restored', 'To confirm fraud protection measures are effective', 'To verify mobile app functionality after update' - provide contextual reason if follow_up_required=yes, null if no)",
+    "next_action_suggestion": "Next step recommendation 50-80 words"
+  }}
+}}
+
+**CRITICAL INSTRUCTIONS:**
+
+1. **STRICT DATA ADHERENCE FROM email_new COLLECTION:** Generate email content ONLY based on the exact data values from the email_new collection. DO NOT deviate from these values, but implement them CONCEPTUALLY:
+   - **URGENCY={urgency}**: Generate urgent scenarios ONLY if True, normal scenarios ONLY if False (without explicitly stating "urgent")
+   - **FOLLOW_UP_REQUIRED="{follow_up_required}"**: End conversation with open-ended scenarios ONLY if "yes", complete resolution ONLY if "no" (without explicitly mentioning "follow-up")
+   - **ACTION_PENDING_STATUS="{action_pending_status}"**: Show waiting scenarios ONLY if "yes", completed scenarios ONLY if "no" (without explicitly stating "action pending")
+   - **ACTION_PENDING_FROM={action_pending_from}**: Show bank processes in progress ONLY if "company", customer information needed ONLY if "customer", complete transactions ONLY if null (without explicitly stating "action from")
+   - **STAGES="{stages}"**: Generate content reflecting this exact bank lifecycle stage (conceptually)
+   - **PRIORITY="{priority}"**: Generate content matching this exact priority level (P1-Critical to P5-Very Low) through scenario complexity and tone
+   - **RESOLUTION_STATUS="{resolution_status}"**: Generate content reflecting this exact resolution state (open/inprogress/closed) through conversation flow
+   - **OVERALL_SENTIMENT={overall_sentiment}**: Generate thread with average sentiment matching this exact value (0-5 scale) through tone and language
+   - **CATEGORY="{category}"**: Generate External (customer→bank) or Internal (bank→bank) emails based on this value
+
+2. **PRESERVE ALL EXISTING FIELDS:** The following fields MUST be preserved exactly as provided - DO NOT change these values and DO NOT include them in the analysis section:
+   - stages="{stages}" (already in database)
+   - category="{category}" (already in database)
+   - overall_sentiment={overall_sentiment} (already in database)
+   - urgency={urgency} (already in database)
+   - follow_up_required="{follow_up_required}" (already in database)
+   - action_pending_status="{action_pending_status}" (already in database)
+   - action_pending_from={action_pending_from} (already in database)
+   - priority="{priority}" (already in database)
+   - resolution_status="{resolution_status}" (already in database)
+   
+   **CRITICAL:** These fields already exist in the database, so DO NOT regenerate them in the analysis section. Only generate: email_summary, follow_up_date, follow_up_reason, next_action_suggestion
+
+2. **AUTHENTIC DATA ONLY:** Generate completely authentic, realistic EU banking email content. NO mock data, placeholder text, or generic examples. Create original, unique email content that reflects real-world banking scenarios with specific details, realistic business contexts, and authentic communication patterns.
+
+3. **CATEGORY COMPLIANCE:** Generate {"external" if category == "External" else "internal"} banking emails reflecting {category_context}.
+   - **EXTERNAL**: Emails FROM external parties (customers, vendors, regulatory bodies, other banks) TO EU Bank
+   - **INTERNAL**: Emails WITHIN EU Bank between departments, employees, or internal systems
+
+4. **STAGE ALIGNMENT:** Email content must reflect the lifecycle stage "{stages}" - show appropriate actions and communications for this stage.
+
+5. **PRIORITY HANDLING:** Email tone, response time, and urgency must match priority level "{priority}".
+
+6. **SENTIMENT CONSISTENCY (CRITICAL):** 
+   - **ENTIRE THREAD SENTIMENT:** ALL messages in the thread must maintain overall_sentiment={overall_sentiment} consistently
+   - **If overall_sentiment=5:** ENTIRE THREAD must reflect extreme frustration, angry language, strong complaints throughout ALL messages
+   - **If overall_sentiment=4:** ENTIRE THREAD must reflect clear anger, frustration, strong dissatisfaction throughout ALL messages
+   - **If overall_sentiment=3:** ENTIRE THREAD must reflect moderate concern, unease, worry throughout ALL messages
+   - **If overall_sentiment=2:** ENTIRE THREAD must reflect slight irritation, impatience throughout ALL messages
+   - **If overall_sentiment=1:** ENTIRE THREAD must reflect calm, professional baseline throughout ALL messages
+   - **If overall_sentiment=0:** ENTIRE THREAD must reflect positive, satisfied communication throughout ALL messages
+   - **BANK EMPLOYEE EXCEPTION:** ALL bank employee responses must ALWAYS be calm, professional, helpful regardless of customer sentiment
+
+7. **ACTION PENDING LOGIC (CONCEPTUAL IMPLEMENTATION):** 
+   - If action_pending_status="yes" and action_pending_from="company": Show bank processes in progress, customer awaiting response (without explicitly stating "company action")
+   - If action_pending_status="yes" and action_pending_from="customer": Show customer needs to provide information or complete steps (without explicitly stating "customer action")
+   - If action_pending_status="no": Show completed communication or informational thread with resolved matters
+
+8. **RESOLUTION ALIGNMENT (CONCEPTUAL IMPLEMENTATION):** Thread must reflect resolution_status="{resolution_status}":
+   - open: Initial inquiry, awaiting response, early stage communication
+   - inprogress: Active back-and-forth, working toward solution, ongoing processes
+   - closed: Issue resolved, confirmation provided, completed transactions
+
+9. **CONVERSATION ENDING LOGIC (CONCEPTUAL IMPLEMENTATION):** End the email thread based on follow_up_required="{follow_up_required}":
+   - If follow_up_required="yes": End with natural open-ended scenarios requiring future communication (without explicitly mentioning "follow-up")
+   - If follow_up_required="no": End with complete resolution, issue fully resolved, closed matters
+
+10. **Date Range:** ALL dates must be between 2025-01-01 and 2025-06-30 (January 2025 to June 2025 - 6 months only)
+
+11. **Subject/Body Separation:** NEVER include the subject line in the email body content
+
+12. **Email Headers:** Do NOT include "From:" and "To:" headers in email body content - these are handled by the database
+
+13. **Banking Details Authenticity:** Include realistic banking details:
+    - Use realistic EU bank account numbers (DE89 3704 0044 0532 0130 00, FR14 2004 1010 0505 0001 3M02 606, etc.)
+    - Include realistic customer details (names, addresses, phone numbers, DOB like 15/03/1985)
+    - Use realistic transaction references (TXN-2025-001234567, REF-789456123)
+    - Include specific amounts (€1,250.00, £850.50) and account types
+    - Include realistic compliance references and case numbers
+
+14. **Email Structure and Signatures:** 
+    - **CRITICAL EMAIL FORMAT:** Each email must follow this exact structure:
+      * Opening: "Dear [Name/Title],"
+      * Body: Complete email content (200-300 words)
+      * Closing: "Thanks," or "Thank you," or "Best regards," or "Sincerely,"
+      * Signature: Name and title only (no email addresses)
+    - Do NOT include email addresses in signatures - only include:
+      * Names and titles (e.g., "John Smith, Customer Relations Manager")
+      * Department names (e.g., "EU Bank Customer Relations")
+      * Phone numbers if relevant
+      * NO email addresses in signatures
+
+15. **Content Authenticity:** Create realistic scenarios matching dominant_topic="{dominant_topic}" and subtopics="{subtopics}"
+
+16. **ORIGINALITY AND REALISM:** 
+    - Create completely original email content - avoid generic templates or repetitive patterns
+    - Use specific banking scenarios, real business contexts, and authentic communication styles
+    - Include realistic details like specific account numbers, transaction references, compliance requirements
+    - Generate unique subject lines and email bodies for each thread
+    - Reflect the actual participant names and email addresses in greetings and signatures
+    - Create natural, conversational flow that feels like real business communication
+    - **CRITICAL: Implement metadata concepts through natural business scenarios, NOT through explicit mentions of metadata fields**
+   - **CRITICAL: ENTIRE THREAD SENTIMENT CONSISTENCY:** If overall_sentiment=5, ALL messages must reflect extreme frustration throughout the entire thread
+   - **CRITICAL: BANK CONTACT CENTER PROFESSIONALISM:** ALL bank employee responses must ALWAYS be calm, professional, helpful regardless of customer sentiment level
+
+17. **EMAIL PARTICIPANTS AND DIRECTION:**
+   - **USE ACTUAL PARTICIPANTS**: Generate emails using the exact participant names and email addresses provided in the "ACTUAL EMAIL PARTICIPANTS" section above
+   - **EXTERNAL CATEGORY**: 
+     * Direction: FROM external parties TO EU Bank
+     * Use the actual external email addresses provided (customers, vendors, regulatory bodies, other banks)
+     * Recipient: EU Bank employee using actual bank email addresses provided
+   - **INTERNAL CATEGORY**:
+     * Direction: WITHIN EU Bank between departments/employees
+     * Use the actual internal bank email addresses provided
+     * Both sender and recipient are EU Bank employees using actual email addresses
+
+**FINAL SENTIMENT AND PROFESSIONALISM REMINDERS:**
+
+1. **ENTIRE THREAD SENTIMENT CONSISTENCY:** 
+   - If overall_sentiment=5: ENTIRE THREAD must reflect extreme frustration, angry language, strong complaints throughout ALL messages
+   - If overall_sentiment=4: ENTIRE THREAD must reflect clear anger, frustration, strong dissatisfaction throughout ALL messages
+   - If overall_sentiment=3: ENTIRE THREAD must reflect moderate concern, unease, worry throughout ALL messages
+   - If overall_sentiment=2: ENTIRE THREAD must reflect slight irritation, impatience throughout ALL messages
+   - If overall_sentiment=1: ENTIRE THREAD must reflect calm, professional baseline throughout ALL messages
+   - If overall_sentiment=0: ENTIRE THREAD must reflect positive, satisfied communication throughout ALL messages
+
+2. **BANK CONTACT CENTER PROFESSIONALISM RULE:**
+   - ALL bank employee responses must ALWAYS be calm, professional, helpful, and courteous
+   - Bank employees must NEVER respond with frustration, anger, or unprofessional language
+   - Bank responses must maintain professional tone regardless of customer sentiment level
+   - Bank employees must acknowledge customer concerns while maintaining professionalism
+
+3. **METADATA CONCEPTUAL IMPLEMENTATION:**
+   - Implement ALL metadata concepts (urgency, follow-up, action pending, priority, resolution status) through natural business scenarios
+   - Do NOT explicitly mention metadata field names in email content
+   - Reflect metadata values through conversation flow, tone, and business context
+   - **CRITICAL:** Do NOT regenerate metadata fields that already exist in database (stages, category, overall_sentiment, urgency, follow_up_required, action_pending_status, action_pending_from, priority, resolution_status)
+   - **CRITICAL:** Only generate new fields: email_summary, follow_up_date, follow_up_reason, next_action_suggestion
+
+4. **EMAIL STRUCTURE REQUIREMENTS:**
+   - **CRITICAL:** Each email must follow this exact format:
+     * Opening: "Dear [Name/Title],"
+     * Body: Complete email content (200-300 words)
+     * Closing: "Thanks," or "Thank you," or "Best regards," or "Sincerely,"
+     * Signature: Name and title only (no email addresses)
+   - **CRITICAL:** Do NOT include "To:" and "From:" headers in email body content
+
+5. **STRICT METADATA ADHERENCE:**
+   - If urgency=false: DO NOT include ANY words denoting urgency such as "URGENT", "urgent", "Urgent", "URGENT:", "IMMEDIATE", "immediate", "ASAP", "asap", "PRIORITY", "priority", "CRITICAL", "critical", "EMERGENCY", "emergency", "ATTENTION", "attention", "REQUIRED", "required", "NEEDED", "needed", "EXPEDITE", "expedite", "RUSH", "rush", "HURRY", "hurry", "FAST", "fast", "QUICK", "quick", "TIMELY", "timely", "DEADLINE", "deadline", "TIME-SENSITIVE", "time-sensitive", "PENDING", "pending", "OVERDUE", "overdue" in subject line
+   - If urgency=true: Subject should reflect time-sensitive nature using words like "immediate", "priority", "time-sensitive", "urgent", "critical", "expedite", "rush", "deadline", "attention required", "asap", "pending", "overdue"
+   - If overall_sentiment=5: ENTIRE THREAD must reflect extreme frustration throughout ALL messages
+   - Bank employee responses must ALWAYS be calm and professional regardless of customer sentiment
+   - Implement all metadata concepts through natural business scenarios, not explicit mentions
+   - **CRITICAL:** Do NOT include "To:" and "From:" headers in email body content
+
+Generate the EU banking email thread content now.

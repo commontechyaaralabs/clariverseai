@@ -1,0 +1,17 @@
+urgency:
+Data Breach Warning (12 records)
+Cybersecurity Incident Report (9 records)
+Security Incident Alert (6 records)
+System Outage Notification (8 records)
+Technology Emergency (11 records)
+Risk Management Alert (16 records)
+Sanctions Screening Alert (10 records)
+Covenant Breach Alert (9 records)
+Executive Escalation Email (20 records)
+Legal Escalation (22 records)
+Compliance Monitoring Alert (8 records)
+Quality Assurance Breach (14 records)
+Customer Service Escalation (16 records)
+Payment Service Problem (8 records) - partial
+Processing Delay Complaint (7 records) - partial
+Clearing House Problem (5 records) - partial

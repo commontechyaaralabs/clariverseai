@@ -409,6 +409,7 @@ OUTPUT FORMAT REQUIRED - EXACTLY THIS STRUCTURE:
 - 3: Moderately Concerned (growing unease or worry)
 - 4: Anger (clear frustration or anger)
 - 5: Frustrated (extreme frustration, very upset)
+
 CRITICAL: If message_count is 1, only generate sentiment for message "0". If message_count is 2, generate sentiment for "0" and "1", etc.),
   "overall_sentiment": 0.0-5.0 (overall ticket sentiment based on issue severity and resolution quality),
   "ticket_raised": "2025-01-01T08:00:00 to 2025-06-30T18:00:00 (business hours for routine, after-hours for urgent)",
