@@ -81,14 +81,14 @@ logger = logging.getLogger(__name__)
 
 # Optimized configuration for faster processing
 OPENROUTER_MODEL = "google/gemma-3-27b-it:free"
-BATCH_SIZE = 3  # Process 3 emails per batch for better throughput
-MAX_CONCURRENT = 1  # Allow 2 concurrent calls for parallel processing
+BATCH_SIZE = 6  # Moderate batch size to balance speed and reliability
+MAX_CONCURRENT = 2  # Conservative concurrency to avoid OpenRouter timeouts
 REQUEST_TIMEOUT = 180  # Reduced timeout for faster failure detection
 MAX_RETRIES = 8  # Fewer retries for faster failure handling
 RETRY_DELAY = 30  # Shorter retry delay
-BATCH_DELAY = 30.0  # Shorter batch delay
+BATCH_DELAY = 5.0  # Minimal batch delay
 API_CALL_DELAY = 2.0  # Much shorter API delay between calls
-CHECKPOINT_SAVE_INTERVAL = 10  # Less frequent checkpoints
+CHECKPOINT_SAVE_INTERVAL = 50  # Much less frequent checkpoints
 RATE_LIMIT_BACKOFF_MULTIPLIER = 2  # Gentler backoff
 MAX_RATE_LIMIT_WAIT = 300  # Shorter wait time for rate limits
 
@@ -124,7 +124,9 @@ class AtomicCounter:
     async def increment(self):
         async with self._lock:
             self._value += 1
-            progress_logger.info(f"{self._name}: {self._value}")
+            # Reduce logging frequency for performance
+            if self._value % 10 == 0:
+                progress_logger.info(f"{self._name}: {self._value}")
             return self._value
     
     @property
@@ -156,21 +158,15 @@ class PerformanceMonitor:
             await self.log_progress(total_emails)
     
     async def log_progress(self, total_emails=None):
-        if self.emails_processed % 100 == 0 and self.emails_processed > 0:
+        if self.emails_processed % 50 == 0 and self.emails_processed > 0:
             elapsed = time.time() - self.start_time
             rate = self.emails_processed / elapsed if elapsed > 0 else 0
             remaining_emails = (total_emails - self.emails_processed) if total_emails else 0
             eta = remaining_emails / rate if rate > 0 and remaining_emails > 0 else 0
             
-            logger.info(f"Performance Stats:")
-            if total_emails:
-                logger.info(f"  Processed: {self.emails_processed}/{total_emails} emails")
-            else:
-                logger.info(f"  Processed: {self.emails_processed} emails")
-            logger.info(f"  Rate: {rate:.2f} emails/second ({rate*3600:.0f} emails/hour)")
-            logger.info(f"  Success rate: {self.successful_requests/(self.successful_requests + self.failed_requests)*100:.1f}%")
-            if eta > 0:
-                logger.info(f"  ETA: {eta/3600:.1f} hours remaining")
+            # Concise logging for performance
+            success_rate = self.successful_requests/(self.successful_requests + self.failed_requests)*100 if (self.successful_requests + self.failed_requests) > 0 else 0
+            logger.info(f"Performance: {self.emails_processed}/{total_emails} emails, {rate:.1f}/sec ({rate*3600:.0f}/hour), {success_rate:.1f}% success" + (f", ETA: {eta/3600:.1f}h" if eta > 0 else ""))
 
 performance_monitor = PerformanceMonitor()
 
@@ -275,9 +271,10 @@ class CheckpointManager:
                 self.stats['failure_count'] += 1
                 self.failed_emails.add(thread_id_str)
             
-            # Auto-save every CHECKPOINT_SAVE_INTERVAL
+            # Auto-save much less frequently to reduce I/O overhead
             if self.stats['processed_count'] % CHECKPOINT_SAVE_INTERVAL == 0:
-                await self.save_checkpoint()
+                # Use create_task to avoid blocking
+                asyncio.create_task(self.save_checkpoint())
 
 checkpoint_manager = CheckpointManager(CHECKPOINT_FILE)
 
@@ -343,6 +340,9 @@ class RateLimitedProcessor:
                     await asyncio.sleep(API_CALL_DELAY - time_since_last)
                 self.last_request_time = time.time()
             
+            # Minimal delay for OpenRouter free tier to prevent timeouts
+            await asyncio.sleep(0.2)
+            
             headers = {
                 'Authorization': f'Bearer {OPENROUTER_API_KEY}',
                 'Content-Type': 'application/json',
@@ -359,7 +359,9 @@ class RateLimitedProcessor:
             
             for attempt in range(max_retries):
                 try:
-                    timeout = aiohttp.ClientTimeout(total=REQUEST_TIMEOUT)
+                    # Progressive timeout - increase timeout with each retry
+                    progressive_timeout = REQUEST_TIMEOUT + (attempt * 30)  # Add 30s per retry
+                    timeout = aiohttp.ClientTimeout(total=progressive_timeout)
                     async with session.post(OPENROUTER_URL, json=payload, headers=headers, timeout=timeout) as response:
                         
                         if response.status == 429:  # Rate limited
@@ -633,7 +635,9 @@ async def generate_email_content(email_data):
         
         try:
             result = json.loads(reply)
-            logger.info(f"Thread {thread_id}: JSON parsing successful. Keys: {list(result.keys())}")
+            # Reduce debug logging for performance
+            if thread_id.endswith('0') or thread_id.endswith('5'):  # Log only every 10th thread
+                logger.info(f"Thread {thread_id}: JSON parsing successful. Keys: {list(result.keys())}")
         except json.JSONDecodeError as json_err:
             logger.error(f"JSON parsing failed for thread {thread_id}. Raw response: {reply[:300]}...")
             logger.error(f"Thread {thread_id}: Full LLM response: {response[:500]}...")
@@ -758,8 +762,9 @@ async def _process_single_email_internal(email_record, total_emails=None):
             await performance_monitor.record_failure(total_emails)
             return None
         
-        # Debug: Log the generated content structure
-        logger.info(f"Thread {thread_id}: Generated content keys: {list(email_content.keys()) if isinstance(email_content, dict) else 'Not a dict'}")
+        # Debug: Log the generated content structure (reduced frequency)
+        if thread_id.endswith('0'):  # Log only every 10th thread
+            logger.info(f"Thread {thread_id}: Generated content keys: {list(email_content.keys()) if isinstance(email_content, dict) else 'Not a dict'}")
         
         # Prepare update document
         update_doc = {}
@@ -812,19 +817,13 @@ async def save_batch_to_database(batch_updates):
         return 0
     
     try:
-        logger.info(f"Saving batch of {len(batch_updates)} updates to database...")
+        # Reduced logging for performance
+        if len(batch_updates) > 5:  # Only log for larger batches
+            logger.info(f"Saving batch of {len(batch_updates)} updates to database...")
         
-        # No need to filter duplicates here since query already excludes llm_processed=True
-        # But keep the structure for potential future use
-        filtered_updates = batch_updates
-        thread_ids = [update_data['thread_id'] for update_data in batch_updates]
-        
-        logger.info(f"Processing {len(filtered_updates)} records for database save")
-        
-        # Create bulk operations
+        # Create bulk operations efficiently
         bulk_operations = []
-        
-        for update_data in filtered_updates:
+        for update_data in batch_updates:
             operation = UpdateOne(
                 filter={"thread.thread_id": update_data['thread_id']},
                 update={"$set": update_data['update_doc']}
@@ -833,37 +832,42 @@ async def save_batch_to_database(batch_updates):
         
         if bulk_operations:
             try:
+                # Use ordered=False for better performance
                 result = email_col.bulk_write(bulk_operations, ordered=False)
-                # Use matched_count instead of modified_count to count all successful operations
-                # modified_count only counts documents that were actually changed
                 updated_count = result.matched_count
                 
-                # Update counter
-                await update_counter.increment()
+                # Update counter asynchronously
+                asyncio.create_task(update_counter.increment())
                 
-                logger.info(f"Successfully saved {updated_count} records to database")
-                progress_logger.info(f"DATABASE_SAVE: {updated_count} records saved")
+                if len(batch_updates) > 5:
+                    logger.info(f"Successfully saved {updated_count} records to database")
+                    progress_logger.info(f"DATABASE_SAVE: {updated_count} records saved")
                 
                 return updated_count
                 
             except Exception as db_error:
                 logger.error(f"Bulk write operation failed: {db_error}")
                 
-                # Fallback to individual updates
+                # Fallback to smaller chunks if bulk fails
+                chunk_size = 10
                 individual_success = 0
-                for update_data in filtered_updates:
+                for i in range(0, len(batch_updates), chunk_size):
+                    chunk = batch_updates[i:i + chunk_size]
                     try:
-                        result = email_col.update_one(
-                            {"thread.thread_id": update_data['thread_id']},
-                            {"$set": update_data['update_doc']}
-                        )
-                        # Use matched_count to count all successful operations, not just modifications
-                        if result.matched_count > 0:
-                            individual_success += 1
-                    except Exception as individual_error:
-                        logger.error(f"Individual update failed for {update_data['thread_id']}: {individual_error}")
+                        chunk_operations = []
+                        for update_data in chunk:
+                            operation = UpdateOne(
+                                filter={"thread.thread_id": update_data['thread_id']},
+                                update={"$set": update_data['update_doc']}
+                            )
+                            chunk_operations.append(operation)
+                        
+                        chunk_result = email_col.bulk_write(chunk_operations, ordered=False)
+                        individual_success += chunk_result.matched_count
+                    except Exception as chunk_error:
+                        logger.error(f"Chunk update failed: {chunk_error}")
                 
-                logger.info(f"Fallback: {individual_success} records saved individually")
+                logger.info(f"Fallback: {individual_success} records saved in chunks")
                 return individual_success
         
         return 0
@@ -975,8 +979,9 @@ async def process_emails_optimized():
         logger.info(f"  Emails needing processing (this session): {emails_needing_processing}")
         logger.info(f"  Overall Progress: {completion_percentage:.1f}% completed, {pending_percentage:.1f}% pending")
         
-        email_records = list(email_col.find(query))
-        total_emails = len(email_records)
+        # Use cursor instead of loading all into memory at once
+        email_records = email_col.find(query).batch_size(100)
+        total_emails = email_col.count_documents(query)
         
         if total_emails == 0:
             logger.info("No emails found that need processing!")
@@ -999,16 +1004,32 @@ async def process_emails_optimized():
     batch_updates = []
     
     try:
-        # Process emails in concurrent batches
-        for i in range(0, total_emails, BATCH_SIZE):
+        # Process emails in concurrent batches using cursor
+        batch_num = 0
+        processed_count = 0
+        
+        while processed_count < total_emails:
             if shutdown_flag.is_set():
                 logger.info("Shutdown requested, stopping processing")
                 break
             
-            batch = email_records[i:i + BATCH_SIZE]
-            batch_num = i//BATCH_SIZE + 1
+            batch_num += 1
             total_batches = (total_emails + BATCH_SIZE - 1)//BATCH_SIZE
-            logger.info(f"Processing batch {batch_num}/{total_batches} (emails {i+1}-{min(i+BATCH_SIZE, total_emails)})")
+            
+            # Collect batch from cursor
+            batch = []
+            for _ in range(BATCH_SIZE):
+                try:
+                    email = next(email_records)
+                    batch.append(email)
+                    processed_count += 1
+                except StopIteration:
+                    break
+            
+            if not batch:
+                break
+                
+            logger.info(f"Processing batch {batch_num}/{total_batches} (emails {processed_count-len(batch)+1}-{processed_count})")
             
             # Process batch concurrently
             batch_tasks = []
@@ -1025,55 +1046,65 @@ async def process_emails_optimized():
             logger.info(f"Created {len(batch_tasks)} tasks for batch {batch_num}")
             
             if batch_tasks:
-                # Process tasks individually but WAIT for ALL to complete before moving to next batch
-                logger.info(f"Processing {len(batch_tasks)} tasks individually in batch {batch_num}")
-                logger.info(f"Will wait for ALL tasks to complete before moving to next batch...")
+                # Process tasks with controlled concurrency to avoid OpenRouter timeouts
+                logger.info(f"Processing {len(batch_tasks)} tasks with controlled concurrency for batch {batch_num}")
                 
                 batch_start_time = time.time()
                 successful_results = []
                 failed_count = 0
                 
-                # Process each task individually with reasonable timeout
-                for task_idx, task in enumerate(batch_tasks, 1):
-                    logger.info(f"Starting task {task_idx}/{len(batch_tasks)} in batch {batch_num}")
-                    start_time = time.time()
-                    try:
-                        # Add reasonable timeout to prevent infinite hanging
-                        task_timeout = REQUEST_TIMEOUT * 4  # 12 minutes per task (4 * 180s)
-                        logger.info(f"Waiting for task {task_idx} to complete (max {task_timeout}s)...")
-                        result = await asyncio.wait_for(task, timeout=task_timeout)
-                        elapsed = time.time() - start_time
-                        logger.info(f"Task {task_idx} finished, processing result...")
-                        if result:
-                            successful_results.append(result)
-                            try:
-                                await asyncio.wait_for(
-                                    checkpoint_manager.mark_processed(result['thread_id'], success=True),
-                                    timeout=10.0  # 10 second timeout for checkpoint
-                                )
-                                logger.info(f"Task {task_idx}/{len(batch_tasks)} completed successfully in {elapsed:.1f}s")
-                            except asyncio.TimeoutError:
-                                logger.warning(f"Checkpoint save timed out for task {task_idx}, but task completed successfully")
-                                logger.info(f"Task {task_idx}/{len(batch_tasks)} completed successfully in {elapsed:.1f}s")
-                        else:
-                            failed_count += 1
-                            logger.warning(f"Task {task_idx}/{len(batch_tasks)} returned no result after {elapsed:.1f}s")
-                    except asyncio.TimeoutError:
-                        elapsed = time.time() - start_time
-                        logger.error(f"Task {task_idx}/{len(batch_tasks)} timed out after {elapsed:.1f}s, continuing to next task...")
-                        failed_count += 1
-                    except Exception as e:
-                        elapsed = time.time() - start_time
-                        logger.error(f"Task {task_idx}/{len(batch_tasks)} failed after {elapsed:.1f}s with error: {e}")
-                        failed_count += 1
+                # Process tasks with staggered execution to avoid overwhelming OpenRouter
+                try:
+                    # Use asyncio.as_completed with controlled concurrency
+                    semaphore = asyncio.Semaphore(MAX_CONCURRENT)
                     
-                    logger.info(f"Finished processing task {task_idx}/{len(batch_tasks)}, moving to next...")
-                
-                if successful_results:
-                    batch_updates.extend(successful_results)
-                
-                batch_elapsed = time.time() - batch_start_time
-                logger.info(f"Batch {batch_num} FULLY completed in {batch_elapsed:.1f}s: {len(successful_results)}/{len(batch_tasks)} successful, {failed_count} failed")
+                    async def controlled_task(task):
+                        async with semaphore:
+                            # Minimal delay between concurrent requests to OpenRouter
+                            await asyncio.sleep(0.1)
+                            return await task
+                    
+                    # Create controlled tasks
+                    controlled_tasks = [controlled_task(task) for task in batch_tasks]
+                    
+                    # Process with individual timeouts to prevent one slow request from blocking others
+                    completed_results = []
+                    for i, task in enumerate(controlled_tasks):
+                        try:
+                            task_timeout = REQUEST_TIMEOUT * 4  # 12 minutes (720s) per task
+                            logger.info(f"Starting task {i+1}/{len(controlled_tasks)} with {task_timeout}s timeout")
+                            
+                            result = await asyncio.wait_for(task, timeout=task_timeout)
+                            completed_results.append((i, result))
+                            
+                            if result:
+                                successful_results.append(result)
+                                # Mark as processed (non-blocking)
+                                asyncio.create_task(
+                                    checkpoint_manager.mark_processed(result['thread_id'], success=True)
+                                )
+                                logger.info(f"Task {i+1}/{len(controlled_tasks)} completed successfully")
+                            else:
+                                failed_count += 1
+                                logger.warning(f"Task {i+1}/{len(controlled_tasks)} returned no result")
+                                
+                        except asyncio.TimeoutError:
+                            failed_count += 1
+                            logger.error(f"Task {i+1}/{len(controlled_tasks)} timed out after {task_timeout}s")
+                        except Exception as e:
+                            failed_count += 1
+                            logger.error(f"Task {i+1}/{len(controlled_tasks)} failed with error: {e}")
+                    
+                    if successful_results:
+                        batch_updates.extend(successful_results)
+                    
+                    batch_elapsed = time.time() - batch_start_time
+                    logger.info(f"Batch {batch_num} completed in {batch_elapsed:.1f}s: {len(successful_results)}/{len(batch_tasks)} successful, {failed_count} failed")
+                    
+                except Exception as batch_error:
+                    batch_elapsed = time.time() - batch_start_time
+                    logger.error(f"Batch {batch_num} failed with error: {batch_error}")
+                    failed_count = len(batch_tasks)
             
             # Save to database when we have enough updates
             if len(batch_updates) >= BATCH_SIZE:
@@ -1082,15 +1113,14 @@ async def process_emails_optimized():
                 batch_updates = []  # Clear batch
             
             # Progress update
-            processed_so_far = min(i + BATCH_SIZE, total_emails)
-            progress_pct = (processed_so_far / total_emails) * 100
-            remaining_emails = total_emails - processed_so_far
+            progress_pct = (processed_count / total_emails) * 100
+            remaining_emails = total_emails - processed_count
             
             # Calculate overall completion including previously processed
             total_completed = emails_processed_by_llm + total_updated
             overall_completion = (total_completed / emails_with_basic_fields * 100) if emails_with_basic_fields > 0 else 0
             
-            logger.info(f"Session Progress: {progress_pct:.1f}% ({processed_so_far}/{total_emails}) - {remaining_emails} remaining")
+            logger.info(f"Session Progress: {progress_pct:.1f}% ({processed_count}/{total_emails}) - {remaining_emails} remaining")
             logger.info(f"Overall Progress: {overall_completion:.1f}% completed ({total_completed}/{emails_with_basic_fields} total emails)")
             
             # Log detailed progress
@@ -1100,7 +1130,7 @@ async def process_emails_optimized():
             await performance_monitor.log_progress(total_emails)
             
             # Brief delay between batches to manage rate limits
-            if i + BATCH_SIZE < total_emails and not shutdown_flag.is_set():
+            if processed_count < total_emails and not shutdown_flag.is_set():
                 await asyncio.sleep(BATCH_DELAY)
         
         # Save any remaining updates
