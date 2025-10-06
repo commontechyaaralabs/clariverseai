@@ -1,0 +1,9 @@
+Urgency,Follow_Up_Required,Action_Pending_Status,Count,Percentage
+True,yes,true,0,0.0
+True,yes,false,0,0.0
+True,no,true,0,0.0
+True,no,false,0,0.0
+False,yes,true,0,0.0
+False,yes,false,0,0.0
+False,no,true,0,0.0
+False,no,false,0,0.0

@@ -1,9 +1,0 @@
-Urgency,Follow_Up_Required,Action_Pending_Status,Count,Percentage
-True,yes,true,160,7.98
-True,yes,false,7,0.35
-True,no,true,3,0.15
-True,no,false,11,0.55
-False,yes,true,333,16.62
-False,yes,false,200,9.98
-False,no,true,127,6.34
-False,no,false,1163,58.03
