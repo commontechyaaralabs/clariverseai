@@ -1,10 +1,9 @@
-# EU Banking Chat Content Generator - OpenRouter Migration (Modified for chat_new)
+# EU Banking Chat Content Generator - Ollama Version
 import os
 import random
 import time
 import json
-import asyncio
-import aiohttp
+import requests
 import signal
 import sys
 import multiprocessing
@@ -22,8 +21,6 @@ import atexit
 import psutil
 from pathlib import Path
 from pymongo import UpdateOne
-from asyncio import Semaphore
-import traceback
 
 # Load environment variables
 load_dotenv()
@@ -31,7 +28,7 @@ load_dotenv()
 # MongoDB setup
 MONGO_URI = os.getenv("MONGO_CONNECTION_STRING")
 DB_NAME = "sparzaai"
-CHAT_COLLECTION = "chat_new"  # Changed to chat_new
+CHAT_COLLECTION = "chat_new"
 
 # Logging setup
 LOG_DIR = Path("logs")
@@ -39,7 +36,7 @@ LOG_DIR.mkdir(exist_ok=True)
 
 # Create timestamped log files
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-MAIN_LOG_FILE = LOG_DIR / f"chat_generator_openrouter_{timestamp}.log"
+MAIN_LOG_FILE = LOG_DIR / f"chat_generator_ollama_{timestamp}.log"
 SUCCESS_LOG_FILE = LOG_DIR / f"successful_generations_{timestamp}.log"
 FAILURE_LOG_FILE = LOG_DIR / f"failed_generations_{timestamp}.log"
 PROGRESS_LOG_FILE = LOG_DIR / f"progress_{timestamp}.log"
@@ -79,28 +76,22 @@ progress_logger.propagate = False
 
 logger = logging.getLogger(__name__)
 
-# Ultra-conservative configuration for OpenRouter free tier
-OPENROUTER_MODEL = "google/gemma-3-27b-it:free"
-BATCH_SIZE = 1  # Process only 1 chat at a time
-MAX_CONCURRENT = 1  # Single concurrent call to avoid rate limits
-REQUEST_TIMEOUT = 720  # Increased timeout to 12 minutes
-MAX_RETRIES = 3  # Fewer retries to avoid long waits
-RETRY_DELAY = 30  # 30 second retry delay for rate limits
-BATCH_DELAY = 10.0  # 10 second delay between batches
-API_CALL_DELAY = 5.0  # 5 second delay between API calls
-CHECKPOINT_SAVE_INTERVAL = 5  # Very frequent checkpoints
-RATE_LIMIT_BACKOFF_MULTIPLIER = 2  # Moderate backoff
-MAX_RATE_LIMIT_WAIT = 1800  # 30 minute max wait for rate limits
+# Ollama configuration (same as email ollama config)
+OLLAMA_MODEL = "gemma3:27b"
+BATCH_SIZE = 3
+MAX_WORKERS = multiprocessing.cpu_count()
+REQUEST_TIMEOUT = 300  # 5 minutes
+MAX_RETRIES = 5
+RETRY_DELAY = 3
+BATCH_DELAY = 2.0
+API_CALL_DELAY = 0.5
 
-# OpenRouter setup
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
-
-# Additional configuration
-CPU_COUNT = multiprocessing.cpu_count()
+# Ollama setup
+OLLAMA_API_KEY = os.getenv("OLLAMA_API_KEY", "7eb2c60fcd3740cea657c8d109ff9016af894d2a2c112954bc3aff033c117736")
+OLLAMA_URL = "http://34.147.17.26:16637/api/chat"
 
 # Global variables for graceful shutdown
-shutdown_flag = asyncio.Event()
+shutdown_flag = threading.Event()
 client = None
 db = None
 chat_col = None
@@ -115,104 +106,30 @@ class ObjectIdEncoder(json.JSONEncoder):
 fake = Faker()
 
 # Thread-safe counters
-class AtomicCounter:
+class LoggingCounter:
     def __init__(self, name):
         self._value = 0
-        self._lock = asyncio.Lock()
+        self._lock = threading.Lock()
         self._name = name
     
-    async def increment(self):
-        async with self._lock:
+    def increment(self):
+        with self._lock:
             self._value += 1
-            # Reduce logging frequency for performance
-            if self._value % 10 == 0:
-                progress_logger.info(f"{self._name}: {self._value}")
+            progress_logger.info(f"{self._name}: {self._value}")
             return self._value
     
     @property
     def value(self):
-        return self._value
+        with self._lock:
+            return self._value
 
-success_counter = AtomicCounter("SUCCESS_COUNT")
-failure_counter = AtomicCounter("FAILURE_COUNT")
-update_counter = AtomicCounter("UPDATE_COUNT")
+success_counter = LoggingCounter("SUCCESS_COUNT")
+failure_counter = LoggingCounter("FAILURE_COUNT")
+update_counter = LoggingCounter("UPDATE_COUNT")
+retry_counter = LoggingCounter("RETRY_COUNT")
 
-# Performance Monitor
-class PerformanceMonitor:
-    def __init__(self):
-        self.start_time = time.time()
-        self.chats_processed = 0
-        self.successful_requests = 0
-        self.failed_requests = 0
-        self._lock = asyncio.Lock()
-    
-    async def record_success(self, total_chats=None):
-        async with self._lock:
-            self.successful_requests += 1
-            self.chats_processed += 1
-            await self.log_progress(total_chats)
-    
-    async def record_failure(self, total_chats=None):
-        async with self._lock:
-            self.failed_requests += 1
-            await self.log_progress(total_chats)
-    
-    async def log_progress(self, total_chats=None):
-        if self.chats_processed % 50 == 0 and self.chats_processed > 0:
-            elapsed = time.time() - self.start_time
-            rate = self.chats_processed / elapsed if elapsed > 0 else 0
-            remaining_chats = (total_chats - self.chats_processed) if total_chats else 0
-            eta = remaining_chats / rate if rate > 0 and remaining_chats > 0 else 0
-            
-            # Concise logging for performance
-            success_rate = self.successful_requests/(self.successful_requests + self.failed_requests)*100 if (self.successful_requests + self.failed_requests) > 0 else 0
-            logger.info(f"Performance: {self.chats_processed}/{total_chats} chats, {rate:.1f}/sec ({rate*3600:.0f}/hour), {success_rate:.1f}% success" + (f", ETA: {eta/3600:.1f}h" if eta > 0 else ""))
-
-performance_monitor = PerformanceMonitor()
-
-# Circuit Breaker for handling rate limits and timeouts
-class CircuitBreaker:
-    def __init__(self, failure_threshold=3, recovery_timeout=60):
-        self.failure_threshold = failure_threshold
-        self.recovery_timeout = recovery_timeout
-        self.failure_count = 0
-        self.last_failure_time = None
-        self.state = 'CLOSED'  # CLOSED, OPEN, HALF_OPEN
-        self._lock = asyncio.Lock()
-    
-    async def call(self, func, *args, **kwargs):
-        async with self._lock:
-            if self.state == 'OPEN':
-                if time.time() - self.last_failure_time > self.recovery_timeout:
-                    self.state = 'HALF_OPEN'
-                    logger.info("Circuit breaker moving to HALF_OPEN state")
-                else:
-                    raise Exception("Circuit breaker is OPEN - too many failures")
-        
-        try:
-            result = await func(*args, **kwargs)
-            await self.on_success()
-            return result
-        except Exception as e:
-            await self.on_failure()
-            raise
-    
-    async def on_success(self):
-        async with self._lock:
-            if self.state == 'HALF_OPEN':
-                logger.info("Circuit breaker moving to CLOSED state")
-            self.failure_count = 0
-            self.state = 'CLOSED'
-    
-    async def on_failure(self):
-        async with self._lock:
-            self.failure_count += 1
-            self.last_failure_time = time.time()
-            if self.failure_count >= self.failure_threshold:
-                self.state = 'OPEN'
-                logger.warning(f"Circuit breaker OPEN after {self.failure_count} failures")
-
-circuit_breaker = CircuitBreaker()
+# Failed records tracking
+failed_records = []
 
 # Checkpoint Manager for resuming from failures
 class CheckpointManager:
@@ -226,7 +143,7 @@ class CheckpointManager:
             'success_count': 0,
             'failure_count': 0
         }
-        self._lock = asyncio.Lock()
+        self._lock = threading.Lock()
         self.load_checkpoint()
     
     def load_checkpoint(self):
@@ -241,8 +158,8 @@ class CheckpointManager:
         except Exception as e:
             logger.warning(f"Could not load checkpoint: {e}")
     
-    async def save_checkpoint(self):
-        async with self._lock:
+    def save_checkpoint(self):
+        with self._lock:
             try:
                 checkpoint_data = {
                     'processed_chats': list(self.processed_chats),
@@ -258,8 +175,8 @@ class CheckpointManager:
     def is_processed(self, chat_id):
         return str(chat_id) in self.processed_chats
     
-    async def mark_processed(self, chat_id, success=True):
-        async with self._lock:
+    def mark_processed(self, chat_id, success=True):
+        with self._lock:
             chat_id_str = str(chat_id)
             self.processed_chats.add(chat_id_str)
             self.stats['processed_count'] += 1
@@ -270,11 +187,6 @@ class CheckpointManager:
             else:
                 self.stats['failure_count'] += 1
                 self.failed_chats.add(chat_id_str)
-            
-            # Auto-save much less frequently to reduce I/O overhead
-            if self.stats['processed_count'] % CHECKPOINT_SAVE_INTERVAL == 0:
-                # Use create_task to avoid blocking
-                asyncio.create_task(self.save_checkpoint())
 
 checkpoint_manager = CheckpointManager(CHECKPOINT_FILE)
 
@@ -282,7 +194,7 @@ def setup_signal_handlers():
     """Setup signal handlers for graceful shutdown"""
     def signal_handler(signum, frame):
         logger.info(f"Received signal {signum}. Initiating graceful shutdown...")
-        asyncio.create_task(shutdown_flag.set())
+        shutdown_flag.set()
         logger.info("Please wait for current operations to complete...")
     
     signal.signal(signal.SIGINT, signal_handler)
@@ -322,145 +234,88 @@ def init_database():
         logger.error(f"Database connection failed: {e}")
         return False
 
-# Rate Limited Processor
-class RateLimitedProcessor:
-    def __init__(self, max_concurrent=MAX_CONCURRENT):
-        self.semaphore = Semaphore(max_concurrent)
-        self.last_request_time = 0
-        self.rate_limit_count = 0
-        self.last_rate_limit_time = 0
-        self._lock = asyncio.Lock()
+@backoff.on_exception(
+    backoff.expo,
+    (requests.exceptions.RequestException, json.JSONDecodeError, KeyError, ValueError),
+    max_tries=MAX_RETRIES,
+    max_time=600,
+    base=RETRY_DELAY,
+    on_backoff=lambda details: logger.warning(f"Retry {details['tries']}/{MAX_RETRIES} after {details['wait']:.1f}s")
+)
+def call_ollama_with_backoff(prompt, timeout=REQUEST_TIMEOUT):
+    """Call Ollama API with exponential backoff and better error handling"""
+    if shutdown_flag.is_set():
+        raise KeyboardInterrupt("Shutdown requested")
     
-    async def call_openrouter_async(self, session, prompt, max_retries=MAX_RETRIES):
-        """Async OpenRouter API call with rate limiting and retries"""
-        async with self.semaphore:
-            # Intelligent rate limiting based on recent rate limit hits
-            async with self._lock:
-                current_time = time.time()
-                time_since_last = current_time - self.last_request_time
-                
-                # Decay rate limit counter over time (reset after 10 minutes)
-                if self.rate_limit_count > 0 and current_time - self.last_rate_limit_time > 600:
-                    self.rate_limit_count = 0
-                    logger.info("Rate limit counter decayed, resetting to normal delays")
-                
-                # If we've hit rate limits recently, increase delay
-                if self.rate_limit_count > 0:
-                    # Increase delay based on recent rate limits
-                    base_delay = API_CALL_DELAY + (self.rate_limit_count * 30)  # Add 30s per recent rate limit
-                    delay = max(base_delay, 60)  # Minimum 60 seconds
-                    logger.info(f"Rate limit history detected ({self.rate_limit_count} recent), using {delay}s delay")
-                else:
-                    delay = API_CALL_DELAY
-                
-                if time_since_last < delay:
-                    await asyncio.sleep(delay - time_since_last)
-                self.last_request_time = time.time()
-            
-            # Ultra-conservative delay for OpenRouter free tier
-            await asyncio.sleep(30.0)
-            
-            headers = {
-                'Authorization': f'Bearer {OPENROUTER_API_KEY}',
-                'Content-Type': 'application/json',
-                'HTTP-Referer': 'http://localhost:3000',
-                'X-Title': 'EU Banking Chat Generator'
+    headers = {
+        'Authorization': f'Bearer {OLLAMA_API_KEY}',
+        'Content-Type': 'application/json'
+    }
+    
+    payload = {
+        "model": OLLAMA_MODEL,
+        "messages": [
+            {
+                "role": "user",
+                "content": prompt
             }
+        ],
+        "stream": False,
+        "options": {
+            "temperature": 0.4,
+            "num_predict": 4000
+        }
+    }
+    
+    try:
+        response = requests.post(
+            OLLAMA_URL, 
+            json=payload, 
+            headers=headers,
+            timeout=timeout
+        )
+        
+        # Check if response is empty
+        if not response.text.strip():
+            raise ValueError("Empty response from Ollama API")
+        
+        response.raise_for_status()
+        
+        try:
+            result = response.json()
+        except json.JSONDecodeError as e:
+            logger.error(f"JSON decode error. Response text: {response.text[:200]}...")
+            raise
+        
+        if "message" not in result or "content" not in result["message"]:
+            logger.error(f"No 'message.content' field. Available fields: {list(result.keys())}")
+            raise KeyError("No 'message.content' field in Ollama response")
             
-            payload = {
-                "model": OPENROUTER_MODEL,
-                "messages": [{"role": "user", "content": prompt}],
-                "max_tokens": 4000,
-                "temperature": 0.4
-            }
-            
-            for attempt in range(max_retries):
-                try:
-                    # Use fixed timeout to avoid long waits
-                    timeout = aiohttp.ClientTimeout(total=REQUEST_TIMEOUT)
-                    async with session.post(OPENROUTER_URL, json=payload, headers=headers, timeout=timeout) as response:
-                        
-                        if response.status == 429:  # Rate limited
-                            # Track rate limit hits
-                            async with self._lock:
-                                self.rate_limit_count += 1
-                                self.last_rate_limit_time = time.time()
-                            
-                            wait_time = min(MAX_RATE_LIMIT_WAIT, RETRY_DELAY * (RATE_LIMIT_BACKOFF_MULTIPLIER ** attempt))
-                            logger.warning(f"Rate limited (429) on attempt {attempt+1}/{max_retries}, waiting {wait_time}s")
-                            logger.info(f"Rate limit detected - this is normal for free tier. Waiting {wait_time} seconds...")
-                            await asyncio.sleep(wait_time)
-                            continue
-                        
-                        if response.status == 502 or response.status == 503:  # Bad Gateway or Service Unavailable
-                            wait_time = min(60, RETRY_DELAY * (attempt + 1))
-                            logger.warning(f"Server error ({response.status}), waiting {wait_time}s before retry {attempt+1}/{max_retries}")
-                            await asyncio.sleep(wait_time)
-                            continue
-                        
-                        response.raise_for_status()
-                        result = await response.json()
-                        
-                        if "choices" not in result or not result["choices"]:
-                            raise ValueError("No 'choices' field in OpenRouter response")
-                        
-                        # Reset rate limit counter on successful request
-                        async with self._lock:
-                            if self.rate_limit_count > 0:
-                                logger.info(f"Successful request after rate limits, resetting counter")
-                                self.rate_limit_count = 0
-                        
-                        return result["choices"][0]["message"]["content"]
-                        
-                except asyncio.TimeoutError:
-                    logger.warning(f"Request timeout on attempt {attempt+1}/{max_retries}")
-                    if attempt < max_retries - 1:
-                        wait_time = RETRY_DELAY * (attempt + 1)
-                        logger.info(f"Timeout detected - waiting {wait_time}s before retry...")
-                        await asyncio.sleep(wait_time)
-                        continue
-                    logger.error(f"Request timed out after {max_retries} attempts")
-                    raise
-                
-                except aiohttp.ClientResponseError as e:
-                    if e.status == 429:  # Rate limit - already handled above
-                        continue
-                    if e.status in [502, 503]:  # Server errors - already handled above
-                        continue
-                    logger.error(f"HTTP error {e.status} on attempt {attempt+1}/{max_retries}")
-                    if attempt < max_retries - 1:
-                        wait_time = RETRY_DELAY * (attempt + 1)
-                        await asyncio.sleep(wait_time)
-                        continue
-                    raise
-                
-                except Exception as e:
-                    try:
-                        # More detailed error logging
-                        error_type = type(e).__name__
-                        error_str = str(e) if e else "None"
-                        logger.error(f"Exception type: {error_type}, Error: {error_str}")
-                        logger.error(f"Exception args: {e.args if hasattr(e, 'args') else 'No args'}")
-                        
-                        error_msg = str(e).lower() if e else "unknown error"
-                        logger.warning(f"Request failed on attempt {attempt+1}/{max_retries}: {error_msg}")
-                        if "rate limit" in error_msg or "429" in error_msg:
-                            logger.warning(f"Rate limit detected, pausing for 30 seconds...")
-                            await asyncio.sleep(30)  # 30 second pause for rate limits
-                    except Exception as debug_e:
-                        logger.error(f"Error in error handling: {debug_e}")
-                        logger.error(f"Original error: {e}")
-                        logger.warning(f"Request failed on attempt {attempt+1}/{max_retries}: {e}")
-                    
-                    if attempt < max_retries - 1:
-                        wait_time = RETRY_DELAY * (attempt + 1)
-                        await asyncio.sleep(wait_time)
-                        continue
-                    raise
-            
-            raise Exception(f"All {max_retries} attempts failed")
-
-processor = RateLimitedProcessor()
+        # Add delay to help with rate limiting
+        time.sleep(API_CALL_DELAY)
+        return result["message"]["content"]
+        
+    except requests.exceptions.Timeout:
+        logger.error(f"Request timed out after {timeout} seconds")
+        raise
+    except requests.exceptions.ConnectionError:
+        logger.error("Connection error - check Ollama endpoint")
+        raise
+    except requests.exceptions.HTTPError as e:
+        if e.response.status_code == 429:
+            logger.warning(f"Rate limited (429) - will retry with backoff")
+        else:
+            logger.error(f"HTTP error: {e.response.status_code} - {e.response.text[:200]}")
+        raise
+    except requests.exceptions.RequestException as e:
+        logger.error(f"Ollama API error: {e}")
+        raise
+    except json.JSONDecodeError as e:
+        logger.error(f"Invalid JSON response: {e}")
+        raise
+    except (KeyError, ValueError) as e:
+        logger.error(f"API response error: {e}")
+        raise
 
 def generate_optimized_chat_prompt(chat_data):
     """Generate optimized prompt for chat content and analysis generation"""
@@ -609,9 +464,9 @@ def generate_optimized_chat_prompt(chat_data):
     # Build action pending from description for prompt
     action_pending_from_desc = ""
     if action_pending_status == "yes" and action_pending_from:
-        if action_pending_from and action_pending_from.lower() == "customer":
+        if action_pending_from.lower() == "customer":
             action_pending_from_desc = "End with customer needing to respond/take action"
-        elif action_pending_from and action_pending_from.lower() == "bank":
+        elif action_pending_from.lower() == "bank":
             action_pending_from_desc = "End with bank needing to respond/take action"
         else:
             action_pending_from_desc = "End with appropriate party needing to take action"
@@ -755,18 +610,6 @@ def generate_optimized_chat_prompt(chat_data):
 
 **ENDING REQUIREMENTS:** {ending_str}
 
-**FOLLOW-UP vs NEXT ACTION DISTINCTION:**
-- **follow_up_reason** = "WHY" (the trigger/justification for follow-up)
-  * Focus on the REASON/CAUSE that necessitates follow-up
-  * Examples: "Customer requested status update", "Documentation incomplete", "Compliance deadline approaching", "Issue unresolved", "Waiting for external approval", "System error occurred"
-- **next_action_suggestion** = "WHAT" (the specific step to take)
-  * Focus on the CONCRETE ACTION to be performed
-  * Examples: "Contact client to request missing documents", "Schedule compliance review meeting", "Escalate to senior management", "Update system with new information", "Send follow-up email to customer", "Review and approve pending application"
-
-**EXAMPLE SCENARIO:**
-- follow_up_reason: "Customer requested status update on loan application"
-- next_action_suggestion: "Call customer to provide current application status and next steps"
-
 **EXAMPLES OF GOOD CHAT MESSAGES:**
 - External: "Hi, I'm having trouble with my online banking. Can someone help me check my account balance?"
 - External: "Of course! I can help you with that. Let me look up your account details right away."
@@ -783,8 +626,8 @@ def generate_optimized_chat_prompt(chat_data):
   ],
   "analysis": {{
     "chat_summary": "Business summary 150-200 words describing discussion topic, participants, key points, and context",
-    "follow_up_reason": {"[WHY follow-up is needed - the trigger/justification. Focus on the REASON/CAUSE that necessitates follow-up. Examples: 'Customer requested status update', 'Documentation incomplete', 'Compliance deadline approaching', 'Issue unresolved', 'Waiting for external approval', 'System error occurred', 'Client response required', 'Regulatory requirement pending'. Be specific about what triggered the need for follow-up.]" if follow_up_required == "yes" else "null"},
-    "next_action_suggestion": {"[WHAT specific step to take - the actionable recommendation. Focus on the CONCRETE ACTION to be performed. Examples: 'Contact client to request missing documents', 'Schedule compliance review meeting', 'Escalate to senior management', 'Update system with new information', 'Send follow-up email to customer', 'Review and approve pending application', 'Coordinate with IT team for resolution', 'Prepare documentation for audit'. Be specific about what needs to be done.]" if follow_up_required == "yes" and action_pending_status == "yes" else "null"},
+    "follow_up_reason": {"[WHY follow-up is needed - the trigger/justification]" if follow_up_required == "yes" else "null"},
+    "next_action_suggestion": {"[WHAT step to take - the action recommendation]" if follow_up_required == "yes" and action_pending_status == "yes" else "null"},
     "follow_up_date": {"[Generate meaningful follow-up date based on last message date and issue type. Consider urgency, business days, and typical resolution times for the topic. For urgent issues (P1-Critical), suggest 1-2 business days. For high priority (P2-High), suggest 3-5 business days. For medium priority (P3-Medium), suggest 1-2 weeks. Format: YYYY-MM-DDTHH:MM:SSZ]" if follow_up_required == "yes" else "null"}
   }}
 }}
@@ -807,8 +650,8 @@ Generate now.
     
     return prompt
 
-async def generate_chat_content(chat_data):
-    """Generate chat content and analysis with OpenRouter"""
+def generate_chat_content(chat_data):
+    """Generate chat content and analysis with Ollama"""
     if shutdown_flag.is_set():
         return None
     
@@ -820,16 +663,7 @@ async def generate_chat_content(chat_data):
         prompt = generate_optimized_chat_prompt(chat_data)
         logger.info(f"Chat {chat_id}: Prompt generated successfully, length: {len(prompt)}")
         
-        # Create session for this request
-        connector = aiohttp.TCPConnector(limit=10, force_close=True, enable_cleanup_closed=True)
-        timeout = aiohttp.ClientTimeout(total=REQUEST_TIMEOUT + 10)
-        
-        async with aiohttp.ClientSession(connector=connector, timeout=timeout) as session:
-            response = await circuit_breaker.call(
-                processor.call_openrouter_async, 
-                session, 
-                prompt
-            )
+        response = call_ollama_with_backoff(prompt)
         
         if not response or not response.strip():
             raise ValueError("Empty response from LLM")
@@ -915,10 +749,6 @@ async def generate_chat_content(chat_data):
                     words = content.split()
                     message['content'] = ' '.join(words[:100])
         
-        # No need to validate follow_up_required - using existing value from database
-        
-        # No need to validate action_pending_from or dates - using existing values from database
-        
         generation_time = time.time() - start_time
         
         # Log success with all preserved fields
@@ -945,39 +775,28 @@ async def generate_chat_content(chat_data):
         failure_logger.error(json.dumps(error_info, cls=ObjectIdEncoder))
         raise
 
-async def process_single_chat(chat_record, total_chats=None):
-    """Process a single chat record with all optimizations"""
+def process_single_chat_update(chat_record, retry_attempt=0):
+    """Process a single chat record to generate content and analysis"""
     if shutdown_flag.is_set():
         return None
-    
+        
+    # Extract chat_id for logging
     chat_id = str(chat_record.get('_id', 'unknown'))
-    
+        
     try:
-        return await _process_single_chat_internal(chat_record, total_chats)
-    except Exception as e:
-        logger.error(f"Chat {chat_id} processing failed with error: {str(e)[:100]}")
-        await performance_monitor.record_failure(total_chats)
-        await failure_counter.increment()
-        await checkpoint_manager.mark_processed(chat_id, success=False)
-        return None
-
-async def _process_single_chat_internal(chat_record, total_chats=None):
-    """Internal chat processing logic"""
-    chat_id = str(chat_record.get('_id', 'unknown'))
-    
-    try:
-        # Generate content
-        chat_content = await generate_chat_content(chat_record)
+        # Generate chat content based on existing data
+        chat_content = generate_chat_content(chat_record)
         
         if not chat_content:
-            await performance_monitor.record_failure(total_chats)
-            return None
+            if retry_attempt < MAX_RETRIES:
+                logger.warning(f"Generation failed for {chat_id}, will retry (attempt {retry_attempt + 1}/{MAX_RETRIES})")
+                return None  # Will be retried
+            else:
+                failure_counter.increment()
+                logger.error(f"Final failure for {chat_id} after {MAX_RETRIES} attempts")
+                return None
         
-        # Debug: Log the generated content structure (reduced frequency)
-        if str(chat_id).endswith('0'):  # Log only every 10th chat
-            logger.info(f"Chat {chat_id}: Generated content keys: {list(chat_content.keys()) if isinstance(chat_content, dict) else 'Not a dict'}")
-        
-        # Prepare update document
+        # Prepare update document with the new structure
         update_doc = {}
         
         # Update messages with generated content
@@ -1034,17 +853,9 @@ async def _process_single_chat_internal(chat_record, total_chats=None):
         # Add LLM processing tracking
         update_doc['llm_processed'] = True
         update_doc['llm_processed_at'] = datetime.now().isoformat()
-        update_doc['llm_model_used'] = OPENROUTER_MODEL
+        update_doc['llm_model_used'] = OLLAMA_MODEL
         
-        # Debug: Log what's being saved to database
-        logger.info(f"Chat {chat_id}: Update document keys: {list(update_doc.keys())}")
-        if 'follow_up_date' in update_doc:
-            logger.info(f"Chat {chat_id}: follow_up_date in update_doc: {update_doc['follow_up_date']}")
-        else:
-            logger.warning(f"Chat {chat_id}: follow_up_date NOT in update_doc")
-        
-        await performance_monitor.record_success(total_chats)
-        await success_counter.increment()
+        success_counter.increment()
         
         return {
             'chat_id': chat_id,
@@ -1052,66 +863,116 @@ async def _process_single_chat_internal(chat_record, total_chats=None):
         }
         
     except Exception as e:
-        logger.error(f"Chat {chat_id} internal processing failed: {str(e)[:100]}")
-        raise  # Re-raise to be caught by the outer handler
+        logger.error(f"Task processing error for {chat_record.get('_id', 'unknown')}: {str(e)[:100]}")
+        if retry_attempt < MAX_RETRIES:
+            logger.warning(f"Will retry {chat_record.get('_id', 'unknown')} due to error (attempt {retry_attempt + 1}/{MAX_RETRIES})")
+            return None  # Will be retried
+        else:
+            failure_counter.increment()
+            logger.error(f"Final failure for {chat_record.get('_id', 'unknown')} after {MAX_RETRIES} attempts")
+            return None
 
-async def save_batch_to_database(batch_updates):
-    """Save batch updates to database with optimized bulk operations"""
+def retry_failed_records(failed_records_list):
+    """Retry processing failed records"""
+    if not failed_records_list:
+        return []
+    
+    logger.info(f"Retrying {len(failed_records_list)} failed records...")
+    retry_counter.increment()
+    
+    successful_retries = []
+    
+    for record_data in failed_records_list:
+        if shutdown_flag.is_set():
+            break
+            
+        chat_record = record_data['record']
+        retry_attempt = record_data.get('retry_attempt', 0) + 1
+        
+        logger.info(f"Retrying {chat_record.get('_id', 'unknown')} (attempt {retry_attempt}/{MAX_RETRIES})")
+        
+        # Add delay before retry
+        time.sleep(RETRY_DELAY)
+        
+        result = process_single_chat_update(chat_record, retry_attempt)
+        
+        if result:
+            successful_retries.append(result)
+            logger.info(f"Retry successful for {chat_record.get('_id', 'unknown')}")
+        else:
+            if retry_attempt < MAX_RETRIES:
+                # Add back to failed records for another retry
+                failed_records.append({
+                    'record': chat_record,
+                    'retry_attempt': retry_attempt
+                })
+            else:
+                logger.error(f"Final retry failure for {chat_record.get('_id', 'unknown')}")
+    
+    return successful_retries
+
+def save_batch_to_database(batch_updates):
+    """Save a batch of updates to the database using proper bulk write operations"""
     if not batch_updates or shutdown_flag.is_set():
         return 0
     
     try:
-        # Reduced logging for performance
-        if len(batch_updates) > 5:  # Only log for larger batches
-            logger.info(f"Saving batch of {len(batch_updates)} updates to database...")
+        logger.info(f"Saving batch of {len(batch_updates)} updates to database...")
         
-        # Create bulk operations efficiently
+        # Create proper UpdateOne operations
         bulk_operations = []
+        chat_ids = []
+        
         for update_data in batch_updates:
+            # Create UpdateOne operation properly
             operation = UpdateOne(
                 filter={"_id": ObjectId(update_data['chat_id'])},
                 update={"$set": update_data['update_doc']}
             )
             bulk_operations.append(operation)
+            chat_ids.append(update_data['chat_id'])
         
+        # Execute bulk write with proper error handling
         if bulk_operations:
             try:
-                # Use ordered=False for better performance
                 result = chat_col.bulk_write(bulk_operations, ordered=False)
-                updated_count = result.matched_count
+                updated_count = result.modified_count
                 
-                # Update counter asynchronously
-                asyncio.create_task(update_counter.increment())
+                # Update counter
+                update_counter._value += updated_count
                 
-                if len(batch_updates) > 5:
-                    logger.info(f"Successfully saved {updated_count} records to database")
-                    progress_logger.info(f"DATABASE_SAVE: {updated_count} records saved")
+                logger.info(f"Successfully saved {updated_count} records to database")
+                progress_logger.info(f"DATABASE_SAVE: {updated_count} records saved, total_updates: {update_counter.value}")
+                
+                # Log some details of what was saved
+                if updated_count > 0:
+                    sample_update = batch_updates[0]
+                    logger.info(f"Sample update - Chat ID: {sample_update['chat_id']}")
                 
                 return updated_count
                 
             except Exception as db_error:
                 logger.error(f"Bulk write operation failed: {db_error}")
                 
-                # Fallback to smaller chunks if bulk fails
-                chunk_size = 10
+                # Try individual updates as fallback
+                logger.info("Attempting individual updates as fallback...")
                 individual_success = 0
-                for i in range(0, len(batch_updates), chunk_size):
-                    chunk = batch_updates[i:i + chunk_size]
-                    try:
-                        chunk_operations = []
-                        for update_data in chunk:
-                            operation = UpdateOne(
-                                filter={"_id": ObjectId(update_data['chat_id'])},
-                                update={"$set": update_data['update_doc']}
-                            )
-                            chunk_operations.append(operation)
-                        
-                        chunk_result = chat_col.bulk_write(chunk_operations, ordered=False)
-                        individual_success += chunk_result.matched_count
-                    except Exception as chunk_error:
-                        logger.error(f"Chunk update failed: {chunk_error}")
                 
-                logger.info(f"Fallback: {individual_success} records saved in chunks")
+                for update_data in batch_updates:
+                    try:
+                        result = chat_col.update_one(
+                            {"_id": ObjectId(update_data['chat_id'])},
+                            {"$set": update_data['update_doc']}
+                        )
+                        if result.modified_count > 0:
+                            individual_success += 1
+                    except Exception as individual_error:
+                        logger.error(f"Individual update failed for {update_data['chat_id']}: {individual_error}")
+                
+                if individual_success > 0:
+                    update_counter._value += individual_success
+                    logger.info(f"Fallback: {individual_success} records saved individually")
+                
                 return individual_success
         
         return 0
@@ -1120,25 +981,23 @@ async def save_batch_to_database(batch_updates):
         logger.error(f"Database save error: {e}")
         return 0
 
-async def process_chats_optimized():
-    """Main optimized processing function for chat generation - regenerates BOTH message content AND analysis fields for records with null/empty message content"""
-    logger.info("Starting Optimized EU Banking Chat Content Generation...")
-    logger.info("Focus: Processing records with NULL/empty message content")
-    logger.info("Action: Will regenerate BOTH message content AND analysis fields")
-    logger.info(f"Collection: {CHAT_COLLECTION}")
-    logger.info(f"Optimized Configuration:")
-    logger.info(f"  Max Concurrent: {MAX_CONCURRENT}")
-    logger.info(f"  Batch Size: {BATCH_SIZE}")
-    logger.info(f"  API Delay: {API_CALL_DELAY}s")
-    logger.info(f"  Request Timeout: {REQUEST_TIMEOUT}s")
-    logger.info(f"  Model: {OPENROUTER_MODEL}")
+def update_chats_with_content_parallel():
+    """Update existing chats with generated content and analysis using optimized batch processing"""
     
-    # Test connection
-    if not await test_openrouter_connection():
-        logger.error("Cannot proceed without OpenRouter connection")
+    logger.info("Starting EU Banking Chat Content Generation...")
+    logger.info(f"System Info: {MAX_WORKERS} CPU cores detected")
+    logger.info(f"Batch size: {BATCH_SIZE}")
+    logger.info(f"Max workers: {MAX_WORKERS}")
+    logger.info(f"Request timeout: {REQUEST_TIMEOUT}s")
+    logger.info(f"Max retries per request: {MAX_RETRIES}")
+    
+    # Test Ollama connection
+    if not test_ollama_connection():
+        logger.error("Cannot proceed without Ollama connection")
         return
     
-    # Get chats to process - only those that have NEVER been processed by LLM
+    # Get all chat records that need content generation
+    logger.info("Fetching chat records from database...")
     try:
         # Query for chats that have null/empty message content - will regenerate BOTH body content AND analysis fields
         query = {
@@ -1168,286 +1027,223 @@ async def process_chats_optimized():
             processed_ids = [ObjectId(cid) for cid in checkpoint_manager.processed_chats if ObjectId.is_valid(cid)]
             query["_id"] = {"$nin": processed_ids}
         
-        # Check chat status
-        total_chats_in_db = chat_col.count_documents({})
-        chats_processed_by_llm = chat_col.count_documents({"llm_processed": True})
-        chats_with_basic_fields = chat_col.count_documents({
-            "$and": [
-                {"_id": {"$exists": True}},
-                {"messages": {"$exists": True, "$ne": None, "$ne": []}}
-            ]
-        })
-        chats_with_llm_fields = chat_col.count_documents({
-            "$and": [
-                {"chat_summary": {"$exists": True, "$ne": None, "$ne": ""}},
-                {"next_action_suggestion": {"$exists": True, "$ne": None, "$ne": ""}},
-                {"follow_up_reason": {"$exists": True, "$ne": None, "$ne": ""}}
-            ]
-        })
-        
-        # Calculate chats with null/empty message content
-        chats_with_null_content = chat_col.count_documents({
-            "$and": [
-                {"_id": {"$exists": True}},
-                {"messages": {"$exists": True, "$ne": None, "$ne": []}},
-                {
-                    "$or": [
-                        {"messages.body.content": {"$eq": None}},
-                        {"messages.body.content": {"$eq": ""}},
-                        {"messages.body.content": {"$exists": False}},
-                        {"messages.body": {"$exists": False}},
-                        {"messages": {"$size": 0}}
-                    ]
-                }
-            ]
-        })
-        
-        # Calculate actual chats needing processing
-        chats_needing_processing = chat_col.count_documents(query)
-        
-        # Calculate pending chats (those with null content)
-        chats_pending_processing = chats_with_null_content
-        
-        # Debug: Let's also check what fields actually exist
-        logger.info("Debug - Checking field distribution in chat_new collection:")
-        for field in ["dominant_topic", "urgency", "follow_up_required", 
-                      "action_pending_status", "priority", "resolution_status", 
-                      "chat_summary", "next_action_suggestion", "follow_up_reason",
-                      "follow_up_date", "overall_sentiment", "subtopics", "category"]:
-            count = chat_col.count_documents({field: {"$exists": True, "$ne": None, "$ne": ""}})
-            logger.info(f"  {field}: {count} chats have this field")
-        
-        # Calculate completion percentages
-        completion_percentage = (chats_processed_by_llm / chats_with_basic_fields * 100) if chats_with_basic_fields > 0 else 0
-        pending_percentage = (chats_pending_processing / chats_with_basic_fields * 100) if chats_with_basic_fields > 0 else 0
-        
-        logger.info(f"Database Status:")
-        logger.info(f"  Total chats in DB: {total_chats_in_db}")
-        logger.info(f"  Chats with required basic fields: {chats_with_basic_fields}")
-        logger.info(f"  Chats with LLM-generated fields: {chats_with_llm_fields}")
-        logger.info(f"  Chats with NULL/empty message content: {chats_with_null_content}")
-        logger.info(f"  Chats processed by LLM (llm_processed=True): {chats_processed_by_llm}")
-        logger.info(f"  Chats pending processing (null content): {chats_pending_processing}")
-        logger.info(f"  Chats needing processing (this session): {chats_needing_processing}")
-        logger.info(f"  Action: Will regenerate BOTH message content AND analysis fields")
-        logger.info(f"  Overall Progress: {completion_percentage:.1f}% completed, {pending_percentage:.1f}% pending")
-        
-        # Use cursor instead of loading all into memory at once
-        chat_records = chat_col.find(query).batch_size(100)
-        total_chats = chat_col.count_documents(query)
+        chat_records = list(chat_col.find(query))
+        total_chats = len(chat_records)
         
         if total_chats == 0:
-            logger.info("No chats found that need processing!")
-            logger.info("All chats appear to have been processed by LLM already.")
+            logger.info("All chats already have content!")
             return
-        
-        logger.info(f"Found {total_chats} chats that need LLM processing")
-        logger.info(f"Previously processed (checkpoint): {len(checkpoint_manager.processed_chats)} chats")
-        
-        # Log session progress
-        progress_logger.info(f"SESSION_START: total_chats={total_chats}, completed={chats_processed_by_llm}, pending={chats_pending_processing}, completion_rate={completion_percentage:.1f}%")
-        progress_logger.info(f"BATCH_START: total_chats={total_chats}")
+            
+        logger.info(f"Found {total_chats} chats needing content generation")
+        progress_logger.info(f"BATCH_START: total_chats={total_chats}, batch_size={BATCH_SIZE}")
         
     except Exception as e:
         logger.error(f"Error fetching chat records: {e}")
         return
     
-    # Process chats in optimized batches
+    # Process in batches of BATCH_SIZE (3)
+    total_batches = (total_chats + BATCH_SIZE - 1) // BATCH_SIZE
     total_updated = 0
-    batch_updates = []
+    batch_updates = []  # Accumulate updates for batch saving
+    
+    logger.info(f"Processing in {total_batches} batches of {BATCH_SIZE} chats each")
+    logger.info(f"Using {MAX_WORKERS} workers for parallel processing")
     
     try:
-        # Process chats in concurrent batches using cursor
-        batch_num = 0
-        processed_count = 0
-        
-        while processed_count < total_chats:
+        for batch_num in range(1, total_batches + 1):
             if shutdown_flag.is_set():
-                logger.info("Shutdown requested, stopping processing")
-                break
-            
-            batch_num += 1
-            total_batches = (total_chats + BATCH_SIZE - 1)//BATCH_SIZE
-            
-            # Collect batch from cursor - process only 1 chat at a time
-            batch = []
-            for _ in range(BATCH_SIZE):  # BATCH_SIZE is now 1
-                try:
-                    chat = next(chat_records)
-                    batch.append(chat)
-                    processed_count += 1
-                except StopIteration:
-                    break
-            
-            if not batch:
+                logger.info(f"Shutdown requested. Stopping at batch {batch_num-1}/{total_batches}")
                 break
                 
-            logger.info(f"Processing batch {batch_num}/{total_batches} (chats {processed_count-len(batch)+1}-{processed_count})")
+            batch_start = (batch_num - 1) * BATCH_SIZE
+            batch_end = min(batch_start + BATCH_SIZE, total_chats)
+            batch_records = chat_records[batch_start:batch_end]
             
-            # Process batch concurrently
-            batch_tasks = []
-            for chat in batch:
-                chat_id = str(chat.get('_id'))
-                
-                # Check checkpoint to prevent duplicates (database check is already done in query)
-                if not checkpoint_manager.is_processed(chat_id):
-                    task = process_single_chat(chat, total_chats)
-                    batch_tasks.append(task)
-                else:
-                    logger.info(f"Skipping already processed chat (checkpoint): {chat_id}")
+            logger.info(f"Processing batch {batch_num}/{total_batches} ({len(batch_records)} chats)...")
+            progress_logger.info(f"BATCH_START: batch={batch_num}/{total_batches}, records={len(batch_records)}")
             
-            logger.info(f"Created {len(batch_tasks)} tasks for batch {batch_num}")
+            # Process batch with optimized parallelization
+            successful_updates = []
+            batch_start_time = time.time()
             
-            if batch_tasks:
-                # Process single task with ultra-conservative approach
-                logger.info(f"Processing 1 task for batch {batch_num}")
+            # Use ThreadPoolExecutor for I/O bound operations (API calls)
+            with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+                # Submit all tasks for this batch
+                futures = {
+                    executor.submit(process_single_chat_update, record): record 
+                    for record in batch_records
+                }
                 
-                batch_start_time = time.time()
-                successful_results = []
-                failed_count = 0
+                # Collect results with progress tracking - process as they complete
+                completed = 0
+                batch_failed_records = []  # Track failed records for this batch
                 
-                # Process single task with maximum conservative settings
                 try:
-                    task = batch_tasks[0]  # Only one task
-                    task_timeout = REQUEST_TIMEOUT + 30  # 12.5 minutes per task
-                    logger.info(f"Starting single task with {task_timeout}s timeout")
-                    
-                    result = await asyncio.wait_for(task, timeout=task_timeout)
-                    
-                    if result:
-                        successful_results.append(result)
-                        # Mark as processed (non-blocking)
-                        asyncio.create_task(
-                            checkpoint_manager.mark_processed(result['chat_id'], success=True)
-                        )
-                        logger.info(f"Single task completed successfully")
-                    else:
-                        failed_count += 1
-                        logger.warning(f"Single task returned no result")
-                        
-                except asyncio.TimeoutError:
-                    failed_count += 1
-                    logger.error(f"Single task timed out after {task_timeout}s")
+                    for future in as_completed(futures, timeout=REQUEST_TIMEOUT * 3):  # Increased timeout multiplier
+                        if shutdown_flag.is_set():
+                            logger.warning("Cancelling remaining tasks...")
+                            for f in futures:
+                                f.cancel()
+                            break
+                            
+                        try:
+                            result = future.result(timeout=60)  # Increased from 30 to 60 seconds
+                            completed += 1
+                            
+                            if result:
+                                successful_updates.append(result)
+                                # Save immediately when we have enough for a batch
+                                if len(successful_updates) >= BATCH_SIZE:
+                                    saved_count = save_batch_to_database(successful_updates)
+                                    total_updated += saved_count
+                                    successful_updates = []  # Clear after saving
+                                    logger.info(f"Immediate save: {saved_count} records")
+                            
+                            # Progress indicator for each completion
+                            progress = (completed / len(batch_records)) * 100
+                            logger.info(f"Task completed: {progress:.1f}% ({completed}/{len(batch_records)})")
+                                
+                        except Exception as e:
+                            logger.error(f"Error processing future result: {e}")
+                            completed += 1
+                            
                 except Exception as e:
-                    failed_count += 1
-                    error_msg = str(e).lower() if e else "unknown error"
-                    if "rate limit" in error_msg or "429" in error_msg:
-                        logger.warning(f"Rate limit detected, pausing for 30 seconds...")
-                        await asyncio.sleep(30)  # 30 second pause for rate limits
-                    logger.error(f"Single task failed with error: {e}")
-                
-                if successful_results:
-                    batch_updates.extend(successful_results)
-                
-                batch_elapsed = time.time() - batch_start_time
-                logger.info(f"Batch {batch_num} completed in {batch_elapsed:.1f}s: {len(successful_results)}/1 successful, {failed_count} failed")
+                    logger.error(f"Error collecting batch results: {e}")
             
-            # Save to database when we have enough updates
-            if len(batch_updates) >= BATCH_SIZE:
-                saved_count = await save_batch_to_database(batch_updates)
+            batch_end_time = time.time()
+            batch_duration = batch_end_time - batch_start_time
+            
+            # Save any remaining updates from this batch
+            if successful_updates and not shutdown_flag.is_set():
+                saved_count = save_batch_to_database(successful_updates)
                 total_updated += saved_count
-                batch_updates = []  # Clear batch
+                logger.info(f"Final batch save: {saved_count} records")
             
-            # Progress update
-            progress_pct = (processed_count / total_chats) * 100
-            remaining_chats = total_chats - processed_count
+            # Retry failed records from this batch
+            if failed_records and not shutdown_flag.is_set():
+                logger.info(f"Retrying {len(failed_records)} failed records from batch {batch_num}")
+                retry_successful = retry_failed_records(failed_records.copy())
+                
+                if retry_successful:
+                    # Save retry results
+                    retry_saved_count = save_batch_to_database(retry_successful)
+                    total_updated += retry_saved_count
+                    logger.info(f"Retry save: {retry_saved_count} records")
+                
+                # Clear failed records after retry attempt
+                failed_records.clear()
             
-            # Calculate overall completion including previously processed
-            total_completed = chats_processed_by_llm + total_updated
-            overall_completion = (total_completed / chats_with_basic_fields * 100) if chats_with_basic_fields > 0 else 0
+            logger.info(f"Batch {batch_num} processing complete: {len(successful_updates)}/{len(batch_records)} successful")
+            logger.info(f"Batch duration: {batch_duration:.2f}s")
+            progress_logger.info(f"BATCH_COMPLETE: batch={batch_num}, successful={len(successful_updates)}, duration={batch_duration:.2f}s")
             
-            logger.info(f"Session Progress: {progress_pct:.1f}% ({processed_count}/{total_chats}) - {remaining_chats} remaining")
-            logger.info(f"Overall Progress: {overall_completion:.1f}% completed ({total_completed}/{chats_with_basic_fields} total chats)")
+            # Progress summary every 3 batches (more frequent due to smaller batches)
+            if batch_num % 3 == 0 or batch_num == total_batches:
+                overall_progress = ((batch_num * BATCH_SIZE) / total_chats) * 100
+                logger.info(f"Overall Progress: {overall_progress:.1f}% | Batches: {batch_num}/{total_batches}")
+                logger.info(f"Success: {success_counter.value} | Failures: {failure_counter.value} | Retries: {retry_counter.value} | DB Updates: {total_updated}")
+                
+                # System resource info
+                cpu_percent = psutil.cpu_percent()
+                memory_percent = psutil.virtual_memory().percent
+                logger.info(f"System: CPU {cpu_percent:.1f}% | Memory {memory_percent:.1f}%")
+                progress_logger.info(f"PROGRESS_SUMMARY: batch={batch_num}/{total_batches}, success={success_counter.value}, failures={failure_counter.value}, retries={retry_counter.value}, db_updates={total_updated}")
             
-            # Log detailed progress
-            progress_logger.info(f"PROGRESS_UPDATE: session={progress_pct:.1f}%, overall={overall_completion:.1f}%, processed_this_session={total_updated}, remaining={remaining_chats}")
-            
-            # Update performance monitor with actual total
-            await performance_monitor.log_progress(total_chats)
-            
-            # Longer delay between batches to manage rate limits
-            if processed_count < total_chats and not shutdown_flag.is_set():
-                logger.info(f"Waiting {BATCH_DELAY}s before next batch to avoid rate limits...")
-                await asyncio.sleep(BATCH_DELAY)
+            # Brief pause between batches to help with rate limiting (reduced)
+            if not shutdown_flag.is_set() and batch_num < total_batches:
+                time.sleep(BATCH_DELAY)
         
-        # Save any remaining updates
-        if batch_updates and not shutdown_flag.is_set():
-            saved_count = await save_batch_to_database(batch_updates)
-            total_updated += saved_count
-        
-        # Final checkpoint save
-        await checkpoint_manager.save_checkpoint()
+        # Final retry phase for any remaining failed records
+        if failed_records and not shutdown_flag.is_set():
+            logger.info(f"Final retry phase: {len(failed_records)} records remaining")
+            final_retry_successful = retry_failed_records(failed_records.copy())
+            
+            if final_retry_successful:
+                final_retry_saved = save_batch_to_database(final_retry_successful)
+                total_updated += final_retry_saved
+                logger.info(f"Final retry save: {final_retry_saved} records")
+            
+            failed_records.clear()
         
         if shutdown_flag.is_set():
-            logger.info("Processing interrupted gracefully!")
+            logger.info("Content generation interrupted gracefully!")
         else:
-            logger.info("Optimized chat content generation complete!")
+            logger.info("EU Banking chat content generation complete!")
+            
+        logger.info(f"Total chats updated: {total_updated}")
+        logger.info(f"Successful generations: {success_counter.value}")
+        logger.info(f"Failed generations: {failure_counter.value}")
+        logger.info(f"Retry attempts: {retry_counter.value}")
+        logger.info(f"Data updated in MongoDB: {DB_NAME}.{CHAT_COLLECTION}")
         
-        # Final statistics
-        final_total_completed = chats_processed_by_llm + total_updated
-        final_completion_percentage = (final_total_completed / chats_with_basic_fields * 100) if chats_with_basic_fields > 0 else 0
-        final_pending = chats_with_basic_fields - final_total_completed
+        # Final progress log
+        progress_logger.info(f"FINAL_SUMMARY: total_updated={total_updated}, success={success_counter.value}, failures={failure_counter.value}")
         
-        logger.info(f"Final Results:")
-        logger.info(f"  Total chats updated this session: {total_updated}")
-        logger.info(f"  Total chats completed (all time): {final_total_completed}")
-        logger.info(f"  Total chats pending: {final_pending}")
-        logger.info(f"  Overall completion rate: {final_completion_percentage:.1f}%")
-        logger.info(f"  Successful generations: {success_counter.value}")
-        logger.info(f"  Failed generations: {failure_counter.value}")
-        logger.info(f"  Success rate: {(success_counter.value/(success_counter.value + failure_counter.value))*100:.1f}%" if (success_counter.value + failure_counter.value) > 0 else "Success rate: N/A")
-        
-        # Performance summary
-        total_time = time.time() - performance_monitor.start_time
-        avg_time_per_chat = total_time / success_counter.value if success_counter.value > 0 else 0
-        logger.info(f"  Total processing time: {total_time/3600:.2f} hours")
-        logger.info(f"  Average time per chat: {avg_time_per_chat:.1f} seconds")
-        logger.info(f"  Processing rate: {success_counter.value/(total_time/3600):.0f} chats/hour" if total_time > 0 else "Processing rate: N/A")
-        
-        progress_logger.info(f"FINAL_SUMMARY: session_updated={total_updated}, total_completed={final_total_completed}, pending={final_pending}, completion_rate={final_completion_percentage:.1f}%, success={success_counter.value}, failures={failure_counter.value}, total_time={total_time/3600:.2f}h, rate={success_counter.value/(total_time/3600):.0f}/h" if total_time > 0 else f"FINAL_SUMMARY: session_updated={total_updated}, total_completed={final_total_completed}, pending={final_pending}, completion_rate={final_completion_percentage:.1f}%, success={success_counter.value}, failures={failure_counter.value}")
-        
+    except KeyboardInterrupt:
+        logger.info("Generation interrupted by user!")
+        shutdown_flag.set()
     except Exception as e:
-        logger.error(f"Unexpected error in main processing: {e}")
-        logger.error(traceback.format_exc())
-    finally:
-        await checkpoint_manager.save_checkpoint()
+        logger.error(f"Unexpected error: {e}")
+        shutdown_flag.set()
 
-async def test_openrouter_connection():
-    """Test OpenRouter connection with async client"""
+def test_ollama_connection():
+    """Test if Ollama is accessible and model is available"""
     try:
-        logger.info("Testing OpenRouter connection...")
+        logger.info(f"Testing connection to Ollama: {OLLAMA_URL}")
         
         headers = {
-            'Authorization': f'Bearer {OPENROUTER_API_KEY}',
-            'Content-Type': 'application/json',
-            'HTTP-Referer': 'http://localhost:3000',
-            'X-Title': 'EU Banking Chat Generator'
+            'Authorization': f'Bearer {OLLAMA_API_KEY}',
+            'Content-Type': 'application/json'
         }
+        
+        # Test basic connection with simple generation
+        logger.info("Testing simple generation...")
         
         test_payload = {
-            "model": OPENROUTER_MODEL,
-            "messages": [{"role": "user", "content": 'Generate JSON: {"test": "success"}'}],
-            "max_tokens": 50
+            "model": OLLAMA_MODEL,
+            "messages": [
+                {
+                    "role": "user",
+                    "content": "Generate a JSON object with 'test': 'success'"
+                }
+            ],
+            "stream": False,
+            "options": {
+                "temperature": 0.4,
+                "num_predict": 20
+            }
         }
         
-        connector = aiohttp.TCPConnector(force_close=True, enable_cleanup_closed=True)
-        timeout = aiohttp.ClientTimeout(total=30)
+        test_response = requests.post(
+            OLLAMA_URL, 
+            json=test_payload,
+            headers=headers,
+            timeout=60  # Increased from 30 to 60 seconds
+        )
         
-        async with aiohttp.ClientSession(connector=connector, timeout=timeout) as session:
-            async with session.post(OPENROUTER_URL, json=test_payload, headers=headers) as response:
-                response.raise_for_status()
-                result = await response.json()
-                
-                if "choices" in result and result["choices"]:
-                    logger.info("OpenRouter connection test successful")
-                    logger.info(f"Test response: {result['choices'][0]['message']['content'][:100]}...")
-                    return True
-                else:
-                    logger.error("Invalid response structure from OpenRouter")
-                    return False
+        logger.info(f"Generation test status: {test_response.status_code}")
         
-    except Exception as e:
-        logger.error(f"OpenRouter connection test failed: {e}")
+        if not test_response.text.strip():
+            logger.error("Empty response from generation endpoint")
+            return False
+        
+        test_response.raise_for_status()
+        
+        try:
+            result = test_response.json()
+            if "message" in result and "content" in result["message"]:
+                logger.info("Ollama connection test successful")
+                logger.info(f"Test response: {result['message']['content'][:100]}...")
+                return True
+            else:
+                logger.error(f"No 'message.content' field in test. Fields: {list(result.keys())}")
+                return False
+        except json.JSONDecodeError as e:
+            logger.error(f"Generation test returned invalid JSON: {e}")
+            return False
+            
+    except requests.exceptions.RequestException as e:
+        logger.error(f"Connection test failed: {e}")
         return False
 
 def get_collection_stats():
@@ -1533,14 +1329,19 @@ def get_sample_generated_chats(limit=3):
     except Exception as e:
         logger.error(f"Error getting sample chats: {e}")
 
-async def main():
-    """Main async function"""
-    logger.info("Optimized EU Banking Chat Content Generator Starting...")
-    logger.info(f"Database: {DB_NAME}.{CHAT_COLLECTION}")
-    logger.info(f"Model: {OPENROUTER_MODEL}")
-    logger.info(f"Configuration: {MAX_CONCURRENT} concurrent, {BATCH_SIZE} batch size")
+# Main execution function
+def main():
+    """Main function to initialize and run the chat content generator"""
+    logger.info("EU Banking Chat Content Generator Starting...")
+    logger.info(f"Database: {DB_NAME}")
+    logger.info(f"Collection: {CHAT_COLLECTION}")
+    logger.info(f"Model: {OLLAMA_MODEL}")
+    logger.info(f"Ollama URL: {OLLAMA_URL}")
+    logger.info(f"Max Workers: {MAX_WORKERS}")
+    logger.info(f"Batch Size: {BATCH_SIZE}")
+    logger.info(f"Log Directory: {LOG_DIR}")
     
-    # Setup signal handlers
+    # Setup signal handlers and cleanup
     setup_signal_handlers()
     atexit.register(cleanup_resources)
     
@@ -1550,34 +1351,34 @@ async def main():
         return
     
     try:
-        # Show initial stats
+        # Show current collection stats
         get_collection_stats()
         
-        # Run optimized processing
-        await process_chats_optimized()
+        # Run the chat content generation
+        update_chats_with_content_parallel()
         
-        # Show final stats
-        logger.info("="*60)
-        logger.info("FINAL STATISTICS")
-        logger.info("="*60)
+        # Show final statistics
         get_collection_stats()
-        get_sample_generated_chats(3)
+        
+        # Show sample generated content
+        get_sample_generated_chats()
         
     except KeyboardInterrupt:
-        logger.info("Processing interrupted by user")
-        await shutdown_flag.set()
+        logger.info("Content generation interrupted by user!")
     except Exception as e:
         logger.error(f"Unexpected error in main: {e}")
-        logger.error(traceback.format_exc())
     finally:
+        # Save final checkpoint
+        checkpoint_manager.save_checkpoint()
         cleanup_resources()
-        logger.info("Session complete. Check log files for details:")
-        logger.info(f"  Main: {MAIN_LOG_FILE}")
-        logger.info(f"  Success: {SUCCESS_LOG_FILE}")
-        logger.info(f"  Failures: {FAILURE_LOG_FILE}")
-        logger.info(f"  Progress: {PROGRESS_LOG_FILE}")
-        logger.info(f"  Checkpoint: {CHECKPOINT_FILE}")
+        
+        logger.info("Session complete. Check log files for detailed information:")
+        logger.info(f"Main Log: {MAIN_LOG_FILE}")
+        logger.info(f"Success Log: {SUCCESS_LOG_FILE}")
+        logger.info(f"Failure Log: {FAILURE_LOG_FILE}")
+        logger.info(f"Progress Log: {PROGRESS_LOG_FILE}")
+        logger.info(f"Checkpoint: {CHECKPOINT_FILE}")
 
-# Run the optimized generator
+# Run the content generator
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
