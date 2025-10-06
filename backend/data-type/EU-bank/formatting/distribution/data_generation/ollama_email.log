@@ -1,0 +1,2448 @@
+nohup: ignoring input
+2025-10-05 17:03:06,136 - INFO - EU Banking Email Content Generator Starting...
+2025-10-05 17:03:06,136 - INFO - Database: sparzaai
+2025-10-05 17:03:06,136 - INFO - Collection: email_new
+2025-10-05 17:03:06,136 - INFO - Model: gemma3:27b
+2025-10-05 17:03:06,136 - INFO - Ollama URL: http://34.147.17.26:16637/api/chat
+2025-10-05 17:03:06,136 - INFO - Max Workers: 12
+2025-10-05 17:03:06,136 - INFO - Batch Size: 3
+2025-10-05 17:03:06,136 - INFO - Log Directory: logs
+2025-10-05 17:03:07,518 - INFO - Database connection established and indexes created
+2025-10-05 17:03:07,849 - INFO - Collection Statistics:
+2025-10-05 17:03:07,849 - INFO - Total emails: 2004
+2025-10-05 17:03:07,849 - INFO - With analysis fields: 1250
+2025-10-05 17:03:07,849 - INFO - Without analysis fields: 754
+2025-10-05 17:03:07,849 - INFO - Top Dominant Topics:
+2025-10-05 17:03:07,849 - INFO - 1. Risk Management Alert: 31 emails
+2025-10-05 17:03:07,849 - INFO - 2. User Access Approval: 30 emails
+2025-10-05 17:03:07,849 - INFO - 3. Quality Assurance Breach: 28 emails
+2025-10-05 17:03:07,849 - INFO - 4. IT Marketing Unresolved: 27 emails
+2025-10-05 17:03:07,849 - INFO - 5. IT Access Problem: 26 emails
+2025-10-05 17:03:07,849 - INFO - 6. Salary Leave Issues: 23 emails
+2025-10-05 17:03:07,849 - INFO - 7. Performance Management: 22 emails
+2025-10-05 17:03:07,849 - INFO - 8. Vendor Management: 22 emails
+2025-10-05 17:03:07,849 - INFO - 9. Process Exception: 22 emails
+2025-10-05 17:03:07,849 - INFO - 10. Legal Escalation: 22 emails
+2025-10-05 17:03:07,849 - INFO - No pending intermediate results to recover
+2025-10-05 17:03:07,849 - INFO - Starting EU Banking Email Content Generation...
+2025-10-05 17:03:07,849 - INFO - System Info: 12 CPU cores detected
+2025-10-05 17:03:07,849 - INFO - Batch size: 3
+2025-10-05 17:03:07,850 - INFO - Max workers: 12
+2025-10-05 17:03:07,850 - INFO - Request timeout: 300s
+2025-10-05 17:03:07,850 - INFO - Max retries per request: 5
+2025-10-05 17:03:07,850 - INFO - Testing connection to Ollama: http://34.147.17.26:16637/api/chat
+2025-10-05 17:03:07,850 - INFO - Testing simple generation...
+2025-10-05 17:03:17,950 - INFO - Generation test status: 200
+2025-10-05 17:03:17,950 - INFO - Ollama connection test successful
+2025-10-05 17:03:17,950 - INFO - Test response: ```json
+{
+  "test": "success"
+}
+```
+...
+2025-10-05 17:03:17,950 - INFO - Fetching email records from database...
+2025-10-05 17:03:18,960 - INFO - Found 575 emails needing content generation
+2025-10-05 17:03:18,960 - INFO - Processing in 192 batches of 3 emails each
+2025-10-05 17:03:18,960 - INFO - Using 12 workers for parallel processing
+2025-10-05 17:03:18,960 - INFO - Processing batch 1/192 (3 emails)...
+2025-10-05 17:04:16,254 - ERROR - Task processing error for conv_m365_f0f388b0d58d: 'str' object has no attribute 'get'
+2025-10-05 17:04:16,254 - WARNING - Will retry conv_m365_f0f388b0d58d due to error (attempt 1/3)
+2025-10-05 17:04:16,254 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 17:05:16,411 - ERROR - Task processing error for conv_m365_d85cd55fea5e: 'str' object has no attribute 'get'
+2025-10-05 17:05:16,411 - WARNING - Will retry conv_m365_d85cd55fea5e due to error (attempt 1/3)
+2025-10-05 17:05:16,411 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 17:06:21,338 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 17:06:21,338 - INFO - Saving batch of 1 updates to database...
+2025-10-05 17:06:21,447 - INFO - Successfully saved 1 records to database
+2025-10-05 17:06:21,447 - INFO - Sample update - Thread ID: conv_m365_7bafde431cf2
+2025-10-05 17:06:21,447 - INFO - Final batch save: 1 records
+2025-10-05 17:06:21,447 - INFO - Batch 1 processing complete: 1/3 successful
+2025-10-05 17:06:21,447 - INFO - Batch duration: 182.38s
+2025-10-05 17:06:23,449 - INFO - Processing batch 2/192 (3 emails)...
+2025-10-05 17:07:13,140 - ERROR - Task processing error for conv_m365_46eead306d49: 'str' object has no attribute 'get'
+2025-10-05 17:07:13,140 - WARNING - Will retry conv_m365_46eead306d49 due to error (attempt 1/3)
+2025-10-05 17:07:13,140 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 17:07:53,786 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 17:08:55,031 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 17:08:55,032 - INFO - Saving batch of 2 updates to database...
+2025-10-05 17:08:55,243 - INFO - Successfully saved 2 records to database
+2025-10-05 17:08:55,244 - INFO - Sample update - Thread ID: conv_m365_f63517c8e5bb
+2025-10-05 17:08:55,244 - INFO - Final batch save: 2 records
+2025-10-05 17:08:55,244 - INFO - Batch 2 processing complete: 2/3 successful
+2025-10-05 17:08:55,244 - INFO - Batch duration: 151.58s
+2025-10-05 17:08:57,244 - INFO - Processing batch 3/192 (3 emails)...
+2025-10-05 17:09:52,139 - ERROR - Task processing error for conv_m365_b2153cbbf00c: 'str' object has no attribute 'get'
+2025-10-05 17:09:52,139 - WARNING - Will retry conv_m365_b2153cbbf00c due to error (attempt 1/3)
+2025-10-05 17:09:52,139 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 17:10:48,910 - ERROR - Task processing error for conv_m365_580837170902: 'str' object has no attribute 'get'
+2025-10-05 17:10:48,910 - WARNING - Will retry conv_m365_580837170902 due to error (attempt 1/3)
+2025-10-05 17:10:48,910 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 17:11:35,230 - ERROR - Task processing error for conv_m365_3d73c0f8bb92: string indices must be integers
+2025-10-05 17:11:35,230 - WARNING - Will retry conv_m365_3d73c0f8bb92 due to error (attempt 1/3)
+2025-10-05 17:11:35,231 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 17:11:35,231 - INFO - Batch 3 processing complete: 0/3 successful
+2025-10-05 17:11:35,231 - INFO - Batch duration: 157.99s
+2025-10-05 17:11:35,231 - INFO - Overall Progress: 1.6% | Batches: 3/192
+2025-10-05 17:11:35,231 - INFO - Success: 3 | Failures: 0 | Retries: 0 | DB Updates: 3
+2025-10-05 17:11:35,232 - INFO - System: CPU 11.4% | Memory 4.2%
+2025-10-05 17:11:37,234 - INFO - Processing batch 4/192 (3 emails)...
+2025-10-05 17:12:37,562 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 17:13:37,604 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 17:14:29,608 - ERROR - Task processing error for conv_m365_6fe4bf2c81d7: 'str' object has no attribute 'get'
+2025-10-05 17:14:29,608 - WARNING - Will retry conv_m365_6fe4bf2c81d7 due to error (attempt 1/3)
+2025-10-05 17:14:29,609 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 17:14:29,609 - INFO - Saving batch of 2 updates to database...
+2025-10-05 17:14:29,823 - INFO - Successfully saved 2 records to database
+2025-10-05 17:14:29,824 - INFO - Sample update - Thread ID: conv_m365_e4215e53a497
+2025-10-05 17:14:29,824 - INFO - Final batch save: 2 records
+2025-10-05 17:14:29,824 - INFO - Batch 4 processing complete: 2/3 successful
+2025-10-05 17:14:29,824 - INFO - Batch duration: 172.37s
+2025-10-05 17:14:31,826 - INFO - Processing batch 5/192 (3 emails)...
+2025-10-05 17:15:19,636 - ERROR - Task processing error for conv_m365_a656cf391467: 'str' object has no attribute 'get'
+2025-10-05 17:15:19,636 - WARNING - Will retry conv_m365_a656cf391467 due to error (attempt 1/3)
+2025-10-05 17:15:19,637 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 17:16:01,705 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 17:16:52,743 - ERROR - Task processing error for conv_m365_7fa7c63433ec: string indices must be integers
+2025-10-05 17:16:52,743 - WARNING - Will retry conv_m365_7fa7c63433ec due to error (attempt 1/3)
+2025-10-05 17:16:52,743 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 17:16:52,743 - INFO - Saving batch of 1 updates to database...
+2025-10-05 17:16:52,852 - INFO - Successfully saved 1 records to database
+2025-10-05 17:16:52,852 - INFO - Sample update - Thread ID: conv_m365_acd771cfe2f7
+2025-10-05 17:16:52,853 - INFO - Final batch save: 1 records
+2025-10-05 17:16:52,853 - INFO - Batch 5 processing complete: 1/3 successful
+2025-10-05 17:16:52,853 - INFO - Batch duration: 140.92s
+2025-10-05 17:16:54,855 - INFO - Processing batch 6/192 (3 emails)...
+2025-10-05 17:17:52,043 - ERROR - Task processing error for conv_m365_5ac6e122b8ee: 'str' object has no attribute 'get'
+2025-10-05 17:17:52,043 - WARNING - Will retry conv_m365_5ac6e122b8ee due to error (attempt 1/3)
+2025-10-05 17:17:52,043 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 17:18:50,226 - ERROR - Task processing error for conv_m365_b08c1fe97d19: string indices must be integers
+2025-10-05 17:18:50,226 - WARNING - Will retry conv_m365_b08c1fe97d19 due to error (attempt 1/3)
+2025-10-05 17:18:50,226 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 17:19:46,283 - ERROR - Task processing error for conv_m365_f6d589f8cde1: 'str' object has no attribute 'get'
+2025-10-05 17:19:46,283 - WARNING - Will retry conv_m365_f6d589f8cde1 due to error (attempt 1/3)
+2025-10-05 17:19:46,283 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 17:19:46,283 - INFO - Batch 6 processing complete: 0/3 successful
+2025-10-05 17:19:46,284 - INFO - Batch duration: 171.43s
+2025-10-05 17:19:46,284 - INFO - Overall Progress: 3.1% | Batches: 6/192
+2025-10-05 17:19:46,284 - INFO - Success: 6 | Failures: 0 | Retries: 0 | DB Updates: 6
+2025-10-05 17:19:46,284 - INFO - System: CPU 10.9% | Memory 4.2%
+2025-10-05 17:19:48,286 - INFO - Processing batch 7/192 (3 emails)...
+2025-10-05 17:20:49,817 - INFO - Thread conv_m365_6cbb4c149ea5: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 17:20:49,817 - ERROR - Task processing error for conv_m365_6cbb4c149ea5: string indices must be integers
+2025-10-05 17:20:49,818 - WARNING - Will retry conv_m365_6cbb4c149ea5 due to error (attempt 1/3)
+2025-10-05 17:20:49,818 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 17:21:40,097 - ERROR - Task processing error for conv_m365_1385b1b08ed7: 'str' object has no attribute 'get'
+2025-10-05 17:21:40,097 - WARNING - Will retry conv_m365_1385b1b08ed7 due to error (attempt 1/3)
+2025-10-05 17:21:40,098 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 17:22:40,646 - INFO - Thread conv_m365_aa91a3a274e5: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 17:22:40,648 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 17:22:40,648 - INFO - Saving batch of 1 updates to database...
+2025-10-05 17:22:40,757 - INFO - Successfully saved 1 records to database
+2025-10-05 17:22:40,757 - INFO - Sample update - Thread ID: conv_m365_aa91a3a274e5
+2025-10-05 17:22:40,757 - INFO - Final batch save: 1 records
+2025-10-05 17:22:40,757 - INFO - Batch 7 processing complete: 1/3 successful
+2025-10-05 17:22:40,758 - INFO - Batch duration: 172.36s
+2025-10-05 17:22:42,760 - INFO - Processing batch 8/192 (3 emails)...
+2025-10-05 17:23:38,992 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 17:24:23,677 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 17:25:23,852 - ERROR - Task processing error for conv_m365_afa34f656bb2: string indices must be integers
+2025-10-05 17:25:23,852 - WARNING - Will retry conv_m365_afa34f656bb2 due to error (attempt 1/3)
+2025-10-05 17:25:23,852 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 17:25:23,852 - INFO - Saving batch of 2 updates to database...
+2025-10-05 17:25:23,961 - INFO - Successfully saved 2 records to database
+2025-10-05 17:25:23,961 - INFO - Sample update - Thread ID: conv_m365_5538d56c1672
+2025-10-05 17:25:23,961 - INFO - Final batch save: 2 records
+2025-10-05 17:25:23,962 - INFO - Batch 8 processing complete: 2/3 successful
+2025-10-05 17:25:23,962 - INFO - Batch duration: 161.09s
+2025-10-05 17:25:25,964 - INFO - Processing batch 9/192 (3 emails)...
+2025-10-05 17:26:23,424 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 17:27:10,049 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 17:28:07,523 - ERROR - Task processing error for conv_m365_20b800eb5249: string indices must be integers
+2025-10-05 17:28:07,524 - WARNING - Will retry conv_m365_20b800eb5249 due to error (attempt 1/3)
+2025-10-05 17:28:07,524 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 17:28:07,524 - INFO - Saving batch of 2 updates to database...
+2025-10-05 17:28:07,634 - INFO - Successfully saved 2 records to database
+2025-10-05 17:28:07,634 - INFO - Sample update - Thread ID: conv_m365_a9102403194c
+2025-10-05 17:28:07,634 - INFO - Final batch save: 2 records
+2025-10-05 17:28:07,634 - INFO - Batch 9 processing complete: 2/3 successful
+2025-10-05 17:28:07,634 - INFO - Batch duration: 161.56s
+2025-10-05 17:28:07,634 - INFO - Overall Progress: 4.7% | Batches: 9/192
+2025-10-05 17:28:07,634 - INFO - Success: 11 | Failures: 0 | Retries: 0 | DB Updates: 11
+2025-10-05 17:28:07,635 - INFO - System: CPU 10.9% | Memory 4.2%
+2025-10-05 17:28:09,637 - INFO - Processing batch 10/192 (3 emails)...
+2025-10-05 17:29:01,676 - ERROR - Task processing error for conv_m365_afef6afecff7: 'str' object has no attribute 'get'
+2025-10-05 17:29:01,676 - WARNING - Will retry conv_m365_afef6afecff7 due to error (attempt 1/3)
+2025-10-05 17:29:01,677 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 17:29:48,309 - ERROR - Task processing error for conv_m365_72da11cc48c6: 'str' object has no attribute 'get'
+2025-10-05 17:29:48,309 - WARNING - Will retry conv_m365_72da11cc48c6 due to error (attempt 1/3)
+2025-10-05 17:29:48,309 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 17:30:44,667 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 17:30:44,667 - INFO - Saving batch of 1 updates to database...
+2025-10-05 17:30:44,776 - INFO - Successfully saved 1 records to database
+2025-10-05 17:30:44,777 - INFO - Sample update - Thread ID: conv_m365_8d79b8ff375a
+2025-10-05 17:30:44,777 - INFO - Final batch save: 1 records
+2025-10-05 17:30:44,777 - INFO - Batch 10 processing complete: 1/3 successful
+2025-10-05 17:30:44,777 - INFO - Batch duration: 155.03s
+2025-10-05 17:30:46,779 - INFO - Processing batch 11/192 (3 emails)...
+2025-10-05 17:31:46,788 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 17:32:38,955 - ERROR - Task processing error for conv_m365_f5790ed389d2: 'str' object has no attribute 'get'
+2025-10-05 17:32:38,955 - WARNING - Will retry conv_m365_f5790ed389d2 due to error (attempt 1/3)
+2025-10-05 17:32:38,955 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 17:33:32,551 - ERROR - Task processing error for conv_m365_eadf9bb941fd: string indices must be integers
+2025-10-05 17:33:32,551 - WARNING - Will retry conv_m365_eadf9bb941fd due to error (attempt 1/3)
+2025-10-05 17:33:32,552 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 17:33:32,552 - INFO - Saving batch of 1 updates to database...
+2025-10-05 17:33:32,661 - INFO - Successfully saved 1 records to database
+2025-10-05 17:33:32,662 - INFO - Sample update - Thread ID: conv_m365_c8534a20cf82
+2025-10-05 17:33:32,662 - INFO - Final batch save: 1 records
+2025-10-05 17:33:32,662 - INFO - Batch 11 processing complete: 1/3 successful
+2025-10-05 17:33:32,662 - INFO - Batch duration: 165.77s
+2025-10-05 17:33:34,664 - INFO - Processing batch 12/192 (3 emails)...
+2025-10-05 17:34:30,771 - ERROR - Task processing error for conv_m365_f0fd5dd1d0be: 'str' object has no attribute 'get'
+2025-10-05 17:34:30,771 - WARNING - Will retry conv_m365_f0fd5dd1d0be due to error (attempt 1/3)
+2025-10-05 17:34:30,772 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 17:35:23,492 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 17:36:15,151 - ERROR - Task processing error for conv_m365_efb3a6624719: 'str' object has no attribute 'get'
+2025-10-05 17:36:15,151 - WARNING - Will retry conv_m365_efb3a6624719 due to error (attempt 1/3)
+2025-10-05 17:36:15,152 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 17:36:15,152 - INFO - Saving batch of 1 updates to database...
+2025-10-05 17:36:15,261 - INFO - Successfully saved 1 records to database
+2025-10-05 17:36:15,261 - INFO - Sample update - Thread ID: conv_m365_7a30fe2eedb8
+2025-10-05 17:36:15,261 - INFO - Final batch save: 1 records
+2025-10-05 17:36:15,261 - INFO - Batch 12 processing complete: 1/3 successful
+2025-10-05 17:36:15,261 - INFO - Batch duration: 160.49s
+2025-10-05 17:36:15,261 - INFO - Overall Progress: 6.3% | Batches: 12/192
+2025-10-05 17:36:15,261 - INFO - Success: 14 | Failures: 0 | Retries: 0 | DB Updates: 14
+2025-10-05 17:36:15,262 - INFO - System: CPU 10.9% | Memory 4.2%
+2025-10-05 17:36:17,264 - INFO - Processing batch 13/192 (3 emails)...
+2025-10-05 17:37:01,809 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 17:37:48,106 - ERROR - Task processing error for conv_m365_2ee30a473142: 'str' object has no attribute 'get'
+2025-10-05 17:37:48,106 - WARNING - Will retry conv_m365_2ee30a473142 due to error (attempt 1/3)
+2025-10-05 17:37:48,106 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 17:38:44,151 - ERROR - Task processing error for conv_m365_d2eb8ba4386f: 'str' object has no attribute 'get'
+2025-10-05 17:38:44,151 - WARNING - Will retry conv_m365_d2eb8ba4386f due to error (attempt 1/3)
+2025-10-05 17:38:44,151 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 17:38:44,151 - INFO - Saving batch of 1 updates to database...
+2025-10-05 17:38:44,260 - INFO - Successfully saved 1 records to database
+2025-10-05 17:38:44,260 - INFO - Sample update - Thread ID: conv_m365_2c38b1f0e5c6
+2025-10-05 17:38:44,260 - INFO - Final batch save: 1 records
+2025-10-05 17:38:44,260 - INFO - Batch 13 processing complete: 1/3 successful
+2025-10-05 17:38:44,260 - INFO - Batch duration: 146.89s
+2025-10-05 17:38:46,263 - INFO - Processing batch 14/192 (3 emails)...
+2025-10-05 17:39:37,644 - ERROR - Task processing error for conv_m365_99d472eb6c1c: 'str' object has no attribute 'get'
+2025-10-05 17:39:37,644 - WARNING - Will retry conv_m365_99d472eb6c1c due to error (attempt 1/3)
+2025-10-05 17:39:37,644 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 17:40:32,232 - ERROR - Task processing error for conv_m365_9d04ef2d2209: 'str' object has no attribute 'get'
+2025-10-05 17:40:32,232 - WARNING - Will retry conv_m365_9d04ef2d2209 due to error (attempt 1/3)
+2025-10-05 17:40:32,232 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 17:41:24,300 - ERROR - Task processing error for conv_m365_4ccae84b6866: 'str' object has no attribute 'get'
+2025-10-05 17:41:24,300 - WARNING - Will retry conv_m365_4ccae84b6866 due to error (attempt 1/3)
+2025-10-05 17:41:24,300 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 17:41:24,300 - INFO - Batch 14 processing complete: 0/3 successful
+2025-10-05 17:41:24,301 - INFO - Batch duration: 158.04s
+2025-10-05 17:41:26,303 - INFO - Processing batch 15/192 (3 emails)...
+2025-10-05 17:42:27,476 - INFO - Thread conv_m365_e87c6f3ce755: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 17:42:27,481 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 17:43:17,330 - ERROR - Task processing error for conv_m365_63a63824b2fa: 'str' object has no attribute 'get'
+2025-10-05 17:43:17,331 - WARNING - Will retry conv_m365_63a63824b2fa due to error (attempt 1/3)
+2025-10-05 17:43:17,331 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 17:44:10,586 - ERROR - Task processing error for conv_m365_748b2259d524: 'str' object has no attribute 'get'
+2025-10-05 17:44:10,586 - WARNING - Will retry conv_m365_748b2259d524 due to error (attempt 1/3)
+2025-10-05 17:44:10,587 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 17:44:10,587 - INFO - Saving batch of 1 updates to database...
+2025-10-05 17:44:10,696 - INFO - Successfully saved 1 records to database
+2025-10-05 17:44:10,696 - INFO - Sample update - Thread ID: conv_m365_e87c6f3ce755
+2025-10-05 17:44:10,696 - INFO - Final batch save: 1 records
+2025-10-05 17:44:10,696 - INFO - Batch 15 processing complete: 1/3 successful
+2025-10-05 17:44:10,696 - INFO - Batch duration: 164.28s
+2025-10-05 17:44:10,696 - INFO - Overall Progress: 7.8% | Batches: 15/192
+2025-10-05 17:44:10,696 - INFO - Success: 16 | Failures: 0 | Retries: 0 | DB Updates: 16
+2025-10-05 17:44:10,697 - INFO - System: CPU 10.7% | Memory 4.2%
+2025-10-05 17:44:12,699 - INFO - Processing batch 16/192 (3 emails)...
+2025-10-05 17:45:07,738 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 17:46:00,034 - ERROR - Task processing error for conv_m365_1917b21d2852: 'str' object has no attribute 'get'
+2025-10-05 17:46:00,034 - WARNING - Will retry conv_m365_1917b21d2852 due to error (attempt 1/3)
+2025-10-05 17:46:00,034 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 17:46:33,396 - INFO - Thread conv_m365_e2e07d548f90: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 17:46:33,399 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 17:46:33,399 - INFO - Saving batch of 2 updates to database...
+2025-10-05 17:46:33,507 - INFO - Successfully saved 2 records to database
+2025-10-05 17:46:33,507 - INFO - Sample update - Thread ID: conv_m365_527601488fa9
+2025-10-05 17:46:33,507 - INFO - Final batch save: 2 records
+2025-10-05 17:46:33,507 - INFO - Batch 16 processing complete: 2/3 successful
+2025-10-05 17:46:33,507 - INFO - Batch duration: 140.70s
+2025-10-05 17:46:35,510 - INFO - Processing batch 17/192 (3 emails)...
+2025-10-05 17:47:24,866 - ERROR - Task processing error for conv_m365_eb85e62bddcd: 'str' object has no attribute 'get'
+2025-10-05 17:47:24,866 - WARNING - Will retry conv_m365_eb85e62bddcd due to error (attempt 1/3)
+2025-10-05 17:47:24,866 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 17:48:03,385 - ERROR - Task processing error for conv_m365_31b04c5fc8f1: 'str' object has no attribute 'get'
+2025-10-05 17:48:03,385 - WARNING - Will retry conv_m365_31b04c5fc8f1 due to error (attempt 1/3)
+2025-10-05 17:48:03,386 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 17:48:57,359 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 17:48:57,360 - INFO - Saving batch of 1 updates to database...
+2025-10-05 17:48:57,468 - INFO - Successfully saved 1 records to database
+2025-10-05 17:48:57,468 - INFO - Sample update - Thread ID: conv_m365_dcad2eae864c
+2025-10-05 17:48:57,468 - INFO - Final batch save: 1 records
+2025-10-05 17:48:57,468 - INFO - Batch 17 processing complete: 1/3 successful
+2025-10-05 17:48:57,468 - INFO - Batch duration: 141.85s
+2025-10-05 17:48:59,470 - INFO - Processing batch 18/192 (3 emails)...
+2025-10-05 17:49:37,374 - ERROR - Task processing error for conv_m365_58f08ec1ee8e: 'str' object has no attribute 'get'
+2025-10-05 17:49:37,374 - WARNING - Will retry conv_m365_58f08ec1ee8e due to error (attempt 1/3)
+2025-10-05 17:49:37,375 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 17:50:29,387 - INFO - Thread conv_m365_7f9d94d4f610: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 17:50:29,388 - ERROR - Task processing error for conv_m365_7f9d94d4f610: 'str' object has no attribute 'get'
+2025-10-05 17:50:29,388 - WARNING - Will retry conv_m365_7f9d94d4f610 due to error (attempt 1/3)
+2025-10-05 17:50:29,388 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 17:51:16,961 - ERROR - Task processing error for conv_m365_b40c82c51431: 'str' object has no attribute 'get'
+2025-10-05 17:51:16,961 - WARNING - Will retry conv_m365_b40c82c51431 due to error (attempt 1/3)
+2025-10-05 17:51:16,961 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 17:51:16,961 - INFO - Batch 18 processing complete: 0/3 successful
+2025-10-05 17:51:16,962 - INFO - Batch duration: 137.49s
+2025-10-05 17:51:16,962 - INFO - Overall Progress: 9.4% | Batches: 18/192
+2025-10-05 17:51:16,962 - INFO - Success: 19 | Failures: 0 | Retries: 0 | DB Updates: 19
+2025-10-05 17:51:16,962 - INFO - System: CPU 11.2% | Memory 4.2%
+2025-10-05 17:51:18,964 - INFO - Processing batch 19/192 (3 emails)...
+2025-10-05 17:52:12,574 - ERROR - Task processing error for conv_m365_3152f9d39126: 'str' object has no attribute 'get'
+2025-10-05 17:52:12,574 - WARNING - Will retry conv_m365_3152f9d39126 due to error (attempt 1/3)
+2025-10-05 17:52:12,574 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 17:52:57,373 - ERROR - Task processing error for conv_m365_80fda235f756: 'str' object has no attribute 'get'
+2025-10-05 17:52:57,373 - WARNING - Will retry conv_m365_80fda235f756 due to error (attempt 1/3)
+2025-10-05 17:52:57,374 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 17:53:52,057 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 17:53:52,057 - INFO - Saving batch of 1 updates to database...
+2025-10-05 17:53:52,167 - INFO - Successfully saved 1 records to database
+2025-10-05 17:53:52,168 - INFO - Sample update - Thread ID: conv_m365_0d0266934dfc
+2025-10-05 17:53:52,168 - INFO - Final batch save: 1 records
+2025-10-05 17:53:52,168 - INFO - Batch 19 processing complete: 1/3 successful
+2025-10-05 17:53:52,168 - INFO - Batch duration: 153.09s
+2025-10-05 17:53:54,170 - INFO - Processing batch 20/192 (3 emails)...
+2025-10-05 17:54:38,251 - INFO - Thread conv_m365_f0bc8f6134d5: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 17:54:38,254 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 17:55:27,272 - ERROR - Task processing error for conv_m365_386fce6682e6: 'str' object has no attribute 'get'
+2025-10-05 17:55:27,272 - WARNING - Will retry conv_m365_386fce6682e6 due to error (attempt 1/3)
+2025-10-05 17:55:27,272 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 17:57:11,118 - ERROR - JSON parsing failed for thread conv_m365_de4d49ed2150. Raw response: {
+  "thread_data": {
+    "subject_norm": "Urgent: Transaction Discrepancy - Account DE89 3704 0044 0532 0130 00",
+    "first_message_at": "2025-01-01T09:00:00Z",
+    "last_message_at": "2025-06-30T17:30:00Z"
+  },
+  "messages": [
+    {
+      "headers": {
+        "date": "2025-01-01T09:00:00Z",
+      ...
+2025-10-05 17:57:11,118 - ERROR - Thread conv_m365_de4d49ed2150: Full LLM response: ```json
+{
+  "thread_data": {
+    "subject_norm": "Urgent: Transaction Discrepancy - Account DE89 3704 0044 0532 0130 00",
+    "first_message_at": "2025-01-01T09:00:00Z",
+    "last_message_at": "2025-06-30T17:30:00Z"
+  },
+  "messages": [
+    {
+      "headers": {
+        "date": "2025-01-01T09:00:00Z",
+        "subject": "Urgent: Transaction Discrepancy - Account DE89 3704 0044 0532 0130 00"
+      },
+      "body": {
+        "text": {
+          "plain": "Dear Robert Medina,\n\nI am writing to expre...
+2025-10-05 17:57:11,118 - ERROR - Task processing error for conv_m365_de4d49ed2150: Invalid JSON response from LLM: Extra data: line 100 column 1 (char 8412)
+2025-10-05 17:57:11,118 - WARNING - Will retry conv_m365_de4d49ed2150 due to error (attempt 1/3)
+2025-10-05 17:57:11,118 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 17:57:11,119 - INFO - Saving batch of 1 updates to database...
+2025-10-05 17:57:11,227 - INFO - Successfully saved 1 records to database
+2025-10-05 17:57:11,227 - INFO - Sample update - Thread ID: conv_m365_f0bc8f6134d5
+2025-10-05 17:57:11,227 - INFO - Final batch save: 1 records
+2025-10-05 17:57:11,227 - INFO - Batch 20 processing complete: 1/3 successful
+2025-10-05 17:57:11,227 - INFO - Batch duration: 196.95s
+2025-10-05 17:57:13,229 - INFO - Processing batch 21/192 (3 emails)...
+2025-10-05 17:57:57,757 - INFO - Thread conv_m365_e3451fce3785: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 17:57:57,760 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 17:58:43,958 - ERROR - Task processing error for conv_m365_c9a51f0a7b68: 'str' object has no attribute 'get'
+2025-10-05 17:58:43,959 - WARNING - Will retry conv_m365_c9a51f0a7b68 due to error (attempt 1/3)
+2025-10-05 17:58:43,959 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 17:59:38,574 - ERROR - Task processing error for conv_m365_f6d4fa980dbf: 'str' object has no attribute 'get'
+2025-10-05 17:59:38,574 - WARNING - Will retry conv_m365_f6d4fa980dbf due to error (attempt 1/3)
+2025-10-05 17:59:38,574 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 17:59:38,575 - INFO - Saving batch of 1 updates to database...
+2025-10-05 17:59:38,683 - INFO - Successfully saved 1 records to database
+2025-10-05 17:59:38,683 - INFO - Sample update - Thread ID: conv_m365_e3451fce3785
+2025-10-05 17:59:38,683 - INFO - Final batch save: 1 records
+2025-10-05 17:59:38,683 - INFO - Batch 21 processing complete: 1/3 successful
+2025-10-05 17:59:38,683 - INFO - Batch duration: 145.34s
+2025-10-05 17:59:38,683 - INFO - Overall Progress: 11.0% | Batches: 21/192
+2025-10-05 17:59:38,683 - INFO - Success: 22 | Failures: 0 | Retries: 0 | DB Updates: 22
+2025-10-05 17:59:38,684 - INFO - System: CPU 10.9% | Memory 4.2%
+2025-10-05 17:59:40,686 - INFO - Processing batch 22/192 (3 emails)...
+2025-10-05 18:00:25,465 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:01:18,393 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:02:14,315 - INFO - Saving batch of 3 updates to database...
+2025-10-05 18:02:14,529 - INFO - Successfully saved 3 records to database
+2025-10-05 18:02:14,529 - INFO - Sample update - Thread ID: conv_m365_464cc56c97f2
+2025-10-05 18:02:14,529 - INFO - Immediate save: 3 records
+2025-10-05 18:02:14,529 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:02:14,529 - INFO - Batch 22 processing complete: 0/3 successful
+2025-10-05 18:02:14,530 - INFO - Batch duration: 153.84s
+2025-10-05 18:02:16,532 - INFO - Processing batch 23/192 (3 emails)...
+2025-10-05 18:03:12,591 - ERROR - Task processing error for conv_m365_8d195bb77558: 'str' object has no attribute 'get'
+2025-10-05 18:03:12,591 - WARNING - Will retry conv_m365_8d195bb77558 due to error (attempt 1/3)
+2025-10-05 18:03:12,591 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:04:00,337 - ERROR - Task processing error for conv_m365_40179795a09b: string indices must be integers
+2025-10-05 18:04:00,337 - WARNING - Will retry conv_m365_40179795a09b due to error (attempt 1/3)
+2025-10-05 18:04:00,338 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:04:28,039 - ERROR - Task processing error for conv_m365_4a5fd10e6a53: 'str' object has no attribute 'get'
+2025-10-05 18:04:28,039 - WARNING - Will retry conv_m365_4a5fd10e6a53 due to error (attempt 1/3)
+2025-10-05 18:04:28,039 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:04:28,040 - INFO - Batch 23 processing complete: 0/3 successful
+2025-10-05 18:04:28,040 - INFO - Batch duration: 131.51s
+2025-10-05 18:04:30,042 - INFO - Processing batch 24/192 (3 emails)...
+2025-10-05 18:05:21,290 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:06:22,739 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:06:58,610 - ERROR - Task processing error for conv_m365_ccf86d0bebec: string indices must be integers
+2025-10-05 18:06:58,610 - WARNING - Will retry conv_m365_ccf86d0bebec due to error (attempt 1/3)
+2025-10-05 18:06:58,610 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:06:58,611 - INFO - Saving batch of 2 updates to database...
+2025-10-05 18:06:58,827 - INFO - Successfully saved 2 records to database
+2025-10-05 18:06:58,827 - INFO - Sample update - Thread ID: conv_m365_0d7b6b5cb286
+2025-10-05 18:06:58,827 - INFO - Final batch save: 2 records
+2025-10-05 18:06:58,827 - INFO - Batch 24 processing complete: 2/3 successful
+2025-10-05 18:06:58,827 - INFO - Batch duration: 148.57s
+2025-10-05 18:06:58,827 - INFO - Overall Progress: 12.5% | Batches: 24/192
+2025-10-05 18:06:58,827 - INFO - Success: 27 | Failures: 0 | Retries: 0 | DB Updates: 27
+2025-10-05 18:06:58,827 - INFO - System: CPU 11.4% | Memory 4.5%
+2025-10-05 18:07:00,830 - INFO - Processing batch 25/192 (3 emails)...
+2025-10-05 18:07:52,729 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:08:38,448 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:09:31,915 - INFO - Saving batch of 3 updates to database...
+2025-10-05 18:09:32,132 - INFO - Successfully saved 3 records to database
+2025-10-05 18:09:32,132 - INFO - Sample update - Thread ID: conv_m365_3127f5d7ce4c
+2025-10-05 18:09:32,132 - INFO - Immediate save: 3 records
+2025-10-05 18:09:32,132 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:09:32,132 - INFO - Batch 25 processing complete: 0/3 successful
+2025-10-05 18:09:32,133 - INFO - Batch duration: 151.30s
+2025-10-05 18:09:34,135 - INFO - Processing batch 26/192 (3 emails)...
+2025-10-05 18:10:17,890 - INFO - Thread conv_m365_9f57e030e3c5: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 18:10:17,891 - ERROR - Task processing error for conv_m365_9f57e030e3c5: 'str' object has no attribute 'get'
+2025-10-05 18:10:17,891 - WARNING - Will retry conv_m365_9f57e030e3c5 due to error (attempt 1/3)
+2025-10-05 18:10:17,891 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:11:09,926 - ERROR - Task processing error for conv_m365_8d49c1df7888: 'str' object has no attribute 'get'
+2025-10-05 18:11:09,927 - WARNING - Will retry conv_m365_8d49c1df7888 due to error (attempt 1/3)
+2025-10-05 18:11:09,927 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:11:46,435 - INFO - Thread conv_m365_b8885a9d4705: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 18:11:46,439 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:11:46,440 - INFO - Saving batch of 1 updates to database...
+2025-10-05 18:11:46,550 - INFO - Successfully saved 1 records to database
+2025-10-05 18:11:46,551 - INFO - Sample update - Thread ID: conv_m365_b8885a9d4705
+2025-10-05 18:11:46,551 - INFO - Final batch save: 1 records
+2025-10-05 18:11:46,551 - INFO - Batch 26 processing complete: 1/3 successful
+2025-10-05 18:11:46,551 - INFO - Batch duration: 132.30s
+2025-10-05 18:11:48,553 - INFO - Processing batch 27/192 (3 emails)...
+2025-10-05 18:12:37,293 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:13:24,809 - ERROR - Task processing error for conv_m365_cce2e12e17ed: 'str' object has no attribute 'get'
+2025-10-05 18:13:24,809 - WARNING - Will retry conv_m365_cce2e12e17ed due to error (attempt 1/3)
+2025-10-05 18:13:24,809 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:14:17,480 - ERROR - Task processing error for conv_m365_53042e877916: 'str' object has no attribute 'get'
+2025-10-05 18:14:17,480 - WARNING - Will retry conv_m365_53042e877916 due to error (attempt 1/3)
+2025-10-05 18:14:17,481 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:14:17,481 - INFO - Saving batch of 1 updates to database...
+2025-10-05 18:14:17,591 - INFO - Successfully saved 1 records to database
+2025-10-05 18:14:17,592 - INFO - Sample update - Thread ID: conv_m365_5adb76d277da
+2025-10-05 18:14:17,592 - INFO - Final batch save: 1 records
+2025-10-05 18:14:17,592 - INFO - Batch 27 processing complete: 1/3 successful
+2025-10-05 18:14:17,592 - INFO - Batch duration: 148.93s
+2025-10-05 18:14:17,592 - INFO - Overall Progress: 14.1% | Batches: 27/192
+2025-10-05 18:14:17,592 - INFO - Success: 32 | Failures: 0 | Retries: 0 | DB Updates: 32
+2025-10-05 18:14:17,592 - INFO - System: CPU 11.2% | Memory 4.4%
+2025-10-05 18:14:19,594 - INFO - Processing batch 28/192 (3 emails)...
+2025-10-05 18:15:11,615 - ERROR - Task processing error for conv_m365_df3c654f523d: 'str' object has no attribute 'get'
+2025-10-05 18:15:11,615 - WARNING - Will retry conv_m365_df3c654f523d due to error (attempt 1/3)
+2025-10-05 18:15:11,615 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:15:55,236 - ERROR - Task processing error for conv_m365_c14ce7982637: 'str' object has no attribute 'get'
+2025-10-05 18:15:55,236 - WARNING - Will retry conv_m365_c14ce7982637 due to error (attempt 1/3)
+2025-10-05 18:15:55,237 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:16:41,991 - INFO - Thread conv_m365_8108f7c31dc0: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 18:16:41,995 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:16:41,996 - INFO - Saving batch of 1 updates to database...
+2025-10-05 18:16:42,106 - INFO - Successfully saved 1 records to database
+2025-10-05 18:16:42,107 - INFO - Sample update - Thread ID: conv_m365_8108f7c31dc0
+2025-10-05 18:16:42,107 - INFO - Final batch save: 1 records
+2025-10-05 18:16:42,107 - INFO - Batch 28 processing complete: 1/3 successful
+2025-10-05 18:16:42,107 - INFO - Batch duration: 142.40s
+2025-10-05 18:16:44,109 - INFO - Processing batch 29/192 (3 emails)...
+2025-10-05 18:17:33,019 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:18:31,316 - INFO - Thread conv_m365_2ba8e308c2b5: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 18:18:31,316 - WARNING - Thread conv_m365_2ba8e308c2b5: Expected 8 messages, got 7
+2025-10-05 18:18:31,325 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:19:11,317 - ERROR - Task processing error for conv_m365_7cc563bd506d: 'str' object has no attribute 'get'
+2025-10-05 18:19:11,317 - WARNING - Will retry conv_m365_7cc563bd506d due to error (attempt 1/3)
+2025-10-05 18:19:11,318 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:19:11,318 - INFO - Saving batch of 2 updates to database...
+2025-10-05 18:19:11,429 - INFO - Successfully saved 2 records to database
+2025-10-05 18:19:11,430 - INFO - Sample update - Thread ID: conv_m365_531e50b76bf9
+2025-10-05 18:19:11,430 - INFO - Final batch save: 2 records
+2025-10-05 18:19:11,430 - INFO - Batch 29 processing complete: 2/3 successful
+2025-10-05 18:19:11,430 - INFO - Batch duration: 147.21s
+2025-10-05 18:19:13,432 - INFO - Processing batch 30/192 (3 emails)...
+2025-10-05 18:20:02,016 - INFO - Thread conv_m365_4b0d33126855: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 18:20:02,017 - ERROR - Task processing error for conv_m365_4b0d33126855: 'str' object has no attribute 'get'
+2025-10-05 18:20:02,017 - WARNING - Will retry conv_m365_4b0d33126855 due to error (attempt 1/3)
+2025-10-05 18:20:02,017 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:20:51,297 - ERROR - Task processing error for conv_m365_5a2f6e0ee03a: 'str' object has no attribute 'get'
+2025-10-05 18:20:51,297 - WARNING - Will retry conv_m365_5a2f6e0ee03a due to error (attempt 1/3)
+2025-10-05 18:20:51,297 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:21:41,760 - ERROR - Task processing error for conv_m365_5229e33725c8: 'str' object has no attribute 'get'
+2025-10-05 18:21:41,760 - WARNING - Will retry conv_m365_5229e33725c8 due to error (attempt 1/3)
+2025-10-05 18:21:41,760 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:21:41,760 - INFO - Batch 30 processing complete: 0/3 successful
+2025-10-05 18:21:41,760 - INFO - Batch duration: 148.33s
+2025-10-05 18:21:41,761 - INFO - Overall Progress: 15.7% | Batches: 30/192
+2025-10-05 18:21:41,761 - INFO - Success: 35 | Failures: 0 | Retries: 0 | DB Updates: 35
+2025-10-05 18:21:41,761 - INFO - System: CPU 11.0% | Memory 4.2%
+2025-10-05 18:21:43,764 - INFO - Processing batch 31/192 (3 emails)...
+2025-10-05 18:22:26,602 - ERROR - Task processing error for conv_m365_462574ea1dd1: 'str' object has no attribute 'get'
+2025-10-05 18:22:26,602 - WARNING - Will retry conv_m365_462574ea1dd1 due to error (attempt 1/3)
+2025-10-05 18:22:26,602 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:23:11,160 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:23:51,724 - ERROR - Task processing error for conv_m365_772af82f113d: 'str' object has no attribute 'get'
+2025-10-05 18:23:51,724 - WARNING - Will retry conv_m365_772af82f113d due to error (attempt 1/3)
+2025-10-05 18:23:51,724 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:23:51,724 - INFO - Saving batch of 1 updates to database...
+2025-10-05 18:23:51,836 - INFO - Successfully saved 1 records to database
+2025-10-05 18:23:51,836 - INFO - Sample update - Thread ID: conv_m365_95f53477dacb
+2025-10-05 18:23:51,836 - INFO - Final batch save: 1 records
+2025-10-05 18:23:51,836 - INFO - Batch 31 processing complete: 1/3 successful
+2025-10-05 18:23:51,836 - INFO - Batch duration: 127.96s
+2025-10-05 18:23:53,838 - INFO - Processing batch 32/192 (3 emails)...
+2025-10-05 18:24:29,248 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:25:11,656 - ERROR - Task processing error for conv_m365_bc0217ab639b: string indices must be integers
+2025-10-05 18:25:11,656 - WARNING - Will retry conv_m365_bc0217ab639b due to error (attempt 1/3)
+2025-10-05 18:25:11,657 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:25:58,721 - ERROR - Task processing error for conv_m365_fa67cee3659e: 'str' object has no attribute 'get'
+2025-10-05 18:25:58,721 - WARNING - Will retry conv_m365_fa67cee3659e due to error (attempt 1/3)
+2025-10-05 18:25:58,721 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:25:58,722 - INFO - Saving batch of 1 updates to database...
+2025-10-05 18:25:58,833 - INFO - Successfully saved 1 records to database
+2025-10-05 18:25:58,834 - INFO - Sample update - Thread ID: conv_m365_65039539ca11
+2025-10-05 18:25:58,834 - INFO - Final batch save: 1 records
+2025-10-05 18:25:58,834 - INFO - Batch 32 processing complete: 1/3 successful
+2025-10-05 18:25:58,834 - INFO - Batch duration: 124.88s
+2025-10-05 18:26:00,836 - INFO - Processing batch 33/192 (3 emails)...
+2025-10-05 18:27:02,453 - ERROR - Task processing error for conv_m365_a37ad015a1a8: 'str' object has no attribute 'get'
+2025-10-05 18:27:02,453 - WARNING - Will retry conv_m365_a37ad015a1a8 due to error (attempt 1/3)
+2025-10-05 18:27:02,453 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:27:36,707 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:28:25,176 - INFO - Thread conv_m365_7ef3491d8c05: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 18:28:25,176 - ERROR - Task processing error for conv_m365_7ef3491d8c05: 'str' object has no attribute 'get'
+2025-10-05 18:28:25,176 - WARNING - Will retry conv_m365_7ef3491d8c05 due to error (attempt 1/3)
+2025-10-05 18:28:25,177 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:28:25,177 - INFO - Saving batch of 1 updates to database...
+2025-10-05 18:28:25,288 - INFO - Successfully saved 1 records to database
+2025-10-05 18:28:25,288 - INFO - Sample update - Thread ID: conv_m365_e5af7f2d838d
+2025-10-05 18:28:25,288 - INFO - Final batch save: 1 records
+2025-10-05 18:28:25,288 - INFO - Batch 33 processing complete: 1/3 successful
+2025-10-05 18:28:25,289 - INFO - Batch duration: 144.34s
+2025-10-05 18:28:25,289 - INFO - Overall Progress: 17.2% | Batches: 33/192
+2025-10-05 18:28:25,289 - INFO - Success: 38 | Failures: 0 | Retries: 0 | DB Updates: 38
+2025-10-05 18:28:25,289 - INFO - System: CPU 10.9% | Memory 4.2%
+2025-10-05 18:28:27,291 - INFO - Processing batch 34/192 (3 emails)...
+2025-10-05 18:29:20,793 - ERROR - Task processing error for conv_m365_c4e4ff7293f9: 'str' object has no attribute 'get'
+2025-10-05 18:29:20,793 - WARNING - Will retry conv_m365_c4e4ff7293f9 due to error (attempt 1/3)
+2025-10-05 18:29:20,794 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:29:51,460 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:30:35,015 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:30:35,015 - INFO - Saving batch of 2 updates to database...
+2025-10-05 18:30:35,126 - INFO - Successfully saved 2 records to database
+2025-10-05 18:30:35,127 - INFO - Sample update - Thread ID: conv_m365_15c7129abe84
+2025-10-05 18:30:35,127 - INFO - Final batch save: 2 records
+2025-10-05 18:30:35,127 - INFO - Batch 34 processing complete: 2/3 successful
+2025-10-05 18:30:35,127 - INFO - Batch duration: 127.72s
+2025-10-05 18:30:37,129 - INFO - Processing batch 35/192 (3 emails)...
+2025-10-05 18:31:26,398 - ERROR - Task processing error for conv_m365_86461603bf01: 'str' object has no attribute 'get'
+2025-10-05 18:31:26,398 - WARNING - Will retry conv_m365_86461603bf01 due to error (attempt 1/3)
+2025-10-05 18:31:26,398 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:32:19,267 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:32:58,804 - ERROR - Task processing error for conv_m365_9fa593c62ce1: 'str' object has no attribute 'get'
+2025-10-05 18:32:58,804 - WARNING - Will retry conv_m365_9fa593c62ce1 due to error (attempt 1/3)
+2025-10-05 18:32:58,804 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:32:58,805 - INFO - Saving batch of 1 updates to database...
+2025-10-05 18:32:58,916 - INFO - Successfully saved 1 records to database
+2025-10-05 18:32:58,916 - INFO - Sample update - Thread ID: conv_m365_97d88f92fd29
+2025-10-05 18:32:58,916 - INFO - Final batch save: 1 records
+2025-10-05 18:32:58,916 - INFO - Batch 35 processing complete: 1/3 successful
+2025-10-05 18:32:58,916 - INFO - Batch duration: 141.68s
+2025-10-05 18:33:00,919 - INFO - Processing batch 36/192 (3 emails)...
+2025-10-05 18:33:44,351 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:34:25,381 - ERROR - Task processing error for conv_m365_63046ff7f3a4: 'str' object has no attribute 'get'
+2025-10-05 18:34:25,381 - WARNING - Will retry conv_m365_63046ff7f3a4 due to error (attempt 1/3)
+2025-10-05 18:34:25,381 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:35:08,883 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:35:08,883 - INFO - Saving batch of 2 updates to database...
+2025-10-05 18:35:08,995 - INFO - Successfully saved 2 records to database
+2025-10-05 18:35:08,995 - INFO - Sample update - Thread ID: conv_m365_b0c97e7a7f5e
+2025-10-05 18:35:08,995 - INFO - Final batch save: 2 records
+2025-10-05 18:35:08,995 - INFO - Batch 36 processing complete: 2/3 successful
+2025-10-05 18:35:08,995 - INFO - Batch duration: 127.96s
+2025-10-05 18:35:08,995 - INFO - Overall Progress: 18.8% | Batches: 36/192
+2025-10-05 18:35:08,996 - INFO - Success: 43 | Failures: 0 | Retries: 0 | DB Updates: 43
+2025-10-05 18:35:08,996 - INFO - System: CPU 10.6% | Memory 4.3%
+2025-10-05 18:35:10,997 - INFO - Processing batch 37/192 (3 emails)...
+2025-10-05 18:35:56,146 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:36:35,536 - ERROR - Task processing error for conv_m365_187508733ccc: 'str' object has no attribute 'get'
+2025-10-05 18:36:35,536 - WARNING - Will retry conv_m365_187508733ccc due to error (attempt 1/3)
+2025-10-05 18:36:35,536 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:37:15,035 - ERROR - Task processing error for conv_m365_cd7e22bc45e2: 'str' object has no attribute 'get'
+2025-10-05 18:37:15,036 - WARNING - Will retry conv_m365_cd7e22bc45e2 due to error (attempt 1/3)
+2025-10-05 18:37:15,036 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:37:15,036 - INFO - Saving batch of 1 updates to database...
+2025-10-05 18:37:15,147 - INFO - Successfully saved 1 records to database
+2025-10-05 18:37:15,148 - INFO - Sample update - Thread ID: conv_m365_74a0550bb637
+2025-10-05 18:37:15,148 - INFO - Final batch save: 1 records
+2025-10-05 18:37:15,148 - INFO - Batch 37 processing complete: 1/3 successful
+2025-10-05 18:37:15,148 - INFO - Batch duration: 124.04s
+2025-10-05 18:37:17,150 - INFO - Processing batch 38/192 (3 emails)...
+2025-10-05 18:38:02,487 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:38:51,189 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:39:39,136 - INFO - Thread conv_m365_1a8bfb8f9b75: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 18:39:39,141 - INFO - Saving batch of 3 updates to database...
+2025-10-05 18:39:39,358 - INFO - Successfully saved 3 records to database
+2025-10-05 18:39:39,358 - INFO - Sample update - Thread ID: conv_m365_d2863fb75636
+2025-10-05 18:39:39,358 - INFO - Immediate save: 3 records
+2025-10-05 18:39:39,358 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:39:39,359 - INFO - Batch 38 processing complete: 0/3 successful
+2025-10-05 18:39:39,359 - INFO - Batch duration: 142.21s
+2025-10-05 18:39:41,361 - INFO - Processing batch 39/192 (3 emails)...
+2025-10-05 18:40:27,557 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:41:15,490 - ERROR - Task processing error for conv_m365_a7350925ed7f: 'str' object has no attribute 'get'
+2025-10-05 18:41:15,490 - WARNING - Will retry conv_m365_a7350925ed7f due to error (attempt 1/3)
+2025-10-05 18:41:15,490 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:42:03,278 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:42:03,278 - INFO - Saving batch of 2 updates to database...
+2025-10-05 18:42:03,392 - INFO - Successfully saved 2 records to database
+2025-10-05 18:42:03,392 - INFO - Sample update - Thread ID: conv_m365_e003ac10a09b
+2025-10-05 18:42:03,392 - INFO - Final batch save: 2 records
+2025-10-05 18:42:03,392 - INFO - Batch 39 processing complete: 2/3 successful
+2025-10-05 18:42:03,392 - INFO - Batch duration: 141.92s
+2025-10-05 18:42:03,393 - INFO - Overall Progress: 20.3% | Batches: 39/192
+2025-10-05 18:42:03,393 - INFO - Success: 49 | Failures: 0 | Retries: 0 | DB Updates: 49
+2025-10-05 18:42:03,393 - INFO - System: CPU 10.8% | Memory 4.2%
+2025-10-05 18:42:05,395 - INFO - Processing batch 40/192 (3 emails)...
+2025-10-05 18:42:57,469 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:43:32,450 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:44:02,717 - INFO - Saving batch of 3 updates to database...
+2025-10-05 18:44:02,934 - INFO - Successfully saved 3 records to database
+2025-10-05 18:44:02,934 - INFO - Sample update - Thread ID: conv_m365_4684d30e2444
+2025-10-05 18:44:02,934 - INFO - Immediate save: 3 records
+2025-10-05 18:44:02,934 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:44:02,935 - INFO - Batch 40 processing complete: 0/3 successful
+2025-10-05 18:44:02,935 - INFO - Batch duration: 117.54s
+2025-10-05 18:44:04,937 - INFO - Processing batch 41/192 (3 emails)...
+2025-10-05 18:44:50,971 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:45:14,663 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:46:06,668 - INFO - Thread conv_m365_1fe2944fed30: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 18:46:06,674 - INFO - Saving batch of 3 updates to database...
+2025-10-05 18:46:06,895 - INFO - Successfully saved 3 records to database
+2025-10-05 18:46:06,895 - INFO - Sample update - Thread ID: conv_m365_e8ebf4d200da
+2025-10-05 18:46:06,896 - INFO - Immediate save: 3 records
+2025-10-05 18:46:06,896 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:46:06,896 - INFO - Batch 41 processing complete: 0/3 successful
+2025-10-05 18:46:06,896 - INFO - Batch duration: 121.96s
+2025-10-05 18:46:08,898 - INFO - Processing batch 42/192 (3 emails)...
+2025-10-05 18:46:53,310 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:47:43,642 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:48:33,814 - INFO - Thread conv_m365_e05c31eefc15: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 18:48:33,820 - INFO - Saving batch of 3 updates to database...
+2025-10-05 18:48:34,036 - INFO - Successfully saved 3 records to database
+2025-10-05 18:48:34,036 - INFO - Sample update - Thread ID: conv_m365_9ec491097e8a
+2025-10-05 18:48:34,036 - INFO - Immediate save: 3 records
+2025-10-05 18:48:34,036 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:48:34,037 - INFO - Batch 42 processing complete: 0/3 successful
+2025-10-05 18:48:34,037 - INFO - Batch duration: 145.14s
+2025-10-05 18:48:34,037 - INFO - Overall Progress: 21.9% | Batches: 42/192
+2025-10-05 18:48:34,037 - INFO - Success: 58 | Failures: 0 | Retries: 0 | DB Updates: 58
+2025-10-05 18:48:34,037 - INFO - System: CPU 10.7% | Memory 4.2%
+2025-10-05 18:48:36,039 - INFO - Processing batch 43/192 (3 emails)...
+2025-10-05 18:49:21,862 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:49:49,762 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:50:41,130 - INFO - Saving batch of 3 updates to database...
+2025-10-05 18:50:41,348 - INFO - Successfully saved 3 records to database
+2025-10-05 18:50:41,349 - INFO - Sample update - Thread ID: conv_m365_e0bf9c6c83e6
+2025-10-05 18:50:41,349 - INFO - Immediate save: 3 records
+2025-10-05 18:50:41,349 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:50:41,349 - INFO - Batch 43 processing complete: 0/3 successful
+2025-10-05 18:50:41,349 - INFO - Batch duration: 125.31s
+2025-10-05 18:50:43,351 - INFO - Processing batch 44/192 (3 emails)...
+2025-10-05 18:51:21,022 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:51:51,412 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:52:30,147 - INFO - Thread conv_m365_d8f10f824415: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 18:52:30,154 - INFO - Saving batch of 3 updates to database...
+2025-10-05 18:52:30,267 - INFO - Successfully saved 3 records to database
+2025-10-05 18:52:30,268 - INFO - Sample update - Thread ID: conv_m365_b91548e54d5e
+2025-10-05 18:52:30,268 - INFO - Immediate save: 3 records
+2025-10-05 18:52:30,268 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:52:30,268 - INFO - Batch 44 processing complete: 0/3 successful
+2025-10-05 18:52:30,268 - INFO - Batch duration: 106.92s
+2025-10-05 18:52:32,270 - INFO - Processing batch 45/192 (3 emails)...
+2025-10-05 18:53:14,918 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:53:57,177 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:54:38,863 - INFO - Saving batch of 3 updates to database...
+2025-10-05 18:54:39,080 - INFO - Successfully saved 3 records to database
+2025-10-05 18:54:39,081 - INFO - Sample update - Thread ID: conv_m365_aa80debaee83
+2025-10-05 18:54:39,081 - INFO - Immediate save: 3 records
+2025-10-05 18:54:39,081 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:54:39,081 - INFO - Batch 45 processing complete: 0/3 successful
+2025-10-05 18:54:39,081 - INFO - Batch duration: 126.81s
+2025-10-05 18:54:39,081 - INFO - Overall Progress: 23.5% | Batches: 45/192
+2025-10-05 18:54:39,081 - INFO - Success: 67 | Failures: 0 | Retries: 0 | DB Updates: 67
+2025-10-05 18:54:39,082 - INFO - System: CPU 10.5% | Memory 4.3%
+2025-10-05 18:54:41,084 - INFO - Processing batch 46/192 (3 emails)...
+2025-10-05 18:55:15,672 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:55:42,004 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:56:40,183 - INFO - Saving batch of 3 updates to database...
+2025-10-05 18:56:40,401 - INFO - Successfully saved 3 records to database
+2025-10-05 18:56:40,401 - INFO - Sample update - Thread ID: conv_m365_42db422ee53b
+2025-10-05 18:56:40,401 - INFO - Immediate save: 3 records
+2025-10-05 18:56:40,401 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:56:40,401 - INFO - Batch 46 processing complete: 0/3 successful
+2025-10-05 18:56:40,401 - INFO - Batch duration: 119.32s
+2025-10-05 18:56:42,404 - INFO - Processing batch 47/192 (3 emails)...
+2025-10-05 18:57:21,884 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:58:09,204 - INFO - Thread conv_m365_67f85faefb75: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 18:58:09,211 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 18:58:47,851 - INFO - Saving batch of 3 updates to database...
+2025-10-05 18:58:47,965 - INFO - Successfully saved 3 records to database
+2025-10-05 18:58:47,965 - INFO - Sample update - Thread ID: conv_m365_30c1d95bee07
+2025-10-05 18:58:47,965 - INFO - Immediate save: 3 records
+2025-10-05 18:58:47,965 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 18:58:47,965 - INFO - Batch 47 processing complete: 0/3 successful
+2025-10-05 18:58:47,966 - INFO - Batch duration: 125.56s
+2025-10-05 18:58:49,968 - INFO - Processing batch 48/192 (3 emails)...
+2025-10-05 18:59:19,035 - INFO - Thread conv_m365_37dd153efde5: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 18:59:19,042 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 18:59:49,567 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:00:35,805 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:00:35,918 - INFO - Successfully saved 3 records to database
+2025-10-05 19:00:35,919 - INFO - Sample update - Thread ID: conv_m365_37dd153efde5
+2025-10-05 19:00:35,919 - INFO - Immediate save: 3 records
+2025-10-05 19:00:35,919 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:00:35,919 - INFO - Batch 48 processing complete: 0/3 successful
+2025-10-05 19:00:35,919 - INFO - Batch duration: 105.95s
+2025-10-05 19:00:35,919 - INFO - Overall Progress: 25.0% | Batches: 48/192
+2025-10-05 19:00:35,919 - INFO - Success: 76 | Failures: 0 | Retries: 0 | DB Updates: 76
+2025-10-05 19:00:35,919 - INFO - System: CPU 10.8% | Memory 4.2%
+2025-10-05 19:00:37,920 - INFO - Processing batch 49/192 (3 emails)...
+2025-10-05 19:01:21,817 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:01:55,535 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:02:19,699 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:02:19,813 - INFO - Successfully saved 3 records to database
+2025-10-05 19:02:19,813 - INFO - Sample update - Thread ID: conv_m365_4e8ceeabbf21
+2025-10-05 19:02:19,813 - INFO - Immediate save: 3 records
+2025-10-05 19:02:19,813 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:02:19,813 - INFO - Batch 49 processing complete: 0/3 successful
+2025-10-05 19:02:19,813 - INFO - Batch duration: 101.89s
+2025-10-05 19:02:21,815 - INFO - Processing batch 50/192 (3 emails)...
+2025-10-05 19:03:06,931 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:03:49,772 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:04:33,788 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:04:34,007 - INFO - Successfully saved 3 records to database
+2025-10-05 19:04:34,007 - INFO - Sample update - Thread ID: conv_m365_82e8fee95ac9
+2025-10-05 19:04:34,007 - INFO - Immediate save: 3 records
+2025-10-05 19:04:34,007 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:04:34,007 - INFO - Batch 50 processing complete: 0/3 successful
+2025-10-05 19:04:34,007 - INFO - Batch duration: 132.19s
+2025-10-05 19:04:36,010 - INFO - Processing batch 51/192 (3 emails)...
+2025-10-05 19:05:20,286 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:05:55,738 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:06:30,740 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:06:30,960 - INFO - Successfully saved 3 records to database
+2025-10-05 19:06:30,960 - INFO - Sample update - Thread ID: conv_m365_7922ad6d69fb
+2025-10-05 19:06:30,960 - INFO - Immediate save: 3 records
+2025-10-05 19:06:30,960 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:06:30,960 - INFO - Batch 51 processing complete: 0/3 successful
+2025-10-05 19:06:30,960 - INFO - Batch duration: 114.95s
+2025-10-05 19:06:30,960 - INFO - Overall Progress: 26.6% | Batches: 51/192
+2025-10-05 19:06:30,960 - INFO - Success: 85 | Failures: 0 | Retries: 0 | DB Updates: 85
+2025-10-05 19:06:30,961 - INFO - System: CPU 10.9% | Memory 4.3%
+2025-10-05 19:06:32,963 - INFO - Processing batch 52/192 (3 emails)...
+2025-10-05 19:07:07,117 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:08:02,208 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:08:26,863 - INFO - Thread conv_m365_ea3150b803e5: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 19:08:26,871 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:08:26,987 - INFO - Successfully saved 3 records to database
+2025-10-05 19:08:26,987 - INFO - Sample update - Thread ID: conv_m365_9b345a7cda1b
+2025-10-05 19:08:26,987 - INFO - Immediate save: 3 records
+2025-10-05 19:08:26,987 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:08:26,988 - INFO - Batch 52 processing complete: 0/3 successful
+2025-10-05 19:08:26,988 - INFO - Batch duration: 114.02s
+2025-10-05 19:08:28,990 - INFO - Processing batch 53/192 (3 emails)...
+2025-10-05 19:08:58,587 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:09:43,670 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:10:31,114 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:10:31,332 - INFO - Successfully saved 3 records to database
+2025-10-05 19:10:31,332 - INFO - Sample update - Thread ID: conv_m365_760415ef7351
+2025-10-05 19:10:31,332 - INFO - Immediate save: 3 records
+2025-10-05 19:10:31,332 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:10:31,333 - INFO - Batch 53 processing complete: 0/3 successful
+2025-10-05 19:10:31,333 - INFO - Batch duration: 122.34s
+2025-10-05 19:10:33,335 - INFO - Processing batch 54/192 (3 emails)...
+2025-10-05 19:11:14,459 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:12:07,582 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:12:53,182 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:12:53,401 - INFO - Successfully saved 3 records to database
+2025-10-05 19:12:53,401 - INFO - Sample update - Thread ID: conv_m365_3d066d8a3ac7
+2025-10-05 19:12:53,401 - INFO - Immediate save: 3 records
+2025-10-05 19:12:53,401 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:12:53,401 - INFO - Batch 54 processing complete: 0/3 successful
+2025-10-05 19:12:53,402 - INFO - Batch duration: 140.07s
+2025-10-05 19:12:53,402 - INFO - Overall Progress: 28.2% | Batches: 54/192
+2025-10-05 19:12:53,402 - INFO - Success: 94 | Failures: 0 | Retries: 0 | DB Updates: 94
+2025-10-05 19:12:53,402 - INFO - System: CPU 10.6% | Memory 4.2%
+2025-10-05 19:12:55,404 - INFO - Processing batch 55/192 (3 emails)...
+2025-10-05 19:13:50,324 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:14:23,833 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:15:04,508 - ERROR - Task processing error for conv_m365_3395e6824dff: 'str' object has no attribute 'get'
+2025-10-05 19:15:04,508 - WARNING - Will retry conv_m365_3395e6824dff due to error (attempt 1/3)
+2025-10-05 19:15:04,508 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:15:04,509 - INFO - Saving batch of 2 updates to database...
+2025-10-05 19:15:04,624 - INFO - Successfully saved 2 records to database
+2025-10-05 19:15:04,624 - INFO - Sample update - Thread ID: conv_m365_f646b27750d7
+2025-10-05 19:15:04,624 - INFO - Final batch save: 2 records
+2025-10-05 19:15:04,624 - INFO - Batch 55 processing complete: 2/3 successful
+2025-10-05 19:15:04,624 - INFO - Batch duration: 129.10s
+2025-10-05 19:15:06,627 - INFO - Processing batch 56/192 (3 emails)...
+2025-10-05 19:15:35,310 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:16:19,463 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:17:08,557 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:17:08,777 - INFO - Successfully saved 3 records to database
+2025-10-05 19:17:08,777 - INFO - Sample update - Thread ID: conv_m365_81cdb7b6862b
+2025-10-05 19:17:08,777 - INFO - Immediate save: 3 records
+2025-10-05 19:17:08,777 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:17:08,778 - INFO - Batch 56 processing complete: 0/3 successful
+2025-10-05 19:17:08,778 - INFO - Batch duration: 122.15s
+2025-10-05 19:17:10,780 - INFO - Processing batch 57/192 (3 emails)...
+2025-10-05 19:17:53,728 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:18:31,033 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:19:12,579 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:19:12,800 - INFO - Successfully saved 3 records to database
+2025-10-05 19:19:12,800 - INFO - Sample update - Thread ID: conv_m365_d4d685e1a1d1
+2025-10-05 19:19:12,801 - INFO - Immediate save: 3 records
+2025-10-05 19:19:12,801 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:19:12,801 - INFO - Batch 57 processing complete: 0/3 successful
+2025-10-05 19:19:12,801 - INFO - Batch duration: 122.02s
+2025-10-05 19:19:12,801 - INFO - Overall Progress: 29.7% | Batches: 57/192
+2025-10-05 19:19:12,801 - INFO - Success: 102 | Failures: 0 | Retries: 0 | DB Updates: 102
+2025-10-05 19:19:12,801 - INFO - System: CPU 11.0% | Memory 4.2%
+2025-10-05 19:19:14,804 - INFO - Processing batch 58/192 (3 emails)...
+2025-10-05 19:19:37,922 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:20:38,416 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:21:31,132 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:21:31,354 - INFO - Successfully saved 3 records to database
+2025-10-05 19:21:31,354 - INFO - Sample update - Thread ID: conv_m365_e007816a4b51
+2025-10-05 19:21:31,354 - INFO - Immediate save: 3 records
+2025-10-05 19:21:31,354 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:21:31,354 - INFO - Batch 58 processing complete: 0/3 successful
+2025-10-05 19:21:31,355 - INFO - Batch duration: 136.55s
+2025-10-05 19:21:33,357 - INFO - Processing batch 59/192 (3 emails)...
+2025-10-05 19:22:17,026 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:22:50,124 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:23:14,192 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:23:14,308 - INFO - Successfully saved 3 records to database
+2025-10-05 19:23:14,308 - INFO - Sample update - Thread ID: conv_m365_b78cd87c6d68
+2025-10-05 19:23:14,308 - INFO - Immediate save: 3 records
+2025-10-05 19:23:14,308 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:23:14,308 - INFO - Batch 59 processing complete: 0/3 successful
+2025-10-05 19:23:14,308 - INFO - Batch duration: 100.95s
+2025-10-05 19:23:16,311 - INFO - Processing batch 60/192 (3 emails)...
+2025-10-05 19:24:06,082 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:24:43,598 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:25:07,474 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:25:07,693 - INFO - Successfully saved 3 records to database
+2025-10-05 19:25:07,693 - INFO - Sample update - Thread ID: conv_m365_6794296afa3d
+2025-10-05 19:25:07,693 - INFO - Immediate save: 3 records
+2025-10-05 19:25:07,693 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:25:07,694 - INFO - Batch 60 processing complete: 0/3 successful
+2025-10-05 19:25:07,694 - INFO - Batch duration: 111.38s
+2025-10-05 19:25:07,694 - INFO - Overall Progress: 31.3% | Batches: 60/192
+2025-10-05 19:25:07,694 - INFO - Success: 111 | Failures: 0 | Retries: 0 | DB Updates: 111
+2025-10-05 19:25:07,694 - INFO - System: CPU 10.5% | Memory 4.3%
+2025-10-05 19:25:09,696 - INFO - Processing batch 61/192 (3 emails)...
+2025-10-05 19:25:37,107 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:26:07,409 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:26:48,276 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:26:48,392 - INFO - Successfully saved 3 records to database
+2025-10-05 19:26:48,393 - INFO - Sample update - Thread ID: conv_m365_74a3392258ad
+2025-10-05 19:26:48,393 - INFO - Immediate save: 3 records
+2025-10-05 19:26:48,393 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:26:48,393 - INFO - Batch 61 processing complete: 0/3 successful
+2025-10-05 19:26:48,393 - INFO - Batch duration: 98.70s
+2025-10-05 19:26:50,395 - INFO - Processing batch 62/192 (3 emails)...
+2025-10-05 19:27:26,984 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:28:13,954 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:28:50,202 - INFO - Thread conv_m365_1dd207eabb10: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 19:28:50,212 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:28:50,432 - INFO - Successfully saved 3 records to database
+2025-10-05 19:28:50,432 - INFO - Sample update - Thread ID: conv_m365_3a852a88827d
+2025-10-05 19:28:50,432 - INFO - Immediate save: 3 records
+2025-10-05 19:28:50,432 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:28:50,433 - INFO - Batch 62 processing complete: 0/3 successful
+2025-10-05 19:28:50,433 - INFO - Batch duration: 120.04s
+2025-10-05 19:28:52,435 - INFO - Processing batch 63/192 (3 emails)...
+2025-10-05 19:29:28,977 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:30:02,126 - INFO - Thread conv_m365_805616771470: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 19:30:02,136 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:30:35,355 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:30:35,472 - INFO - Successfully saved 3 records to database
+2025-10-05 19:30:35,472 - INFO - Sample update - Thread ID: conv_m365_7fdd04db6393
+2025-10-05 19:30:35,472 - INFO - Immediate save: 3 records
+2025-10-05 19:30:35,472 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:30:35,473 - INFO - Batch 63 processing complete: 0/3 successful
+2025-10-05 19:30:35,473 - INFO - Batch duration: 103.04s
+2025-10-05 19:30:35,473 - INFO - Overall Progress: 32.9% | Batches: 63/192
+2025-10-05 19:30:35,473 - INFO - Success: 120 | Failures: 0 | Retries: 0 | DB Updates: 120
+2025-10-05 19:30:35,473 - INFO - System: CPU 10.9% | Memory 4.3%
+2025-10-05 19:30:37,475 - INFO - Processing batch 64/192 (3 emails)...
+2025-10-05 19:31:04,694 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:31:37,328 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:32:04,113 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:32:04,228 - INFO - Successfully saved 3 records to database
+2025-10-05 19:32:04,229 - INFO - Sample update - Thread ID: conv_m365_768e21ff971c
+2025-10-05 19:32:04,229 - INFO - Immediate save: 3 records
+2025-10-05 19:32:04,229 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:32:04,229 - INFO - Batch 64 processing complete: 0/3 successful
+2025-10-05 19:32:04,229 - INFO - Batch duration: 86.75s
+2025-10-05 19:32:06,231 - INFO - Processing batch 65/192 (3 emails)...
+2025-10-05 19:32:33,261 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:33:04,606 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:33:38,902 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:33:39,018 - INFO - Successfully saved 3 records to database
+2025-10-05 19:33:39,018 - INFO - Sample update - Thread ID: conv_m365_840958b2d9ac
+2025-10-05 19:33:39,018 - INFO - Immediate save: 3 records
+2025-10-05 19:33:39,018 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:33:39,018 - INFO - Batch 65 processing complete: 0/3 successful
+2025-10-05 19:33:39,018 - INFO - Batch duration: 92.79s
+2025-10-05 19:33:41,020 - INFO - Processing batch 66/192 (3 emails)...
+2025-10-05 19:34:11,535 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:34:56,770 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:35:23,390 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:35:23,506 - INFO - Successfully saved 3 records to database
+2025-10-05 19:35:23,506 - INFO - Sample update - Thread ID: conv_m365_702f82955bb7
+2025-10-05 19:35:23,507 - INFO - Immediate save: 3 records
+2025-10-05 19:35:23,507 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:35:23,507 - INFO - Batch 66 processing complete: 0/3 successful
+2025-10-05 19:35:23,507 - INFO - Batch duration: 102.49s
+2025-10-05 19:35:23,507 - INFO - Overall Progress: 34.4% | Batches: 66/192
+2025-10-05 19:35:23,507 - INFO - Success: 129 | Failures: 0 | Retries: 0 | DB Updates: 129
+2025-10-05 19:35:23,508 - INFO - System: CPU 10.6% | Memory 4.3%
+2025-10-05 19:35:25,510 - INFO - Processing batch 67/192 (3 emails)...
+2025-10-05 19:36:02,158 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:36:40,644 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:37:27,304 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:37:27,523 - INFO - Successfully saved 3 records to database
+2025-10-05 19:37:27,523 - INFO - Sample update - Thread ID: conv_m365_8d628ef46747
+2025-10-05 19:37:27,523 - INFO - Immediate save: 3 records
+2025-10-05 19:37:27,523 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:37:27,524 - INFO - Batch 67 processing complete: 0/3 successful
+2025-10-05 19:37:27,524 - INFO - Batch duration: 122.01s
+2025-10-05 19:37:29,526 - INFO - Processing batch 68/192 (3 emails)...
+2025-10-05 19:38:15,313 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:38:45,472 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:39:17,395 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:39:17,511 - INFO - Successfully saved 3 records to database
+2025-10-05 19:39:17,512 - INFO - Sample update - Thread ID: conv_m365_d8246ee15454
+2025-10-05 19:39:17,512 - INFO - Immediate save: 3 records
+2025-10-05 19:39:17,512 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:39:17,512 - INFO - Batch 68 processing complete: 0/3 successful
+2025-10-05 19:39:17,512 - INFO - Batch duration: 107.99s
+2025-10-05 19:39:19,514 - INFO - Processing batch 69/192 (3 emails)...
+2025-10-05 19:39:54,671 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:40:35,283 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:41:22,459 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:41:22,678 - INFO - Successfully saved 3 records to database
+2025-10-05 19:41:22,678 - INFO - Sample update - Thread ID: conv_m365_6994815ca1b8
+2025-10-05 19:41:22,679 - INFO - Immediate save: 3 records
+2025-10-05 19:41:22,679 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:41:22,679 - INFO - Batch 69 processing complete: 0/3 successful
+2025-10-05 19:41:22,679 - INFO - Batch duration: 123.16s
+2025-10-05 19:41:22,679 - INFO - Overall Progress: 36.0% | Batches: 69/192
+2025-10-05 19:41:22,679 - INFO - Success: 138 | Failures: 0 | Retries: 0 | DB Updates: 138
+2025-10-05 19:41:22,679 - INFO - System: CPU 10.7% | Memory 4.2%
+2025-10-05 19:41:24,682 - INFO - Processing batch 70/192 (3 emails)...
+2025-10-05 19:42:11,892 - INFO - Thread conv_m365_de6b04f53205: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 19:42:11,904 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:43:01,871 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:44:00,754 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:44:00,974 - INFO - Successfully saved 3 records to database
+2025-10-05 19:44:00,974 - INFO - Sample update - Thread ID: conv_m365_de6b04f53205
+2025-10-05 19:44:00,974 - INFO - Immediate save: 3 records
+2025-10-05 19:44:00,974 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:44:00,974 - INFO - Batch 70 processing complete: 0/3 successful
+2025-10-05 19:44:00,974 - INFO - Batch duration: 156.29s
+2025-10-05 19:44:02,976 - INFO - Processing batch 71/192 (3 emails)...
+2025-10-05 19:44:35,284 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:45:04,677 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:45:42,756 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:45:42,874 - INFO - Successfully saved 3 records to database
+2025-10-05 19:45:42,874 - INFO - Sample update - Thread ID: conv_m365_84d6cf3ae39a
+2025-10-05 19:45:42,874 - INFO - Immediate save: 3 records
+2025-10-05 19:45:42,874 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:45:42,874 - INFO - Batch 71 processing complete: 0/3 successful
+2025-10-05 19:45:42,875 - INFO - Batch duration: 99.90s
+2025-10-05 19:45:44,877 - INFO - Processing batch 72/192 (3 emails)...
+2025-10-05 19:46:15,909 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:46:57,469 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:47:48,888 - INFO - Thread conv_m365_9db8b2ac32e5: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 19:47:48,902 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:47:49,122 - INFO - Successfully saved 3 records to database
+2025-10-05 19:47:49,122 - INFO - Sample update - Thread ID: conv_m365_e96575922e5b
+2025-10-05 19:47:49,122 - INFO - Immediate save: 3 records
+2025-10-05 19:47:49,122 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:47:49,122 - INFO - Batch 72 processing complete: 0/3 successful
+2025-10-05 19:47:49,122 - INFO - Batch duration: 124.25s
+2025-10-05 19:47:49,123 - INFO - Overall Progress: 37.6% | Batches: 72/192
+2025-10-05 19:47:49,123 - INFO - Success: 147 | Failures: 0 | Retries: 0 | DB Updates: 147
+2025-10-05 19:47:49,123 - INFO - System: CPU 11.0% | Memory 4.3%
+2025-10-05 19:47:51,125 - INFO - Processing batch 73/192 (3 emails)...
+2025-10-05 19:48:32,380 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:48:58,565 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:49:29,371 - INFO - Thread conv_m365_d6a6bf670a00: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 19:49:29,384 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:49:29,502 - INFO - Successfully saved 3 records to database
+2025-10-05 19:49:29,502 - INFO - Sample update - Thread ID: conv_m365_17053e235f13
+2025-10-05 19:49:29,502 - INFO - Immediate save: 3 records
+2025-10-05 19:49:29,502 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:49:29,503 - INFO - Batch 73 processing complete: 0/3 successful
+2025-10-05 19:49:29,503 - INFO - Batch duration: 98.38s
+2025-10-05 19:49:31,505 - INFO - Processing batch 74/192 (3 emails)...
+2025-10-05 19:50:08,733 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:50:58,783 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:51:49,303 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:51:49,523 - INFO - Successfully saved 3 records to database
+2025-10-05 19:51:49,523 - INFO - Sample update - Thread ID: conv_m365_a5ed37297c34
+2025-10-05 19:51:49,523 - INFO - Immediate save: 3 records
+2025-10-05 19:51:49,523 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:51:49,523 - INFO - Batch 74 processing complete: 0/3 successful
+2025-10-05 19:51:49,523 - INFO - Batch duration: 138.02s
+2025-10-05 19:51:51,526 - INFO - Processing batch 75/192 (3 emails)...
+2025-10-05 19:52:37,311 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:53:20,878 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:54:20,300 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:54:20,523 - INFO - Successfully saved 3 records to database
+2025-10-05 19:54:20,523 - INFO - Sample update - Thread ID: conv_m365_2815d275ca59
+2025-10-05 19:54:20,523 - INFO - Immediate save: 3 records
+2025-10-05 19:54:20,523 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:54:20,524 - INFO - Batch 75 processing complete: 0/3 successful
+2025-10-05 19:54:20,524 - INFO - Batch duration: 149.00s
+2025-10-05 19:54:20,524 - INFO - Overall Progress: 39.1% | Batches: 75/192
+2025-10-05 19:54:20,524 - INFO - Success: 156 | Failures: 0 | Retries: 0 | DB Updates: 156
+2025-10-05 19:54:20,524 - INFO - System: CPU 10.5% | Memory 4.3%
+2025-10-05 19:54:22,526 - INFO - Processing batch 76/192 (3 emails)...
+2025-10-05 19:55:04,747 - INFO - Thread conv_m365_a00a848de7e0: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 19:55:04,759 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:55:32,347 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:56:00,414 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:56:00,534 - INFO - Successfully saved 3 records to database
+2025-10-05 19:56:00,535 - INFO - Sample update - Thread ID: conv_m365_a00a848de7e0
+2025-10-05 19:56:00,535 - INFO - Immediate save: 3 records
+2025-10-05 19:56:00,535 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:56:00,535 - INFO - Batch 76 processing complete: 0/3 successful
+2025-10-05 19:56:00,535 - INFO - Batch duration: 98.01s
+2025-10-05 19:56:02,537 - INFO - Processing batch 77/192 (3 emails)...
+2025-10-05 19:56:47,856 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:57:40,027 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:58:13,991 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:58:14,214 - INFO - Successfully saved 3 records to database
+2025-10-05 19:58:14,214 - INFO - Sample update - Thread ID: conv_m365_291a64f58a94
+2025-10-05 19:58:14,214 - INFO - Immediate save: 3 records
+2025-10-05 19:58:14,214 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:58:14,215 - INFO - Batch 77 processing complete: 0/3 successful
+2025-10-05 19:58:14,215 - INFO - Batch duration: 131.68s
+2025-10-05 19:58:16,217 - INFO - Processing batch 78/192 (3 emails)...
+2025-10-05 19:58:46,586 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 19:59:22,449 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 19:59:56,195 - INFO - Thread conv_m365_1f8b909930e0: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 19:59:56,208 - INFO - Saving batch of 3 updates to database...
+2025-10-05 19:59:56,329 - INFO - Successfully saved 3 records to database
+2025-10-05 19:59:56,329 - INFO - Sample update - Thread ID: conv_m365_74d155c75578
+2025-10-05 19:59:56,329 - INFO - Immediate save: 3 records
+2025-10-05 19:59:56,329 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 19:59:56,329 - INFO - Batch 78 processing complete: 0/3 successful
+2025-10-05 19:59:56,329 - INFO - Batch duration: 100.11s
+2025-10-05 19:59:56,329 - INFO - Overall Progress: 40.7% | Batches: 78/192
+2025-10-05 19:59:56,329 - INFO - Success: 165 | Failures: 0 | Retries: 0 | DB Updates: 165
+2025-10-05 19:59:56,330 - INFO - System: CPU 10.8% | Memory 4.3%
+2025-10-05 19:59:58,332 - INFO - Processing batch 79/192 (3 emails)...
+2025-10-05 20:00:39,678 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:01:15,234 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:01:57,855 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:01:58,078 - INFO - Successfully saved 3 records to database
+2025-10-05 20:01:58,079 - INFO - Sample update - Thread ID: conv_m365_99dfdc4e2a1a
+2025-10-05 20:01:58,079 - INFO - Immediate save: 3 records
+2025-10-05 20:01:58,079 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:01:58,079 - INFO - Batch 79 processing complete: 0/3 successful
+2025-10-05 20:01:58,079 - INFO - Batch duration: 119.75s
+2025-10-05 20:02:00,081 - INFO - Processing batch 80/192 (3 emails)...
+2025-10-05 20:02:29,441 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:03:10,917 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:03:46,000 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:03:46,119 - INFO - Successfully saved 3 records to database
+2025-10-05 20:03:46,120 - INFO - Sample update - Thread ID: conv_m365_519a23a18382
+2025-10-05 20:03:46,120 - INFO - Immediate save: 3 records
+2025-10-05 20:03:46,120 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:03:46,120 - INFO - Batch 80 processing complete: 0/3 successful
+2025-10-05 20:03:46,120 - INFO - Batch duration: 106.04s
+2025-10-05 20:03:48,122 - INFO - Processing batch 81/192 (3 emails)...
+2025-10-05 20:04:18,276 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:04:40,654 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:05:08,968 - INFO - Thread conv_m365_5232654860d0: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 20:05:08,982 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:05:09,102 - INFO - Successfully saved 3 records to database
+2025-10-05 20:05:09,102 - INFO - Sample update - Thread ID: conv_m365_a65756969242
+2025-10-05 20:05:09,102 - INFO - Immediate save: 3 records
+2025-10-05 20:05:09,102 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:05:09,103 - INFO - Batch 81 processing complete: 0/3 successful
+2025-10-05 20:05:09,103 - INFO - Batch duration: 80.98s
+2025-10-05 20:05:09,103 - INFO - Overall Progress: 42.3% | Batches: 81/192
+2025-10-05 20:05:09,103 - INFO - Success: 174 | Failures: 0 | Retries: 0 | DB Updates: 174
+2025-10-05 20:05:09,103 - INFO - System: CPU 10.8% | Memory 4.3%
+2025-10-05 20:05:11,105 - INFO - Processing batch 82/192 (3 emails)...
+2025-10-05 20:05:36,990 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:06:09,426 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:06:44,365 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:06:44,486 - INFO - Successfully saved 3 records to database
+2025-10-05 20:06:44,486 - INFO - Sample update - Thread ID: conv_m365_8e26754edd4d
+2025-10-05 20:06:44,486 - INFO - Immediate save: 3 records
+2025-10-05 20:06:44,486 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:06:44,487 - INFO - Batch 82 processing complete: 0/3 successful
+2025-10-05 20:06:44,487 - INFO - Batch duration: 93.38s
+2025-10-05 20:06:46,489 - INFO - Processing batch 83/192 (3 emails)...
+2025-10-05 20:07:11,600 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:07:52,682 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:08:23,146 - INFO - Thread conv_m365_f10dbe0418c0: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 20:08:23,161 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:08:23,282 - INFO - Successfully saved 3 records to database
+2025-10-05 20:08:23,282 - INFO - Sample update - Thread ID: conv_m365_89f2189c47ef
+2025-10-05 20:08:23,283 - INFO - Immediate save: 3 records
+2025-10-05 20:08:23,283 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:08:23,283 - INFO - Batch 83 processing complete: 0/3 successful
+2025-10-05 20:08:23,283 - INFO - Batch duration: 96.79s
+2025-10-05 20:08:25,285 - INFO - Processing batch 84/192 (3 emails)...
+2025-10-05 20:08:57,441 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:09:42,118 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:10:13,224 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:10:13,345 - INFO - Successfully saved 3 records to database
+2025-10-05 20:10:13,345 - INFO - Sample update - Thread ID: conv_m365_5a0c2e59c08a
+2025-10-05 20:10:13,345 - INFO - Immediate save: 3 records
+2025-10-05 20:10:13,345 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:10:13,346 - INFO - Batch 84 processing complete: 0/3 successful
+2025-10-05 20:10:13,346 - INFO - Batch duration: 108.06s
+2025-10-05 20:10:13,346 - INFO - Overall Progress: 43.8% | Batches: 84/192
+2025-10-05 20:10:13,346 - INFO - Success: 183 | Failures: 0 | Retries: 0 | DB Updates: 183
+2025-10-05 20:10:13,346 - INFO - System: CPU 10.7% | Memory 4.3%
+2025-10-05 20:10:15,348 - INFO - Processing batch 85/192 (3 emails)...
+2025-10-05 20:10:59,819 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:11:34,480 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:12:27,649 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:12:27,875 - INFO - Successfully saved 3 records to database
+2025-10-05 20:12:27,875 - INFO - Sample update - Thread ID: conv_m365_f21b3db0af39
+2025-10-05 20:12:27,875 - INFO - Immediate save: 3 records
+2025-10-05 20:12:27,875 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:12:27,876 - INFO - Batch 85 processing complete: 0/3 successful
+2025-10-05 20:12:27,876 - INFO - Batch duration: 132.53s
+2025-10-05 20:12:29,878 - INFO - Processing batch 86/192 (3 emails)...
+2025-10-05 20:13:09,890 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:13:52,157 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:14:17,573 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:14:17,695 - INFO - Successfully saved 3 records to database
+2025-10-05 20:14:17,695 - INFO - Sample update - Thread ID: conv_m365_392758ca052a
+2025-10-05 20:14:17,695 - INFO - Immediate save: 3 records
+2025-10-05 20:14:17,695 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:14:17,695 - INFO - Batch 86 processing complete: 0/3 successful
+2025-10-05 20:14:17,696 - INFO - Batch duration: 107.82s
+2025-10-05 20:14:19,698 - INFO - Processing batch 87/192 (3 emails)...
+2025-10-05 20:15:07,977 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:15:41,634 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:16:10,981 - INFO - Thread conv_m365_947878a71a35: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 20:16:10,996 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:16:11,122 - INFO - Successfully saved 3 records to database
+2025-10-05 20:16:11,122 - INFO - Sample update - Thread ID: conv_m365_3c27fd54a01d
+2025-10-05 20:16:11,122 - INFO - Immediate save: 3 records
+2025-10-05 20:16:11,122 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:16:11,123 - INFO - Batch 87 processing complete: 0/3 successful
+2025-10-05 20:16:11,123 - INFO - Batch duration: 111.42s
+2025-10-05 20:16:11,123 - INFO - Overall Progress: 45.4% | Batches: 87/192
+2025-10-05 20:16:11,123 - INFO - Success: 192 | Failures: 0 | Retries: 0 | DB Updates: 192
+2025-10-05 20:16:11,123 - INFO - System: CPU 10.7% | Memory 4.3%
+2025-10-05 20:16:13,126 - INFO - Processing batch 88/192 (3 emails)...
+2025-10-05 20:16:58,878 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:17:24,590 - INFO - Thread conv_m365_6f63df4f4005: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 20:17:24,618 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:17:52,825 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:17:52,947 - INFO - Successfully saved 3 records to database
+2025-10-05 20:17:52,947 - INFO - Sample update - Thread ID: conv_m365_40964de1659e
+2025-10-05 20:17:52,947 - INFO - Immediate save: 3 records
+2025-10-05 20:17:52,947 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:17:52,947 - INFO - Batch 88 processing complete: 0/3 successful
+2025-10-05 20:17:52,947 - INFO - Batch duration: 99.82s
+2025-10-05 20:17:54,950 - INFO - Processing batch 89/192 (3 emails)...
+2025-10-05 20:18:30,933 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:19:09,621 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:20:01,657 - INFO - Thread conv_m365_53221f6cad00: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 20:20:01,674 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:20:01,900 - INFO - Successfully saved 3 records to database
+2025-10-05 20:20:01,900 - INFO - Sample update - Thread ID: conv_m365_86ddaaa3ea58
+2025-10-05 20:20:01,900 - INFO - Immediate save: 3 records
+2025-10-05 20:20:01,900 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:20:01,901 - INFO - Batch 89 processing complete: 0/3 successful
+2025-10-05 20:20:01,901 - INFO - Batch duration: 126.95s
+2025-10-05 20:20:03,903 - INFO - Processing batch 90/192 (3 emails)...
+2025-10-05 20:20:29,188 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:21:09,764 - INFO - Thread conv_m365_3f4d4a7f8b50: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 20:21:09,781 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:21:48,982 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:21:49,104 - INFO - Successfully saved 3 records to database
+2025-10-05 20:21:49,104 - INFO - Sample update - Thread ID: conv_m365_933fd0f8ea16
+2025-10-05 20:21:49,104 - INFO - Immediate save: 3 records
+2025-10-05 20:21:49,104 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:21:49,105 - INFO - Batch 90 processing complete: 0/3 successful
+2025-10-05 20:21:49,105 - INFO - Batch duration: 105.20s
+2025-10-05 20:21:49,105 - INFO - Overall Progress: 47.0% | Batches: 90/192
+2025-10-05 20:21:49,105 - INFO - Success: 201 | Failures: 0 | Retries: 0 | DB Updates: 201
+2025-10-05 20:21:49,105 - INFO - System: CPU 10.6% | Memory 4.3%
+2025-10-05 20:21:51,108 - INFO - Processing batch 91/192 (3 emails)...
+2025-10-05 20:22:45,709 - ERROR - Task processing error for conv_m365_866e53ef0e02: string indices must be integers
+2025-10-05 20:22:45,709 - WARNING - Will retry conv_m365_866e53ef0e02 due to error (attempt 1/3)
+2025-10-05 20:22:45,709 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:23:27,535 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:24:14,321 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:24:14,321 - INFO - Saving batch of 2 updates to database...
+2025-10-05 20:24:14,443 - INFO - Successfully saved 2 records to database
+2025-10-05 20:24:14,443 - INFO - Sample update - Thread ID: conv_m365_cf908f732669
+2025-10-05 20:24:14,444 - INFO - Final batch save: 2 records
+2025-10-05 20:24:14,444 - INFO - Batch 91 processing complete: 2/3 successful
+2025-10-05 20:24:14,444 - INFO - Batch duration: 143.21s
+2025-10-05 20:24:16,446 - INFO - Processing batch 92/192 (3 emails)...
+2025-10-05 20:24:57,230 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:25:31,722 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:26:08,800 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:26:08,927 - INFO - Successfully saved 3 records to database
+2025-10-05 20:26:08,927 - INFO - Sample update - Thread ID: conv_m365_e2f5e26cc69a
+2025-10-05 20:26:08,927 - INFO - Immediate save: 3 records
+2025-10-05 20:26:08,927 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:26:08,927 - INFO - Batch 92 processing complete: 0/3 successful
+2025-10-05 20:26:08,927 - INFO - Batch duration: 112.48s
+2025-10-05 20:26:10,930 - INFO - Processing batch 93/192 (3 emails)...
+2025-10-05 20:26:51,827 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:27:18,754 - INFO - Thread conv_m365_b3e72bb2c8a0: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 20:27:18,770 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:27:58,828 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:27:59,053 - INFO - Successfully saved 3 records to database
+2025-10-05 20:27:59,053 - INFO - Sample update - Thread ID: conv_m365_1e95fdafd337
+2025-10-05 20:27:59,053 - INFO - Immediate save: 3 records
+2025-10-05 20:27:59,053 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:27:59,054 - INFO - Batch 93 processing complete: 0/3 successful
+2025-10-05 20:27:59,054 - INFO - Batch duration: 108.12s
+2025-10-05 20:27:59,054 - INFO - Overall Progress: 48.5% | Batches: 93/192
+2025-10-05 20:27:59,054 - INFO - Success: 209 | Failures: 0 | Retries: 0 | DB Updates: 209
+2025-10-05 20:27:59,054 - INFO - System: CPU 10.8% | Memory 4.3%
+2025-10-05 20:28:01,057 - INFO - Processing batch 94/192 (3 emails)...
+2025-10-05 20:28:37,247 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:29:24,178 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:30:01,423 - INFO - Thread conv_m365_fbe94baa7275: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 20:30:01,440 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:30:01,680 - INFO - Successfully saved 3 records to database
+2025-10-05 20:30:01,680 - INFO - Sample update - Thread ID: conv_m365_6f786e1923de
+2025-10-05 20:30:01,680 - INFO - Immediate save: 3 records
+2025-10-05 20:30:01,681 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:30:01,681 - INFO - Batch 94 processing complete: 0/3 successful
+2025-10-05 20:30:01,681 - INFO - Batch duration: 120.62s
+2025-10-05 20:30:03,683 - INFO - Processing batch 95/192 (3 emails)...
+2025-10-05 20:30:31,548 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:31:08,708 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:31:52,620 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:31:52,744 - INFO - Successfully saved 3 records to database
+2025-10-05 20:31:52,744 - INFO - Sample update - Thread ID: conv_m365_865131832e8c
+2025-10-05 20:31:52,745 - INFO - Immediate save: 3 records
+2025-10-05 20:31:52,745 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:31:52,745 - INFO - Batch 95 processing complete: 0/3 successful
+2025-10-05 20:31:52,745 - INFO - Batch duration: 109.06s
+2025-10-05 20:31:54,747 - INFO - Processing batch 96/192 (3 emails)...
+2025-10-05 20:32:37,942 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:33:23,433 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:34:11,105 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:34:11,332 - INFO - Successfully saved 3 records to database
+2025-10-05 20:34:11,332 - INFO - Sample update - Thread ID: conv_m365_2fcaddbb61cc
+2025-10-05 20:34:11,332 - INFO - Immediate save: 3 records
+2025-10-05 20:34:11,333 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:34:11,333 - INFO - Batch 96 processing complete: 0/3 successful
+2025-10-05 20:34:11,333 - INFO - Batch duration: 136.59s
+2025-10-05 20:34:11,333 - INFO - Overall Progress: 50.1% | Batches: 96/192
+2025-10-05 20:34:11,333 - INFO - Success: 218 | Failures: 0 | Retries: 0 | DB Updates: 218
+2025-10-05 20:34:11,333 - INFO - System: CPU 10.6% | Memory 4.3%
+2025-10-05 20:34:13,336 - INFO - Processing batch 97/192 (3 emails)...
+2025-10-05 20:34:51,825 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:35:34,384 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:36:01,884 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:36:02,008 - INFO - Successfully saved 3 records to database
+2025-10-05 20:36:02,009 - INFO - Sample update - Thread ID: conv_m365_56fb7f46a77b
+2025-10-05 20:36:02,009 - INFO - Immediate save: 3 records
+2025-10-05 20:36:02,009 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:36:02,009 - INFO - Batch 97 processing complete: 0/3 successful
+2025-10-05 20:36:02,009 - INFO - Batch duration: 108.67s
+2025-10-05 20:36:04,011 - INFO - Processing batch 98/192 (3 emails)...
+2025-10-05 20:36:37,369 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:37:04,586 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:37:46,326 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:37:46,450 - INFO - Successfully saved 3 records to database
+2025-10-05 20:37:46,450 - INFO - Sample update - Thread ID: conv_m365_9286c19b72b1
+2025-10-05 20:37:46,450 - INFO - Immediate save: 3 records
+2025-10-05 20:37:46,450 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:37:46,450 - INFO - Batch 98 processing complete: 0/3 successful
+2025-10-05 20:37:46,450 - INFO - Batch duration: 102.44s
+2025-10-05 20:37:48,453 - INFO - Processing batch 99/192 (3 emails)...
+2025-10-05 20:38:30,179 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:39:19,493 - INFO - Thread conv_m365_c50acb3df340: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 20:39:19,493 - ERROR - Task processing error for conv_m365_c50acb3df340: string indices must be integers
+2025-10-05 20:39:19,493 - WARNING - Will retry conv_m365_c50acb3df340 due to error (attempt 1/3)
+2025-10-05 20:39:19,494 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:39:45,399 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:39:45,400 - INFO - Saving batch of 2 updates to database...
+2025-10-05 20:39:45,523 - INFO - Successfully saved 2 records to database
+2025-10-05 20:39:45,524 - INFO - Sample update - Thread ID: conv_m365_338d657a40ef
+2025-10-05 20:39:45,524 - INFO - Final batch save: 2 records
+2025-10-05 20:39:45,524 - INFO - Batch 99 processing complete: 2/3 successful
+2025-10-05 20:39:45,524 - INFO - Batch duration: 116.95s
+2025-10-05 20:39:45,524 - INFO - Overall Progress: 51.7% | Batches: 99/192
+2025-10-05 20:39:45,524 - INFO - Success: 226 | Failures: 0 | Retries: 0 | DB Updates: 226
+2025-10-05 20:39:45,524 - INFO - System: CPU 10.8% | Memory 4.3%
+2025-10-05 20:39:47,527 - INFO - Processing batch 100/192 (3 emails)...
+2025-10-05 20:40:31,707 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:41:00,426 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:41:38,324 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:41:38,448 - INFO - Successfully saved 3 records to database
+2025-10-05 20:41:38,448 - INFO - Sample update - Thread ID: conv_m365_a2fe7192545c
+2025-10-05 20:41:38,448 - INFO - Immediate save: 3 records
+2025-10-05 20:41:38,449 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:41:38,449 - INFO - Batch 100 processing complete: 0/3 successful
+2025-10-05 20:41:38,449 - INFO - Batch duration: 110.92s
+2025-10-05 20:41:40,451 - INFO - Processing batch 101/192 (3 emails)...
+2025-10-05 20:42:08,834 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:42:39,446 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:43:07,058 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:43:07,182 - INFO - Successfully saved 3 records to database
+2025-10-05 20:43:07,182 - INFO - Sample update - Thread ID: conv_m365_9e2fcd70d24e
+2025-10-05 20:43:07,182 - INFO - Immediate save: 3 records
+2025-10-05 20:43:07,182 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:43:07,183 - INFO - Batch 101 processing complete: 0/3 successful
+2025-10-05 20:43:07,183 - INFO - Batch duration: 86.73s
+2025-10-05 20:43:09,185 - INFO - Processing batch 102/192 (3 emails)...
+2025-10-05 20:43:49,419 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:44:43,962 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:45:12,369 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:45:12,597 - INFO - Successfully saved 3 records to database
+2025-10-05 20:45:12,597 - INFO - Sample update - Thread ID: conv_m365_b27a77d7c5df
+2025-10-05 20:45:12,597 - INFO - Immediate save: 3 records
+2025-10-05 20:45:12,597 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:45:12,597 - INFO - Batch 102 processing complete: 0/3 successful
+2025-10-05 20:45:12,597 - INFO - Batch duration: 123.41s
+2025-10-05 20:45:12,597 - INFO - Overall Progress: 53.2% | Batches: 102/192
+2025-10-05 20:45:12,597 - INFO - Success: 235 | Failures: 0 | Retries: 0 | DB Updates: 235
+2025-10-05 20:45:12,598 - INFO - System: CPU 10.5% | Memory 4.3%
+2025-10-05 20:45:14,600 - INFO - Processing batch 103/192 (3 emails)...
+2025-10-05 20:45:41,508 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:46:12,874 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:46:39,552 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:46:39,676 - INFO - Successfully saved 3 records to database
+2025-10-05 20:46:39,676 - INFO - Sample update - Thread ID: conv_m365_f5b558ed6a1e
+2025-10-05 20:46:39,676 - INFO - Immediate save: 3 records
+2025-10-05 20:46:39,676 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:46:39,677 - INFO - Batch 103 processing complete: 0/3 successful
+2025-10-05 20:46:39,677 - INFO - Batch duration: 85.08s
+2025-10-05 20:46:41,679 - INFO - Processing batch 104/192 (3 emails)...
+2025-10-05 20:47:12,462 - INFO - Thread conv_m365_6554d04aabe0: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 20:47:12,481 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:47:40,820 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:48:09,437 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:48:09,562 - INFO - Successfully saved 3 records to database
+2025-10-05 20:48:09,563 - INFO - Sample update - Thread ID: conv_m365_6554d04aabe0
+2025-10-05 20:48:09,563 - INFO - Immediate save: 3 records
+2025-10-05 20:48:09,563 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:48:09,563 - INFO - Batch 104 processing complete: 0/3 successful
+2025-10-05 20:48:09,563 - INFO - Batch duration: 87.88s
+2025-10-05 20:48:11,565 - INFO - Processing batch 105/192 (3 emails)...
+2025-10-05 20:48:46,770 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:49:29,928 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:50:08,771 - INFO - Thread conv_m365_b562f51a34e0: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 20:50:08,789 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:50:09,020 - INFO - Successfully saved 3 records to database
+2025-10-05 20:50:09,021 - INFO - Sample update - Thread ID: conv_m365_eafd0aa10769
+2025-10-05 20:50:09,021 - INFO - Immediate save: 3 records
+2025-10-05 20:50:09,021 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:50:09,021 - INFO - Batch 105 processing complete: 0/3 successful
+2025-10-05 20:50:09,021 - INFO - Batch duration: 117.46s
+2025-10-05 20:50:09,021 - INFO - Overall Progress: 54.8% | Batches: 105/192
+2025-10-05 20:50:09,021 - INFO - Success: 244 | Failures: 0 | Retries: 0 | DB Updates: 244
+2025-10-05 20:50:09,022 - INFO - System: CPU 11.0% | Memory 4.3%
+2025-10-05 20:50:11,024 - INFO - Processing batch 106/192 (3 emails)...
+2025-10-05 20:50:46,131 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:51:10,795 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:51:53,920 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:51:54,047 - INFO - Successfully saved 3 records to database
+2025-10-05 20:51:54,047 - INFO - Sample update - Thread ID: conv_m365_b06922776984
+2025-10-05 20:51:54,047 - INFO - Immediate save: 3 records
+2025-10-05 20:51:54,047 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:51:54,048 - INFO - Batch 106 processing complete: 0/3 successful
+2025-10-05 20:51:54,048 - INFO - Batch duration: 103.02s
+2025-10-05 20:51:56,050 - INFO - Processing batch 107/192 (3 emails)...
+2025-10-05 20:52:39,403 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:53:09,843 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:53:37,449 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:53:37,575 - INFO - Successfully saved 3 records to database
+2025-10-05 20:53:37,575 - INFO - Sample update - Thread ID: conv_m365_13ee0d7d328f
+2025-10-05 20:53:37,575 - INFO - Immediate save: 3 records
+2025-10-05 20:53:37,575 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:53:37,575 - INFO - Batch 107 processing complete: 0/3 successful
+2025-10-05 20:53:37,575 - INFO - Batch duration: 101.53s
+2025-10-05 20:53:39,578 - INFO - Processing batch 108/192 (3 emails)...
+2025-10-05 20:54:28,285 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:55:10,158 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:55:52,991 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:55:53,221 - INFO - Successfully saved 3 records to database
+2025-10-05 20:55:53,221 - INFO - Sample update - Thread ID: conv_m365_5c87fa834509
+2025-10-05 20:55:53,221 - INFO - Immediate save: 3 records
+2025-10-05 20:55:53,221 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:55:53,221 - INFO - Batch 108 processing complete: 0/3 successful
+2025-10-05 20:55:53,222 - INFO - Batch duration: 133.64s
+2025-10-05 20:55:53,222 - INFO - Overall Progress: 56.3% | Batches: 108/192
+2025-10-05 20:55:53,222 - INFO - Success: 253 | Failures: 0 | Retries: 0 | DB Updates: 253
+2025-10-05 20:55:53,222 - INFO - System: CPU 10.5% | Memory 4.2%
+2025-10-05 20:55:55,224 - INFO - Processing batch 109/192 (3 emails)...
+2025-10-05 20:56:25,591 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:56:53,367 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:57:25,083 - INFO - Thread conv_m365_b5fbfd122fa5: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 20:57:25,104 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:57:25,229 - INFO - Successfully saved 3 records to database
+2025-10-05 20:57:25,230 - INFO - Sample update - Thread ID: conv_m365_edd361bf6999
+2025-10-05 20:57:25,230 - INFO - Immediate save: 3 records
+2025-10-05 20:57:25,230 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:57:25,230 - INFO - Batch 109 processing complete: 0/3 successful
+2025-10-05 20:57:25,230 - INFO - Batch duration: 90.01s
+2025-10-05 20:57:27,232 - INFO - Processing batch 110/192 (3 emails)...
+2025-10-05 20:57:56,723 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 20:58:24,914 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 20:59:22,225 - INFO - Saving batch of 3 updates to database...
+2025-10-05 20:59:22,455 - INFO - Successfully saved 3 records to database
+2025-10-05 20:59:22,455 - INFO - Sample update - Thread ID: conv_m365_65d77c053b74
+2025-10-05 20:59:22,455 - INFO - Immediate save: 3 records
+2025-10-05 20:59:22,455 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 20:59:22,455 - INFO - Batch 110 processing complete: 0/3 successful
+2025-10-05 20:59:22,456 - INFO - Batch duration: 115.22s
+2025-10-05 20:59:24,458 - INFO - Processing batch 111/192 (3 emails)...
+2025-10-05 21:00:09,851 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:01:03,411 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:01:30,177 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:01:30,408 - INFO - Successfully saved 3 records to database
+2025-10-05 21:01:30,408 - INFO - Sample update - Thread ID: conv_m365_96668cba718f
+2025-10-05 21:01:30,408 - INFO - Immediate save: 3 records
+2025-10-05 21:01:30,408 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:01:30,408 - INFO - Batch 111 processing complete: 0/3 successful
+2025-10-05 21:01:30,408 - INFO - Batch duration: 125.95s
+2025-10-05 21:01:30,408 - INFO - Overall Progress: 57.9% | Batches: 111/192
+2025-10-05 21:01:30,409 - INFO - Success: 262 | Failures: 0 | Retries: 0 | DB Updates: 262
+2025-10-05 21:01:30,409 - INFO - System: CPU 10.8% | Memory 4.3%
+2025-10-05 21:01:32,411 - INFO - Processing batch 112/192 (3 emails)...
+2025-10-05 21:02:15,214 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:03:00,198 - ERROR - JSON parsing failed for thread conv_m365_458524f3fc6f. Raw response: {
+  "thread_data": {
+    "subject_norm": "Urgent: Notification Regarding Account DE89 3704 0044 0532 0130 00 - Transaction Review",
+    "first_message_at": "2025-01-15T09:00:00Z",
+    "last_message_at": "2025-06-20T14:30:00Z"
+  },
+  "messages": [
+    {
+      "headers": {
+        "date": "2025-01-15T...
+2025-10-05 21:03:00,198 - ERROR - Thread conv_m365_458524f3fc6f: Full LLM response: ```json
+{
+  "thread_data": {
+    "subject_norm": "Urgent: Notification Regarding Account DE89 3704 0044 0532 0130 00 - Transaction Review",
+    "first_message_at": "2025-01-15T09:00:00Z",
+    "last_message_at": "2025-06-20T14:30:00Z"
+  },
+  "messages": [
+    {
+      "headers": {
+        "date": "2025-01-15T09:00:00Z",
+        "subject": "Regarding Recent Account Activity - Account DE89 3704 0044 0532 0130 00"
+      },
+      "body": {
+        "text": {
+          "plain": "Dear Jenny Burke and Lea...
+2025-10-05 21:03:00,199 - ERROR - Task processing error for conv_m365_458524f3fc6f: Invalid JSON response from LLM: Expecting property name enclosed in double quotes: line 56 column 7 
+2025-10-05 21:03:00,199 - WARNING - Will retry conv_m365_458524f3fc6f due to error (attempt 1/3)
+2025-10-05 21:03:00,199 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:03:34,654 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:03:34,654 - INFO - Saving batch of 2 updates to database...
+2025-10-05 21:03:34,781 - INFO - Successfully saved 2 records to database
+2025-10-05 21:03:34,781 - INFO - Sample update - Thread ID: conv_m365_fcc623a8e3f1
+2025-10-05 21:03:34,781 - INFO - Final batch save: 2 records
+2025-10-05 21:03:34,781 - INFO - Batch 112 processing complete: 2/3 successful
+2025-10-05 21:03:34,781 - INFO - Batch duration: 122.24s
+2025-10-05 21:03:36,783 - INFO - Processing batch 113/192 (3 emails)...
+2025-10-05 21:04:03,903 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:04:35,939 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:05:17,387 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:05:17,514 - INFO - Successfully saved 3 records to database
+2025-10-05 21:05:17,515 - INFO - Sample update - Thread ID: conv_m365_1365c58db188
+2025-10-05 21:05:17,515 - INFO - Immediate save: 3 records
+2025-10-05 21:05:17,515 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:05:17,515 - INFO - Batch 113 processing complete: 0/3 successful
+2025-10-05 21:05:17,515 - INFO - Batch duration: 100.73s
+2025-10-05 21:05:19,517 - INFO - Processing batch 114/192 (3 emails)...
+2025-10-05 21:05:55,377 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:06:24,333 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:06:54,307 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:06:54,434 - INFO - Successfully saved 3 records to database
+2025-10-05 21:06:54,435 - INFO - Sample update - Thread ID: conv_m365_995f0734cce9
+2025-10-05 21:06:54,435 - INFO - Immediate save: 3 records
+2025-10-05 21:06:54,435 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:06:54,435 - INFO - Batch 114 processing complete: 0/3 successful
+2025-10-05 21:06:54,435 - INFO - Batch duration: 94.92s
+2025-10-05 21:06:54,435 - INFO - Overall Progress: 59.5% | Batches: 114/192
+2025-10-05 21:06:54,435 - INFO - Success: 270 | Failures: 0 | Retries: 0 | DB Updates: 270
+2025-10-05 21:06:54,435 - INFO - System: CPU 10.8% | Memory 4.3%
+2025-10-05 21:06:56,438 - INFO - Processing batch 115/192 (3 emails)...
+2025-10-05 21:07:34,556 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:08:10,595 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:08:48,282 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:08:48,409 - INFO - Successfully saved 3 records to database
+2025-10-05 21:08:48,409 - INFO - Sample update - Thread ID: conv_m365_e8dfe9d261a9
+2025-10-05 21:08:48,409 - INFO - Immediate save: 3 records
+2025-10-05 21:08:48,409 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:08:48,410 - INFO - Batch 115 processing complete: 0/3 successful
+2025-10-05 21:08:48,410 - INFO - Batch duration: 111.97s
+2025-10-05 21:08:50,412 - INFO - Processing batch 116/192 (3 emails)...
+2025-10-05 21:09:30,412 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:09:56,329 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:10:22,099 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:10:22,225 - INFO - Successfully saved 3 records to database
+2025-10-05 21:10:22,225 - INFO - Sample update - Thread ID: conv_m365_c1eba6c5a29b
+2025-10-05 21:10:22,225 - INFO - Immediate save: 3 records
+2025-10-05 21:10:22,226 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:10:22,226 - INFO - Batch 116 processing complete: 0/3 successful
+2025-10-05 21:10:22,226 - INFO - Batch duration: 91.81s
+2025-10-05 21:10:24,228 - INFO - Processing batch 117/192 (3 emails)...
+2025-10-05 21:10:52,882 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:11:36,526 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:12:05,516 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:12:05,643 - INFO - Successfully saved 3 records to database
+2025-10-05 21:12:05,643 - INFO - Sample update - Thread ID: conv_m365_279bffe533bf
+2025-10-05 21:12:05,644 - INFO - Immediate save: 3 records
+2025-10-05 21:12:05,644 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:12:05,644 - INFO - Batch 117 processing complete: 0/3 successful
+2025-10-05 21:12:05,644 - INFO - Batch duration: 101.42s
+2025-10-05 21:12:05,644 - INFO - Overall Progress: 61.0% | Batches: 117/192
+2025-10-05 21:12:05,644 - INFO - Success: 279 | Failures: 0 | Retries: 0 | DB Updates: 279
+2025-10-05 21:12:05,644 - INFO - System: CPU 10.5% | Memory 4.3%
+2025-10-05 21:12:07,647 - INFO - Processing batch 118/192 (3 emails)...
+2025-10-05 21:12:34,243 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:13:02,471 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:13:30,755 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:13:30,883 - INFO - Successfully saved 3 records to database
+2025-10-05 21:13:30,883 - INFO - Sample update - Thread ID: conv_m365_1be6965ea9cb
+2025-10-05 21:13:30,883 - INFO - Immediate save: 3 records
+2025-10-05 21:13:30,883 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:13:30,884 - INFO - Batch 118 processing complete: 0/3 successful
+2025-10-05 21:13:30,884 - INFO - Batch duration: 83.24s
+2025-10-05 21:13:32,886 - INFO - Processing batch 119/192 (3 emails)...
+2025-10-05 21:14:06,169 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:14:40,778 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:15:16,726 - INFO - Thread conv_m365_e11acd0d7135: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 21:15:16,748 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:15:16,877 - INFO - Successfully saved 3 records to database
+2025-10-05 21:15:16,877 - INFO - Sample update - Thread ID: conv_m365_203c23ed4fa4
+2025-10-05 21:15:16,877 - INFO - Immediate save: 3 records
+2025-10-05 21:15:16,877 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:15:16,878 - INFO - Batch 119 processing complete: 0/3 successful
+2025-10-05 21:15:16,878 - INFO - Batch duration: 103.99s
+2025-10-05 21:15:18,880 - INFO - Processing batch 120/192 (3 emails)...
+2025-10-05 21:15:59,517 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:16:33,394 - INFO - Thread conv_m365_5614f4f97515: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 21:16:33,417 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:17:28,050 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:17:28,282 - INFO - Successfully saved 3 records to database
+2025-10-05 21:17:28,282 - INFO - Sample update - Thread ID: conv_m365_808bfb90ffc1
+2025-10-05 21:17:28,282 - INFO - Immediate save: 3 records
+2025-10-05 21:17:28,282 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:17:28,282 - INFO - Batch 120 processing complete: 0/3 successful
+2025-10-05 21:17:28,282 - INFO - Batch duration: 129.40s
+2025-10-05 21:17:28,283 - INFO - Overall Progress: 62.6% | Batches: 120/192
+2025-10-05 21:17:28,283 - INFO - Success: 288 | Failures: 0 | Retries: 0 | DB Updates: 288
+2025-10-05 21:17:28,283 - INFO - System: CPU 10.7% | Memory 4.2%
+2025-10-05 21:17:30,285 - INFO - Processing batch 121/192 (3 emails)...
+2025-10-05 21:18:14,252 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:18:59,791 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:19:44,527 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:19:44,758 - INFO - Successfully saved 3 records to database
+2025-10-05 21:19:44,759 - INFO - Sample update - Thread ID: conv_m365_d6ea08b6ab26
+2025-10-05 21:19:44,759 - INFO - Immediate save: 3 records
+2025-10-05 21:19:44,759 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:19:44,759 - INFO - Batch 121 processing complete: 0/3 successful
+2025-10-05 21:19:44,759 - INFO - Batch duration: 134.47s
+2025-10-05 21:19:46,761 - INFO - Processing batch 122/192 (3 emails)...
+2025-10-05 21:20:31,735 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:21:00,781 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:21:40,608 - INFO - Thread conv_m365_21a7e9085a45: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 21:21:40,630 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:21:40,862 - INFO - Successfully saved 3 records to database
+2025-10-05 21:21:40,862 - INFO - Sample update - Thread ID: conv_m365_66822a70ce84
+2025-10-05 21:21:40,862 - INFO - Immediate save: 3 records
+2025-10-05 21:21:40,862 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:21:40,862 - INFO - Batch 122 processing complete: 0/3 successful
+2025-10-05 21:21:40,862 - INFO - Batch duration: 114.10s
+2025-10-05 21:21:42,865 - INFO - Processing batch 123/192 (3 emails)...
+2025-10-05 21:22:08,857 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:22:33,996 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:23:10,987 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:23:11,115 - INFO - Successfully saved 3 records to database
+2025-10-05 21:23:11,115 - INFO - Sample update - Thread ID: conv_m365_968d3111068b
+2025-10-05 21:23:11,115 - INFO - Immediate save: 3 records
+2025-10-05 21:23:11,115 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:23:11,116 - INFO - Batch 123 processing complete: 0/3 successful
+2025-10-05 21:23:11,116 - INFO - Batch duration: 88.25s
+2025-10-05 21:23:11,116 - INFO - Overall Progress: 64.2% | Batches: 123/192
+2025-10-05 21:23:11,116 - INFO - Success: 297 | Failures: 0 | Retries: 0 | DB Updates: 297
+2025-10-05 21:23:11,116 - INFO - System: CPU 10.7% | Memory 4.3%
+2025-10-05 21:23:13,119 - INFO - Processing batch 124/192 (3 emails)...
+2025-10-05 21:23:43,824 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:24:23,820 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:24:56,611 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:24:56,740 - INFO - Successfully saved 3 records to database
+2025-10-05 21:24:56,740 - INFO - Sample update - Thread ID: conv_m365_cd290b632d96
+2025-10-05 21:24:56,740 - INFO - Immediate save: 3 records
+2025-10-05 21:24:56,740 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:24:56,741 - INFO - Batch 124 processing complete: 0/3 successful
+2025-10-05 21:24:56,741 - INFO - Batch duration: 103.62s
+2025-10-05 21:24:58,743 - INFO - Processing batch 125/192 (3 emails)...
+2025-10-05 21:25:24,938 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:26:21,438 - ERROR - Task processing error for conv_m365_8d981026f293: 'str' object has no attribute 'get'
+2025-10-05 21:26:21,438 - WARNING - Will retry conv_m365_8d981026f293 due to error (attempt 1/3)
+2025-10-05 21:26:21,439 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:27:13,553 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:27:13,554 - INFO - Saving batch of 2 updates to database...
+2025-10-05 21:27:13,684 - INFO - Successfully saved 2 records to database
+2025-10-05 21:27:13,684 - INFO - Sample update - Thread ID: conv_m365_6db7eccb09ad
+2025-10-05 21:27:13,684 - INFO - Final batch save: 2 records
+2025-10-05 21:27:13,684 - INFO - Batch 125 processing complete: 2/3 successful
+2025-10-05 21:27:13,684 - INFO - Batch duration: 134.81s
+2025-10-05 21:27:15,686 - INFO - Processing batch 126/192 (3 emails)...
+2025-10-05 21:28:04,113 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:28:31,315 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:29:08,831 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:29:08,959 - INFO - Successfully saved 3 records to database
+2025-10-05 21:29:08,960 - INFO - Sample update - Thread ID: conv_m365_f0efbe9f2441
+2025-10-05 21:29:08,960 - INFO - Immediate save: 3 records
+2025-10-05 21:29:08,960 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:29:08,960 - INFO - Batch 126 processing complete: 0/3 successful
+2025-10-05 21:29:08,960 - INFO - Batch duration: 113.27s
+2025-10-05 21:29:08,960 - INFO - Overall Progress: 65.7% | Batches: 126/192
+2025-10-05 21:29:08,960 - INFO - Success: 305 | Failures: 0 | Retries: 0 | DB Updates: 305
+2025-10-05 21:29:08,961 - INFO - System: CPU 10.8% | Memory 4.3%
+2025-10-05 21:29:10,963 - INFO - Processing batch 127/192 (3 emails)...
+2025-10-05 21:29:49,782 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:30:17,968 - INFO - Thread conv_m365_40c9d6ae7315: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 21:30:17,991 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:31:02,455 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:31:02,585 - INFO - Successfully saved 3 records to database
+2025-10-05 21:31:02,585 - INFO - Sample update - Thread ID: conv_m365_bef369994fb1
+2025-10-05 21:31:02,585 - INFO - Immediate save: 3 records
+2025-10-05 21:31:02,585 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:31:02,586 - INFO - Batch 127 processing complete: 0/3 successful
+2025-10-05 21:31:02,586 - INFO - Batch duration: 111.62s
+2025-10-05 21:31:04,588 - INFO - Processing batch 128/192 (3 emails)...
+2025-10-05 21:31:36,201 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:32:04,247 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:32:30,559 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:32:30,690 - INFO - Successfully saved 3 records to database
+2025-10-05 21:32:30,691 - INFO - Sample update - Thread ID: conv_m365_d99ac1628f92
+2025-10-05 21:32:30,691 - INFO - Immediate save: 3 records
+2025-10-05 21:32:30,691 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:32:30,691 - INFO - Batch 128 processing complete: 0/3 successful
+2025-10-05 21:32:30,691 - INFO - Batch duration: 86.10s
+2025-10-05 21:32:32,693 - INFO - Processing batch 129/192 (3 emails)...
+2025-10-05 21:33:10,904 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:33:54,245 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:34:32,025 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:34:32,157 - INFO - Successfully saved 3 records to database
+2025-10-05 21:34:32,158 - INFO - Sample update - Thread ID: conv_m365_13c4593aec56
+2025-10-05 21:34:32,158 - INFO - Immediate save: 3 records
+2025-10-05 21:34:32,158 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:34:32,158 - INFO - Batch 129 processing complete: 0/3 successful
+2025-10-05 21:34:32,158 - INFO - Batch duration: 119.46s
+2025-10-05 21:34:32,158 - INFO - Overall Progress: 67.3% | Batches: 129/192
+2025-10-05 21:34:32,158 - INFO - Success: 314 | Failures: 0 | Retries: 0 | DB Updates: 314
+2025-10-05 21:34:32,159 - INFO - System: CPU 10.5% | Memory 4.4%
+2025-10-05 21:34:34,161 - INFO - Processing batch 130/192 (3 emails)...
+2025-10-05 21:35:03,960 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:35:29,520 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:35:53,934 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:35:54,064 - INFO - Successfully saved 3 records to database
+2025-10-05 21:35:54,064 - INFO - Sample update - Thread ID: conv_m365_3c5ebf30af28
+2025-10-05 21:35:54,064 - INFO - Immediate save: 3 records
+2025-10-05 21:35:54,064 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:35:54,065 - INFO - Batch 130 processing complete: 0/3 successful
+2025-10-05 21:35:54,065 - INFO - Batch duration: 79.90s
+2025-10-05 21:35:56,067 - INFO - Processing batch 131/192 (3 emails)...
+2025-10-05 21:36:40,581 - ERROR - Task processing error for conv_m365_451de8752116: 'str' object has no attribute 'get'
+2025-10-05 21:36:40,581 - WARNING - Will retry conv_m365_451de8752116 due to error (attempt 1/3)
+2025-10-05 21:36:40,581 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:37:16,660 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:37:54,315 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:37:54,315 - INFO - Saving batch of 2 updates to database...
+2025-10-05 21:37:54,446 - INFO - Successfully saved 2 records to database
+2025-10-05 21:37:54,446 - INFO - Sample update - Thread ID: conv_m365_32c0c61ccebf
+2025-10-05 21:37:54,446 - INFO - Final batch save: 2 records
+2025-10-05 21:37:54,446 - INFO - Batch 131 processing complete: 2/3 successful
+2025-10-05 21:37:54,446 - INFO - Batch duration: 118.25s
+2025-10-05 21:37:56,449 - INFO - Processing batch 132/192 (3 emails)...
+2025-10-05 21:38:25,393 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:39:02,775 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:39:45,013 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:39:45,247 - INFO - Successfully saved 3 records to database
+2025-10-05 21:39:45,247 - INFO - Sample update - Thread ID: conv_m365_3d2a22ae5972
+2025-10-05 21:39:45,247 - INFO - Immediate save: 3 records
+2025-10-05 21:39:45,248 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:39:45,248 - INFO - Batch 132 processing complete: 0/3 successful
+2025-10-05 21:39:45,248 - INFO - Batch duration: 108.80s
+2025-10-05 21:39:45,248 - INFO - Overall Progress: 68.9% | Batches: 132/192
+2025-10-05 21:39:45,248 - INFO - Success: 322 | Failures: 0 | Retries: 0 | DB Updates: 322
+2025-10-05 21:39:45,248 - INFO - System: CPU 10.8% | Memory 4.3%
+2025-10-05 21:39:47,251 - INFO - Processing batch 133/192 (3 emails)...
+2025-10-05 21:40:26,429 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:40:58,203 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:41:37,400 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:41:37,531 - INFO - Successfully saved 3 records to database
+2025-10-05 21:41:37,531 - INFO - Sample update - Thread ID: conv_m365_e4148c876a09
+2025-10-05 21:41:37,531 - INFO - Immediate save: 3 records
+2025-10-05 21:41:37,531 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:41:37,531 - INFO - Batch 133 processing complete: 0/3 successful
+2025-10-05 21:41:37,531 - INFO - Batch duration: 110.28s
+2025-10-05 21:41:39,533 - INFO - Processing batch 134/192 (3 emails)...
+2025-10-05 21:42:10,750 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:42:40,050 - INFO - Thread conv_m365_9c15c6641a20: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 21:42:40,075 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:43:13,786 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:43:13,916 - INFO - Successfully saved 3 records to database
+2025-10-05 21:43:13,917 - INFO - Sample update - Thread ID: conv_m365_f3453fe8ed5f
+2025-10-05 21:43:13,917 - INFO - Immediate save: 3 records
+2025-10-05 21:43:13,917 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:43:13,917 - INFO - Batch 134 processing complete: 0/3 successful
+2025-10-05 21:43:13,917 - INFO - Batch duration: 94.38s
+2025-10-05 21:43:15,919 - INFO - Processing batch 135/192 (3 emails)...
+2025-10-05 21:43:38,745 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:44:22,814 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:44:55,419 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:44:55,549 - INFO - Successfully saved 3 records to database
+2025-10-05 21:44:55,549 - INFO - Sample update - Thread ID: conv_m365_8b0fd735c2d8
+2025-10-05 21:44:55,549 - INFO - Immediate save: 3 records
+2025-10-05 21:44:55,549 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:44:55,550 - INFO - Batch 135 processing complete: 0/3 successful
+2025-10-05 21:44:55,550 - INFO - Batch duration: 99.63s
+2025-10-05 21:44:55,550 - INFO - Overall Progress: 70.4% | Batches: 135/192
+2025-10-05 21:44:55,550 - INFO - Success: 331 | Failures: 0 | Retries: 0 | DB Updates: 331
+2025-10-05 21:44:55,550 - INFO - System: CPU 10.5% | Memory 4.3%
+2025-10-05 21:44:57,553 - INFO - Processing batch 136/192 (3 emails)...
+2025-10-05 21:45:45,110 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:46:12,470 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:46:56,765 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:46:56,896 - INFO - Successfully saved 3 records to database
+2025-10-05 21:46:56,896 - INFO - Sample update - Thread ID: conv_m365_252d13e472dc
+2025-10-05 21:46:56,896 - INFO - Immediate save: 3 records
+2025-10-05 21:46:56,896 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:46:56,897 - INFO - Batch 136 processing complete: 0/3 successful
+2025-10-05 21:46:56,897 - INFO - Batch duration: 119.34s
+2025-10-05 21:46:58,899 - INFO - Processing batch 137/192 (3 emails)...
+2025-10-05 21:47:30,027 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:48:20,976 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:48:45,096 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:48:45,229 - INFO - Successfully saved 3 records to database
+2025-10-05 21:48:45,229 - INFO - Sample update - Thread ID: conv_m365_dc22ad95321e
+2025-10-05 21:48:45,229 - INFO - Immediate save: 3 records
+2025-10-05 21:48:45,229 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:48:45,229 - INFO - Batch 137 processing complete: 0/3 successful
+2025-10-05 21:48:45,229 - INFO - Batch duration: 106.33s
+2025-10-05 21:48:47,232 - INFO - Processing batch 138/192 (3 emails)...
+2025-10-05 21:49:11,347 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:49:43,257 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:50:22,658 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:50:22,791 - INFO - Successfully saved 3 records to database
+2025-10-05 21:50:22,791 - INFO - Sample update - Thread ID: conv_m365_595085352c04
+2025-10-05 21:50:22,791 - INFO - Immediate save: 3 records
+2025-10-05 21:50:22,791 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:50:22,792 - INFO - Batch 138 processing complete: 0/3 successful
+2025-10-05 21:50:22,792 - INFO - Batch duration: 95.56s
+2025-10-05 21:50:22,792 - INFO - Overall Progress: 72.0% | Batches: 138/192
+2025-10-05 21:50:22,792 - INFO - Success: 340 | Failures: 0 | Retries: 0 | DB Updates: 340
+2025-10-05 21:50:22,792 - INFO - System: CPU 10.9% | Memory 4.3%
+2025-10-05 21:50:24,794 - INFO - Processing batch 139/192 (3 emails)...
+2025-10-05 21:51:12,908 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:51:41,087 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:52:22,594 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:52:22,832 - INFO - Successfully saved 3 records to database
+2025-10-05 21:52:22,833 - INFO - Sample update - Thread ID: conv_m365_7d075d46a278
+2025-10-05 21:52:22,833 - INFO - Immediate save: 3 records
+2025-10-05 21:52:22,833 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:52:22,833 - INFO - Batch 139 processing complete: 0/3 successful
+2025-10-05 21:52:22,833 - INFO - Batch duration: 118.04s
+2025-10-05 21:52:24,835 - INFO - Processing batch 140/192 (3 emails)...
+2025-10-05 21:52:52,858 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:53:21,414 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:53:58,511 - INFO - Thread conv_m365_f115a0a08f40: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 21:53:58,537 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:53:58,670 - INFO - Successfully saved 3 records to database
+2025-10-05 21:53:58,670 - INFO - Sample update - Thread ID: conv_m365_12d1943309fb
+2025-10-05 21:53:58,670 - INFO - Immediate save: 3 records
+2025-10-05 21:53:58,670 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:53:58,670 - INFO - Batch 140 processing complete: 0/3 successful
+2025-10-05 21:53:58,670 - INFO - Batch duration: 93.83s
+2025-10-05 21:54:00,673 - INFO - Processing batch 141/192 (3 emails)...
+2025-10-05 21:54:32,602 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:55:02,351 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:55:32,758 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:55:32,891 - INFO - Successfully saved 3 records to database
+2025-10-05 21:55:32,891 - INFO - Sample update - Thread ID: conv_m365_e4cf08025aca
+2025-10-05 21:55:32,891 - INFO - Immediate save: 3 records
+2025-10-05 21:55:32,891 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:55:32,891 - INFO - Batch 141 processing complete: 0/3 successful
+2025-10-05 21:55:32,892 - INFO - Batch duration: 92.22s
+2025-10-05 21:55:32,892 - INFO - Overall Progress: 73.6% | Batches: 141/192
+2025-10-05 21:55:32,892 - INFO - Success: 349 | Failures: 0 | Retries: 0 | DB Updates: 349
+2025-10-05 21:55:32,892 - INFO - System: CPU 10.5% | Memory 4.3%
+2025-10-05 21:55:34,894 - INFO - Processing batch 142/192 (3 emails)...
+2025-10-05 21:56:21,486 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:57:21,620 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:57:59,112 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:57:59,350 - INFO - Successfully saved 3 records to database
+2025-10-05 21:57:59,350 - INFO - Sample update - Thread ID: conv_m365_2fa43f3d48c6
+2025-10-05 21:57:59,350 - INFO - Immediate save: 3 records
+2025-10-05 21:57:59,350 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:57:59,351 - INFO - Batch 142 processing complete: 0/3 successful
+2025-10-05 21:57:59,351 - INFO - Batch duration: 144.46s
+2025-10-05 21:58:01,353 - INFO - Processing batch 143/192 (3 emails)...
+2025-10-05 21:58:41,106 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 21:59:24,681 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 21:59:49,663 - INFO - Saving batch of 3 updates to database...
+2025-10-05 21:59:49,797 - INFO - Successfully saved 3 records to database
+2025-10-05 21:59:49,797 - INFO - Sample update - Thread ID: conv_m365_6c07e04e8e74
+2025-10-05 21:59:49,797 - INFO - Immediate save: 3 records
+2025-10-05 21:59:49,797 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 21:59:49,798 - INFO - Batch 143 processing complete: 0/3 successful
+2025-10-05 21:59:49,798 - INFO - Batch duration: 108.44s
+2025-10-05 21:59:51,800 - INFO - Processing batch 144/192 (3 emails)...
+2025-10-05 22:00:19,256 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:00:51,880 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:01:22,223 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:01:22,357 - INFO - Successfully saved 3 records to database
+2025-10-05 22:01:22,357 - INFO - Sample update - Thread ID: conv_m365_b01a251c020d
+2025-10-05 22:01:22,357 - INFO - Immediate save: 3 records
+2025-10-05 22:01:22,357 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:01:22,357 - INFO - Batch 144 processing complete: 0/3 successful
+2025-10-05 22:01:22,357 - INFO - Batch duration: 90.56s
+2025-10-05 22:01:22,357 - INFO - Overall Progress: 75.1% | Batches: 144/192
+2025-10-05 22:01:22,357 - INFO - Success: 358 | Failures: 0 | Retries: 0 | DB Updates: 358
+2025-10-05 22:01:22,358 - INFO - System: CPU 10.8% | Memory 4.3%
+2025-10-05 22:01:24,360 - INFO - Processing batch 145/192 (3 emails)...
+2025-10-05 22:01:55,787 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:02:45,324 - ERROR - Task processing error for conv_m365_be632420017a: 'str' object has no attribute 'get'
+2025-10-05 22:02:45,325 - WARNING - Will retry conv_m365_be632420017a due to error (attempt 1/3)
+2025-10-05 22:02:45,325 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:03:28,652 - INFO - Thread conv_m365_e1e70bc12030: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 22:03:28,679 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:03:28,679 - INFO - Saving batch of 2 updates to database...
+2025-10-05 22:03:28,813 - INFO - Successfully saved 2 records to database
+2025-10-05 22:03:28,813 - INFO - Sample update - Thread ID: conv_m365_f2f599b9963d
+2025-10-05 22:03:28,813 - INFO - Final batch save: 2 records
+2025-10-05 22:03:28,813 - INFO - Batch 145 processing complete: 2/3 successful
+2025-10-05 22:03:28,813 - INFO - Batch duration: 124.32s
+2025-10-05 22:03:30,815 - INFO - Processing batch 146/192 (3 emails)...
+2025-10-05 22:03:56,128 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:04:36,840 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:05:10,356 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:05:10,491 - INFO - Successfully saved 3 records to database
+2025-10-05 22:05:10,491 - INFO - Sample update - Thread ID: conv_m365_e77491cf8e66
+2025-10-05 22:05:10,491 - INFO - Immediate save: 3 records
+2025-10-05 22:05:10,491 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:05:10,492 - INFO - Batch 146 processing complete: 0/3 successful
+2025-10-05 22:05:10,492 - INFO - Batch duration: 99.68s
+2025-10-05 22:05:12,494 - INFO - Processing batch 147/192 (3 emails)...
+2025-10-05 22:05:40,822 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:06:26,622 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:06:52,563 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:06:52,697 - INFO - Successfully saved 3 records to database
+2025-10-05 22:06:52,697 - INFO - Sample update - Thread ID: conv_m365_b12850343098
+2025-10-05 22:06:52,697 - INFO - Immediate save: 3 records
+2025-10-05 22:06:52,697 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:06:52,697 - INFO - Batch 147 processing complete: 0/3 successful
+2025-10-05 22:06:52,698 - INFO - Batch duration: 100.20s
+2025-10-05 22:06:52,698 - INFO - Overall Progress: 76.7% | Batches: 147/192
+2025-10-05 22:06:52,698 - INFO - Success: 366 | Failures: 0 | Retries: 0 | DB Updates: 366
+2025-10-05 22:06:52,698 - INFO - System: CPU 10.7% | Memory 4.3%
+2025-10-05 22:06:54,700 - INFO - Processing batch 148/192 (3 emails)...
+2025-10-05 22:07:25,787 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:07:50,645 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:08:33,989 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:08:34,123 - INFO - Successfully saved 3 records to database
+2025-10-05 22:08:34,123 - INFO - Sample update - Thread ID: conv_m365_7c0dbf46ad6f
+2025-10-05 22:08:34,123 - INFO - Immediate save: 3 records
+2025-10-05 22:08:34,123 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:08:34,123 - INFO - Batch 148 processing complete: 0/3 successful
+2025-10-05 22:08:34,124 - INFO - Batch duration: 99.42s
+2025-10-05 22:08:36,126 - INFO - Processing batch 149/192 (3 emails)...
+2025-10-05 22:09:03,534 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:09:38,194 - INFO - Thread conv_m365_4054b60a3c35: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 22:09:38,194 - ERROR - Task processing error for conv_m365_4054b60a3c35: 'str' object has no attribute 'get'
+2025-10-05 22:09:38,194 - WARNING - Will retry conv_m365_4054b60a3c35 due to error (attempt 1/3)
+2025-10-05 22:09:38,194 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:10:27,007 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:10:27,007 - INFO - Saving batch of 2 updates to database...
+2025-10-05 22:10:27,143 - INFO - Successfully saved 2 records to database
+2025-10-05 22:10:27,143 - INFO - Sample update - Thread ID: conv_m365_7d40586c46c9
+2025-10-05 22:10:27,143 - INFO - Final batch save: 2 records
+2025-10-05 22:10:27,143 - INFO - Batch 149 processing complete: 2/3 successful
+2025-10-05 22:10:27,143 - INFO - Batch duration: 110.88s
+2025-10-05 22:10:29,145 - INFO - Processing batch 150/192 (3 emails)...
+2025-10-05 22:11:01,587 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:11:27,773 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:11:54,383 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:11:54,518 - INFO - Successfully saved 3 records to database
+2025-10-05 22:11:54,518 - INFO - Sample update - Thread ID: conv_m365_517ecda58a4d
+2025-10-05 22:11:54,518 - INFO - Immediate save: 3 records
+2025-10-05 22:11:54,518 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:11:54,518 - INFO - Batch 150 processing complete: 0/3 successful
+2025-10-05 22:11:54,518 - INFO - Batch duration: 85.37s
+2025-10-05 22:11:54,518 - INFO - Overall Progress: 78.3% | Batches: 150/192
+2025-10-05 22:11:54,518 - INFO - Success: 374 | Failures: 0 | Retries: 0 | DB Updates: 374
+2025-10-05 22:11:54,519 - INFO - System: CPU 10.8% | Memory 4.3%
+2025-10-05 22:11:56,521 - INFO - Processing batch 151/192 (3 emails)...
+2025-10-05 22:12:25,023 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:12:53,334 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:13:24,790 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:13:24,925 - INFO - Successfully saved 3 records to database
+2025-10-05 22:13:24,926 - INFO - Sample update - Thread ID: conv_m365_efc5b2ae419e
+2025-10-05 22:13:24,926 - INFO - Immediate save: 3 records
+2025-10-05 22:13:24,926 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:13:24,926 - INFO - Batch 151 processing complete: 0/3 successful
+2025-10-05 22:13:24,926 - INFO - Batch duration: 88.40s
+2025-10-05 22:13:26,928 - INFO - Processing batch 152/192 (3 emails)...
+2025-10-05 22:13:48,953 - INFO - Thread conv_m365_14d5b775fe05: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 22:13:48,981 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:14:23,529 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:14:59,616 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:14:59,753 - INFO - Successfully saved 3 records to database
+2025-10-05 22:14:59,753 - INFO - Sample update - Thread ID: conv_m365_14d5b775fe05
+2025-10-05 22:14:59,753 - INFO - Immediate save: 3 records
+2025-10-05 22:14:59,753 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:14:59,754 - INFO - Batch 152 processing complete: 0/3 successful
+2025-10-05 22:14:59,754 - INFO - Batch duration: 92.83s
+2025-10-05 22:15:01,756 - INFO - Processing batch 153/192 (3 emails)...
+2025-10-05 22:15:54,757 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:16:25,305 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:16:57,899 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:16:58,139 - INFO - Successfully saved 3 records to database
+2025-10-05 22:16:58,139 - INFO - Sample update - Thread ID: conv_m365_0e2de4c6ddfa
+2025-10-05 22:16:58,139 - INFO - Immediate save: 3 records
+2025-10-05 22:16:58,139 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:16:58,140 - INFO - Batch 153 processing complete: 0/3 successful
+2025-10-05 22:16:58,140 - INFO - Batch duration: 116.38s
+2025-10-05 22:16:58,140 - INFO - Overall Progress: 79.8% | Batches: 153/192
+2025-10-05 22:16:58,140 - INFO - Success: 383 | Failures: 0 | Retries: 0 | DB Updates: 383
+2025-10-05 22:16:58,140 - INFO - System: CPU 10.8% | Memory 4.3%
+2025-10-05 22:17:00,143 - INFO - Processing batch 154/192 (3 emails)...
+2025-10-05 22:17:30,370 - INFO - Thread conv_m365_97456dbbad30: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 22:17:30,399 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:18:26,593 - ERROR - Task processing error for conv_m365_5da0ad18425d: string indices must be integers
+2025-10-05 22:18:26,593 - WARNING - Will retry conv_m365_5da0ad18425d due to error (attempt 1/3)
+2025-10-05 22:18:26,593 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:18:52,276 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:18:52,277 - INFO - Saving batch of 2 updates to database...
+2025-10-05 22:18:52,429 - INFO - Successfully saved 2 records to database
+2025-10-05 22:18:52,430 - INFO - Sample update - Thread ID: conv_m365_97456dbbad30
+2025-10-05 22:18:52,430 - INFO - Final batch save: 2 records
+2025-10-05 22:18:52,430 - INFO - Batch 154 processing complete: 2/3 successful
+2025-10-05 22:18:52,430 - INFO - Batch duration: 112.13s
+2025-10-05 22:18:54,432 - INFO - Processing batch 155/192 (3 emails)...
+2025-10-05 22:19:19,549 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:19:47,607 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:20:16,976 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:20:17,112 - INFO - Successfully saved 3 records to database
+2025-10-05 22:20:17,112 - INFO - Sample update - Thread ID: conv_m365_6d8f2669b71e
+2025-10-05 22:20:17,112 - INFO - Immediate save: 3 records
+2025-10-05 22:20:17,113 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:20:17,113 - INFO - Batch 155 processing complete: 0/3 successful
+2025-10-05 22:20:17,113 - INFO - Batch duration: 82.68s
+2025-10-05 22:20:19,115 - INFO - Processing batch 156/192 (3 emails)...
+2025-10-05 22:21:06,631 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:21:35,594 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:22:10,275 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:22:10,411 - INFO - Successfully saved 3 records to database
+2025-10-05 22:22:10,411 - INFO - Sample update - Thread ID: conv_m365_bd7d57e0c0b2
+2025-10-05 22:22:10,411 - INFO - Immediate save: 3 records
+2025-10-05 22:22:10,411 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:22:10,411 - INFO - Batch 156 processing complete: 0/3 successful
+2025-10-05 22:22:10,411 - INFO - Batch duration: 111.30s
+2025-10-05 22:22:10,411 - INFO - Overall Progress: 81.4% | Batches: 156/192
+2025-10-05 22:22:10,411 - INFO - Success: 391 | Failures: 0 | Retries: 0 | DB Updates: 391
+2025-10-05 22:22:10,412 - INFO - System: CPU 11.1% | Memory 4.3%
+2025-10-05 22:22:12,414 - INFO - Processing batch 157/192 (3 emails)...
+2025-10-05 22:22:43,083 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:23:18,399 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:23:57,068 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:23:57,206 - INFO - Successfully saved 3 records to database
+2025-10-05 22:23:57,206 - INFO - Sample update - Thread ID: conv_m365_6039572aea0e
+2025-10-05 22:23:57,206 - INFO - Immediate save: 3 records
+2025-10-05 22:23:57,206 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:23:57,207 - INFO - Batch 157 processing complete: 0/3 successful
+2025-10-05 22:23:57,207 - INFO - Batch duration: 104.79s
+2025-10-05 22:23:59,209 - INFO - Processing batch 158/192 (3 emails)...
+2025-10-05 22:24:25,074 - INFO - Thread conv_m365_5d3d92a63125: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 22:24:25,103 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:25:03,103 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:25:44,928 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:25:45,064 - INFO - Successfully saved 3 records to database
+2025-10-05 22:25:45,065 - INFO - Sample update - Thread ID: conv_m365_5d3d92a63125
+2025-10-05 22:25:45,065 - INFO - Immediate save: 3 records
+2025-10-05 22:25:45,065 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:25:45,065 - INFO - Batch 158 processing complete: 0/3 successful
+2025-10-05 22:25:45,065 - INFO - Batch duration: 105.86s
+2025-10-05 22:25:47,068 - INFO - Processing batch 159/192 (3 emails)...
+2025-10-05 22:26:12,818 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:26:43,297 - INFO - Thread conv_m365_9b535049eb10: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 22:26:43,325 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:27:17,852 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:27:17,988 - INFO - Successfully saved 3 records to database
+2025-10-05 22:27:17,988 - INFO - Sample update - Thread ID: conv_m365_2410992a632d
+2025-10-05 22:27:17,988 - INFO - Immediate save: 3 records
+2025-10-05 22:27:17,988 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:27:17,988 - INFO - Batch 159 processing complete: 0/3 successful
+2025-10-05 22:27:17,988 - INFO - Batch duration: 90.92s
+2025-10-05 22:27:17,988 - INFO - Overall Progress: 83.0% | Batches: 159/192
+2025-10-05 22:27:17,988 - INFO - Success: 400 | Failures: 0 | Retries: 0 | DB Updates: 400
+2025-10-05 22:27:17,989 - INFO - System: CPU 10.8% | Memory 4.3%
+2025-10-05 22:27:19,991 - INFO - Processing batch 160/192 (3 emails)...
+2025-10-05 22:28:06,315 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:28:28,411 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:29:05,302 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:29:05,439 - INFO - Successfully saved 3 records to database
+2025-10-05 22:29:05,439 - INFO - Sample update - Thread ID: conv_m365_7f9d6773a98c
+2025-10-05 22:29:05,439 - INFO - Immediate save: 3 records
+2025-10-05 22:29:05,439 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:29:05,440 - INFO - Batch 160 processing complete: 0/3 successful
+2025-10-05 22:29:05,440 - INFO - Batch duration: 105.45s
+2025-10-05 22:29:07,442 - INFO - Processing batch 161/192 (3 emails)...
+2025-10-05 22:29:55,544 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:30:44,803 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:31:11,552 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:31:11,793 - INFO - Successfully saved 3 records to database
+2025-10-05 22:31:11,793 - INFO - Sample update - Thread ID: conv_m365_15cbb8d4121e
+2025-10-05 22:31:11,793 - INFO - Immediate save: 3 records
+2025-10-05 22:31:11,793 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:31:11,793 - INFO - Batch 161 processing complete: 0/3 successful
+2025-10-05 22:31:11,794 - INFO - Batch duration: 124.35s
+2025-10-05 22:31:13,796 - INFO - Processing batch 162/192 (3 emails)...
+2025-10-05 22:31:42,611 - INFO - Thread conv_m365_a63f8f4dc730: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 22:31:42,641 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:32:17,978 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:32:53,663 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:32:53,799 - INFO - Successfully saved 3 records to database
+2025-10-05 22:32:53,799 - INFO - Sample update - Thread ID: conv_m365_a63f8f4dc730
+2025-10-05 22:32:53,799 - INFO - Immediate save: 3 records
+2025-10-05 22:32:53,799 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:32:53,800 - INFO - Batch 162 processing complete: 0/3 successful
+2025-10-05 22:32:53,800 - INFO - Batch duration: 100.00s
+2025-10-05 22:32:53,800 - INFO - Overall Progress: 84.5% | Batches: 162/192
+2025-10-05 22:32:53,800 - INFO - Success: 409 | Failures: 0 | Retries: 0 | DB Updates: 409
+2025-10-05 22:32:53,800 - INFO - System: CPU 10.7% | Memory 4.3%
+2025-10-05 22:32:55,802 - INFO - Processing batch 163/192 (3 emails)...
+2025-10-05 22:33:32,365 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:34:01,073 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:34:42,258 - INFO - Thread conv_m365_f71330a99a10: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 22:34:42,288 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:34:42,423 - INFO - Successfully saved 3 records to database
+2025-10-05 22:34:42,423 - INFO - Sample update - Thread ID: conv_m365_28caa01e91dc
+2025-10-05 22:34:42,423 - INFO - Immediate save: 3 records
+2025-10-05 22:34:42,423 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:34:42,424 - INFO - Batch 163 processing complete: 0/3 successful
+2025-10-05 22:34:42,424 - INFO - Batch duration: 106.62s
+2025-10-05 22:34:44,426 - INFO - Processing batch 164/192 (3 emails)...
+2025-10-05 22:35:14,928 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:35:42,279 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:36:28,827 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:36:28,963 - INFO - Successfully saved 3 records to database
+2025-10-05 22:36:28,963 - INFO - Sample update - Thread ID: conv_m365_0eeb7c81c52f
+2025-10-05 22:36:28,963 - INFO - Immediate save: 3 records
+2025-10-05 22:36:28,963 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:36:28,963 - INFO - Batch 164 processing complete: 0/3 successful
+2025-10-05 22:36:28,963 - INFO - Batch duration: 104.54s
+2025-10-05 22:36:30,965 - INFO - Processing batch 165/192 (3 emails)...
+2025-10-05 22:37:15,512 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:38:01,817 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:38:53,193 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:38:53,434 - INFO - Successfully saved 3 records to database
+2025-10-05 22:38:53,434 - INFO - Sample update - Thread ID: conv_m365_965b5850df22
+2025-10-05 22:38:53,434 - INFO - Immediate save: 3 records
+2025-10-05 22:38:53,435 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:38:53,435 - INFO - Batch 165 processing complete: 0/3 successful
+2025-10-05 22:38:53,435 - INFO - Batch duration: 142.47s
+2025-10-05 22:38:53,435 - INFO - Overall Progress: 86.1% | Batches: 165/192
+2025-10-05 22:38:53,435 - INFO - Success: 418 | Failures: 0 | Retries: 0 | DB Updates: 418
+2025-10-05 22:38:53,435 - INFO - System: CPU 10.8% | Memory 4.2%
+2025-10-05 22:38:55,438 - INFO - Processing batch 166/192 (3 emails)...
+2025-10-05 22:39:24,542 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:40:13,468 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:40:44,483 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:40:44,621 - INFO - Successfully saved 3 records to database
+2025-10-05 22:40:44,621 - INFO - Sample update - Thread ID: conv_m365_cb6e3079e7ed
+2025-10-05 22:40:44,621 - INFO - Immediate save: 3 records
+2025-10-05 22:40:44,621 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:40:44,621 - INFO - Batch 166 processing complete: 0/3 successful
+2025-10-05 22:40:44,621 - INFO - Batch duration: 109.18s
+2025-10-05 22:40:46,624 - INFO - Processing batch 167/192 (3 emails)...
+2025-10-05 22:41:17,933 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:42:07,319 - INFO - Thread conv_m365_3b30f4b106f5: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 22:42:07,369 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:42:30,804 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:42:30,943 - INFO - Successfully saved 3 records to database
+2025-10-05 22:42:30,943 - INFO - Sample update - Thread ID: conv_m365_bfab2741cb02
+2025-10-05 22:42:30,943 - INFO - Immediate save: 3 records
+2025-10-05 22:42:30,943 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:42:30,944 - INFO - Batch 167 processing complete: 0/3 successful
+2025-10-05 22:42:30,944 - INFO - Batch duration: 104.32s
+2025-10-05 22:42:32,946 - INFO - Processing batch 168/192 (3 emails)...
+2025-10-05 22:42:57,680 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:43:25,925 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:43:51,417 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:43:51,556 - INFO - Successfully saved 3 records to database
+2025-10-05 22:43:51,556 - INFO - Sample update - Thread ID: conv_m365_e280711aa574
+2025-10-05 22:43:51,556 - INFO - Immediate save: 3 records
+2025-10-05 22:43:51,556 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:43:51,557 - INFO - Batch 168 processing complete: 0/3 successful
+2025-10-05 22:43:51,557 - INFO - Batch duration: 78.61s
+2025-10-05 22:43:51,557 - INFO - Overall Progress: 87.7% | Batches: 168/192
+2025-10-05 22:43:51,557 - INFO - Success: 427 | Failures: 0 | Retries: 0 | DB Updates: 427
+2025-10-05 22:43:51,557 - INFO - System: CPU 10.7% | Memory 4.3%
+2025-10-05 22:43:53,559 - INFO - Processing batch 169/192 (3 emails)...
+2025-10-05 22:44:42,069 - INFO - Thread conv_m365_dd74134c28c0: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 22:44:42,119 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:45:32,891 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:46:04,794 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:46:05,038 - INFO - Successfully saved 3 records to database
+2025-10-05 22:46:05,038 - INFO - Sample update - Thread ID: conv_m365_dd74134c28c0
+2025-10-05 22:46:05,038 - INFO - Immediate save: 3 records
+2025-10-05 22:46:05,038 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:46:05,038 - INFO - Batch 169 processing complete: 0/3 successful
+2025-10-05 22:46:05,038 - INFO - Batch duration: 131.48s
+2025-10-05 22:46:07,041 - INFO - Processing batch 170/192 (3 emails)...
+2025-10-05 22:46:49,114 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:47:28,803 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:48:11,535 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:48:11,779 - INFO - Successfully saved 3 records to database
+2025-10-05 22:48:11,779 - INFO - Sample update - Thread ID: conv_m365_8b5764a28e8b
+2025-10-05 22:48:11,779 - INFO - Immediate save: 3 records
+2025-10-05 22:48:11,779 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:48:11,780 - INFO - Batch 170 processing complete: 0/3 successful
+2025-10-05 22:48:11,780 - INFO - Batch duration: 124.74s
+2025-10-05 22:48:13,782 - INFO - Processing batch 171/192 (3 emails)...
+2025-10-05 22:48:57,370 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:49:21,922 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:50:07,460 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:50:07,599 - INFO - Successfully saved 3 records to database
+2025-10-05 22:50:07,599 - INFO - Sample update - Thread ID: conv_m365_f230b573c646
+2025-10-05 22:50:07,599 - INFO - Immediate save: 3 records
+2025-10-05 22:50:07,599 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:50:07,600 - INFO - Batch 171 processing complete: 0/3 successful
+2025-10-05 22:50:07,600 - INFO - Batch duration: 113.82s
+2025-10-05 22:50:07,600 - INFO - Overall Progress: 89.2% | Batches: 171/192
+2025-10-05 22:50:07,600 - INFO - Success: 436 | Failures: 0 | Retries: 0 | DB Updates: 436
+2025-10-05 22:50:07,600 - INFO - System: CPU 10.8% | Memory 4.3%
+2025-10-05 22:50:09,602 - INFO - Processing batch 172/192 (3 emails)...
+2025-10-05 22:50:51,471 - INFO - Thread conv_m365_625c66711a25: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 22:50:51,502 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:51:40,028 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:52:06,841 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:52:07,084 - INFO - Successfully saved 3 records to database
+2025-10-05 22:52:07,084 - INFO - Sample update - Thread ID: conv_m365_625c66711a25
+2025-10-05 22:52:07,084 - INFO - Immediate save: 3 records
+2025-10-05 22:52:07,084 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:52:07,084 - INFO - Batch 172 processing complete: 0/3 successful
+2025-10-05 22:52:07,085 - INFO - Batch duration: 117.48s
+2025-10-05 22:52:09,087 - INFO - Processing batch 173/192 (3 emails)...
+2025-10-05 22:52:43,929 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:53:24,619 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:53:53,083 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:53:53,222 - INFO - Successfully saved 3 records to database
+2025-10-05 22:53:53,223 - INFO - Sample update - Thread ID: conv_m365_c2192a754e58
+2025-10-05 22:53:53,223 - INFO - Immediate save: 3 records
+2025-10-05 22:53:53,223 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:53:53,223 - INFO - Batch 173 processing complete: 0/3 successful
+2025-10-05 22:53:53,223 - INFO - Batch duration: 104.14s
+2025-10-05 22:53:55,225 - INFO - Processing batch 174/192 (3 emails)...
+2025-10-05 22:54:23,325 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:55:05,293 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:55:44,664 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:55:44,803 - INFO - Successfully saved 3 records to database
+2025-10-05 22:55:44,803 - INFO - Sample update - Thread ID: conv_m365_c052473a8fac
+2025-10-05 22:55:44,803 - INFO - Immediate save: 3 records
+2025-10-05 22:55:44,804 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:55:44,804 - INFO - Batch 174 processing complete: 0/3 successful
+2025-10-05 22:55:44,804 - INFO - Batch duration: 109.58s
+2025-10-05 22:55:44,804 - INFO - Overall Progress: 90.8% | Batches: 174/192
+2025-10-05 22:55:44,804 - INFO - Success: 445 | Failures: 0 | Retries: 0 | DB Updates: 445
+2025-10-05 22:55:44,804 - INFO - System: CPU 10.5% | Memory 4.3%
+2025-10-05 22:55:46,807 - INFO - Processing batch 175/192 (3 emails)...
+2025-10-05 22:56:31,488 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:57:10,770 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:57:37,646 - INFO - Thread conv_m365_c870108b5db5: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 22:57:37,679 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:57:37,819 - INFO - Successfully saved 3 records to database
+2025-10-05 22:57:37,819 - INFO - Sample update - Thread ID: conv_m365_a676558b6e41
+2025-10-05 22:57:37,819 - INFO - Immediate save: 3 records
+2025-10-05 22:57:37,820 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:57:37,820 - INFO - Batch 175 processing complete: 0/3 successful
+2025-10-05 22:57:37,820 - INFO - Batch duration: 111.01s
+2025-10-05 22:57:39,822 - INFO - Processing batch 176/192 (3 emails)...
+2025-10-05 22:58:16,463 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 22:58:52,843 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 22:59:43,464 - INFO - Saving batch of 3 updates to database...
+2025-10-05 22:59:43,707 - INFO - Successfully saved 3 records to database
+2025-10-05 22:59:43,707 - INFO - Sample update - Thread ID: conv_m365_ae90f5c581d3
+2025-10-05 22:59:43,707 - INFO - Immediate save: 3 records
+2025-10-05 22:59:43,707 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 22:59:43,708 - INFO - Batch 176 processing complete: 0/3 successful
+2025-10-05 22:59:43,708 - INFO - Batch duration: 123.89s
+2025-10-05 22:59:45,710 - INFO - Processing batch 177/192 (3 emails)...
+2025-10-05 23:00:33,965 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 23:01:03,414 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 23:01:43,601 - INFO - Saving batch of 3 updates to database...
+2025-10-05 23:01:43,845 - INFO - Successfully saved 3 records to database
+2025-10-05 23:01:43,846 - INFO - Sample update - Thread ID: conv_m365_e6bbb9cb6e9f
+2025-10-05 23:01:43,846 - INFO - Immediate save: 3 records
+2025-10-05 23:01:43,846 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 23:01:43,846 - INFO - Batch 177 processing complete: 0/3 successful
+2025-10-05 23:01:43,846 - INFO - Batch duration: 118.14s
+2025-10-05 23:01:43,846 - INFO - Overall Progress: 92.3% | Batches: 177/192
+2025-10-05 23:01:43,846 - INFO - Success: 454 | Failures: 0 | Retries: 0 | DB Updates: 454
+2025-10-05 23:01:43,847 - INFO - System: CPU 10.8% | Memory 4.3%
+2025-10-05 23:01:45,849 - INFO - Processing batch 178/192 (3 emails)...
+2025-10-05 23:02:33,438 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 23:03:04,064 - INFO - Thread conv_m365_48cacc000ca0: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 23:03:04,096 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 23:03:39,958 - INFO - Saving batch of 3 updates to database...
+2025-10-05 23:03:40,203 - INFO - Successfully saved 3 records to database
+2025-10-05 23:03:40,203 - INFO - Sample update - Thread ID: conv_m365_86a4092e23a7
+2025-10-05 23:03:40,203 - INFO - Immediate save: 3 records
+2025-10-05 23:03:40,203 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 23:03:40,203 - INFO - Batch 178 processing complete: 0/3 successful
+2025-10-05 23:03:40,204 - INFO - Batch duration: 114.35s
+2025-10-05 23:03:42,206 - INFO - Processing batch 179/192 (3 emails)...
+2025-10-05 23:04:09,670 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 23:04:37,936 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 23:05:24,855 - INFO - Saving batch of 3 updates to database...
+2025-10-05 23:05:24,996 - INFO - Successfully saved 3 records to database
+2025-10-05 23:05:24,997 - INFO - Sample update - Thread ID: conv_m365_def4d3acfa53
+2025-10-05 23:05:24,997 - INFO - Immediate save: 3 records
+2025-10-05 23:05:24,997 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 23:05:24,997 - INFO - Batch 179 processing complete: 0/3 successful
+2025-10-05 23:05:24,997 - INFO - Batch duration: 102.79s
+2025-10-05 23:05:26,999 - INFO - Processing batch 180/192 (3 emails)...
+2025-10-05 23:06:01,529 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 23:06:41,243 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 23:07:08,415 - INFO - Saving batch of 3 updates to database...
+2025-10-05 23:07:08,555 - INFO - Successfully saved 3 records to database
+2025-10-05 23:07:08,555 - INFO - Sample update - Thread ID: conv_m365_eacb80bf9ea1
+2025-10-05 23:07:08,555 - INFO - Immediate save: 3 records
+2025-10-05 23:07:08,555 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 23:07:08,555 - INFO - Batch 180 processing complete: 0/3 successful
+2025-10-05 23:07:08,555 - INFO - Batch duration: 101.56s
+2025-10-05 23:07:08,556 - INFO - Overall Progress: 93.9% | Batches: 180/192
+2025-10-05 23:07:08,556 - INFO - Success: 463 | Failures: 0 | Retries: 0 | DB Updates: 463
+2025-10-05 23:07:08,556 - INFO - System: CPU 10.7% | Memory 4.3%
+2025-10-05 23:07:10,558 - INFO - Processing batch 181/192 (3 emails)...
+2025-10-05 23:07:39,608 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 23:08:11,011 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 23:08:40,790 - INFO - Saving batch of 3 updates to database...
+2025-10-05 23:08:40,931 - INFO - Successfully saved 3 records to database
+2025-10-05 23:08:40,931 - INFO - Sample update - Thread ID: conv_m365_79ec927a2bb2
+2025-10-05 23:08:40,931 - INFO - Immediate save: 3 records
+2025-10-05 23:08:40,931 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 23:08:40,932 - INFO - Batch 181 processing complete: 0/3 successful
+2025-10-05 23:08:40,932 - INFO - Batch duration: 90.37s
+2025-10-05 23:08:42,934 - INFO - Processing batch 182/192 (3 emails)...
+2025-10-05 23:09:30,370 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 23:09:58,395 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 23:10:27,501 - INFO - Saving batch of 3 updates to database...
+2025-10-05 23:10:27,642 - INFO - Successfully saved 3 records to database
+2025-10-05 23:10:27,642 - INFO - Sample update - Thread ID: conv_m365_b10d0d1c22bb
+2025-10-05 23:10:27,642 - INFO - Immediate save: 3 records
+2025-10-05 23:10:27,642 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 23:10:27,643 - INFO - Batch 182 processing complete: 0/3 successful
+2025-10-05 23:10:27,643 - INFO - Batch duration: 104.71s
+2025-10-05 23:10:29,645 - INFO - Processing batch 183/192 (3 emails)...
+2025-10-05 23:11:21,974 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 23:12:02,746 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 23:12:32,253 - INFO - Saving batch of 3 updates to database...
+2025-10-05 23:12:32,500 - INFO - Successfully saved 3 records to database
+2025-10-05 23:12:32,500 - INFO - Sample update - Thread ID: conv_m365_2127e25d4893
+2025-10-05 23:12:32,500 - INFO - Immediate save: 3 records
+2025-10-05 23:12:32,500 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 23:12:32,500 - INFO - Batch 183 processing complete: 0/3 successful
+2025-10-05 23:12:32,500 - INFO - Batch duration: 122.85s
+2025-10-05 23:12:32,500 - INFO - Overall Progress: 95.5% | Batches: 183/192
+2025-10-05 23:12:32,501 - INFO - Success: 472 | Failures: 0 | Retries: 0 | DB Updates: 472
+2025-10-05 23:12:32,501 - INFO - System: CPU 10.5% | Memory 4.3%
+2025-10-05 23:12:34,503 - INFO - Processing batch 184/192 (3 emails)...
+2025-10-05 23:13:18,717 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 23:14:07,510 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 23:14:35,875 - INFO - Saving batch of 3 updates to database...
+2025-10-05 23:14:36,121 - INFO - Successfully saved 3 records to database
+2025-10-05 23:14:36,121 - INFO - Sample update - Thread ID: conv_m365_f3c5f961b0df
+2025-10-05 23:14:36,121 - INFO - Immediate save: 3 records
+2025-10-05 23:14:36,121 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 23:14:36,122 - INFO - Batch 184 processing complete: 0/3 successful
+2025-10-05 23:14:36,122 - INFO - Batch duration: 121.62s
+2025-10-05 23:14:38,124 - INFO - Processing batch 185/192 (3 emails)...
+2025-10-05 23:15:02,608 - INFO - Thread conv_m365_4791a85525d0: JSON parsing successful. Keys: ['thread_data', 'messages', 'analysis']
+2025-10-05 23:15:02,643 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 23:15:42,004 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 23:16:21,307 - INFO - Saving batch of 3 updates to database...
+2025-10-05 23:16:21,449 - INFO - Successfully saved 3 records to database
+2025-10-05 23:16:21,449 - INFO - Sample update - Thread ID: conv_m365_4791a85525d0
+2025-10-05 23:16:21,449 - INFO - Immediate save: 3 records
+2025-10-05 23:16:21,449 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 23:16:21,449 - INFO - Batch 185 processing complete: 0/3 successful
+2025-10-05 23:16:21,450 - INFO - Batch duration: 103.32s
+2025-10-05 23:16:23,452 - INFO - Processing batch 186/192 (3 emails)...
+2025-10-05 23:17:06,595 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 23:17:43,444 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 23:18:10,074 - INFO - Saving batch of 3 updates to database...
+2025-10-05 23:18:10,216 - INFO - Successfully saved 3 records to database
+2025-10-05 23:18:10,216 - INFO - Sample update - Thread ID: conv_m365_32b5e556961d
+2025-10-05 23:18:10,216 - INFO - Immediate save: 3 records
+2025-10-05 23:18:10,216 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 23:18:10,217 - INFO - Batch 186 processing complete: 0/3 successful
+2025-10-05 23:18:10,217 - INFO - Batch duration: 106.76s
+2025-10-05 23:18:10,217 - INFO - Overall Progress: 97.0% | Batches: 186/192
+2025-10-05 23:18:10,217 - INFO - Success: 481 | Failures: 0 | Retries: 0 | DB Updates: 481
+2025-10-05 23:18:10,217 - INFO - System: CPU 11.0% | Memory 4.3%
+2025-10-05 23:18:12,219 - INFO - Processing batch 187/192 (3 emails)...
+2025-10-05 23:19:01,194 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 23:19:28,204 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 23:19:53,033 - INFO - Saving batch of 3 updates to database...
+2025-10-05 23:19:53,175 - INFO - Successfully saved 3 records to database
+2025-10-05 23:19:53,175 - INFO - Sample update - Thread ID: conv_m365_82d0ce265e54
+2025-10-05 23:19:53,175 - INFO - Immediate save: 3 records
+2025-10-05 23:19:53,175 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 23:19:53,175 - INFO - Batch 187 processing complete: 0/3 successful
+2025-10-05 23:19:53,176 - INFO - Batch duration: 100.96s
+2025-10-05 23:19:55,178 - INFO - Processing batch 188/192 (3 emails)...
+2025-10-05 23:20:25,935 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 23:21:07,875 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 23:22:01,342 - INFO - Saving batch of 3 updates to database...
+2025-10-05 23:22:01,588 - INFO - Successfully saved 3 records to database
+2025-10-05 23:22:01,589 - INFO - Sample update - Thread ID: conv_m365_781465cf9179
+2025-10-05 23:22:01,589 - INFO - Immediate save: 3 records
+2025-10-05 23:22:01,589 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 23:22:01,589 - INFO - Batch 188 processing complete: 0/3 successful
+2025-10-05 23:22:01,589 - INFO - Batch duration: 126.41s
+2025-10-05 23:22:03,591 - INFO - Processing batch 189/192 (3 emails)...
+2025-10-05 23:22:44,895 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 23:23:13,509 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 23:23:38,696 - INFO - Saving batch of 3 updates to database...
+2025-10-05 23:23:38,838 - INFO - Successfully saved 3 records to database
+2025-10-05 23:23:38,838 - INFO - Sample update - Thread ID: conv_m365_4373d6673ec7
+2025-10-05 23:23:38,838 - INFO - Immediate save: 3 records
+2025-10-05 23:23:38,838 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 23:23:38,838 - INFO - Batch 189 processing complete: 0/3 successful
+2025-10-05 23:23:38,839 - INFO - Batch duration: 95.25s
+2025-10-05 23:23:38,839 - INFO - Overall Progress: 98.6% | Batches: 189/192
+2025-10-05 23:23:38,839 - INFO - Success: 490 | Failures: 0 | Retries: 0 | DB Updates: 490
+2025-10-05 23:23:38,839 - INFO - System: CPU 10.5% | Memory 4.3%
+2025-10-05 23:23:40,841 - INFO - Processing batch 190/192 (3 emails)...
+2025-10-05 23:24:14,342 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 23:24:49,737 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 23:25:15,556 - INFO - Saving batch of 3 updates to database...
+2025-10-05 23:25:15,698 - INFO - Successfully saved 3 records to database
+2025-10-05 23:25:15,699 - INFO - Sample update - Thread ID: conv_m365_67cd2f8edb1d
+2025-10-05 23:25:15,699 - INFO - Immediate save: 3 records
+2025-10-05 23:25:15,699 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 23:25:15,699 - INFO - Batch 190 processing complete: 0/3 successful
+2025-10-05 23:25:15,699 - INFO - Batch duration: 94.86s
+2025-10-05 23:25:17,701 - INFO - Processing batch 191/192 (3 emails)...
+2025-10-05 23:25:49,749 - INFO - Task completed: 33.3% (1/3)
+2025-10-05 23:26:15,641 - INFO - Task completed: 66.7% (2/3)
+2025-10-05 23:26:44,461 - INFO - Saving batch of 3 updates to database...
+2025-10-05 23:26:44,604 - INFO - Successfully saved 3 records to database
+2025-10-05 23:26:44,604 - INFO - Sample update - Thread ID: conv_m365_0cce5478952a
+2025-10-05 23:26:44,604 - INFO - Immediate save: 3 records
+2025-10-05 23:26:44,604 - INFO - Task completed: 100.0% (3/3)
+2025-10-05 23:26:44,605 - INFO - Batch 191 processing complete: 0/3 successful
+2025-10-05 23:26:44,605 - INFO - Batch duration: 86.90s
+2025-10-05 23:26:46,607 - INFO - Processing batch 192/192 (2 emails)...
+2025-10-05 23:27:28,668 - INFO - Task completed: 50.0% (1/2)
+2025-10-05 23:27:57,329 - INFO - Task completed: 100.0% (2/2)
+2025-10-05 23:27:57,329 - INFO - Saving batch of 2 updates to database...
+2025-10-05 23:27:57,472 - INFO - Successfully saved 2 records to database
+2025-10-05 23:27:57,472 - INFO - Sample update - Thread ID: conv_m365_d2b0163c694f
+2025-10-05 23:27:57,472 - INFO - Final batch save: 2 records
+2025-10-05 23:27:57,472 - INFO - Batch 192 processing complete: 2/2 successful
+2025-10-05 23:27:57,472 - INFO - Batch duration: 70.72s
+2025-10-05 23:27:57,472 - INFO - Overall Progress: 100.2% | Batches: 192/192
+2025-10-05 23:27:57,473 - INFO - Success: 498 | Failures: 0 | Retries: 0 | DB Updates: 498
+2025-10-05 23:27:57,473 - INFO - System: CPU 10.8% | Memory 4.3%
+2025-10-05 23:27:57,473 - INFO - EU Banking email content generation complete!
+2025-10-05 23:27:57,473 - INFO - Total emails updated: 498
+2025-10-05 23:27:57,473 - INFO - Successful generations: 498
+2025-10-05 23:27:57,473 - INFO - Failed generations: 0
+2025-10-05 23:27:57,473 - INFO - Retry attempts: 0
+2025-10-05 23:27:57,473 - INFO - Data updated in MongoDB: sparzaai.email_new
+2025-10-05 23:27:57,858 - INFO - Collection Statistics:
+2025-10-05 23:27:57,858 - INFO - Total emails: 2004
+2025-10-05 23:27:57,858 - INFO - With analysis fields: 1392
+2025-10-05 23:27:57,858 - INFO - Without analysis fields: 612
+2025-10-05 23:27:57,858 - INFO - Top Dominant Topics:
+2025-10-05 23:27:57,858 - INFO - 1. Risk Management Alert: 31 emails
+2025-10-05 23:27:57,858 - INFO - 2. User Access Approval: 30 emails
+2025-10-05 23:27:57,858 - INFO - 3. Quality Assurance Breach: 28 emails
+2025-10-05 23:27:57,858 - INFO - 4. IT Marketing Unresolved: 27 emails
+2025-10-05 23:27:57,858 - INFO - 5. IT Access Problem: 26 emails
+2025-10-05 23:27:57,859 - INFO - 6. Salary Leave Issues: 23 emails
+2025-10-05 23:27:57,859 - INFO - 7. Process Exception: 22 emails
+2025-10-05 23:27:57,859 - INFO - 8. Legal Escalation: 22 emails
+2025-10-05 23:27:57,859 - INFO - 9. Performance Management: 22 emails
+2025-10-05 23:27:57,859 - INFO - 10. Vendor Management: 22 emails
+2025-10-05 23:27:57,967 - INFO - Sample Generated Email Content:
+2025-10-05 23:27:57,967 - INFO - --- Sample Email 1 ---
+2025-10-05 23:27:57,968 - INFO - Thread ID: conv_m365_b95922d34b8a
+2025-10-05 23:27:57,968 - INFO - Subject: Account Activity Review - DE89 3704 0044 0532 0130 00
+2025-10-05 23:27:57,968 - INFO - Dominant Topic: Internal Audit
+2025-10-05 23:27:57,968 - INFO - Email Summary: This email details a flagged transaction of €1,250.00 (TXN-2025-001234567) on account DE89 3704 0044 0532 0130 00 during a routine internal audit. The transaction, while appearing legitimate, deviates...
+2025-10-05 23:27:57,968 - INFO - Urgent: False
+2025-10-05 23:27:57,968 - INFO - --- Sample Email 2 ---
+2025-10-05 23:27:57,968 - INFO - Thread ID: conv_m365_b1014ac35f75
+2025-10-05 23:27:57,968 - INFO - Subject: Account Activity - International Payment Inquiry
+2025-10-05 23:27:57,968 - INFO - Dominant Topic: Cross-Border Transfer Problem
+2025-10-05 23:27:57,968 - INFO - Email Summary: James Davidson is expressing strong dissatisfaction regarding a delayed international transfer of €1,250.00 (TXN-2025-001234567). Funds have been debited from his account (DE89 3704 0044 0532 0130 00)...
+2025-10-05 23:27:57,968 - INFO - Urgent: False
+2025-10-05 23:27:57,968 - INFO - --- Sample Email 3 ---
+2025-10-05 23:27:57,968 - INFO - Thread ID: conv_m365_30d11d7521a5
+2025-10-05 23:27:57,968 - INFO - Subject: Urgent: Notification Regarding Account DE89 3704 0044 0532 0130 00 - Transaction Review
+2025-10-05 23:27:57,968 - INFO - Dominant Topic: Covenant Breach Alert
+2025-10-05 23:27:57,968 - INFO - Email Summary: This email serves as a notification of a potential covenant breach on account DE89 3704 0044 0532 0130 00 due to a €1,250.00 transaction (TXN-2025-001234567). The bank is requesting clarification from...
+2025-10-05 23:27:57,968 - INFO - Urgent: True
+2025-10-05 23:27:58,109 - INFO - Database connection closed
+2025-10-05 23:27:58,109 - INFO - Session complete. Check log files for detailed information:
+2025-10-05 23:27:58,109 - INFO - Main Log: logs/email_generator_ollama_20251005_170306.log
+2025-10-05 23:27:58,109 - INFO - Success Log: logs/successful_generations_20251005_170306.log
+2025-10-05 23:27:58,109 - INFO - Failure Log: logs/failed_generations_20251005_170306.log
+2025-10-05 23:27:58,109 - INFO - Progress Log: logs/progress_20251005_170306.log
+2025-10-05 23:27:58,109 - INFO - Intermediate Results: logs/intermediate_results_20251005_170306.json
+2025-10-05 23:27:58,110 - INFO - Database connection closed

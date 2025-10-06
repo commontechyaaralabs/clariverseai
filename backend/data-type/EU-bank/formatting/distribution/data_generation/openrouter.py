@@ -675,7 +675,11 @@ async def generate_email_content(email_data):
         # Clean up any subject lines and headers that might appear in body content
         if 'messages' in result:
             for message in result['messages']:
-                if 'body' in message and 'text' in message['body'] and 'plain' in message['body']['text']:
+                # Validate message structure before accessing nested elements
+                if (isinstance(message, dict) and 
+                    'body' in message and isinstance(message['body'], dict) and 
+                    'text' in message['body'] and isinstance(message['body']['text'], dict) and 
+                    'plain' in message['body']['text']):
                     body_content = message['body']['text']['plain']
                     
                     # Check for various subject line and header patterns and remove them
@@ -699,7 +703,11 @@ async def generate_email_content(email_data):
                             
                             cleaned_body = '\n'.join(cleaned_lines)
                     
-                    message['body']['text']['plain'] = cleaned_body
+                    # Safely access nested message structure
+                    if isinstance(message.get('body'), dict) and isinstance(message['body'].get('text'), dict):
+                        message['body']['text']['plain'] = cleaned_body
+                    else:
+                        logger.error(f"Thread {thread_id}: Invalid message structure - body or text is not a dict")
         
         generation_time = time.time() - start_time
         
@@ -767,27 +775,46 @@ async def _process_single_email_internal(email_record, total_emails=None):
         # Update thread data
         if 'thread_data' in email_content:
             thread_data = email_content['thread_data']
-            update_doc['thread.subject_norm'] = thread_data.get('subject_norm')
-            update_doc['thread.first_message_at'] = thread_data.get('first_message_at')
-            update_doc['thread.last_message_at'] = thread_data.get('last_message_at')
+            if not isinstance(thread_data, dict):
+                logger.error(f"Thread {thread_id}: thread_data is not a dict, got {type(thread_data)}: {str(thread_data)[:100]}...")
+            else:
+                update_doc['thread.subject_norm'] = thread_data.get('subject_norm')
+                update_doc['thread.first_message_at'] = thread_data.get('first_message_at')
+                update_doc['thread.last_message_at'] = thread_data.get('last_message_at')
         
         # Update messages with generated content
         if 'messages' in email_content:
             messages = email_content['messages']
-            for i, message in enumerate(messages):
-                if i < len(email_record.get('messages', [])):
-                    update_doc[f'messages.{i}.headers.date'] = message.get('headers', {}).get('date')
-                    update_doc[f'messages.{i}.headers.subject'] = message.get('headers', {}).get('subject')
-                    update_doc[f'messages.{i}.body.text.plain'] = message.get('body', {}).get('text', {}).get('plain')
+            if not isinstance(messages, list):
+                logger.error(f"Thread {thread_id}: messages is not a list, got {type(messages)}: {str(messages)[:100]}...")
+            else:
+                for i, message in enumerate(messages):
+                    if i < len(email_record.get('messages', [])):
+                        # Validate message is a dictionary, not a string
+                        if not isinstance(message, dict):
+                            logger.error(f"Thread {thread_id}: Message {i} is not a dict, got {type(message)}: {str(message)[:100]}...")
+                            continue
+                        
+                        # Safely access nested message structure
+                        headers = message.get('headers', {})
+                        body = message.get('body', {})
+                        text = body.get('text', {}) if isinstance(body, dict) else {}
+                        
+                        update_doc[f'messages.{i}.headers.date'] = headers.get('date') if isinstance(headers, dict) else None
+                        update_doc[f'messages.{i}.headers.subject'] = headers.get('subject') if isinstance(headers, dict) else None
+                        update_doc[f'messages.{i}.body.text.plain'] = text.get('plain') if isinstance(text, dict) else None
         
         # Update analysis fields from LLM response - only new fields, preserve existing metadata
         if 'analysis' in email_content:
             analysis = email_content['analysis']
-            # Only update LLM-generated fields - do NOT overwrite existing metadata fields
-            update_doc['email_summary'] = analysis.get('email_summary')
-            update_doc['follow_up_date'] = analysis.get('follow_up_date')
-            update_doc['follow_up_reason'] = analysis.get('follow_up_reason')
-            update_doc['next_action_suggestion'] = analysis.get('next_action_suggestion')
+            if not isinstance(analysis, dict):
+                logger.error(f"Thread {thread_id}: analysis is not a dict, got {type(analysis)}: {str(analysis)[:100]}...")
+            else:
+                # Only update LLM-generated fields - do NOT overwrite existing metadata fields
+                update_doc['email_summary'] = analysis.get('email_summary')
+                update_doc['follow_up_date'] = analysis.get('follow_up_date')
+                update_doc['follow_up_reason'] = analysis.get('follow_up_reason')
+                update_doc['next_action_suggestion'] = analysis.get('next_action_suggestion')
         
         # Add LLM processing tracking
         update_doc['llm_processed'] = True

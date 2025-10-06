@@ -1,0 +1,117 @@
+nohup: ignoring input
+2025-10-06 05:50:51,250 - INFO - EU Banking Email Content Generator Starting...
+2025-10-06 05:50:51,250 - INFO - Database: sparzaai
+2025-10-06 05:50:51,250 - INFO - Collection: email_new
+2025-10-06 05:50:51,250 - INFO - Model: gemma3:27b
+2025-10-06 05:50:51,250 - INFO - Ollama URL: http://34.147.17.26:16637/api/chat
+2025-10-06 05:50:51,250 - INFO - Max Workers: 12
+2025-10-06 05:50:51,251 - INFO - Batch Size: 3
+2025-10-06 05:50:51,251 - INFO - Log Directory: logs
+2025-10-06 05:50:52,638 - INFO - Database connection established and indexes created
+2025-10-06 05:50:52,972 - INFO - Collection Statistics:
+2025-10-06 05:50:52,972 - INFO - Total emails: 2004
+2025-10-06 05:50:52,972 - INFO - With analysis fields: 1461
+2025-10-06 05:50:52,972 - INFO - Without analysis fields: 543
+2025-10-06 05:50:52,972 - INFO - Top Dominant Topics:
+2025-10-06 05:50:52,972 - INFO - 1. Risk Management Alert: 31 emails
+2025-10-06 05:50:52,972 - INFO - 2. User Access Approval: 30 emails
+2025-10-06 05:50:52,972 - INFO - 3. Quality Assurance Breach: 28 emails
+2025-10-06 05:50:52,972 - INFO - 4. IT Marketing Unresolved: 27 emails
+2025-10-06 05:50:52,972 - INFO - 5. IT Access Problem: 26 emails
+2025-10-06 05:50:52,972 - INFO - 6. Salary Leave Issues: 23 emails
+2025-10-06 05:50:52,972 - INFO - 7. Legal Escalation: 22 emails
+2025-10-06 05:50:52,972 - INFO - 8. Process Exception: 22 emails
+2025-10-06 05:50:52,972 - INFO - 9. Performance Management: 22 emails
+2025-10-06 05:50:52,972 - INFO - 10. Vendor Management: 22 emails
+2025-10-06 05:50:52,973 - INFO - No pending intermediate results to recover
+2025-10-06 05:50:52,973 - INFO - Starting EU Banking Email Content Generation...
+2025-10-06 05:50:52,973 - INFO - System Info: 12 CPU cores detected
+2025-10-06 05:50:52,973 - INFO - Batch size: 3
+2025-10-06 05:50:52,973 - INFO - Max workers: 12
+2025-10-06 05:50:52,973 - INFO - Request timeout: 300s
+2025-10-06 05:50:52,973 - INFO - Max retries per request: 5
+2025-10-06 05:50:52,973 - INFO - Testing connection to Ollama: http://34.147.17.26:16637/api/chat
+2025-10-06 05:50:52,973 - INFO - Testing simple generation...
+2025-10-06 05:51:02,814 - INFO - Generation test status: 200
+2025-10-06 05:51:02,814 - INFO - Ollama connection test successful
+2025-10-06 05:51:02,814 - INFO - Test response: ```json
+{
+  "test": "success"
+}
+```
+...
+2025-10-06 05:51:02,815 - INFO - Fetching email records from database...
+2025-10-06 05:51:03,033 - INFO - Found 6 emails needing content generation
+2025-10-06 05:51:03,033 - INFO - Processing in 2 batches of 3 emails each
+2025-10-06 05:51:03,033 - INFO - Using 12 workers for parallel processing
+2025-10-06 05:51:03,033 - INFO - Processing batch 1/2 (3 emails)...
+2025-10-06 05:51:55,531 - INFO - Task completed: 33.3% (1/3)
+2025-10-06 05:52:41,065 - INFO - Task completed: 66.7% (2/3)
+2025-10-06 05:53:21,709 - INFO - Saving batch of 3 updates to database...
+2025-10-06 05:53:21,818 - INFO - Successfully saved 3 records to database
+2025-10-06 05:53:21,818 - INFO - Sample update - Thread ID: conv_m365_6fe4bf2c81d7
+2025-10-06 05:53:21,818 - INFO - Immediate save: 3 records
+2025-10-06 05:53:21,818 - INFO - Task completed: 100.0% (3/3)
+2025-10-06 05:53:21,818 - INFO - Batch 1 processing complete: 0/3 successful
+2025-10-06 05:53:21,819 - INFO - Batch duration: 138.79s
+2025-10-06 05:53:23,821 - INFO - Processing batch 2/2 (3 emails)...
+2025-10-06 05:54:10,261 - INFO - Task completed: 33.3% (1/3)
+2025-10-06 05:55:00,586 - INFO - Task completed: 66.7% (2/3)
+2025-10-06 05:55:34,621 - INFO - Saving batch of 3 updates to database...
+2025-10-06 05:55:34,730 - INFO - Successfully saved 3 records to database
+2025-10-06 05:55:34,730 - INFO - Sample update - Thread ID: conv_m365_1385b1b08ed7
+2025-10-06 05:55:34,730 - INFO - Immediate save: 3 records
+2025-10-06 05:55:34,730 - INFO - Task completed: 100.0% (3/3)
+2025-10-06 05:55:34,730 - INFO - Batch 2 processing complete: 0/3 successful
+2025-10-06 05:55:34,730 - INFO - Batch duration: 130.91s
+2025-10-06 05:55:34,730 - INFO - Overall Progress: 100.0% | Batches: 2/2
+2025-10-06 05:55:34,730 - INFO - Success: 6 | Failures: 0 | Retries: 0 | DB Updates: 6
+2025-10-06 05:55:34,731 - INFO - System: CPU 11.4% | Memory 5.1%
+2025-10-06 05:55:34,731 - INFO - EU Banking email content generation complete!
+2025-10-06 05:55:34,731 - INFO - Total emails updated: 6
+2025-10-06 05:55:34,731 - INFO - Successful generations: 6
+2025-10-06 05:55:34,731 - INFO - Failed generations: 0
+2025-10-06 05:55:34,731 - INFO - Retry attempts: 0
+2025-10-06 05:55:34,731 - INFO - Data updated in MongoDB: sparzaai.email_new
+2025-10-06 05:55:35,062 - INFO - Collection Statistics:
+2025-10-06 05:55:35,062 - INFO - Total emails: 2004
+2025-10-06 05:55:35,062 - INFO - With analysis fields: 1467
+2025-10-06 05:55:35,063 - INFO - Without analysis fields: 537
+2025-10-06 05:55:35,063 - INFO - Top Dominant Topics:
+2025-10-06 05:55:35,063 - INFO - 1. Risk Management Alert: 31 emails
+2025-10-06 05:55:35,063 - INFO - 2. User Access Approval: 30 emails
+2025-10-06 05:55:35,063 - INFO - 3. Quality Assurance Breach: 28 emails
+2025-10-06 05:55:35,063 - INFO - 4. IT Marketing Unresolved: 27 emails
+2025-10-06 05:55:35,063 - INFO - 5. IT Access Problem: 26 emails
+2025-10-06 05:55:35,063 - INFO - 6. Salary Leave Issues: 23 emails
+2025-10-06 05:55:35,063 - INFO - 7. Performance Management: 22 emails
+2025-10-06 05:55:35,063 - INFO - 8. Vendor Management: 22 emails
+2025-10-06 05:55:35,063 - INFO - 9. Process Exception: 22 emails
+2025-10-06 05:55:35,063 - INFO - 10. Legal Escalation: 22 emails
+2025-10-06 05:55:35,171 - INFO - Sample Generated Email Content:
+2025-10-06 05:55:35,172 - INFO - --- Sample Email 1 ---
+2025-10-06 05:55:35,172 - INFO - Thread ID: conv_m365_b95922d34b8a
+2025-10-06 05:55:35,172 - INFO - Subject: Account Activity Review - DE89 3704 0044 0532 0130 00
+2025-10-06 05:55:35,172 - INFO - Dominant Topic: Internal Audit
+2025-10-06 05:55:35,172 - INFO - Email Summary: This email details a flagged transaction of €1,250.00 (TXN-2025-001234567) on account DE89 3704 0044 0532 0130 00 during a routine internal audit. The transaction, while appearing legitimate, deviates...
+2025-10-06 05:55:35,172 - INFO - Urgent: False
+2025-10-06 05:55:35,172 - INFO - --- Sample Email 2 ---
+2025-10-06 05:55:35,172 - INFO - Thread ID: conv_m365_b1014ac35f75
+2025-10-06 05:55:35,172 - INFO - Subject: Account Activity - International Payment Inquiry
+2025-10-06 05:55:35,172 - INFO - Dominant Topic: Cross-Border Transfer Problem
+2025-10-06 05:55:35,172 - INFO - Email Summary: James Davidson is expressing strong dissatisfaction regarding a delayed international transfer of €1,250.00 (TXN-2025-001234567). Funds have been debited from his account (DE89 3704 0044 0532 0130 00)...
+2025-10-06 05:55:35,172 - INFO - Urgent: False
+2025-10-06 05:55:35,172 - INFO - --- Sample Email 3 ---
+2025-10-06 05:55:35,172 - INFO - Thread ID: conv_m365_30d11d7521a5
+2025-10-06 05:55:35,173 - INFO - Subject: Urgent: Notification Regarding Account DE89 3704 0044 0532 0130 00 - Transaction Review
+2025-10-06 05:55:35,173 - INFO - Dominant Topic: Covenant Breach Alert
+2025-10-06 05:55:35,173 - INFO - Email Summary: This email serves as a notification of a potential covenant breach on account DE89 3704 0044 0532 0130 00 due to a €1,250.00 transaction (TXN-2025-001234567). The bank is requesting clarification from...
+2025-10-06 05:55:35,173 - INFO - Urgent: True
+2025-10-06 05:55:35,279 - INFO - Database connection closed
+2025-10-06 05:55:35,279 - INFO - Session complete. Check log files for detailed information:
+2025-10-06 05:55:35,279 - INFO - Main Log: logs/email_generator_ollama_20251006_055051.log
+2025-10-06 05:55:35,280 - INFO - Success Log: logs/successful_generations_20251006_055051.log
+2025-10-06 05:55:35,280 - INFO - Failure Log: logs/failed_generations_20251006_055051.log
+2025-10-06 05:55:35,280 - INFO - Progress Log: logs/progress_20251006_055051.log
+2025-10-06 05:55:35,280 - INFO - Intermediate Results: logs/intermediate_results_20251006_055051.json
+2025-10-06 05:55:35,281 - INFO - Database connection closed
