@@ -83,7 +83,7 @@ logger = logging.getLogger(__name__)
 OPENROUTER_MODEL = "google/gemma-3-27b-it:free"
 BATCH_SIZE = 6  # Moderate batch size to balance speed and reliability
 MAX_CONCURRENT = 2  # Conservative concurrency to avoid OpenRouter timeouts
-REQUEST_TIMEOUT = 180  # Reduced timeout for faster failure detection
+REQUEST_TIMEOUT = 600  # Increased timeout to 10 minutes for better reliability
 MAX_RETRIES = 8  # Fewer retries for faster failure handling
 RETRY_DELAY = 30  # Shorter retry delay
 BATCH_DELAY = 5.0  # Minimal batch delay
@@ -360,7 +360,7 @@ class RateLimitedProcessor:
             for attempt in range(max_retries):
                 try:
                     # Progressive timeout - increase timeout with each retry
-                    progressive_timeout = REQUEST_TIMEOUT + (attempt * 30)  # Add 30s per retry
+                    progressive_timeout = REQUEST_TIMEOUT + (attempt * 60)  # Add 60s per retry
                     timeout = aiohttp.ClientTimeout(total=progressive_timeout)
                     async with session.post(OPENROUTER_URL, json=payload, headers=headers, timeout=timeout) as response:
                         
@@ -686,6 +686,11 @@ async def generate_email_content(email_data):
                     'plain' in message['body']['text']):
                     body_content = message['body']['text']['plain']
                     
+                    # Check if body_content is None or empty
+                    if not body_content or not isinstance(body_content, str):
+                        logger.warning(f"Thread {thread_id}: Message body content is None or not a string, skipping cleanup")
+                        continue
+                    
                     # Check for various subject line and header patterns and remove them
                     unwanted_patterns = [
                         'Subject:', 'SUBJECT:', 'subject:', 'Re:', 'RE:', 'Fwd:', 'FWD:',
@@ -794,28 +799,27 @@ async def _process_single_email_internal(email_record, total_emails=None):
                 logger.error(f"Thread {thread_id}: messages is not a list, got {type(messages)}: {str(messages)[:100]}...")
             else:
                 for i, message in enumerate(messages):
-                    if i < len(email_record.get('messages', [])):
-                        # Validate message is a dictionary, not a string
-                        if not isinstance(message, dict):
-                            logger.error(f"Thread {thread_id}: Message {i} is not a dict, got {type(message)}: {str(message)[:100]}...")
-                            continue
-                        
-                        # Safely access nested message structure
-                        headers = message.get('headers', {})
-                        body = message.get('body', {})
-                        text = body.get('text', {}) if isinstance(body, dict) else {}
-                        
-                        update_doc[f'messages.{i}.headers.date'] = headers.get('date') if isinstance(headers, dict) else None
-                        update_doc[f'messages.{i}.headers.subject'] = headers.get('subject') if isinstance(headers, dict) else None
-                        update_doc[f'messages.{i}.body.text.plain'] = text.get('plain') if isinstance(text, dict) else None
+                    # Validate message is a dictionary, not a string
+                    if not isinstance(message, dict):
+                        logger.error(f"Thread {thread_id}: Message {i} is not a dict, got {type(message)}: {str(message)[:100]}...")
+                        continue
+                    
+                    # Safely access nested message structure
+                    headers = message.get('headers', {})
+                    body = message.get('body', {})
+                    text = body.get('text', {}) if isinstance(body, dict) else {}
+                    
+                    update_doc[f'messages.{i}.headers.date'] = headers.get('date') if isinstance(headers, dict) else None
+                    update_doc[f'messages.{i}.headers.subject'] = headers.get('subject') if isinstance(headers, dict) else None
+                    update_doc[f'messages.{i}.body.text.plain'] = text.get('plain') if isinstance(text, dict) else None
         
-        # Update analysis fields from LLM response - only new fields, preserve existing metadata
+        # Update analysis fields from LLM response - regenerate ALL analysis fields
         if 'analysis' in email_content:
             analysis = email_content['analysis']
             if not isinstance(analysis, dict):
                 logger.error(f"Thread {thread_id}: analysis is not a dict, got {type(analysis)}: {str(analysis)[:100]}...")
             else:
-                # Only update LLM-generated fields - do NOT overwrite existing metadata fields
+                # Regenerate ALL LLM-generated analysis fields (overwrite existing ones)
                 update_doc['email_summary'] = analysis.get('email_summary')
                 update_doc['follow_up_date'] = analysis.get('follow_up_date')
                 update_doc['follow_up_reason'] = analysis.get('follow_up_reason')
@@ -904,8 +908,10 @@ async def save_batch_to_database(batch_updates):
         return 0
 
 async def process_emails_optimized():
-    """Main optimized processing function for email generation"""
+    """Main optimized processing function for email generation - regenerates BOTH message body content AND analysis fields for records with null/empty message body content"""
     logger.info("Starting Optimized EU Banking Email Content Generation...")
+    logger.info("Focus: Processing records with NULL/empty message body content")
+    logger.info("Action: Will regenerate BOTH message body content AND analysis fields")
     logger.info(f"Collection: {EMAIL_COLLECTION}")
     logger.info(f"Optimized Configuration:")
     logger.info(f"  Max Concurrent: {MAX_CONCURRENT}")
@@ -921,7 +927,7 @@ async def process_emails_optimized():
     
     # Get emails to process - only those that have NEVER been processed by LLM
     try:
-        # Query for emails that have basic fields but are missing LLM-generated content
+        # Query for emails that have null/empty message body content - will regenerate BOTH body content AND analysis fields
         query = {
             "$and": [
                 # Must have basic email structure
@@ -935,19 +941,20 @@ async def process_emails_optimized():
                 {"action_pending_status": {"$exists": True, "$ne": None, "$ne": ""}},
                 {"priority": {"$exists": True, "$ne": None, "$ne": ""}},
                 {"resolution_status": {"$exists": True, "$ne": None, "$ne": ""}},
-                # Exclude already processed records
-                {"llm_processed": {"$ne": True}},
-                # Must be missing LLM-generated content fields
+                # Must have messages array
+                {"messages": {"$exists": True, "$ne": None, "$ne": []}},
+                # Must have at least one message with null/empty body text
                 {
                     "$or": [
-                        {"email_summary": {"$exists": False}},
-                        {"email_summary": {"$eq": None}},
-                        {"email_summary": {"$eq": ""}},
-                        {"next_action_suggestion": {"$exists": False}},
-                        {"next_action_suggestion": {"$eq": None}},
-                        {"next_action_suggestion": {"$eq": ""}},
-                        {"sentiment": {"$exists": False}},
-                        {"sentiment": {"$eq": None}}
+                        # Check for null plain text in any message
+                        {"messages.body.text.plain": {"$eq": None}},
+                        {"messages.body.text.plain": {"$eq": ""}},
+                        {"messages.body.text.plain": {"$exists": False}},
+                        # Check for messages with missing body structure
+                        {"messages.body.text": {"$exists": False}},
+                        {"messages.body": {"$exists": False}},
+                        # Check for empty messages array
+                        {"messages": {"$size": 0}}
                     ]
                 }
             ]
@@ -979,11 +986,34 @@ async def process_emails_optimized():
             ]
         })
         
+        # Calculate emails with null/empty message body content
+        emails_with_null_body_content = email_col.count_documents({
+            "$and": [
+                {"stages": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"category": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"urgency": {"$exists": True}},
+                {"follow_up_required": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"priority": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"resolution_status": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"messages": {"$exists": True, "$ne": None, "$ne": []}},
+                {
+                    "$or": [
+                        {"messages.body.text.plain": {"$eq": None}},
+                        {"messages.body.text.plain": {"$eq": ""}},
+                        {"messages.body.text.plain": {"$exists": False}},
+                        {"messages.body.text": {"$exists": False}},
+                        {"messages.body": {"$exists": False}},
+                        {"messages": {"$size": 0}}
+                    ]
+                }
+            ]
+        })
+        
         # Calculate actual emails needing processing
         emails_needing_processing = email_col.count_documents(query)
         
-        # Calculate pending emails (those with basic fields but not processed)
-        emails_pending_processing = emails_with_basic_fields - emails_processed_by_llm
+        # Calculate pending emails (those with null body content)
+        emails_pending_processing = emails_with_null_body_content
         
         # Debug: Let's also check what fields actually exist
         logger.info("Debug - Checking field distribution in email_new collection:")
@@ -1001,9 +1031,11 @@ async def process_emails_optimized():
         logger.info(f"  Total emails in DB: {total_emails_in_db}")
         logger.info(f"  Emails with required basic fields: {emails_with_basic_fields}")
         logger.info(f"  Emails with LLM-generated fields: {emails_with_llm_fields}")
+        logger.info(f"  Emails with NULL/empty message body content: {emails_with_null_body_content}")
         logger.info(f"  Emails processed by LLM (llm_processed=True): {emails_processed_by_llm}")
-        logger.info(f"  Emails pending processing: {emails_pending_processing}")
+        logger.info(f"  Emails pending processing (null body content): {emails_pending_processing}")
         logger.info(f"  Emails needing processing (this session): {emails_needing_processing}")
+        logger.info(f"  Action: Will regenerate BOTH message body content AND analysis fields")
         logger.info(f"  Overall Progress: {completion_percentage:.1f}% completed, {pending_percentage:.1f}% pending")
         
         # Use cursor instead of loading all into memory at once
@@ -1098,7 +1130,7 @@ async def process_emails_optimized():
                     completed_results = []
                     for i, task in enumerate(controlled_tasks):
                         try:
-                            task_timeout = REQUEST_TIMEOUT * 4  # 12 minutes (720s) per task
+                            task_timeout = REQUEST_TIMEOUT * 2  # 20 minutes (1200s) per task
                             logger.info(f"Starting task {i+1}/{len(controlled_tasks)} with {task_timeout}s timeout")
                             
                             result = await asyncio.wait_for(task, timeout=task_timeout)

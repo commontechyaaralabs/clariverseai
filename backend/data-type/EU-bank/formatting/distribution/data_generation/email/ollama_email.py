@@ -85,29 +85,15 @@ email_col = None
 # Additional configuration
 CPU_COUNT = multiprocessing.cpu_count()
 
-# Import configuration
-try:
-    from config import (
-        OLLAMA_MODEL, BATCH_SIZE, MAX_WORKERS, REQUEST_TIMEOUT, 
-        MAX_RETRIES, RETRY_DELAY, BATCH_DELAY, API_CALL_DELAY,
-        get_rate_limit_config
-    )
-    # Apply rate limiting configuration
-    rate_config = get_rate_limit_config()
-    BATCH_SIZE = rate_config["batch_size"]
-    MAX_WORKERS = rate_config["max_workers"]
-    BATCH_DELAY = rate_config["batch_delay"]
-    API_CALL_DELAY = rate_config["api_call_delay"]
-except ImportError:
-    # Fallback configuration if config.py doesn't exist
-    OLLAMA_MODEL = "gemma3:27b"
-    BATCH_SIZE = 3
-    MAX_WORKERS = CPU_COUNT  # Use all available CPU cores
-    REQUEST_TIMEOUT = 300  # Increased from 120 to 300 seconds (5 minutes)
-    MAX_RETRIES = 5
-    RETRY_DELAY = 3
-    BATCH_DELAY = 2.0  # Reduced delay for faster processing
-    API_CALL_DELAY = 0.5  # Reduced API call delay
+# Configuration values
+OLLAMA_MODEL = "gemma3:27b"
+BATCH_SIZE = 3
+MAX_WORKERS = CPU_COUNT  # Use all available CPU cores
+REQUEST_TIMEOUT = 300  # Increased from 120 to 300 seconds (5 minutes)
+MAX_RETRIES = 5
+RETRY_DELAY = 3
+BATCH_DELAY = 2.0  # Reduced delay for faster processing
+API_CALL_DELAY = 0.5  # Reduced API call delay
 
 # Ollama setup
 OLLAMA_API_KEY = os.getenv("OLLAMA_API_KEY", "7eb2c60fcd3740cea657c8d109ff9016af894d2a2c112954bc3aff033c117736")
@@ -653,17 +639,20 @@ def process_single_email_update(email_record, retry_attempt=0):
     if shutdown_flag.is_set():
         return None
         
+    # Extract thread_id for logging
+    thread_id = email_record.get('thread', {}).get('thread_id', 'unknown')
+        
     try:
         # Generate email content based on existing data
         email_content = generate_email_content(email_record)
         
         if not email_content:
             if retry_attempt < MAX_RETRY_ATTEMPTS:
-                logger.warning(f"Generation failed for {email_record.get('thread', {}).get('thread_id', 'unknown')}, will retry (attempt {retry_attempt + 1}/{MAX_RETRY_ATTEMPTS})")
+                logger.warning(f"Generation failed for {thread_id}, will retry (attempt {retry_attempt + 1}/{MAX_RETRY_ATTEMPTS})")
                 return None  # Will be retried
             else:
                 failure_counter.increment()
-                logger.error(f"Final failure for {email_record.get('thread', {}).get('thread_id', 'unknown')} after {MAX_RETRY_ATTEMPTS} attempts")
+                logger.error(f"Final failure for {thread_id} after {MAX_RETRY_ATTEMPTS} attempts")
                 return None
         
         # Prepare update document with the new structure
@@ -686,20 +675,19 @@ def process_single_email_update(email_record, retry_attempt=0):
                 logger.error(f"Thread {thread_id}: messages is not a list, got {type(messages)}: {str(messages)[:100]}...")
             else:
                 for i, message in enumerate(messages):
-                    if i < len(email_record.get('messages', [])):
-                        # Validate message is a dictionary, not a string
-                        if not isinstance(message, dict):
-                            logger.error(f"Thread {thread_id}: Message {i} is not a dict, got {type(message)}: {str(message)[:100]}...")
-                            continue
-                        
-                        # Safely access nested message structure
-                        headers = message.get('headers', {})
-                        body = message.get('body', {})
-                        text = body.get('text', {}) if isinstance(body, dict) else {}
-                        
-                        update_doc[f'messages.{i}.headers.date'] = headers.get('date') if isinstance(headers, dict) else None
-                        update_doc[f'messages.{i}.headers.subject'] = headers.get('subject') if isinstance(headers, dict) else None
-                        update_doc[f'messages.{i}.body.text.plain'] = text.get('plain') if isinstance(text, dict) else None
+                    # Validate message is a dictionary, not a string
+                    if not isinstance(message, dict):
+                        logger.error(f"Thread {thread_id}: Message {i} is not a dict, got {type(message)}: {str(message)[:100]}...")
+                        continue
+                    
+                    # Safely access nested message structure
+                    headers = message.get('headers', {})
+                    body = message.get('body', {})
+                    text = body.get('text', {}) if isinstance(body, dict) else {}
+                    
+                    update_doc[f'messages.{i}.headers.date'] = headers.get('date') if isinstance(headers, dict) else None
+                    update_doc[f'messages.{i}.headers.subject'] = headers.get('subject') if isinstance(headers, dict) else None
+                    update_doc[f'messages.{i}.body.text.plain'] = text.get('plain') if isinstance(text, dict) else None
         
         # Update analysis fields from LLM response - only new fields, preserve existing metadata
         if 'analysis' in email_content:
