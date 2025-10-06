@@ -1,4 +1,4 @@
-# EU Banking Chat Content Generator - Ollama Version
+# EU Banking Chat Content Generator - Ollama Version (Modified for chat_new)
 import os
 import random
 import time
@@ -28,7 +28,7 @@ load_dotenv()
 # MongoDB setup
 MONGO_URI = os.getenv("MONGO_CONNECTION_STRING")
 DB_NAME = "sparzaai"
-CHAT_COLLECTION = "chat_new"
+CHAT_COLLECTION = "chat_new"  # Changed to chat_new
 
 # Logging setup
 LOG_DIR = Path("logs")
@@ -40,7 +40,7 @@ MAIN_LOG_FILE = LOG_DIR / f"chat_generator_ollama_{timestamp}.log"
 SUCCESS_LOG_FILE = LOG_DIR / f"successful_generations_{timestamp}.log"
 FAILURE_LOG_FILE = LOG_DIR / f"failed_generations_{timestamp}.log"
 PROGRESS_LOG_FILE = LOG_DIR / f"progress_{timestamp}.log"
-CHECKPOINT_FILE = LOG_DIR / f"checkpoint_{timestamp}.json"
+INTERMEDIATE_RESULTS_FILE = LOG_DIR / f"intermediate_results_{timestamp}.json"
 
 # Configure main logger
 logging.basicConfig(
@@ -76,35 +76,35 @@ progress_logger.propagate = False
 
 logger = logging.getLogger(__name__)
 
-# Ollama configuration (same as email ollama config)
-OLLAMA_MODEL = "gemma3:27b"
-BATCH_SIZE = 3
-MAX_WORKERS = multiprocessing.cpu_count()
-REQUEST_TIMEOUT = 300  # 5 minutes
-MAX_RETRIES = 5
-RETRY_DELAY = 3
-BATCH_DELAY = 2.0
-API_CALL_DELAY = 0.5
-
-# Ollama setup
-OLLAMA_API_KEY = os.getenv("OLLAMA_API_KEY", "fbedba0c1d929cbd26609896a3c9c186a1edc55e753ccc16d4e44de403c297ef")
-OLLAMA_URL = "http://34.147.17.26:20855/api/chat"
 # Global variables for graceful shutdown
 shutdown_flag = threading.Event()
 client = None
 db = None
 chat_col = None
 
-# Custom JSON encoder to handle ObjectId serialization
-class ObjectIdEncoder(json.JSONEncoder):
-    def default(self, obj):
-        if isinstance(obj, ObjectId):
-            return str(obj)
-        return super().default(obj)
+# Additional configuration
+CPU_COUNT = multiprocessing.cpu_count()
+
+# Configuration values - Ultra-conservative for Ollama
+OLLAMA_MODEL = "gemma3:27b"
+BATCH_SIZE = 1  # Process only 1 chat at a time
+MAX_WORKERS = 1  # Single worker to avoid rate limits
+REQUEST_TIMEOUT = 720  # Increased timeout to 12 minutes
+MAX_RETRIES = 3  # Fewer retries to avoid long waits
+RETRY_DELAY = 30  # 30 second retry delay for rate limits
+BATCH_DELAY = 10.0  # 10 second delay between batches
+API_CALL_DELAY = 5.0  # 5 second delay between API calls
+
+# Ollama setup
+OLLAMA_API_KEY = os.getenv("OLLAMA_API_KEY", "fbedba0c1d929cbd26609896a3c9c186a1edc55e753ccc16d4e44de403c297ef")
+OLLAMA_URL = "http://34.147.17.26:20855/api/chat"
+# Retry configuration
+MAX_RETRY_ATTEMPTS = 3  # Maximum retry attempts for failed records
+RETRY_DELAY_SECONDS = 5  # Delay between retry attempts
 
 fake = Faker()
 
-# Thread-safe counters
+# Thread-safe counters with logging
 class LoggingCounter:
     def __init__(self, name):
         self._value = 0
@@ -128,66 +128,66 @@ update_counter = LoggingCounter("UPDATE_COUNT")
 retry_counter = LoggingCounter("RETRY_COUNT")
 
 # Failed records tracking
-failed_records = []
+failed_records = []  # Store failed records for retry
 
-# Checkpoint Manager for resuming from failures
-class CheckpointManager:
-    def __init__(self, checkpoint_file):
-        self.checkpoint_file = checkpoint_file
-        self.processed_chats = set()
-        self.failed_chats = set()
-        self.stats = {
-            'start_time': time.time(),
-            'processed_count': 0,
-            'success_count': 0,
-            'failure_count': 0
-        }
+class IntermediateResultsManager:
+    """Manages saving and loading of intermediate results"""
+    
+    def __init__(self, filename):
+        self.filename = filename
+        self.results = []
         self._lock = threading.Lock()
-        self.load_checkpoint()
+        self.load_existing_results()
     
-    def load_checkpoint(self):
+    def load_existing_results(self):
+        """Load existing intermediate results if file exists"""
         try:
-            if os.path.exists(self.checkpoint_file):
-                with open(self.checkpoint_file, 'r') as f:
-                    data = json.load(f)
-                    self.processed_chats = set(data.get('processed_chats', []))
-                    self.failed_chats = set(data.get('failed_chats', []))
-                    self.stats.update(data.get('stats', {}))
-                logger.info(f"Loaded checkpoint: {len(self.processed_chats)} processed, {len(self.failed_chats)} failed")
+            if self.filename.exists():
+                with open(self.filename, 'r') as f:
+                    self.results = json.load(f)
+                logger.info(f"Loaded {len(self.results)} existing intermediate results")
         except Exception as e:
-            logger.warning(f"Could not load checkpoint: {e}")
+            logger.error(f"Error loading intermediate results: {e}")
+            self.results = []
     
-    def save_checkpoint(self):
+    def add_result(self, result):
+        """Add a result to intermediate storage"""
         with self._lock:
-            try:
-                checkpoint_data = {
-                    'processed_chats': list(self.processed_chats),
-                    'failed_chats': list(self.failed_chats),
-                    'stats': self.stats,
-                    'timestamp': datetime.now().isoformat()
-                }
-                with open(self.checkpoint_file, 'w') as f:
-                    json.dump(checkpoint_data, f, indent=2)
-            except Exception as e:
-                logger.error(f"Could not save checkpoint: {e}")
+            result['timestamp'] = datetime.now().isoformat()
+            self.results.append(result)
+            self.save_to_file()
     
-    def is_processed(self, chat_id):
-        return str(chat_id) in self.processed_chats
-    
-    def mark_processed(self, chat_id, success=True):
+    def add_batch_results(self, results_batch):
+        """Add multiple results to intermediate storage"""
         with self._lock:
-            chat_id_str = str(chat_id)
-            self.processed_chats.add(chat_id_str)
-            self.stats['processed_count'] += 1
-            
-            if success:
-                self.stats['success_count'] += 1
-                self.failed_chats.discard(chat_id_str)
-            else:
-                self.stats['failure_count'] += 1
-                self.failed_chats.add(chat_id_str)
+            for result in results_batch:
+                result['timestamp'] = datetime.now().isoformat()
+            self.results.extend(results_batch)
+            self.save_to_file()
+            logger.info(f"Added {len(results_batch)} results to intermediate storage")
+    
+    def save_to_file(self):
+        """Save current results to file"""
+        try:
+            with open(self.filename, 'w') as f:
+                json.dump(self.results, f, indent=2)
+        except Exception as e:
+            logger.error(f"Error saving intermediate results: {e}")
+    
+    def get_pending_updates(self):
+        """Get results that haven't been saved to database yet"""
+        return [r for r in self.results if not r.get('saved_to_db', False)]
+    
+    def mark_as_saved(self, chat_ids):
+        """Mark results as saved to database"""
+        with self._lock:
+            for result in self.results:
+                if result.get('chat_id') in chat_ids:
+                    result['saved_to_db'] = True
+            self.save_to_file()
 
-checkpoint_manager = CheckpointManager(CHECKPOINT_FILE)
+# Initialize intermediate results manager
+results_manager = IntermediateResultsManager(INTERMEDIATE_RESULTS_FILE)
 
 def setup_signal_handlers():
     """Setup signal handlers for graceful shutdown"""
@@ -237,7 +237,7 @@ def init_database():
     backoff.expo,
     (requests.exceptions.RequestException, json.JSONDecodeError, KeyError, ValueError),
     max_tries=MAX_RETRIES,
-    max_time=600,
+    max_time=600,  # Increased max time for rate limiting and longer processing
     base=RETRY_DELAY,
     on_backoff=lambda details: logger.warning(f"Retry {details['tries']}/{MAX_RETRIES} after {details['wait']:.1f}s")
 )
@@ -267,6 +267,9 @@ def call_ollama_with_backoff(prompt, timeout=REQUEST_TIMEOUT):
     }
     
     try:
+        # Add delay to help with rate limiting
+        time.sleep(API_CALL_DELAY)
+        
         response = requests.post(
             OLLAMA_URL, 
             json=payload, 
@@ -290,8 +293,6 @@ def call_ollama_with_backoff(prompt, timeout=REQUEST_TIMEOUT):
             logger.error(f"No 'message.content' field. Available fields: {list(result.keys())}")
             raise KeyError("No 'message.content' field in Ollama response")
             
-        # Add delay to help with rate limiting
-        time.sleep(API_CALL_DELAY)
         return result["message"]["content"]
         
     except requests.exceptions.Timeout:
@@ -317,7 +318,7 @@ def call_ollama_with_backoff(prompt, timeout=REQUEST_TIMEOUT):
         raise
 
 def generate_optimized_chat_prompt(chat_data):
-    """Generate optimized prompt for chat content and analysis generation"""
+    """Generate optimized prompt for chat content and analysis generation - EXACT REPLICA from v2openrouter.py"""
     
     # Extract data from chat record - ALL EXISTING FIELDS FROM chat_new COLLECTION
     dominant_topic = chat_data.get('dominant_topic')
@@ -332,7 +333,7 @@ def generate_optimized_chat_prompt(chat_data):
     action_pending_from = chat_data.get('action_pending_from')
     priority = chat_data.get('priority')
     resolution_status = chat_data.get('resolution_status')
-    overall_sentiment = chat_data.get('overall_sentiment')
+    overall_sentiment = chat_data.get('overall_sentiment') or chat_data.get('sentiment')
     category = chat_data.get('category')  # external or internal
     
     # Extract participant names from messages - these are for conversation participants only
@@ -418,21 +419,21 @@ def generate_optimized_chat_prompt(chat_data):
     
     metadata_str = " | ".join(metadata_parts) if metadata_parts else "No metadata available"
     
-    # Build sentiment description dynamically
+    # Build sentiment description dynamically with specific tone guidance
     sentiment_desc = ""
     if overall_sentiment is not None:
         if overall_sentiment == 5:
-            sentiment_desc = "Extreme frustration throughout ALL messages"
+            sentiment_desc = "Frustrated (extreme frustration, very upset) - Use strong emotional language, complaints, exclamations, urgent demands"
         elif overall_sentiment == 4:
-            sentiment_desc = "Clear anger/frustration"
+            sentiment_desc = "Anger (clear frustration or anger) - Use frustrated language, raised concerns, demanding tone, clear dissatisfaction"
         elif overall_sentiment == 3:
-            sentiment_desc = "Moderate concern/unease"
+            sentiment_desc = "Moderately Concerned (growing unease or worry) - Use worried language, concerned questions, seeking reassurance"
         elif overall_sentiment == 2:
-            sentiment_desc = "Slight irritation/impatience"
+            sentiment_desc = "Bit Irritated (slight annoyance or impatience) - Use slightly impatient language, mild complaints, subtle frustration"
         elif overall_sentiment == 1:
-            sentiment_desc = "Calm professional baseline"
+            sentiment_desc = "Calm (baseline for professional communication) - Use professional, calm, and polite language"
         else:
-            sentiment_desc = "Positive satisfied communication"
+            sentiment_desc = "Positive satisfied communication - Use positive, satisfied, and appreciative language"
     
     # Build follow-up description
     follow_up_desc = ""
@@ -463,9 +464,9 @@ def generate_optimized_chat_prompt(chat_data):
     # Build action pending from description for prompt
     action_pending_from_desc = ""
     if action_pending_status == "yes" and action_pending_from:
-        if action_pending_from.lower() == "customer":
+        if action_pending_from and action_pending_from.lower() == "customer":
             action_pending_from_desc = "End with customer needing to respond/take action"
-        elif action_pending_from.lower() == "bank":
+        elif action_pending_from and action_pending_from.lower() == "bank":
             action_pending_from_desc = "End with bank needing to respond/take action"
         else:
             action_pending_from_desc = "End with appropriate party needing to take action"
@@ -602,12 +603,31 @@ def generate_optimized_chat_prompt(chat_data):
 - Use informal language while staying professional
 - Include realistic banking scenarios and problems
 
+**SENTIMENT-BASED TONE INSTRUCTIONS:**
+- Sentiment 1 (Calm): Professional, calm, polite language - "I would like to inquire about...", "Could you please help me with...", "Thank you for your assistance"
+- Sentiment 2 (Bit Irritated): Slightly impatient, mild complaints - "I've been waiting for...", "This is taking longer than expected", "I'm a bit concerned about..."
+- Sentiment 3 (Moderately Concerned): Worried language, seeking reassurance - "I'm worried about...", "Can you confirm that...", "This doesn't seem right to me"
+- Sentiment 4 (Anger): Frustrated language, demanding tone - "This is unacceptable!", "I need this resolved immediately", "I'm very frustrated with..."
+- Sentiment 5 (Frustrated): Extreme frustration, strong emotional language - "This is ridiculous!", "I'm extremely upset!", "I demand immediate action!", "This is the worst service!"
+
 **NAMING RULES:**
 - Participant names are ONLY for conversation participants (Customer, Bank_Employee, Employee_1, etc.)
 - When mentioning clients, customers, or issues in conversation content, use realistic names like John Smith, Maria Garcia, etc.
 - NEVER use participant names when referring to clients or customers in the conversation content
 
 **ENDING REQUIREMENTS:** {ending_str}
+
+**FOLLOW-UP vs NEXT ACTION DISTINCTION:**
+- **follow_up_reason** = "WHY" (the trigger/justification for follow-up)
+  * Focus on the REASON/CAUSE that necessitates follow-up
+  * Examples: "Customer requested status update", "Documentation incomplete", "Compliance deadline approaching", "Issue unresolved", "Waiting for external approval", "System error occurred"
+- **next_action_suggestion** = "WHAT" (the specific step to take)
+  * Focus on the CONCRETE ACTION to be performed
+  * Examples: "Contact client to request missing documents", "Schedule compliance review meeting", "Escalate to senior management", "Update system with new information", "Send follow-up email to customer", "Review and approve pending application"
+
+**EXAMPLE SCENARIO:**
+- follow_up_reason: "Customer requested status update on loan application"
+- next_action_suggestion: "Call customer to provide current application status and next steps"
 
 **EXAMPLES OF GOOD CHAT MESSAGES:**
 - External: "Hi, I'm having trouble with my online banking. Can someone help me check my account balance?"
@@ -625,8 +645,8 @@ def generate_optimized_chat_prompt(chat_data):
   ],
   "analysis": {{
     "chat_summary": "Business summary 150-200 words describing discussion topic, participants, key points, and context",
-    "follow_up_reason": {"[WHY follow-up is needed - the trigger/justification]" if follow_up_required == "yes" else "null"},
-    "next_action_suggestion": {"[WHAT step to take - the action recommendation]" if follow_up_required == "yes" and action_pending_status == "yes" else "null"},
+    "follow_up_reason": {"[WHY follow-up is needed - the trigger/justification. Focus on the REASON/CAUSE that necessitates follow-up. Provide detailed explanation with specific context, background information, and comprehensive reasoning. Examples: 'Customer requested status update on loan application submitted last week', 'Documentation incomplete - missing income verification and employment history', 'Compliance deadline approaching for regulatory audit requiring immediate attention', 'Issue unresolved after multiple escalation attempts and customer dissatisfaction', 'Waiting for external approval from regulatory body with pending timeline', 'System error occurred during transaction processing causing customer inconvenience', 'Client response required for account verification process', 'Regulatory requirement pending with specific deadline constraints'. Be specific about what triggered the need for follow-up with full context and background.]" if follow_up_required == "yes" else "null"},
+    "next_action_suggestion": {"[WHAT specific step to take - the actionable recommendation. Focus on the CONCRETE ACTION to be performed with detailed steps, timeline, and responsible parties. Examples: 'Contact client to request missing documents including bank statements and employment verification within 48 hours', 'Schedule compliance review meeting with senior management and legal team for next business day', 'Escalate to senior management with detailed case summary and customer impact assessment', 'Update system with new information and coordinate with IT team for immediate resolution', 'Send follow-up email to customer with status update and next steps timeline', 'Review and approve pending application with complete documentation verification', 'Coordinate with IT team for system resolution and customer communication strategy', 'Prepare comprehensive documentation for audit including all supporting materials'. Be specific about what needs to be done with detailed implementation steps.]" if follow_up_required == "yes" and action_pending_status == "yes" else "null"},
     "follow_up_date": {"[Generate meaningful follow-up date based on last message date and issue type. Consider urgency, business days, and typical resolution times for the topic. For urgent issues (P1-Critical), suggest 1-2 business days. For high priority (P2-High), suggest 3-5 business days. For medium priority (P3-Medium), suggest 1-2 weeks. Format: YYYY-MM-DDTHH:MM:SSZ]" if follow_up_required == "yes" else "null"}
   }}
 }}
@@ -634,15 +654,25 @@ def generate_optimized_chat_prompt(chat_data):
 Use EXACT metadata values and EXACT dates provided. Implement concepts through natural scenarios, NOT explicit mentions. Generate authentic banking content with specific details.
 
 **CRITICAL:** 
-- Follow-up reason = "WHY" (the trigger/justification for follow-up) - ONLY if follow_up_required="yes", otherwise "null"
+- **SENTIMENT-BASED TONE**: ALL messages must reflect the exact sentiment level (1-5) with appropriate emotional language and tone
+- Follow-up reason = "WHY" (the trigger/justification for follow-up) - ONLY if follow_up_required="yes", otherwise "null" 
 - Next-action suggestion = "WHAT" (the step you advise taking) - ONLY generate if follow_up_required="yes" AND action_pending_status="yes":
-  * If action_pending_from="Customer": Suggest what the customer needs to do
-  * If action_pending_from="Bank": Suggest what the bank needs to do
+  * If action_pending_from="Customer": Suggest what the customer needs to do with specific details and timeline
+  * If action_pending_from="Bank": Suggest what the bank needs to do with specific details and timeline
   * If both follow_up_required="no" AND action_pending_status="no": Set to "null"
 - Follow-up date = "WHEN" (meaningful date based on last message and issue type) - ONLY if follow_up_required="yes", otherwise "null"
 - Chat summary should reflect the conversation type (external vs internal) and include all relevant context
 - All analysis fields should be meaningful and based on the actual conversation content
 - Use the EXACT dates provided for message timestamps - do not generate new dates
+
+**IMPORTANT MESSAGE GENERATION RULES:**
+- Generate EXACTLY {message_count} messages - no more, no less
+- Each message MUST have actual conversational content (10-100 words)
+- Content should be realistic banking conversation text
+- Do NOT generate empty, null, or placeholder content
+- Each message should sound like a real person talking
+- Use "content" field name (NOT "text") for message content in JSON structure
+- ALL {message_count} messages must be included in the output array
 
 Generate now.
 """.strip()
@@ -685,9 +715,21 @@ def generate_chat_content(chat_data):
         
         try:
             result = json.loads(reply)
-            # Reduce debug logging for performance
-            if str(chat_id).endswith('0') or str(chat_id).endswith('5'):  # Log only every 10th chat
+            # Debug logging for message content
+            if 'messages' in result and result['messages']:
+                sample_message = result['messages'][0] if result['messages'] else {}
                 logger.info(f"Chat {chat_id}: JSON parsing successful. Keys: {list(result.keys())}")
+                logger.info(f"Chat {chat_id}: Sample message structure: {sample_message}")
+                
+                # Check for both 'content' and 'text' fields
+                if 'content' in sample_message:
+                    logger.info(f"Chat {chat_id}: Sample message has 'content' field, length: {len(str(sample_message['content']))}")
+                elif 'text' in sample_message:
+                    logger.info(f"Chat {chat_id}: Sample message has 'text' field, length: {len(str(sample_message['text']))}")
+                else:
+                    logger.warning(f"Chat {chat_id}: Sample message missing both 'content' and 'text' fields!")
+            else:
+                logger.warning(f"Chat {chat_id}: No messages in LLM response!")
         except json.JSONDecodeError as json_err:
             logger.error(f"JSON parsing failed for chat {chat_id}. Raw response: {reply[:300]}...")
             logger.error(f"Chat {chat_id}: Full LLM response: {response[:500]}...")
@@ -702,10 +744,17 @@ def generate_chat_content(chat_data):
         
         # Validate messages count
         message_count = len(chat_data.get('messages', [])) if chat_data.get('messages') else 2
+        logger.info(f"Chat {chat_id}: Expected {message_count} messages, got {len(result['messages'])} from LLM")
+        
         if len(result['messages']) != message_count:
-            logger.warning(f"Chat {chat_id}: Expected {message_count} messages, got {len(result['messages'])}")
-            # Adjust to correct count
-            if len(result['messages']) > message_count:
+            logger.warning(f"Chat {chat_id}: Message count mismatch - expected {message_count}, got {len(result['messages'])}")
+            
+            # If LLM generated fewer messages, we need to handle this
+            if len(result['messages']) < message_count:
+                logger.warning(f"Chat {chat_id}: LLM generated only {len(result['messages'])} messages, need {message_count}")
+                # For now, we'll process what we have and log the issue
+            elif len(result['messages']) > message_count:
+                logger.warning(f"Chat {chat_id}: LLM generated {len(result['messages'])} messages, truncating to {message_count}")
                 result['messages'] = result['messages'][:message_count]
         
         # Validate required analysis fields
@@ -733,20 +782,32 @@ def generate_chat_content(chat_data):
                 logger.error(f"Chat {chat_id}: Missing next_action_suggestion (follow_up_required=yes, action_pending_status=yes)")
                 raise ValueError("Missing next_action_suggestion field")
         
-        # Validate message word counts for realism
+        # Validate message content and word counts for realism
         for i, message in enumerate(result.get('messages', [])):
-            if isinstance(message, dict) and 'content' in message:
-                content = message['content']
+            if isinstance(message, dict) and ('content' in message or 'text' in message):
+                # Handle both 'content' and 'text' field names from LLM
+                content = message.get('content') or message.get('text')
+                
+                # Check if content is empty or None
+                if not content or content.strip() == "":
+                    logger.error(f"Chat {chat_id}: Message {i} has empty content! Message structure: {message}")
+                    # Generate a fallback message
+                    fallback_content = f"This is message {i+1} in the conversation about {chat_data.get('dominant_topic', 'banking matters')}."
+                    message['content'] = fallback_content
+                    content = fallback_content
+                
                 word_count = len(content.split())
                 if word_count < 10:
                     logger.warning(f"Chat {chat_id}: Message {i} too short ({word_count} words), expanding...")
                     # Add some context to make it more realistic
-                    message['content'] = f"{content} Let me give you more details about this."
+                    expanded_content = f"{content} Let me give you more details about this."
+                    message['content'] = expanded_content
                 elif word_count > 100:
                     logger.warning(f"Chat {chat_id}: Message {i} too long ({word_count} words), truncating...")
                     # Truncate to 100 words
                     words = content.split()
-                    message['content'] = ' '.join(words[:100])
+                    truncated_content = ' '.join(words[:100])
+                    message['content'] = truncated_content
         
         generation_time = time.time() - start_time
         
@@ -759,7 +820,7 @@ def generate_chat_content(chat_data):
             'resolution_status': chat_data.get('resolution_status'),
             'generation_time': generation_time
         }
-        success_logger.info(json.dumps(success_info, cls=ObjectIdEncoder))
+        success_logger.info(json.dumps(success_info))
         
         return result
         
@@ -771,7 +832,7 @@ def generate_chat_content(chat_data):
             'error': str(e)[:200],
             'generation_time': generation_time
         }
-        failure_logger.error(json.dumps(error_info, cls=ObjectIdEncoder))
+        failure_logger.error(json.dumps(error_info))
         raise
 
 def process_single_chat_update(chat_record, retry_attempt=0):
@@ -787,25 +848,48 @@ def process_single_chat_update(chat_record, retry_attempt=0):
         chat_content = generate_chat_content(chat_record)
         
         if not chat_content:
-            if retry_attempt < MAX_RETRIES:
-                logger.warning(f"Generation failed for {chat_id}, will retry (attempt {retry_attempt + 1}/{MAX_RETRIES})")
+            if retry_attempt < MAX_RETRY_ATTEMPTS:
+                logger.warning(f"Generation failed for {chat_id}, will retry (attempt {retry_attempt + 1}/{MAX_RETRY_ATTEMPTS})")
                 return None  # Will be retried
             else:
                 failure_counter.increment()
-                logger.error(f"Final failure for {chat_id} after {MAX_RETRIES} attempts")
+                logger.error(f"Final failure for {chat_id} after {MAX_RETRY_ATTEMPTS} attempts")
                 return None
         
-        # Prepare update document with the new structure
+        # Prepare update document
         update_doc = {}
         
         # Update messages with generated content
         if 'messages' in chat_content:
             messages = chat_content['messages']
             if isinstance(messages, list):
+                expected_message_count = len(chat_data.get('messages', []))
+                logger.info(f"Chat {chat_id}: Processing {len(messages)} generated messages for {expected_message_count} expected messages")
+                
                 for i, message in enumerate(messages):
                     if isinstance(message, dict):
-                        update_doc[f'messages.{i}.body.content'] = message.get('content')
-                        update_doc[f'messages.{i}.createdDateTime'] = message.get('timestamp')
+                        # Handle both 'content' and 'text' field names from LLM
+                        content = message.get('content') or message.get('text')
+                        timestamp = message.get('timestamp')
+                        
+                        # Debug logging for message content
+                        if not content or content.strip() == "":
+                            logger.warning(f"Chat {chat_id}: Message {i} has empty content. Message structure: {message}")
+                        else:
+                            logger.info(f"Chat {chat_id}: Message {i} content length: {len(content)} chars")
+                        
+                        update_doc[f'messages.{i}.body.content'] = content
+                        update_doc[f'messages.{i}.createdDateTime'] = timestamp
+                
+                # Log if we're missing messages
+                if len(messages) < expected_message_count:
+                    missing_count = expected_message_count - len(messages)
+                    logger.warning(f"Chat {chat_id}: Missing {missing_count} messages - only updating first {len(messages)} messages")
+                    
+                    # For missing messages, set content to null to avoid database errors
+                    for i in range(len(messages), expected_message_count):
+                        update_doc[f'messages.{i}.body.content'] = None
+                        logger.warning(f"Chat {chat_id}: Setting message {i} content to null (missing from LLM response)")
         
         # Update analysis fields from LLM response - regenerate ALL analysis fields
         if 'analysis' in chat_content:
@@ -854,7 +938,27 @@ def process_single_chat_update(chat_record, retry_attempt=0):
         update_doc['llm_processed_at'] = datetime.now().isoformat()
         update_doc['llm_model_used'] = OLLAMA_MODEL
         
+        # Debug: Log what's being saved to database
+        logger.info(f"Chat {chat_id}: Update document keys: {list(update_doc.keys())}")
+        if 'follow_up_date' in update_doc:
+            logger.info(f"Chat {chat_id}: follow_up_date in update_doc: {update_doc['follow_up_date']}")
+        else:
+            logger.warning(f"Chat {chat_id}: follow_up_date NOT in update_doc")
+        
         success_counter.increment()
+        
+        # Create intermediate result
+        intermediate_result = {
+            'chat_id': chat_id,
+            'update_doc': update_doc,
+            'original_data': {
+                'dominant_topic': chat_record.get('dominant_topic'),
+                'subtopics': chat_record.get('subtopics', '')[:100] + '...' if len(str(chat_record.get('subtopics', ''))) > 100 else chat_record.get('subtopics', '')
+            }
+        }
+        
+        # Add to intermediate results
+        results_manager.add_result(intermediate_result)
         
         return {
             'chat_id': chat_id,
@@ -862,13 +966,13 @@ def process_single_chat_update(chat_record, retry_attempt=0):
         }
         
     except Exception as e:
-        logger.error(f"Task processing error for {chat_record.get('_id', 'unknown')}: {str(e)[:100]}")
-        if retry_attempt < MAX_RETRIES:
-            logger.warning(f"Will retry {chat_record.get('_id', 'unknown')} due to error (attempt {retry_attempt + 1}/{MAX_RETRIES})")
+        logger.error(f"Task processing error for {chat_id}: {str(e)[:100]}")
+        if retry_attempt < MAX_RETRY_ATTEMPTS:
+            logger.warning(f"Will retry {chat_id} due to error (attempt {retry_attempt + 1}/{MAX_RETRY_ATTEMPTS})")
             return None  # Will be retried
         else:
             failure_counter.increment()
-            logger.error(f"Final failure for {chat_record.get('_id', 'unknown')} after {MAX_RETRIES} attempts")
+            logger.error(f"Final failure for {chat_id} after {MAX_RETRY_ATTEMPTS} attempts")
             return None
 
 def retry_failed_records(failed_records_list):
@@ -888,10 +992,10 @@ def retry_failed_records(failed_records_list):
         chat_record = record_data['record']
         retry_attempt = record_data.get('retry_attempt', 0) + 1
         
-        logger.info(f"Retrying {chat_record.get('_id', 'unknown')} (attempt {retry_attempt}/{MAX_RETRIES})")
+        logger.info(f"Retrying {chat_record.get('_id', 'unknown')} (attempt {retry_attempt}/{MAX_RETRY_ATTEMPTS})")
         
         # Add delay before retry
-        time.sleep(RETRY_DELAY)
+        time.sleep(RETRY_DELAY_SECONDS)
         
         result = process_single_chat_update(chat_record, retry_attempt)
         
@@ -899,7 +1003,7 @@ def retry_failed_records(failed_records_list):
             successful_retries.append(result)
             logger.info(f"Retry successful for {chat_record.get('_id', 'unknown')}")
         else:
-            if retry_attempt < MAX_RETRIES:
+            if retry_attempt < MAX_RETRY_ATTEMPTS:
                 # Add back to failed records for another retry
                 failed_records.append({
                     'record': chat_record,
@@ -937,6 +1041,9 @@ def save_batch_to_database(batch_updates):
                 result = chat_col.bulk_write(bulk_operations, ordered=False)
                 updated_count = result.modified_count
                 
+                # Mark intermediate results as saved
+                results_manager.mark_as_saved(chat_ids)
+                
                 # Update counter
                 update_counter._value += updated_count
                 
@@ -969,6 +1076,7 @@ def save_batch_to_database(batch_updates):
                         logger.error(f"Individual update failed for {update_data['chat_id']}: {individual_error}")
                 
                 if individual_success > 0:
+                    results_manager.mark_as_saved([up['chat_id'] for up in batch_updates[:individual_success]])
                     update_counter._value += individual_success
                     logger.info(f"Fallback: {individual_success} records saved individually")
                 
@@ -980,23 +1088,25 @@ def save_batch_to_database(batch_updates):
         logger.error(f"Database save error: {e}")
         return 0
 
-def update_chats_with_content_parallel():
-    """Update existing chats with generated content and analysis using optimized batch processing"""
+def process_chats_optimized():
+    """Main optimized processing function for chat generation - regenerates BOTH message content AND analysis fields for records with null/empty message content"""
+    logger.info("Starting Optimized EU Banking Chat Content Generation...")
+    logger.info("Focus: Processing records with NULL/empty message content")
+    logger.info("Action: Will regenerate BOTH message content AND analysis fields")
+    logger.info(f"Collection: {CHAT_COLLECTION}")
+    logger.info(f"Optimized Configuration:")
+    logger.info(f"  Max Workers: {MAX_WORKERS}")
+    logger.info(f"  Batch Size: {BATCH_SIZE}")
+    logger.info(f"  API Delay: {API_CALL_DELAY}s")
+    logger.info(f"  Request Timeout: {REQUEST_TIMEOUT}s")
+    logger.info(f"  Model: {OLLAMA_MODEL}")
     
-    logger.info("Starting EU Banking Chat Content Generation...")
-    logger.info(f"System Info: {MAX_WORKERS} CPU cores detected")
-    logger.info(f"Batch size: {BATCH_SIZE}")
-    logger.info(f"Max workers: {MAX_WORKERS}")
-    logger.info(f"Request timeout: {REQUEST_TIMEOUT}s")
-    logger.info(f"Max retries per request: {MAX_RETRIES}")
-    
-    # Test Ollama connection
+    # Test connection
     if not test_ollama_connection():
         logger.error("Cannot proceed without Ollama connection")
         return
     
-    # Get all chat records that need content generation
-    logger.info("Fetching chat records from database...")
+    # Get chats to process - only those that have NEVER been processed by LLM
     try:
         # Query for chats that have null/empty message content - will regenerate BOTH body content AND analysis fields
         query = {
@@ -1021,195 +1131,245 @@ def update_chats_with_content_parallel():
             ]
         }
         
-        # Exclude already processed chats
-        if checkpoint_manager.processed_chats:
-            processed_ids = [ObjectId(cid) for cid in checkpoint_manager.processed_chats if ObjectId.is_valid(cid)]
-            query["_id"] = {"$nin": processed_ids}
+        # Check chat status
+        total_chats_in_db = chat_col.count_documents({})
+        chats_processed_by_llm = chat_col.count_documents({"llm_processed": True})
+        chats_with_basic_fields = chat_col.count_documents({
+            "$and": [
+                {"_id": {"$exists": True}},
+                {"messages": {"$exists": True, "$ne": None, "$ne": []}}
+            ]
+        })
+        chats_with_llm_fields = chat_col.count_documents({
+            "$and": [
+                {"chat_summary": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"next_action_suggestion": {"$exists": True, "$ne": None, "$ne": ""}},
+                {"follow_up_reason": {"$exists": True, "$ne": None, "$ne": ""}}
+            ]
+        })
         
-        chat_records = list(chat_col.find(query))
-        total_chats = len(chat_records)
+        # Calculate chats with null/empty message content
+        chats_with_null_content = chat_col.count_documents({
+            "$and": [
+                {"_id": {"$exists": True}},
+                {"messages": {"$exists": True, "$ne": None, "$ne": []}},
+                {
+                    "$or": [
+                        {"messages.body.content": {"$eq": None}},
+                        {"messages.body.content": {"$eq": ""}},
+                        {"messages.body.content": {"$exists": False}},
+                        {"messages.body": {"$exists": False}},
+                        {"messages": {"$size": 0}}
+                    ]
+                }
+            ]
+        })
+        
+        # Calculate actual chats needing processing
+        chats_needing_processing = chat_col.count_documents(query)
+        
+        # Calculate pending chats (those with null content)
+        chats_pending_processing = chats_with_null_content
+        
+        # Debug: Let's also check what fields actually exist
+        logger.info("Debug - Checking field distribution in chat_new collection:")
+        for field in ["dominant_topic", "urgency", "follow_up_required", 
+                      "action_pending_status", "priority", "resolution_status", 
+                      "chat_summary", "next_action_suggestion", "follow_up_reason",
+                      "follow_up_date", "overall_sentiment", "sentiment", "subtopics", "category"]:
+            count = chat_col.count_documents({field: {"$exists": True, "$ne": None, "$ne": ""}})
+            logger.info(f"  {field}: {count} chats have this field")
+        
+        # Calculate completion percentages
+        completion_percentage = (chats_processed_by_llm / chats_with_basic_fields * 100) if chats_with_basic_fields > 0 else 0
+        pending_percentage = (chats_pending_processing / chats_with_basic_fields * 100) if chats_with_basic_fields > 0 else 0
+        
+        logger.info(f"Database Status:")
+        logger.info(f"  Total chats in DB: {total_chats_in_db}")
+        logger.info(f"  Chats with required basic fields: {chats_with_basic_fields}")
+        logger.info(f"  Chats with LLM-generated fields: {chats_with_llm_fields}")
+        logger.info(f"  Chats with NULL/empty message content: {chats_with_null_content}")
+        logger.info(f"  Chats processed by LLM (llm_processed=True): {chats_processed_by_llm}")
+        logger.info(f"  Chats pending processing (null content): {chats_pending_processing}")
+        logger.info(f"  Chats needing processing (this session): {chats_needing_processing}")
+        logger.info(f"  Action: Will regenerate BOTH message content AND analysis fields")
+        logger.info(f"  Overall Progress: {completion_percentage:.1f}% completed, {pending_percentage:.1f}% pending")
+        
+        # Use cursor instead of loading all into memory at once
+        chat_records = chat_col.find(query).batch_size(100)
+        total_chats = chat_col.count_documents(query)
         
         if total_chats == 0:
-            logger.info("All chats already have content!")
+            logger.info("No chats found that need processing!")
+            logger.info("All chats appear to have been processed by LLM already.")
             return
-            
-        logger.info(f"Found {total_chats} chats needing content generation")
-        progress_logger.info(f"BATCH_START: total_chats={total_chats}, batch_size={BATCH_SIZE}")
+        
+        logger.info(f"Found {total_chats} chats that need LLM processing")
+        
+        # Log session progress
+        progress_logger.info(f"SESSION_START: total_chats={total_chats}, completed={chats_processed_by_llm}, pending={chats_pending_processing}, completion_rate={completion_percentage:.1f}%")
+        progress_logger.info(f"BATCH_START: total_chats={total_chats}")
         
     except Exception as e:
         logger.error(f"Error fetching chat records: {e}")
         return
     
-    # Process in batches of BATCH_SIZE (3)
-    total_batches = (total_chats + BATCH_SIZE - 1) // BATCH_SIZE
+    # Process chats in optimized batches
     total_updated = 0
-    batch_updates = []  # Accumulate updates for batch saving
-    
-    logger.info(f"Processing in {total_batches} batches of {BATCH_SIZE} chats each")
-    logger.info(f"Using {MAX_WORKERS} workers for parallel processing")
+    batch_updates = []
     
     try:
-        for batch_num in range(1, total_batches + 1):
+        # Process chats in batches
+        batch_num = 0
+        processed_count = 0
+        
+        while processed_count < total_chats:
             if shutdown_flag.is_set():
-                logger.info(f"Shutdown requested. Stopping at batch {batch_num-1}/{total_batches}")
+                logger.info("Shutdown requested, stopping processing")
+                break
+            
+            batch_num += 1
+            total_batches = (total_chats + BATCH_SIZE - 1)//BATCH_SIZE
+            
+            # Collect batch from cursor - process only 1 chat at a time
+            batch = []
+            for _ in range(BATCH_SIZE):  # BATCH_SIZE is now 1
+                try:
+                    chat = next(chat_records)
+                    batch.append(chat)
+                    processed_count += 1
+                except StopIteration:
+                    break
+            
+            if not batch:
                 break
                 
-            batch_start = (batch_num - 1) * BATCH_SIZE
-            batch_end = min(batch_start + BATCH_SIZE, total_chats)
-            batch_records = chat_records[batch_start:batch_end]
+            logger.info(f"Processing batch {batch_num}/{total_batches} (chats {processed_count-len(batch)+1}-{processed_count})")
             
-            logger.info(f"Processing batch {batch_num}/{total_batches} ({len(batch_records)} chats)...")
-            progress_logger.info(f"BATCH_START: batch={batch_num}/{total_batches}, records={len(batch_records)}")
+            # Process batch with single worker
+            batch_tasks = []
+            for chat in batch:
+                chat_id = str(chat.get('_id'))
+                task = process_single_chat_update(chat)
+                batch_tasks.append(task)
             
-            # Process batch with optimized parallelization
-            successful_updates = []
-            batch_start_time = time.time()
+            logger.info(f"Created {len(batch_tasks)} tasks for batch {batch_num}")
             
-            # Use ThreadPoolExecutor for I/O bound operations (API calls)
-            with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-                # Submit all tasks for this batch
-                futures = {
-                    executor.submit(process_single_chat_update, record): record 
-                    for record in batch_records
-                }
+            if batch_tasks:
+                # Process single task with ultra-conservative approach
+                logger.info(f"Processing 1 task for batch {batch_num}")
                 
-                # Collect results with progress tracking - process as they complete
-                completed = 0
-                batch_failed_records = []  # Track failed records for this batch
+                batch_start_time = time.time()
+                successful_results = []
+                failed_count = 0
                 
+                # Process single task with maximum conservative settings
                 try:
-                    for future in as_completed(futures, timeout=REQUEST_TIMEOUT * 3):  # Increased timeout multiplier
-                        if shutdown_flag.is_set():
-                            logger.warning("Cancelling remaining tasks...")
-                            for f in futures:
-                                f.cancel()
-                            break
-                            
-                        try:
-                            result = future.result(timeout=60)  # Increased from 30 to 60 seconds
-                            completed += 1
-                            
-                            if result:
-                                successful_updates.append(result)
-                                # Save immediately when we have enough for a batch
-                                if len(successful_updates) >= BATCH_SIZE:
-                                    saved_count = save_batch_to_database(successful_updates)
-                                    total_updated += saved_count
-                                    successful_updates = []  # Clear after saving
-                                    logger.info(f"Immediate save: {saved_count} records")
-                            
-                            # Progress indicator for each completion
-                            progress = (completed / len(batch_records)) * 100
-                            logger.info(f"Task completed: {progress:.1f}% ({completed}/{len(batch_records)})")
-                                
-                        except Exception as e:
-                            logger.error(f"Error processing future result: {e}")
-                            completed += 1
-                            
+                    task = batch_tasks[0]  # Only one task
+                    task_timeout = REQUEST_TIMEOUT + 30  # 12.5 minutes per task
+                    logger.info(f"Starting single task with {task_timeout}s timeout")
+                    
+                    result = task  # Direct call since it's not async
+                    
+                    if result:
+                        successful_results.append(result)
+                        logger.info(f"Single task completed successfully")
+                    else:
+                        failed_count += 1
+                        logger.warning(f"Single task returned no result")
+                        
                 except Exception as e:
-                    logger.error(f"Error collecting batch results: {e}")
+                    failed_count += 1
+                    error_msg = str(e).lower() if e else "unknown error"
+                    if "rate limit" in error_msg or "429" in error_msg:
+                        logger.warning(f"Rate limit detected, pausing for 30 seconds...")
+                        time.sleep(30)  # 30 second pause for rate limits
+                    logger.error(f"Single task failed with error: {e}")
+                
+                if successful_results:
+                    batch_updates.extend(successful_results)
+                
+                batch_elapsed = time.time() - batch_start_time
+                logger.info(f"Batch {batch_num} completed in {batch_elapsed:.1f}s: {len(successful_results)}/1 successful, {failed_count} failed")
             
-            batch_end_time = time.time()
-            batch_duration = batch_end_time - batch_start_time
-            
-            # Save any remaining updates from this batch
-            if successful_updates and not shutdown_flag.is_set():
-                saved_count = save_batch_to_database(successful_updates)
+            # Save to database when we have enough updates
+            if len(batch_updates) >= BATCH_SIZE:
+                saved_count = save_batch_to_database(batch_updates)
                 total_updated += saved_count
-                logger.info(f"Final batch save: {saved_count} records")
+                batch_updates = []  # Clear batch
             
-            # Retry failed records from this batch
-            if failed_records and not shutdown_flag.is_set():
-                logger.info(f"Retrying {len(failed_records)} failed records from batch {batch_num}")
-                retry_successful = retry_failed_records(failed_records.copy())
-                
-                if retry_successful:
-                    # Save retry results
-                    retry_saved_count = save_batch_to_database(retry_successful)
-                    total_updated += retry_saved_count
-                    logger.info(f"Retry save: {retry_saved_count} records")
-                
-                # Clear failed records after retry attempt
-                failed_records.clear()
+            # Progress update
+            progress_pct = (processed_count / total_chats) * 100
+            remaining_chats = total_chats - processed_count
             
-            logger.info(f"Batch {batch_num} processing complete: {len(successful_updates)}/{len(batch_records)} successful")
-            logger.info(f"Batch duration: {batch_duration:.2f}s")
-            progress_logger.info(f"BATCH_COMPLETE: batch={batch_num}, successful={len(successful_updates)}, duration={batch_duration:.2f}s")
+            # Calculate overall completion including previously processed
+            total_completed = chats_processed_by_llm + total_updated
+            overall_completion = (total_completed / chats_with_basic_fields * 100) if chats_with_basic_fields > 0 else 0
             
-            # Progress summary every 3 batches (more frequent due to smaller batches)
-            if batch_num % 3 == 0 or batch_num == total_batches:
-                overall_progress = ((batch_num * BATCH_SIZE) / total_chats) * 100
-                logger.info(f"Overall Progress: {overall_progress:.1f}% | Batches: {batch_num}/{total_batches}")
-                logger.info(f"Success: {success_counter.value} | Failures: {failure_counter.value} | Retries: {retry_counter.value} | DB Updates: {total_updated}")
-                
-                # System resource info
-                cpu_percent = psutil.cpu_percent()
-                memory_percent = psutil.virtual_memory().percent
-                logger.info(f"System: CPU {cpu_percent:.1f}% | Memory {memory_percent:.1f}%")
-                progress_logger.info(f"PROGRESS_SUMMARY: batch={batch_num}/{total_batches}, success={success_counter.value}, failures={failure_counter.value}, retries={retry_counter.value}, db_updates={total_updated}")
+            logger.info(f"Session Progress: {progress_pct:.1f}% ({processed_count}/{total_chats}) - {remaining_chats} remaining")
+            logger.info(f"Overall Progress: {overall_completion:.1f}% completed ({total_completed}/{chats_with_basic_fields} total chats)")
             
-            # Brief pause between batches to help with rate limiting (reduced)
-            if not shutdown_flag.is_set() and batch_num < total_batches:
+            # Log detailed progress
+            progress_logger.info(f"PROGRESS_UPDATE: session={progress_pct:.1f}%, overall={overall_completion:.1f}%, processed_this_session={total_updated}, remaining={remaining_chats}")
+            
+            # Longer delay between batches to manage rate limits
+            if processed_count < total_chats and not shutdown_flag.is_set():
+                logger.info(f"Waiting {BATCH_DELAY}s before next batch to avoid rate limits...")
                 time.sleep(BATCH_DELAY)
         
-        # Final retry phase for any remaining failed records
-        if failed_records and not shutdown_flag.is_set():
-            logger.info(f"Final retry phase: {len(failed_records)} records remaining")
-            final_retry_successful = retry_failed_records(failed_records.copy())
-            
-            if final_retry_successful:
-                final_retry_saved = save_batch_to_database(final_retry_successful)
-                total_updated += final_retry_saved
-                logger.info(f"Final retry save: {final_retry_saved} records")
-            
-            failed_records.clear()
+        # Save any remaining updates
+        if batch_updates and not shutdown_flag.is_set():
+            saved_count = save_batch_to_database(batch_updates)
+            total_updated += saved_count
         
         if shutdown_flag.is_set():
-            logger.info("Content generation interrupted gracefully!")
+            logger.info("Processing interrupted gracefully!")
         else:
-            logger.info("EU Banking chat content generation complete!")
-            
-        logger.info(f"Total chats updated: {total_updated}")
-        logger.info(f"Successful generations: {success_counter.value}")
-        logger.info(f"Failed generations: {failure_counter.value}")
-        logger.info(f"Retry attempts: {retry_counter.value}")
-        logger.info(f"Data updated in MongoDB: {DB_NAME}.{CHAT_COLLECTION}")
+            logger.info("Optimized chat content generation complete!")
         
-        # Final progress log
-        progress_logger.info(f"FINAL_SUMMARY: total_updated={total_updated}, success={success_counter.value}, failures={failure_counter.value}")
+        # Final statistics
+        final_total_completed = chats_processed_by_llm + total_updated
+        final_completion_percentage = (final_total_completed / chats_with_basic_fields * 100) if chats_with_basic_fields > 0 else 0
+        final_pending = chats_with_basic_fields - final_total_completed
         
-    except KeyboardInterrupt:
-        logger.info("Generation interrupted by user!")
-        shutdown_flag.set()
+        logger.info(f"Final Results:")
+        logger.info(f"  Total chats updated this session: {total_updated}")
+        logger.info(f"  Total chats completed (all time): {final_total_completed}")
+        logger.info(f"  Total chats pending: {final_pending}")
+        logger.info(f"  Overall completion rate: {final_completion_percentage:.1f}%")
+        logger.info(f"  Successful generations: {success_counter.value}")
+        logger.info(f"  Failed generations: {failure_counter.value}")
+        logger.info(f"  Success rate: {(success_counter.value/(success_counter.value + failure_counter.value))*100:.1f}%" if (success_counter.value + failure_counter.value) > 0 else "Success rate: N/A")
+        
+        progress_logger.info(f"FINAL_SUMMARY: session_updated={total_updated}, total_completed={final_total_completed}, pending={final_pending}, completion_rate={final_completion_percentage:.1f}%, success={success_counter.value}, failures={failure_counter.value}")
+        
     except Exception as e:
-        logger.error(f"Unexpected error: {e}")
-        shutdown_flag.set()
+        logger.error(f"Unexpected error in main processing: {e}")
+        import traceback
+        logger.error(traceback.format_exc())
 
 def test_ollama_connection():
-    """Test if Ollama is accessible and model is available"""
+    """Test Ollama connection with simple generation"""
     try:
-        logger.info(f"Testing connection to Ollama: {OLLAMA_URL}")
+        logger.info("Testing Ollama connection...")
         
         headers = {
             'Authorization': f'Bearer {OLLAMA_API_KEY}',
             'Content-Type': 'application/json'
         }
         
-        # Test basic connection with simple generation
-        logger.info("Testing simple generation...")
-        
         test_payload = {
             "model": OLLAMA_MODEL,
             "messages": [
                 {
                     "role": "user",
-                    "content": "Generate a JSON object with 'test': 'success'"
+                    "content": 'Generate JSON: {"test": "success"}'
                 }
             ],
             "stream": False,
             "options": {
                 "temperature": 0.4,
-                "num_predict": 20
+                "num_predict": 50
             }
         }
         
@@ -1217,13 +1377,13 @@ def test_ollama_connection():
             OLLAMA_URL, 
             json=test_payload,
             headers=headers,
-            timeout=60  # Increased from 30 to 60 seconds
+            timeout=60
         )
         
-        logger.info(f"Generation test status: {test_response.status_code}")
+        logger.info(f"Test response status: {test_response.status_code}")
         
         if not test_response.text.strip():
-            logger.error("Empty response from generation endpoint")
+            logger.error("Empty response from Ollama API")
             return False
         
         test_response.raise_for_status()
@@ -1238,7 +1398,7 @@ def test_ollama_connection():
                 logger.error(f"No 'message.content' field in test. Fields: {list(result.keys())}")
                 return False
         except json.JSONDecodeError as e:
-            logger.error(f"Generation test returned invalid JSON: {e}")
+            logger.error(f"Test returned invalid JSON: {e}")
             return False
             
     except requests.exceptions.RequestException as e:
@@ -1328,16 +1488,52 @@ def get_sample_generated_chats(limit=3):
     except Exception as e:
         logger.error(f"Error getting sample chats: {e}")
 
+def recover_from_intermediate_results():
+    """Recover and process any pending intermediate results"""
+    try:
+        pending_results = results_manager.get_pending_updates()
+        
+        if not pending_results:
+            logger.info("No pending intermediate results to recover")
+            return 0
+        
+        logger.info(f"Recovering {len(pending_results)} pending intermediate results...")
+        
+        # Convert to database update format
+        batch_updates = []
+        for result in pending_results:
+            if 'chat_id' in result and 'update_doc' in result:
+                batch_updates.append({
+                    'chat_id': result['chat_id'],
+                    'update_doc': result['update_doc']
+                })
+        
+        if batch_updates:
+            # Process in batches of BATCH_SIZE
+            total_recovered = 0
+            for i in range(0, len(batch_updates), BATCH_SIZE):
+                batch = batch_updates[i:i + BATCH_SIZE]
+                saved_count = save_batch_to_database(batch)
+                total_recovered += saved_count
+                logger.info(f"Recovered batch: {saved_count} records")
+            
+            logger.info(f"Successfully recovered {total_recovered} records from intermediate results")
+            return total_recovered
+        
+        return 0
+        
+    except Exception as e:
+        logger.error(f"Error recovering intermediate results: {e}")
+        return 0
+
 # Main execution function
 def main():
     """Main function to initialize and run the chat content generator"""
-    logger.info("EU Banking Chat Content Generator Starting...")
-    logger.info(f"Database: {DB_NAME}")
-    logger.info(f"Collection: {CHAT_COLLECTION}")
+    logger.info("Optimized EU Banking Chat Content Generator Starting...")
+    logger.info(f"Database: {DB_NAME}.{CHAT_COLLECTION}")
     logger.info(f"Model: {OLLAMA_MODEL}")
+    logger.info(f"Configuration: {MAX_WORKERS} workers, {BATCH_SIZE} batch size")
     logger.info(f"Ollama URL: {OLLAMA_URL}")
-    logger.info(f"Max Workers: {MAX_WORKERS}")
-    logger.info(f"Batch Size: {BATCH_SIZE}")
     logger.info(f"Log Directory: {LOG_DIR}")
     
     # Setup signal handlers and cleanup
@@ -1350,34 +1546,43 @@ def main():
         return
     
     try:
-        # Show current collection stats
+        # Show initial stats
         get_collection_stats()
         
-        # Run the chat content generation
-        update_chats_with_content_parallel()
+        # Try to recover any pending intermediate results first
+        recovered_count = recover_from_intermediate_results()
+        if recovered_count > 0:
+            logger.info(f"Recovered {recovered_count} records from previous session")
         
-        # Show final statistics
+        # Run optimized processing
+        process_chats_optimized()
+        
+        # Show final stats
+        logger.info("="*60)
+        logger.info("FINAL STATISTICS")
+        logger.info("="*60)
         get_collection_stats()
-        
-        # Show sample generated content
-        get_sample_generated_chats()
+        get_sample_generated_chats(3)
         
     except KeyboardInterrupt:
-        logger.info("Content generation interrupted by user!")
+        logger.info("Processing interrupted by user")
+        shutdown_flag.set()
     except Exception as e:
         logger.error(f"Unexpected error in main: {e}")
+        import traceback
+        logger.error(traceback.format_exc())
     finally:
-        # Save final checkpoint
-        checkpoint_manager.save_checkpoint()
+        # Save final intermediate results
+        results_manager.save_to_file()
         cleanup_resources()
-        
-        logger.info("Session complete. Check log files for detailed information:")
-        logger.info(f"Main Log: {MAIN_LOG_FILE}")
-        logger.info(f"Success Log: {SUCCESS_LOG_FILE}")
-        logger.info(f"Failure Log: {FAILURE_LOG_FILE}")
-        logger.info(f"Progress Log: {PROGRESS_LOG_FILE}")
-        logger.info(f"Checkpoint: {CHECKPOINT_FILE}")
+        logger.info("Session complete. Check log files for details:")
+        logger.info(f"  Main: {MAIN_LOG_FILE}")
+        logger.info(f"  Success: {SUCCESS_LOG_FILE}")
+        logger.info(f"  Failures: {FAILURE_LOG_FILE}")
+        logger.info(f"  Progress: {PROGRESS_LOG_FILE}")
+        logger.info(f"  Intermediate Results: {INTERMEDIATE_RESULTS_FILE}")
 
-# Run the content generator
+# Run the optimized generator
 if __name__ == "__main__":
     main()
+     
