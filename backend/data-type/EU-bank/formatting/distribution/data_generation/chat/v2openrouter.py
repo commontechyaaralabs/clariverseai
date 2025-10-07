@@ -9,6 +9,7 @@ import signal
 import sys
 import multiprocessing
 import logging
+import re
 from datetime import datetime, timedelta
 from pymongo import MongoClient
 from bson import ObjectId
@@ -905,9 +906,10 @@ async def generate_chat_content(chat_data):
         # Clean and parse JSON response
         reply = response.strip()
         
-        # Remove markdown formatting if present
-        if "```" in reply:
-            reply = reply.replace("```json", "").replace("```", "")
+        # Remove markdown code fences more carefully using regex
+        # Remove leading ```json or ``` and trailing ```
+        reply = re.sub(r'^```(?:json)?\s*', '', reply)
+        reply = re.sub(r'\s*```$', '', reply)
         
         # Extract JSON
         json_start = reply.find('{')
@@ -916,7 +918,7 @@ async def generate_chat_content(chat_data):
         if json_start == -1 or json_end <= json_start:
             raise ValueError("No valid JSON found in LLM response")
         
-        reply = reply[json_start:json_end]
+        reply = reply[json_start:json_end].strip()
         
         try:
             result = json.loads(reply)
