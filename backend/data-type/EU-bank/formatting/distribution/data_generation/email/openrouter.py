@@ -79,18 +79,20 @@ progress_logger.propagate = False
 
 logger = logging.getLogger(__name__)
 
-# Optimized configuration for faster processing
+# Ultra-conservative configuration for OpenRouter free tier (heavily rate limited)
 OPENROUTER_MODEL = "google/gemma-3-27b-it:free"
-BATCH_SIZE = 6  # Moderate batch size to balance speed and reliability
-MAX_CONCURRENT = 2  # Conservative concurrency to avoid OpenRouter timeouts
-REQUEST_TIMEOUT = 600  # Increased timeout to 10 minutes for better reliability
-MAX_RETRIES = 8  # Fewer retries for faster failure handling
-RETRY_DELAY = 30  # Shorter retry delay
-BATCH_DELAY = 5.0  # Minimal batch delay
-API_CALL_DELAY = 2.0  # Much shorter API delay between calls
-CHECKPOINT_SAVE_INTERVAL = 50  # Much less frequent checkpoints
-RATE_LIMIT_BACKOFF_MULTIPLIER = 2  # Gentler backoff
-MAX_RATE_LIMIT_WAIT = 300  # Shorter wait time for rate limits
+BATCH_SIZE = 1  # Process only 1 email at a time
+MAX_CONCURRENT = 1  # Single concurrent call to avoid rate limits
+REQUEST_TIMEOUT = 300  # 5 minute timeout (free tier is SLOW - needs time to respond)
+MAX_RETRIES = 5  # More retries to ensure no records are missed
+RETRY_DELAY = 10  # 10 second initial retry delay
+BATCH_DELAY = 5.0  # 5 second delay between batches (increased to avoid rate limits)
+API_CALL_DELAY = 3.0  # 3 second base delay between API calls
+BASE_REQUEST_DELAY = 25.0  # 25 second base delay per request (INCREASED - free tier is heavily rate limited)
+CHECKPOINT_SAVE_INTERVAL = 5  # Very frequent checkpoints
+RATE_LIMIT_BACKOFF_MULTIPLIER = 2  # Moderate backoff
+MAX_RATE_LIMIT_WAIT = 120  # 2 minute max wait for rate limits
+MAX_RETRY_ATTEMPTS_PER_EMAIL = 10  # Maximum attempts per email before final retry queue
 
 # OpenRouter setup
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
@@ -220,11 +222,13 @@ class CheckpointManager:
         self.checkpoint_file = checkpoint_file
         self.processed_emails = set()
         self.failed_emails = set()
+        self.retry_attempts = {}  # Track retry attempts per email_id
         self.stats = {
             'start_time': time.time(),
             'processed_count': 0,
             'success_count': 0,
-            'failure_count': 0
+            'failure_count': 0,
+            'retry_count': 0
         }
         self._lock = asyncio.Lock()
         self.load_checkpoint()
@@ -236,8 +240,9 @@ class CheckpointManager:
                     data = json.load(f)
                     self.processed_emails = set(data.get('processed_emails', []))
                     self.failed_emails = set(data.get('failed_emails', []))
+                    self.retry_attempts = data.get('retry_attempts', {})
                     self.stats.update(data.get('stats', {}))
-                logger.info(f"Loaded checkpoint: {len(self.processed_emails)} processed, {len(self.failed_emails)} failed")
+                logger.info(f"Loaded checkpoint: {len(self.processed_emails)} processed, {len(self.failed_emails)} failed, {len(self.retry_attempts)} with retry attempts")
         except Exception as e:
             logger.warning(f"Could not load checkpoint: {e}")
     
@@ -247,6 +252,7 @@ class CheckpointManager:
                 checkpoint_data = {
                     'processed_emails': list(self.processed_emails),
                     'failed_emails': list(self.failed_emails),
+                    'retry_attempts': self.retry_attempts,
                     'stats': self.stats,
                     'timestamp': datetime.now().isoformat()
                 }
@@ -258,6 +264,20 @@ class CheckpointManager:
     def is_processed(self, thread_id):
         return str(thread_id) in self.processed_emails
     
+    async def increment_retry(self, thread_id):
+        """Track retry attempts for an email"""
+        async with self._lock:
+            thread_id_str = str(thread_id)
+            if thread_id_str not in self.retry_attempts:
+                self.retry_attempts[thread_id_str] = 0
+            self.retry_attempts[thread_id_str] += 1
+            self.stats['retry_count'] += 1
+            return self.retry_attempts[thread_id_str]
+    
+    def get_retry_count(self, thread_id):
+        """Get number of retry attempts for an email"""
+        return self.retry_attempts.get(str(thread_id), 0)
+    
     async def mark_processed(self, thread_id, success=True):
         async with self._lock:
             thread_id_str = str(thread_id)
@@ -267,6 +287,9 @@ class CheckpointManager:
             if success:
                 self.stats['success_count'] += 1
                 self.failed_emails.discard(thread_id_str)
+                # Clear retry attempts on success
+                if thread_id_str in self.retry_attempts:
+                    del self.retry_attempts[thread_id_str]
             else:
                 self.stats['failure_count'] += 1
                 self.failed_emails.add(thread_id_str)
@@ -327,21 +350,36 @@ class RateLimitedProcessor:
     def __init__(self, max_concurrent=MAX_CONCURRENT):
         self.semaphore = Semaphore(max_concurrent)
         self.last_request_time = 0
+        self.rate_limit_count = 0
+        self.last_rate_limit_time = 0
         self._lock = asyncio.Lock()
     
     async def call_openrouter_async(self, session, prompt, max_retries=MAX_RETRIES):
-        """Async OpenRouter API call with rate limiting and retries"""
+        """Async OpenRouter API call with smart adaptive rate limiting and retries"""
         async with self.semaphore:
-            # Rate limiting - ensure minimum delay between requests
+            # Intelligent rate limiting based on recent rate limit hits
             async with self._lock:
                 current_time = time.time()
                 time_since_last = current_time - self.last_request_time
-                if time_since_last < API_CALL_DELAY:
-                    await asyncio.sleep(API_CALL_DELAY - time_since_last)
+                
+                # Decay rate limit counter over time (reset after 10 minutes)
+                if self.rate_limit_count > 0 and current_time - self.last_rate_limit_time > 600:
+                    self.rate_limit_count = 0
+                    logger.info("Rate limit counter decayed, resetting to normal delays")
+                
+                # Adaptive delay based on rate limit history
+                if self.rate_limit_count > 0:
+                    # Aggressive delay increase after rate limits
+                    base_delay = BASE_REQUEST_DELAY + (self.rate_limit_count * 20)  # Add 20s per recent rate limit
+                    delay = max(base_delay, 45)  # Minimum 45 seconds when rate limited
+                    logger.info(f"Rate limit history detected ({self.rate_limit_count} recent), using {delay}s delay")
+                else:
+                    # Normal operation - use base delay
+                    delay = BASE_REQUEST_DELAY
+                
+                if time_since_last < delay:
+                    await asyncio.sleep(delay - time_since_last)
                 self.last_request_time = time.time()
-            
-            # Minimal delay for OpenRouter free tier to prevent timeouts
-            await asyncio.sleep(0.2)
             
             headers = {
                 'Authorization': f'Bearer {OPENROUTER_API_KEY}',
@@ -359,20 +397,25 @@ class RateLimitedProcessor:
             
             for attempt in range(max_retries):
                 try:
-                    # Progressive timeout - increase timeout with each retry
-                    progressive_timeout = REQUEST_TIMEOUT + (attempt * 60)  # Add 60s per retry
-                    timeout = aiohttp.ClientTimeout(total=progressive_timeout)
+                    # Use fixed timeout to avoid long waits
+                    timeout = aiohttp.ClientTimeout(total=REQUEST_TIMEOUT)
                     async with session.post(OPENROUTER_URL, json=payload, headers=headers, timeout=timeout) as response:
                         
                         if response.status == 429:  # Rate limited
-                            wait_time = min(MAX_RATE_LIMIT_WAIT, RETRY_DELAY * (RATE_LIMIT_BACKOFF_MULTIPLIER ** attempt))
-                            logger.warning(f"Rate limited (429), waiting {wait_time}s before retry {attempt+1}/{max_retries}")
-                            logger.info(f"Rate limit detected - this is normal for free tier. Waiting {wait_time} seconds...")
+                            # Track rate limit hits
+                            async with self._lock:
+                                self.rate_limit_count += 1
+                                self.last_rate_limit_time = time.time()
+                            
+                            # Very aggressive backoff for heavily rate limited free tier: 30s, 60s, 90s, 120s, 120s
+                            wait_time = min(MAX_RATE_LIMIT_WAIT, 30 * (attempt + 1))
+                            logger.warning(f"Rate limited (429) on attempt {attempt+1}/{max_retries}, waiting {wait_time}s")
+                            logger.info(f"Rate limit detected - adapting delays for subsequent requests")
                             await asyncio.sleep(wait_time)
                             continue
                         
                         if response.status == 502 or response.status == 503:  # Bad Gateway or Service Unavailable
-                            wait_time = min(60, RETRY_DELAY * (attempt + 1))
+                            wait_time = min(30, RETRY_DELAY * (attempt + 1))  # Reduced max wait to 30s
                             logger.warning(f"Server error ({response.status}), waiting {wait_time}s before retry {attempt+1}/{max_retries}")
                             await asyncio.sleep(wait_time)
                             continue
@@ -383,15 +426,22 @@ class RateLimitedProcessor:
                         if "choices" not in result or not result["choices"]:
                             raise ValueError("No 'choices' field in OpenRouter response")
                         
+                        # Reset rate limit counter on successful request
+                        async with self._lock:
+                            if self.rate_limit_count > 0:
+                                logger.info(f"Successful request after rate limits, resetting counter")
+                                self.rate_limit_count = 0
+                        
                         return result["choices"][0]["message"]["content"]
                         
                 except asyncio.TimeoutError:
                     logger.warning(f"Request timeout on attempt {attempt+1}/{max_retries}")
                     if attempt < max_retries - 1:
                         wait_time = RETRY_DELAY * (attempt + 1)
-                        logger.info(f"Waiting {wait_time}s before retry...")
+                        logger.info(f"Timeout detected - waiting {wait_time}s before retry...")
                         await asyncio.sleep(wait_time)
                         continue
+                    logger.error(f"Request timed out after {max_retries} attempts")
                     raise
                 
                 except aiohttp.ClientResponseError as e:
@@ -407,7 +457,38 @@ class RateLimitedProcessor:
                     raise
                 
                 except Exception as e:
-                    logger.warning(f"Request failed on attempt {attempt+1}/{max_retries}: {e}")
+                    try:
+                        # More detailed error logging
+                        error_type = type(e).__name__
+                        error_str = str(e) if e else "None"
+                        logger.error(f"Exception type: {error_type}, Error: {error_str}")
+                        logger.error(f"Exception args: {e.args if hasattr(e, 'args') else 'No args'}")
+                        
+                        # Safe error message extraction
+                        error_msg = ""
+                        if e and hasattr(e, '__str__'):
+                            try:
+                                error_msg = str(e).lower()
+                            except:
+                                error_msg = ""
+                        
+                        logger.warning(f"Request failed on attempt {attempt+1}/{max_retries}: {error_msg if error_msg else 'unknown error'}")
+                        
+                        # Check for rate limit in error message safely
+                        if error_msg and ("rate limit" in error_msg or "429" in error_msg):
+                            # Track rate limit and use very aggressive backoff
+                            async with self._lock:
+                                self.rate_limit_count += 1
+                                self.last_rate_limit_time = time.time()
+                            # Very aggressive backoff: 30s, 60s, 90s, 120s, 120s
+                            wait_time = min(MAX_RATE_LIMIT_WAIT, 30 * (attempt + 1))
+                            logger.warning(f"Rate limit detected in exception, pausing for {wait_time}s...")
+                            await asyncio.sleep(wait_time)
+                    except Exception as debug_e:
+                        logger.error(f"Error in error handling: {debug_e}")
+                        logger.error(f"Original error: {e}")
+                        logger.warning(f"Request failed on attempt {attempt+1}/{max_retries}: {e}")
+                    
                     if attempt < max_retries - 1:
                         wait_time = RETRY_DELAY * (attempt + 1)
                         await asyncio.sleep(wait_time)
@@ -748,20 +829,72 @@ async def generate_email_content(email_data):
         raise
 
 async def process_single_email(email_record, total_emails=None):
-    """Process a single email record with all optimizations"""
+    """Process a single email record with comprehensive retry logic - NEVER GIVE UP"""
     if shutdown_flag.is_set():
         return None
     
     thread_id = email_record.get('thread', {}).get('thread_id', 'unknown')
+    retry_count = checkpoint_manager.get_retry_count(thread_id)
     
-    try:
-        return await _process_single_email_internal(email_record, total_emails)
-    except Exception as e:
-        logger.error(f"Thread {thread_id} processing failed with error: {str(e)[:100]}")
-        await performance_monitor.record_failure(total_emails)
-        await failure_counter.increment()
-        await checkpoint_manager.mark_processed(thread_id, success=False)
-        return None
+    # Try up to MAX_RETRY_ATTEMPTS_PER_EMAIL times
+    for attempt in range(MAX_RETRY_ATTEMPTS_PER_EMAIL):
+        if shutdown_flag.is_set():
+            return None
+        
+        try:
+            if attempt > 0:
+                # Exponential backoff for retries: 10s, 20s, 40s, 80s, 120s, 120s...
+                retry_wait = min(120, RETRY_DELAY * (2 ** (attempt - 1)))  # Cap at 2 minutes
+                logger.info(f"Thread {thread_id}: Retry attempt {attempt + 1}/{MAX_RETRY_ATTEMPTS_PER_EMAIL} after {retry_wait}s wait")
+                await asyncio.sleep(retry_wait)
+                await checkpoint_manager.increment_retry(thread_id)
+            
+            result = await _process_single_email_internal(email_record, total_emails)
+            
+            if result:
+                # Success!
+                if attempt > 0:
+                    logger.info(f"Thread {thread_id}: SUCCESS after {attempt + 1} attempts!")
+                return result
+            else:
+                logger.warning(f"Thread {thread_id}: Attempt {attempt + 1} returned no result, retrying...")
+                continue
+                
+        except asyncio.TimeoutError:
+            logger.warning(f"Thread {thread_id}: Timeout on attempt {attempt + 1}/{MAX_RETRY_ATTEMPTS_PER_EMAIL}")
+            if attempt < MAX_RETRY_ATTEMPTS_PER_EMAIL - 1:
+                continue
+            else:
+                logger.error(f"Thread {thread_id}: Failed after {MAX_RETRY_ATTEMPTS_PER_EMAIL} timeout attempts")
+        
+        except Exception as e:
+            # Safe error message extraction
+            error_msg = ""
+            if e and hasattr(e, '__str__'):
+                try:
+                    error_msg = str(e).lower()
+                except:
+                    error_msg = ""
+            
+            logger.warning(f"Thread {thread_id}: Error on attempt {attempt + 1}/{MAX_RETRY_ATTEMPTS_PER_EMAIL}: {str(e)[:100] if e else 'unknown error'}")
+            
+            # Special handling for rate limits - very aggressive backoff
+            if error_msg and ("rate limit" in error_msg or "429" in error_msg):
+                wait_time = min(120, 30 * (attempt + 1))  # 30s, 60s, 90s, 120s, 120s...
+                logger.info(f"Thread {thread_id}: Rate limit detected, waiting {wait_time}s before retry")
+                await asyncio.sleep(wait_time)
+            
+            if attempt < MAX_RETRY_ATTEMPTS_PER_EMAIL - 1:
+                continue
+            else:
+                logger.error(f"Thread {thread_id}: Failed after {MAX_RETRY_ATTEMPTS_PER_EMAIL} attempts: {str(e)[:100] if e else 'unknown error'}")
+    
+    # If we get here, all attempts failed
+    logger.error(f"Thread {thread_id}: FAILED after {MAX_RETRY_ATTEMPTS_PER_EMAIL} attempts - marking for manual retry")
+    await performance_monitor.record_failure(total_emails)
+    await failure_counter.increment()
+    await checkpoint_manager.mark_processed(thread_id, success=False)
+    return None
 
 async def _process_single_email_internal(email_record, total_emails=None):
     """Internal email processing logic"""
@@ -1112,58 +1245,46 @@ async def process_emails_optimized():
                 successful_results = []
                 failed_count = 0
                 
-                # Process tasks with staggered execution to avoid overwhelming OpenRouter
+                # Process single task WITHOUT outer timeout (process_single_email has its own retry logic)
                 try:
-                    # Use asyncio.as_completed with controlled concurrency
-                    semaphore = asyncio.Semaphore(MAX_CONCURRENT)
+                    task = batch_tasks[0]  # Only one task (BATCH_SIZE=1)
+                    logger.info(f"Starting single task (with internal retry logic)")
                     
-                    async def controlled_task(task):
-                        async with semaphore:
-                            # Minimal delay between concurrent requests to OpenRouter
-                            await asyncio.sleep(0.1)
-                            return await task
+                    # No outer timeout - let the internal retry logic handle everything
+                    result = await task
                     
-                    # Create controlled tasks
-                    controlled_tasks = [controlled_task(task) for task in batch_tasks]
-                    
-                    # Process with individual timeouts to prevent one slow request from blocking others
-                    completed_results = []
-                    for i, task in enumerate(controlled_tasks):
+                    if result:
+                        successful_results.append(result)
+                        # Mark as processed (non-blocking)
+                        asyncio.create_task(
+                            checkpoint_manager.mark_processed(result['thread_id'], success=True)
+                        )
+                        logger.info(f"Single task completed successfully")
+                    else:
+                        failed_count += 1
+                        logger.warning(f"Single task returned no result after all retries")
+                        
+                except Exception as e:
+                    failed_count += 1
+                    # Safe error message extraction
+                    error_msg = ""
+                    if e and hasattr(e, '__str__'):
                         try:
-                            task_timeout = REQUEST_TIMEOUT * 2  # 20 minutes (1200s) per task
-                            logger.info(f"Starting task {i+1}/{len(controlled_tasks)} with {task_timeout}s timeout")
-                            
-                            result = await asyncio.wait_for(task, timeout=task_timeout)
-                            completed_results.append((i, result))
-                            
-                            if result:
-                                successful_results.append(result)
-                                # Mark as processed (non-blocking)
-                                asyncio.create_task(
-                                    checkpoint_manager.mark_processed(result['thread_id'], success=True)
-                                )
-                                logger.info(f"Task {i+1}/{len(controlled_tasks)} completed successfully")
-                            else:
-                                failed_count += 1
-                                logger.warning(f"Task {i+1}/{len(controlled_tasks)} returned no result")
-                                
-                        except asyncio.TimeoutError:
-                            failed_count += 1
-                            logger.error(f"Task {i+1}/{len(controlled_tasks)} timed out after {task_timeout}s")
-                        except Exception as e:
-                            failed_count += 1
-                            logger.error(f"Task {i+1}/{len(controlled_tasks)} failed with error: {e}")
+                            error_msg = str(e).lower()
+                        except:
+                            error_msg = ""
                     
-                    if successful_results:
-                        batch_updates.extend(successful_results)
-                    
-                    batch_elapsed = time.time() - batch_start_time
-                    logger.info(f"Batch {batch_num} completed in {batch_elapsed:.1f}s: {len(successful_results)}/{len(batch_tasks)} successful, {failed_count} failed")
-                    
-                except Exception as batch_error:
-                    batch_elapsed = time.time() - batch_start_time
-                    logger.error(f"Batch {batch_num} failed with error: {batch_error}")
-                    failed_count = len(batch_tasks)
+                    if error_msg and ("rate limit" in error_msg or "429" in error_msg):
+                        wait_time = 30  # 30 second pause for rate limits at batch level
+                        logger.warning(f"Rate limit detected at batch level, pausing for {wait_time}s...")
+                        await asyncio.sleep(wait_time)
+                    logger.error(f"Single task failed with error: {e}")
+                
+                if successful_results:
+                    batch_updates.extend(successful_results)
+                
+                batch_elapsed = time.time() - batch_start_time
+                logger.info(f"Batch {batch_num} completed in {batch_elapsed:.1f}s: {len(successful_results)}/1 successful, {failed_count} failed")
             
             # Save to database when we have enough updates
             if len(batch_updates) >= BATCH_SIZE:

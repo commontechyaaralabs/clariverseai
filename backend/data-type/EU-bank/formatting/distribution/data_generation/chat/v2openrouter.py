@@ -79,18 +79,20 @@ progress_logger.propagate = False
 
 logger = logging.getLogger(__name__)
 
-# Ultra-conservative configuration for OpenRouter free tier
+# Ultra-conservative configuration for OpenRouter (for organization API with strict rate limits)
 OPENROUTER_MODEL = "google/gemma-3-27b-it:free"
 BATCH_SIZE = 1  # Process only 1 chat at a time
 MAX_CONCURRENT = 1  # Single concurrent call to avoid rate limits
-REQUEST_TIMEOUT = 720  # Increased timeout to 12 minutes
-MAX_RETRIES = 3  # Fewer retries to avoid long waits
-RETRY_DELAY = 30  # 30 second retry delay for rate limits
-BATCH_DELAY = 10.0  # 10 second delay between batches
-API_CALL_DELAY = 5.0  # 5 second delay between API calls
+REQUEST_TIMEOUT = 300  # 5 minute timeout (free tier is SLOW - needs time to respond)
+MAX_RETRIES = 5  # More retries to ensure no records are missed
+RETRY_DELAY = 10  # 10 second initial retry delay
+BATCH_DELAY = 5.0  # 5 second delay between batches (increased to avoid rate limits)
+API_CALL_DELAY = 3.0  # 3 second base delay between API calls
+BASE_REQUEST_DELAY = 40.0  # 40 second base delay per request (INCREASED for org API with strict limits)
 CHECKPOINT_SAVE_INTERVAL = 5  # Very frequent checkpoints
 RATE_LIMIT_BACKOFF_MULTIPLIER = 2  # Moderate backoff
-MAX_RATE_LIMIT_WAIT = 1800  # 30 minute max wait for rate limits
+MAX_RATE_LIMIT_WAIT = 120  # 2 minute max wait for rate limits
+MAX_RETRY_ATTEMPTS_PER_CHAT = 10  # Maximum attempts per chat before final retry queue
 
 # OpenRouter setup
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
@@ -220,11 +222,13 @@ class CheckpointManager:
         self.checkpoint_file = checkpoint_file
         self.processed_chats = set()
         self.failed_chats = set()
+        self.retry_attempts = {}  # Track retry attempts per chat_id
         self.stats = {
             'start_time': time.time(),
             'processed_count': 0,
             'success_count': 0,
-            'failure_count': 0
+            'failure_count': 0,
+            'retry_count': 0
         }
         self._lock = asyncio.Lock()
         self.load_checkpoint()
@@ -236,8 +240,9 @@ class CheckpointManager:
                     data = json.load(f)
                     self.processed_chats = set(data.get('processed_chats', []))
                     self.failed_chats = set(data.get('failed_chats', []))
+                    self.retry_attempts = data.get('retry_attempts', {})
                     self.stats.update(data.get('stats', {}))
-                logger.info(f"Loaded checkpoint: {len(self.processed_chats)} processed, {len(self.failed_chats)} failed")
+                logger.info(f"Loaded checkpoint: {len(self.processed_chats)} processed, {len(self.failed_chats)} failed, {len(self.retry_attempts)} with retry attempts")
         except Exception as e:
             logger.warning(f"Could not load checkpoint: {e}")
     
@@ -247,6 +252,7 @@ class CheckpointManager:
                 checkpoint_data = {
                     'processed_chats': list(self.processed_chats),
                     'failed_chats': list(self.failed_chats),
+                    'retry_attempts': self.retry_attempts,
                     'stats': self.stats,
                     'timestamp': datetime.now().isoformat()
                 }
@@ -258,6 +264,20 @@ class CheckpointManager:
     def is_processed(self, chat_id):
         return str(chat_id) in self.processed_chats
     
+    async def increment_retry(self, chat_id):
+        """Track retry attempts for a chat"""
+        async with self._lock:
+            chat_id_str = str(chat_id)
+            if chat_id_str not in self.retry_attempts:
+                self.retry_attempts[chat_id_str] = 0
+            self.retry_attempts[chat_id_str] += 1
+            self.stats['retry_count'] += 1
+            return self.retry_attempts[chat_id_str]
+    
+    def get_retry_count(self, chat_id):
+        """Get number of retry attempts for a chat"""
+        return self.retry_attempts.get(str(chat_id), 0)
+    
     async def mark_processed(self, chat_id, success=True):
         async with self._lock:
             chat_id_str = str(chat_id)
@@ -267,6 +287,9 @@ class CheckpointManager:
             if success:
                 self.stats['success_count'] += 1
                 self.failed_chats.discard(chat_id_str)
+                # Clear retry attempts on success
+                if chat_id_str in self.retry_attempts:
+                    del self.retry_attempts[chat_id_str]
             else:
                 self.stats['failure_count'] += 1
                 self.failed_chats.add(chat_id_str)
@@ -332,7 +355,7 @@ class RateLimitedProcessor:
         self._lock = asyncio.Lock()
     
     async def call_openrouter_async(self, session, prompt, max_retries=MAX_RETRIES):
-        """Async OpenRouter API call with rate limiting and retries"""
+        """Async OpenRouter API call with smart adaptive rate limiting and retries"""
         async with self.semaphore:
             # Intelligent rate limiting based on recent rate limit hits
             async with self._lock:
@@ -344,21 +367,19 @@ class RateLimitedProcessor:
                     self.rate_limit_count = 0
                     logger.info("Rate limit counter decayed, resetting to normal delays")
                 
-                # If we've hit rate limits recently, increase delay
+                # Adaptive delay based on rate limit history
                 if self.rate_limit_count > 0:
-                    # Increase delay based on recent rate limits
-                    base_delay = API_CALL_DELAY + (self.rate_limit_count * 30)  # Add 30s per recent rate limit
-                    delay = max(base_delay, 60)  # Minimum 60 seconds
+                    # Aggressive delay increase after rate limits
+                    base_delay = BASE_REQUEST_DELAY + (self.rate_limit_count * 20)  # Add 20s per recent rate limit
+                    delay = max(base_delay, 45)  # Minimum 45 seconds when rate limited
                     logger.info(f"Rate limit history detected ({self.rate_limit_count} recent), using {delay}s delay")
                 else:
-                    delay = API_CALL_DELAY
+                    # Normal operation - use base delay
+                    delay = BASE_REQUEST_DELAY
                 
                 if time_since_last < delay:
                     await asyncio.sleep(delay - time_since_last)
                 self.last_request_time = time.time()
-            
-            # Ultra-conservative delay for OpenRouter free tier
-            await asyncio.sleep(30.0)
             
             headers = {
                 'Authorization': f'Bearer {OPENROUTER_API_KEY}',
@@ -386,14 +407,15 @@ class RateLimitedProcessor:
                                 self.rate_limit_count += 1
                                 self.last_rate_limit_time = time.time()
                             
-                            wait_time = min(MAX_RATE_LIMIT_WAIT, RETRY_DELAY * (RATE_LIMIT_BACKOFF_MULTIPLIER ** attempt))
+                            # Very aggressive backoff for heavily rate limited free tier: 30s, 60s, 90s, 120s, 120s
+                            wait_time = min(MAX_RATE_LIMIT_WAIT, 30 * (attempt + 1))
                             logger.warning(f"Rate limited (429) on attempt {attempt+1}/{max_retries}, waiting {wait_time}s")
-                            logger.info(f"Rate limit detected - this is normal for free tier. Waiting {wait_time} seconds...")
+                            logger.info(f"Rate limit detected - adapting delays for subsequent requests")
                             await asyncio.sleep(wait_time)
                             continue
                         
                         if response.status == 502 or response.status == 503:  # Bad Gateway or Service Unavailable
-                            wait_time = min(60, RETRY_DELAY * (attempt + 1))
+                            wait_time = min(30, RETRY_DELAY * (attempt + 1))  # Reduced max wait to 30s
                             logger.warning(f"Server error ({response.status}), waiting {wait_time}s before retry {attempt+1}/{max_retries}")
                             await asyncio.sleep(wait_time)
                             continue
@@ -442,11 +464,26 @@ class RateLimitedProcessor:
                         logger.error(f"Exception type: {error_type}, Error: {error_str}")
                         logger.error(f"Exception args: {e.args if hasattr(e, 'args') else 'No args'}")
                         
-                        error_msg = str(e).lower() if e else "unknown error"
-                        logger.warning(f"Request failed on attempt {attempt+1}/{max_retries}: {error_msg}")
-                        if "rate limit" in error_msg or "429" in error_msg:
-                            logger.warning(f"Rate limit detected, pausing for 30 seconds...")
-                            await asyncio.sleep(30)  # 30 second pause for rate limits
+                        # Safe error message extraction
+                        error_msg = ""
+                        if e and hasattr(e, '__str__'):
+                            try:
+                                error_msg = str(e).lower()
+                            except:
+                                error_msg = ""
+                        
+                        logger.warning(f"Request failed on attempt {attempt+1}/{max_retries}: {error_msg if error_msg else 'unknown error'}")
+                        
+                        # Check for rate limit in error message safely
+                        if error_msg and ("rate limit" in error_msg or "429" in error_msg):
+                            # Track rate limit and use very aggressive backoff
+                            async with self._lock:
+                                self.rate_limit_count += 1
+                                self.last_rate_limit_time = time.time()
+                            # Very aggressive backoff: 30s, 60s, 90s, 120s, 120s
+                            wait_time = min(MAX_RATE_LIMIT_WAIT, 30 * (attempt + 1))
+                            logger.warning(f"Rate limit detected in exception, pausing for {wait_time}s...")
+                            await asyncio.sleep(wait_time)
                     except Exception as debug_e:
                         logger.error(f"Error in error handling: {debug_e}")
                         logger.error(f"Original error: {e}")
@@ -649,27 +686,28 @@ def generate_optimized_chat_prompt(chat_data):
                 except:
                     pass  # If date parsing fails, continue without day shift instruction
         
-        # Determine conversation context based on category
-        if category == 'external':
+        # Determine conversation context based on category - CRITICAL: Follow category exactly!
+        # Handle both "external"/"External" and "internal"/"Internal"
+        if category and category.lower() == 'external':
             if i == 0:
-                # First message from customer to bank
-                message_instructions.append(f'{{"content": "Realistic chat message 10-100 words from customer to bank. Customer is reaching out about banking issue. Use natural language, contractions, informal tone, emojis when appropriate. Base content on {dominant_topic if dominant_topic else "banking business"}. Sound like a real customer with genuine concerns. Include realistic details, questions, and natural flow. Vary length: short responses (10-30 words) for quick replies, medium (40-70 words) for explanations, longer (80-100 words) for detailed discussions. When mentioning client names or issues, use realistic names like John Smith, Maria Garcia, etc. - NOT participant names.{day_shift_instruction}", "from_user": "{user_name}", "timestamp": "{message_date}"}}')
+                # CRITICAL: External means CUSTOMER speaks first (not employee!)
+                message_instructions.append(f'{{"content": "CUSTOMER message to BANK (10-100 words). Customer reaching out with banking question/issue/complaint. NOT an employee! Use first person (I, my, me). Sound like real customer: \'Hi, I need help with...\', \'Hello, I\'m having an issue...\', \'Can someone help me?\'. Topic: {dominant_topic if dominant_topic else "banking issue"}. Natural language, contractions, informal. Use emojis occasionally when expressing emotion (😅 for frustration, 🤔 for confusion, 😊 for thanks, ❓ for questions). Include realistic details. NEVER mention other customer names.{day_shift_instruction}", "from_user": "{user_name}", "timestamp": "{message_date}"}}')
             else:
-                # Bank employee response
-                message_instructions.append(f'{{"content": "Realistic chat message 10-100 words from bank employee to customer. Professional but friendly response. Use natural language, contractions, informal tone, emojis when appropriate. Base content on {dominant_topic if dominant_topic else "banking business"}. Sound like helpful bank staff. Include realistic details, solutions, and natural conversation flow. Vary length: short responses (10-30 words) for quick replies, medium (40-70 words) for explanations, longer (80-100 words) for detailed discussions. When mentioning client names or issues, use realistic names like John Smith, Maria Garcia, etc. - NOT participant names.{day_shift_instruction}", "from_user": "{user_name}", "timestamp": "{message_date}"}}')
+                # Bank employee responding to customer
+                message_instructions.append(f'{{"content": "BANK EMPLOYEE responding to CUSTOMER (10-100 words). Professional helpful response. Use phrases like \'I can help you with that\', \'Let me check\', \'I\'ll look into this\'. Address customer directly. Topic: {dominant_topic if dominant_topic else "banking business"}. Natural language, contractions, friendly tone. Use emojis sparingly when appropriate (👍 for confirmation, ✅ for completed, 📧 for email references). Include solutions, next steps. When mentioning OTHER clients in conversation, use names like John Smith, Maria Garcia.{day_shift_instruction}", "from_user": "{user_name}", "timestamp": "{message_date}"}}')
         else:
-            # Internal conversation between bank employees
+            # CRITICAL: Internal means EMPLOYEE to EMPLOYEE conversation (colleagues discussing work)
             if i == 0:
-                message_instructions.append(f'{{"content": "Realistic chat message 10-100 words from bank employee to colleague. Internal discussion about banking operations. Use natural language, contractions, informal tone, emojis when appropriate. Base content on {dominant_topic if dominant_topic else "banking business"}. Sound like colleagues discussing work. Include realistic details, questions, reactions, and natural flow. Vary length: short responses (10-30 words) for quick replies, medium (40-70 words) for explanations, longer (80-100 words) for detailed discussions. When mentioning client names or issues, use realistic names like John Smith, Maria Garcia, etc. - NOT participant names.{day_shift_instruction}", "from_user": "{user_name}", "timestamp": "{message_date}"}}')
+                message_instructions.append(f'{{"content": "BANK EMPLOYEE to COLLEAGUE (10-100 words). Internal work discussion between staff. Use phrases like \'Hey [name], just got a request from...\', \'Can you help me with...\', \'Did you process the...\'. Discussing CUSTOMERS\' issues, not their own. Topic: {dominant_topic if dominant_topic else "banking operations"}. Informal colleague chat. Use emojis occasionally for reactions (😅 for stress, 🤔 for thinking, 👍 for acknowledgment, 📁 for files). Mention customer names like Maria Garcia, John Smith when discussing their cases.{day_shift_instruction}", "from_user": "{user_name}", "timestamp": "{message_date}"}}')
             else:
-                message_instructions.append(f'{{"content": "Realistic chat message 10-100 words from bank employee to colleague. Continue internal discussion naturally. Use natural language, contractions, informal tone, emojis when appropriate. Base content on {dominant_topic if dominant_topic else "banking business"}. Sound like colleagues having a real conversation. Include realistic details, emotions, and natural conversation flow. Vary length: short responses (10-30 words) for quick replies, medium (40-70 words) for explanations, longer (80-100 words) for detailed discussions. When mentioning client names or issues, use realistic names like John Smith, Maria Garcia, etc. - NOT participant names.{day_shift_instruction}", "from_user": "{user_name}", "timestamp": "{message_date}"}}')
+                message_instructions.append(f'{{"content": "BANK EMPLOYEE replying to COLLEAGUE (10-100 words). Continue work discussion between staff. Use phrases like \'Let me check on that\', \'I\'ll look into it\', \'Yeah, I saw that request\'. Colleagues helping each other with customers\' cases. Topic: {dominant_topic if dominant_topic else "banking operations"}. Natural colleague conversation. Use emojis occasionally for emphasis (👍 for agreement, ✅ for done, 🔍 for searching, 😅 for challenges). Reference customer names like Maria Garcia, John Smith.{day_shift_instruction}", "from_user": "{user_name}", "timestamp": "{message_date}"}}')
     
     messages_json = ",\n  ".join(message_instructions)
     
     # No sentiment generation needed - use existing overall_sentiment
     
-    # Determine conversation type and ending requirements
-    conversation_type = "EXTERNAL (Customer ↔ Bank)" if category == 'external' else "INTERNAL (Bank Employee ↔ Bank Employee)"
+    # Determine conversation type and ending requirements (case-insensitive check)
+    conversation_type = "EXTERNAL (Customer ↔ Bank)" if (category and category.lower() == 'external') else "INTERNAL (Bank Employee ↔ Bank Employee)"
     
     # Determine ending requirements based on action pending and follow-up
     ending_requirements = []
@@ -697,6 +735,13 @@ def generate_optimized_chat_prompt(chat_data):
 - Last message date: {last_message_date}
 - Total message count: {message_count}
 
+**PRIORITY LEVEL DEFINITION:**
+- P1-Critical: Business stop → must resolve NOW (follow-up within 24-48 hours)
+- P2-High: Major issue, limited users impacted, needs fast action (follow-up within 2-7 days)
+- P3-Medium: Standard issues/requests, manageable timelines (follow-up within 1-2 weeks)
+- P4-Low: Minor issues, no major business impact (follow-up within 2-4 weeks)
+- P5-Very Low: Informational, FYI, archival (follow-up within 1-2 months)
+
 **ACTION PENDING CONTEXT:** {action_pending_context}
 
 **PARTICIPANTS:** {participant_str}
@@ -708,9 +753,10 @@ def generate_optimized_chat_prompt(chat_data):
 - Action {action_pending_status}: {"Show waiting scenarios" if action_pending_status == "yes" else "Show completed processes"}
 - Action Pending From {action_pending_from}: {action_pending_from_desc}
 
-**CONVERSATION STRUCTURE:**
-- External: First message from customer, then bank employee responses
-- Internal: All messages between bank employees discussing work
+**CONVERSATION STRUCTURE - CRITICAL:**
+- **External ({conversation_type})**: CUSTOMER writes FIRST message to BANK. Customer has problem/question. Bank employee responds helpfully. Customer uses first person (I, my, me). Example: "Hi, I'm having trouble with my account..." → "I can help you with that!"
+- **Internal ({conversation_type})**: BANK EMPLOYEES discussing work with each other. Colleagues chatting about customers' cases. Use names like Sarah, Megan. Example: "Hey Sarah, Maria Garcia called about..." → "Oh yeah, let me check that..."
+- **NEVER mix these up!** External = customer speaking, Internal = employees chatting
 - Realistic chat messages 10-100 words each
 - Natural human conversation flow
 - Use contractions, informal tone, emojis
@@ -742,7 +788,11 @@ def generate_optimized_chat_prompt(chat_data):
 - Sound like real people chatting, not formal business emails
 - Use contractions (I'm, we're, can't, won't, etc.)
 - Include natural reactions (oh no!, really?, that's interesting, etc.)
-- Use emojis appropriately (😅, 👍, 🤔, etc.)
+- **Use emojis occasionally (NOT every message)** - add emojis when expressing emotion or emphasis:
+  * Customer emotions: 😅 (frustration), 🤔 (confusion), 😊 (thanks), ❓ (questions), 😞 (disappointed)
+  * Bank responses: 👍 (confirmation), ✅ (completed), 📧 (email), 💳 (card), 📱 (phone)
+  * Employee chat: 😅 (stress), 🤔 (thinking), 👍 (acknowledgment), 📁 (files), 🔍 (searching), ✅ (done)
+  * Use 1-2 emojis per message maximum, only where natural
 - Ask follow-up questions naturally
 - Show emotions and personality
 - Use informal language while staying professional
@@ -767,15 +817,25 @@ def generate_optimized_chat_prompt(chat_data):
 - follow_up_reason: "Customer requested status update on loan application"
 - next_action_suggestion: "Call customer to provide current application status and next steps"
 
-**EXAMPLES OF GOOD CHAT MESSAGES:**
-- External: "Hi, I'm having trouble with my online banking. Can someone help me check my account balance?"
-- External: "Of course! I can help you with that. Let me look up your account details right away."
-- Internal: "Hey Sarah, just got a call about that loan application. The customer's asking about the status 😅"
-- Internal: "Oh really? What's the issue? I thought we processed it yesterday"
+**EXAMPLES OF GOOD CHAT MESSAGES (with appropriate emoji usage):**
+- **External (Customer → Bank):** "Hi, I'm having trouble with my online banking. Can someone help me check my account balance?" ← CUSTOMER speaking (no emoji - straightforward question)
+- **External (Bank → Customer):** "Of course! I can help you with that 👍 Let me look up your account details right away." ← BANK employee (emoji for confirmation)
+- **External (Customer → Bank):** "Hello, I need help accessing my statements. My login isn't working 😅" ← CUSTOMER issue (emoji for frustration)
+- **External (Bank → Customer):** "Thanks for your patience! I've reset your login ✅ You should be able to access it now." ← BANK (emoji for completion)
+- **Internal (Employee → Employee):** "Hey Sarah, just got a call from Maria Garcia about her loan application. She's asking about the status 😅" ← EMPLOYEES discussing customer's case (emoji for stress)
+- **Internal (Employee → Employee):** "Oh really? What's the issue with Maria's application? I thought we processed it yesterday" ← COLLEAGUES chatting (no emoji - straightforward)
+- **Internal (Employee → Employee):** "Can you help me with the Johnson account? They're asking about wire transfer limits 🤔" ← STAFF helping each other (emoji for uncertainty)
+- **Internal (Employee → Employee):** "Found it! I'll send you the file now 📁" ← COLLEAGUES (emoji for file reference)
 - Day shift: "Good morning! Following up on our discussion about the Smith application..."
-- Day shift: "Hey, got an update on that compliance issue we were working on"
 - Same day gap: "Quick follow-up - did you hear back from the client?"
-- Same day gap: "Just checking in on the status of that transaction"
+
+**FINAL CHECK BEFORE GENERATING:**
+- Conversation Type = {conversation_type}
+- If External: First message MUST be from CUSTOMER (not employee!) - customer has a problem/question
+- If Internal: All messages are EMPLOYEES chatting with each other about work/customers
+- Double-check you're following the correct category!
+- Priority = {priority} → {"follow_up_date MUST be within 24-48 hours of {last_message_date}" if priority and priority.startswith("P1") else "follow_up_date MUST be within 2-7 days of {last_message_date}" if priority and priority.startswith("P2") else "follow_up_date can be 1-2 weeks from {last_message_date}" if priority and priority.startswith("P3") else "follow_up_date can be 2-4 weeks from {last_message_date}" if priority and priority.startswith("P4") else "follow_up_date can be 1-2 months from {last_message_date}"} (ONLY if follow_up_required="yes")
+- Use emojis occasionally (1-2 per message max) where they add emotion or emphasis, NOT in every message!
 
 **OUTPUT:** {{
   "messages": [
@@ -785,7 +845,7 @@ def generate_optimized_chat_prompt(chat_data):
     "chat_summary": "Business summary 150-200 words describing discussion topic, participants, key points, and context",
     "follow_up_reason": {"[WHY follow-up is needed - the trigger/justification. Focus on the REASON/CAUSE that necessitates follow-up. Examples: 'Customer requested status update', 'Documentation incomplete', 'Compliance deadline approaching', 'Issue unresolved', 'Waiting for external approval', 'System error occurred', 'Client response required', 'Regulatory requirement pending'. Be specific about what triggered the need for follow-up.]" if follow_up_required == "yes" else "null"},
     "next_action_suggestion": {"[WHAT specific step to take - the actionable recommendation. Focus on the CONCRETE ACTION to be performed. Examples: 'Contact client to request missing documents', 'Schedule compliance review meeting', 'Escalate to senior management', 'Update system with new information', 'Send follow-up email to customer', 'Review and approve pending application', 'Coordinate with IT team for resolution', 'Prepare documentation for audit'. Be specific about what needs to be done.]" if follow_up_required == "yes" and action_pending_status == "yes" else "null"},
-    "follow_up_date": {"[Generate meaningful follow-up date based on last message date and issue type. Consider urgency, business days, and typical resolution times for the topic. For urgent issues (P1-Critical), suggest 1-2 business days. For high priority (P2-High), suggest 3-5 business days. For medium priority (P3-Medium), suggest 1-2 weeks. Format: YYYY-MM-DDTHH:MM:SSZ]" if follow_up_required == "yes" else "null"}
+    "follow_up_date": {"[Generate follow-up date after {last_message_date} based on priority={priority}. CRITICAL RULES: P1-Critical=SAME DAY or next business day (24-48 hours MAX), P2-High=2-5 business days (MUST be within same week, 7 days MAX), P3-Medium=1-2 weeks, P4-Low=2-4 weeks, P5-Very Low=1-2 months. NEVER generate dates months away for P1/P2! Format: YYYY-MM-DDTHH:MM:SSZ]" if follow_up_required == "yes" else "null"}
   }}
 }}
 
@@ -797,7 +857,15 @@ Use EXACT metadata values and EXACT dates provided. Implement concepts through n
   * If action_pending_from="Customer": Suggest what the customer needs to do
   * If action_pending_from="Bank": Suggest what the bank needs to do
   * If both follow_up_required="no" AND action_pending_status="no": Set to "null"
-- Follow-up date = "WHEN" (meaningful date based on last message and issue type) - ONLY if follow_up_required="yes", otherwise "null"
+- Follow-up date = "WHEN" - ONLY if follow_up_required="yes", otherwise "null"
+  * **PRIORITY-BASED TIMING (STRICT):**
+    - P1-Critical: SAME DAY or next business day (24-48 hours MAXIMUM from {last_message_date})
+    - P2-High: 2-5 business days (MUST be within 7 days from {last_message_date})
+    - P3-Medium: 1-2 weeks from {last_message_date}
+    - P4-Low: 2-4 weeks from {last_message_date}
+    - P5-Very Low: 1-2 months from {last_message_date}
+  * **NEVER generate dates months away for P1-Critical or P2-High priorities!**
+  * Current priority for this chat: {priority}
 - Chat summary should reflect the conversation type (external vs internal) and include all relevant context
 - All analysis fields should be meaningful and based on the actual conversation content
 - Use the EXACT dates provided for message timestamps - do not generate new dates
@@ -946,20 +1014,72 @@ async def generate_chat_content(chat_data):
         raise
 
 async def process_single_chat(chat_record, total_chats=None):
-    """Process a single chat record with all optimizations"""
+    """Process a single chat record with comprehensive retry logic - NEVER GIVE UP"""
     if shutdown_flag.is_set():
         return None
     
     chat_id = str(chat_record.get('_id', 'unknown'))
+    retry_count = checkpoint_manager.get_retry_count(chat_id)
     
-    try:
-        return await _process_single_chat_internal(chat_record, total_chats)
-    except Exception as e:
-        logger.error(f"Chat {chat_id} processing failed with error: {str(e)[:100]}")
-        await performance_monitor.record_failure(total_chats)
-        await failure_counter.increment()
-        await checkpoint_manager.mark_processed(chat_id, success=False)
-        return None
+    # Try up to MAX_RETRY_ATTEMPTS_PER_CHAT times
+    for attempt in range(MAX_RETRY_ATTEMPTS_PER_CHAT):
+        if shutdown_flag.is_set():
+            return None
+        
+        try:
+            if attempt > 0:
+                # Exponential backoff for retries: 10s, 20s, 40s, 80s, 120s, 120s...
+                retry_wait = min(120, RETRY_DELAY * (2 ** (attempt - 1)))  # Cap at 2 minutes
+                logger.info(f"Chat {chat_id}: Retry attempt {attempt + 1}/{MAX_RETRY_ATTEMPTS_PER_CHAT} after {retry_wait}s wait")
+                await asyncio.sleep(retry_wait)
+                await checkpoint_manager.increment_retry(chat_id)
+            
+            result = await _process_single_chat_internal(chat_record, total_chats)
+            
+            if result:
+                # Success!
+                if attempt > 0:
+                    logger.info(f"Chat {chat_id}: SUCCESS after {attempt + 1} attempts!")
+                return result
+            else:
+                logger.warning(f"Chat {chat_id}: Attempt {attempt + 1} returned no result, retrying...")
+                continue
+                
+        except asyncio.TimeoutError:
+            logger.warning(f"Chat {chat_id}: Timeout on attempt {attempt + 1}/{MAX_RETRY_ATTEMPTS_PER_CHAT}")
+            if attempt < MAX_RETRY_ATTEMPTS_PER_CHAT - 1:
+                continue
+            else:
+                logger.error(f"Chat {chat_id}: Failed after {MAX_RETRY_ATTEMPTS_PER_CHAT} timeout attempts")
+        
+        except Exception as e:
+            # Safe error message extraction
+            error_msg = ""
+            if e and hasattr(e, '__str__'):
+                try:
+                    error_msg = str(e).lower()
+                except:
+                    error_msg = ""
+            
+            logger.warning(f"Chat {chat_id}: Error on attempt {attempt + 1}/{MAX_RETRY_ATTEMPTS_PER_CHAT}: {str(e)[:100] if e else 'unknown error'}")
+            
+            # Special handling for rate limits - very aggressive backoff
+            if error_msg and ("rate limit" in error_msg or "429" in error_msg):
+                wait_time = min(120, 30 * (attempt + 1))  # 30s, 60s, 90s, 120s, 120s...
+                logger.info(f"Chat {chat_id}: Rate limit detected, waiting {wait_time}s before retry")
+                await asyncio.sleep(wait_time)
+            
+            if attempt < MAX_RETRY_ATTEMPTS_PER_CHAT - 1:
+                continue
+            else:
+                logger.error(f"Chat {chat_id}: Failed after {MAX_RETRY_ATTEMPTS_PER_CHAT} attempts: {str(e)[:100] if e else 'unknown error'}")
+    
+    # If we get here, all attempts failed
+    logger.error(f"Chat {chat_id}: FAILED after {MAX_RETRY_ATTEMPTS_PER_CHAT} attempts - marking for manual retry")
+    await performance_monitor.record_failure(total_chats)
+    await failure_counter.increment()
+    await checkpoint_manager.mark_processed(chat_id, success=False)
+    return None
 
 async def _process_single_chat_internal(chat_record, total_chats=None):
     """Internal chat processing logic"""
@@ -1306,13 +1426,13 @@ async def process_chats_optimized():
                 successful_results = []
                 failed_count = 0
                 
-                # Process single task with maximum conservative settings
+                # Process single task WITHOUT outer timeout (process_single_chat has its own retry logic)
                 try:
                     task = batch_tasks[0]  # Only one task
-                    task_timeout = REQUEST_TIMEOUT + 30  # 12.5 minutes per task
-                    logger.info(f"Starting single task with {task_timeout}s timeout")
+                    logger.info(f"Starting single task (with internal retry logic)")
                     
-                    result = await asyncio.wait_for(task, timeout=task_timeout)
+                    # No outer timeout - let the internal retry logic handle everything
+                    result = await task
                     
                     if result:
                         successful_results.append(result)
@@ -1323,17 +1443,22 @@ async def process_chats_optimized():
                         logger.info(f"Single task completed successfully")
                     else:
                         failed_count += 1
-                        logger.warning(f"Single task returned no result")
+                        logger.warning(f"Single task returned no result after all retries")
                         
-                except asyncio.TimeoutError:
-                    failed_count += 1
-                    logger.error(f"Single task timed out after {task_timeout}s")
                 except Exception as e:
                     failed_count += 1
-                    error_msg = str(e).lower() if e else "unknown error"
-                    if "rate limit" in error_msg or "429" in error_msg:
-                        logger.warning(f"Rate limit detected, pausing for 30 seconds...")
-                        await asyncio.sleep(30)  # 30 second pause for rate limits
+                    # Safe error message extraction
+                    error_msg = ""
+                    if e and hasattr(e, '__str__'):
+                        try:
+                            error_msg = str(e).lower()
+                        except:
+                            error_msg = ""
+                    
+                    if error_msg and ("rate limit" in error_msg or "429" in error_msg):
+                        wait_time = 30  # 30 second pause for rate limits at batch level
+                        logger.warning(f"Rate limit detected at batch level, pausing for {wait_time}s...")
+                        await asyncio.sleep(wait_time)
                     logger.error(f"Single task failed with error: {e}")
                 
                 if successful_results:
@@ -1365,15 +1490,62 @@ async def process_chats_optimized():
             # Update performance monitor with actual total
             await performance_monitor.log_progress(total_chats)
             
-            # Longer delay between batches to manage rate limits
+            # Short delay between batches (rate limiting is already handled in API call)
             if processed_count < total_chats and not shutdown_flag.is_set():
-                logger.info(f"Waiting {BATCH_DELAY}s before next batch to avoid rate limits...")
                 await asyncio.sleep(BATCH_DELAY)
         
         # Save any remaining updates
         if batch_updates and not shutdown_flag.is_set():
             saved_count = await save_batch_to_database(batch_updates)
             total_updated += saved_count
+        
+        # FINAL RETRY PASS: Retry all failed chats
+        if checkpoint_manager.failed_chats and not shutdown_flag.is_set():
+            failed_chat_ids = list(checkpoint_manager.failed_chats)
+            logger.info(f"="*60)
+            logger.info(f"FINAL RETRY PASS: Retrying {len(failed_chat_ids)} failed chats")
+            logger.info(f"="*60)
+            
+            retry_success = 0
+            retry_failed = 0
+            
+            for failed_chat_id in failed_chat_ids:
+                if shutdown_flag.is_set():
+                    break
+                
+                try:
+                    # Fetch chat record from database
+                    chat_record = chat_col.find_one({"_id": ObjectId(failed_chat_id)})
+                    
+                    if not chat_record:
+                        logger.warning(f"Failed chat {failed_chat_id} not found in database")
+                        continue
+                    
+                    logger.info(f"Final retry pass: Processing failed chat {failed_chat_id}")
+                    
+                    # Process with full retry logic
+                    result = await process_single_chat(chat_record, total_chats)
+                    
+                    if result:
+                        # Save successful result
+                        saved_count = await save_batch_to_database([result])
+                        if saved_count > 0:
+                            retry_success += 1
+                            total_updated += 1
+                            logger.info(f"Final retry pass: SUCCESS for chat {failed_chat_id}")
+                    else:
+                        retry_failed += 1
+                        logger.warning(f"Final retry pass: FAILED for chat {failed_chat_id}")
+                    
+                    # Short delay between retries
+                    await asyncio.sleep(BATCH_DELAY)
+                    
+                except Exception as e:
+                    retry_failed += 1
+                    logger.error(f"Final retry pass error for chat {failed_chat_id}: {e}")
+            
+            logger.info(f"Final retry pass complete: {retry_success} succeeded, {retry_failed} failed")
+            logger.info(f"="*60)
         
         # Final checkpoint save
         await checkpoint_manager.save_checkpoint()
@@ -1395,6 +1567,8 @@ async def process_chats_optimized():
         logger.info(f"  Overall completion rate: {final_completion_percentage:.1f}%")
         logger.info(f"  Successful generations: {success_counter.value}")
         logger.info(f"  Failed generations: {failure_counter.value}")
+        logger.info(f"  Total retry attempts: {checkpoint_manager.stats.get('retry_count', 0)}")
+        logger.info(f"  Chats still in failed state: {len(checkpoint_manager.failed_chats)}")
         logger.info(f"  Success rate: {(success_counter.value/(success_counter.value + failure_counter.value))*100:.1f}%" if (success_counter.value + failure_counter.value) > 0 else "Success rate: N/A")
         
         # Performance summary
@@ -1404,7 +1578,27 @@ async def process_chats_optimized():
         logger.info(f"  Average time per chat: {avg_time_per_chat:.1f} seconds")
         logger.info(f"  Processing rate: {success_counter.value/(total_time/3600):.0f} chats/hour" if total_time > 0 else "Processing rate: N/A")
         
-        progress_logger.info(f"FINAL_SUMMARY: session_updated={total_updated}, total_completed={final_total_completed}, pending={final_pending}, completion_rate={final_completion_percentage:.1f}%, success={success_counter.value}, failures={failure_counter.value}, total_time={total_time/3600:.2f}h, rate={success_counter.value/(total_time/3600):.0f}/h" if total_time > 0 else f"FINAL_SUMMARY: session_updated={total_updated}, total_completed={final_total_completed}, pending={final_pending}, completion_rate={final_completion_percentage:.1f}%, success={success_counter.value}, failures={failure_counter.value}")
+        progress_logger.info(f"FINAL_SUMMARY: session_updated={total_updated}, total_completed={final_total_completed}, pending={final_pending}, completion_rate={final_completion_percentage:.1f}%, success={success_counter.value}, failures={failure_counter.value}, retries={checkpoint_manager.stats.get('retry_count', 0)}, total_time={total_time/3600:.2f}h, rate={success_counter.value/(total_time/3600):.0f}/h" if total_time > 0 else f"FINAL_SUMMARY: session_updated={total_updated}, total_completed={final_total_completed}, pending={final_pending}, completion_rate={final_completion_percentage:.1f}%, success={success_counter.value}, failures={failure_counter.value}, retries={checkpoint_manager.stats.get('retry_count', 0)}")
+        
+        # Save list of permanently failed chats to a file for manual review
+        if checkpoint_manager.failed_chats:
+            failed_chats_file = LOG_DIR / f"permanently_failed_chats_{timestamp}.json"
+            try:
+                failed_chats_details = []
+                for failed_id in checkpoint_manager.failed_chats:
+                    failed_chats_details.append({
+                        'chat_id': failed_id,
+                        'retry_attempts': checkpoint_manager.get_retry_count(failed_id)
+                    })
+                
+                with open(failed_chats_file, 'w') as f:
+                    json.dump(failed_chats_details, f, indent=2)
+                
+                logger.warning(f"ATTENTION: {len(checkpoint_manager.failed_chats)} chats could not be processed after multiple retries")
+                logger.warning(f"Failed chat IDs saved to: {failed_chats_file}")
+                logger.warning(f"Please review and retry these chats manually or re-run the script")
+            except Exception as e:
+                logger.error(f"Could not save failed chats list: {e}")
         
     except Exception as e:
         logger.error(f"Unexpected error in main processing: {e}")

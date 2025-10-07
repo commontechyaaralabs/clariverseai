@@ -1,0 +1,140 @@
+Generate EU banking chat conversation with {message_count} messages.
+
+**METADATA:** {metadata_str}
+
+**CONVERSATION TYPE:** {conversation_type}
+
+**TIMELINE INFORMATION:**
+- First message date: {first_message_date}
+- Last message date: {last_message_date}
+- Total message count: {message_count}
+
+**PRIORITY LEVEL DEFINITION:**
+- P1-Critical: Business stop → must resolve NOW (follow-up within 24-48 hours)
+- P2-High: Major issue, limited users impacted, needs fast action (follow-up within 2-7 days)
+- P3-Medium: Standard issues/requests, manageable timelines (follow-up within 1-2 weeks)
+- P4-Low: Minor issues, no major business impact (follow-up within 2-4 weeks)
+- P5-Very Low: Informational, FYI, archival (follow-up within 1-2 months)
+
+**ACTION PENDING CONTEXT:** {action_pending_context}
+
+**PARTICIPANTS:** {participant_str}
+
+**RULES:** 
+- Sentiment {overall_sentiment}/5: {"Extreme frustration throughout ALL messages" if overall_sentiment == 5 else "Clear anger/frustration" if overall_sentiment == 4 else "Moderate concern/unease" if overall_sentiment == 3 else "Slight irritation/impatience" if overall_sentiment == 2 else "Calm professional baseline" if overall_sentiment == 1 else "Positive satisfied communication"}
+- Bank employees: ALWAYS calm, professional, helpful
+- Follow-up {follow_up_required}: {"End with open-ended scenarios" if follow_up_required == "yes" else "End with complete resolution"}
+- Action {action_pending_status}: {"Show waiting scenarios" if action_pending_status == "yes" else "Show completed processes"}
+- Action Pending From {action_pending_from}: {action_pending_from_desc}
+
+**CONVERSATION STRUCTURE - CRITICAL:**
+- **External**: CUSTOMER writes FIRST message to BANK. Customer has problem/question. Bank employee responds helpfully. Customer uses first person (I, my, me). Example: "Hi, I'm having trouble with my account..." → "I can help you with that!"
+- **Internal**: BANK EMPLOYEES discussing work with each other. Colleagues chatting about customers' cases. Use names like Sarah, Megan. Example: "Hey Sarah, Maria Garcia called about..." → "Oh yeah, let me check that..."
+- **NEVER mix these up!** External = customer speaking, Internal = employees chatting
+- Realistic chat messages 10-100 words each
+- Natural human conversation flow
+- Use contractions, informal tone, emojis occasionally (NOT every message)
+- Use EXACT dates provided for each message timestamp
+- Consider time gaps between messages for natural conversation flow
+
+**DATE-BASED CONVERSATION FLOW:**
+- Use the EXACT dates provided for each message
+- CRITICAL: If there are time gaps between messages, create natural conversation breaks
+- For day shifts (different dates), ALWAYS start with greetings like:
+  * "Good morning!" (for morning messages)
+  * "Hey, got an update" (for afternoon/evening messages)
+  * "Hi again" (for casual follow-ups)
+  * "Following up on our discussion yesterday" (for next-day follow-ups)
+  * "Quick update on..." (for urgent matters)
+- For same-day gaps (hours apart), use phrases like:
+  * "Got an update"
+  * "Quick follow-up"
+  * "Just checking in"
+  * "Hey, just heard back"
+- Consider business hours and urgency when crafting messages
+- Make conversations feel natural based on the actual timeline
+- ALWAYS acknowledge time gaps with appropriate conversation starters
+- NEVER continue a conversation across days without acknowledging the time gap
+
+**BANKING:** Realistic EU accounts | Specific amounts | Transaction IDs | Customer details | Authentic banking terminology
+
+**CONVERSATION STYLE:** 
+- Sound like real people chatting, not formal business emails
+- Use contractions (I'm, we're, can't, won't, etc.)
+- Include natural reactions (oh no!, really?, that's interesting, etc.)
+- **Use emojis occasionally (NOT every message)** - add emojis when expressing emotion or emphasis:
+  * Customer emotions: 😅 (frustration), 🤔 (confusion), 😊 (thanks), ❓ (questions), 😞 (disappointed)
+  * Bank responses: 👍 (confirmation), ✅ (completed), 📧 (email), 💳 (card), 📱 (phone)
+  * Employee chat: 😅 (stress), 🤔 (thinking), 👍 (acknowledgment), 📁 (files), 🔍 (searching), ✅ (done)
+  * Use 1-2 emojis per message maximum, only where natural
+- Ask follow-up questions naturally
+- Show emotions and personality
+- Use informal language while staying professional
+- Include realistic banking scenarios and problems
+
+**NAMING RULES:**
+- Participant names are ONLY for conversation participants (Customer, Bank_Employee, Employee_1, etc.)
+- When mentioning clients, customers, or issues in conversation content, use realistic names like John Smith, Maria Garcia, etc.
+- NEVER use participant names when referring to clients or customers in the conversation content
+
+**ENDING REQUIREMENTS:** {ending_str}
+
+**FOLLOW-UP vs NEXT ACTION DISTINCTION:**
+- **follow_up_reason** = "WHY" (the trigger/justification for follow-up)
+  * Focus on the REASON/CAUSE that necessitates follow-up
+  * Examples: "Customer requested status update", "Documentation incomplete", "Compliance deadline approaching", "Issue unresolved", "Waiting for external approval", "System error occurred"
+- **next_action_suggestion** = "WHAT" (the specific step to take)
+  * Focus on the CONCRETE ACTION to be performed
+  * Examples: "Contact client to request missing documents", "Schedule compliance review meeting", "Escalate to senior management", "Update system with new information", "Send follow-up email to customer", "Review and approve pending application"
+
+**EXAMPLE SCENARIO:**
+- follow_up_reason: "Customer requested status update on loan application"
+- next_action_suggestion: "Call customer to provide current application status and next steps"
+
+**EXAMPLES OF GOOD CHAT MESSAGES (with appropriate emoji usage):**
+- **External (Customer → Bank):** "Hi, I'm having trouble with my online banking. Can someone help me check my account balance?" ← CUSTOMER speaking (no emoji - straightforward question)
+- **External (Bank → Customer):** "Of course! I can help you with that 👍 Let me look up your account details right away." ← BANK employee (emoji for confirmation)
+- **External (Customer → Bank):** "Hello, I need help accessing my statements. My login isn't working 😅" ← CUSTOMER issue (emoji for frustration)
+- **External (Bank → Customer):** "Thanks for your patience! I've reset your login ✅ You should be able to access it now." ← BANK (emoji for completion)
+- **Internal (Employee → Employee):** "Hey Sarah, just got a call from Maria Garcia about her loan application. She's asking about the status 😅" ← EMPLOYEES discussing customer's case (emoji for stress)
+- **Internal (Employee → Employee):** "Oh really? What's the issue with Maria's application? I thought we processed it yesterday" ← COLLEAGUES chatting (no emoji - straightforward)
+- **Internal (Employee → Employee):** "Can you help me with the Johnson account? They're asking about wire transfer limits 🤔" ← STAFF helping each other (emoji for uncertainty)
+- **Internal (Employee → Employee):** "Found it! I'll send you the file now 📁" ← COLLEAGUES (emoji for file reference)
+- Day shift: "Good morning! Following up on our discussion about the Smith application..."
+- Same day gap: "Quick follow-up - did you hear back from the client?"
+
+**OUTPUT:** {{
+  "messages": [
+    {messages_json}
+  ],
+  "analysis": {{
+    "chat_summary": "Business summary 150-200 words describing discussion topic, participants, key points, and context",
+    "follow_up_reason": {"[WHY follow-up is needed - the trigger/justification. Focus on the REASON/CAUSE that necessitates follow-up. Examples: 'Customer requested status update', 'Documentation incomplete', 'Compliance deadline approaching', 'Issue unresolved', 'Waiting for external approval', 'System error occurred', 'Client response required', 'Regulatory requirement pending'. Be specific about what triggered the need for follow-up.]" if follow_up_required == "yes" else "null"},
+    "next_action_suggestion": {"[WHAT specific step to take - the actionable recommendation. Focus on the CONCRETE ACTION to be performed. Examples: 'Contact client to request missing documents', 'Schedule compliance review meeting', 'Escalate to senior management', 'Update system with new information', 'Send follow-up email to customer', 'Review and approve pending application', 'Coordinate with IT team for resolution', 'Prepare documentation for audit'. Be specific about what needs to be done.]" if follow_up_required == "yes" and action_pending_status == "yes" else "null"},
+    "follow_up_date": {"[Generate follow-up date after {last_message_date} based on priority={priority}. CRITICAL RULES: P1-Critical=SAME DAY or next business day (24-48 hours MAX), P2-High=2-5 business days (MUST be within same week, 7 days MAX), P3-Medium=1-2 weeks, P4-Low=2-4 weeks, P5-Very Low=1-2 months. NEVER generate dates months away for P1/P2! Format: YYYY-MM-DDTHH:MM:SSZ]" if follow_up_required == "yes" else "null"}
+  }}
+}}
+
+Use EXACT metadata values and EXACT dates provided. Implement concepts through natural scenarios, NOT explicit mentions. Generate authentic banking content with specific details.
+
+**CRITICAL:** 
+- Follow-up reason = "WHY" (the trigger/justification for follow-up) - ONLY if follow_up_required="yes", otherwise "null"
+- Next-action suggestion = "WHAT" (the step you advise taking) - ONLY generate if follow_up_required="yes" AND action_pending_status="yes":
+  * If action_pending_from="Customer": Suggest what the customer needs to do
+  * If action_pending_from="Bank": Suggest what the bank needs to do
+  * If both follow_up_required="no" AND action_pending_status="no": Set to "null"
+- Follow-up date = "WHEN" - ONLY if follow_up_required="yes", otherwise "null"
+  * **PRIORITY-BASED TIMING (STRICT):**
+    - P1-Critical: SAME DAY or next business day (24-48 hours MAXIMUM from {last_message_date})
+    - P2-High: 2-5 business days (MUST be within 7 days from {last_message_date})
+    - P3-Medium: 1-2 weeks from {last_message_date}
+    - P4-Low: 2-4 weeks from {last_message_date}
+    - P5-Very Low: 1-2 months from {last_message_date}
+  * **NEVER generate dates months away for P1-Critical or P2-High priorities!**
+  * Current priority for this chat: {priority}
+- Chat summary should reflect the conversation type (external vs internal) and include all relevant context
+- All analysis fields should be meaningful and based on the actual conversation content
+- Use the EXACT dates provided for message timestamps - do not generate new dates
+- Use emojis occasionally (1-2 per message max), NOT in every message
+
+Generate now.
