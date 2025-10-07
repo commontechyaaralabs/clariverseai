@@ -1,0 +1,5 @@
+urgency,category,total,follow_up_yes,follow_up_no,follow_up_yes_pct,follow_up_no_pct
+True,External,174,147,27,84.48275862068965,15.517241379310345
+True,Internal,41,34,7,82.92682926829268,17.073170731707318
+False,External,1410,1022,388,72.4822695035461,27.5177304964539
+False,Internal,375,261,114,69.6,30.4
