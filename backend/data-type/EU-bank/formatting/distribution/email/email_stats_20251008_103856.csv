@@ -1,0 +1,14 @@
+urgency,follow_up_required,action_pending_status,priority,count,percentage
+False,yes,yes,P3-Medium,471,23.5
+False,no,no,P5-Very Low,427,21.31
+False,yes,yes,P2-High,390,19.46
+False,yes,yes,P4-Low,284,14.17
+False,yes,yes,P1-Critical,163,8.13
+True,yes,yes,P1-Critical,88,4.39
+False,no,no,P4-Low,82,4.09
+True,yes,yes,P2-High,50,2.5
+True,yes,yes,P3-Medium,15,0.75
+True,no,no,P2-High,12,0.6
+True,no,no,P3-Medium,12,0.6
+False,yes,yes,P5-Very Low,6,0.3
+True,no,no,P4-Low,4,0.2

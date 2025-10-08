@@ -1,0 +1,17 @@
+urgency,follow_up_required,action_pending_status,priority,action_pending_from,count,percentage
+False,yes,yes,P2-High,company,287,14.32
+False,yes,yes,P3-Medium,company,246,12.28
+False,yes,yes,P3-Medium,customer,225,11.23
+False,yes,yes,P4-Low,company,151,7.53
+False,yes,yes,P4-Low,customer,133,6.64
+False,yes,yes,P2-High,customer,103,5.14
+False,yes,yes,P1-Critical,company,90,4.49
+False,yes,yes,P1-Critical,customer,73,3.64
+True,yes,yes,P1-Critical,company,49,2.45
+True,yes,yes,P1-Critical,customer,39,1.95
+True,yes,yes,P2-High,company,29,1.45
+True,yes,yes,P2-High,customer,21,1.05
+True,yes,yes,P3-Medium,customer,11,0.55
+False,yes,yes,P5-Very Low,company,4,0.2
+True,yes,yes,P3-Medium,company,4,0.2
+False,yes,yes,P5-Very Low,customer,2,0.1
