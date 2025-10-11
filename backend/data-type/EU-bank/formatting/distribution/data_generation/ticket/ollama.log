@@ -1,0 +1,84 @@
+nohup: ignoring input
+2025-10-11 16:12:01,128 - INFO - Optimized EU Banking Trouble Ticket Content Generator Starting...
+2025-10-11 16:12:01,129 - INFO - Database: sparzaai.tickets_new
+2025-10-11 16:12:01,129 - INFO - Model: gemma3:27b
+2025-10-11 16:12:01,129 - INFO - Ollama URL: http://34.147.17.26:17647/api/chat
+2025-10-11 16:12:01,129 - INFO - Configuration: 3 workers, 3 batch size
+2025-10-11 16:12:02,402 - INFO - Database connection established and indexes created
+2025-10-11 16:12:02,956 - INFO - Collection Statistics:
+2025-10-11 16:12:02,956 - INFO -   Total tickets: 2000
+2025-10-11 16:12:02,956 - INFO -   With complete fields: 0
+2025-10-11 16:12:02,956 - INFO -   Without complete fields: 2000
+2025-10-11 16:12:02,956 - INFO -   Urgent tickets: 215 (10.8%)
+2025-10-11 16:12:02,956 - INFO -   Completion rate: 0.0%
+2025-10-11 16:12:02,956 - INFO - Priority Distribution:
+2025-10-11 16:12:02,956 - INFO -   P1-Critical: 280 tickets
+2025-10-11 16:12:02,956 - INFO -   P2-High: 287 tickets
+2025-10-11 16:12:02,956 - INFO -   P3-Medium: 747 tickets
+2025-10-11 16:12:02,956 - INFO -   P4-Low: 201 tickets
+2025-10-11 16:12:02,956 - INFO -   P5-Very Low: 485 tickets
+2025-10-11 16:12:02,956 - INFO - Resolution Status Distribution:
+2025-10-11 16:12:02,956 - INFO -   closed: 536 tickets
+2025-10-11 16:12:02,956 - INFO -   open: 1464 tickets
+2025-10-11 16:12:02,956 - INFO - Starting Optimized EU Banking Trouble Ticket Content Generation...
+2025-10-11 16:12:02,957 - INFO - Focus: Processing records with NULL/empty message body content
+2025-10-11 16:12:02,957 - INFO - Collection: tickets_new
+2025-10-11 16:12:02,957 - INFO - Optimized Configuration:
+2025-10-11 16:12:02,957 - INFO -   Max Workers: 3
+2025-10-11 16:12:02,957 - INFO -   Batch Size: 3
+2025-10-11 16:12:02,957 - INFO -   API Delay: 0.5s
+2025-10-11 16:12:02,957 - INFO -   Request Timeout: 300s
+2025-10-11 16:12:02,957 - INFO -   Model: gemma3:27b
+2025-10-11 16:12:02,957 - INFO - Testing connection to Ollama: http://34.147.17.26:17647/api/chat
+2025-10-11 16:12:03,818 - INFO - Test status: 200
+2025-10-11 16:12:03,818 - INFO - Ollama connection test successful
+2025-10-11 16:12:03,818 - INFO - Test response: ```json
+{
+  "test": "success"
+}
+```
+...
+2025-10-11 16:12:04,374 - INFO - Database Status:
+2025-10-11 16:12:04,375 - INFO -   Total tickets in DB: 2000
+2025-10-11 16:12:04,375 - INFO -   Tickets with required basic fields: 2000
+2025-10-11 16:12:04,375 - INFO -   Tickets with NULL/empty message body content: 2000
+2025-10-11 16:12:04,375 - INFO -   Tickets processed by LLM: 0
+2025-10-11 16:12:04,375 - INFO -   Tickets needing processing: 2000
+2025-10-11 16:12:04,375 - INFO -   Overall Progress: 0.0% completed, 100.0% pending
+2025-10-11 16:12:07,490 - INFO - Found 2000 tickets that need LLM processing
+2025-10-11 16:12:07,490 - INFO - Previously processed (checkpoint): 0 tickets
+2025-10-11 16:12:07,490 - INFO - Processing in 667 batches of 3 tickets each
+2025-10-11 16:12:07,490 - INFO - Using 3 workers for parallel processing
+2025-10-11 16:12:07,490 - INFO - Processing batch 1/667 (3 tickets)...
+2025-10-11 16:12:07,491 - INFO - Processing ticket 6889ba7ca4f4718f70978ff5 - Topic: Cross Border Failed, Priority: P5-Very Low, Messages: 4
+2025-10-11 16:12:07,491 - INFO - Processing ticket 6889ba7ea4f4718f70978ff6 - Topic: Core System Error, Priority: P3-Medium, Messages: 4
+2025-10-11 16:12:07,494 - INFO - Processing ticket 6889ba7ea4f4718f70978ff7 - Topic: Card Authorization Failed, Priority: P4-Low, Messages: 4
+2025-10-11 16:12:37,844 - INFO - ✓ Ticket 6889ba7ea4f4718f70978ff6: JSON parsed successfully
+2025-10-11 16:12:37,844 - INFO - ✓ SUCCESS: Ticket 6889ba7ea4f4718f70978ff6 completed in 30.4s - Topic: Core System Error, Priority: P3-Medium
+2025-10-11 16:12:37,844 - INFO - 💾 SAVED: Ticket 6889ba7ea4f4718f70978ff6 added to batch (batch size: 1/3)
+2025-10-11 16:12:37,844 - INFO - Task completed: 33.3% (1/3)
+2025-10-11 16:13:02,554 - INFO - ✓ Ticket 6889ba7ca4f4718f70978ff5: JSON parsed successfully
+2025-10-11 16:13:02,555 - INFO - ✓ SUCCESS: Ticket 6889ba7ca4f4718f70978ff5 completed in 55.1s - Topic: Cross Border Failed, Priority: P5-Very Low
+2025-10-11 16:13:02,555 - INFO - 💾 SAVED: Ticket 6889ba7ca4f4718f70978ff5 added to batch (batch size: 2/3)
+2025-10-11 16:13:02,555 - INFO - Task completed: 66.7% (2/3)
+2025-10-11 16:13:29,337 - INFO - ✓ Ticket 6889ba7ea4f4718f70978ff7: JSON parsed successfully
+2025-10-11 16:13:29,337 - INFO - ✓ SUCCESS: Ticket 6889ba7ea4f4718f70978ff7 completed in 81.8s - Topic: Card Authorization Failed, Priority: P4-Low
+2025-10-11 16:13:29,338 - INFO - 💾 SAVED: Ticket 6889ba7ea4f4718f70978ff7 added to batch (batch size: 3/3)
+2025-10-11 16:13:29,338 - INFO - 💾 BATCH #1 READY: 3 tickets ready for database save
+2025-10-11 16:13:29,338 - INFO - 🔄 WRITING TO DATABASE: Starting bulk write of 3 tickets...
+2025-10-11 16:13:29,338 - INFO - 🔄 WRITING TO DATABASE: Starting bulk write of 3 tickets...
+2025-10-11 16:13:29,548 - INFO - ✅ DATABASE WRITE COMPLETE: 3 tickets successfully written to database
+2025-10-11 16:13:29,549 - INFO - ✅ DATABASE WRITE COMPLETE: 3 tickets successfully written to database
+2025-10-11 16:13:29,549 - INFO - ✅ BATCH #1 COMPLETED: 3 tickets written to database successfully!
+2025-10-11 16:13:29,549 - INFO - 📊 TOTAL BATCHES COMPLETED: 1 | TOTAL TICKETS SAVED TO DB: 3
+2025-10-11 16:13:29,549 - INFO - Task completed: 100.0% (3/3)
+2025-10-11 16:13:29,549 - INFO - Batch 1 processing complete: 0/3 successful
+2025-10-11 16:13:29,549 - INFO - Batch duration: 82.06s
+2025-10-11 16:13:31,552 - INFO - Processing batch 2/667 (3 tickets)...
+2025-10-11 16:13:31,552 - INFO - Processing ticket 6889ba7ea4f4718f70978ff8 - Topic: Executive Complaint Raised, Priority: P3-Medium, Messages: 7
+2025-10-11 16:13:31,553 - INFO - Processing ticket 6889ba7ea4f4718f70978ff9 - Topic: Submission Deadline Missed, Priority: P5-Very Low, Messages: 1
+2025-10-11 16:13:31,556 - INFO - Processing ticket 6889ba7ea4f4718f70978ffa - Topic: Connection Timeout Error, Priority: P5-Very Low, Messages: 4
+2025-10-11 16:14:10,552 - INFO - ✓ Ticket 6889ba7ea4f4718f70978ff8: JSON parsed successfully
+2025-10-11 16:14:10,553 - INFO - ✓ SUCCESS: Ticket 6889ba7ea4f4718f70978ff8 completed in 39.0s - Topic: Executive Complaint Raised, Priority: P3-Medium
+2025-10-11 16:14:10,553 - INFO - 💾 SAVED: Ticket 6889ba7ea4f4718f70978ff8 added to batch (batch size: 1/3)
+2025-10-11 16:14:10,553 - INFO - Task completed: 33.3% (1/3)

@@ -44,17 +44,28 @@ FAILURE_LOG_FILE = LOG_DIR / f"failed_generations_{timestamp}.log"
 PROGRESS_LOG_FILE = LOG_DIR / f"progress_{timestamp}.log"
 CHECKPOINT_FILE = LOG_DIR / f"checkpoint_{timestamp}.json"
 
-# Configure main logger
+# Force unbuffered output FIRST
+import io
+sys.stdout = io.TextIOWrapper(open(sys.stdout.fileno(), 'wb', 0), write_through=True)
+sys.stderr = io.TextIOWrapper(open(sys.stderr.fileno(), 'wb', 0), write_through=True)
+
+# Configure main logger with immediate flush
+file_handler = logging.FileHandler(MAIN_LOG_FILE, encoding='utf-8')
+file_handler.setLevel(logging.INFO)
+file_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+
+stream_handler = logging.StreamHandler(sys.stdout)
+stream_handler.setLevel(logging.INFO)
+stream_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler(MAIN_LOG_FILE, encoding='utf-8'),
-        logging.StreamHandler(sys.stdout)
-    ]
+    handlers=[file_handler, stream_handler],
+    force=True
 )
 
-# Configure specialized loggers
+# Configure specialized loggers with immediate flush
 success_logger = logging.getLogger('success')
 success_logger.setLevel(logging.INFO)
 success_handler = logging.FileHandler(SUCCESS_LOG_FILE, encoding='utf-8')
@@ -78,9 +89,23 @@ progress_logger.propagate = False
 
 logger = logging.getLogger(__name__)
 
+# Helper function to flush all log handlers
+def flush_all_logs():
+    """Flush all log handlers to ensure immediate write"""
+    for handler in logger.handlers:
+        handler.flush()
+    for handler in success_logger.handlers:
+        handler.flush()
+    for handler in failure_logger.handlers:
+        handler.flush()
+    for handler in progress_logger.handlers:
+        handler.flush()
+    sys.stdout.flush()
+    sys.stderr.flush()
+
 # Configuration for Ollama
 OLLAMA_MODEL = "gemma3:27b"
-BATCH_SIZE = 1
+BATCH_SIZE = 3
 MAX_WORKERS = 3  # Concurrent workers
 REQUEST_TIMEOUT = 300
 MAX_RETRIES = 5
@@ -91,8 +116,8 @@ CHECKPOINT_SAVE_INTERVAL = 5
 MAX_RETRY_ATTEMPTS_PER_TICKET = 10
 
 # Ollama setup
-OLLAMA_API_KEY = os.getenv("OLLAMA_API_KEY", "7eb2c60fcd3740cea657c8d109ff9016af894d2a2c112954bc3aff033c117736")
-OLLAMA_URL = "http://34.147.17.26:16637/api/chat"
+OLLAMA_API_KEY = os.getenv("OLLAMA_API_KEY", "9226380519607fc8251a4021fd0795556fc7dc5a99b53d319b9a684c5d908b7d")
+OLLAMA_URL = "http://34.147.17.26:17647/api/chat"
 
 # Additional configuration
 CPU_COUNT = multiprocessing.cpu_count()
@@ -164,6 +189,7 @@ class PerformanceMonitor:
             
             success_rate = self.successful_requests/(self.successful_requests + self.failed_requests)*100 if (self.successful_requests + self.failed_requests) > 0 else 0
             logger.info(f"Performance: {self.tickets_processed}/{total_tickets} tickets, {rate:.1f}/sec ({rate*3600:.0f}/hour), {success_rate:.1f}% success" + (f", ETA: {eta/3600:.1f}h" if eta > 0 else ""))
+            flush_all_logs()
 
 performance_monitor = PerformanceMonitor()
 
@@ -248,11 +274,10 @@ class CheckpointManager:
 checkpoint_manager = CheckpointManager(CHECKPOINT_FILE)
 
 def setup_signal_handlers():
-    """Setup signal handlers for graceful shutdown"""
+    """Setup signal handlers for immediate shutdown"""
     def signal_handler(signum, frame):
-        logger.info(f"Received signal {signum}. Initiating graceful shutdown...")
-        shutdown_flag.set()
-        logger.info("Please wait for current operations to complete...")
+        print(f"\n⚠️  Received Ctrl+C - Exiting immediately!")
+        os._exit(0)  # Force immediate exit without cleanup
     
     signal.signal(signal.SIGINT, signal_handler)
     signal.signal(signal.SIGTERM, signal_handler)
@@ -429,11 +454,13 @@ def generate_optimized_ticket_prompt(ticket_data):
         ticket_direction = "FROM external parties (customers, vendors, regulatory bodies, other banks) TO EU Bank"
         raiser_context = "External party (customer, vendor, regulatory body, or other bank)"
         handler_context = "EU Bank department or employee"
+        terminology_note = "Use 'customer' terminology for the ticket raiser"
     else:  # Internal
-        category_context = "internal inter-company inter-bank ticket raised WITHIN the bank"
+        category_context = "internal inter-company inter-bank ticket raised WITHIN the bank between employees/departments"
         ticket_direction = "WITHIN EU Bank between departments, employees, or internal systems"
-        raiser_context = "EU Bank department or employee"
-        handler_context = "EU Bank department or employee"
+        raiser_context = "EU Bank department or employee (the ticket raiser)"
+        handler_context = "EU Bank department or employee (the ticket handler)"
+        terminology_note = "CRITICAL: This is INTERNAL communication between bank employees. NEVER use 'customer' - use 'employee', 'team member', 'requesting department', 'reporting employee', or the actual person's name/team name from MESSAGE HEADERS"
     
     # Extract message dates from existing database records
     message_dates = []
@@ -465,11 +492,57 @@ def generate_optimized_ticket_prompt(ticket_data):
     else:
         action_pending_context = "No action is pending - process is complete or ongoing"
     
-    # Build message generation instructions with actual dates
+    # Extract message headers info (FROM/TO for each message)
+    message_headers_info = []
+    if messages:
+        for i, message in enumerate(messages):
+            if not message or not isinstance(message, dict):
+                continue
+                
+            headers = message.get('headers', {})
+            if not headers or not isinstance(headers, dict):
+                continue
+                
+            from_list = headers.get('from', [])
+            to_list = headers.get('to', [])
+            
+            from_info = []
+            if from_list and isinstance(from_list, list):
+                for from_person in from_list:
+                    if from_person and isinstance(from_person, dict):
+                        from_info.append(f"{from_person.get('name', 'Unknown')} ({from_person.get('email', 'unknown@example.com')})")
+            
+            to_info = []
+            if to_list and isinstance(to_list, list):
+                for to_person in to_list:
+                    if to_person and isinstance(to_person, dict):
+                        to_info.append(f"{to_person.get('name', 'Unknown')} ({to_person.get('email', 'unknown@example.com')})")
+            
+            if from_info and to_info:
+                message_headers_info.append(f"Message {i+1}: FROM {', '.join(from_info)} TO {', '.join(to_info)}")
+    
+    message_headers_text = "\n".join(message_headers_info) if message_headers_info else "No message headers found"
+    
+    # Build message generation instructions with actual dates and from/to info
     message_instructions = []
     for i in range(message_count):
         # Get the actual date for this message
         message_date = message_dates[i] if i < len(message_dates) else (last_message_at if last_message_at else "2025-01-01T12:00:00")
+        
+        # Get from/to info for this message
+        from_name = "Unknown"
+        to_name = "Unknown"
+        if i < len(messages):
+            msg = messages[i]
+            if isinstance(msg, dict):
+                headers = msg.get('headers', {})
+                if isinstance(headers, dict):
+                    from_list = headers.get('from', [])
+                    to_list = headers.get('to', [])
+                    if from_list and isinstance(from_list, list) and len(from_list) > 0:
+                        from_name = from_list[0].get('name', 'Unknown')
+                    if to_list and isinstance(to_list, list) and len(to_list) > 0:
+                        to_name = to_list[0].get('name', 'Unknown')
         
         # Check for day shift (different date from previous message)
         day_shift_instruction = ""
@@ -480,14 +553,14 @@ def generate_optimized_ticket_prompt(ticket_data):
                     prev_date = datetime.fromisoformat(prev_message_date.replace('Z', '+00:00')).date() if 'Z' in prev_message_date else datetime.fromisoformat(prev_message_date).date()
                     curr_date = datetime.fromisoformat(message_date.replace('Z', '+00:00')).date() if 'Z' in message_date else datetime.fromisoformat(message_date).date()
                     if prev_date != curr_date:
-                        day_shift_instruction = " IMPORTANT: This message is on a different day than the previous message. Start with a natural day shift greeting like 'Good morning!', 'Following up on our discussion yesterday', 'Hi again', or acknowledge the time gap."
+                        day_shift_instruction = " IMPORTANT: This message is on a different day. Start with day shift greeting like 'Good morning!', 'Following up on our discussion yesterday', 'Hi again'."
                 except:
                     pass
         
         if i % 2 == 0:  # Customer message (ticket raiser)
-            message_instructions.append(f"Message {i+1} ({raiser_context.upper()} at {message_date}): Message 300-400 words with flexible conversational format, natural flow, proper line breaks (\\n\\n), realistic banking details.{day_shift_instruction}")
+            message_instructions.append(f"Message {i+1} (FROM {from_name} TO {to_name} at {message_date}): 300-400 words. MUST use \\n\\n between paragraphs. Structure: Greeting\\n\\nProblem description\\n\\nContext/impact\\n\\nRequest\\n\\nClosing. Include amounts, dates, error codes.{day_shift_instruction}")
         else:  # Company message (ticket handler)
-            message_instructions.append(f"Message {i+1} ({handler_context.upper()} at {message_date}): Response 300-400 words starting with 'Ticket Reference: {banking_details['ticket_number']}', flexible professional format, natural flow, proper line breaks (\\n\\n).{day_shift_instruction}")
+            message_instructions.append(f"Message {i+1} (FROM {from_name} TO {to_name} at {message_date}): 300-400 words. MUST start with 'Ticket Reference: {banking_details['ticket_number']}'\\n\\n then: Greeting\\n\\nAcknowledgment\\n\\nInvestigation details\\n\\nNext steps\\n\\nClosing. Use \\n\\n between paragraphs.{day_shift_instruction}")
     
     messages_timeline = "\n".join(message_instructions)
     
@@ -542,19 +615,55 @@ def generate_optimized_ticket_prompt(ticket_data):
     
     ending_str = " | ".join(ending_requirements) if ending_requirements else "Conversation should end with complete resolution"
     
-    prompt = f"""Generate EU banking trouble ticket JSON with {message_count} messages.
+    prompt = f"""Generate EU banking trouble ticket with EXACTLY {message_count} message{"s" if message_count != 1 else ""}.
 
-**METADATA:** Topic:{dominant_topic} | Subtopic:{subtopics} | Urgency:{urgency} | Priority:{priority} | Follow-up:{follow_up_required} | Action:{action_pending_status} | Action From:{action_pending_from} | Resolution:{resolution_status} | Sentiment:{overall_sentiment}/5 | Category:{category}
+⚠️ **CRITICAL MESSAGE COUNT REQUIREMENT - READ CAREFULLY:** ⚠️
+You MUST generate EXACTLY {message_count} message{"s" if message_count != 1 else ""} in the messages array.
+NOT {message_count - 1 if message_count > 1 else 0} message{"s" if message_count - 1 != 1 else ""}. NOT {message_count + 1} messages. EXACTLY {message_count}.
+{"GENERATE ONLY 1 SINGLE MESSAGE. DO NOT GENERATE 2 MESSAGES. STOP AFTER 1 MESSAGE." if message_count == 1 else f"GENERATE ALL {message_count} MESSAGES. COUNT: 1, 2, 3...{message_count}. STOP AT {message_count}."}
+This will be validated and REJECTED if the count is wrong.
 
-**CONTEXT:**
-Ticket: {banking_details['ticket_number']} | Customer: {banking_details['customer_name']} | Account: {banking_details['account_number']} | System: {banking_details['system_name']}
+**PRIMARY TOPIC:** {dominant_topic}
+**SUBTOPICS:** {subtopics}
 
-**TIMELINE INFORMATION:**
-- First message date: {first_message_at}
-- Last message date: {last_message_at}
-- Total message count: {message_count}
-- Message timeline:
+**CRITICAL CONTENT REQUIREMENT:**
+Read and understand the PRIMARY TOPIC "{dominant_topic}" and SUBTOPICS "{subtopics}" above.
+Generate a REALISTIC banking trouble ticket conversation SPECIFICALLY about this topic and its subtopics.
+- Create an authentic banking scenario that matches "{dominant_topic}"
+- Include specific problems, technical details, and resolution related to "{dominant_topic}" and "{subtopics}"
+- The entire conversation must revolve around this banking issue
+- DO NOT generate generic content - make it specific to "{dominant_topic}"
+
+**METADATA:** Urgency:{urgency} | Priority:{priority} | Follow-up:{follow_up_required} | Action:{action_pending_status} | Resolution:{resolution_status} | Sentiment:{overall_sentiment}/5 | Category:{category}
+
+**MESSAGE HEADERS:** {message_headers_text}
+
+**CRITICAL:** NO subject lines in message body content. Messages should start directly with greeting "Dear [Name],"
+
+**TIMELINE:** First message: {first_message_at} | Last message: {last_message_at}
+
+⚠️ **MESSAGE COUNT: {message_count}** ⚠️
+{"You must generate ONLY 1 MESSAGE. If you generate 2 messages, it will be REJECTED." if message_count == 1 else f"You must generate ALL {message_count} MESSAGES. Count them: 1, 2, 3...{message_count}"}
+
+**MESSAGE TIMELINE:**
 {messages_timeline}
+
+**REALISTIC BANKING DETAILS TO INCLUDE:**
+Generate and include these specific details in ticket content (NO placeholders):
+- **Account Numbers:** Full IBAN (DE89370400440532013000, FR1420041010050500013M02606, IT60X0542811101000000123456)
+- **Account Holder Names:** Use realistic names from MESSAGE HEADERS or generate realistic European names
+- **Transaction Amounts:** Specific amounts with cents (€1,250.50, €342.78, €5,847.23) - NOT round numbers
+- **Transaction IDs:** Realistic format (TXN-2025-001234567, PMT-20250115-456789, REF-2025-CB-789456)
+- **Transaction Dates/Times:** Specific timestamps (15/01/2025 14:35, 23/02/2025 09:47:12)
+- **Card Details:** Last 4 digits (1234, 5678, 9012), Card types (Visa Debit, Mastercard Credit)
+- **Error Codes:** Technical codes (ERR_4521, SYS_TIMEOUT_001, SEPA_REJECT_01, KYC_FAILED_456)
+- **Beneficiary Details:** Beneficiary name, account (IT60X0542811101000000123456), bank name
+- **Customer IDs:** Format (CID789456, CUST-2025-123456)
+- **Reference Numbers:** Order numbers, invoice numbers, booking references
+- **Branch/Sort Codes:** BIC (DEUTDEFF, BNPAFRPP), Sort codes (40-50-21)
+- **Technical Systems:** SEPA clearing system, SWIFT network, Core Banking Platform, Payment Hub
+
+**CRITICAL:** Include 6-10 specific realistic details per ticket. NO placeholders like [Account Number], [Amount], [Date].
 
 **PRIORITY LEVEL DEFINITION:**
 - P1-Critical: Business stop → must resolve NOW (follow-up within 24-48 hours)
@@ -567,6 +676,7 @@ Ticket: {banking_details['ticket_number']} | Customer: {banking_details['custome
 - Ticket Direction: {ticket_direction}
 - Ticket Raiser: {raiser_context}
 - Ticket Handler: {handler_context}
+- **TERMINOLOGY RULE:** {terminology_note}
 
 **ACTION PENDING CONTEXT:** {action_pending_context}
 
@@ -580,16 +690,18 @@ Ticket: {banking_details['ticket_number']} | Customer: {banking_details['custome
 - internalithelpdesk@eubank.com (Internal IT)
 
 **RULES:**
-- Category {category}: {category_context}
-  * External: Ticket raised BY {raiser_context}, handled BY {handler_context}
-  * Internal: Ticket raised BY {raiser_context}, handled BY {handler_context}
-- Sentiment {overall_sentiment}/5: {sentiment_desc}
-- Bank employees: ALWAYS calm, professional, helpful
-- Title: Professional ticket title 80-120 characters - match {urgency_context} tone
-- Priority: Must match urgency={urgency} (P1-Critical/P2-High for urgent, P3-Medium/P4-Low/P5-Very Low for non-urgent)
-- Follow-up {follow_up_required}: {follow_up_desc}
-- Action {action_pending_status}: {action_desc}
-- Action Pending From {action_pending_from}: {action_from_desc}
+- **CRITICAL - Content Topic:** The ENTIRE conversation must be about "{dominant_topic}"
+  * Understand what "{dominant_topic}" means in banking context
+  * Review subtopics: "{subtopics}" - these are related issues
+  * Create realistic problem scenario that fits "{dominant_topic}" exactly
+  * Example: If topic is "Cross Border Failed", discuss international payment failures, SWIFT issues, currency problems
+  * Example: If topic is "Core System Error", discuss system timeouts, database issues, platform failures
+  * DO NOT create generic banking content - make it SPECIFIC to "{dominant_topic}"
+- Category {category}: {category_context} | **TERMINOLOGY:** {terminology_note}
+- Sentiment {overall_sentiment}/5: {sentiment_desc} | Bank employees: calm, professional, helpful
+- Title: Professional ticket title matching "{dominant_topic}"
+- Priority: {priority} | Follow-up: {follow_up_desc} | Action: {action_desc}
+- **NO SUBJECT LINES IN BODY** - Start directly with "Dear [Name],"
 
 **DATE-BASED CONVERSATION FLOW:**
 - Use the EXACT dates provided for each message
@@ -607,62 +719,143 @@ Ticket: {banking_details['ticket_number']} | Customer: {banking_details['custome
 - ALWAYS acknowledge time gaps with appropriate conversation starters
 - NEVER continue a conversation across days without acknowledging the time gap
 
-**MESSAGE STRUCTURE:** Customer message 300-400 words → Company response 300-400 words (alternating pattern)
-- Customer messages ({raiser_context}): Flexible conversational format with natural flow, proper line breaks (\\n\\n), realistic ticket details
-- Company messages ({handler_context}): Professional format with "Ticket Reference: {banking_details['ticket_number']}" at start, natural flow, proper line breaks (\\n\\n)
-- Use banking terminology, specific amounts, transaction IDs, account numbers, error codes
-- Acknowledge time gaps naturally when messages are on different days
-- IMPORTANT: First message MUST be from {raiser_context} raising the ticket, subsequent messages alternate with {handler_context} responses
-- CRITICAL: Craft the conversation content to naturally lead to follow_up_reason and next_action_suggestion
-  * For External: Include specific customer requests, pending items, missing documents, unresolved issues in conversation
-  * For Internal: Include specific inter-department coordination needs, approvals needed, system issues, process steps in conversation
+**MESSAGE STRUCTURE:**
+- Each message: 300-400 words with 3-5 paragraphs
+- Use \\n\\n between paragraphs | Use \\n for line breaks in greetings/closings
+- **CRITICAL:** Content must be SPECIFICALLY about "{dominant_topic}" and related to subtopics "{subtopics}"
+- **NO SUBJECT LINES** - Never include "Subject:", "Re:", "Fwd:" in message body
+- Start directly with: "Dear [Name]," or "Ticket Reference: XXX\\n\\nDear [Name],"
 
-**ENDING REQUIREMENTS:** {ending_str}
+**Customer Message ({raiser_context}) - 300-400 words:**
+Structure: "Dear [TO name],"\\n\\n[Problem paragraph about {dominant_topic}]\\n\\n[Context/impact paragraph]\\n\\n[Request paragraph]\\n\\n"Best regards,\\n[FROM name]"
+
+**CRITICAL:** Problem MUST be specifically about "{dominant_topic}"
+- If topic is "Cross Border Failed": Describe international payment failure, SWIFT issue, currency conversion problem
+- If topic is "Core System Error": Describe system timeout, platform failure, database error
+- If topic is "Card Authorization Failed": Describe card decline, merchant terminal issue, authorization error
+- Match the problem to "{dominant_topic}" - NOT generic banking issues
+- **MUST include realistic details:**
+  * Account holder name (use FROM name or realistic European name)
+  * Full account number (IBAN: DE89370400440532013000)
+  * Specific transaction amount (€1,250.50 - with cents)
+  * Transaction ID/reference (TXN-2025-001234567)
+  * Date and time (15/01/2025 14:35)
+  * Error codes if technical issue (ERR_4521)
+  * Beneficiary details if transfer (Name: John Smith, Account: IT60X0542811101000000123456)
+  * Card details if card issue (Visa Debit ending 1234)
+- Explain impact and steps already taken
+- State clear request with specific questions
+- Use FROM/TO names from MESSAGE HEADERS (NO invented names, NO emails)
+
+Example for "{dominant_topic}": Create a realistic problem scenario that matches this topic exactly.
+
+**NO SUBJECT LINES** - Start directly with "Dear [TO name]," - NOT "Subject: XXX" or "Re: XXX"
+
+**Company Message ({handler_context}) - 300-400 words:**
+Structure: "Ticket Reference: {banking_details['ticket_number']}"\\n\\n"Dear [TO name],"\\n\\n[Acknowledgment about {dominant_topic}]\\n\\n[Investigation/Action regarding {dominant_topic}]\\n\\n[Resolution]\\n\\n"Best regards,\\n[FROM name]"
+
+**CRITICAL:** Response MUST address the specific "{dominant_topic}" issue
+- Acknowledge the "{dominant_topic}" problem mentioned by customer
+- Explain technical investigation related to "{dominant_topic}"
+- Provide resolution specific to "{dominant_topic}"
+- Explain technical investigation findings with specific details
+- **MUST reference customer's details and add investigation findings:**
+  * Reference customer's account number (DE89370400440532013000)
+  * Reference transaction amount (€1,250.50)
+  * Reference transaction ID/date (TXN-2025-001234567, 15/01/2025 14:35)
+  * Explain technical cause (error code ERR_4521 indicates SEPA timeout)
+  * Mention systems checked (Core Banking Platform, SWIFT network)
+  * Provide beneficiary status if relevant (funds reached/pending at beneficiary bank)
+  * Add internal reference numbers (Case ID, Investigation ticket)
+- Provide resolution timeline, next steps, specific timeframes (2-4 hours, by 18:00 today, within 24 hours)
+- Use FROM/TO names from MESSAGE HEADERS (NO invented names like "Digital Banking Support Team")
+
+Example snippet: "Thank you for contacting us regarding the €1,250.50 transfer from your account DE89370400440532013000 on 15/01/2025 at 14:35. I have reviewed transaction TXN-2025-001234567 and can confirm that error code ERR_4521 indicates a timeout with the SEPA clearing system. I have contacted the beneficiary bank and confirmed the funds are in their processing queue. The transfer to John Smith's account IT60X0542811101000000123456 will be completed by 18:00 today..."
+
+**CRITICAL REQUIREMENTS:**
+- **PRIMARY REQUIREMENT:** ALL content must be SPECIFICALLY about "{dominant_topic}"
+  * Read and understand "{dominant_topic}" - create problem scenario matching this exact banking issue
+  * Use subtopics "{subtopics}" as context for realistic scenario details
+  * Example: "Cross Border Failed" = international payment failure, NOT generic transfer issue
+  * Example: "Core System Error" = platform/system malfunction, NOT user error
+- Use EXACT names from MESSAGE HEADERS (greetings: TO name, signatures: FROM name, NO emails)
+- **NO SUBJECT LINES IN BODY** - Start with "Dear [Name]," directly
+- Acknowledge time gaps between messages naturally
+- Craft content to naturally lead to follow_up_reason and next_action_suggestion
+- Ending: {ending_str}
 
 **FOLLOW-UP AND NEXT ACTION GUIDELINES:**
-- **follow_up_reason** = Simple, direct statement (20-50 words): Just state WHY follow-up is needed from the conversation
-  * For External (category={category}): State what's pending from {raiser_context}"
-  * For Internal (category={category}): State what's pending between departments"
-  * NO extra explanation or context - just the core reason
+- **follow_up_reason** = Brief statement (20-50 words recommended): Why follow-up is needed
+  * For External (category=External): State what's pending from customer or bank
+  * For Internal (category=Internal): State what's pending between departments/employees (NEVER mention "customer" - use employee names, department names, or "team member")
+  * Keep it focused and concise
   
-- **next_action_suggestion** = 30-80 words deriving from conversation what {action_pending_from} should do next
-  * For External (category={category}): What {raiser_context} or bank needs to do based on conversation
-  * For Internal (category={category}): What requesting/handling department needs to do (use department names, NOT "customer")
-  * Must be ACTIONABLE and SPECIFIC to conversation context
+- **next_action_suggestion** = Actionable steps (30-80 words recommended): What needs to be done
+  * For External (category=External): What customer or bank needs to do based on conversation
+  * For Internal (category=Internal): What requesting department/employee or handling department/employee needs to do
+    - CRITICAL: Use ACTUAL names from MESSAGE HEADERS (e.g., "Sean Ray", "Internalithelpdesk team")
+    - NEVER use word "customer" for Internal tickets
+    - Use "the reporting employee", "the requesting team", "IT team", etc.
+  * Must be ACTIONABLE and SPECIFIC to conversation context with clear steps
 
-**OUTPUT:** {{
+**CRITICAL - USE THESE EXACT NAMES IN ALL GENERATED CONTENT:**
+For each message, use the FROM and TO names from MESSAGE HEADERS:
+{message_headers_text}
+
+**OUTPUT FORMAT:** {{
   "title": "Professional ticket title 80-120 characters matching {urgency_context} tone",
   "priority": "{priority}",
-  "assigned_team_email": "exact_email@eubank.com",
-  "ticket_summary": "Business summary 150-200 words describing issue, impact, details",
+  "ticket_summary": "Business summary 150-200 words describing issue, impact, details using EXACT names from MESSAGE HEADERS",
   "action_pending_status": "{action_pending_status}",
   "action_pending_from": {"customer|company|null" if action_pending_status == "yes" else "null"},
   "resolution_status": "{resolution_status}",
-  "messages": [
-    {{"content": "[Message from {raiser_context} - 300-400 words with flexible format, natural flow, proper line breaks (\\n\\n), realistic banking details. Acknowledge time gaps.]", "sender_type": "customer"}},
-    {{"content": "[Response from {handler_context} - 300-400 words starting with 'Ticket Reference: {banking_details['ticket_number']}', flexible professional format, proper line breaks (\\n\\n). Acknowledge time gaps.]", "sender_type": "company"}}{"... continue alternating for " + str(message_count) + " total messages" if message_count > 2 else ""}
+  "messages": [⚠️ CRITICAL: This array MUST contain EXACTLY {message_count} message object{"s" if message_count != 1 else ""}. {"ONLY 1 MESSAGE - DO NOT ADD A SECOND MESSAGE" if message_count == 1 else f"ALL {message_count} MESSAGES - Count: 1, 2, 3...{message_count}"}]
+    {{"content": "[300-400 words about {dominant_topic}. Use FROM/TO names from MESSAGE HEADERS]", "sender_type": "customer"}}{"," if message_count > 1 else ""}
+    {'{{"content": "[300-400 words response about ' + str(dominant_topic) + ']", "sender_type": "company"}}' if message_count > 1 else ""}{", ... continue until EXACTLY " + str(message_count) + " messages" if message_count > 2 else ""}
   ],
   "analysis": {{
-    "ticket_summary": "[150-200 word business summary of the ENTIRE CONVERSATION]",
-    "follow_up_reason": {"[Simple direct statement: WHY follow-up is needed. Just state the reason from conversation, no extra explanation. 20-50 words max.]" if follow_up_required == "yes" else "null"},
-    "next_action_suggestion": {"[30-80 words: WHAT specific step {action_pending_from} needs to take based on conversation - the action recommendation]" if follow_up_required == "yes" and action_pending_status == "yes" else "null"},
-    "follow_up_date": {"[Generate follow-up date after {last_message_at} based on priority={priority}. CRITICAL RULES: P1-Critical=SAME DAY or next business day (24-48 hours MAX), P2-High=2-5 business days (MUST be within 7 days MAX), P3-Medium=1-2 weeks, P4-Low=2-4 weeks, P5-Very Low=1-2 months. Format: YYYY-MM-DDTHH:MM:SS]" if follow_up_required == "yes" else "null"}
+    "ticket_summary": "[150-200 word business summary using EXACT names from MESSAGE HEADERS]",
+    "follow_up_reason": {"[Brief statement using EXACT names from MESSAGE HEADERS]" if follow_up_required == "yes" else "null"},
+    "next_action_suggestion": {"[Actionable steps using EXACT names from MESSAGE HEADERS]" if follow_up_required == "yes" and action_pending_status == "yes" else "null"},
+    "follow_up_date": {"[ISO format: YYYY-MM-DDTHH:MM:SS]" if follow_up_required == "yes" else "null"}
   }}
 }}
 
+⚠️ **BEFORE SUBMITTING - COUNT YOUR MESSAGES:** ⚠️
+{"Count the messages array: Do you have EXACTLY 1 message? If you have 2 messages, DELETE one immediately." if message_count == 1 else f"Count the messages array: 1, 2, 3...{message_count}. Do you have EXACTLY {message_count} messages? If not, ADD or REMOVE messages to reach {message_count}."}
+
+**CRITICAL:** DO NOT generate "assigned_team_email" field - it already exists in database
+
 Use EXACT metadata values. Implement concepts through natural scenarios. Generate authentic banking content with specific details.
 
-**CRITICAL:**
+**CRITICAL FORMATTING REMINDER:**
+- EVERY message MUST use \\n\\n (double newline) to separate paragraphs
+- **CONTENT MUST BE ABOUT "{dominant_topic}"** - Create realistic scenario matching this exact banking issue
+- **NO SUBJECT LINES IN BODY** - Never start with "Subject:", "Re:", "Fwd:" - Start with "Dear [Name]," or "Ticket Reference: XXX\\n\\nDear [Name],"
+- Customer messages: Describe problem related to "{dominant_topic}" with account details, amounts, transaction IDs
+- Company messages: Address "{dominant_topic}" issue, explain technical findings, provide resolution
+- **USE ONLY NAMES FROM MESSAGE HEADERS** - NO "Digital Banking Support Team", NO invented team names
+- **NO PLACEHOLDERS** - Use specific values: €1,250.50 (NOT €[Amount]), DE89370400440532013000 (NOT [Account])
+- Each message: 3-5 distinct paragraphs separated by \\n\\n
+- Include 6-10 specific realistic banking details per ticket
+
+**CRITICAL REQUIREMENTS:**
 - Generate Messages FIRST, then analyze them for follow-up reason and next action
-- **follow_up_reason** = Simple direct statement (20-50 words max) stating WHY follow-up is needed - ONLY if follow_up_required="yes", otherwise "null"
-  * Just state the reason, NO extra explanation
-- **next_action_suggestion** = Detailed action (30-80 words) stating WHAT needs to be done - ONLY if follow_up_required="yes" AND action_pending_status="yes", otherwise "null"
-  * For External tickets:
-    - If action_pending_from="customer": What the {raiser_context} needs to do based on conversation
+- **follow_up_reason** = Brief statement (20-50 words recommended) - ONLY if follow_up_required="yes", otherwise "null"
+  * Just state WHY follow-up is needed based on the conversation
+  * For category={category}: {terminology_note}
+  * Keep it concise and focused
+- **next_action_suggestion** = Actionable steps (30-80 words recommended) - ONLY if follow_up_required="yes" AND action_pending_status="yes", otherwise "null"
+  * State WHAT specific actions need to be taken
+  * For External tickets (category=External):
+    - If action_pending_from="customer": What the customer needs to do based on conversation
     - If action_pending_from="company" or "bank": What the bank/handling team needs to do based on conversation
-  * For Internal tickets:
-    - If action_pending_from="customer": What the requesting department/employee needs to do based on conversation (DO NOT use word "customer" - use "requesting department" or "employee name")
-    - If action_pending_from="company" or "bank": What the handling department/employee needs to do based on conversation (use specific department names)
+  * For Internal tickets (category=Internal):
+    - CRITICAL: NEVER use word "customer"
+    - Use ACTUAL names from MESSAGE HEADERS (e.g., "Sean Ray should...", "Internalithelpdesk team should...")
+    - If action_pending_from="customer": This is WRONG for Internal - ignore and use "the reporting employee [Name]" or "requesting team [TeamName]"
+    - If action_pending_from="company" or "bank": Use "the handling team [TeamName]" or specific department names
+    - Example: "The Internalithelpdesk team should contact Sean Ray within 5 business days..." (NOT "contact the customer")
 - **follow_up_date** = Date based on priority - ONLY if follow_up_required="yes", otherwise "null"
   * P1-Critical: SAME DAY or next business day (24-48 hours MAX from {last_message_at})
   * P2-High: 2-5 business days (MUST be within 7 days from {last_message_at})
@@ -670,7 +863,29 @@ Use EXACT metadata values. Implement concepts through natural scenarios. Generat
   * P4-Low: 2-4 weeks from {last_message_at}
   * P5-Very Low: 1-2 months from {last_message_at}
 - DO NOT generate message dates or thread dates - use EXISTING dates from database
-- For category={category}: Use proper terminology ({raiser_context} raising ticket, {handler_context} handling ticket)
+- For category={category}: {terminology_note}
+
+**FINAL VALIDATION CHECKLIST BEFORE SUBMITTING:**
+1. ⚠️ **COUNT MESSAGES ARRAY - MOST CRITICAL:** ⚠️
+   {"- Do you have EXACTLY 1 message in the array?" if message_count == 1 else f"- Count the messages: 1, 2, 3...{message_count}"}
+   {"- If you have 2 messages, DELETE one now. Only 1 message allowed." if message_count == 1 else f"- Do you have {message_count} messages? If you have {message_count-1 if message_count > 1 else 0} or {message_count+1}, FIX IT NOW."}
+   {"- STOP AFTER 1 MESSAGE. DO NOT GENERATE A SECOND MESSAGE." if message_count == 1 else f"- REQUIRED COUNT: {message_count} (not {message_count-1 if message_count > 1 else 0}, not {message_count+1})"}
+2. **Is content about "{dominant_topic}"?**
+   - Does the conversation match "{dominant_topic}" exactly?
+   - NOT generic banking problems
+3. **NO SUBJECT LINES in message body?** 
+   - Start with "Dear [Name]," or "Ticket Reference: XXX\\n\\nDear [Name],"
+4. All required fields present in JSON?
+5. For category={category}: Correct terminology?
+   - If Internal: No "customer", use names from MESSAGE HEADERS
+   - If External: Use "customer" appropriately
+6. **Check all names:**
+   - Use EXACT names from MESSAGE HEADERS
+   - NO invented names like "Digital Banking Support Team"
+7. **Avoid generating assigned_team_email?** (Already exists in database)
+8. **Include realistic banking details?**
+   - Full account numbers (IBAN), amounts with cents, transaction IDs, dates/times
+   - NO placeholders like [Amount], [Account Number]
 
 Generate now.
 """.strip()
@@ -684,6 +899,8 @@ def generate_ticket_content(ticket_data):
     
     start_time = time.time()
     ticket_id = str(ticket_data.get('_id', 'unknown'))
+    
+    logger.info(f"Processing ticket {ticket_id} - Topic: {ticket_data.get('dominant_topic')}, Priority: {ticket_data.get('priority')}, Messages: {ticket_data.get('thread', {}).get('message_count', 2)}")
     
     try:
         prompt = generate_optimized_ticket_prompt(ticket_data)
@@ -710,55 +927,38 @@ def generate_ticket_content(ticket_data):
         
         try:
             result = json.loads(reply)
-            if str(ticket_id).endswith('0') or str(ticket_id).endswith('5'):
-                logger.info(f"Ticket {ticket_id}: JSON parsing successful. Keys: {list(result.keys())}")
+            logger.info(f"✓ Ticket {ticket_id}: JSON parsed successfully")
         except json.JSONDecodeError as json_err:
-            logger.error(f"JSON parsing failed for ticket {ticket_id}. Raw response: {reply[:300]}...")
+            logger.error(f"✗ Ticket {ticket_id}: JSON parsing failed. Raw response: {reply[:300]}...")
             raise ValueError(f"Invalid JSON response from LLM: {json_err}")
         
         # Validate required fields
-        required_fields = ['title', 'priority', 'assigned_team_email', 'messages', 'analysis']
+        required_fields = ['title', 'priority', 'messages', 'analysis']
         missing_fields = [field for field in required_fields if field not in result]
         if missing_fields:
-            logger.error(f"Ticket {ticket_id}: Missing required fields: {missing_fields}")
+            logger.error(f"✗ Ticket {ticket_id}: Missing required fields: {missing_fields}")
             raise ValueError(f"Missing required fields: {missing_fields}")
         
         # Validate analysis fields
         analysis_fields = ['ticket_summary', 'follow_up_reason', 'next_action_suggestion', 'follow_up_date']
         for field in analysis_fields:
             if field not in result['analysis']:
-                logger.error(f"Ticket {ticket_id}: Missing analysis field: {field}")
+                logger.error(f"✗ Ticket {ticket_id}: Missing analysis field: {field}")
                 raise ValueError(f"Missing analysis field: {field}")
         
-        # Validate content-based fields are specific and within word count when required
-        if ticket_data.get('follow_up_required') == "yes":
-            follow_up_reason = result['analysis'].get('follow_up_reason')
-            if follow_up_reason and follow_up_reason != "null" and isinstance(follow_up_reason, str):
-                word_count = len(follow_up_reason.strip().split())
-                if word_count < 15:
-                    logger.warning(f"Ticket {ticket_id}: follow_up_reason too short ({word_count} words, need 20-50): {follow_up_reason[:100]}...")
-                elif word_count > 50:
-                    logger.warning(f"Ticket {ticket_id}: follow_up_reason too long ({word_count} words, need 20-50): {follow_up_reason[:100]}...")
-        
-        if ticket_data.get('follow_up_required') == "yes" and ticket_data.get('action_pending_status') == "yes":
-            next_action = result['analysis'].get('next_action_suggestion')
-            if next_action and next_action != "null" and isinstance(next_action, str):
-                word_count = len(next_action.strip().split())
-                if word_count < 30:
-                    logger.warning(f"Ticket {ticket_id}: next_action_suggestion too short ({word_count} words, need 30-80): {next_action[:100]}...")
-                elif word_count > 80:
-                    logger.warning(f"Ticket {ticket_id}: next_action_suggestion too long ({word_count} words, need 30-80): {next_action[:100]}...")
-        
-        # Validate messages count
+        # No word count validation - accept as-is
+        # Validate messages count - STRICT requirement
         message_count = ticket_data.get('thread', {}).get('message_count', 2)
         if len(result['messages']) != message_count:
-            logger.warning(f"Ticket {ticket_id}: Expected {message_count} messages, got {len(result['messages'])}")
-            if len(result['messages']) > message_count:
-                result['messages'] = result['messages'][:message_count]
+            logger.error(f"✗ Ticket {ticket_id}: Expected EXACTLY {message_count} messages, got {len(result['messages'])}")
+            raise ValueError(f"Expected EXACTLY {message_count} messages, got {len(result['messages'])}")
         
         generation_time = time.time() - start_time
         
-        # Log success
+        # Log success - main log
+        logger.info(f"✓ SUCCESS: Ticket {ticket_id} completed in {generation_time:.1f}s - Topic: {ticket_data.get('dominant_topic')}, Priority: {result['priority']}")
+        
+        # Log success - detailed log
         success_info = {
             'ticket_id': ticket_id,
             'dominant_topic': ticket_data.get('dominant_topic'),
@@ -769,11 +969,17 @@ def generate_ticket_content(ticket_data):
             'generation_time': generation_time
         }
         success_logger.info(json.dumps(success_info, cls=ObjectIdEncoder))
+        flush_all_logs()
         
         return result
         
     except Exception as e:
         generation_time = time.time() - start_time
+        
+        # Log failure - main log
+        logger.error(f"✗ FAILED: Ticket {ticket_id} after {generation_time:.1f}s - Error: {str(e)[:100]}")
+        
+        # Log failure - detailed log
         error_info = {
             'ticket_id': ticket_id,
             'dominant_topic': ticket_data.get('dominant_topic', 'Unknown'),
@@ -781,6 +987,7 @@ def generate_ticket_content(ticket_data):
             'generation_time': generation_time
         }
         failure_logger.error(json.dumps(error_info, cls=ObjectIdEncoder))
+        flush_all_logs()
         raise
 
 def populate_email_addresses(ticket_record, assigned_team_email, generated_messages):
@@ -850,7 +1057,7 @@ def process_single_ticket(ticket_record, total_tickets=None, retry_attempt=0):
         try:
             if attempt > 0:
                 retry_wait = min(120, RETRY_DELAY * (2 ** (attempt - 1)))
-                logger.info(f"Ticket {ticket_id}: Retry attempt {attempt + 1}/{MAX_RETRY_ATTEMPTS_PER_TICKET} after {retry_wait}s wait")
+                logger.info(f"🔄 RETRY: Ticket {ticket_id} - Attempt {attempt + 1}/{MAX_RETRY_ATTEMPTS_PER_TICKET} after {retry_wait}s wait")
                 time.sleep(retry_wait)
                 checkpoint_manager.increment_retry(ticket_id)
             
@@ -858,7 +1065,7 @@ def process_single_ticket(ticket_record, total_tickets=None, retry_attempt=0):
             
             if result:
                 if attempt > 0:
-                    logger.info(f"Ticket {ticket_id}: SUCCESS after {attempt + 1} attempts!")
+                    logger.info(f"✓ RECOVERED: Ticket {ticket_id} succeeded after {attempt + 1} attempts!")
                 return result
             else:
                 logger.warning(f"Ticket {ticket_id}: Attempt {attempt + 1} returned no result, retrying...")
@@ -882,12 +1089,13 @@ def process_single_ticket(ticket_record, total_tickets=None, retry_attempt=0):
             if attempt < MAX_RETRY_ATTEMPTS_PER_TICKET - 1:
                 continue
             else:
-                logger.error(f"Ticket {ticket_id}: Failed after {MAX_RETRY_ATTEMPTS_PER_TICKET} attempts")
+                logger.error(f"✗ EXHAUSTED: Ticket {ticket_id} failed after {MAX_RETRY_ATTEMPTS_PER_TICKET} attempts")
     
-    logger.error(f"Ticket {ticket_id}: FAILED after {MAX_RETRY_ATTEMPTS_PER_TICKET} attempts")
+    logger.error(f"✗ FINAL FAILURE: Ticket {ticket_id} - All {MAX_RETRY_ATTEMPTS_PER_TICKET} attempts exhausted")
     performance_monitor.record_failure(total_tickets)
     failure_counter.increment()
     checkpoint_manager.mark_processed(ticket_id, success=False)
+    flush_all_logs()
     return None
 
 def _process_single_ticket_internal(ticket_record, total_tickets=None):
@@ -911,7 +1119,7 @@ def _process_single_ticket_internal(ticket_record, total_tickets=None):
         # Update top-level fields from LLM response
         update_doc['title'] = ticket_content.get('title')
         update_doc['priority'] = ticket_content.get('priority')
-        update_doc['assigned_team_email'] = ticket_content.get('assigned_team_email')
+        # Don't update assigned_team_email - it already exists in database
         update_doc['action_pending_status'] = ticket_content.get('action_pending_status')
         update_doc['action_pending_from'] = ticket_content.get('action_pending_from')
         update_doc['resolution_status'] = ticket_content.get('resolution_status')
@@ -969,7 +1177,9 @@ def _process_single_ticket_internal(ticket_record, total_tickets=None):
                     update_doc['next_action_suggestion'] = None
         
         # Add email and message updates (only content, not dates)
-        email_updates = populate_email_addresses(ticket_record, ticket_content['assigned_team_email'], ticket_content['messages'])
+        # Use assigned_team_email from database, not from LLM response
+        assigned_team_email = ticket_record.get('assigned_team_email', 'customerservice@eubank.com')
+        email_updates = populate_email_addresses(ticket_record, assigned_team_email, ticket_content['messages'])
         update_doc.update(email_updates)
         
         # Set titles programmatically
@@ -1022,14 +1232,14 @@ def save_batch_to_database(batch_updates):
         
         if bulk_operations:
             try:
+                logger.info(f"🔄 WRITING TO DATABASE: Starting bulk write of {len(bulk_operations)} tickets...")
                 result = ticket_col.bulk_write(bulk_operations, ordered=False)
                 updated_count = result.matched_count
                 
                 update_counter._value += updated_count
                 
-                if len(batch_updates) > 5:
-                    logger.info(f"Successfully saved {updated_count} records to database")
-                    progress_logger.info(f"DATABASE_SAVE: {updated_count} records saved")
+                logger.info(f"✅ DATABASE WRITE COMPLETE: {updated_count} tickets successfully written to database")
+                progress_logger.info(f"DATABASE_SAVE: {updated_count} records saved")
                 
                 return updated_count
                 
@@ -1154,85 +1364,117 @@ def process_tickets_optimized():
         logger.info(f"Previously processed (checkpoint): {len(checkpoint_manager.processed_tickets)} tickets")
         
         progress_logger.info(f"SESSION_START: total_tickets={total_tickets}, completed={tickets_processed_by_llm}, pending={tickets_with_null_body_content}, completion_rate={completion_percentage:.1f}%")
+        flush_all_logs()
         
     except Exception as e:
         logger.error(f"Error fetching ticket records: {e}")
         return
     
-    # Process tickets
+    # Process in batches - matching email script structure
+    total_batches = (total_tickets + BATCH_SIZE - 1) // BATCH_SIZE
     total_updated = 0
-    batch_updates = []
+    batch_count = 0
+    
+    logger.info(f"Processing in {total_batches} batches of {BATCH_SIZE} tickets each")
+    logger.info(f"Using {MAX_WORKERS} workers for parallel processing")
     
     try:
-        # Process with ThreadPoolExecutor
-        with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-            futures = {}
-            processed_count = 0
-            
-            for ticket in ticket_records:
-                if shutdown_flag.is_set():
-                    logger.info("Shutdown requested, stopping processing")
-                    break
+        for batch_num in range(1, total_batches + 1):
+            if shutdown_flag.is_set():
+                logger.info(f"Shutdown requested. Stopping at batch {batch_num-1}/{total_batches}")
+                break
                 
-                ticket_id = str(ticket.get('_id'))
-                
-                if not checkpoint_manager.is_processed(ticket_id):
-                    future = executor.submit(process_single_ticket, ticket, total_tickets)
-                    futures[future] = ticket_id
-                else:
-                    logger.info(f"Skipping already processed ticket: {ticket_id}")
-                    processed_count += 1
+            batch_start = (batch_num - 1) * BATCH_SIZE
+            batch_end = min(batch_start + BATCH_SIZE, total_tickets)
+            batch_records = ticket_records[batch_start:batch_end]
             
-            logger.info(f"Created {len(futures)} tasks for processing")
+            logger.info(f"Processing batch {batch_num}/{total_batches} ({len(batch_records)} tickets)...")
+            progress_logger.info(f"BATCH_START: batch={batch_num}/{total_batches}, records={len(batch_records)}")
             
-            # Collect results
-            for future in as_completed(futures):
-                if shutdown_flag.is_set():
-                    logger.info("Shutdown requested, stopping collection")
-                    break
+            # Process batch with optimized parallelization
+            successful_updates = []
+            batch_start_time = time.time()
+            
+            # Use ThreadPoolExecutor for I/O bound operations (API calls)
+            with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+                # Submit all tasks for this batch
+                futures = {
+                    executor.submit(process_single_ticket, record, total_tickets): record 
+                    for record in batch_records
+                }
                 
-                ticket_id = futures[future]
-                processed_count += 1
+                # Collect results with progress tracking - process as they complete
+                completed = 0
                 
                 try:
-                    result = future.result()
-                    
-                    if result:
-                        batch_updates.append(result)
-                        checkpoint_manager.mark_processed(result['ticket_id'], success=True)
-                        
-                        # Save batch when we have enough
-                        if len(batch_updates) >= BATCH_SIZE:
-                            saved_count = save_batch_to_database(batch_updates)
-                            total_updated += saved_count
-                            batch_updates = []
-                    
-                    # Progress update
-                    if processed_count % 10 == 0:
-                        progress_pct = (processed_count / total_tickets) * 100
-                        remaining_tickets = total_tickets - processed_count
-                        total_completed = tickets_processed_by_llm + total_updated
-                        overall_completion = (total_completed / tickets_with_basic_fields * 100) if tickets_with_basic_fields > 0 else 0
-                        
-                        logger.info(f"Session Progress: {progress_pct:.1f}% ({processed_count}/{total_tickets}) - {remaining_tickets} remaining")
-                        logger.info(f"Overall Progress: {overall_completion:.1f}% completed ({total_completed}/{tickets_with_basic_fields} total)")
-                        
-                        progress_logger.info(f"PROGRESS_UPDATE: session={progress_pct:.1f}%, overall={overall_completion:.1f}%, processed_this_session={total_updated}, remaining={remaining_tickets}")
-                    
-                    performance_monitor.log_progress(total_tickets)
-                    
+                    for future in as_completed(futures, timeout=REQUEST_TIMEOUT * 3):
+                        if shutdown_flag.is_set():
+                            logger.warning("Cancelling remaining tasks...")
+                            for f in futures:
+                                f.cancel()
+                            break
+                            
+                        try:
+                            result = future.result(timeout=60)
+                            completed += 1
+                            
+                            if result:
+                                successful_updates.append(result)
+                                ticket_id = result['ticket_id']
+                                logger.info(f"💾 SAVED: Ticket {ticket_id} added to batch (batch size: {len(successful_updates)}/{BATCH_SIZE})")
+                                
+                                # Save immediately when we have enough for a batch
+                                if len(successful_updates) >= BATCH_SIZE:
+                                    batch_count += 1
+                                    logger.info(f"💾 BATCH #{batch_count} READY: {len(successful_updates)} tickets ready for database save")
+                                    logger.info(f"🔄 WRITING TO DATABASE: Starting bulk write of {len(successful_updates)} tickets...")
+                                    saved_count = save_batch_to_database(successful_updates)
+                                    total_updated += saved_count
+                                    logger.info(f"✅ DATABASE WRITE COMPLETE: {saved_count} tickets successfully written to database")
+                                    logger.info(f"✅ BATCH #{batch_count} COMPLETED: {saved_count} tickets written to database successfully!")
+                                    logger.info(f"📊 TOTAL BATCHES COMPLETED: {batch_count} | TOTAL TICKETS SAVED TO DB: {total_updated}")
+                                    successful_updates = []  # Clear after saving
+                            
+                            # Progress indicator for each completion
+                            progress = (completed / len(batch_records)) * 100
+                            logger.info(f"Task completed: {progress:.1f}% ({completed}/{len(batch_records)})")
+                                
+                        except Exception as e:
+                            logger.error(f"Error processing future result: {e}")
+                            completed += 1
+                            
                 except Exception as e:
-                    logger.error(f"Error processing ticket {ticket_id}: {e}")
-                    checkpoint_manager.mark_processed(ticket_id, success=False)
-                
-                # Brief pause between tickets
-                if not shutdown_flag.is_set():
-                    time.sleep(BATCH_DELAY)
-        
-        # Save any remaining updates
-        if batch_updates and not shutdown_flag.is_set():
-            saved_count = save_batch_to_database(batch_updates)
-            total_updated += saved_count
+                    logger.error(f"Error collecting batch results: {e}")
+            
+            batch_end_time = time.time()
+            batch_duration = batch_end_time - batch_start_time
+            
+            # Save any remaining updates from this batch
+            if successful_updates and not shutdown_flag.is_set():
+                batch_count += 1
+                logger.info(f"💾 BATCH #{batch_count} READY: {len(successful_updates)} remaining tickets ready for database save")
+                logger.info(f"🔄 WRITING TO DATABASE: Starting bulk write of {len(successful_updates)} tickets...")
+                saved_count = save_batch_to_database(successful_updates)
+                total_updated += saved_count
+                logger.info(f"✅ DATABASE WRITE COMPLETE: {saved_count} tickets successfully written to database")
+                logger.info(f"✅ BATCH #{batch_count} COMPLETED: {saved_count} tickets written to database successfully!")
+                logger.info(f"📊 TOTAL BATCHES COMPLETED: {batch_count} | TOTAL TICKETS SAVED TO DB: {total_updated}")
+            
+            logger.info(f"Batch {batch_num} processing complete: {len(successful_updates) if successful_updates else 0}/{len(batch_records)} successful")
+            logger.info(f"Batch duration: {batch_duration:.2f}s")
+            progress_logger.info(f"BATCH_COMPLETE: batch={batch_num}, successful={len(successful_updates)}, duration={batch_duration:.2f}s")
+            
+            # Progress summary every 3 batches
+            if batch_num % 3 == 0 or batch_num == total_batches:
+                overall_progress = ((batch_num * BATCH_SIZE) / total_tickets) * 100
+                logger.info(f"Overall Progress: {overall_progress:.1f}% | Batches: {batch_num}/{total_batches}")
+                logger.info(f"Success: {success_counter.value} | Failures: {failure_counter.value} | DB Updates: {total_updated}")
+                logger.info(f"💾 TOTAL BATCHES COMPLETED: {batch_count} | TOTAL TICKETS SAVED TO DB: {total_updated}")
+                progress_logger.info(f"PROGRESS_SUMMARY: batch={batch_num}/{total_batches}, success={success_counter.value}, failures={failure_counter.value}, db_updates={total_updated}")
+            
+            # Brief pause between batches
+            if not shutdown_flag.is_set() and batch_num < total_batches:
+                time.sleep(BATCH_DELAY)
         
         checkpoint_manager.save_checkpoint()
         
@@ -1245,14 +1487,16 @@ def process_tickets_optimized():
         final_completion_percentage = (final_total_completed / tickets_with_basic_fields * 100) if tickets_with_basic_fields > 0 else 0
         final_pending = tickets_with_basic_fields - final_total_completed
         
-        logger.info(f"Final Results:")
-        logger.info(f"  Total tickets updated this session: {total_updated}")
-        logger.info(f"  Total tickets completed (all time): {final_total_completed}")
-        logger.info(f"  Total tickets pending: {final_pending}")
-        logger.info(f"  Overall completion rate: {final_completion_percentage:.1f}%")
-        logger.info(f"  Successful generations: {success_counter.value}")
-        logger.info(f"  Failed generations: {failure_counter.value}")
-        logger.info(f"  Total retry attempts: {checkpoint_manager.stats.get('retry_count', 0)}")
+        logger.info("="*80)
+        logger.info(" FINAL RESULTS")
+        logger.info("="*80)
+        logger.info(f"✓ Successful generations: {success_counter.value}")
+        logger.info(f"✗ Failed generations: {failure_counter.value}")
+        logger.info(f"💾 Total batches completed: {batch_count}")
+        logger.info(f"💾 Total tickets updated this session: {total_updated}")
+        logger.info(f"📈 Total tickets completed (all time): {final_total_completed}")
+        logger.info(f"📉 Total tickets pending: {final_pending}")
+        logger.info(f"🎯 Overall completion rate: {final_completion_percentage:.1f}%")
         
         total_time = time.time() - performance_monitor.start_time
         avg_time_per_ticket = total_time / success_counter.value if success_counter.value > 0 else 0
