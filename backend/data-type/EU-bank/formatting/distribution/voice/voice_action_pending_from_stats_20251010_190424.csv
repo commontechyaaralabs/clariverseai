@@ -1,0 +1,9 @@
+urgency,follow_up_required,action_pending_status,priority,total_documents,company,customer
+False,yes,yes,P2-High,240,228.0,12.0
+False,yes,yes,P3-Medium,717,637.0,80.0
+False,yes,yes,P4-Low,174,163.0,11.0
+False,yes,yes,P1-Critical,100,97.0,3.0
+False,yes,yes,P5-Very Low,3,3.0,
+True,yes,yes,P1-Critical,263,258.0,5.0
+True,yes,yes,P2-High,6,6.0,
+True,yes,yes,P3-Medium,2,,2.0
